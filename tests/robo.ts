@@ -119,6 +119,7 @@ export function cozinhaFalsa(): Cozinha {
     atualizar() {},
     definirChama() {},
     definirForno() {},
+    abrirPorta() {},
   };
 }
 

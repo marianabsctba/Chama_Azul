@@ -120,4 +120,6 @@ export interface Cozinha {
   definirChama: (intensidade: number) => void;
   /** Luz interna do forno (0 a 1). */
   definirForno: (intensidade: number) => void;
+  /** Abre ou fecha a porta do forno ou da geladeira (com animação). */
+  abrirPorta: (qual: 'forno' | 'geladeira', aberta: boolean) => void;
 }

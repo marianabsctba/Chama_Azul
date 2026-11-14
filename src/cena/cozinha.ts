@@ -622,6 +622,11 @@ export function criarCozinha(): Cozinha {
   }
 
   /* ---------------- Parede celeste: geladeira, forno, confeitaria ---------------- */
+  // As portas da geladeira e do forno ficam fechadas e abrem quando o passo pede.
+  const cPortaGel = new Construtor();
+  const cPortaForno = new Construtor();
+  const pivoGel = new THREE.Vector3();
+  const pivoForno = new THREE.Vector3();
   const XD = 3.86; // frente dos móveis da parede celeste
   // Geladeira retrô.
   const GEL = { x0: 3.76, x1: 4.46, z0: -3.44, z1: -2.74 };
@@ -672,9 +677,10 @@ export function criarCozinha(): Cozinha {
     c.bloco('fosco', '#cdb894', xi1 - 0.14, prateleiraY, zi0 + 0.02, xi1 - 0.02, prateleiraY + 0.045, zi0 + 0.25);
     for (let i = 0; i < 3; i++) for (let j = 0; j < 2; j++) c.esfera('brilho', '#f3e6d0', xi1 - 0.11 + j * 0.06, prateleiraY + 0.06, zi0 + 0.06 + i * 0.075, 0.022, 0.9, 1.2, 0.9, 1);
 
-    // Porta aberta (dobradiça junto à parede do fundo).
-    const ang = -1.54;
-    c.com(M(x0, 0, z0, 0, ang, 0), () => {
+    // Porta (dobradiça junto à parede do fundo): construída à parte para abrir e fechar.
+    pivoGel.set(x0, 0, z0);
+    {
+      const c = cPortaGel;
       const L = z1 - z0;
       c.add('brilho', new RoundedBoxGeometry(0.055, 1.5, L, 3, 0.022), GELADEIRA, M(-0.0285, 0.88, L / 2));
       c.bloco('brilho', BRANCO, -0.002, 0.2, 0.04, 0.004, 1.55, L - 0.04);
@@ -692,9 +698,8 @@ export function criarCozinha(): Cozinha {
       c.bloco('metal', INOX, -0.07, 0.9, L - 0.08, -0.06, 0.92, L - 0.04);
       c.bloco('metal', INOX, -0.07, 1.2, L - 0.08, -0.06, 1.22, L - 0.04);
       c.bloco('metal', INOX, -0.062, 1.42, L / 2 - 0.08, -0.058, 1.45, L / 2 + 0.08);
-    });
+    }
     bloqueio(x0, z0, LX, z1);
-    bloqueio(x0 - 0.7, z0 - 0.06, x0, z0 + 0.08);
   }
 
   // Coluna do forno de parede.
@@ -747,9 +752,11 @@ export function criarCozinha(): Cozinha {
       const zz = cz0 + 0.03 + i * ((cz1 - cz0 - 0.06) / 8);
       c.add('metal', new THREE.CylinderGeometry(0.003, 0.003, g1 - g0, 6), INOX, M((g0 + g1) / 2, fornoGradeY - 0.004, zz, 0, 0, PI / 2));
     }
-    // Porta de vidro basculante, aberta quase na horizontal (dobradiça embaixo).
+    // Porta de vidro basculante (dobradiça embaixo): construída à parte para abrir e fechar.
     const hd = cy1 - cy0 + 0.04;
-    c.com(M(XD - 0.02, cy0 - 0.012, 0, 0, 0, 1.5), () => {
+    pivoForno.set(XD - 0.02, cy0 - 0.012, 0);
+    {
+      const c = cPortaForno;
       c.bloco('vidro', '#3a3026', -0.018, 0.045, cz0 + 0.03, -0.012, hd - 0.05, cz1 - 0.03);
       c.bloco('metal', INOX, -0.03, 0, cz0 - 0.005, 0, 0.045, cz1 + 0.005);
       c.bloco('metal', INOX, -0.03, hd - 0.05, cz0 - 0.005, 0, hd, cz1 + 0.005);
@@ -757,7 +764,7 @@ export function criarCozinha(): Cozinha {
       c.bloco('metal', INOX, -0.03, 0.045, cz1 - 0.03, 0, hd - 0.05, cz1 + 0.005);
       c.add('metal', new THREE.CylinderGeometry(0.009, 0.009, cz1 - cz0 - 0.06, 10), INOX, M(-0.075, hd - 0.03, fornoZ, PI / 2));
       for (const dz of [-0.22, 0.22]) c.add('metal', new THREE.CylinderGeometry(0.005, 0.005, 0.05, 6), INOX, M(-0.05, hd - 0.03, fornoZ + dz, 0, 0, PI / 2));
-    });
+    }
     // Pano de prato pendurado no puxador da gaveta.
     c.add('fosco', new THREE.BoxGeometry(0.008, 0.26, 0.2), '#e9eef5', M(XD - 0.045, 0.49, fornoZ + 0.12));
     for (let i = 0; i < 3; i++) c.add('fosco', new THREE.BoxGeometry(0.009, 0.02, 0.2), FILETE, M(XD - 0.045, 0.57 - i * 0.07, fornoZ + 0.12));
@@ -940,6 +947,34 @@ export function criarCozinha(): Cozinha {
     grupo.add(m);
   }
 
+  /* ---------------- Portas que abrem ---------------- */
+  const montarPorta = (cp: Construtor, pivo: THREE.Vector3) => {
+    const g = new THREE.Group();
+    g.position.copy(pivo);
+    for (const m of cp.construir(mats.porChave)) {
+      const chave = m.name.replace('cozinha_', '');
+      m.castShadow = !['vidro', 'emissivo'].includes(chave);
+      m.receiveShadow = !['vidro', 'emissivo'].includes(chave);
+      if (chave === 'vidro') m.renderOrder = 2;
+      g.add(m);
+    }
+    grupo.add(g);
+    return g;
+  };
+  const portaGel = montarPorta(cPortaGel, pivoGel);
+  const portaForno = montarPorta(cPortaForno, pivoForno);
+  const ABERTA_GEL = -1.54;
+  const ABERTA_FORNO = 1.5;
+  let alvoGel = 0;
+  let alvoForno = 0;
+  let abertGel = 0;
+  let abertForno = 0;
+  function abrirPorta(qual: 'forno' | 'geladeira', aberta: boolean): void {
+    if (qual === 'forno') alvoForno = aberta ? 1 : 0;
+    else alvoGel = aberta ? 1 : 0;
+  }
+  const suaveAbrir = (x: number) => x * x * (3 - 2 * x);
+
   /* ---------------- Janela: vidro com chuva e céu lá fora ---------------- */
   const largJ = J.z1 - J.z0;
   const altJ = J.y1 - J.y0;
@@ -1103,7 +1138,13 @@ export function criarCozinha(): Cozinha {
   definirChama(intChama);
   definirForno(0);
 
-  function atualizar(_dt: number, t: number): void {
+  function atualizar(dt: number, t: number): void {
+    // portas: abrem e fecham devagar, com uma leve desaceleração no fim
+    const passo = Math.min(1, dt * 1.6);
+    abertGel += Math.sign(alvoGel - abertGel) * Math.min(Math.abs(alvoGel - abertGel), passo);
+    abertForno += Math.sign(alvoForno - abertForno) * Math.min(Math.abs(alvoForno - abertForno), passo);
+    portaGel.rotation.y = ABERTA_GEL * suaveAbrir(abertGel);
+    portaForno.rotation.z = ABERTA_FORNO * suaveAbrir(abertForno);
     if (rendererVisto) {
       mats.aplicarAmbiente(rendererVisto);
       rendererVisto = null;
@@ -1122,5 +1163,5 @@ export function criarCozinha(): Cozinha {
   }
   atualizar(0, 0);
 
-  return { grupo, estacoes, colisores, inicio, atualizar, definirChama, definirForno };
+  return { grupo, estacoes, colisores, inicio, atualizar, definirChama, definirForno, abrirPorta };
 }
