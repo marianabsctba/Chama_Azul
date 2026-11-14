@@ -31,7 +31,7 @@ export class Audio {
   private analisador: AnalyserNode | null = null;
   ligado = true;
   volumeMusica = 0.6;
-  volumeChuva = 0.45;
+  volumeChuva = 0.35;
 
   /** Cria ou retoma o som. Precisa ser chamado dentro de um toque ou clique (regra dos navegadores). */
   iniciar() {
@@ -73,7 +73,7 @@ export class Audio {
     tom.connect(this.salaReverb);
 
     this.ambiente = ctx.createGain();
-    this.ambiente.gain.value = this.volumeChuva * 0.6;
+    this.ambiente.gain.value = this.volumeChuva * 0.5;
     this.ambiente.connect(this.mestre);
 
     const n = ctx.sampleRate * 3;
@@ -94,8 +94,8 @@ export class Audio {
     }
     // chuva: chiado suave lá fora e um ronco grave do temporal
     // chuva abafada, vista de dentro de casa: só os graves e médios, sem chiado agudo
-    this.chuva = this.ruido('lowpass', 900, 0.11, this.ambiente, 0.5);
-    this.chuvaGrave = this.ruido('lowpass', 300, 0.13, this.ambiente);
+    this.chuva = this.ruido('lowpass', 520, 0.045, this.ambiente, 0.4);
+    this.chuvaGrave = this.ruido('lowpass', 220, 0.1, this.ambiente);
     this.chiado = this.ruido('highpass', 3500, 0);
     this.borbulha = this.ruido('bandpass', 400, 0);
     this.bater = this.ruido('bandpass', 2500, 0);
@@ -189,7 +189,7 @@ export class Audio {
 
   definirChuva(v: number) {
     this.volumeChuva = v;
-    if (this.ctx) this.ambiente.gain.setTargetAtTime(v * 0.6, this.ctx.currentTime, 0.3);
+    if (this.ctx) this.ambiente.gain.setTargetAtTime(v * 0.5, this.ctx.currentTime, 0.3);
   }
 
   private nivel(r: Ruido | undefined, v: number, freq?: number) {
@@ -263,7 +263,7 @@ export class Audio {
     filtro.frequency.value = 1600 + Math.random() * 1800;
     filtro.Q.value = 6;
     const g = ctx.createGain();
-    const v = 0.012 + Math.random() * 0.035;
+    const v = 0.008 + Math.random() * 0.022;
     g.gain.setValueAtTime(v, inicio);
     g.gain.exponentialRampToValueAtTime(0.0001, inicio + 0.035);
     f.connect(filtro);
