@@ -1,0 +1,226 @@
+// A mesa de trabalho: o que está sobre a estação (peça, recipiente, conteúdo, utensílio na mão).
+import * as THREE from 'three';
+import { Peca } from '../pecas/peca';
+import { Conteudo, estadoInicial } from '../pecas/conteudo';
+import { criarFormaAlimento, criarFormaGenerica } from '../modelos/alimentos';
+import { criarUtensilio, pontosDoUtensilio } from '../modelos/utensilios';
+import type { Estacao } from '../tipos';
+
+/** Palavras que indicam que o alvo do passo é um preparo líquido ou pastoso, não uma peça. */
+const LIQUIDO = /\b(caldo|sopa|molho|creme|claras?|gemas?|ovos batidos|massa l[ií]quida|leite|calda|xarope|caramelo|[oó]leo|azeite|gordura|manteiga derretida|[aá]gua|vinho|vinagre|marinada|mistura|massa de crepe|massa de panqueca|merengue|chantilly|maionese|vinagrete|roux|b[eé]chamel|purê|pur[eê]|ganache|chocolate derretido|coulis|geleia|gelatina|ponche|liquido|l[ií]quido|suco|sorbet|sorvete|musse|mousse|recheio|massa mole|massa do bolo|massa de bolo|massa choux|fumet|consom[eê]|risoto|arroz|polenta|cuscuz|grãos|feij[aã]o|lentilha)\b/i;
+
+export function ehLiquido(texto: string) {
+  return LIQUIDO.test(texto);
+}
+
+const UTENSILIO_PADRAO: Record<string, string> = {
+  cortar: 'faca do chef',
+  picar: 'faca do chef',
+  remover: 'descascador de legumes',
+  cobrir: 'pincel',
+  limpar: 'pano',
+  'circular-rapido': 'batedor de arame',
+  circular: 'colher de pau',
+  dobrar: 'espátula de silicone',
+  vaivem: 'rolo de massa',
+  golpes: 'martelo de carne',
+  pressionar: 'amassador',
+  escumar: 'escumadeira',
+  despejar: 'concha',
+  peneirar: 'peneira',
+  confeitar: 'saco de confeitar',
+};
+
+export class Mesa {
+  readonly cena: THREE.Scene;
+  peca: Peca | null = null;
+  pecaChave = '';
+  recipiente: THREE.Group | null = null;
+  recipienteChave = '';
+  conteudo: Conteudo | null = null;
+  ferramenta: THREE.Group | null = null;
+  ferramentaChave = '';
+  /** Raio interno e altura do fundo do recipiente atual (no espaço do mundo). */
+  bocaRaio = 0.1;
+  fundoY = 0;
+  /** Centro do fundo interno do recipiente atual (no mundo). */
+  readonly centro = new THREE.Vector3();
+  readonly extras: THREE.Object3D[] = [];
+
+  constructor(cena: THREE.Scene) {
+    this.cena = cena;
+  }
+
+  /** Garante a peça do alimento (mantém a mesma se for o mesmo alimento). */
+  garantirPeca(chave: string, ondeY: THREE.Vector3): Peca {
+    if (this.peca && this.pecaChave === chave) return this.peca;
+    this.removerPeca();
+    let forma;
+    try {
+      forma = criarFormaAlimento(chave);
+    } catch {
+      forma = criarFormaGenerica(chave);
+    }
+    const p = new Peca(forma);
+    // peças muito grandes são reduzidas para caber na tábua sem perder a proporção
+    const maior = Math.max(p.comprimento, p.largura);
+    if (maior > 0.7) p.scale.setScalar(0.7 / maior);
+    p.position.copy(ondeY);
+    this.cena.add(p);
+    this.peca = p;
+    this.pecaChave = chave;
+    return p;
+  }
+
+  removerPeca() {
+    if (!this.peca) return;
+    this.cena.remove(this.peca);
+    this.peca.descartar();
+    this.peca = null;
+    this.pecaChave = '';
+  }
+
+  /**
+   * Garante um recipiente (tigela, panela, frigideira, assadeira) na posição dada,
+   * com medidas da boca para o conteúdo.
+   */
+  garantirRecipiente(texto: string, onde: THREE.Vector3, padrao = 'tigela'): THREE.Group {
+    const chave = `${texto || padrao}@${onde.x.toFixed(2)},${onde.z.toFixed(2)}`;
+    if (this.recipiente && this.recipienteChave === chave) return this.recipiente;
+    this.removerRecipiente(false);
+    let g = (texto && criarUtensilio(texto)) || criarUtensilio(padrao) || new THREE.Group();
+    this.recipiente = g;
+    this.recipienteChave = chave;
+    g.position.copy(onde);
+    this.cena.add(g);
+    g.updateMatrixWorld(true);
+    const caixa = new THREE.Box3().setFromObject(g);
+    const tam = caixa.getSize(new THREE.Vector3());
+    // a boca é o menor lado horizontal (ignora cabos compridos)
+    this.bocaRaio = Math.max(0.04, Math.min(tam.x, tam.z) * 0.42);
+    this.fundoY = caixa.min.y + Math.min(0.012, tam.y * 0.15);
+    // nos recipientes, a ponta do modelo é o centro do fundo por dentro: é ali que vai o conteúdo
+    this.centro.copy(g.position);
+    const ponta = g.userData.ponta as THREE.Vector3 | undefined;
+    if (ponta) {
+      const p = ponta.clone().applyMatrix4(g.matrixWorld);
+      this.centro.set(p.x, g.position.y, p.z);
+      if (p.y > caixa.min.y && p.y < caixa.min.y + tam.y * 0.5) this.fundoY = p.y;
+    }
+    if (this.conteudo) {
+      this.cena.remove(this.conteudo);
+      this.conteudo.descartar();
+      this.conteudo = null;
+    }
+    return g;
+  }
+
+  /** Coloca ou mantém o conteúdo dentro do recipiente atual. */
+  garantirConteudo(texto: string, nivelRel = 0.45): Conteudo {
+    if (!this.recipiente) throw new Error('sem recipiente');
+    const caixa = new THREE.Box3().setFromObject(this.recipiente);
+    const alturaUtil = Math.max(0.02, (caixa.max.y - this.fundoY) * 0.85);
+    if (!this.conteudo) {
+      const e = estadoInicial(texto);
+      const c = new Conteudo(this.bocaRaio * 0.95, e.cor, alturaUtil * nivelRel);
+      c.estado.espessura = e.espessura;
+      c.estado.brilho = e.brilho;
+      c.position.set(this.centro.x, this.fundoY, this.centro.z);
+      this.cena.add(c);
+      this.conteudo = c;
+    }
+    return this.conteudo;
+  }
+
+  removerRecipiente(tudo = true) {
+    if (this.recipiente) this.cena.remove(this.recipiente);
+    this.recipiente = null;
+    this.recipienteChave = '';
+    if (this.conteudo && tudo) {
+      this.cena.remove(this.conteudo);
+      this.conteudo.descartar();
+      this.conteudo = null;
+    }
+  }
+
+  /** Utensílio que acompanha o mouse. */
+  pegarFerramenta(texto: string, padrao: string): THREE.Group | null {
+    const t = texto && !/^(m[aã]os?|dedos?)$/i.test(texto.trim()) ? texto : UTENSILIO_PADRAO[padrao] ?? padrao;
+    if (this.ferramenta && this.ferramentaChave === t) return this.ferramenta;
+    this.soltarFerramenta();
+    const g = criarUtensilio(t) || criarUtensilio(UTENSILIO_PADRAO[padrao] ?? padrao);
+    if (!g) return null;
+    g.traverse((o) => {
+      if (o instanceof THREE.Mesh) o.castShadow = true;
+    });
+    this.ferramenta = g;
+    this.ferramentaChave = t;
+    this.cena.add(g);
+    return g;
+  }
+
+  soltarFerramenta() {
+    if (this.ferramenta) this.cena.remove(this.ferramenta);
+    this.ferramenta = null;
+    this.ferramentaChave = '';
+  }
+
+  /** Posiciona a ferramenta para que sua ponta ativa fique no ponto dado. */
+  ferramentaEm(ponto: THREE.Vector3, rotY = 0, inclinacao = -0.5, rolar = 0) {
+    const g = this.ferramenta;
+    if (!g) return;
+    const { ponta } = pontosDoUtensilio(g);
+    g.rotation.set(0, 0, 0);
+    g.rotation.order = 'YZX';
+    g.rotation.y = rotY;
+    g.rotation.z = inclinacao;
+    g.rotation.x = rolar;
+    g.updateMatrixWorld(true);
+    const pontaMundo = ponta.clone().applyQuaternion(g.quaternion);
+    g.position.copy(ponto).sub(pontaMundo);
+  }
+
+  adicionarExtra(o: THREE.Object3D) {
+    this.extras.push(o);
+    this.cena.add(o);
+  }
+
+  limparExtras() {
+    for (const o of this.extras) {
+      this.cena.remove(o);
+      o.traverse((c) => {
+        if (c instanceof THREE.Mesh) {
+          c.geometry.dispose();
+        }
+      });
+    }
+    this.extras.length = 0;
+  }
+
+  atualizar(dt: number) {
+    this.peca?.atualizar(dt);
+    this.conteudo?.atualizar(dt);
+  }
+
+  limparTudo() {
+    this.removerPeca();
+    this.removerRecipiente(true);
+    this.soltarFerramenta();
+    this.limparExtras();
+  }
+}
+
+/** Posição de apoio ao lado da superfície da estação (para tigela de destino, travessa etc.). */
+export function aoLado(e: Estacao, dx: number, dz = 0) {
+  const frente = e.superficie.clone().sub(e.camera).setY(0).normalize();
+  const lado = new THREE.Vector3(-frente.z, 0, frente.x);
+  return e.superficie.clone().addScaledVector(lado, dx).addScaledVector(frente, dz);
+}
+
+/** Ângulo Y que alinha o eixo X local à direita de quem olha a estação. */
+export function anguloDaEstacao(e: Estacao) {
+  const frente = e.superficie.clone().sub(e.camera).setY(0).normalize();
+  // eixo X local deve apontar para a direita da tela
+  const direita = new THREE.Vector3(-frente.z, 0, frente.x);
+  return Math.atan2(-direita.z, direita.x);
+}
