@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chama Azul: vitrine da cozinha</title>
+    <style>
+      html, body { margin: 0; height: 100%; overflow: hidden; background: #0d1626; font-family: system-ui, sans-serif; }
+      canvas { display: block; }
+      #painel { position: fixed; top: 12px; left: 12px; display: flex; gap: 12px; align-items: center;
+        background: rgba(13, 22, 38, 0.75); color: #dfe9f5; padding: 8px 12px; border-radius: 8px; font-size: 13px; }
+      #painel select { font-size: 13px; }
+      #painel label { display: flex; gap: 6px; align-items: center; }
+      #info { position: fixed; bottom: 10px; left: 12px; color: #b9cbe0; font: 12px monospace;
+        background: rgba(13, 22, 38, 0.6); padding: 4px 8px; border-radius: 6px; }
+    </style>
+  </head>
+  <body>
+    <div id="painel"></div>
+    <div id="info">carregando</div>
+    <script type="module" src="/src/cena/vitrine.ts"></script>
+  </body>
+</html>
