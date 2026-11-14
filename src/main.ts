@@ -73,6 +73,12 @@ async function iniciar() {
   jogador.sensibilidade = 0.0022 * progresso.sensibilidade;
   audio.ligado = progresso.som;
   audio.volumeMusica = progresso.musica;
+  audio.volumeChuva = progresso.chuva;
+  // o navegador só libera som depois de um gesto: o primeiro clique, toque ou tecla em qualquer lugar liga tudo
+  const liberarSom = () => {
+    if (progresso.som) audio.iniciar();
+  };
+  for (const ev of ['pointerdown', 'keydown', 'touchend'] as const) window.addEventListener(ev, liberarSom, { capture: true, passive: true });
 
   const ui = document.getElementById('ui')!;
   const hud = new HudHtml(ui);
@@ -92,6 +98,17 @@ async function iniciar() {
     alternarSom: () => {
       progresso.som = !progresso.som;
       audio.definirLigado(progresso.som);
+      if (progresso.som) audio.iniciar();
+      salvar(progresso);
+    },
+    volume: (qual, v) => {
+      if (qual === 'musica') {
+        progresso.musica = v;
+        audio.definirMusica(v);
+      } else {
+        progresso.chuva = v;
+        audio.definirChuva(v);
+      }
       salvar(progresso);
     },
   });
@@ -262,7 +279,7 @@ async function iniciar() {
 
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) audio.ctx?.suspend();
-    else if (estado !== 'menu') audio.ctx?.resume();
+    else audio.ctx?.resume();
   });
 
   clearInterval(trocaFrase);
@@ -284,6 +301,7 @@ async function iniciar() {
       if (t) comecar(t);
     },
     catalogo,
+    audio,
     camera,
     canvas,
     THREE,

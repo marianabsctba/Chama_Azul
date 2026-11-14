@@ -20,6 +20,7 @@ export interface AcoesTelas {
   fecharCaderno(): void;
   alternarModo(): void;
   alternarSom(): void;
+  volume(qual: 'musica' | 'chuva', v: number): void;
 }
 
 export class Telas {
@@ -79,8 +80,23 @@ export class Telas {
     const ajuda = el('button', 'botao', 'Como jogar');
     ajuda.addEventListener('click', () => this.mostrar(this.ajuda, true));
     linha.append(this.btnModo, this.btnSom, ajuda);
+    const volumes = el('div', 'menu-volumes');
+    for (const [qual, nome] of [['musica', 'Música'], ['chuva', 'Chuva']] as const) {
+      const rot = el('label', 'volume');
+      rot.append(el('span', '', nome));
+      const r = el('input') as HTMLInputElement;
+      r.type = 'range';
+      r.min = '0';
+      r.max = '1';
+      r.step = '0.05';
+      r.value = String(this.progresso[qual]);
+      r.setAttribute('aria-label', `Volume da ${nome.toLowerCase()}`);
+      r.addEventListener('input', () => this.acoes.volume(qual, Number(r.value)));
+      rot.append(r);
+      volumes.append(rot);
+    }
     const rodape = el('p', 'rodape', 'Feito com carinho, código aberto. Tudo em 3D gerado por código.');
-    caixa.append(logo, titulo, sub, this.resumoMenu, entrar, linha, rodape);
+    caixa.append(logo, titulo, sub, this.resumoMenu, entrar, linha, volumes, rodape);
     m.append(caixa);
     this.atualizarMenuDepois = () => this.atualizarMenu();
     queueMicrotask(() => this.atualizarMenu());
