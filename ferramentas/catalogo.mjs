@@ -28,6 +28,8 @@ function variante(acao, gesto, texto) {
   const t = texto.toLowerCase();
   switch (gesto) {
     case 'cortar':
+      // faca deitada, paralela à tábua: borboleta, escalope, abrir na horizontal, filetar rente às costelas
+      if (['cortar', 'fatiar', 'abrir'].includes(acao) && /corte horizontal|peito na horizontal|borboleta|faca (quase )?deitada|faca paralela|escalope|em duas camadas|ao meio na espessura|bolso/.test(t)) return 'deitado';
       if (acao === 'picar') return 'picar';
       if (acao === 'fatiar') return 'fatiar';
       if (acao === 'desossar' || acao === 'eviscerar' || acao === 'abrir') return 'contorno';
@@ -149,28 +151,74 @@ function main() {
     tabelas.push(...(j.tabelas ?? []));
   }
 
+  // palavras soltas que não identificam um alimento sozinhas
+  const GENERICAS_FORTES = new Set(['barriga', 'perna', 'peito', 'lombo', 'costela', 'paleta', 'asa', 'coxa', 'file', 'carne', 'peixe', 'osso', 'pele', 'cabeca', 'pe', 'furcula', 'carcaca', 'miolo']);
   // índice de alimentos por chave normalizada (nome e partes do nome antes de parênteses)
   const indice = [];
   for (const a of alimentos.values()) {
     const nomes = new Set([a.nome, a.nome.split('(')[0], a.nome.split(',')[0], a.id.replace(/[-_]/g, ' ')]);
     for (const n of nomes) {
       const k = chave(n);
-      if (k.length >= 3) indice.push({ k, id: a.id });
+      if (k.length >= 3 && !(GENERICAS_FORTES.has(k))) indice.push({ k, id: a.id });
     }
   }
   indice.sort((a, b) => b.k.length - a.k.length);
-  // depois dos nomes completos, a primeira palavra do nome (frango, salmão, batata), sem repetir
-  const palavras = new Map();
+  // a primeira palavra do nome só vale quando é inequívoca (uma única comida começa com ela)
+  // e não é palavra genérica: "filé", "carne", "barriga" não podem virar filé-mignon ou barriga de porco
+  const GENERICAS = new Set(['peixe', 'carne', 'file', 'barriga', 'concha', 'musse', 'molho', 'massa', 'folha', 'caldo', 'creme', 'pao', 'bolo', 'torta', 'pasta', 'cabeca', 'perna', 'peito', 'lombo', 'costela', 'paleta', 'pe', 'asa', 'coxa', 'osso', 'miolo', 'polpa', 'casca', 'suco', 'calda', 'fruta', 'legume', 'erva', 'sementes', 'graos', 'po', 'oleo', 'vinho', 'agua']);
+  const contagem = new Map();
   for (const a of alimentos.values()) {
-    const w = chave(a.nome.split(/[ ,(]/)[0]);
-    if (w.length >= 4 && !palavras.has(w)) palavras.set(w, a.id);
+    const w = chave(a.nome.split(/[ ,(-]/)[0]);
+    contagem.set(w, [...(contagem.get(w) ?? []), a.id]);
   }
-  for (const [k, id] of palavras) if (!indice.some((e) => e.k === k)) indice.push({ k, id });
+  const fracos = [];
+  for (const [w, lista] of contagem) if (w.length >= 4 && lista.length === 1 && !GENERICAS.has(w) && !indice.some((e) => e.k === w)) fracos.push({ k: w, id: lista[0] });
+  // apelidos de peças genéricas, para o texto do livro virar uma peça de verdade
+  // [expressão, id, bancadas onde vale (vazio = todas), capítulo que precisa casar]
+  const APELIDOS = [
+    [/\b(peixes? chatos?|linguados?|solha)\b/, 'linguado', []],
+    [/\b(file|files|filetes?|posta|postas|manta|mantas|lombo) de peixe\b/, 'salmao', []],
+    [/\bpeixes?\b/, 'truta', []],
+    [/\bpernas?\b/, 'perna-de-cordeiro', ['carnes'], /cordeiro/i],
+    [/\bpaleta\b/, 'paleta-de-cordeiro', ['carnes'], /cordeiro/i],
+    [/\bpernas?\b/, 'pernil', ['carnes'], /porco/i],
+    // cortes ditos de forma genérica, pelo capítulo
+    [/\bcarres?\b/, 'carre-de-cordeiro', ['carnes']],
+    [/\bnoisettes?\b/, 'noisette-de-cordeiro', ['carnes']],
+    [/\bcosteletas?\b/, 'costeleta-de-cordeiro', ['carnes'], /cordeiro/i],
+    [/\bcosteletas?\b/, 'costeleta-de-porco', ['carnes'], /porco/i],
+    [/\bcosteletas?\b/, 'costeleta-de-vitela', ['carnes'], /vitela|bovin/i],
+    [/\bcostelas?\b/, 'costela-bovina', ['carnes'], /bovin/i],
+    [/\b(files?|lombo)\b/, 'file-de-porco', ['carnes'], /porco/i],
+    [/\b(files?|bifes?)\b/, 'file-mignon', ['carnes'], /bovin|vitela/i],
+    [/\bsebo\b/, 'sebo-de-rim', ['carnes']],
+    [/\b(carne|peca|pecas|cubos|assado)\b/, 'lombo-de-cordeiro', ['carnes'], /cordeiro/i],
+    [/\b(carne|peca|pecas|cubos|assado)\b/, 'lombo-de-porco', ['carnes'], /porco/i],
+    [/\b(carne|peca|pecas|cubos|assado)\b/, 'contrafile', ['carnes'], /bovin|vitela/i],
+    [/\b(ave|aves|frango|galinha) (inteir[oa]s?|pequen[oa]s?)\b/, 'frango-inteiro', ['aves']],
+    [/\bpeitos?( de (frango|ave|peru))?\b/, 'peito-de-frango', ['aves']],
+    [/\b(coxas?|pernas?|sobrecoxas?)( de (frango|ave))?\b/, 'perna-de-frango', ['aves']],
+    [/\basas?\b/, 'asa-de-frango', ['aves']],
+    [/\b(aves?|frangos?)\b/, 'frango-inteiro', ['aves']],
+  ].filter(([, id]) => alimentos.has(id));
   const reconhecer = (texto) => {
     const k = ' ' + chave(texto) + ' ';
     for (const e of indice) if (k.includes(' ' + e.k + ' ')) return e.id;
     return undefined;
   };
+  const reconhecerFraco = (texto, bancada = '', capitulo = '') => {
+    const k = ' ' + chave(texto) + ' ';
+    for (const e of fracos) if (k.includes(' ' + e.k + ' ')) return e.id;
+    const n = normal(texto);
+    for (const [re, id, onde, cap] of APELIDOS) {
+      if (onde.length && !onde.includes(bancada)) continue;
+      if (cap && !cap.test(capitulo + ' ' + texto)) continue;
+      if (re.test(n)) return id;
+    }
+    return undefined;
+  };
+  /** Partes de uma peça: o passo continua trabalhando a mesma peça do passo anterior. */
+  const PARTES = /\b(furcula|barriga|cabeca|rabo|cauda|pele|espinhas?|guelras?|costas|nadadeiras?|escamas|visceras|carne|files?|filetes?|peito|coxas?|osso|ossos|carcaca|pescoco|asas?|juntas?|tendoes|gordura|membrana|lado|lados|outro lado|metades?|pedacos?|peca|pecas|centro|ponta|pontas|bolso|cavidade|interior|superficie|corte|cortes|fatias?|tiras?|cubos?)\b/;
 
   const ids = new Set();
   const problemas = [];
@@ -179,7 +227,7 @@ function main() {
     ids.add(t.id);
     const bancada = BANCADAS.find((b) => b.teste.test(t.capitulo));
     if (!bancada) problemas.push(`capítulo sem bancada: ${t.capitulo}`);
-    const alim = [...new Set(t.ingredientes.map(reconhecer).filter(Boolean))];
+    const alim = [...new Set(t.ingredientes.map((x) => reconhecer(x) ?? reconhecerFraco(x, bancada?.id, t.capitulo + ' ' + t.nome)).filter(Boolean))];
     // a peça principal é o primeiro ingrediente que não é tempero, gordura ou líquido de cobertura
     const principal = alim.find((id) => !ehCobertura(id, alimentos.get(id)?.nome ?? '')) ?? alim[0];
     let anterior = principal;
@@ -203,7 +251,9 @@ function main() {
       if (m) passo.meta = m;
       const cob = (id) => !!id && ehCobertura(id, alimentos.get(id)?.nome ?? '');
       const solido = gesto === 'superficie' || gesto === 'cortar' || gesto === 'montar' || gesto === 'separar';
-      const r = reconhecer(p.alvo);
+      // nome completo no alvo vale sempre; parte de peça segue a peça anterior; só então os apelidos
+      const forte = reconhecer(p.alvo);
+      const r = forte ?? (PARTES.test(normal(p.alvo)) && anterior ? anterior : reconhecerFraco(p.alvo, bancada?.id, t.capitulo + ' ' + t.nome));
       // pincelar, regar, temperar: o que se reconhece no alvo é a cobertura, não a peça
       const a = solido ? [r, anterior, principal].find((x) => x && !cob(x)) : r ?? anterior ?? principal;
       if (a) {
