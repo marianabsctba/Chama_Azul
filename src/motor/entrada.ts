@@ -9,6 +9,10 @@ export class Entrada {
   readonly olhar = new THREE.Vector2();
   pressionado = false;
   cliqueNovo = false;
+  /** Joystick virtual (x para os lados, y para trás), de -1 a 1. */
+  readonly analogico = new THREE.Vector2();
+  /** Verdadeiro depois do primeiro toque na tela. */
+  toque = false;
   soltouNovo = false;
   roda = 0;
   readonly teclas = new Set<string>();
@@ -18,19 +22,48 @@ export class Entrada {
 
   constructor(el: HTMLElement) {
     this.el = el;
+    // dedos na tela: um dedo é a mão; dois dedos arrastando de lado giram a peça (como a roda do mouse)
+    const dedos = new Map<number, { x: number; y: number }>();
+    let giroDedos = 0;
     el.addEventListener('pointermove', (e) => {
+      if (e.pointerType === 'touch' && dedos.has(e.pointerId)) {
+        const ant = dedos.get(e.pointerId)!;
+        if (dedos.size >= 2) {
+          giroDedos += (e.clientX - ant.x) / dedos.size;
+          while (Math.abs(giroDedos) > 36) {
+            this.roda += giroDedos > 0 ? 1 : -1;
+            giroDedos -= Math.sign(giroDedos) * 36;
+          }
+        }
+        dedos.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (dedos.size >= 2) return;
+      }
       this.atualizarPos(e.clientX, e.clientY);
       if (document.pointerLockElement === el) this.olhar.x += e.movementX, this.olhar.y += e.movementY;
     });
     el.addEventListener('pointerdown', (e) => {
       if (e.button !== 0) return;
+      if (e.pointerType === 'touch') {
+        this.toque = true;
+        dedos.set(e.pointerId, { x: e.clientX, y: e.clientY });
+        if (dedos.size >= 2) {
+          // segundo dedo: cancela a mão para não riscar sem querer
+          if (this.pressionado) this.soltouNovo = true;
+          this.pressionado = false;
+          giroDedos = 0;
+          return;
+        }
+      }
       this.atualizarPos(e.clientX, e.clientY);
       this.deltaPx.set(0, 0);
       this.pressionado = true;
       this.cliqueNovo = true;
       el.setPointerCapture?.(e.pointerId);
     });
-    const soltar = () => {
+    const soltar = (e: PointerEvent) => {
+      const eraGiro = dedos.size >= 2;
+      dedos.delete(e.pointerId);
+      if (eraGiro) return;
       if (this.pressionado) this.soltouNovo = true;
       this.pressionado = false;
     };

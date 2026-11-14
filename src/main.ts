@@ -15,6 +15,7 @@ import { carregar, registrar, salvar } from './progresso';
 import { Peca } from './pecas/peca';
 import { criarFormaGenerica } from './modelos/alimentos';
 import { formatarTempo } from './gestos/base';
+import { ControlesToque, ehToque, textoParaToque } from './ui/toque';
 import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 const catalogo = catalogoBruto as unknown as Catalogo;
@@ -44,7 +45,9 @@ async function iniciar() {
     clearInterval(trocaFrase);
     return;
   }
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  const celular = ehToque();
+  // no celular, menos pixels por quadro: fica leve e ainda nítido
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, celular ? 1.25 : 1.75));
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -73,6 +76,8 @@ async function iniciar() {
 
   const ui = document.getElementById('ui')!;
   const hud = new HudHtml(ui);
+  if (celular) hud.transformar = textoParaToque;
+  if (celular) hud.btnSair.textContent = 'Sair';
   let estado: Estado = 'menu';
   let missao: Missao | null = null;
 
@@ -223,6 +228,7 @@ async function iniciar() {
     telas.mostrar(telas.dicaAndar, true);
   }
 
+  const toque = celular ? new ControlesToque(ui, entrada, () => estado === 'andar' && abrirCaderno()) : null;
   hud.btnPular.addEventListener('click', () => missao?.pular());
   hud.btnSair.addEventListener('click', () => sairDaMissao());
 
@@ -232,7 +238,7 @@ async function iniciar() {
       abrirCaderno();
       return;
     }
-    if (!document.pointerLockElement) canvas.requestPointerLock?.();
+    if (!document.pointerLockElement && !entrada.toque && !celular) canvas.requestPointerLock?.();
   });
 
   function olhandoCaderno() {
@@ -245,6 +251,9 @@ async function iniciar() {
     const w = canvas.clientWidth || window.innerWidth;
     const h = canvas.clientHeight || window.innerHeight;
     camera.aspect = w / h;
+    // tela em pé: abre a lente para manter a largura de visão de uma tela deitada
+    const graus = Math.PI / 180;
+    camera.fov = camera.aspect < 1 ? Math.min(92, (2 * Math.atan(Math.tan(31 * graus) * (1.3 / Math.max(camera.aspect, 0.35)) * 0.62)) / graus) : 62;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
   };
@@ -303,8 +312,10 @@ async function iniciar() {
       const alvo = olhandoCaderno();
       telas.mira.classList.toggle('alvo', alvo);
       telas.dicaAndar.innerHTML = alvo
-        ? 'Clique para abrir o <b>caderno de técnicas</b>'
-        : document.pointerLockElement
+        ? `${celular ? 'Toque' : 'Clique'} para abrir o <b>caderno de técnicas</b>`
+        : celular
+          ? 'Joystick para andar · arraste para olhar · <b>Caderno</b> para escolher uma técnica'
+          : document.pointerLockElement
           ? '<b>WASD</b> para andar · vá até o caderno no púlpito ou aperte <b>C</b>'
           : 'Clique para olhar em volta · <b>C</b> abre o caderno de técnicas';
     }
@@ -313,6 +324,7 @@ async function iniciar() {
       const esc = missao.relogio.escala;
       hud.definirTempo(esc > 1 ? `Relógio da cozinha ×${esc} · ${formatarTempo(missao.relogio.decorrido / 60)}` : '');
     }
+    toque?.mostrar(estado === 'andar' && !jogador.voando ? 'andar' : estado === 'missao' ? 'trabalho' : 'nada');
     cozinha.atualizar(dt, tempo);
     audio.atualizar();
     renderer.render(cena, camera);

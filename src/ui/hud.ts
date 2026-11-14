@@ -19,6 +19,8 @@ export class HudHtml implements Hud {
   private titulo: HTMLElement;
   private pontos: HTMLElement;
   private ultimaDica = '';
+  /** Adapta os textos (por exemplo, de mouse para toque). */
+  transformar: (t: string) => string = (t) => t;
   private ultimoBotao: string | null = null;
   private clicado = false;
   private escolhida = -1;
@@ -81,7 +83,7 @@ export class HudHtml implements Hud {
   dica(texto: string) {
     if (texto === this.ultimaDica) return;
     this.ultimaDica = texto;
-    this.dicaEl.textContent = texto;
+    this.dicaEl.textContent = this.transformar(texto);
   }
 
   medidores(lista: Medidor[]) {
@@ -157,7 +159,7 @@ export class HudHtml implements Hud {
   }
 
   aviso(texto: string, tipo: 'bom' | 'neutro' | 'ajuste' = 'neutro') {
-    const a = el('div', `aviso ${tipo}`, texto);
+    const a = el('div', `aviso ${tipo}`, this.transformar(texto));
     this.avisos.append(a);
     setTimeout(() => a.classList.add('sai'), 1600);
     setTimeout(() => a.remove(), 2200);

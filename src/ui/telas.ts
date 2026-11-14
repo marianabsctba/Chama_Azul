@@ -105,10 +105,11 @@ export class Telas {
     c.innerHTML = `
       <h2>Como jogar</h2>
       <ul>
-        <li><b>Andar:</b> clique na tela para olhar com o mouse, WASD para andar, Shift para ir mais rápido, Esc solta o mouse.</li>
-        <li><b>Escolher técnica:</b> clique no caderno aberto no púlpito ou aperte <b>C</b> em qualquer lugar.</li>
+        <li><b>Andar:</b> clique na tela para olhar com o mouse, WASD para andar, Shift para ir mais rápido, Esc solta o mouse. No celular: joystick no canto e arraste o dedo para olhar.</li>
+        <li><b>Escolher técnica:</b> clique no caderno aberto no púlpito, aperte <b>C</b> ou toque no botão <b>Caderno</b>.</li>
         <li><b>Trabalhar:</b> a câmera vai até a bancada e o mouse vira sua mão. Cada passo diz o gesto: riscar o corte, mexer em círculos, inclinar para despejar, girar o fogo com a roda do mouse.</li>
-        <li><b>O tempo é a quarta dimensão:</b> no fogo, no forno e no descanso, segure <b>Espaço</b> para acelerar o relógio da cozinha.</li>
+        <li><b>Fogo, forno e timer:</b> roda do mouse ou Q e E; no celular, os botões <b>−</b> e <b>+</b>.</li>
+        <li><b>O tempo é a quarta dimensão:</b> no fogo, no forno e no descanso, segure <b>Espaço</b> (ou <b>⏩</b> no celular) para acelerar o relógio da cozinha.</li>
         <li><b>Modo Zen:</b> sem pressa, nada se perde, só dicas. <b>Modo Prova:</b> a precisão vale estrelas.</li>
         <li><b>Pular passo</b> e <b>Sair</b> ficam no canto de cima. Seu progresso fica salvo neste navegador.</li>
       </ul>`;

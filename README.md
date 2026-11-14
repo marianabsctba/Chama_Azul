@@ -26,6 +26,7 @@ Você anda por uma cozinha azul de azulejos portugueses, com chuva na janela e m
 | Trabalhar | o mouse vira a mão; cada passo explica o gesto na parte de baixo da tela |
 | Fogo e forno | roda do mouse, ou Q e E |
 | Tempo | segure Espaço para acelerar |
+| Celular e tablet | joystick para andar, arraste o dedo para olhar, botão Caderno; no trabalho, o dedo é a mão, os botões − e + regulam fogo, forno e timer, ⏩ acelera o tempo e dois dedos de lado giram a peça |
 
 ## Rodar localmente
 

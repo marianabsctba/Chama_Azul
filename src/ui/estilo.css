@@ -19,8 +19,8 @@
 }
 
 * { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; overflow: hidden; background: var(--noite); color: var(--espuma); font-family: var(--texto); }
-canvas#jogo { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+html, body { margin: 0; height: 100%; overflow: hidden; overscroll-behavior: none; -webkit-user-select: none; user-select: none; background: var(--noite); color: var(--espuma); font-family: var(--texto); }
+canvas#jogo { position: fixed; inset: 0; width: 100%; height: 100%; display: block; outline: none; touch-action: none; -webkit-tap-highlight-color: transparent; }
 #ui { position: fixed; inset: 0; pointer-events: none; }
 #ui > * { pointer-events: auto; }
 #ui > .hud, #ui > .mira, #ui > .dica-andar { pointer-events: none; }
@@ -188,4 +188,28 @@ canvas#jogo { position: fixed; inset: 0; width: 100%; height: 100%; display: blo
   .hud-passo { top: 120px; }
   .hud-medidores { top: auto; bottom: 120px; transform: none; }
   .hud-tecnica { max-width: 55vw; }
+}
+
+/* toque (celular e tablet) */
+.toque-andar, .toque-trabalho { position: fixed; pointer-events: none; z-index: 5; }
+.toque-andar { inset: auto 0 0 0; height: 0; }
+.joystick { pointer-events: auto; position: fixed; left: 22px; bottom: 26px; width: 128px; height: 128px; border-radius: 50%; background: rgba(10, 30, 60, 0.45); border: 2px solid var(--borda); backdrop-filter: blur(6px); touch-action: none; }
+.joystick-pino { position: absolute; left: 50%; top: 50%; width: 56px; height: 56px; margin: -28px 0 0 -28px; border-radius: 50%; background: linear-gradient(180deg, #62a9ff, var(--cobalto)); box-shadow: 0 4px 14px rgba(31, 95, 191, 0.6); }
+.toque-caderno { pointer-events: auto; position: fixed; right: 18px; bottom: 34px; font-size: 17px; padding: 14px 22px; }
+.toque-trabalho { right: 14px; bottom: 96px; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+.toque-btn { pointer-events: auto; touch-action: none; min-width: 60px; height: 60px; border-radius: 18px; font: 700 28px var(--texto); color: var(--espuma); background: var(--vidro); border: 1px solid var(--borda); backdrop-filter: blur(8px); }
+.toque-btn.largo { font-size: 16px; padding: 0 16px; }
+.toque-btn.ativo { background: rgba(95, 180, 255, 0.45); border-color: var(--celeste); }
+@media (pointer: coarse) {
+  .hud-medidores { top: auto; bottom: 120px; right: auto; left: 12px; transform: none; width: min(230px, 52vw); gap: 6px; }
+  .medidor { padding: 7px 10px; }
+  .hud-dica { bottom: 10px; font-size: 13px; max-width: calc(100vw - 24px); }
+  .hud-passo { top: 70px; padding: 8px 14px; }
+  .hud-passo-acao { font-size: 16px; }
+  .hud-acao { bottom: 70px; }
+  .hud-tempo { display: none; }
+  .hud-tecnica { max-width: 50vw; padding: 7px 10px; }
+  .hud-titulo { font-size: 14px; }
+  .hud-botoes .botao { padding: 7px 9px; font-size: 13px; }
+  .dica-andar { bottom: auto; top: 14px; font-size: 13px; }
 }

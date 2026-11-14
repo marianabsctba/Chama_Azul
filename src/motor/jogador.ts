@@ -98,6 +98,12 @@ export class Jogador {
         this.pitch -= entrada.olhar.y * this.sensibilidade;
         this.pitch = Math.max(-1.35, Math.min(1.35, this.pitch));
       }
+      // no toque, arrastar o dedo na tela olha em volta
+      if (!travado && entrada.toque && entrada.pressionado) {
+        this.yaw -= entrada.deltaPx.x * 0.005;
+        this.pitch -= entrada.deltaPx.y * 0.005;
+        this.pitch = Math.max(-1.35, Math.min(1.35, this.pitch));
+      }
       // setas também giram (acessibilidade e quem não quer travar o mouse)
       if (entrada.teclas.has('arrowleft')) this.yaw += dt * 1.8;
       if (entrada.teclas.has('arrowright')) this.yaw -= dt * 1.8;
@@ -109,8 +115,11 @@ export class Jogador {
       if (entrada.teclas.has('s') || entrada.teclas.has('arrowdown')) mov.sub(frente);
       if (entrada.teclas.has('d')) mov.add(lado);
       if (entrada.teclas.has('a')) mov.sub(lado);
+      // joystick virtual
+      if (entrada.analogico.lengthSq() > 0.01) mov.addScaledVector(frente, -entrada.analogico.y).addScaledVector(lado, entrada.analogico.x);
       if (mov.lengthSq() > 0) {
-        mov.normalize().multiplyScalar(dt * (entrada.teclas.has('shift') ? 2.6 : 1.6));
+        const forca = Math.min(1, mov.length());
+        mov.normalize().multiplyScalar(dt * (entrada.teclas.has('shift') ? 2.6 : 1.6) * (entrada.analogico.lengthSq() > 0.01 ? forca : 1));
         this.balanco += dt * 9;
         this.mover(mov);
       }
