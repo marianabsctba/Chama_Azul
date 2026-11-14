@@ -33,6 +33,7 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
   peca.position.copy(estacao.superficie);
   const v = passo.variante;
   if (v === 'contorno' || v === 'pontos' || v === 'desfiar') return gestoTracar(ctx);
+  if (v === 'deitado') return cortarDeitado(ctx);
 
   const L = peca.comprimento;
   const W = peca.largura;
@@ -68,6 +69,8 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
   let descida = 0;
   const alturaPlano = estacao.superficie.y + H * escala * 0.6;
   const rotPeca = peca.rotation.y;
+  // a faca gira 90 graus com R (ou o botão no celular) e, durante o corte, segue a direção do arraste
+  let giroManual = 0;
   const textoMedida = passo.meta && (passo.meta.unidade === 'mm' || passo.meta.unidade === 'cm') ? ` de ${passo.meta.valor}${passo.meta.max ? ' a ' + passo.meta.max : ''} ${passo.meta.unidade}` : '';
 
   const proxima = () => guias.find((g) => !g.feito);
@@ -92,16 +95,21 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
         hud.dica(
           p.eixo === 'z'
             ? `Arraste a faca no sentido do comprimento, sobre a guia clara${textoMedida}.`
-            : `Risque o corte de cima para baixo na tela, sobre a guia clara${textoMedida}.`,
+            : `Risque o corte de cima para baixo na tela, sobre a guia clara${textoMedida}. A faca segue o seu risco; R gira a faca.`,
         );
       }
       hud.medidores([{ rotulo: 'Cortes', valor: guias.filter((g) => g.feito).length / guias.length, texto: `${guias.filter((g) => g.feito).length} de ${guias.length}` }]);
       // faca acompanha o mouse
+      if (entrada.apertou('r')) giroManual += Math.PI / 2;
       if (ponto && faca) {
         descida = Math.max(0, descida - dt * 3);
         const alvo = ponto.clone();
         alvo.y = estacao.superficie.y + H * escala * (0.9 - descida * 0.9) + 0.01;
-        const giro = p?.eixo === 'z' ? rotPeca : rotPeca + Math.PI / 2;
+        let giro = (p?.eixo === 'z' ? rotPeca : rotPeca + Math.PI / 2) + giroManual;
+        if (entrada.pressionado && inicio && ponto.distanceTo(inicio) > 0.012) {
+          const d = ponto.clone().sub(inicio);
+          giro = Math.atan2(-d.z, d.x);
+        }
         mesa.ferramentaEm(alvo, giro, -0.08, 0);
       }
       if (entrada.cliqueNovo && ponto) inicio = ponto.clone();
@@ -249,6 +257,101 @@ function gestoTracar(ctx: ContextoGesto): Execucao {
       mesa.limparExtras();
       mesa.soltarFerramenta();
       desvios = [];
+    },
+  };
+  return exec;
+}
+
+/** Corte deitado (borboleta, escalope, bolso): faca paralela à tábua, altura escolhida com o mouse. */
+function cortarDeitado(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, camera, hud } = ctx;
+  const peca = mesa.peca!;
+  const L = peca.comprimento;
+  const W = peca.largura;
+  const H = peca.altura;
+  const camadas = /tr[eê]s|3 ou mais|terç/.test(`${passo.alvo} ${passo.parametro}`) ? 2 : 1;
+  const guias: Guia[] = [];
+  for (let i = 1; i <= camadas; i++) {
+    const y = (H * i) / (camadas + 1);
+    const g = new THREE.PlaneGeometry(L * 1.15, W * 1.25);
+    g.rotateX(-Math.PI / 2);
+    const m = new THREE.Mesh(g, matGuia);
+    m.renderOrder = 5;
+    m.position.set(0, y, 0);
+    peca.add(m);
+    guias.push({ eixo: 'x', pos: y, feito: false, malha: m });
+  }
+  const faca = mesa.pegarFerramenta(passo.utensilio, 'cortar');
+  const notas: number[] = [];
+  let inicioX: number | null = null;
+  let somaY = 0;
+  let nY = 0;
+  const proxima = () => guias.find((g) => !g.feito);
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar() {
+      const p = proxima();
+      guias.forEach((g) => {
+        g.malha.visible = !g.feito;
+        g.malha.material = g === p ? matGuiaAtiva : matGuia;
+      });
+      hud.dica('Faca deitada, paralela à tábua: suba ou desça o mouse até a guia e arraste de um lado ao outro para cortar.');
+      hud.medidores([{ rotulo: 'Cortes', valor: guias.filter((g) => g.feito).length / guias.length, texto: `${guias.filter((g) => g.feito).length} de ${guias.length}` }]);
+      // o mouse anda num plano em pé que passa pelo meio da peça, de frente para quem corta
+      peca.updateMatrixWorld(true);
+      const normal = new THREE.Vector3(0, 0, 1).transformDirection(peca.matrixWorld);
+      const plano = new THREE.Plane().setFromNormalAndCoplanarPoint(normal, peca.getWorldPosition(new THREE.Vector3()));
+      const ponto = entrada.noPlanoQualquer(camera, plano);
+      if (!ponto || !p) return;
+      const local = peca.worldToLocal(ponto.clone());
+      const h = THREE.MathUtils.clamp(local.y, 0.002, H * 1.05);
+      if (faca) {
+        const naAltura = peca.localToWorld(new THREE.Vector3(local.x, h, 0));
+        mesa.ferramentaEm(naAltura, peca.rotation.y, 0, Math.PI / 2);
+      }
+      if (entrada.cliqueNovo) {
+        inicioX = local.x;
+        somaY = 0;
+        nY = 0;
+      }
+      if (entrada.pressionado && inicioX !== null) {
+        somaY += h;
+        nY++;
+      }
+      if (entrada.soltouNovo && inicioX !== null) {
+        const percorrido = Math.abs(local.x - inicioX);
+        const altura = nY ? somaY / nY : h;
+        inicioX = null;
+        if (percorrido < L * 0.45) {
+          hud.aviso('Leve a faca de um lado ao outro da peça.', 'ajuste');
+          return;
+        }
+        const erro = Math.abs(altura - p.pos) / Math.max(H * 0.25, 1e-3);
+        if (erro > 1 && ctx.modo === 'prova') {
+          hud.aviso('Longe da guia: ajuste a altura da faca.', 'ajuste');
+          return;
+        }
+        const nota = clamp(1 - erro * 0.9);
+        notas.push(nota);
+        peca.cortar('y', ctx.modo === 'zen' ? p.pos : altura);
+        p.feito = true;
+        audio.corte();
+        hud.aviso(nota >= 0.85 ? 'Camadas por igual!' : nota >= 0.6 ? 'Bom corte.' : 'Saiu torto, mas abriu.', nota >= 0.6 ? 'bom' : 'neutro');
+        if (!proxima()) {
+          exec.nota = notas.reduce((s2, n) => s2 + n, 0) / notas.length;
+          exec.comentario = comentar(exec.nota, 'Espessura igual nas duas partes: cozinha por igual.', 'Quase igual; uma parte ficou um pouco mais grossa.', 'Partes desiguais cozinham em tempos diferentes.');
+          exec.concluido = true;
+        }
+      }
+    },
+    descartar() {
+      for (const g of guias) {
+        peca.remove(g.malha);
+        g.malha.geometry.dispose();
+      }
+      mesa.soltarFerramenta();
     },
   };
   return exec;

@@ -201,6 +201,19 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
       if (!guia) return;
       guia.geometry.computeBoundingBox();
       const bb = guia.geometry.boundingBox!;
+      if (bb.max.y - bb.min.y < 1e-4) {
+        // guia deitada: arrasta de lado na altura da guia, no plano do meio da peça
+        const y = guia.position.y;
+        const f = mem.fase++ % 3;
+        const pt = peca.localToWorld(new THREE.Vector3(f === 0 ? -peca.comprimento * 0.55 : peca.comprimento * 0.55, y, 0));
+        e.apontar(pt, cam);
+        if (f === 0) {
+          e.cliqueNovo = true;
+          e.pressionado = true;
+        } else if (f === 1) e.pressionado = true;
+        else e.soltouNovo = true;
+        return;
+      }
       const eixoX = bb.max.x - bb.min.x < 1e-4; // plano perpendicular a X
       const c = guia.position.clone();
       const larg = eixoX ? bb.max.z : bb.max.x;
@@ -226,15 +239,13 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
     case 'superficie': {
       if (!peca) return;
       // mira os pontos visíveis ainda não trabalhados, como quem olha a peça e passa o pincel
-      const am = (peca as unknown as { amostras: THREE.Vector3[]; marcadas: Uint8Array }).amostras;
-      const mk = (peca as unknown as { marcadas: Uint8Array }).marcadas;
-      if (!am.length) return;
-      let i = mem.alvoIdx % am.length;
-      for (let k = 0; k < am.length && mk[i]; k++) i = (i + 1) % am.length;
-      mem.alvoIdx = i;
-      // vai e vem curto entre dois pontos vizinhos da superfície, como uma pincelada
-      const j = mem.fase++ % 2 ? (i + 1) % am.length : i;
-      segurar(peca.localToWorld(am[j].clone()));
+      const pend = peca.amostrasPendentes();
+      if (!pend.length) return;
+      // se um ponto não marca depois de muitas tentativas, passa para outro
+      if (mem.fase++ % 40 === 39) mem.alvoIdx++;
+      const i = mem.alvoIdx % pend.length;
+      const j = mem.fase % 2 ? (i + 1) % pend.length : i;
+      segurar(pend[j]);
       return;
     }
     case 'ritmo': {

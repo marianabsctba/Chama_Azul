@@ -9,9 +9,14 @@ const LONGE = new THREE.Plane(new THREE.Vector3(0, 1, 0), 1e5);
 /** Material das tampas de corte (cor por vértice), compartilhado por quantidade de planos. */
 const materialTampa = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.75, metalness: 0 });
 
+export type Eixo = 'x' | 'y' | 'z';
+/** Planos de recorte por material: um de cada lado em cada eixo. Sempre 6, para usar um shader só. */
+const N_PLANOS = 6;
+const planosLonge = () => Array.from({ length: N_PLANOS }, () => LONGE.clone());
+
 /** Plano em coordenadas locais da peça, com o lado mantido (normal aponta para dentro). */
 interface PlanoLocal {
-  eixo: 'x' | 'z';
+  eixo: Eixo;
   pos: number;
   sinal: 1 | -1; // 1 mantém pos > corte, -1 mantém pos < corte
 }
@@ -22,13 +27,17 @@ export interface Fragmento {
   materiais: THREE.MeshStandardMaterial[];
   tampas: THREE.Mesh[];
   /** Intervalos do fragmento no espaço local da peça. */
-  x0: number; x1: number; z0: number; z1: number;
+  x0: number; x1: number; y0: number; y1: number; z0: number; z1: number;
   alvo: THREE.Vector3; // deslocamento desejado (separação)
 }
+
+interface Limites { x0: number; x1: number; y0: number; y1: number; z0: number; z1: number }
 
 export class Peca extends THREE.Group {
   readonly forma: FormaAlimento;
   readonly fragmentos: Fragmento[] = [];
+  /** Bloco que fica parado na tábua enquanto se corta (passa para o maior pedaço a cada corte). */
+  private ancora: Fragmento | null = null;
   readonly corInterna: THREE.Color;
   readonly corCozida: THREE.Color;
   /** 0 = cru, 1 = no ponto, acima de 1 = passando do ponto. */
@@ -39,7 +48,7 @@ export class Peca extends THREE.Group {
   private alturaMax: number;
   private coresOriginais = new Map<THREE.BufferGeometry, Float32Array>();
   /** Pontos da superfície que a câmera enxerga no começo do gesto (os que contam na cobertura), no espaço local. */
-  private amostras: THREE.Vector3[] = [];
+  private amostras: { g: THREE.Object3D; p: THREE.Vector3 }[] = [];
   private marcadas = new Uint8Array(0);
   /** Quanto cada vértice já foi pintado (0 a 1), por geometria. */
   readonly cobertura = new Map<THREE.BufferGeometry, Float32Array>();
@@ -71,19 +80,19 @@ export class Peca extends THREE.Group {
       m.receiveShadow = true;
     }
     const L = forma.comprimento / 2;
-    this.criarFragmento([], -L, L, -this.larguraZ, this.larguraZ);
+    this.criarFragmento([], { x0: -L, x1: L, y0: 0, y1: this.alturaMax, z0: -this.larguraZ, z1: this.larguraZ });
   }
 
   get comprimento() { return this.forma.comprimento; }
   get largura() { return this.larguraZ * 2; }
   get altura() { return this.alturaMax; }
 
-  private criarFragmento(planos: PlanoLocal[], x0: number, x1: number, z0: number, z1: number, base?: Fragmento): Fragmento {
+  private criarFragmento(planos: PlanoLocal[], lim: Limites, base?: Fragmento): Fragmento {
     const grupo = new THREE.Group();
     const materiais: THREE.MeshStandardMaterial[] = [];
     for (const m of this.forma.malhas) {
       const mat = (m.material as THREE.MeshStandardMaterial).clone();
-      mat.clippingPlanes = [LONGE.clone(), LONGE.clone(), LONGE.clone(), LONGE.clone()];
+      mat.clippingPlanes = planosLonge();
       mat.clipShadows = true;
       mat.side = THREE.DoubleSide;
       materiais.push(mat);
@@ -95,7 +104,7 @@ export class Peca extends THREE.Group {
       malha.scale.copy(m.scale);
       grupo.add(malha);
     }
-    const f: Fragmento = { grupo, planos, materiais, tampas: [], x0, x1, z0, z1, alvo: new THREE.Vector3() };
+    const f: Fragmento = { grupo, planos, materiais, tampas: [], ...lim, alvo: new THREE.Vector3() };
     if (base) {
       grupo.position.copy(base.grupo.position);
       f.alvo.copy(base.alvo);
@@ -107,30 +116,31 @@ export class Peca extends THREE.Group {
     return f;
   }
 
-  /** Corta todos os fragmentos atravessados pelo plano local eixo=pos. Devolve quantos foram divididos. */
-  cortar(eixo: 'x' | 'z', pos: number): number {
+  /**
+   * Corta todos os fragmentos atravessados pelo plano local eixo=pos (x atravessado, z no comprimento,
+   * y deitado, paralelo à tábua). Devolve quantos foram divididos.
+   */
+  cortar(eixo: Eixo, pos: number): number {
     let divididos = 0;
+    const k0 = `${eixo}0` as 'x0' | 'y0' | 'z0';
+    const k1 = `${eixo}1` as 'x1' | 'y1' | 'z1';
     for (const f of [...this.fragmentos]) {
-      const a = eixo === 'x' ? f.x0 : f.z0;
-      const b = eixo === 'x' ? f.x1 : f.z1;
+      const a = f[k0];
+      const b = f[k1];
       const margem = (b - a) * 0.04;
       if (pos <= a + margem || pos >= b - margem) continue;
-      if (f.planos.length >= 4 && f.planos.filter((p) => p.eixo === eixo).length >= 2) {
-        // limite de planos por material: troca o plano do mesmo eixo mais próximo
-      }
-      if (this.fragmentos.length >= 40) break;
+      if (this.fragmentos.length >= 48) break;
       divididos++;
-      const semEixo = (lista: PlanoLocal[], s: 1 | -1) => {
-        // mantém no máximo um plano por lado de cada eixo (4 no total)
-        const outros = lista.filter((p) => !(p.eixo === eixo && p.sinal === s));
-        return outros;
-      };
-      const planosA: PlanoLocal[] = [...semEixo(f.planos, -1), { eixo, pos, sinal: -1 }];
-      const planosB: PlanoLocal[] = [...semEixo(f.planos, 1), { eixo, pos, sinal: 1 }];
-      const fa = this.criarFragmento(planosA, eixo === 'x' ? f.x0 : f.x0, eixo === 'x' ? pos : f.x1, eixo === 'z' ? f.z0 : f.z0, eixo === 'z' ? pos : f.z1, f);
-      const fb = this.criarFragmento(planosB, eixo === 'x' ? pos : f.x0, eixo === 'x' ? f.x1 : f.x1, eixo === 'z' ? pos : f.z0, eixo === 'z' ? f.z1 : f.z1, f);
+      // no máximo um plano por lado de cada eixo: o novo corte substitui o antigo do mesmo lado
+      const sem = (s: 1 | -1) => f.planos.filter((p) => !(p.eixo === eixo && p.sinal === s));
+      const limA: Limites = { x0: f.x0, x1: f.x1, y0: f.y0, y1: f.y1, z0: f.z0, z1: f.z1 };
+      const limB: Limites = { ...limA };
+      limA[k1] = pos;
+      limB[k0] = pos;
+      const fa = this.criarFragmento([...sem(-1), { eixo, pos, sinal: -1 }], limA, f);
+      const fb = this.criarFragmento([...sem(1), { eixo, pos, sinal: 1 }], limB, f);
+      if (this.ancora === f || !this.ancora) this.ancora = Peca.volume(fa) >= Peca.volume(fb) ? fa : fb;
       this.removerFragmento(f);
-      void fa; void fb;
     }
     this.espalhar();
     return divididos;
@@ -146,15 +156,26 @@ export class Peca extends THREE.Group {
 
   /** Separa levemente os fragmentos para o corte ficar visível. */
   espalhar(folga = 0.006) {
-    const xs = [...new Set(this.fragmentos.map((f) => +f.x0.toFixed(4)))].sort((a, b) => a - b);
-    const zs = [...new Set(this.fragmentos.map((f) => +f.z0.toFixed(4)))].sort((a, b) => a - b);
-    const cx = (xs.length - 1) / 2;
-    const cz = (zs.length - 1) / 2;
+    const niveis = (k: 'x0' | 'y0' | 'z0') => [...new Set(this.fragmentos.map((f) => +f[k].toFixed(4)))].sort((a, b) => a - b);
+    const xs = niveis('x0');
+    const ys = niveis('y0');
+    const zs = niveis('z0');
+    // o bloco maior fica parado (as guias continuam certas sobre ele); só o que já foi cortado se afasta
+    const ancora = this.ancora && this.fragmentos.includes(this.ancora) ? this.ancora : this.fragmentos.reduce((a, b) => (Peca.volume(b) > Peca.volume(a) ? b : a), this.fragmentos[0]);
+    const ax = xs.indexOf(+ancora.x0.toFixed(4));
+    const ay = ys.indexOf(+ancora.y0.toFixed(4));
+    const az = zs.indexOf(+ancora.z0.toFixed(4));
     for (const f of this.fragmentos) {
-      const ix = xs.indexOf(+f.x0.toFixed(4));
-      const iz = zs.indexOf(+f.z0.toFixed(4));
-      f.alvo.set((ix - cx) * folga, 0, (iz - cz) * folga);
+      const ix = xs.indexOf(+f.x0.toFixed(4)) - ax;
+      const iy = ys.indexOf(+f.y0.toFixed(4)) - ay;
+      const iz = zs.indexOf(+f.z0.toFixed(4)) - az;
+      // camadas de um corte deitado sobem um pouquinho e escorregam de lado, como uma fatia aberta
+      f.alvo.set(ix * folga + Math.max(0, iy) * folga * 0.8, Math.max(0, iy) * folga * 0.6, iz * folga);
     }
+  }
+
+  private static volume(f: Fragmento) {
+    return (f.x1 - f.x0) * (f.y1 - f.y0) * (f.z1 - f.z0);
   }
 
   /** Afasta um fragmento (usado no gesto de separar). */
@@ -169,10 +190,10 @@ export class Peca extends THREE.Group {
     }
     f.tampas = [];
     for (const p of f.planos) {
-      const geo = p.eixo === 'x' ? this.tampaX(p.pos, f) : this.tampaZ(p.pos, f);
+      const geo = p.eixo === 'x' ? this.tampaX(p.pos, f) : p.eixo === 'y' ? this.tampaY(p.pos, f) : this.tampaZ(p.pos, f);
       if (!geo) continue;
       const mat = materialTampa.clone();
-      mat.clippingPlanes = [LONGE.clone(), LONGE.clone(), LONGE.clone(), LONGE.clone()];
+      mat.clippingPlanes = planosLonge();
       mat.side = THREE.DoubleSide;
       const t = new THREE.Mesh(geo, mat);
       t.userData.plano = p;
@@ -208,6 +229,28 @@ export class Peca extends THREE.Group {
     return geo;
   }
 
+  /** Tampa de um corte deitado: o contorno da peça naquela altura, visto de cima. */
+  private tampaY(y: number, f: Fragmento): THREE.BufferGeometry | null {
+    const lado: THREE.Vector2[] = [];
+    const outro: THREE.Vector2[] = [];
+    const n = 28;
+    for (let i = 0; i <= n; i++) {
+      const x = f.x0 + ((f.x1 - f.x0) * i) / n;
+      const s = this.forma.secao(x);
+      const r = s.raioY > 0 ? (y - s.centroY) / s.raioY : 2;
+      if (Math.abs(r) >= 1) continue;
+      const hz = s.raioZ * Math.sqrt(1 - r * r) * 0.97;
+      lado.push(new THREE.Vector2(x, hz));
+      outro.push(new THREE.Vector2(x, -hz));
+    }
+    if (lado.length < 2) return null;
+    const geo = new THREE.ShapeGeometry(new THREE.Shape([...lado, ...outro.reverse()]));
+    geo.rotateX(Math.PI / 2);
+    geo.translate(0, y, 0);
+    this.colorir(geo, this.corInterna);
+    return geo;
+  }
+
   private tampaZ(z: number, f: Fragmento): THREE.BufferGeometry | null {
     // perfil lateral: para cada x do fragmento, a altura da peça em z
     const pts: THREE.Vector2[] = [];
@@ -240,24 +283,24 @@ export class Peca extends THREE.Group {
       f.grupo.updateMatrixWorld(true);
       const mundo = f.grupo.matrixWorld;
       const planosMundo = f.planos.map((p) => {
-        const normal = p.eixo === 'x' ? new THREE.Vector3(p.sinal, 0, 0) : new THREE.Vector3(0, 0, p.sinal);
-        const ponto = p.eixo === 'x' ? new THREE.Vector3(p.pos, 0, 0) : new THREE.Vector3(0, 0, p.pos);
+        const normal = new THREE.Vector3(p.eixo === 'x' ? p.sinal : 0, p.eixo === 'y' ? p.sinal : 0, p.eixo === 'z' ? p.sinal : 0);
+        const ponto = new THREE.Vector3(p.eixo === 'x' ? p.pos : 0, p.eixo === 'y' ? p.pos : 0, p.eixo === 'z' ? p.pos : 0);
         // plano: normal·x + d = 0, mantém o lado positivo (normal·x + d > 0)
         const pl = new THREE.Plane().setFromNormalAndCoplanarPoint(normal, ponto);
         return pl.applyMatrix4(mundo);
       });
       for (const mat of f.materiais) {
-        for (let i = 0; i < 4; i++) mat.clippingPlanes![i].copy(planosMundo[i] ?? LONGE);
+        for (let i = 0; i < N_PLANOS; i++) mat.clippingPlanes![i].copy(planosMundo[i] ?? LONGE);
       }
       for (const t of f.tampas) {
         const proprio = t.userData.plano as PlanoLocal;
         const mat = t.material as THREE.MeshStandardMaterial;
         let j = 0;
         f.planos.forEach((p, i) => {
-          if (p === proprio || j >= 4) return;
+          if (p === proprio || j >= N_PLANOS) return;
           mat.clippingPlanes![j++].copy(planosMundo[i]);
         });
-        while (j < 4) mat.clippingPlanes![j++].copy(LONGE);
+        while (j < N_PLANOS) mat.clippingPlanes![j++].copy(LONGE);
       }
     }
   }
@@ -386,7 +429,11 @@ export class Peca extends THREE.Group {
       for (let j = 0; j <= n; j++) {
         rc.setFromCamera(new THREE.Vector2(min.x + ((max.x - min.x) * i) / n, min.y + ((max.y - min.y) * j) / n), camera);
         const hit = rc.intersectObjects(alvo, false)[0];
-        if (hit) this.amostras.push(this.worldToLocal(hit.point.clone()));
+        // cada ponto fica preso ao pedaço em que caiu (pedaços se afastam depois de um corte)
+        if (hit) {
+          const g = hit.object.parent ?? this;
+          this.amostras.push({ g, p: g.worldToLocal(hit.point.clone()) });
+        }
       }
     }
     this.marcadas = new Uint8Array(this.amostras.length);
@@ -395,10 +442,20 @@ export class Peca extends THREE.Group {
   /** Marca as amostras perto de um ponto do mundo (chamado junto com a pintura). */
   private marcarAmostras(pontoMundo: THREE.Vector3, raio: number) {
     if (!this.amostras.length) return;
-    const local = this.worldToLocal(pontoMundo.clone());
-    const r = raio / (this.scale.x || 1);
-    const r2 = r * r;
-    for (let i = 0; i < this.amostras.length; i++) if (!this.marcadas[i] && this.amostras[i].distanceToSquared(local) <= r2) this.marcadas[i] = 1;
+    const r2 = raio * raio;
+    const w = new THREE.Vector3();
+    for (let i = 0; i < this.amostras.length; i++) {
+      if (this.marcadas[i]) continue;
+      const a = this.amostras[i];
+      if (a.g.localToWorld(w.copy(a.p)).distanceToSquared(pontoMundo) <= r2) this.marcadas[i] = 1;
+    }
+  }
+
+  /** Posição no mundo das amostras ainda não trabalhadas (para dicas e testes). */
+  amostrasPendentes(): THREE.Vector3[] {
+    const out: THREE.Vector3[] = [];
+    this.amostras.forEach((a, i) => !this.marcadas[i] && out.push(a.g.localToWorld(a.p.clone())));
+    return out;
   }
 
   /** Zera a contagem de cobertura (antes de um novo gesto de superfície). */

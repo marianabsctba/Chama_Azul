@@ -87,6 +87,9 @@ export class ControlesToque {
     const menos = el('button', 'toque-btn', '−');
     const mais = el('button', 'toque-btn', '+');
     const rapido = el('button', 'toque-btn largo', '⏩ Acelerar');
+    const girar = el('button', 'toque-btn largo', '↻ Faca');
+    girar.setAttribute('aria-label', 'Girar a faca');
+    segurar(girar, () => entrada.teclasNovas.add('r'));
     menos.setAttribute('aria-label', 'Diminuir');
     mais.setAttribute('aria-label', 'Aumentar');
     segurar(menos, () => {
@@ -96,7 +99,7 @@ export class ControlesToque {
       entrada.roda -= 1;
     }, undefined, 140);
     segurar(rapido, () => entrada.teclas.add(' '), () => entrada.teclas.delete(' '));
-    this.trabalho.append(menos, mais, rapido);
+    this.trabalho.append(girar, menos, mais, rapido);
     pai.append(this.andar, this.trabalho);
   }
 
@@ -123,6 +126,7 @@ export function textoParaToque(t: string): string {
     .replace(/sacuda o mouse/g, 'sacuda o dedo')
     .replace(/leve o mouse/g, 'leve o dedo')
     .replace(/o mouse/g, 'o dedo')
+    .replace(/R gira a faca/g, '↻ Faca gira a faca')
     .replace(/Clique/g, 'Toque')
     .replace(/clique/g, 'toque');
 }
