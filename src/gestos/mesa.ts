@@ -1,6 +1,7 @@
 // A mesa de trabalho: o que está sobre a estação (peça, recipiente, conteúdo, utensílio na mão).
 import * as THREE from 'three';
 import { Peca } from '../pecas/peca';
+import { Capa, capaDoTexto } from '../pecas/capa';
 import { Conteudo, estadoInicial } from '../pecas/conteudo';
 import { criarFormaAlimento, criarFormaGenerica } from '../modelos/alimentos';
 import { criarUtensilio, pontosDoUtensilio } from '../modelos/utensilios';
@@ -48,6 +49,8 @@ export class Mesa {
   readonly extras: THREE.Object3D[] = [];
   /** Miúdos (amêndoa, ervilha, uva) aparecem em punhado nos passos de panela, forno, descanso e tempero. */
   mostrarPunhado = false;
+  /** Folha, massa, bacon ou papel que envolve a peça (segue a peça até o fim da técnica). */
+  capa: Capa | null = null;
   private punhado: THREE.Group | null = null;
   private punhadoDe: Peca | null = null;
   private punhadoMats: THREE.MeshStandardMaterial[] = [];
@@ -77,8 +80,27 @@ export class Mesa {
     return p;
   }
 
+  /** Cria a capa descrita no texto (ou nas pistas extras) em volta da peça atual, se ainda não houver. */
+  garantirCapa(texto: string, pistas = ''): Capa | null {
+    if (!this.peca) return null;
+    if (this.capa && this.capa.parent === this.peca) return this.capa;
+    let info = capaDoTexto(texto);
+    if (!info) return null;
+    // "folha" sozinha: o tipo de folha costuma estar nos ingredientes (uva, bananeira, repolho)
+    if (/folha/.test(texto.toLowerCase()) && !/uva|bananeira|repolho|couve|alface/.test(texto.toLowerCase())) info = capaDoTexto(pistas) ?? info;
+    const c = new Capa(this.peca, info.cor, info.cor2, info.metal);
+    this.peca.add(c);
+    this.capa = c;
+    return c;
+  }
+
   removerPeca() {
     this.descartarPunhado();
+    if (this.capa) {
+      this.capa.removeFromParent();
+      this.capa.descartar();
+      this.capa = null;
+    }
     if (!this.peca) return;
     this.cena.remove(this.peca);
     this.peca.descartar();
@@ -236,7 +258,7 @@ export class Mesa {
       // um material por malha do alimento, sem recorte, com a cor acompanhando a peça
       this.punhadoMats = p.forma.malhas.map((m) => {
         const mat = (m.material as THREE.MeshStandardMaterial).clone();
-        mat.clippingPlanes = [0, 1, 2, 3].map(() => new THREE.Plane(new THREE.Vector3(0, 1, 0), 1e5));
+        mat.clippingPlanes = [0, 1, 2, 3, 4, 5].map(() => new THREE.Plane(new THREE.Vector3(0, 1, 0), 1e5));
         return mat;
       });
       const n = Math.max(5, Math.min(12, Math.round(0.06 / this.tamanhoPeca(p)) + 4));

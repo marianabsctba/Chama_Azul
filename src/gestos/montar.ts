@@ -83,8 +83,26 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
     return peca.localToWorld(new THREE.Vector3(lx, sec.centroY + sec.raioY * Math.sqrt(Math.max(0, 1 - (lz / Math.max(sec.raioZ, 1e-4)) ** 2)), lz));
   };
 
+  // folha, massa, bacon, alho-poró ou papel que entra neste passo
+  const textoPasso = `${passo.alvo} ${passo.parametro} ${passo.utensilio}`;
+  // pacote já envolvido: amarrar fecha a folha de vez
+  if (v === 'amarrar' && mesa.capa && mesa.capa.enrolado < 1) {
+    mesa.capa.enrolado = 1;
+    mesa.capa.aplicar();
+  }
+  if (['enrolar', 'moldar', 'forrar', 'dobrar', 'rechear', 'amarrar'].includes(v) && /folha|massa|filo|bacon|toucinho|presunto|alho[- ]?por|papel|alum[ií]nio|nori|repolho|couve|crepe|tortilha/i.test(passo.alvo + ' ' + passo.parametro)) {
+    const c = mesa.garantirCapa(textoPasso, ctx.tecnica.ingredientes.join(' '));
+    if (c && v === 'amarrar' && c.enrolado < 1) {
+      c.enrolado = 1;
+      c.aplicar();
+    }
+  }
   if (v === 'amarrar') {
     const xs = [-0.3, -0.1, 0.1, 0.3].map((f) => f * L);
+    // a amarração usa a fibra que o passo pede: alho-poró e cebolinha ficam verdes
+    const fibra = /alho[- ]?por|cebolinha|ciboulette/i.test(textoPasso + ' ' + ctx.tecnica.ingredientes.join(' ')) && !/barbante/i.test(textoPasso) ? '#8dbb5e' : /bacon|toucinho/i.test(textoPasso) ? '#e9a3a0' : '#efe6d2';
+    const matAmarra = fibra === '#efe6d2' ? matFio : new THREE.MeshStandardMaterial({ color: fibra, roughness: 0.7 });
+    const folga = mesa.capa ? 1.12 : 1.03;
     return sequencia(
       ctx,
       xs.map((x) => topo(x)),
@@ -92,11 +110,11 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
       (i) => {
         const x = xs[i];
         const sec = peca.forma.secao(x);
-        const anel = new THREE.Mesh(new THREE.TorusGeometry(1, 0.04, 6, 32), matFio);
+        const anel = new THREE.Mesh(new THREE.TorusGeometry(1, fibra === '#efe6d2' ? 0.04 : 0.09, 6, 32), matAmarra);
         anel.rotation.y = Math.PI / 2;
         // o toro nasce no plano XY; girado em Y, o X local vira o Z do mundo
-        anel.scale.set(sec.raioZ * 1.03, sec.raioY * 1.03, 1);
-        anel.position.set(x, sec.centroY, 0);
+        anel.scale.set(sec.raioZ * folga, sec.raioY * folga, 1);
+        anel.position.set(x, mesa.capa ? Math.max(sec.centroY, sec.raioY * folga) : sec.centroY, 0);
         anel.castShadow = true;
         // aperto leve da carne
         peca.add(anel);
@@ -183,8 +201,14 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
       if (v === 'enrolar') {
         if (entrada.pressionado) progresso = clamp(progresso + Math.max(0, -entrada.deltaPx.y) / 500);
         const k = progresso;
-        peca.scale.set(escala0.x * (1 - 0.15 * k), escala0.y * (1 + 0.5 * k), escala0.z * (1 - 0.35 * k));
-        peca.rotation.x = rot0.x + k * Math.PI * 0.12;
+        if (mesa.capa) {
+          // a folha sobe pelos lados e fecha em volta da peça
+          mesa.capa.enrolado = k;
+          mesa.capa.aplicar();
+        } else {
+          peca.scale.set(escala0.x * (1 - 0.15 * k), escala0.y * (1 + 0.5 * k), escala0.z * (1 - 0.35 * k));
+          peca.rotation.x = rot0.x + k * Math.PI * 0.12;
+        }
         hud.medidores([{ rotulo: 'Enrolado', valor: progresso }]);
       } else if (v === 'trancar') {
         if (entrada.cliqueNovo) {
