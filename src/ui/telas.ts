@@ -3,6 +3,7 @@ import type { Catalogo, Tecnica } from '../tipos';
 import type { Progresso } from '../progresso';
 import type { ResultadoPasso } from '../missao';
 import { NOME_GESTO } from '../gestos';
+import { buscar, trocarAlimento } from '../busca';
 
 const el = <K extends keyof HTMLElementTagNameMap>(tag: K, cls?: string, txt?: string) => {
   const e = document.createElement(tag);
@@ -96,7 +97,8 @@ export class Telas {
       volumes.append(rot);
     }
     const rodape = el('p', 'rodape', 'Feito com carinho, código aberto. Tudo em 3D gerado por código.');
-    caixa.append(logo, titulo, sub, this.resumoMenu, entrar, linha, volumes, rodape);
+    const assinatura = el('p', 'assinatura', 'Powered by Mariana BS');
+    caixa.append(logo, titulo, sub, this.resumoMenu, entrar, linha, volumes, rodape, assinatura);
     m.append(caixa);
     this.atualizarMenuDepois = () => this.atualizarMenu();
     queueMicrotask(() => this.atualizarMenu());
@@ -222,8 +224,23 @@ export class Telas {
   private renderLista() {
     for (const b of this.caderno.querySelectorAll<HTMLElement>('.chip[data-f]')) b.classList.toggle('ativo', b.dataset.f === this.filtro);
     let ts = this.catalogo.tecnicas;
+    // ingredientes que casam com a busca mas não têm técnica própria: praticar com eles
+    const extras: HTMLElement[] = [];
     if (this.busca) {
-      ts = ts.filter((t) => normal(`${t.nome} ${t.ingredientes.join(' ')} ${t.utensilios.join(' ')}`).includes(this.busca));
+      const r = buscar(this.catalogo, this.busca);
+      ts = r.tecnicas;
+      for (const c of r.cartoes) {
+        const cartao = el('div', 'cartao-ingrediente');
+        const nome = c.nome.toLowerCase();
+        cartao.append(el('div', 'ci-titulo', `Pratique com ${nome}`), el('p', 'ci-texto', `O livro não tem uma técnica só para ${nome}, mas estas servem. Você joga com ${nome} no lugar.`));
+        for (const t of c.tecnicas) {
+          const bt = el('button', 'item');
+          bt.append(el('span', 'item-nome', t.nome), el('span', 'item-gestos', t.capitulo), el('span', 'item-estrelas', `${t.passos.length} passos`));
+          bt.addEventListener('click', () => this.acoes.comecar(trocarAlimento(t, c.id, c.nome)));
+          cartao.append(bt);
+        }
+        extras.push(cartao);
+      }
     } else ts = ts.filter((t) => t.bancada === this.bancadaAtual);
     if (this.filtro === 'pendentes') ts = ts.filter((t) => !this.progresso.feitas[t.id]);
     if (this.filtro === 'feitas') ts = ts.filter((t) => this.progresso.feitas[t.id]);
@@ -233,8 +250,8 @@ export class Telas {
       g.push(t);
       grupos.set(t.capitulo, g);
     }
-    const filhos: HTMLElement[] = [];
-    if (!ts.length) filhos.push(el('p', 'vazio', 'Nenhuma técnica aqui com esse filtro.'));
+    const filhos: HTMLElement[] = [...extras];
+    if (!ts.length && !extras.length) filhos.push(el('p', 'vazio', 'Nenhuma técnica aqui com esse filtro.'));
     for (const [cap, lista] of grupos) {
       filhos.push(el('div', 'grupo', cap));
       for (const t of lista) {
@@ -327,3 +344,4 @@ export class Telas {
     this.atualizarMenuDepois();
   }
 }
+
