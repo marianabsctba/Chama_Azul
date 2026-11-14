@@ -202,38 +202,16 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
       guia.geometry.computeBoundingBox();
       const bb = guia.geometry.boundingBox!;
       if (bb.max.y - bb.min.y < 1e-4) {
-        // guia deitada: arrasta de lado na altura da guia, no plano do meio da peça
-        const y = guia.position.y;
-        const f = mem.fase++ % 3;
-        const pt = peca.localToWorld(new THREE.Vector3(f === 0 ? -peca.comprimento * 0.55 : peca.comprimento * 0.55, y, 0));
-        e.apontar(pt, cam);
-        if (f === 0) {
-          e.cliqueNovo = true;
-          e.pressionado = true;
-        } else if (f === 1) e.pressionado = true;
-        else e.soltouNovo = true;
+        // guia deitada: mira a altura da guia no plano do meio da peça e clica
+        e.apontar(peca.localToWorld(new THREE.Vector3(0, guia.position.y, 0)), cam);
+        if (mem.fase++ % 20 === 0) e.cliqueNovo = true;
         return;
       }
-      const eixoX = bb.max.x - bb.min.x < 1e-4; // plano perpendicular a X
-      const c = guia.position.clone();
-      const larg = eixoX ? bb.max.z : bb.max.x;
-      const a = peca.localToWorld(eixoX ? c.clone().setZ(-larg * 1.1) : c.clone().setX(-larg * 1.05));
-      const b = peca.localToWorld(eixoX ? c.clone().setZ(larg * 1.1) : c.clone().setX(larg * 1.05));
-      const alturaPlano = peca.position.y + peca.altura * peca.scale.y * 0.6;
-      a.y = b.y = alturaPlano;
-      // risco em 3 quadros: clica, arrasta, solta
-      const f = mem.fase++ % 3;
-      if (f === 0) {
-        e.apontar(a, cam);
-        e.cliqueNovo = true;
-        e.pressionado = true;
-      } else if (f === 1) {
-        e.apontar(b, cam);
-        e.pressionado = true;
-      } else {
-        e.apontar(b, cam);
-        e.soltouNovo = true;
-      }
+      // guia em pé: mira o meio da guia na altura do plano da faca e clica
+      const alvoPeca = guia.position.clone();
+      alvoPeca.y = peca.altura * 0.6;
+      e.apontar(peca.localToWorld(alvoPeca), cam);
+      if (mem.fase++ % 10 === 0) e.cliqueNovo = true;
       return;
     }
     case 'superficie': {
