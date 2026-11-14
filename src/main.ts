@@ -10,6 +10,7 @@ import { audio } from './motor/audio';
 import { HudHtml } from './ui/hud';
 import { Telas } from './ui/telas';
 import { Missao, estrelas } from './missao';
+import { empratar, type Prato } from './empratar';
 import { NOME_GESTO } from './gestos';
 import { carregar, registrar, salvar } from './progresso';
 import { Peca } from './pecas/peca';
@@ -86,6 +87,8 @@ async function iniciar() {
   if (celular) hud.btnSair.textContent = 'Sair';
   let estado: Estado = 'menu';
   let missao: Missao | null = null;
+  let prato: Prato | null = null;
+  let anguloPrato = 0;
 
   const telas = new Telas(ui, catalogo, progresso, {
     entrar: () => entrar(),
@@ -118,6 +121,7 @@ async function iniciar() {
   amostra.position.set(0, -5, 0);
   amostra.cortar('x', 0);
   amostra.cortar('z', 0);
+  amostra.cortar('y', amostra.altura / 2);
   cena.add(amostra);
   amostra.atualizar(0);
   const caderno = cozinha.estacoes.caderno;
@@ -172,7 +176,13 @@ async function iniciar() {
     telas.mostrar(telas.dicaAndar, true);
   }
 
+  function limparPrato() {
+    prato?.limpar();
+    prato = null;
+  }
+
   function comecar(t: Tecnica) {
+    limparPrato();
     telas.mostrar(telas.caderno, false);
     telas.mostrar(telas.resultado, false);
     telas.mostrar(telas.mira, false);
@@ -201,6 +211,11 @@ async function iniciar() {
       aoFim(resultados) {
         const e = estrelas(resultados);
         registrar(progresso, t.id, e);
+        // empratamento: a peça pronta vai para um prato e a câmera passeia em volta
+        prato?.limpar();
+        prato = missao ? empratar(cena, cozinha, missao.mesa, t) : null;
+        anguloPrato = 0;
+        jogador.modo = 'livre';
         audio.conclusao(e);
         hud.mostrar(false);
         estado = 'resultado';
@@ -234,6 +249,7 @@ async function iniciar() {
   }
 
   function sairDaMissao() {
+    limparPrato();
     missao?.encerrar();
     missao = null;
     hud.mostrar(false);
@@ -311,6 +327,9 @@ async function iniciar() {
     get estado() {
       return estado;
     },
+    get prato() {
+      return prato;
+    },
   };
 
   const relogio = new THREE.Clock();
@@ -336,6 +355,18 @@ async function iniciar() {
           : document.pointerLockElement
           ? '<b>WASD</b> para andar · vá até o caderno no púlpito ou aperte <b>C</b>'
           : 'Clique para olhar em volta · <b>C</b> abre o caderno de técnicas';
+    }
+    if (estado === 'resultado' && prato) {
+      // volta lenta em torno do prato, de cima e de lado, como foto de cardápio
+      prato.atualizar(dt);
+      anguloPrato += dt * 0.22;
+      const r = prato.raio * 2.9;
+      const base = prato.centro;
+      const frente = cozinha.inicio.posicao.clone().sub(base).setY(0).normalize();
+      const a0 = Math.atan2(frente.z, frente.x);
+      const alvoCam = new THREE.Vector3(base.x + Math.cos(a0 + Math.sin(anguloPrato) * 0.7) * r, base.y + r * 0.75, base.z + Math.sin(a0 + Math.sin(anguloPrato) * 0.7) * r);
+      camera.position.lerp(alvoCam, Math.min(1, dt * 1.6));
+      camera.lookAt(base);
     }
     if (missao && estado === 'missao') {
       missao.atualizar(dt);
