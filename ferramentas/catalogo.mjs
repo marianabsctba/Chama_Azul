@@ -218,7 +218,7 @@ function main() {
     return undefined;
   };
   /** Partes de uma peça: o passo continua trabalhando a mesma peça do passo anterior. */
-  const PARTES = /\b(furcula|barriga|cabeca|rabo|cauda|pele|espinhas?|guelras?|costas|nadadeiras?|escamas|visceras|carne|files?|filetes?|peito|coxas?|osso|ossos|carcaca|pescoco|asas?|juntas?|tendoes|gordura|membrana|lado|lados|outro lado|metades?|pedacos?|peca|pecas|centro|ponta|pontas|bolso|cavidade|interior|superficie|corte|cortes|fatias?|tiras?|cubos?)\b/;
+  const PARTES = /\b(furcula|pernas?|barriga|cabeca|rabo|cauda|pele|espinhas?|guelras?|costas|nadadeiras?|escamas|visceras|carne|files?|filetes?|peito|coxas?|osso|ossos|carcaca|pescoco|asas?|juntas?|tendoes|gordura|membrana|lado|lados|outro lado|metades?|pedacos?|peca|pecas|centro|ponta|pontas|bolso|cavidade|interior|superficie|corte|cortes|fatias?|tiras?|cubos?)\b/;
 
   const ids = new Set();
   const problemas = [];
@@ -229,7 +229,10 @@ function main() {
     if (!bancada) problemas.push(`capítulo sem bancada: ${t.capitulo}`);
     const alim = [...new Set(t.ingredientes.map((x) => reconhecer(x) ?? reconhecerFraco(x, bancada?.id, t.capitulo + ' ' + t.nome)).filter(Boolean))];
     // a peça principal é o primeiro ingrediente que não é tempero, gordura ou líquido de cobertura
-    const principal = alim.find((id) => !ehCobertura(id, alimentos.get(id)?.nome ?? '')) ?? alim[0];
+    // nas bancadas de proteína, a principal é a ave, a carne ou o peixe (não a erva do tempero)
+    const PROTEINA = { aves: /frango|galinha|pato|peru|codorna|faisao|ganso|pombo|perdiz|ave|coelho/, carnes: /bovin|vitela|porco|cordeiro|carne|file|lombo|pernil|costel|carre|alcatra|contrafile|paleta|perna|noisette|linguica|toucinho|bacon|presunto|figado|rim|coracao|lingua|miolo|rabada|moida|bife/, peixes: /truta|salmao|linguado|sardinha|bacalhau|peixe|cavala|arenque|robalo|tainha|merluza|atum|lagosta|camarao|caranguejo|mexilhao|ostra|vieira|lula|polvo|lagostim|ameijoa|buzio|enguia|carpa|vermelho|hadoque/ }[bancada?.id ?? ''];
+    const naoCobertura = alim.filter((id) => !ehCobertura(id, alimentos.get(id)?.nome ?? ''));
+    const principal = (PROTEINA && naoCobertura.find((id) => PROTEINA.test(id))) ?? naoCobertura[0] ?? alim[0];
     let anterior = principal;
     const passos = t.passos.map((p) => {
       const acao = p.acao.trim();

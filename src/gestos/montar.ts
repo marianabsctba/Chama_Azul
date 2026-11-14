@@ -4,7 +4,8 @@ import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar } from './base';
 import { anguloDaEstacao, ehLiquido } from './mesa';
-import { criarFormaGenerica } from '../modelos/alimentos';
+import { criarFormaGenerica, familiaDe } from '../modelos/alimentos';
+import { estadoInicial } from '../pecas/conteudo';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
 
@@ -415,7 +416,10 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
 /** Observar e decidir: o jogador vê a peça num estado e diz se está no ponto. */
 export function gestoTestar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, hud, tecnica } = ctx;
-  const solido = passo.alimento && !ehLiquido(passo.alvo);
+  // havendo uma peça de verdade na técnica, ela aparece; só preparos líquidos vão para a tigela
+  const fam = passo.alimento ? familiaDe(passo.alimento) : undefined;
+  const solido = !!passo.alimento && !!fam && !['recipiente', 'monte', 'pasta'].includes(fam);
+  const caldinho = solido && ehLiquido(passo.alvo);
   const estados = [0.55, 1, 1.4];
   const sorteio = (tecnica.id.length * 7 + passo.alvo.length * 3) % 3;
   const estado = estados[sorteio];
@@ -426,6 +430,16 @@ export function gestoTestar(ctx: ContextoGesto): Execucao {
       peca.rotation.y = anguloDaEstacao(estacao);
     }
     peca.definirCozimento(Math.max(peca.cozimento, 0) > 0.2 ? estado : estado * 0.6);
+    if (caldinho) {
+      // o suco ou caldo que escorre aparece numa pocinha ao lado da peça
+      const cor = new THREE.Color(estadoInicial(passo.alvo + ' ' + passo.parametro).cor);
+      const turvo = [new THREE.Color('#d98c8c'), cor, new THREE.Color('#e8d9a8')][sorteio];
+      const poca = new THREE.Mesh(new THREE.CircleGeometry(0.035, 28), new THREE.MeshStandardMaterial({ color: turvo, roughness: 0.15, transparent: true, opacity: 0.85 }));
+      poca.rotation.x = -Math.PI / 2;
+      poca.scale.set(1.4, 0.8, 1);
+      poca.position.copy(peca.position).add(new THREE.Vector3(peca.comprimento * peca.scale.x * 0.55, 0.002, 0.02));
+      mesa.adicionarExtra(poca);
+    }
   } else {
     if (!mesa.recipiente) mesa.garantirRecipiente('tigela', estacao.superficie.clone(), 'tigela');
     const c = mesa.garantirConteudo(passo.alvo, 0.45);
