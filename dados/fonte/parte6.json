@@ -1,0 +1,8413 @@
+{
+ "acoes_novas": [
+  "desenformar",
+  "embeber",
+  "esfregar",
+  "esmagar",
+  "espalhar",
+  "hidratar",
+  "marcar",
+  "mergulhar",
+  "polvilhar",
+  "raspar",
+  "testar"
+ ],
+ "alimentos": [
+  {
+   "id": "merengue-frances",
+   "nome": "Merengue francês",
+   "forma": "espuma branca brilhante com picos"
+  },
+  {
+   "id": "merengue-italiano",
+   "nome": "Merengue italiano",
+   "forma": "espuma densa acetinada em picos firmes"
+  },
+  {
+   "id": "merengue-suico",
+   "nome": "Merengue suíço",
+   "forma": "espuma branca muito firme"
+  },
+  {
+   "id": "pavlova",
+   "nome": "Pavlova",
+   "forma": "disco de merengue de 20 cm com borda alta e cavidade, recheio de creme e frutas"
+  },
+  {
+   "id": "concha-merengue",
+   "nome": "Concha de merengue",
+   "forma": "gota arredondada e lisa, branca"
+  },
+  {
+   "id": "ninho-merengue",
+   "nome": "Ninho de merengue",
+   "forma": "cesta espiral estriada de 5 cm"
+  },
+  {
+   "id": "disco-merengue",
+   "nome": "Disco de merengue",
+   "forma": "disco plano em espiral"
+  },
+  {
+   "id": "gelatina-folha",
+   "nome": "Gelatina em folha",
+   "forma": "folha retangular transparente com textura de grade"
+  },
+  {
+   "id": "gelatina-po",
+   "nome": "Gelatina em pó",
+   "forma": "pó granulado"
+  },
+  {
+   "id": "musse-fruta",
+   "nome": "Musse de fruta",
+   "forma": "creme aerado colorido em taça"
+  },
+  {
+   "id": "musse-chocolate",
+   "nome": "Musse de chocolate",
+   "forma": "creme marrom escuro aerado"
+  },
+  {
+   "id": "sufle-frio",
+   "nome": "Suflê frio de framboesa",
+   "forma": "cilindro rosa acima da borda do pote"
+  },
+  {
+   "id": "gelatina-frutas",
+   "nome": "Gelatina de frutas",
+   "forma": "bloco translúcido com frutas suspensas em camadas"
+  },
+  {
+   "id": "creme-anglaise",
+   "nome": "Creme anglaise",
+   "forma": "líquido amarelo espesso"
+  },
+  {
+   "id": "creme-patissiere",
+   "nome": "Creme pâtissière",
+   "forma": "creme amarelo grosso"
+  },
+  {
+   "id": "creme-musseline",
+   "nome": "Creme mousseline",
+   "forma": "creme amarelado firme de saco"
+  },
+  {
+   "id": "custard",
+   "nome": "Custard",
+   "forma": "creme dourado em travessa com noz-moscada"
+  },
+  {
+   "id": "bavaroise",
+   "nome": "Bavaroise",
+   "forma": "cúpula alta canelada desenformada"
+  },
+  {
+   "id": "creme-brulee",
+   "nome": "Creme brûlée",
+   "forma": "ramequim com crosta de vidro âmbar"
+  },
+  {
+   "id": "creme-caramelo",
+   "nome": "Creme caramelo",
+   "forma": "pudim pequeno com calda escorrendo"
+  },
+  {
+   "id": "pudim-arroz",
+   "nome": "Pudim de arroz",
+   "forma": "grãos em creme em travessa, crosta dourada"
+  },
+  {
+   "id": "sufle-baunilha",
+   "nome": "Suflê de baunilha",
+   "forma": "cilindro dourado crescido acima do ramequim"
+  },
+  {
+   "id": "charlotte-maca",
+   "nome": "Charlotte de maçã",
+   "forma": "cúpula de fatias de pão douradas sobrepostas"
+  },
+  {
+   "id": "pudim-vapor",
+   "nome": "Pudim no vapor",
+   "forma": "fôrma tampada com alumínio e alça de barbante"
+  },
+  {
+   "id": "calda-acucar",
+   "nome": "Calda de açúcar",
+   "forma": "líquido transparente viscoso"
+  },
+  {
+   "id": "caramelo",
+   "nome": "Caramelo",
+   "forma": "líquido âmbar brilhante"
+  },
+  {
+   "id": "praline",
+   "nome": "Praline",
+   "forma": "placa âmbar com castanhas, quebrada em cacos"
+  },
+  {
+   "id": "nougatine",
+   "nome": "Nougatine",
+   "forma": "placa fina âmbar com amêndoas laminadas"
+  },
+  {
+   "id": "ganache",
+   "nome": "Ganache",
+   "forma": "creme marrom brilhante"
+  },
+  {
+   "id": "chocolate-barra",
+   "nome": "Barra de chocolate",
+   "forma": "retângulo marrom"
+  },
+  {
+   "id": "taca-chocolate",
+   "nome": "Taça de chocolate",
+   "forma": "copinho fino canelado de chocolate"
+  },
+  {
+   "id": "formas-chocolate",
+   "nome": "Formas de chocolate",
+   "forma": "discos e quadrados finos de 2 mm"
+  },
+  {
+   "id": "fita-chocolate",
+   "nome": "Fita de chocolate",
+   "forma": "fita larga ondulada flexível"
+  },
+  {
+   "id": "gateau-deux-pierre",
+   "nome": "Gâteau des Deux Pierre",
+   "forma": "bolo redondo de 23 cm envolto em fitas de chocolate, leque no topo"
+  },
+  {
+   "id": "sorvete-bola",
+   "nome": "Bola de sorvete",
+   "forma": "esfera"
+  },
+  {
+   "id": "semifreddo",
+   "nome": "Semifreddo",
+   "forma": "cilindro rosado fatiado"
+  },
+  {
+   "id": "parfait",
+   "nome": "Parfait",
+   "forma": "cilindro de 8 cm amarelo-claro"
+  },
+  {
+   "id": "sorbet",
+   "nome": "Sorbet",
+   "forma": "bola lisa colorida"
+  },
+  {
+   "id": "fruit-givre",
+   "nome": "Limão recheado de sorbet",
+   "forma": "casca de limão oca com cúpula de sorbet e tampa"
+  },
+  {
+   "id": "granita",
+   "nome": "Granita de café",
+   "forma": "cristais de gelo marrons soltos em taça"
+  },
+  {
+   "id": "folha-chocolate",
+   "nome": "Folha de chocolate",
+   "forma": "folha com veios marcados"
+  },
+  {
+   "id": "fio-caramelo",
+   "nome": "Fios de caramelo",
+   "forma": "rendado âmbar de fios"
+  },
+  {
+   "id": "espiral-chocolate",
+   "nome": "Espiral de chocolate",
+   "forma": "lasca enrolada"
+  },
+  {
+   "id": "cesta-ondulada",
+   "nome": "Cesta ondulada",
+   "forma": "cesta dourada em forma de sol com bordas onduladas"
+  },
+  {
+   "id": "cigarro-chocolate",
+   "nome": "Cigarro de chocolate",
+   "forma": "tubinho enrolado"
+  },
+  {
+   "id": "raspas-carameladas",
+   "nome": "Raspas carameladas",
+   "forma": "tiras finas translúcidas açucaradas"
+  },
+  {
+   "id": "pennant-maracuja",
+   "nome": "Pennant de maracujá",
+   "forma": "biscoito curvo em bandeirola com sementes pretas"
+  },
+  {
+   "id": "zabaione",
+   "nome": "Zabaione",
+   "forma": "creme espumoso amarelo"
+  },
+  {
+   "id": "manteiga-conhaque",
+   "nome": "Manteiga com conhaque",
+   "forma": "pasta clara"
+  },
+  {
+   "id": "butterscotch",
+   "nome": "Molho butterscotch",
+   "forma": "calda castanha"
+  },
+  {
+   "id": "chantilly",
+   "nome": "Creme chantilly",
+   "forma": "creme branco em picos"
+  },
+  {
+   "id": "pate-brisee",
+   "nome": "Pâte brisée",
+   "forma": "bola de massa clara"
+  },
+  {
+   "id": "fundo-torta",
+   "nome": "Fundo de torta",
+   "forma": "casca de massa dourada em fôrma canelada"
+  },
+  {
+   "id": "feijoes-assar",
+   "nome": "Feijões para assar",
+   "forma": "bolinhas de cerâmica ou metal"
+  },
+  {
+   "id": "barquinha",
+   "nome": "Barquinha",
+   "forma": "tortinha oval em forma de barco com frutas"
+  },
+  {
+   "id": "torta-tampa",
+   "nome": "Torta com tampa",
+   "forma": "prato de torta com tampa e furo central"
+  },
+  {
+   "id": "torta-trelica",
+   "nome": "Torta com treliça",
+   "forma": "torta com tiras cruzadas"
+  },
+  {
+   "id": "rosinha-massa",
+   "nome": "Rosinha de massa",
+   "forma": "flor de pétalas de massa"
+  },
+  {
+   "id": "tarte-tatin",
+   "nome": "Tarte Tatin",
+   "forma": "torta invertida com frutas caramelizadas"
+  },
+  {
+   "id": "pate-choux",
+   "nome": "Pâte à choux",
+   "forma": "massa amarela lisa brilhante"
+  },
+  {
+   "id": "bomba-choux",
+   "nome": "Bombinha de choux",
+   "forma": "bolinha oca dourada"
+  },
+  {
+   "id": "eclair",
+   "nome": "Éclair",
+   "forma": "bastão dourado de 8 cm com cobertura brilhante"
+  },
+  {
+   "id": "profiterole",
+   "nome": "Profiterole",
+   "forma": "bombinha com calda de chocolate"
+  },
+  {
+   "id": "choux-frito",
+   "nome": "Choux frito",
+   "forma": "bastão de 3 cm frito e polvilhado"
+  },
+  {
+   "id": "croquembouche",
+   "nome": "Croquembouche",
+   "forma": "cone alto de bombinhas coladas com caramelo sobre disco de nougatine"
+  },
+  {
+   "id": "filo",
+   "nome": "Massa filo",
+   "forma": "folhas finas translúcidas"
+  },
+  {
+   "id": "baklava",
+   "nome": "Baklava",
+   "forma": "camadas de filo cortadas em losangos com mel"
+  },
+  {
+   "id": "filo-cigarro",
+   "nome": "Cigarro de filo",
+   "forma": "rolinho dourado"
+  },
+  {
+   "id": "filo-triangulo",
+   "nome": "Triângulo de filo",
+   "forma": "triângulo folhado"
+  },
+  {
+   "id": "filo-bolsa",
+   "nome": "Bolsinha de filo",
+   "forma": "trouxinha torcida no topo"
+  },
+  {
+   "id": "strudel",
+   "nome": "Strudel",
+   "forma": "rolo dourado em ferradura"
+  },
+  {
+   "id": "detrempe",
+   "nome": "Détrempe",
+   "forma": "bola de massa com X no topo"
+  },
+  {
+   "id": "massa-folhada",
+   "nome": "Massa folhada",
+   "forma": "bloco retangular em camadas"
+  },
+  {
+   "id": "bouchee",
+   "nome": "Bouchée",
+   "forma": "cilindro folhado oco"
+  },
+  {
+   "id": "tranche",
+   "nome": "Tranche",
+   "forma": "retângulo folhado com bordas altas"
+  },
+  {
+   "id": "feuillete",
+   "nome": "Feuilleté",
+   "forma": "losango folhado com bordas cruzadas"
+  },
+  {
+   "id": "sanduiche-victoria",
+   "nome": "Sanduíche Victoria",
+   "forma": "dois discos de bolo com geleia"
+  },
+  {
+   "id": "bolo-frutas",
+   "nome": "Bolo de frutas",
+   "forma": "bolo redondo alto escuro com frutas"
+  },
+  {
+   "id": "bolo-gengibre",
+   "nome": "Bolo de gengibre",
+   "forma": "bolo quadrado escuro"
+  },
+  {
+   "id": "pao-de-lo",
+   "nome": "Pão-de-ló",
+   "forma": "disco de bolo amarelo fofo"
+  },
+  {
+   "id": "rocambole",
+   "nome": "Rocambole",
+   "forma": "rolo com espiral de recheio"
+  },
+  {
+   "id": "bolo-de-anjo",
+   "nome": "Bolo de anjo",
+   "forma": "anel alto branco com furo central"
+  },
+  {
+   "id": "torta-chocolate",
+   "nome": "Torta de chocolate",
+   "forma": "bolo redondo denso escuro"
+  },
+  {
+   "id": "bolo-camadas",
+   "nome": "Bolo em camadas",
+   "forma": "bolo cilíndrico com camadas e cobertura"
+  },
+  {
+   "id": "bolo-merengue",
+   "nome": "Bolo de merengue",
+   "forma": "discos de merengue intercalados com musse, cigarros na lateral"
+  },
+  {
+   "id": "base-biscoito",
+   "nome": "Base de biscoito",
+   "forma": "disco de migalhas compactadas"
+  },
+  {
+   "id": "cheesecake-gelado",
+   "nome": "Cheesecake gelado",
+   "forma": "cilindro rosado sobre base de biscoito"
+  },
+  {
+   "id": "cheesecake-assado",
+   "nome": "Cheesecake assado",
+   "forma": "torta alta dourada com desenho de açúcar rendado"
+  },
+  {
+   "id": "glace-real",
+   "nome": "Glacê real",
+   "forma": "pasta branca dura"
+  },
+  {
+   "id": "glace-chocolate",
+   "nome": "Glacê de chocolate",
+   "forma": "cobertura espelhada escura"
+  },
+  {
+   "id": "sachertorte",
+   "nome": "Sachertorte",
+   "forma": "bolo coberto de chocolate com nome escrito"
+  },
+  {
+   "id": "glace-manteiga",
+   "nome": "Glacê de manteiga",
+   "forma": "creme amarelado fofo"
+  },
+  {
+   "id": "lace-tuile",
+   "nome": "Lace tuile",
+   "forma": "telha rendada curva"
+  },
+  {
+   "id": "operetta",
+   "nome": "Operetta",
+   "forma": "quadradinho em camadas com folha dourada"
+  },
+  {
+   "id": "financier",
+   "nome": "Financier",
+   "forma": "bolinho oval dourado"
+  },
+  {
+   "id": "physalis-caramelada",
+   "nome": "Physalis caramelada",
+   "forma": "fruta laranja brilhante com pétalas secas para cima"
+  },
+  {
+   "id": "bola-sorvete-coberta",
+   "nome": "Bolinha de sorvete coberta",
+   "forma": "esfera de chocolate no palito"
+  },
+  {
+   "id": "tortinha-limao",
+   "nome": "Tortinha de limão",
+   "forma": "tortinha com topo caramelizado"
+  },
+  {
+   "id": "miroir",
+   "nome": "Miroir de maracujá",
+   "forma": "disco de 4 cm com topo espelhado amarelo"
+  },
+  {
+   "id": "trufa-amendoa",
+   "nome": "Trufa de amêndoa",
+   "forma": "bolinha branca rugosa"
+  },
+  {
+   "id": "biscoito-cortado",
+   "nome": "Biscoito cortado",
+   "forma": "biscoito plano recortado"
+  },
+  {
+   "id": "shortbread",
+   "nome": "Shortbread",
+   "forma": "retângulos dourados açucarados"
+  },
+  {
+   "id": "biscoito-roseta",
+   "nome": "Biscoito roseta",
+   "forma": "roseta estriada"
+  },
+  {
+   "id": "brandy-snap",
+   "nome": "Biscoito de conhaque",
+   "forma": "tubo rendado dourado"
+  },
+  {
+   "id": "biscoito-champagne",
+   "nome": "Biscoito champagne",
+   "forma": "palito de 10 cm com pérolas de açúcar"
+  },
+  {
+   "id": "tuile",
+   "nome": "Tuile",
+   "forma": "telha curva fina"
+  },
+  {
+   "id": "tulipa",
+   "nome": "Tulipa",
+   "forma": "cestinha ondulada de biscoito"
+  }
+ ],
+ "utensilios": [
+  {
+   "id": "saco-confeitar",
+   "nome": "Saco de confeitar",
+   "forma": "cone de tecido ou plástico"
+  },
+  {
+   "id": "saco-papel",
+   "nome": "Saco de confeitar de papel",
+   "forma": "cone de papel-vegetal"
+  },
+  {
+   "id": "bico-liso",
+   "nome": "Bico liso",
+   "forma": "cone de metal com furo redondo (5 mm, 1 cm, 1,5 cm, 2 cm)"
+  },
+  {
+   "id": "bico-pitanga",
+   "nome": "Bico pitanga (estrela)",
+   "forma": "cone de metal com ponta dentada"
+  },
+  {
+   "id": "termometro-acucar",
+   "nome": "Termômetro de açúcar",
+   "forma": "haste com escala e presilha de panela"
+  },
+  {
+   "id": "batedor-arame",
+   "nome": "Batedor de arame",
+   "forma": "fios em balão com cabo"
+  },
+  {
+   "id": "batedeira",
+   "nome": "Batedeira",
+   "forma": "máquina com tigela e batedor balão"
+  },
+  {
+   "id": "sorveteira",
+   "nome": "Sorveteira elétrica",
+   "forma": "cuba cilíndrica com pá giratória"
+  },
+  {
+   "id": "boleador",
+   "nome": "Boleador de sorvete",
+   "forma": "colher semiesférica"
+  },
+  {
+   "id": "pote-sufle",
+   "nome": "Pote de suflê",
+   "forma": "ramequim cilíndrico branco"
+  },
+  {
+   "id": "forma-charlotte",
+   "nome": "Fôrma de charlotte",
+   "forma": "balde de metal com alças"
+  },
+  {
+   "id": "aro-metal",
+   "nome": "Aro de metal",
+   "forma": "anel sem fundo (8, 10 e 23 cm)"
+  },
+  {
+   "id": "cartao-bolo",
+   "nome": "Cartão de bolo",
+   "forma": "disco de papelão"
+  },
+  {
+   "id": "macarico",
+   "nome": "Maçarico",
+   "forma": "pistola de chama"
+  },
+  {
+   "id": "trempe",
+   "nome": "Trempe",
+   "forma": "grade baixa para o fundo de panela"
+  },
+  {
+   "id": "forma-dariole",
+   "nome": "Fôrma dariole",
+   "forma": "copinho de metal"
+  },
+  {
+   "id": "forminha-papel",
+   "nome": "Forminha de papel",
+   "forma": "copinho canelado de papel"
+  },
+  {
+   "id": "cortador-biscoito",
+   "nome": "Cortador de biscoito",
+   "forma": "anel de metal liso ou serrilhado"
+  },
+  {
+   "id": "espatula-angulo",
+   "nome": "Espátula em ângulo",
+   "forma": "lâmina flexível com dobra"
+  },
+  {
+   "id": "raspador",
+   "nome": "Raspador liso e dentado",
+   "forma": "placa retangular"
+  },
+  {
+   "id": "tabua-giratoria",
+   "nome": "Tábua giratória",
+   "forma": "prato giratório sobre base"
+  },
+  {
+   "id": "molde-estencil",
+   "nome": "Molde de estêncil",
+   "forma": "placa plástica vazada em sol"
+  },
+  {
+   "id": "descascador",
+   "nome": "Descascador de legumes",
+   "forma": "lâmina com fenda"
+  },
+  {
+   "id": "misturador-massa",
+   "nome": "Misturador de massa",
+   "forma": "arcos de aço com cabo"
+  },
+  {
+   "id": "feijoes-assar",
+   "nome": "Feijões para assar",
+   "forma": "bolinhas de cerâmica"
+  },
+  {
+   "id": "funil-torta",
+   "nome": "Funil de torta",
+   "forma": "pássaro ou chaminé de cerâmica"
+  },
+  {
+   "id": "forma-torta",
+   "nome": "Fôrma de torta canelada",
+   "forma": "prato raso com borda ondulada"
+  },
+  {
+   "id": "forma-barquinha",
+   "nome": "Forminha de barquinha",
+   "forma": "fôrma oval pequena"
+  },
+  {
+   "id": "cone-croquembouche",
+   "nome": "Cone de croquembouche",
+   "forma": "cone alto de metal"
+  },
+  {
+   "id": "rolo-massa",
+   "nome": "Rolo de massa",
+   "forma": "cilindro de madeira ou metal"
+  },
+  {
+   "id": "forma-rocambole",
+   "nome": "Fôrma de rocambole",
+   "forma": "assadeira rasa 22 x 33 cm"
+  },
+  {
+   "id": "forma-anjo",
+   "nome": "Fôrma de bolo de anjo",
+   "forma": "fôrma com tubo central e pés"
+  },
+  {
+   "id": "forma-desmontavel",
+   "nome": "Fôrma desmontável",
+   "forma": "aro com fecho e fundo solto"
+  },
+  {
+   "id": "grade-metal",
+   "nome": "Grade de metal",
+   "forma": "grelha retangular"
+  },
+  {
+   "id": "toalhinha-rendada",
+   "nome": "Toalhinha rendada",
+   "forma": "disco rendado de papel"
+  },
+  {
+   "id": "forminha-oval",
+   "nome": "Forminha oval de financier",
+   "forma": "fôrma oval pequena"
+  },
+  {
+   "id": "forminha-ondulada",
+   "nome": "Forminha ondulada",
+   "forma": "fôrma de tulipa canelada"
+  },
+  {
+   "id": "palito-metal",
+   "nome": "Palito de metal",
+   "forma": "haste fina"
+  },
+  {
+   "id": "peneira",
+   "nome": "Peneira",
+   "forma": "malha fina com aro"
+  }
+ ],
+ "tabelas": [
+  {
+   "nome": "Pontos do açúcar",
+   "linhas": [
+    [
+     "fio",
+     "110 °C",
+     "forma fio entre os dedos",
+     "glacê de chocolate"
+    ],
+    [
+     "bala mole",
+     "116 a 118 °C",
+     "bolinha que cede ao apertar",
+     "merengue italiano, glacê de manteiga, parfait"
+    ],
+    [
+     "bala dura",
+     "125 °C",
+     "bolinha firme e pegajosa",
+     "marzipã, fondant, balas"
+    ],
+    [
+     "crosta mole",
+     "134 °C",
+     "quebra mas gruda nos dentes",
+     "nougat, caramelos, puxa-puxa"
+    ],
+    [
+     "crosta dura",
+     "145 °C",
+     "muito quebradiço",
+     "algodão-doce, açúcar-cande, frutas cristalizadas"
+    ],
+    [
+     "caramelo",
+     "até 190 °C",
+     "âmbar a dourado-escuro",
+     "caldas, creme caramelo, coberturas"
+    ]
+   ]
+  },
+  {
+   "nome": "Caldas por proporção",
+   "linhas": [
+    [
+     "fina",
+     "250 g de açúcar : 500 ml de água",
+     "saladas e frutas cozidas"
+    ],
+    [
+     "média",
+     "250 g : 250 ml",
+     "frutas carameladas"
+    ],
+    [
+     "grossa",
+     "250 g : 225 ml",
+     "caramelo e sobremesas geladas"
+    ]
+   ]
+  },
+  {
+   "nome": "Tipos de merengue",
+   "linhas": [
+    [
+     "francês",
+     "115 g de açúcar para 2 claras",
+     "cru, batido"
+    ],
+    [
+     "italiano",
+     "250 g de açúcar e 60 ml de água para 5 claras",
+     "calda a 118 °C"
+    ],
+    [
+     "suíço",
+     "125 g de açúcar para 2 claras",
+     "banho-maria"
+    ]
+   ]
+  },
+  {
+   "nome": "Temperagem do chocolate",
+   "linhas": [
+    [
+     "derreter",
+     "45 °C"
+    ],
+    [
+     "resfriar",
+     "25 °C"
+    ],
+    [
+     "trabalho",
+     "32 °C"
+    ]
+   ]
+  },
+  {
+   "nome": "Tipos de chocolate",
+   "linhas": [
+    [
+     "de confeiteiro (pâte à glacer)",
+     "gordura vegetal, não precisa temperar, fosco, ótimo para fitas"
+    ],
+    [
+     "couverture",
+     "mínimo 32% de manteiga de cacau, precisa temperar, acetinado"
+    ]
+   ]
+  },
+  {
+   "nome": "Descanso antes de desenformar",
+   "linhas": [
+    [
+     "pão-de-ló",
+     "5 min"
+    ],
+    [
+     "bolo de frutas",
+     "30 min"
+    ]
+   ]
+  },
+  {
+   "nome": "Enchimento da fôrma",
+   "linhas": [
+    [
+     "massa leve",
+     "2/3 da altura"
+    ],
+    [
+     "massa densa de frutas",
+     "3/4 da altura"
+    ]
+   ]
+  },
+  {
+   "nome": "Tipos de açúcar",
+   "linhas": [
+    [
+     "cristais"
+    ],
+    [
+     "mascavo claro"
+    ],
+    [
+     "mascavo escuro"
+    ],
+    [
+     "demerara"
+    ],
+    [
+     "de confeiteiro"
+    ],
+    [
+     "em cubos"
+    ],
+    [
+     "refinado"
+    ],
+    [
+     "granulado"
+    ]
+   ]
+  }
+ ],
+ "tecnicas": [
+  {
+   "id": "sobremesas.merengue-frances",
+   "capitulo": "Sobremesas",
+   "nome": "Merengue francês",
+   "ingredientes": [
+    "claras",
+    "açúcar refinado"
+   ],
+   "utensilios": [
+    "tigela limpa sem gordura",
+    "batedor de arame"
+   ],
+   "passos": [
+    {
+     "acao": "descansar",
+     "alvo": "claras",
+     "utensilio": "tigela tampada",
+     "parametro": "1 h em temperatura ambiente para ganhar volume"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedor de arame",
+     "parametro": "até picos firmes"
+    },
+    {
+     "acao": "bater",
+     "alvo": "metade do açúcar",
+     "utensilio": "batedor de arame",
+     "parametro": "adicionado aos poucos"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "resto do açúcar",
+     "utensilio": "batedor de arame",
+     "parametro": "115 g de açúcar para 2 claras"
+    }
+   ],
+   "ponto_critico": "picos firmes e brilhantes antes de entrar o açúcar; utensílio sem nenhum traço de gordura",
+   "erro_comum": "tigela engordurada ou gema na clara impede o volume"
+  },
+  {
+   "id": "sobremesas.merengue-italiano",
+   "capitulo": "Sobremesas",
+   "nome": "Merengue italiano",
+   "ingredientes": [
+    "claras",
+    "açúcar",
+    "água"
+   ],
+   "utensilios": [
+    "batedeira",
+    "termômetro de açúcar",
+    "panela pequena"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda de açúcar",
+     "utensilio": "panela pequena",
+     "parametro": "250 g de açúcar e 60 ml de água até 118 °C, ponto de bala mole"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedeira",
+     "parametro": "5 claras em neve"
+    },
+    {
+     "acao": "bater",
+     "alvo": "calda quente sobre as claras",
+     "utensilio": "batedeira",
+     "parametro": "velocidade baixa, calda em fio contínuo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "merengue",
+     "utensilio": "batedeira",
+     "parametro": "até firme, acetinado e frio; rende cerca de 400 g"
+    }
+   ],
+   "ponto_critico": "calda exatamente a 118 °C e despejada em fio fino",
+   "erro_comum": "calda despejada de uma vez ou sobre o batedor espirra e endurece em fios"
+  },
+  {
+   "id": "sobremesas.merengue-suico",
+   "capitulo": "Sobremesas",
+   "nome": "Merengue suíço",
+   "ingredientes": [
+    "claras",
+    "açúcar"
+   ],
+   "utensilios": [
+    "tigela refratária",
+    "panela com água fervente",
+    "batedor de arame"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "claras e açúcar",
+     "utensilio": "tigela sobre banho-maria",
+     "parametro": "125 g de açúcar para 2 claras"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "tigela",
+     "utensilio": "panela com água fervente",
+     "parametro": "girar a tigela o tempo todo enquanto bate"
+    },
+    {
+     "acao": "bater",
+     "alvo": "merengue",
+     "utensilio": "batedor de arame",
+     "parametro": "até muito firme"
+    }
+   ],
+   "ponto_critico": "bater sem parar sobre o vapor girando a tigela",
+   "erro_comum": "deixar a tigela parada sobre o calor cozinha as claras"
+  },
+  {
+   "id": "sobremesas.pavlova",
+   "capitulo": "Sobremesas",
+   "nome": "Pavlova",
+   "ingredientes": [
+    "claras",
+    "açúcar",
+    "vinagre de framboesa ou de vinho",
+    "fubá"
+   ],
+   "utensilios": [
+    "assadeira",
+    "papel-manteiga",
+    "colher grande de metal",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "forrar",
+     "alvo": "assadeira",
+     "utensilio": "papel-manteiga",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedor",
+     "parametro": "neve firme, depois metade do açúcar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "resto do açúcar, vinagre e fubá",
+     "utensilio": "colher grande de metal",
+     "parametro": "3 claras, 175 g de açúcar, 1 colher (chá) de cada"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "disco de merengue com cavidade central",
+     "utensilio": "colher grande de metal",
+     "parametro": "20 cm de diâmetro"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pavlova",
+     "utensilio": "forno",
+     "parametro": "150 °C por 1 h"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "pavlova",
+     "utensilio": "forno desligado",
+     "parametro": "esfriar dentro do forno"
+    },
+    {
+     "acao": "separar",
+     "alvo": "papel-manteiga",
+     "utensilio": "",
+     "parametro": "descolar com cuidado só depois de frio"
+    }
+   ],
+   "ponto_critico": "miolo macio tipo marshmallow e casca seca; assar curto para reter umidade",
+   "erro_comum": "tirar o papel ainda quente quebra a base"
+  },
+  {
+   "id": "sobremesas.encher-saco-confeitar",
+   "capitulo": "Sobremesas",
+   "nome": "Encher o saco de confeitar",
+   "ingredientes": [
+    "merengue ou creme"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico",
+    "colher",
+    "jarra (opcional)"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "bico no saco",
+     "utensilio": "saco de confeitar",
+     "parametro": "torcer o saco logo acima do bico para vedar"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "saco aberto sobre a mão",
+     "utensilio": "colher",
+     "parametro": "dobrar a boca do saco sobre a mão ou apoiar numa jarra"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "boca do saco",
+     "utensilio": "saco de confeitar",
+     "parametro": "torcer até o recheio chegar ao bico, expulsando o ar"
+    }
+   ],
+   "ponto_critico": "sem bolhas de ar e com o bico vedado até a hora de usar",
+   "erro_comum": "não torcer acima do bico faz o recheio vazar"
+  },
+  {
+   "id": "sobremesas.merengue-conchas",
+   "capitulo": "Sobremesas",
+   "nome": "Merengue em conchas",
+   "ingredientes": [
+    "merengue francês"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico liso médio ou grande",
+    "assadeira",
+    "papel-manteiga"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "bolinhas de merengue",
+     "utensilio": "bico liso médio ou grande",
+     "parametro": "sobre papel-manteiga"
+    },
+    {
+     "acao": "assar",
+     "alvo": "conchas",
+     "utensilio": "forno",
+     "parametro": "100 °C por pelo menos 1 h"
+    }
+   ],
+   "ponto_critico": "secar em forno baixo sem dourar",
+   "erro_comum": "forno quente demais amarela e racha"
+  },
+  {
+   "id": "sobremesas.merengue-ninhos",
+   "capitulo": "Sobremesas",
+   "nome": "Ninhos de merengue",
+   "ingredientes": [
+    "merengue francês"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico pitanga (estrela)",
+    "papel-manteiga"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "espiral de base",
+     "utensilio": "bico pitanga (estrela)",
+     "parametro": "círculos de 5 cm partindo do centro"
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "parede do ninho",
+     "utensilio": "bico pitanga (estrela)",
+     "parametro": "voltas sobre a borda"
+    },
+    {
+     "acao": "assar",
+     "alvo": "ninhos",
+     "utensilio": "forno",
+     "parametro": "100 °C por pelo menos 1 h"
+    }
+   ],
+   "ponto_critico": "espiral contínua sem falhas na base",
+   "erro_comum": "borda baixa demais não segura o recheio"
+  },
+  {
+   "id": "sobremesas.merengue-disco",
+   "capitulo": "Sobremesas",
+   "nome": "Disco de merengue",
+   "ingredientes": [
+    "merengue francês ou suíço"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico liso",
+    "papel-manteiga com círculo marcado"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "espiral",
+     "utensilio": "bico liso",
+     "parametro": "do centro para fora até o tamanho desejado"
+    },
+    {
+     "acao": "assar",
+     "alvo": "disco",
+     "utensilio": "forno",
+     "parametro": "100 °C por 1 h ou merengue suíço a 60 °C a noite toda para ficar mais branco"
+    }
+   ],
+   "ponto_critico": "espiral fechada e espessura uniforme",
+   "erro_comum": "espaços entre as voltas deixam o disco frágil"
+  },
+  {
+   "id": "sobremesas.servir-merengues",
+   "capitulo": "Sobremesas",
+   "nome": "Montar e servir merengues",
+   "ingredientes": [
+    "conchas, ninhos ou discos de merengue",
+    "ganache",
+    "lascas de chocolate",
+    "frutas da estação",
+    "Cointreau",
+    "açúcar de confeiteiro",
+    "cacau em pó"
+   ],
+   "utensilios": [
+    "peneira",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "duas conchas com ganache",
+     "utensilio": "colher",
+     "parametro": "unir como sanduíche"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "conchas",
+     "utensilio": "",
+     "parametro": "lascas de chocolate"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "conchas",
+     "utensilio": "peneira",
+     "parametro": "polvilhar açúcar de confeiteiro e cacau"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "frutas",
+     "utensilio": "",
+     "parametro": "um pouco de Cointreau, depois sobre os ninhos"
+    },
+    {
+     "acao": "montar",
+     "alvo": "discos intercalados com musse ou frutas",
+     "utensilio": "",
+     "parametro": "formando um bolo"
+    }
+   ],
+   "ponto_critico": "montar perto de servir para o merengue não amolecer",
+   "erro_comum": "rechear cedo demais deixa o merengue mole"
+  },
+  {
+   "id": "sobremesas.dissolver-gelatina-po",
+   "capitulo": "Sobremesas",
+   "nome": "Dissolver gelatina em pó",
+   "ingredientes": [
+    "gelatina em pó",
+    "líquido frio"
+   ],
+   "utensilios": [
+    "tigela pequena",
+    "panela para banho-maria"
+   ],
+   "passos": [
+    {
+     "acao": "hidratar",
+     "alvo": "gelatina em pó",
+     "utensilio": "tigela pequena",
+     "parametro": "4 colheres (sopa) de líquido frio por 5 min"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "gelatina",
+     "utensilio": "banho-maria",
+     "parametro": "até dissolver, sem ferver"
+    }
+   ],
+   "ponto_critico": "líquido límpido sem grãos; nunca ferver",
+   "erro_comum": "ferver deixa a gelatina fibrosa"
+  },
+  {
+   "id": "sobremesas.dissolver-gelatina-folha",
+   "capitulo": "Sobremesas",
+   "nome": "Dissolver gelatina em folha",
+   "ingredientes": [
+    "gelatina em folha",
+    "água",
+    "líquido quente da receita"
+   ],
+   "utensilios": [
+    "tigela com água"
+   ],
+   "passos": [
+    {
+     "acao": "hidratar",
+     "alvo": "folhas",
+     "utensilio": "tigela com água",
+     "parametro": "5 min até amolecer"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "folhas",
+     "utensilio": "mãos",
+     "parametro": "tirar bem a água"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "folhas no líquido quente",
+     "utensilio": "",
+     "parametro": "até dissolver, sem ferver"
+    }
+   ],
+   "ponto_critico": "folhas bem espremidas e dissolvidas por completo",
+   "erro_comum": "folha mal hidratada forma grumos"
+  },
+  {
+   "id": "sobremesas.musse-fruta",
+   "capitulo": "Sobremesas",
+   "nome": "Musse simples de fruta",
+   "ingredientes": [
+    "purê de fruta adoçado (abricó, amora, groselha preta)",
+    "gelatina em pó",
+    "creme de leite integral",
+    "claras (opcional)"
+   ],
+   "utensilios": [
+    "tigela",
+    "batedor",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "hidratar",
+     "alvo": "gelatina",
+     "utensilio": "",
+     "parametro": "15 g, dissolver e deixar amornar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gelatina no purê",
+     "utensilio": "",
+     "parametro": "450 ml de purê"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "mistura",
+     "utensilio": "",
+     "parametro": "temperatura ambiente até começar a engrossar, 15 a 30 min"
+    },
+    {
+     "acao": "bater",
+     "alvo": "creme de leite",
+     "utensilio": "batedor",
+     "parametro": "300 ml, ponto leve"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme na fruta",
+     "utensilio": "espátula",
+     "parametro": "primeiro 2 colheres para soltar, depois o resto"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "claras em neve",
+     "utensilio": "espátula",
+     "parametro": "opcional, 2 claras para ficar mais leve"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "musse",
+     "utensilio": "geladeira",
+     "parametro": "pelo menos 4 h"
+    }
+   ],
+   "ponto_critico": "incorporar o creme quando a base começa a ganhar corpo",
+   "erro_comum": "gelatina fria demais empelota; quente demais desmonta o creme"
+  },
+  {
+   "id": "sobremesas.musse-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Musse de chocolate",
+   "ingredientes": [
+    "chocolate amargo",
+    "açúcar",
+    "manteiga",
+    "gemas",
+    "claras"
+   ],
+   "utensilios": [
+    "banho-maria",
+    "batedor",
+    "espátula",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "chocolate, açúcar e manteiga",
+     "utensilio": "banho-maria",
+     "parametro": "450 g, 100 g e 2 colheres (sopa) até derreter"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "chocolate derretido",
+     "utensilio": "",
+     "parametro": "até esfriar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gemas",
+     "utensilio": "",
+     "parametro": "6 gemas na mistura já fria"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedor",
+     "parametro": "6 claras em neve"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "claras no chocolate",
+     "utensilio": "espátula",
+     "parametro": "2 colheres primeiro, depois o resto aos poucos"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "musse tampada",
+     "utensilio": "geladeira",
+     "parametro": "mínimo 4 h"
+    }
+   ],
+   "ponto_critico": "chocolate frio antes das gemas",
+   "erro_comum": "chocolate quente cozinha e talha as gemas"
+  },
+  {
+   "id": "sobremesas.sufle-frio-frutas",
+   "capitulo": "Sobremesas",
+   "nome": "Suflê frio de frutas com colarinho",
+   "ingredientes": [
+    "purê de framboesa",
+    "merengue italiano",
+    "creme de leite integral batido"
+   ],
+   "utensilios": [
+    "pote de suflê de 1,5 l",
+    "papel-manteiga",
+    "fita adesiva",
+    "espátula",
+    "concha"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "colarinho duplo de papel-manteiga",
+     "utensilio": "fita adesiva",
+     "parametro": "3 a 5 cm acima da borda"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "merengue no purê, depois o creme",
+     "utensilio": "espátula",
+     "parametro": "350 ml de purê, 400 g de merengue, 400 ml de creme"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "pote até a borda do colarinho",
+     "utensilio": "concha",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "superfície",
+     "utensilio": "espátula mergulhada em água quente",
+     "parametro": "alisar"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "suflê",
+     "utensilio": "freezer",
+     "parametro": "2 h até firmar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "colarinho",
+     "utensilio": "",
+     "parametro": "20 min antes de servir, alisar a lateral e decorar"
+    }
+   ],
+   "ponto_critico": "colarinho firme e mistura acima da borda do pote para imitar suflê crescido",
+   "erro_comum": "tirar o colarinho sem cuidado arranca a lateral"
+  },
+  {
+   "id": "sobremesas.gelatina-frutas-camadas",
+   "capitulo": "Sobremesas",
+   "nome": "Gelatina de frutas em camadas",
+   "ingredientes": [
+    "gelatina em pó",
+    "açúcar",
+    "água",
+    "suco de fruta sem açúcar",
+    "licor",
+    "frutas frescas"
+   ],
+   "utensilios": [
+    "fôrma de 1,5 l",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "hidratar",
+     "alvo": "gelatina",
+     "utensilio": "",
+     "parametro": "15 g em água"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "calda morna",
+     "utensilio": "panela",
+     "parametro": "150 g de açúcar e 50 ml de água, dissolver a gelatina nela"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "suco e licor na calda",
+     "utensilio": "",
+     "parametro": "500 ml de suco e 3 colheres (sopa) de licor; esfriar"
+    },
+    {
+     "acao": "montar",
+     "alvo": "camada de frutas",
+     "utensilio": "fôrma",
+     "parametro": "500 g no total"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "gelatina líquida sobre a camada",
+     "utensilio": "fôrma",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "camada",
+     "utensilio": "geladeira",
+     "parametro": "15 min até firmar; repetir até a borda"
+    }
+   ],
+   "ponto_critico": "cada camada firme antes da seguinte",
+   "erro_comum": "colocar a próxima camada antes de firmar mistura tudo"
+  },
+  {
+   "id": "sobremesas.gelatina-frutas-aleatoria",
+   "capitulo": "Sobremesas",
+   "nome": "Gelatina de frutas rápida (frutas soltas)",
+   "ingredientes": [
+    "gelatina de fruta líquida",
+    "frutas frescas"
+   ],
+   "utensilios": [
+    "fôrma"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "frutas soltas",
+     "utensilio": "fôrma",
+     "parametro": "ao acaso"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "gelatina líquida",
+     "utensilio": "fôrma",
+     "parametro": "cobrir tudo de uma vez"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "gelatina",
+     "utensilio": "geladeira",
+     "parametro": "até firmar"
+    }
+   ],
+   "ponto_critico": "gelatina fria mas ainda líquida",
+   "erro_comum": "gelatina quente cozinha frutas delicadas"
+  },
+  {
+   "id": "sobremesas.creme-anglaise",
+   "capitulo": "Sobremesas",
+   "nome": "Creme anglaise",
+   "ingredientes": [
+    "leite",
+    "fava de baunilha",
+    "gemas",
+    "açúcar"
+   ],
+   "utensilios": [
+    "panela",
+    "colher de pau",
+    "batedor",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "leite com meia fava de baunilha",
+     "utensilio": "panela",
+     "parametro": "500 ml em infusão"
+    },
+    {
+     "acao": "bater",
+     "alvo": "gemas e açúcar",
+     "utensilio": "batedor",
+     "parametro": "5 gemas e 65 g"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "leite sem a fava",
+     "utensilio": "panela",
+     "parametro": "levantar fervura"
+    },
+    {
+     "acao": "bater",
+     "alvo": "leite sobre os ovos",
+     "utensilio": "batedor",
+     "parametro": "passar para panela limpa"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "creme",
+     "utensilio": "colher de pau",
+     "parametro": "fogo baixo, mexendo fundo e laterais até engrossar"
+    },
+    {
+     "acao": "medir",
+     "alvo": "ponto de napar",
+     "utensilio": "colher de pau",
+     "parametro": "dedo passado no dorso deixa traço limpo; rende cerca de 650 ml"
+    }
+   ],
+   "ponto_critico": "traço limpo no dorso da colher, sem deixar ferver",
+   "erro_comum": "fogo alto ou leite fervendo com os ovos talha o creme"
+  },
+  {
+   "id": "sobremesas.creme-patissiere",
+   "capitulo": "Sobremesas",
+   "nome": "Creme pâtissière",
+   "ingredientes": [
+    "gemas",
+    "açúcar",
+    "farinha de trigo",
+    "fubá",
+    "leite",
+    "manteiga"
+   ],
+   "utensilios": [
+    "batedor",
+    "panela",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "gemas com açúcar",
+     "utensilio": "batedor",
+     "parametro": "6 gemas e 100 g"
+    },
+    {
+     "acao": "bater",
+     "alvo": "farinha e fubá",
+     "utensilio": "batedor",
+     "parametro": "40 g de cada"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "leite",
+     "utensilio": "panela",
+     "parametro": "600 ml"
+    },
+    {
+     "acao": "bater",
+     "alvo": "leite sobre os ovos",
+     "utensilio": "batedor",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "creme",
+     "utensilio": "panela",
+     "parametro": "mexendo até surgirem bolhas grandes"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "creme",
+     "utensilio": "batedor",
+     "parametro": "fogo baixo até engrossar bem"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "superfície com manteiga",
+     "utensilio": "",
+     "parametro": "evita película se não usar na hora"
+    }
+   ],
+   "ponto_critico": "precisa ferver para cozinhar o amido e engrossar",
+   "erro_comum": "não ferver deixa gosto de farinha e textura rala"
+  },
+  {
+   "id": "sobremesas.recuperar-creme-talhado",
+   "capitulo": "Sobremesas",
+   "nome": "Recuperar creme talhado",
+   "ingredientes": [
+    "creme de ovos talhado"
+   ],
+   "utensilios": [
+    "colher",
+    "peneira fina",
+    "liquidificador",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "creme fora do fogo",
+     "utensilio": "colher",
+     "parametro": "bater até ficar liso de novo"
+    },
+    {
+     "acao": "coar",
+     "alvo": "creme",
+     "utensilio": "peneira fina",
+     "parametro": "alternativa"
+    },
+    {
+     "acao": "bater",
+     "alvo": "creme",
+     "utensilio": "liquidificador",
+     "parametro": "até alisar"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "creme",
+     "utensilio": "panela",
+     "parametro": "reaquecer em fogo baixo"
+    }
+   ],
+   "ponto_critico": "tirar do fogo assim que aparecer aspecto granuloso",
+   "erro_comum": "continuar no fogo alto piora a separação"
+  },
+  {
+   "id": "sobremesas.custard-ingles-assado",
+   "capitulo": "Sobremesas",
+   "nome": "Custard inglês assado",
+   "ingredientes": [
+    "gemas",
+    "açúcar",
+    "fubá",
+    "farinha de trigo",
+    "leite",
+    "noz-moscada"
+   ],
+   "utensilios": [
+    "panela",
+    "travessa refratária",
+    "banho-maria",
+    "ralador"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "gemas, açúcar, fubá e farinha",
+     "utensilio": "",
+     "parametro": "3 gemas, 50 g, 25 g e 25 g"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "creme com 500 ml de leite",
+     "utensilio": "panela",
+     "parametro": "fogo baixo mexendo até engrossar"
+    },
+    {
+     "acao": "ralar",
+     "alvo": "noz-moscada sobre o creme",
+     "utensilio": "ralador",
+     "parametro": "na travessa"
+    },
+    {
+     "acao": "assar",
+     "alvo": "custard",
+     "utensilio": "banho-maria",
+     "parametro": "170 °C, 20 a 25 min; servir quente"
+    }
+   ],
+   "ponto_critico": "engrossar antes de ir ao forno",
+   "erro_comum": "banho-maria fervendo forma bolhas no creme"
+  },
+  {
+   "id": "sobremesas.potinhos-franceses",
+   "capitulo": "Sobremesas",
+   "nome": "Potinhos de creme franceses",
+   "ingredientes": [
+    "creme de leite",
+    "leite",
+    "gemas",
+    "açúcar"
+   ],
+   "utensilios": [
+    "potinhos individuais",
+    "assadeira para banho-maria"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "creme base",
+     "utensilio": "",
+     "parametro": "300 ml de creme de leite, 200 ml de leite e 2 gemas"
+    },
+    {
+     "acao": "assar",
+     "alvo": "potinhos",
+     "utensilio": "banho-maria",
+     "parametro": "170 °C, 15 a 20 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "potinhos",
+     "utensilio": "geladeira",
+     "parametro": "servir frios"
+    }
+   ],
+   "ponto_critico": "creme firme mas trêmulo no centro",
+   "erro_comum": "assar demais deixa poroso"
+  },
+  {
+   "id": "sobremesas.bavaroise",
+   "capitulo": "Sobremesas",
+   "nome": "Bavaroise",
+   "ingredientes": [
+    "gelatina em pó",
+    "Cointreau",
+    "creme anglaise",
+    "creme de leite integral"
+   ],
+   "utensilios": [
+    "fôrma de charlotte de 1,5 l",
+    "tigela",
+    "concha",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "hidratar",
+     "alvo": "gelatina",
+     "utensilio": "",
+     "parametro": "15 g em água"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gelatina, Cointreau e anglaise quente",
+     "utensilio": "",
+     "parametro": "3 colheres (sopa) e 625 ml"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "creme coberto",
+     "utensilio": "tigela",
+     "parametro": "até começar a firmar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme de leite levemente batido",
+     "utensilio": "batedor",
+     "parametro": "225 ml"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "fôrma",
+     "utensilio": "água fria",
+     "parametro": "molhar a fôrma por dentro"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "fôrma",
+     "utensilio": "concha",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "bavaroise",
+     "utensilio": "geladeira",
+     "parametro": "4 h até firmar"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "bavaroise",
+     "utensilio": "prato",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "incorporar o creme batido quando a base começa a firmar",
+   "erro_comum": "base totalmente firme forma grumos com o creme"
+  },
+  {
+   "id": "sobremesas.cobertura-brulee",
+   "capitulo": "Sobremesas",
+   "nome": "Cobertura brûlée",
+   "ingredientes": [
+    "creme espesso assado",
+    "açúcar granulado"
+   ],
+   "utensilios": [
+    "grelha do forno (salamandra)",
+    "fôrmas individuais"
+   ],
+   "passos": [
+    {
+     "acao": "decorar",
+     "alvo": "fôrmas",
+     "utensilio": "",
+     "parametro": "1 e 1/2 colher (sopa) de açúcar por fôrma"
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "açúcar",
+     "utensilio": "grelha bem quente",
+     "parametro": "o mais perto do fogo, 2 a 3 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "brûlée",
+     "utensilio": "",
+     "parametro": "2 h antes de servir"
+    }
+   ],
+   "ponto_critico": "camada fina e uniforme de açúcar que vira vidro âmbar",
+   "erro_comum": "camada grossa queima por cima e fica crua por baixo"
+  },
+  {
+   "id": "sobremesas.creme-caramelo",
+   "capitulo": "Sobremesas",
+   "nome": "Creme caramelo",
+   "ingredientes": [
+    "açúcar granulado",
+    "água",
+    "ovos",
+    "gemas",
+    "açúcar refinado",
+    "baunilha",
+    "leite"
+   ],
+   "utensilios": [
+    "4 forminhas de 125 ml",
+    "assadeira",
+    "peneira",
+    "espátula",
+    "prato de sobremesa"
+   ],
+   "passos": [
+    {
+     "acao": "caramelizar",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "100 g de açúcar e 60 ml de água"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "forminhas com caramelo",
+     "utensilio": "",
+     "parametro": "inclinar logo para cobrir fundo e lados"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovos, gemas, açúcar e baunilha",
+     "utensilio": "",
+     "parametro": "2 ovos, 4 gemas, 115 g; sem bater ar"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "leite",
+     "utensilio": "panela",
+     "parametro": "500 ml morno, juntar mexendo"
+    },
+    {
+     "acao": "coar",
+     "alvo": "creme",
+     "utensilio": "peneira",
+     "parametro": "e distribuir abaixo da borda"
+    },
+    {
+     "acao": "assar",
+     "alvo": "forminhas",
+     "utensilio": "banho-maria quente",
+     "parametro": "170 °C, 40 a 50 min; água até metade"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "cremes",
+     "utensilio": "geladeira",
+     "parametro": "a noite toda"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "creme",
+     "utensilio": "espátula e prato",
+     "parametro": "passar a lâmina, cobrir com prato e virar"
+    }
+   ],
+   "ponto_critico": "água do banho-maria sem borbulhar",
+   "erro_comum": "água fervendo deixa o creme cheio de furinhos"
+  },
+  {
+   "id": "sobremesas.pudim-arroz-cozido",
+   "capitulo": "Sobremesas",
+   "nome": "Pudim de arroz cozido",
+   "ingredientes": [
+    "leite",
+    "arroz para pudim",
+    "açúcar",
+    "fava de baunilha"
+   ],
+   "utensilios": [
+    "panela de fundo grosso",
+    "colher de pau"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "leite",
+     "utensilio": "panela de fundo grosso",
+     "parametro": "550 ml"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "arroz, açúcar e meia fava",
+     "utensilio": "panela de fundo grosso",
+     "parametro": "115 g e 60 g, cerca de 30 min"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "pudim",
+     "utensilio": "colher de pau",
+     "parametro": "sempre, para não pegar no fundo"
+    }
+   ],
+   "ponto_critico": "grãos macios envoltos em creme",
+   "erro_comum": "panela fina queima o fundo"
+  },
+  {
+   "id": "sobremesas.pudim-arroz-assado",
+   "capitulo": "Sobremesas",
+   "nome": "Pudim de arroz assado",
+   "ingredientes": [
+    "arroz para pudim",
+    "açúcar",
+    "raspa de limão",
+    "sal",
+    "leite quente",
+    "noz-moscada",
+    "manteiga"
+   ],
+   "utensilios": [
+    "fôrma refratária untada",
+    "ralador"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "ingredientes na fôrma",
+     "utensilio": "fôrma refratária untada",
+     "parametro": "50 g de arroz, 60 g de açúcar, 600 ml de leite"
+    },
+    {
+     "acao": "ralar",
+     "alvo": "noz-moscada",
+     "utensilio": "ralador",
+     "parametro": "por cima"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "pedacinhos de manteiga",
+     "utensilio": "",
+     "parametro": "para crosta dourada"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pudim",
+     "utensilio": "forno",
+     "parametro": "150 °C, 1 a 1 e 1/2 h, mexer só uma vez aos 30 min"
+    }
+   ],
+   "ponto_critico": "crosta fina dourada por cima",
+   "erro_comum": "mexer várias vezes impede a crosta"
+  },
+  {
+   "id": "sobremesas.forrar-forma-sufle",
+   "capitulo": "Sobremesas",
+   "nome": "Preparar fôrma de suflê (tripla cobertura)",
+   "ingredientes": [
+    "manteiga amolecida",
+    "açúcar"
+   ],
+   "utensilios": [
+    "forminhas de suflê",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "interior da fôrma",
+     "utensilio": "pincel",
+     "parametro": "manteiga de baixo para cima"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "fôrma",
+     "utensilio": "",
+     "parametro": "deixar firmar e repetir a manteiga"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fôrma com açúcar",
+     "utensilio": "",
+     "parametro": "encher até metade, girar e passar o excesso para a próxima fôrma"
+    }
+   ],
+   "ponto_critico": "pinceladas verticais para o suflê subir reto",
+   "erro_comum": "manteiga em círculos trava a subida"
+  },
+  {
+   "id": "sobremesas.limpar-borda-sufle",
+   "capitulo": "Sobremesas",
+   "nome": "Limpar a borda do suflê",
+   "ingredientes": [
+    "suflê cru na fôrma"
+   ],
+   "utensilios": [
+    "dedo"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "borda interna",
+     "utensilio": "dedo",
+     "parametro": "passar o dedo em volta antes de assar"
+    }
+   ],
+   "ponto_critico": "sulco limpo entre massa e borda",
+   "erro_comum": "massa grudada na borda faz crescer torto"
+  },
+  {
+   "id": "sobremesas.sufle-baunilha-assado",
+   "capitulo": "Sobremesas",
+   "nome": "Suflê de baunilha assado",
+   "ingredientes": [
+    "manteiga",
+    "farinha de trigo",
+    "leite",
+    "baunilha",
+    "açúcar",
+    "ovos separados",
+    "açúcar de confeiteiro"
+   ],
+   "utensilios": [
+    "panela",
+    "batedor",
+    "colher grande de metal",
+    "6 forminhas de 125 ml preparadas"
+   ],
+   "passos": [
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "molho branco",
+     "utensilio": "panela",
+     "parametro": "125 g de manteiga, 60 g de farinha, 500 ml de leite"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "baunilha e 2 colheres de açúcar",
+     "utensilio": "",
+     "parametro": "fora do fogo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "gemas no molho morno",
+     "utensilio": "batedor",
+     "parametro": "8 gemas"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras com o resto do açúcar",
+     "utensilio": "batedor",
+     "parametro": "merengue macio"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "merengue no molho",
+     "utensilio": "colher grande de metal",
+     "parametro": "aos poucos"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "forminhas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "suflês",
+     "utensilio": "forno",
+     "parametro": "190 °C, 15 a 20 min"
+    },
+    {
+     "acao": "servir",
+     "alvo": "suflês",
+     "utensilio": "",
+     "parametro": "polvilhar açúcar de confeiteiro e servir na hora"
+    }
+   ],
+   "ponto_critico": "crescido e dourado, servido imediatamente",
+   "erro_comum": "abrir o forno cedo ou demorar a servir faz murchar"
+  },
+  {
+   "id": "sobremesas.charlotte-quente",
+   "capitulo": "Sobremesas",
+   "nome": "Charlotte quente de maçã",
+   "ingredientes": [
+    "maçã vermelha",
+    "maçã verde",
+    "manteiga sem sal",
+    "açúcar",
+    "nozes",
+    "pão branco amanhecido",
+    "cobertura de abricó"
+   ],
+   "utensilios": [
+    "fôrma de charlotte de 1,5 l",
+    "cortador de biscoito liso",
+    "concha",
+    "papel-alumínio",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "saltear",
+     "alvo": "maçãs",
+     "utensilio": "panela",
+     "parametro": "500 g de cada em 25 g de manteiga, fogo baixo 15 min"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "compota com açúcar e nozes",
+     "utensilio": "panela",
+     "parametro": "250 g e 50 g até as maçãs desmancharem"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "pão sem casca em triângulos",
+     "utensilio": "faca",
+     "parametro": "4 a 5 fatias na diagonal, curvar com cortador liso"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fundo da fôrma",
+     "utensilio": "",
+     "parametro": "triângulos mergulhados em manteiga"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "laterais",
+     "utensilio": "",
+     "parametro": "6 fatias cortadas ao meio, sobrepostas"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "compota no centro",
+     "utensilio": "concha",
+     "parametro": "apertar com o dorso da concha"
+    },
+    {
+     "acao": "montar",
+     "alvo": "tampa de pão com manteiga",
+     "utensilio": "",
+     "parametro": "fechar para não espalhar ao desenformar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "charlotte coberta",
+     "utensilio": "forno",
+     "parametro": "190 °C por 1 h"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "charlotte",
+     "utensilio": "travessa",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "cobertura de abricó",
+     "utensilio": "pincel",
+     "parametro": "servir quente"
+    }
+   ],
+   "ponto_critico": "pão amanhecido bem selado sem frestas",
+   "erro_comum": "pão fresco desmancha com a umidade da fruta"
+  },
+  {
+   "id": "sobremesas.pudim-vapor",
+   "capitulo": "Sobremesas",
+   "nome": "Pudim cozido no vapor (embrulho com alça)",
+   "ingredientes": [
+    "massa de pudim"
+   ],
+   "utensilios": [
+    "fôrma de pudim",
+    "papel-manteiga",
+    "papel-alumínio",
+    "barbante",
+    "trempe",
+    "panela grande"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "folha de papel-manteiga sobre folha de alumínio",
+     "utensilio": "",
+     "parametro": "tamanho para cobrir a fôrma"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "tampa na fôrma",
+     "utensilio": "barbante",
+     "parametro": "em volta e por cima, formando alça"
+    },
+    {
+     "acao": "montar",
+     "alvo": "trempe no fundo da panela",
+     "utensilio": "trempe",
+     "parametro": "distribui o calor"
+    },
+    {
+     "acao": "vapor",
+     "alvo": "pudim",
+     "utensilio": "panela grande",
+     "parametro": "colocar e tirar pela alça"
+    }
+   ],
+   "ponto_critico": "vedação firme e alça para manusear",
+   "erro_comum": "pegar a fôrma direto queima as mãos"
+  },
+  {
+   "id": "sobremesas.calda-acucar-simples",
+   "capitulo": "Sobremesas",
+   "nome": "Calda de açúcar simples",
+   "ingredientes": [
+    "açúcar",
+    "água fria"
+   ],
+   "utensilios": [
+    "panela pesada",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "açúcar e água",
+     "utensilio": "panela pesada",
+     "parametro": "fogo baixo até dissolver por completo"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "1 min, sem mexer"
+    }
+   ],
+   "ponto_critico": "todo o açúcar dissolvido antes de ferver",
+   "erro_comum": "mexer depois de ferver faz a calda açucarar"
+  },
+  {
+   "id": "sobremesas.calda-fina",
+   "capitulo": "Sobremesas",
+   "nome": "Calda fina",
+   "ingredientes": [
+    "açúcar",
+    "água"
+   ],
+   "utensilios": [
+    "panela pesada"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "açúcar e água",
+     "utensilio": "",
+     "parametro": "250 g para 500 ml"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "proporção 1:2",
+   "erro_comum": "usar em salada de frutas e frutas cozidas"
+  },
+  {
+   "id": "sobremesas.calda-media",
+   "capitulo": "Sobremesas",
+   "nome": "Calda média",
+   "ingredientes": [
+    "açúcar",
+    "água"
+   ],
+   "utensilios": [
+    "panela pesada"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "açúcar e água",
+     "utensilio": "",
+     "parametro": "250 g para 250 ml"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "proporção 1:1",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.calda-grossa",
+   "capitulo": "Sobremesas",
+   "nome": "Calda grossa",
+   "ingredientes": [
+    "açúcar",
+    "água"
+   ],
+   "utensilios": [
+    "panela pesada"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "açúcar e água",
+     "utensilio": "",
+     "parametro": "250 g para 225 ml"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "base para caramelo e sobremesas geladas",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.calda-fervida-sem-cristais",
+   "capitulo": "Sobremesas",
+   "nome": "Calda fervida sem cristalizar",
+   "ingredientes": [
+    "calda de açúcar",
+    "água"
+   ],
+   "utensilios": [
+    "pincel",
+    "termômetro de açúcar",
+    "panela pesada"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "a água evapora e a temperatura sobe"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "paredes da panela com água",
+     "utensilio": "pincel",
+     "parametro": "dissolve cristais grudados"
+    },
+    {
+     "acao": "medir",
+     "alvo": "temperatura",
+     "utensilio": "termômetro de açúcar",
+     "parametro": "ponta só no líquido, sem tocar a panela"
+    }
+   ],
+   "ponto_critico": "paredes limpas de cristais",
+   "erro_comum": "cristal na parede contamina e açucara toda a calda"
+  },
+  {
+   "id": "sobremesas.teste-dedo-agua-gelada",
+   "capitulo": "Sobremesas",
+   "nome": "Teste do ponto sem termômetro",
+   "ingredientes": [
+    "calda fervente",
+    "água gelada"
+   ],
+   "utensilios": [
+    "tigela de água gelada"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "dedos",
+     "utensilio": "água gelada",
+     "parametro": "molhar bem"
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "dedos na calda",
+     "utensilio": "",
+     "parametro": "rapidamente"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "dedos",
+     "utensilio": "água gelada",
+     "parametro": "de novo, e avaliar a textura da calda"
+    }
+   ],
+   "ponto_critico": "movimento rápido sempre com dedos gelados",
+   "erro_comum": "dedos secos queimam"
+  },
+  {
+   "id": "sobremesas.ponto-fio",
+   "capitulo": "Sobremesas",
+   "nome": "Ponto de fio (110 °C)",
+   "ingredientes": [
+    "calda de açúcar"
+   ],
+   "utensilios": [
+    "termômetro de açúcar",
+    "água gelada"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "110 °C"
+    },
+    {
+     "acao": "testar",
+     "alvo": "calda entre os dedos",
+     "utensilio": "água gelada",
+     "parametro": "ao abrir os dedos forma um fio"
+    }
+   ],
+   "ponto_critico": "110 °C",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.ponto-bala-mole",
+   "capitulo": "Sobremesas",
+   "nome": "Ponto de bala mole (116 a 118 °C)",
+   "ingredientes": [
+    "calda de açúcar"
+   ],
+   "utensilios": [
+    "termômetro de açúcar"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "116 a 118 °C"
+    },
+    {
+     "acao": "testar",
+     "alvo": "bolinha de calda",
+     "utensilio": "água gelada",
+     "parametro": "mantém a forma mas cede ao apertar"
+    }
+   ],
+   "ponto_critico": "116 a 118 °C; usado em merengue italiano e glacê de manteiga",
+   "erro_comum": "passar do ponto deixa o merengue granuloso"
+  },
+  {
+   "id": "sobremesas.ponto-bala-dura",
+   "capitulo": "Sobremesas",
+   "nome": "Ponto de bala dura (125 °C)",
+   "ingredientes": [
+    "calda de açúcar"
+   ],
+   "utensilios": [
+    "termômetro de açúcar"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "125 °C"
+    },
+    {
+     "acao": "testar",
+     "alvo": "bolinha de calda",
+     "utensilio": "água gelada",
+     "parametro": "firme e flexível, ainda pegajosa"
+    }
+   ],
+   "ponto_critico": "125 °C; para marzipã, fondant e balas",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.ponto-crosta-mole",
+   "capitulo": "Sobremesas",
+   "nome": "Ponto de crosta mole (134 °C)",
+   "ingredientes": [
+    "calda de açúcar"
+   ],
+   "utensilios": [
+    "termômetro de açúcar"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "134 °C"
+    },
+    {
+     "acao": "testar",
+     "alvo": "fio de calda",
+     "utensilio": "água gelada",
+     "parametro": "quebra mas gruda nos dentes"
+    }
+   ],
+   "ponto_critico": "134 °C; para nougat, caramelos e puxa-puxa",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.ponto-crosta-dura",
+   "capitulo": "Sobremesas",
+   "nome": "Ponto de crosta dura (145 °C)",
+   "ingredientes": [
+    "calda de açúcar"
+   ],
+   "utensilios": [
+    "termômetro de açúcar"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "145 °C"
+    },
+    {
+     "acao": "testar",
+     "alvo": "fio de calda",
+     "utensilio": "água gelada",
+     "parametro": "muito quebradiço"
+    }
+   ],
+   "ponto_critico": "145 °C; logo depois começa a caramelizar",
+   "erro_comum": "distração aqui leva direto ao caramelo"
+  },
+  {
+   "id": "sobremesas.caramelo",
+   "capitulo": "Sobremesas",
+   "nome": "Caramelo",
+   "ingredientes": [
+    "calda grossa de açúcar"
+   ],
+   "utensilios": [
+    "panela pesada",
+    "tigela com água gelada"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "além da crosta dura"
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "fogo baixo, girar a panela uma ou duas vezes, sem colher"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "fundo da panela",
+     "utensilio": "água gelada",
+     "parametro": "na cor desejada, para parar o cozimento"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "caramelo",
+     "utensilio": "fogo",
+     "parametro": "rapidamente se endurecer antes da hora"
+    }
+   ],
+   "ponto_critico": "cor âmbar sem passar de 190 °C",
+   "erro_comum": "mexer com colher cristaliza; passar de 190 °C amarga"
+  },
+  {
+   "id": "sobremesas.praline",
+   "capitulo": "Sobremesas",
+   "nome": "Praline",
+   "ingredientes": [
+    "caramelo",
+    "castanhas inteiras descascadas (amêndoa, avelã, pecã)"
+   ],
+   "utensilios": [
+    "panela pesada",
+    "assadeira",
+    "papel-manteiga",
+    "rolo de massa",
+    "processador"
+   ],
+   "passos": [
+    {
+     "acao": "caramelizar",
+     "alvo": "castanhas no caramelo",
+     "utensilio": "panela pesada",
+     "parametro": "partes iguais de castanha e açúcar, até estalar e cheirar a tostado"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "praline",
+     "utensilio": "assadeira forrada",
+     "parametro": "camada uniforme, deixar esfriar"
+    },
+    {
+     "acao": "esmagar",
+     "alvo": "praline",
+     "utensilio": "rolo de massa ou processador no pulsar",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "castanha tostada e caramelo âmbar",
+   "erro_comum": "processar demais vira pasta"
+  },
+  {
+   "id": "sobremesas.nougatine",
+   "capitulo": "Sobremesas",
+   "nome": "Nougatine",
+   "ingredientes": [
+    "açúcar",
+    "água",
+    "glicose líquida",
+    "amêndoa fatiada e tostada"
+   ],
+   "utensilios": [
+    "panela pesada",
+    "superfície untada (mármore)",
+    "rolo de metal untado e aquecido",
+    "faca untada e aquecida"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "1 kg de açúcar em 100 ml de água"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "glicose",
+     "utensilio": "",
+     "parametro": "400 g"
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "calda",
+     "utensilio": "panela pesada",
+     "parametro": "até cor de caramelo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "amêndoas",
+     "utensilio": "panela pesada",
+     "parametro": "500 g, girando a panela"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "massa",
+     "utensilio": "superfície untada",
+     "parametro": "deixar amornar"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "nougatine",
+     "utensilio": "rolo de metal untado e aquecido",
+     "parametro": "5 mm"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tiras e formatos",
+     "utensilio": "faca untada e aquecida",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "trabalhar morno e maleável",
+   "erro_comum": "frio demais quebra; reaquecer no forno para amolecer"
+  },
+  {
+   "id": "sobremesas.picar-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Picar chocolate",
+   "ingredientes": [
+    "chocolate frio"
+   ],
+   "utensilios": [
+    "faca de cozinha",
+    "tábua",
+    "papel-manteiga ou alumínio"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "chocolate",
+     "utensilio": "geladeira",
+     "parametro": "se estiver calor"
+    },
+    {
+     "acao": "picar",
+     "alvo": "chocolate",
+     "utensilio": "faca de cozinha",
+     "parametro": "movimento de vaivém, segurando com papel"
+    }
+   ],
+   "ponto_critico": "chocolate duro e utensílios secos",
+   "erro_comum": "mão quente derrete o chocolate"
+  },
+  {
+   "id": "sobremesas.ralar-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Ralar chocolate",
+   "ingredientes": [
+    "chocolate frio"
+   ],
+   "utensilios": [
+    "ralador de lâmina grossa"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "chocolate",
+     "utensilio": "ralador de lâmina grossa",
+     "parametro": "segurar firme com papel"
+    }
+   ],
+   "ponto_critico": "chocolate gelado",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.derreter-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Derreter chocolate",
+   "ingredientes": [
+    "chocolate"
+   ],
+   "utensilios": [
+    "tigela refratária seca",
+    "panela com água quente",
+    "colher de pau"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "chocolate",
+     "utensilio": "faca",
+     "parametro": "pedaços grandes e iguais"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "chocolate",
+     "utensilio": "banho-maria",
+     "parametro": "água quente sem ferver, fogo muito baixo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "chocolate",
+     "utensilio": "colher de pau",
+     "parametro": "quando começar a derreter, até virar creme"
+    }
+   ],
+   "ponto_critico": "nenhuma gota de água e calor suave",
+   "erro_comum": "água faz empedrar; calor demais queima e encaroça"
+  },
+  {
+   "id": "sobremesas.ganache",
+   "capitulo": "Sobremesas",
+   "nome": "Ganache",
+   "ingredientes": [
+    "chocolate de boa qualidade",
+    "creme de leite",
+    "licor ou café (opcional)"
+   ],
+   "utensilios": [
+    "panela",
+    "colher de pau",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "chocolate",
+     "utensilio": "faca",
+     "parametro": "300 g"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "chocolate",
+     "utensilio": "banho-maria",
+     "parametro": "derreter"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "creme de leite",
+     "utensilio": "panela",
+     "parametro": "150 ml"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "creme no chocolate",
+     "utensilio": "colher de pau",
+     "parametro": "até homogêneo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ganache",
+     "utensilio": "batedor",
+     "parametro": "até cremosa e acetinada"
+    }
+   ],
+   "ponto_critico": "mistura lisa e brilhante",
+   "erro_comum": "chocolate de baixa qualidade separa a gordura"
+  },
+  {
+   "id": "sobremesas.temperar-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Preparar (temperar) chocolate",
+   "ingredientes": [
+    "chocolate couverture"
+   ],
+   "utensilios": [
+    "tigela",
+    "panela com água quente",
+    "tigela com gelo",
+    "termômetro"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "chocolate",
+     "utensilio": "banho-maria sem ferver",
+     "parametro": "mexer até liso a 45 °C"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "chocolate",
+     "utensilio": "tigela sobre gelo",
+     "parametro": "mexer até 25 °C"
+    },
+    {
+     "acao": "temperar-chocolate",
+     "alvo": "chocolate",
+     "utensilio": "banho-maria",
+     "parametro": "reaquecer 30 a 60 s até 32 °C"
+    }
+   ],
+   "ponto_critico": "curva 45 °C, 25 °C, 32 °C",
+   "erro_comum": "pular o resfriamento deixa chocolate opaco e mole"
+  },
+  {
+   "id": "sobremesas.tacas-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Taças de chocolate",
+   "ingredientes": [
+    "chocolate preparado"
+   ],
+   "utensilios": [
+    "forminhas de papel",
+    "pincel",
+    "fôrmas dariole com filme (versão profissional)"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "interior da forminha",
+     "utensilio": "pincel",
+     "parametro": "camada fina de chocolate"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "taça",
+     "utensilio": "",
+     "parametro": "até endurecer"
+    },
+    {
+     "acao": "separar",
+     "alvo": "forminha de papel",
+     "utensilio": "",
+     "parametro": "despregar com cuidado"
+    }
+   ],
+   "ponto_critico": "camada fina mas sem falhas",
+   "erro_comum": "camada fina demais quebra ao desenformar"
+  },
+  {
+   "id": "sobremesas.formas-chocolate-cortadas",
+   "capitulo": "Sobremesas",
+   "nome": "Formas de chocolate cortadas",
+   "ingredientes": [
+    "chocolate preparado"
+   ],
+   "utensilios": [
+    "assadeira",
+    "papel-manteiga",
+    "concha",
+    "espátula em ângulo",
+    "cortador de biscoito",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "chocolate",
+     "utensilio": "espátula em ângulo",
+     "parametro": "nas costas da assadeira forrada, 2 mm"
+    },
+    {
+     "acao": "montar",
+     "alvo": "segunda folha de papel por cima e virar",
+     "utensilio": "",
+     "parametro": "evita que enrole ao secar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "rodelas",
+     "utensilio": "cortador aquecido em água quente e seco",
+     "parametro": "antes de endurecer de todo"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "outros formatos",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "formas",
+     "utensilio": "papel-manteiga",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "cortar no ponto de semi-firme",
+   "erro_comum": "chocolate muito duro racha ao cortar"
+  },
+  {
+   "id": "sobremesas.fitas-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Fitas de chocolate",
+   "ingredientes": [
+    "chocolate de confeiteiro (pâte à glacer)"
+   ],
+   "utensilios": [
+    "assadeira",
+    "espátula de massa ou raspador limpo"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "chocolate derretido",
+     "utensilio": "costas da assadeira",
+     "parametro": "deixar esfriar até firmar"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "camada",
+     "utensilio": "palma da mão",
+     "parametro": "esfregar para amolecer um pouco"
+    },
+    {
+     "acao": "raspar",
+     "alvo": "fita",
+     "utensilio": "espátula de massa",
+     "parametro": "empurrar para longe de você, deixando a ponta enrolar"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "lateral e topo do bolo",
+     "utensilio": "",
+     "parametro": "usar cada fita na hora"
+    }
+   ],
+   "ponto_critico": "chocolate flexível e trabalho rápido",
+   "erro_comum": "chocolate gelado quebra em lascas"
+  },
+  {
+   "id": "sobremesas.gateau-deux-pierre",
+   "capitulo": "Sobremesas",
+   "nome": "Gâteau des Deux Pierre (montagem em aro)",
+   "ingredientes": [
+    "farinha de trigo",
+    "cacau em pó",
+    "ovos",
+    "açúcar",
+    "gelatina em folha",
+    "chocolate couverture",
+    "creme de leite integral",
+    "framboesa",
+    "licor de framboesa",
+    "calda de açúcar",
+    "chocolate de confeiteiro",
+    "açúcar de confeiteiro"
+   ],
+   "utensilios": [
+    "fôrma de rocambole",
+    "grade de metal",
+    "aro de metal de 23 cm",
+    "cartão para bolo",
+    "maçarico ou toalha quente",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "assar",
+     "alvo": "pão-de-ló de cacau",
+     "utensilio": "fôrma de rocambole",
+     "parametro": "220 °C, 8 a 10 min"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "dois discos",
+     "utensilio": "aro de 23 cm",
+     "parametro": ""
+    },
+    {
+     "acao": "marinar",
+     "alvo": "framboesas",
+     "utensilio": "licor",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "musse de chocolate com gelatina e creme",
+     "utensilio": "espátula",
+     "parametro": "250 g de couverture, 500 ml de creme"
+    },
+    {
+     "acao": "montar",
+     "alvo": "disco no aro sobre cartão",
+     "utensilio": "aro de metal",
+     "parametro": ""
+    },
+    {
+     "acao": "embeber",
+     "alvo": "pão-de-ló",
+     "utensilio": "pincel",
+     "parametro": "calda com o licor das framboesas"
+    },
+    {
+     "acao": "montar",
+     "alvo": "musse, disco, framboesas, musse",
+     "utensilio": "aro de metal",
+     "parametro": "alisar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "bolo",
+     "utensilio": "geladeira",
+     "parametro": "1 h"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "aro",
+     "utensilio": "maçarico ou toalha quente",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "fitas de chocolate em volta e onduladas no topo",
+     "utensilio": "",
+     "parametro": "leque no centro e açúcar de confeiteiro"
+    }
+   ],
+   "ponto_critico": "aro aquecido para soltar sem marcar a musse",
+   "erro_comum": "tirar o aro frio arranca a lateral"
+  },
+  {
+   "id": "sobremesas.bolas-sorvete-congeladas",
+   "capitulo": "Sobremesas",
+   "nome": "Bolas de sorvete pré-moldadas",
+   "ingredientes": [
+    "sorvete"
+   ],
+   "utensilios": [
+    "boleador de sorvete",
+    "assadeira",
+    "papel-manteiga",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "bolas",
+     "utensilio": "boleador de sorvete",
+     "parametro": ""
+    },
+    {
+     "acao": "congelar",
+     "alvo": "bolas",
+     "utensilio": "assadeira forrada",
+     "parametro": "no freezer"
+    },
+    {
+     "acao": "servir",
+     "alvo": "bolas",
+     "utensilio": "espátula",
+     "parametro": "em recipientes gelados"
+    }
+   ],
+   "ponto_critico": "recipientes gelados",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.sorvete-cremoso",
+   "capitulo": "Sobremesas",
+   "nome": "Sorvete cremoso",
+   "ingredientes": [
+    "creme anglaise",
+    "creme de leite batido",
+    "cacau ou purê de fruta (variação)"
+   ],
+   "utensilios": [
+    "tigela",
+    "tigela com gelo",
+    "sorveteira elétrica"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "creme anglaise",
+     "utensilio": "tigela sobre gelo",
+     "parametro": "625 ml, mexendo sem parar"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "creme",
+     "utensilio": "sorveteira elétrica",
+     "parametro": "30 min"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme de leite batido",
+     "utensilio": "",
+     "parametro": "250 ml"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "sorvete",
+     "utensilio": "sorveteira elétrica",
+     "parametro": "mais 20 min; rende 1,5 l"
+    }
+   ],
+   "ponto_critico": "bater constante para quebrar cristais",
+   "erro_comum": "sabores fracos somem no frio; use purês concentrados"
+  },
+  {
+   "id": "sobremesas.semifreddo",
+   "capitulo": "Sobremesas",
+   "nome": "Semifreddo",
+   "ingredientes": [
+    "framboesa",
+    "licor",
+    "creme de leite",
+    "açúcar",
+    "merengue esmigalhado"
+   ],
+   "utensilios": [
+    "liquidificador",
+    "peneira",
+    "fôrma desmontável de 20 cm",
+    "papel-manteiga"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "framboesa",
+     "utensilio": "liquidificador",
+     "parametro": "225 g"
+    },
+    {
+     "acao": "coar",
+     "alvo": "purê",
+     "utensilio": "peneira",
+     "parametro": "opcional, tirar sementes"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "licor",
+     "utensilio": "",
+     "parametro": "3 colheres (sopa)"
+    },
+    {
+     "acao": "bater",
+     "alvo": "creme com açúcar",
+     "utensilio": "batedor",
+     "parametro": "300 ml e 50 g"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme e merengue esmigalhado no purê",
+     "utensilio": "espátula",
+     "parametro": "115 g de merengue"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "semifreddo",
+     "utensilio": "fôrma desmontável forrada",
+     "parametro": "pelo menos 6 h"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "semifreddo",
+     "utensilio": "",
+     "parametro": "tirar o papel e fatiar"
+    }
+   ],
+   "ponto_critico": "licor retarda o congelamento e dá textura semicremosa",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.parfait",
+   "capitulo": "Sobremesas",
+   "nome": "Parfait",
+   "ingredientes": [
+    "açúcar",
+    "água",
+    "ovo",
+    "gemas",
+    "creme de leite"
+   ],
+   "utensilios": [
+    "panela",
+    "termômetro de açúcar",
+    "batedeira",
+    "aros de metal de 8 cm",
+    "papel-manteiga",
+    "espátula reta",
+    "toalha quente"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "100 g de açúcar e 2 colheres de água até bala mole"
+    },
+    {
+     "acao": "bater",
+     "alvo": "calda sobre 1 ovo e 5 gemas",
+     "utensilio": "batedeira",
+     "parametro": "até engrossar e esfriar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme levemente batido",
+     "utensilio": "",
+     "parametro": "500 ml"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "aros",
+     "utensilio": "papel-manteiga",
+     "parametro": "deixar colarinho"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "aros",
+     "utensilio": "",
+     "parametro": "bater de leve para tirar bolhas"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "topo",
+     "utensilio": "espátula reta",
+     "parametro": "nivelar"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "parfaits",
+     "utensilio": "freezer",
+     "parametro": "mínimo 6 h"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "aro",
+     "utensilio": "toalha quente",
+     "parametro": "envolver o aro"
+    }
+   ],
+   "ponto_critico": "calda em bala mole batida até a base esfriar",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.sorbet-maquina",
+   "capitulo": "Sobremesas",
+   "nome": "Sorbet na sorveteira",
+   "ingredientes": [
+    "açúcar",
+    "água",
+    "purê de blueberry peneirado",
+    "pimenta-do-reino",
+    "claras"
+   ],
+   "utensilios": [
+    "sorveteira elétrica",
+    "panela",
+    "batedeira"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "150 g de açúcar e 150 ml de água"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "purê e pimenta",
+     "utensilio": "",
+     "parametro": "500 ml"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "base",
+     "utensilio": "geladeira",
+     "parametro": "2 h"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "base",
+     "utensilio": "sorveteira elétrica",
+     "parametro": "parcialmente, 40 min"
+    },
+    {
+     "acao": "bater",
+     "alvo": "merengue italiano",
+     "utensilio": "batedeira",
+     "parametro": "50 g de clara com o resto do açúcar e da água"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "merengue",
+     "utensilio": "sorveteira elétrica",
+     "parametro": "com o sorbet semicongelado"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "sorbet",
+     "utensilio": "sorveteira elétrica",
+     "parametro": "mais 45 min; firme e liso, sem cristais"
+    }
+   ],
+   "ponto_critico": "merengue entra no meio do congelamento",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.sorbet-mao",
+   "capitulo": "Sobremesas",
+   "nome": "Sorbet à mão",
+   "ingredientes": [
+    "calda de açúcar",
+    "purê de fruta"
+   ],
+   "utensilios": [
+    "recipiente para freezer",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "calda e purê",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "congelar",
+     "alvo": "mistura",
+     "utensilio": "freezer",
+     "parametro": "2 h até semicongelar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "sorbet",
+     "utensilio": "batedor",
+     "parametro": "repetir em intervalos regulares por mais 2 h"
+    }
+   ],
+   "ponto_critico": "quanto mais bater, mais liso",
+   "erro_comum": "suco puro forma mais cristais que purê"
+  },
+  {
+   "id": "sobremesas.fruits-givres",
+   "capitulo": "Sobremesas",
+   "nome": "Frutas congeladas recheadas (fruits givrés)",
+   "ingredientes": [
+    "limões, limas ou laranjas",
+    "sorbet do mesmo sabor"
+   ],
+   "utensilios": [
+    "faca",
+    "colher",
+    "freezer"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tampa e base da fruta",
+     "utensilio": "faca",
+     "parametro": "base fina para ficar em pé"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "polpa",
+     "utensilio": "colher",
+     "parametro": "esvaziar e usar no sorbet"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "cascas ocas",
+     "utensilio": "freezer",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "sorbet",
+     "utensilio": "colher",
+     "parametro": "2 a 4 cm acima da borda, modelar"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "frutas com tampa",
+     "utensilio": "freezer",
+     "parametro": "até servir"
+    }
+   ],
+   "ponto_critico": "casca congelada antes de rechear",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.sorbet-saco-confeitar",
+   "capitulo": "Sobremesas",
+   "nome": "Sorbet decorado com saco",
+   "ingredientes": [
+    "sorbet levemente amolecido",
+    "raspas carameladas"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico pitanga (estrela)",
+    "taças de pé alto geladas"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "sorbet",
+     "utensilio": "bico pitanga (estrela)",
+     "parametro": "dentro das taças geladas"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "taças",
+     "utensilio": "freezer",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "raspas carameladas",
+     "utensilio": "",
+     "parametro": "do mesmo sabor"
+    }
+   ],
+   "ponto_critico": "sorbet macio o bastante para sair pelo bico",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.granita-cafe",
+   "capitulo": "Sobremesas",
+   "nome": "Granita de café",
+   "ingredientes": [
+    "açúcar",
+    "água fria",
+    "café instantâneo",
+    "água fervendo"
+   ],
+   "utensilios": [
+    "recipiente raso",
+    "garfo",
+    "peneira",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "200 g de açúcar e 450 ml de água; esfriar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "café na água fervendo",
+     "utensilio": "",
+     "parametro": "50 g em 450 ml; esfriar"
+    },
+    {
+     "acao": "coar",
+     "alvo": "calda no café",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "congelar",
+     "alvo": "granita",
+     "utensilio": "freezer",
+     "parametro": "pelo menos 4 h"
+    },
+    {
+     "acao": "esmagar",
+     "alvo": "cristais",
+     "utensilio": "garfo",
+     "parametro": "várias vezes durante o congelamento"
+    },
+    {
+     "acao": "raspar",
+     "alvo": "granita",
+     "utensilio": "colher",
+     "parametro": "para servir"
+    }
+   ],
+   "ponto_critico": "cristais grandes e soltos",
+   "erro_comum": "não raspar vira bloco de gelo"
+  },
+  {
+   "id": "sobremesas.folhas-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Folhas de chocolate",
+   "ingredientes": [
+    "folhas não tóxicas com cabo",
+    "chocolate"
+   ],
+   "utensilios": [
+    "pano úmido",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "folhas",
+     "utensilio": "pano úmido",
+     "parametro": "secar bem"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "chocolate",
+     "utensilio": "banho-maria",
+     "parametro": "300 g"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "verso da folha",
+     "utensilio": "pincel",
+     "parametro": "camada grossa"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "folhas",
+     "utensilio": "geladeira",
+     "parametro": "até endurecer"
+    },
+    {
+     "acao": "separar",
+     "alvo": "folha natural do chocolate",
+     "utensilio": "",
+     "parametro": "puxar com delicadeza"
+    }
+   ],
+   "ponto_critico": "camada grossa para não quebrar",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.fios-caramelo",
+   "capitulo": "Sobremesas",
+   "nome": "Fios de caramelo",
+   "ingredientes": [
+    "caramelo"
+   ],
+   "utensilios": [
+    "colher",
+    "assadeira",
+    "papel-manteiga untado"
+   ],
+   "passos": [
+    {
+     "acao": "caramelizar",
+     "alvo": "calda grossa",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "fios",
+     "utensilio": "colher",
+     "parametro": "deixar escorrer da ponta sobre o papel untado"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "formas",
+     "utensilio": "",
+     "parametro": "antes de soltar"
+    }
+   ],
+   "ponto_critico": "caramelo um pouco espesso para fio contínuo",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.duplo-polvilhamento",
+   "capitulo": "Sobremesas",
+   "nome": "Duplo polvilhamento",
+   "ingredientes": [
+    "formas de chocolate",
+    "açúcar de confeiteiro",
+    "cacau em pó"
+   ],
+   "utensilios": [
+    "duas peneiras"
+   ],
+   "passos": [
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar",
+     "utensilio": "peneira",
+     "parametro": "leve"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "cacau por cima",
+     "utensilio": "outra peneira",
+     "parametro": "no chocolate branco, inverter a ordem"
+    }
+   ],
+   "ponto_critico": "camadas leves",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.espirais-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Espirais de chocolate",
+   "ingredientes": [
+    "barra de chocolate em temperatura ambiente"
+   ],
+   "utensilios": [
+    "descascador de legumes"
+   ],
+   "passos": [
+    {
+     "acao": "raspar",
+     "alvo": "lateral da barra",
+     "utensilio": "descascador de legumes",
+     "parametro": "segurando firme"
+    }
+   ],
+   "ponto_critico": "chocolate de confeiteiro ou com pouca manteiga de cacau quebra menos",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.cestas-onduladas",
+   "capitulo": "Sobremesas",
+   "nome": "Cestas onduladas",
+   "ingredientes": [
+    "pasta de estêncil"
+   ],
+   "utensilios": [
+    "assadeira",
+    "papel-manteiga",
+    "molde de estêncil em forma de sol",
+    "tigela funda",
+    "cortador de biscoito"
+   ],
+   "passos": [
+    {
+     "acao": "forrar",
+     "alvo": "assadeira",
+     "utensilio": "papel-manteiga",
+     "parametro": ""
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "pasta sobre o molde de sol",
+     "utensilio": "molde de estêncil",
+     "parametro": "1 colher (sopa)"
+    },
+    {
+     "acao": "assar",
+     "alvo": "cestas",
+     "utensilio": "forno",
+     "parametro": "4 por vez, 180 °C, 5 a 8 min até dourar as pontas"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "cesta",
+     "utensilio": "tigela funda",
+     "parametro": "ainda quente"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "centro",
+     "utensilio": "cortador de biscoito",
+     "parametro": "rende 16"
+    }
+   ],
+   "ponto_critico": "moldar enquanto quente",
+   "erro_comum": "frio demais racha"
+  },
+  {
+   "id": "sobremesas.cigarros-chocolate",
+   "capitulo": "Sobremesas",
+   "nome": "Cigarros de chocolate",
+   "ingredientes": [
+    "chocolate couverture"
+   ],
+   "utensilios": [
+    "assadeira",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "chocolate",
+     "utensilio": "costas da assadeira",
+     "parametro": "300 g"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "camada fria",
+     "utensilio": "palma da mão",
+     "parametro": "esfregar"
+    },
+    {
+     "acao": "raspar",
+     "alvo": "charutinhos",
+     "utensilio": "espátula",
+     "parametro": "segurando a assadeira firme; rende cerca de 30"
+    }
+   ],
+   "ponto_critico": "chocolate firme mas não quebradiço",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.raspas-lima-carameladas",
+   "capitulo": "Sobremesas",
+   "nome": "Raspas de lima carameladas",
+   "ingredientes": [
+    "raspas de lima",
+    "calda fina",
+    "açúcar",
+    "açúcar refinado"
+   ],
+   "utensilios": [
+    "panela",
+    "peneira",
+    "papel-manteiga"
+   ],
+   "passos": [
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "raspas",
+     "utensilio": "calda fina",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "com mais açúcar",
+     "utensilio": "panela",
+     "parametro": "100 g, 20 min"
+    },
+    {
+     "acao": "coar",
+     "alvo": "raspas",
+     "utensilio": "peneira",
+     "parametro": "deixar secar"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "raspas no açúcar",
+     "utensilio": "papel-manteiga",
+     "parametro": "passar no açúcar e deixar endurecer"
+    }
+   ],
+   "ponto_critico": "raspas translúcidas",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.penants-maracuja",
+   "capitulo": "Sobremesas",
+   "nome": "Pennants de maracujá",
+   "ingredientes": [
+    "pasta de estêncil",
+    "sementes de maracujá"
+   ],
+   "utensilios": [
+    "molde de estêncil",
+    "papel-manteiga",
+    "rolo untado"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "sementes na pasta",
+     "utensilio": "",
+     "parametro": "60 g"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "pasta no molde",
+     "utensilio": "molde de estêncil",
+     "parametro": "tirar o molde e repetir"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pennants",
+     "utensilio": "forno",
+     "parametro": "6 por vez, 180 °C, 5 a 8 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "pennants",
+     "utensilio": "rolo untado",
+     "parametro": "deixar endurecer; rende 12"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.zabaione",
+   "capitulo": "Sobremesas",
+   "nome": "Zabaione",
+   "ingredientes": [
+    "gemas",
+    "açúcar",
+    "vinho doce ou suco de fruta",
+    "Madeira ou sherry"
+   ],
+   "utensilios": [
+    "tigela refratária",
+    "panela com água fervente",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "gemas e açúcar",
+     "utensilio": "batedor",
+     "parametro": "6 gemas e 90 g até espumar e clarear"
+    },
+    {
+     "acao": "bater",
+     "alvo": "mistura",
+     "utensilio": "banho-maria",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "vinho aos poucos",
+     "utensilio": "batedor",
+     "parametro": "150 ml até engrossar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "zabaione",
+     "utensilio": "batedor",
+     "parametro": "até ponto de fita grossa; juntar 1 colher de Madeira"
+    },
+    {
+     "acao": "bater",
+     "alvo": "zabaione fora do fogo",
+     "utensilio": "batedor",
+     "parametro": "opcional, até esfriar para servir frio"
+    }
+   ],
+   "ponto_critico": "ponto de fita grossa",
+   "erro_comum": "cozinhar demais separa"
+  },
+  {
+   "id": "sobremesas.manteiga-conhaque",
+   "capitulo": "Sobremesas",
+   "nome": "Manteiga com conhaque",
+   "ingredientes": [
+    "manteiga sem sal amolecida",
+    "açúcar de confeiteiro",
+    "conhaque"
+   ],
+   "utensilios": [
+    "tigela",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manteiga e açúcar",
+     "utensilio": "colher",
+     "parametro": "175 g, até cremosa"
+    },
+    {
+     "acao": "bater",
+     "alvo": "conhaque",
+     "utensilio": "colher",
+     "parametro": "4 colheres (sopa)"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "manteiga",
+     "utensilio": "geladeira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.butterscotch",
+   "capitulo": "Sobremesas",
+   "nome": "Molho butterscotch",
+   "ingredientes": [
+    "manteiga",
+    "açúcar mascavo",
+    "calda dourada",
+    "creme de leite"
+   ],
+   "utensilios": [
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga, mascavo e calda",
+     "utensilio": "panela",
+     "parametro": "85 g, 175 g, 2 colheres; fogo baixo"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "com o creme",
+     "utensilio": "panela",
+     "parametro": "85 ml, levantar fervura"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "sobremesas.chantilly",
+   "capitulo": "Sobremesas",
+   "nome": "Creme chantilly",
+   "ingredientes": [
+    "creme de leite",
+    "açúcar",
+    "baunilha"
+   ],
+   "utensilios": [
+    "tigela",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "creme",
+     "utensilio": "batedor",
+     "parametro": "250 ml até engrossar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "açúcar e baunilha",
+     "utensilio": "batedor",
+     "parametro": "2 colheres (sopa), até picos firmes"
+    }
+   ],
+   "ponto_critico": "picos firmes para usar no saco",
+   "erro_comum": "bater demais vira manteiga"
+  },
+  {
+   "id": "pastelaria.pate-brisee",
+   "capitulo": "Pastelaria",
+   "nome": "Pâte brisée",
+   "ingredientes": [
+    "farinha de trigo",
+    "sal",
+    "manteiga sem sal em cubos",
+    "ovo",
+    "água"
+   ],
+   "utensilios": [
+    "tigela funda",
+    "peneira",
+    "misturador de massa",
+    "filme"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha",
+     "utensilio": "peneira",
+     "parametro": "200 g, com 1 colher (chá) de sal"
+    },
+    {
+     "acao": "esfregar",
+     "alvo": "manteiga na farinha",
+     "utensilio": "dedos",
+     "parametro": "100 g até virar farofa"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "tigela",
+     "utensilio": "",
+     "parametro": "sacudir para subir pedaços e abrir cavidade"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovo à parte",
+     "utensilio": "garfo",
+     "parametro": "despejar no centro"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "massa",
+     "utensilio": "misturador de massa",
+     "parametro": "água 1 colher por vez até ligar"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bola",
+     "utensilio": "mãos",
+     "parametro": "mínimo de manuseio"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa",
+     "utensilio": "geladeira",
+     "parametro": "30 min; rende 400 g"
+    }
+   ],
+   "ponto_critico": "manusear pouco e frio",
+   "erro_comum": "trabalhar demais endurece e encolhe no forno"
+  },
+  {
+   "id": "pastelaria.pate-sucree",
+   "capitulo": "Pastelaria",
+   "nome": "Pâte sucrée",
+   "ingredientes": [
+    "ingredientes da pâte brisée",
+    "açúcar refinado"
+   ],
+   "utensilios": [
+    "tigela",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha, sal e açúcar",
+     "utensilio": "peneira",
+     "parametro": "1 colher (sopa) de açúcar"
+    },
+    {
+     "acao": "esfregar",
+     "alvo": "manteiga na farinha",
+     "utensilio": "dedos",
+     "parametro": "farofa"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovo e água",
+     "utensilio": "",
+     "parametro": "até ligar"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa",
+     "utensilio": "geladeira",
+     "parametro": "30 min"
+    }
+   ],
+   "ponto_critico": "mesma técnica da brisée",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.massa-podre-inglesa",
+   "capitulo": "Pastelaria",
+   "nome": "Massa podre inglesa com banha",
+   "ingredientes": [
+    "farinha de trigo",
+    "manteiga",
+    "banha"
+   ],
+   "utensilios": [
+    "misturador de massa"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "gordura e farinha",
+     "utensilio": "",
+     "parametro": "manteiga e banha em partes iguais, farinha o dobro"
+    },
+    {
+     "acao": "esfregar",
+     "alvo": "gorduras na farinha",
+     "utensilio": "misturador de massa",
+     "parametro": "corta a banha e areja"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.forrar-forma-torta",
+   "capitulo": "Pastelaria",
+   "nome": "Forrar fôrma de torta",
+   "ingredientes": [
+    "massa esfarelada gelada"
+   ],
+   "utensilios": [
+    "rolo de massa",
+    "fôrma de torta"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "massa",
+     "utensilio": "rolo de massa",
+     "parametro": "5 cm maior que a fôrma"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "massa no rolo",
+     "utensilio": "rolo de massa",
+     "parametro": "desenrolar sobre a fôrma"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fundo e laterais",
+     "utensilio": "bolinha de massa",
+     "parametro": "pressionar sem esticar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "excesso",
+     "utensilio": "rolo de massa",
+     "parametro": "passar o rolo sobre a borda"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "fôrma forrada",
+     "utensilio": "geladeira",
+     "parametro": "pelo menos 30 min"
+    }
+   ],
+   "ponto_critico": "não esticar a massa",
+   "erro_comum": "massa esticada encolhe no forno"
+  },
+  {
+   "id": "pastelaria.assar-as-cegas",
+   "capitulo": "Pastelaria",
+   "nome": "Assar às cegas (baking blind)",
+   "ingredientes": [
+    "fundo de massa cru"
+   ],
+   "utensilios": [
+    "garfo",
+    "papel-vegetal",
+    "feijões para assar (cerâmica ou metal) ou grãos crus",
+    "grade de metal"
+   ],
+   "passos": [
+    {
+     "acao": "perfurar",
+     "alvo": "fundo",
+     "utensilio": "garfo",
+     "parametro": "para o ar sair"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "massa",
+     "utensilio": "papel-vegetal",
+     "parametro": "um pouco maior que a fôrma"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "feijões para assar",
+     "utensilio": "",
+     "parametro": "camada uniforme"
+    },
+    {
+     "acao": "assar-as-cegas",
+     "alvo": "fundo",
+     "utensilio": "forno",
+     "parametro": "180 °C, 15 a 20 min até firmar e dourar a borda"
+    },
+    {
+     "acao": "separar",
+     "alvo": "papel e feijões",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "fundo",
+     "utensilio": "forno",
+     "parametro": "mais 5 min até corar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "fundo",
+     "utensilio": "grade de metal",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "borda dourada e fundo seco",
+   "erro_comum": "sem peso a base estufa e forma bolhas"
+  },
+  {
+   "id": "pastelaria.barquinhas",
+   "capitulo": "Pastelaria",
+   "nome": "Barquinhas e tortinhas com fôrma por cima",
+   "ingredientes": [
+    "massa esfarelada",
+    "creme pâtissière",
+    "frutas frescas",
+    "calda de fruta (brilho)"
+   ],
+   "utensilios": [
+    "forminhas de barquinha",
+    "grade de metal",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "forrar",
+     "alvo": "forminha",
+     "utensilio": "",
+     "parametro": "cortar o excesso"
+    },
+    {
+     "acao": "montar",
+     "alvo": "outra forminha por cima",
+     "utensilio": "",
+     "parametro": "apertar de leve"
+    },
+    {
+     "acao": "assar-as-cegas",
+     "alvo": "barquinhas",
+     "utensilio": "forno",
+     "parametro": "180 °C, 10 min"
+    },
+    {
+     "acao": "separar",
+     "alvo": "fôrma de cima",
+     "utensilio": "",
+     "parametro": "assar mais 5 min até dourar"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "barquinhas",
+     "utensilio": "grade de metal",
+     "parametro": "esfriar"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "creme e frutas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "frutas",
+     "utensilio": "pincel",
+     "parametro": "calda de fruta"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.torta-simples",
+   "capitulo": "Pastelaria",
+   "nome": "Torta simples com tampa e funil",
+   "ingredientes": [
+    "massa esfarelada",
+    "recheio frio",
+    "gema e água"
+   ],
+   "utensilios": [
+    "prato de torta",
+    "funil de torta (cerâmica ou papel-alumínio)",
+    "rolo",
+    "faca",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "massa",
+     "utensilio": "rolo",
+     "parametro": "2,5 a 5 cm maior que o prato"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tampa e anel de 2 cm",
+     "utensilio": "faca",
+     "parametro": "virar o prato sobre a massa"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "recheio frio em volta do funil",
+     "utensilio": "funil de torta",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "borda do prato com água",
+     "utensilio": "pincel",
+     "parametro": "colar o anel e pincelar"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tampa no rolo",
+     "utensilio": "rolo",
+     "parametro": "desenrolar sobre o prato"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "excesso",
+     "utensilio": "faca",
+     "parametro": "em volta do prato"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "borda",
+     "utensilio": "costas da faca",
+     "parametro": "sulcos e marcas com o polegar"
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "furo sobre o funil",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "tampa",
+     "utensilio": "pincel",
+     "parametro": "gema com água"
+    }
+   ],
+   "ponto_critico": "anel duplo segura a tampa",
+   "erro_comum": "recheio quente amolece a massa"
+  },
+  {
+   "id": "pastelaria.torta-dupla",
+   "capitulo": "Pastelaria",
+   "nome": "Torta dupla",
+   "ingredientes": [
+    "massa esfarelada",
+    "recheio de fruta firme (ruibarbo)",
+    "clara batida",
+    "gema e água"
+   ],
+   "utensilios": [
+    "prato de torta raso",
+    "rolo",
+    "faca",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "forrar",
+     "alvo": "prato com metade da massa",
+     "utensilio": "dorso da mão",
+     "parametro": "sem esticar; cortar excesso"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "fundo com clara",
+     "utensilio": "pincel",
+     "parametro": "impermeabiliza"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "recheio frio",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "borda com água",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tampa no rolo",
+     "utensilio": "rolo",
+     "parametro": "desenrolar por cima"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "excesso e selar borda",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "saídas de vapor",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "tampa",
+     "utensilio": "pincel",
+     "parametro": "brilho de ovo"
+    }
+   ],
+   "ponto_critico": "fundo selado com clara",
+   "erro_comum": "fruta muito suculenta encharca a base"
+  },
+  {
+   "id": "pastelaria.borda-pregas",
+   "capitulo": "Pastelaria",
+   "nome": "Borda em pregas",
+   "ingredientes": [
+    "borda de massa"
+   ],
+   "utensilios": [
+    "dedos enfarinhados"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "pregas",
+     "utensilio": "dedos",
+     "parametro": "indicador e polegar por dentro, os da outra mão por fora"
+    }
+   ],
+   "ponto_critico": "pregas bem marcadas e regulares",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.borda-folhas",
+   "capitulo": "Pastelaria",
+   "nome": "Borda de folhas de massa",
+   "ingredientes": [
+    "sobras de massa",
+    "gema e água"
+   ],
+   "utensilios": [
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "folhas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "veios",
+     "utensilio": "ponta da faca",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "borda",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "folhas sobrepostas",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.borda-tranca",
+   "capitulo": "Pastelaria",
+   "nome": "Borda trançada",
+   "ingredientes": [
+    "massa",
+    "água"
+   ],
+   "utensilios": [
+    "faca",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "três tiras",
+     "utensilio": "faca",
+     "parametro": "1 cm de largura, 5 cm a mais que a circunferência"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "trança",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "borda com água",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "trança na borda",
+     "utensilio": "",
+     "parametro": "juntar as pontas"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.trelica",
+   "capitulo": "Pastelaria",
+   "nome": "Treliça",
+   "ingredientes": [
+    "tiras de massa"
+   ],
+   "utensilios": [
+    "faca ou carretilha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tiras",
+     "utensilio": "faca",
+     "parametro": "1,5 cm"
+    },
+    {
+     "acao": "montar",
+     "alvo": "tiras paralelas",
+     "utensilio": "",
+     "parametro": "a cada 2 cm"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "tiras alternadas",
+     "utensilio": "",
+     "parametro": "levantar, cruzar uma tira, baixar; inverter e repetir a cada 2 cm"
+    }
+   ],
+   "ponto_critico": "espaçamento regular",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.rosinha-massa",
+   "capitulo": "Pastelaria",
+   "nome": "Rosinha de massa",
+   "ingredientes": [
+    "massa"
+   ],
+   "utensilios": [
+    "cortador de 3 cm"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "cone",
+     "utensilio": "dedos",
+     "parametro": "2 cm"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "5 pétalas",
+     "utensilio": "cortador de 3 cm",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "pétalas",
+     "utensilio": "dedos",
+     "parametro": "achatar uma parte"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "pétalas em volta do cone",
+     "utensilio": "",
+     "parametro": "sobrepondo"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.tarte-tatin",
+   "capitulo": "Pastelaria",
+   "nome": "Tarte Tatin (cobrir e virar)",
+   "ingredientes": [
+    "massa",
+    "frutas caramelizadas"
+   ],
+   "utensilios": [
+    "fôrma",
+    "travessa"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "massa",
+     "utensilio": "rolo",
+     "parametro": "um pouco maior que a fôrma"
+    },
+    {
+     "acao": "montar",
+     "alvo": "massa sobre a fôrma",
+     "utensilio": "",
+     "parametro": "cortar excesso e apertar bordas"
+    },
+    {
+     "acao": "assar",
+     "alvo": "torta",
+     "utensilio": "forno",
+     "parametro": "230 °C, 20 min"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "torta",
+     "utensilio": "",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "torta",
+     "utensilio": "travessa",
+     "parametro": "virar"
+    }
+   ],
+   "ponto_critico": "descansar antes de virar",
+   "erro_comum": "virar quente demais escorre a calda"
+  },
+  {
+   "id": "pastelaria.pate-a-choux",
+   "capitulo": "Pastelaria",
+   "nome": "Pâte à choux",
+   "ingredientes": [
+    "manteiga sem sal",
+    "água",
+    "farinha de trigo",
+    "sal",
+    "açúcar",
+    "ovos"
+   ],
+   "utensilios": [
+    "panela",
+    "colher de pau"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "manteiga e água",
+     "utensilio": "panela",
+     "parametro": "100 g e 250 ml; tirar do fogo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "farinha, sal e açúcar",
+     "utensilio": "colher de pau",
+     "parametro": "150 g de farinha de uma vez"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "massa",
+     "utensilio": "panela",
+     "parametro": "até secar, formar bola e soltar do fundo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovos aos poucos",
+     "utensilio": "colher de pau",
+     "parametro": "4 ovos, fora do fogo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "massa",
+     "utensilio": "colher de pau",
+     "parametro": "até brilhante e caindo da colher"
+    }
+   ],
+   "ponto_critico": "massa brilhante que cai da colher em fita",
+   "erro_comum": "ovos de uma vez ou massa muito quente endurece"
+  },
+  {
+   "id": "pastelaria.bombas-choux",
+   "capitulo": "Pastelaria",
+   "nome": "Bombinhas de choux",
+   "ingredientes": [
+    "pâte à choux",
+    "gema e água"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico liso de 1 cm",
+    "assadeira untada e gelada",
+    "pincel",
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "montinhos",
+     "utensilio": "bico liso de 1 cm",
+     "parametro": "bem espaçados"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "bombinhas",
+     "utensilio": "pincel",
+     "parametro": "gema e água"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "topo",
+     "utensilio": "garfo molhado",
+     "parametro": "achatar de leve"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bombinhas",
+     "utensilio": "forno",
+     "parametro": "200 °C, cerca de 20 min até dourar"
+    }
+   ],
+   "ponto_critico": "assadeira gelada evita escorregar",
+   "erro_comum": "abrir o forno cedo faz murchar"
+  },
+  {
+   "id": "pastelaria.eclair",
+   "capitulo": "Pastelaria",
+   "nome": "Éclair",
+   "ingredientes": [
+    "pâte à choux",
+    "gema e água",
+    "creme pâtissière",
+    "fondant ou couverture"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico liso de 1 cm",
+    "bico de 5 mm",
+    "garfo",
+    "faquinha",
+    "grade de metal"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "tiras de 8 cm",
+     "utensilio": "bico liso de 1 cm",
+     "parametro": "pressão constante"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "éclairs",
+     "utensilio": "pincel",
+     "parametro": "gema e água e riscar com garfo"
+    },
+    {
+     "acao": "assar",
+     "alvo": "éclairs",
+     "utensilio": "forno",
+     "parametro": "200 °C, 20 a 25 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "éclairs",
+     "utensilio": "grade de metal",
+     "parametro": ""
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "lateral",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "creme",
+     "utensilio": "bico de 5 mm",
+     "parametro": "até sair do outro lado"
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "topo",
+     "utensilio": "fondant afinado ou couverture",
+     "parametro": "mergulhar e tirar o excesso"
+    }
+   ],
+   "ponto_critico": "recheio aparecendo no furo oposto",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.bomba-caramelo-amendoa",
+   "capitulo": "Pastelaria",
+   "nome": "Bomba com caramelo e amêndoa",
+   "ingredientes": [
+    "bombinhas de choux",
+    "lascas de amêndoa",
+    "caramelo"
+   ],
+   "utensilios": [
+    "assadeira untada"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "amêndoas",
+     "utensilio": "assadeira untada",
+     "parametro": ""
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "topo da bomba no caramelo",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "lado caramelado sobre a amêndoa",
+     "utensilio": "",
+     "parametro": "deixar endurecer"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.profiteroles",
+   "capitulo": "Pastelaria",
+   "nome": "Profiteroles de chocolate",
+   "ingredientes": [
+    "bombinhas de choux",
+    "sorvete ou chantilly",
+    "calda de chocolate ou couverture"
+   ],
+   "utensilios": [
+    "saco de confeitar"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "bombinhas",
+     "utensilio": "saco de confeitar",
+     "parametro": "sorvete ou chantilly"
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "calda quente de chocolate",
+     "utensilio": "",
+     "parametro": "por cima"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.decorar-saco-papel-fondant",
+   "capitulo": "Pastelaria",
+   "nome": "Desenhar sobre fondant com saco de papel",
+   "ingredientes": [
+    "chocolate derretido ou glacê"
+   ],
+   "utensilios": [
+    "saco de confeitar de papel"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "desenhos",
+     "utensilio": "saco de confeitar de papel",
+     "parametro": "sobre o fondant"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.choux-fritos",
+   "capitulo": "Pastelaria",
+   "nome": "Choux fritos (estilo churros e beignets)",
+   "ingredientes": [
+    "pâte à choux",
+    "óleo",
+    "açúcar de confeiteiro ou açúcar e canela"
+   ],
+   "utensilios": [
+    "panela funda",
+    "termômetro",
+    "saco de confeitar",
+    "bico liso de 1,5 cm",
+    "faca",
+    "escumadeira",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "óleo",
+     "utensilio": "panela funda",
+     "parametro": "7,5 cm de profundidade a 190 °C"
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "porções de 3 cm",
+     "utensilio": "bico liso de 1,5 cm",
+     "parametro": "sobre o óleo"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "massa rente ao bico",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "choux",
+     "utensilio": "panela funda",
+     "parametro": "3 a 5 min até inflar e dourar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "choux",
+     "utensilio": "escumadeira",
+     "parametro": "escorrer em papel-toalha"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar",
+     "utensilio": "",
+     "parametro": "servir quente"
+    }
+   ],
+   "ponto_critico": "óleo a 190 °C",
+   "erro_comum": "óleo frio encharca"
+  },
+  {
+   "id": "pastelaria.creme-mousseline",
+   "capitulo": "Pastelaria",
+   "nome": "Creme mousseline",
+   "ingredientes": [
+    "creme pâtissière",
+    "manteiga com e sem sal amolecida",
+    "licor"
+   ],
+   "utensilios": [
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "creme pâtissière",
+     "utensilio": "panela",
+     "parametro": "base de 12 gemas e 1,5 l de leite"
+    },
+    {
+     "acao": "bater",
+     "alvo": "manteiga aos poucos",
+     "utensilio": "batedor",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "licor",
+     "utensilio": "batedor",
+     "parametro": "aos poucos; deixar esfriar"
+    }
+   ],
+   "ponto_critico": "manteiga entra aos poucos",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.croquembouche",
+   "capitulo": "Pastelaria",
+   "nome": "Croquembouche",
+   "ingredientes": [
+    "nougatine",
+    "glacê real",
+    "bombinhas de choux",
+    "creme mousseline",
+    "caramelo com glicose",
+    "açúcar granulado"
+   ],
+   "utensilios": [
+    "cartão de bolo de 30 cm",
+    "cortador de metal de 10 cm",
+    "saco de confeitar",
+    "bico pitanga pequeno",
+    "bico liso",
+    "cone grande",
+    "papel-alumínio",
+    "tigela com água gelada"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "nougatine",
+     "utensilio": "rolo de metal",
+     "parametro": "camada fina"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "disco base de 30 cm, 2 discos de 10 cm e 3 luas",
+     "utensilio": "faca e cortador",
+     "parametro": ""
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "conchinhas de glacê real na borda",
+     "utensilio": "bico pitanga pequeno",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "100 bombinhas",
+     "utensilio": "forno",
+     "parametro": "pinceladas com ovo"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "creme mousseline",
+     "utensilio": "bico liso",
+     "parametro": "pelo furo"
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "caramelo",
+     "utensilio": "panela",
+     "parametro": "1 kg de açúcar, 200 ml de água, 300 g de glicose até amarelado"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "fundo da panela",
+     "utensilio": "água gelada",
+     "parametro": ""
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "topo das bombinhas no caramelo",
+     "utensilio": "",
+     "parametro": "secar com o lado caramelado para baixo; algumas no açúcar"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "cone",
+     "utensilio": "papel-alumínio untado",
+     "parametro": "com base de alumínio"
+    },
+    {
+     "acao": "montar",
+     "alvo": "fileiras",
+     "utensilio": "cone",
+     "parametro": "colar as bombinhas lado a lado com caramelo, não no alumínio"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "croquembouche",
+     "utensilio": "",
+     "parametro": "tirar o cone e a base"
+    },
+    {
+     "acao": "montar",
+     "alvo": "sobre a base de nougatine",
+     "utensilio": "",
+     "parametro": "decorar o topo com nougatine colada com caramelo"
+    }
+   ],
+   "ponto_critico": "local fresco, 4 a 6 h antes de servir, fora da geladeira",
+   "erro_comum": "geladeira deixa o caramelo pegajoso"
+  },
+  {
+   "id": "pastelaria.filo-camadas",
+   "capitulo": "Pastelaria",
+   "nome": "Filo em camadas (baklava)",
+   "ingredientes": [
+    "massa filo",
+    "manteiga derretida",
+    "nozes picadas",
+    "açúcar",
+    "canela",
+    "mel"
+   ],
+   "utensilios": [
+    "travessa untada",
+    "pincel",
+    "pano úmido",
+    "faca afiada"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "metade das folhas",
+     "utensilio": "travessa",
+     "parametro": "pincelar manteiga em cada uma; filo coberta com pano úmido"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "nozes, açúcar e canela",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "resto das folhas",
+     "utensilio": "pincel",
+     "parametro": "última camada toda coberta de manteiga"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "losangos nas camadas de cima",
+     "utensilio": "faca afiada",
+     "parametro": "antes de assar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "baklava",
+     "utensilio": "forno",
+     "parametro": "170 °C por 1 h 15 min"
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "mel",
+     "utensilio": "",
+     "parametro": "enquanto quente"
+    }
+   ],
+   "ponto_critico": "filo sempre coberta para não secar",
+   "erro_comum": "filo exposta resseca e quebra"
+  },
+  {
+   "id": "pastelaria.filo-cigarro",
+   "capitulo": "Pastelaria",
+   "nome": "Filo em cigarro",
+   "ingredientes": [
+    "filo",
+    "manteiga derretida",
+    "recheio"
+   ],
+   "utensilios": [
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "tira de 8 cm",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "1 colher (chá) na ponta",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "laterais para dentro",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "cigarro",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "cigarros",
+     "utensilio": "forno",
+     "parametro": "180 °C, 30 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.filo-triangulo",
+   "capitulo": "Pastelaria",
+   "nome": "Filo em triângulo",
+   "ingredientes": [
+    "filo",
+    "manteiga derretida",
+    "recheio"
+   ],
+   "utensilios": [
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "tira de 8 cm",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "1 colher (chá) num canto",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "dobras em triângulo",
+     "utensilio": "",
+     "parametro": "diagonal até o fim da tira"
+    },
+    {
+     "acao": "assar",
+     "alvo": "triângulos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 30 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.filo-bolsa",
+   "capitulo": "Pastelaria",
+   "nome": "Filo em bolsinha",
+   "ingredientes": [
+    "filo",
+    "manteiga derretida",
+    "recheio"
+   ],
+   "utensilios": [
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "tira de 8 cm",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "1 colher (chá) no meio",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "pontas juntas",
+     "utensilio": "",
+     "parametro": "torcer acima do recheio sem rasgar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bolsinhas",
+     "utensilio": "forno",
+     "parametro": "180 °C, 30 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.strudel",
+   "capitulo": "Pastelaria",
+   "nome": "Strudel de maçã (massa esticada à mão)",
+   "ingredientes": [
+    "farinha de trigo",
+    "sal",
+    "óleo vegetal",
+    "água quente",
+    "maçãs cozidas",
+    "manteiga",
+    "açúcar demerara",
+    "uva passa",
+    "nozes tostadas",
+    "canela",
+    "migalhas de bolo ou pão"
+   ],
+   "utensilios": [
+    "superfície enfarinhada",
+    "pano de prato grande",
+    "tigela forrada com toalha úmida",
+    "rolo",
+    "pincel",
+    "assadeira untada"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "óleo e água na farinha",
+     "utensilio": "",
+     "parametro": "300 g de farinha, 40 ml de óleo, 200 ml de água"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "superfície enfarinhada",
+     "parametro": "jogar na bancada 5 a 7 min até lisa"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa",
+     "utensilio": "tigela com toalha úmida",
+     "parametro": "cerca de 2 h"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "maçãs na manteiga",
+     "utensilio": "frigideira",
+     "parametro": "juntar o resto e esfriar"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "massa",
+     "utensilio": "rolo",
+     "parametro": "descansar mais 15 min coberta"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "esticar com o dorso das mãos",
+     "utensilio": "pano enfarinhado",
+     "parametro": "do centro para fora até ver as mãos através"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "massa",
+     "utensilio": "pincel",
+     "parametro": "manteiga"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "recheio",
+     "utensilio": "",
+     "parametro": "a 3 cm das bordas"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "strudel",
+     "utensilio": "pano",
+     "parametro": "pelo lado longo"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "ferradura",
+     "utensilio": "assadeira untada",
+     "parametro": "emenda para baixo"
+    },
+    {
+     "acao": "assar",
+     "alvo": "strudel",
+     "utensilio": "forno",
+     "parametro": "190 °C, 30 a 40 min"
+    }
+   ],
+   "ponto_critico": "massa tão fina que se vê a mão",
+   "erro_comum": "massa sem descanso rasga ao esticar"
+  },
+  {
+   "id": "pastelaria.detrempe",
+   "capitulo": "Pastelaria",
+   "nome": "Détrempe (base da folhada)",
+   "ingredientes": [
+    "farinha de trigo",
+    "água fria",
+    "manteiga derretida sem sal",
+    "sal"
+   ],
+   "utensilios": [
+    "superfície fria",
+    "misturador de massa",
+    "faca",
+    "papel-vegetal"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha",
+     "utensilio": "peneira",
+     "parametro": "500 g em monte com buraco"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "água, manteiga e sal",
+     "utensilio": "dedos",
+     "parametro": "250 ml, 75 g, 2 colheres (chá)"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "massa",
+     "utensilio": "misturador de massa",
+     "parametro": "até formar pedaços"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bola",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "X no topo",
+     "utensilio": "faca",
+     "parametro": "evita encolher"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "détrempe",
+     "utensilio": "geladeira",
+     "parametro": "30 min embrulhada"
+    }
+   ],
+   "ponto_critico": "massa fria e pouco trabalhada",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.folhada-incorporar-manteiga",
+   "capitulo": "Pastelaria",
+   "nome": "Envolver a manteiga na détrempe",
+   "ingredientes": [
+    "détrempe",
+    "manteiga sem sal"
+   ],
+   "utensilios": [
+    "rolo de madeira",
+    "papel-vegetal ou filme",
+    "superfície fria"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "manteiga",
+     "utensilio": "rolo de madeira",
+     "parametro": "quadrado de 2 cm entre papel"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "détrempe em cruz",
+     "utensilio": "rolo",
+     "parametro": "deixar montinho no centro"
+    },
+    {
+     "acao": "montar",
+     "alvo": "manteiga no centro da cruz",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "abas sobre a manteiga",
+     "utensilio": "",
+     "parametro": "puxar de leve para cobrir"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "selar e abrir retângulo",
+     "utensilio": "rolo",
+     "parametro": "polvilhar farinha"
+    }
+   ],
+   "ponto_critico": "manteiga e massa na mesma consistência e temperatura",
+   "erro_comum": "manteiga dura rasga a massa; mole vaza"
+  },
+  {
+   "id": "pastelaria.folhada-dobra-carta",
+   "capitulo": "Pastelaria",
+   "nome": "Dobra em carta da folhada",
+   "ingredientes": [
+    "massa folhada"
+   ],
+   "utensilios": [
+    "rolo",
+    "pincel seco"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "retângulo",
+     "utensilio": "rolo",
+     "parametro": "20 x 45 cm, sempre para longe de você"
+    },
+    {
+     "acao": "laminar(dobras)",
+     "alvo": "terço de baixo para cima",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "laminar(dobras)",
+     "alvo": "terço de cima",
+     "utensilio": "",
+     "parametro": "três camadas"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "excesso de farinha",
+     "utensilio": "pincel seco",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "lados retos e alinhados",
+   "erro_comum": "farinha entre as camadas impede de folhar"
+  },
+  {
+   "id": "pastelaria.folhada-virar",
+   "capitulo": "Pastelaria",
+   "nome": "Virar e marcar a folhada (6 voltas)",
+   "ingredientes": [
+    "massa folhada"
+   ],
+   "utensilios": [
+    "rolo"
+   ],
+   "passos": [
+    {
+     "acao": "laminar(dobras)",
+     "alvo": "girar um quarto",
+     "utensilio": "",
+     "parametro": "lado aberto à direita como livro; selar"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "retângulo",
+     "utensilio": "rolo",
+     "parametro": "20 x 45 cm e dobrar em três"
+    },
+    {
+     "acao": "marcar",
+     "alvo": "número de voltas",
+     "utensilio": "dedos",
+     "parametro": "furinhos na massa"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "massa",
+     "utensilio": "geladeira",
+     "parametro": "30 min a cada duas voltas; total de 6 voltas"
+    }
+   ],
+   "ponto_critico": "6 voltas com descanso a cada 2",
+   "erro_comum": "não gelar entre voltas derrete a manteiga"
+  },
+  {
+   "id": "pastelaria.bouchees",
+   "capitulo": "Pastelaria",
+   "nome": "Bouchées",
+   "ingredientes": [
+    "massa folhada",
+    "gema e água"
+   ],
+   "utensilios": [
+    "rolo",
+    "cortador serrilhado",
+    "cortador de 3,5 cm",
+    "assadeira umedecida",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "duas folhas",
+     "utensilio": "rolo",
+     "parametro": "3 mm"
+    },
+    {
+     "acao": "montar",
+     "alvo": "uma sobre a outra",
+     "utensilio": "pincel",
+     "parametro": "pincelar gema e água"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "massa",
+     "utensilio": "freezer",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "círculos",
+     "utensilio": "cortador serrilhado",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "centro da camada de cima",
+     "utensilio": "cortador de 3,5 cm untado",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "bouchées",
+     "utensilio": "assadeira umedecida",
+     "parametro": "220 °C, 20 a 25 min; cortadores nos cantos e folha de massa por cima"
+    }
+   ],
+   "ponto_critico": "corte reto e frio para crescer por igual",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.tranche",
+   "capitulo": "Pastelaria",
+   "nome": "Tranche",
+   "ingredientes": [
+    "massa folhada",
+    "gema e água"
+   ],
+   "utensilios": [
+    "rolo",
+    "faca",
+    "pincel",
+    "assadeira umedecida"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "retângulo de 14 x 30 cm",
+     "utensilio": "faca",
+     "parametro": "3 mm, bordas retas"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "duas tiras de 1 cm",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "laterais",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "tiras a 2 mm da borda",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "losangos",
+     "utensilio": "dorso da faca",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "tranche",
+     "utensilio": "forno",
+     "parametro": "220 °C, 8 a 10 min e 190 °C, 12 a 15 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "pastelaria.feuilletes",
+   "capitulo": "Pastelaria",
+   "nome": "Feuilletés",
+   "ingredientes": [
+    "massa folhada",
+    "gema e água"
+   ],
+   "utensilios": [
+    "rolo",
+    "faca",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "quadrados de 13 cm",
+     "utensilio": "faca",
+     "parametro": "3 mm"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "triângulo",
+     "utensilio": "",
+     "parametro": "na diagonal"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "borda de 1 cm",
+     "utensilio": "faca",
+     "parametro": "deixando 1 cm sem cortar na ponta"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "bordas",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "cruzar as tiras",
+     "utensilio": "",
+     "parametro": "levar aos cantos opostos e colar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "feuilletés",
+     "utensilio": "assadeira umedecida",
+     "parametro": "220 °C, 8 a 12 min e 190 °C, 12 a 15 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.untar-polvilhar",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Untar e enfarinhar fôrma",
+   "ingredientes": [
+    "manteiga sem sal derretida",
+    "farinha de trigo"
+   ],
+   "utensilios": [
+    "pincel",
+    "fôrma de bolo"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "fundo, cantos e laterais",
+     "utensilio": "pincel",
+     "parametro": "camada fina"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "farinha",
+     "utensilio": "",
+     "parametro": "girar a fôrma e virar para tirar o excesso"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.forrar-base",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Forrar fundo da fôrma",
+   "ingredientes": [
+    "papel-vegetal"
+   ],
+   "utensilios": [
+    "lápis",
+    "tesoura",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "contorno da base",
+     "utensilio": "lápis",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "disco",
+     "utensilio": "tesoura",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "fôrma",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fundo",
+     "utensilio": "papel-vegetal",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.dupla-forracao",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Dupla forração",
+   "ingredientes": [
+    "papel-vegetal",
+    "jornal (opcional)"
+   ],
+   "utensilios": [
+    "tesoura",
+    "fita adesiva",
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "tira de papel ao meio",
+     "utensilio": "",
+     "parametro": "comprimento da volta mais 2 cm"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "piques diagonais",
+     "utensilio": "tesoura",
+     "parametro": "2 cm a cada 3 cm"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "lateral interna",
+     "utensilio": "",
+     "parametro": "piques na base"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "lateral externa",
+     "utensilio": "fita adesiva",
+     "parametro": "segunda tira dobrada"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fundo",
+     "utensilio": "papel-vegetal",
+     "parametro": ""
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "jornal em volta",
+     "utensilio": "barbante",
+     "parametro": "opcional"
+    }
+   ],
+   "ponto_critico": "protege bolos de longo cozimento",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.forrar-forma-pao",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Forrar fôrma de pão",
+   "ingredientes": [
+    "papel-manteiga"
+   ],
+   "utensilios": [
+    "tesoura"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "papel com o dobro do tamanho",
+     "utensilio": "tesoura",
+     "parametro": "fôrma no centro"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "diagonais nos cantos",
+     "utensilio": "tesoura",
+     "parametro": "até os vértices"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fôrma",
+     "utensilio": "",
+     "parametro": "sobrepor os cantos"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.encher-forma",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Encher a fôrma de bolo",
+   "ingredientes": [
+    "massa de bolo"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "massa leve",
+     "utensilio": "colher",
+     "parametro": "até 2/3 da altura"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "massa densa de frutas",
+     "utensilio": "colher",
+     "parametro": "até 3/4"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "cavidade no centro (bolo de frutas)",
+     "utensilio": "dorso da colher",
+     "parametro": "evita rachar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "círculos (pão-de-ló)",
+     "utensilio": "dorso da colher",
+     "parametro": "nivelar"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.teste-pao-de-lo",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Teste de ponto do pão-de-ló",
+   "ingredientes": [
+    "pão-de-ló assado"
+   ],
+   "utensilios": [
+    "dedo"
+   ],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "centro",
+     "utensilio": "dedo",
+     "parametro": "aperta e volta"
+    }
+   ],
+   "ponto_critico": "dourado, crescido, solto das laterais",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.teste-bolo-fruta",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Teste do palito (bolo de frutas)",
+   "ingredientes": [
+    "bolo de frutas"
+   ],
+   "utensilios": [
+    "palito de metal"
+   ],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "centro",
+     "utensilio": "palito de metal",
+     "parametro": "sai limpo"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.desenformar-esfriar",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Desenformar e esfriar bolo",
+   "ingredientes": [
+    "bolo assado"
+   ],
+   "utensilios": [
+    "faca",
+    "grade de metal",
+    "toalha"
+   ],
+   "passos": [
+    {
+     "acao": "descansar",
+     "alvo": "bolo na fôrma",
+     "utensilio": "",
+     "parametro": "pão-de-ló 5 min, bolo de frutas 30 min"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "contorno",
+     "utensilio": "faca",
+     "parametro": "uma passada só"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "bolo",
+     "utensilio": "grade de metal",
+     "parametro": "virar segurando com toalha"
+    },
+    {
+     "acao": "separar",
+     "alvo": "papel",
+     "utensilio": "",
+     "parametro": "desvirar e esfriar na grade"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "movimentos curtos com a faca danificam a crosta"
+  },
+  {
+   "id": "bolos.metodo-cremoso-mao",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Método cremoso à mão",
+   "ingredientes": [
+    "manteiga amolecida",
+    "açúcar refinado",
+    "ovos",
+    "farinha com fermento",
+    "sal"
+   ],
+   "utensilios": [
+    "tigela",
+    "colher de pau",
+    "colher de metal"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manteiga e açúcar",
+     "utensilio": "colher de pau",
+     "parametro": "até quase branco e fofo"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovos aos poucos",
+     "utensilio": "colher de pau",
+     "parametro": "1 a 2 colheres de farinha se talhar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "farinha",
+     "utensilio": "colher de metal",
+     "parametro": "movimentos em oito"
+    }
+   ],
+   "ponto_critico": "creme bem aerado",
+   "erro_comum": "ovo rápido demais talha"
+  },
+  {
+   "id": "bolos.metodo-tudo-em-um",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Método tudo-em-um na batedeira",
+   "ingredientes": [
+    "margarina em tablete",
+    "açúcar",
+    "ovos",
+    "farinha",
+    "fermento em pó"
+   ],
+   "utensilios": [
+    "batedeira"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "todos os ingredientes",
+     "utensilio": "batedeira",
+     "parametro": "meio colher (chá) de fermento extra; velocidade média 2 a 3 min"
+    }
+   ],
+   "ponto_critico": "massa cremosa e lisa",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.sanduiche-victoria",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Sanduíche Victoria",
+   "ingredientes": [
+    "farinha com fermento",
+    "sal",
+    "manteiga",
+    "açúcar",
+    "ovos",
+    "geleia"
+   ],
+   "utensilios": [
+    "2 fôrmas redondas de 20 cm",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "massa pelo método cremoso",
+     "utensilio": "",
+     "parametro": "225 g de cada e 4 ovos"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bolos",
+     "utensilio": "forno",
+     "parametro": "190 °C, 25 min"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "bolos",
+     "utensilio": "grade",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "camadas com geleia",
+     "utensilio": "",
+     "parametro": "4 colheres (sopa)"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar refinado",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.massa-mais-leve",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Deixar a massa mais leve",
+   "ingredientes": [
+    "água morna"
+   ],
+   "utensilios": [
+    "batedeira"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "1 a 2 colheres (sopa) de água morna",
+     "utensilio": "batedeira",
+     "parametro": "logo antes de pôr na fôrma"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.metodo-esfregar",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Método de esfregar (bolo de frutas)",
+   "ingredientes": [
+    "farinha",
+    "especiarias",
+    "gengibre",
+    "bicarbonato",
+    "frutas secas",
+    "manteiga",
+    "açúcar mascavo",
+    "ovo",
+    "leite"
+   ],
+   "utensilios": [
+    "tigela",
+    "fôrma funda de 23 cm forrada"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "secos",
+     "utensilio": "peneira",
+     "parametro": "450 g de farinha"
+    },
+    {
+     "acao": "esfregar",
+     "alvo": "manteiga na farinha",
+     "utensilio": "dedos",
+     "parametro": "erguendo as mãos, até migalhas"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "açúcar e frutas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovo e leite no centro",
+     "utensilio": "",
+     "parametro": "até pingar da colher"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bolo",
+     "utensilio": "forno",
+     "parametro": "170 °C, cerca de 1 h 40 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.enfarinhar-frutas",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Enfarinhar frutas para não afundar",
+   "ingredientes": [
+    "frutas secas",
+    "farinha da receita"
+   ],
+   "utensilios": [
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "frutas em 2 colheres de farinha",
+     "utensilio": "",
+     "parametro": "antes de fazer a massa"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "frutas sem farinha afundam"
+  },
+  {
+   "id": "bolos.metodo-dissolver",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Método de dissolver (bolo de gengibre)",
+   "ingredientes": [
+    "manteiga",
+    "açúcar mascavo",
+    "melado escuro",
+    "farinha",
+    "gengibre",
+    "especiarias",
+    "bicarbonato",
+    "ovo",
+    "leite"
+   ],
+   "utensilios": [
+    "panela",
+    "colher de pau",
+    "fôrma quadrada de 23 cm"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga, açúcar e melado",
+     "utensilio": "panela",
+     "parametro": "250 g de cada, fogo baixo"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "mistura",
+     "utensilio": "",
+     "parametro": "um pouco"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "com ovo, leite e secos",
+     "utensilio": "colher de pau",
+     "parametro": "até lisa e pingando"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bolo",
+     "utensilio": "forno",
+     "parametro": "170 °C, cerca de 1 h 30 min"
+    }
+   ],
+   "ponto_critico": "medir bem o melado e trabalhar rápido pelo bicarbonato",
+   "erro_comum": "melado demais pesa o bolo"
+  },
+  {
+   "id": "bolos.pao-de-lo",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Pão-de-ló (génoise)",
+   "ingredientes": [
+    "ovos",
+    "açúcar refinado",
+    "farinha",
+    "sal"
+   ],
+   "utensilios": [
+    "tigela refratária",
+    "panela com água quente",
+    "batedor grande ou batedeira manual",
+    "espátula de borracha",
+    "fôrma de 20 cm"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "ovos e açúcar",
+     "utensilio": "batedor",
+     "parametro": "4 ovos e 120 g"
+    },
+    {
+     "acao": "bater",
+     "alvo": "sobre água quente",
+     "utensilio": "banho-maria sem encostar",
+     "parametro": "até a fita desenhar um 8"
+    },
+    {
+     "acao": "bater",
+     "alvo": "fora do calor",
+     "utensilio": "batedor",
+     "parametro": "3 a 5 min até esfriar e engrossar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "farinha peneirada",
+     "utensilio": "espátula de borracha",
+     "parametro": "em porções, movimento em 8"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pão-de-ló",
+     "utensilio": "forno",
+     "parametro": "170 °C, cerca de 25 min"
+    }
+   ],
+   "ponto_critico": "ponto de fita que sustenta um 8",
+   "erro_comum": "tigela encostando na água cozinha os ovos"
+  },
+  {
+   "id": "bolos.pao-de-lo-enriquecido",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Pão-de-ló enriquecido com manteiga",
+   "ingredientes": [
+    "massa de pão-de-ló",
+    "manteiga sem sal derretida fria"
+   ],
+   "utensilios": [
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga",
+     "utensilio": "panela",
+     "parametro": "20 g, deixar esfriar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "manteiga em fio",
+     "utensilio": "espátula",
+     "parametro": "após a farinha, cortando a massa"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bolo",
+     "utensilio": "forno",
+     "parametro": "imediatamente"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "demorar a assar faz a massa murchar"
+  },
+  {
+   "id": "bolos.rocambole",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Rocambole",
+   "ingredientes": [
+    "ovos",
+    "açúcar",
+    "farinha",
+    "recheio",
+    "açúcar de confeiteiro"
+   ],
+   "utensilios": [
+    "fôrma de rocambole 22 x 33 cm",
+    "papel-vegetal",
+    "toalha",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "assar",
+     "alvo": "pão-de-ló fino",
+     "utensilio": "fôrma de rocambole",
+     "parametro": "4 ovos, 125 g de açúcar, 75 g de farinha; 190 a 200 °C, 4 a 5 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "bolo com papel",
+     "utensilio": "grade",
+     "parametro": ""
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "sobre papel com açúcar",
+     "utensilio": "",
+     "parametro": "tirar o papel de cima"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "recheio",
+     "utensilio": "espátula",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "borda de 2 cm",
+     "utensilio": "papel-vegetal",
+     "parametro": "dá o arranque"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "rocambole",
+     "utensilio": "papel-vegetal",
+     "parametro": "emenda para baixo"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar",
+     "utensilio": "",
+     "parametro": "só antes de servir"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "bolo seco racha ao enrolar"
+  },
+  {
+   "id": "bolos.apertar-rocambole",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Apertar o rocambole",
+   "ingredientes": [
+    "rocambole enrolado"
+   ],
+   "utensilios": [
+    "espátula",
+    "papel-vegetal"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "aperto",
+     "utensilio": "espátula",
+     "parametro": "segurar sob o papel e puxar o papel"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.bolo-de-anjo",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Bolo de anjo",
+   "ingredientes": [
+    "claras",
+    "cremor de tártaro",
+    "açúcar refinado",
+    "farinha",
+    "fubá",
+    "baunilha"
+   ],
+   "utensilios": [
+    "batedeira",
+    "espátula",
+    "fôrma de bolo de anjo (com pés e tubo)",
+    "funil ou gargalo de garrafa"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedeira",
+     "parametro": "12 claras até espumar, com cremor"
+    },
+    {
+     "acao": "bater",
+     "alvo": "açúcar colherada a colherada",
+     "utensilio": "batedeira",
+     "parametro": "280 g, merengue duro"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "farinha, fubá e baunilha",
+     "utensilio": "espátula",
+     "parametro": "sem perder ar"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "fôrma sem untar",
+     "utensilio": "espátula",
+     "parametro": "nivelar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bolo",
+     "utensilio": "forno",
+     "parametro": "175 °C, 40 a 50 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "de cabeça para baixo",
+     "utensilio": "pés da fôrma ou gargalo",
+     "parametro": "até frio"
+    }
+   ],
+   "ponto_critico": "fôrma sem gordura e esfriar invertido",
+   "erro_comum": "untar a fôrma faz o bolo despencar"
+  },
+  {
+   "id": "bolos.torta-chocolate-austriaca",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Torta de chocolate sem farinha",
+   "ingredientes": [
+    "manteiga",
+    "açúcar mascavo claro",
+    "ovos separados",
+    "chocolate amargo ralado",
+    "avelã",
+    "amêndoa",
+    "açúcar refinado"
+   ],
+   "utensilios": [
+    "fôrma de 23 cm",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manteiga e açúcar",
+     "utensilio": "batedor",
+     "parametro": "creme"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gemas, chocolate e castanhas",
+     "utensilio": "",
+     "parametro": "moídos fino"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras com açúcar",
+     "utensilio": "batedor",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "merengue",
+     "utensilio": "espátula",
+     "parametro": "3 a 4 porções"
+    },
+    {
+     "acao": "assar",
+     "alvo": "torta",
+     "utensilio": "forno",
+     "parametro": "150 °C, 50 min"
+    },
+    {
+     "acao": "testar",
+     "alvo": "centro",
+     "utensilio": "dedo",
+     "parametro": "levemente macio, firma ao esfriar"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.cortar-embeber",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Cortar e embeber camadas",
+   "ingredientes": [
+    "bolo",
+    "calda fina",
+    "licor"
+   ],
+   "utensilios": [
+    "faquinha",
+    "faca de serra",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "entalhe lateral",
+     "utensilio": "faquinha",
+     "parametro": "guia de alinhamento"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "2 ou 3 camadas",
+     "utensilio": "faca de serra",
+     "parametro": "movimento de serrar"
+    },
+    {
+     "acao": "embeber",
+     "alvo": "camadas",
+     "utensilio": "pincel",
+     "parametro": "calda com 2 a 3 colheres de licor"
+    }
+   ],
+   "ponto_critico": "entalhe alinhado na montagem",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.rechear-sobrepor",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Rechear e sobrepor camadas",
+   "ingredientes": [
+    "camadas embebidas",
+    "creme batido",
+    "purê de framboesa"
+   ],
+   "utensilios": [
+    "espátula aquecida"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "camada",
+     "utensilio": "espátula",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "camada seguinte",
+     "utensilio": "",
+     "parametro": "alinhar pelo entalhe"
+    },
+    {
+     "acao": "montar",
+     "alvo": "base por último",
+     "utensilio": "",
+     "parametro": "superfície mais plana em cima"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "cobertura",
+     "utensilio": "espátula aquecida",
+     "parametro": "topo e laterais"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.bolo-merengue",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Bolo de merengue em aro",
+   "ingredientes": [
+    "discos de merengue",
+    "musse de chocolate"
+   ],
+   "utensilios": [
+    "cartão de bolo",
+    "aro de metal",
+    "toalha quente"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "disco dentro do aro",
+     "utensilio": "aro de metal",
+     "parametro": "sobre cartão"
+    },
+    {
+     "acao": "montar",
+     "alvo": "camadas de musse e discos",
+     "utensilio": "",
+     "parametro": "terminar com musse"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "bolo",
+     "utensilio": "geladeira",
+     "parametro": ""
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "aro",
+     "utensilio": "toalha quente",
+     "parametro": "1 a 2 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.base-biscoito",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Base de biscoito esfarelado",
+   "ingredientes": [
+    "biscoito",
+    "manteiga derretida"
+   ],
+   "utensilios": [
+    "saco plástico",
+    "rolo",
+    "tigela",
+    "colher",
+    "fôrma desmontável"
+   ],
+   "passos": [
+    {
+     "acao": "esmagar",
+     "alvo": "biscoitos no saco",
+     "utensilio": "rolo",
+     "parametro": "250 g"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "migalhas e manteiga",
+     "utensilio": "colher",
+     "parametro": "60 g"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fundo da fôrma",
+     "utensilio": "dorso da colher",
+     "parametro": "pressionar uniforme"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "base",
+     "utensilio": "geladeira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.cheesecake-gelado",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Cheesecake gelado de framboesa",
+   "ingredientes": [
+    "base de biscoito",
+    "gelatina em pó",
+    "água",
+    "creme de leite",
+    "purê de framboesa",
+    "açúcar",
+    "queijo cremoso"
+   ],
+   "utensilios": [
+    "fôrma desmontável de 25 cm",
+    "espátula",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "hidratar",
+     "alvo": "gelatina",
+     "utensilio": "",
+     "parametro": "15 g em 4 colheres de água"
+    },
+    {
+     "acao": "bater",
+     "alvo": "creme",
+     "utensilio": "batedor",
+     "parametro": "125 ml"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "purê, açúcar, queijo e gelatina fria",
+     "utensilio": "espátula",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme",
+     "utensilio": "espátula",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "fôrma",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "cheesecake",
+     "utensilio": "geladeira",
+     "parametro": "pelo menos 4 h"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.soltar-aro-desmontavel",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Soltar aro de fôrma desmontável",
+   "ingredientes": [
+    "cheesecake"
+   ],
+   "utensilios": [
+    "fôrma desmontável",
+    "tigela menor"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "fecho lateral",
+     "utensilio": "",
+     "parametro": "abrir devagar"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "aro",
+     "utensilio": "tigela menor",
+     "parametro": "apoiar e baixar o aro"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.cheesecake-assado",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Cheesecake assado austríaco",
+   "ingredientes": [
+    "cream cheese",
+    "cottage",
+    "açúcar",
+    "ovos",
+    "creme azedo",
+    "farinha",
+    "fubá",
+    "água"
+   ],
+   "utensilios": [
+    "fôrma desmontável de 25 cm",
+    "concha",
+    "palito",
+    "colher de pau"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "massa com cream cheese, farinha, açúcar e água",
+     "utensilio": "",
+     "parametro": "gelar 30 min"
+    },
+    {
+     "acao": "forrar",
+     "alvo": "fundo e laterais",
+     "utensilio": "",
+     "parametro": "selar bem"
+    },
+    {
+     "acao": "assar-as-cegas",
+     "alvo": "fundo",
+     "utensilio": "forno",
+     "parametro": "180 °C, 10 a 15 min"
+    },
+    {
+     "acao": "bater",
+     "alvo": "recheio",
+     "utensilio": "colher de pau",
+     "parametro": "cream cheese, cottage, açúcar, ovos, creme azedo"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "quase até a borda",
+     "utensilio": "concha",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "cheesecake",
+     "utensilio": "forno",
+     "parametro": "45 a 50 min"
+    },
+    {
+     "acao": "testar",
+     "alvo": "centro",
+     "utensilio": "palito",
+     "parametro": "sai limpo e massa solta da parede"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.estencil-toalhinha",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Decorar com toalhinha rendada",
+   "ingredientes": [
+    "açúcar refinado ou de confeiteiro"
+   ],
+   "utensilios": [
+    "toalhinha rendada",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "toalhinha sobre o bolo",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "toalhinha",
+     "utensilio": "",
+     "parametro": "erguer sem arrastar"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.saco-papel",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Saco de confeitar de papel",
+   "ingredientes": [
+    "papel-vegetal"
+   ],
+   "utensilios": [
+    "tesoura"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "quadrado de 25 cm na diagonal",
+     "utensilio": "tesoura",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "cone",
+     "utensilio": "",
+     "parametro": "ponta ao centro e a outra por fora"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "sobra para dentro",
+     "utensilio": "",
+     "parametro": "vincar para travar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "ponta",
+     "utensilio": "tesoura",
+     "parametro": "tamanho do traço"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.glace-acucar",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Glacê de açúcar",
+   "ingredientes": [
+    "açúcar de confeiteiro",
+    "água quente, suco ou licor"
+   ],
+   "utensilios": [
+    "peneira",
+    "colher de metal"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "açúcar",
+     "utensilio": "peneira",
+     "parametro": "175 g"
+    },
+    {
+     "acao": "bater",
+     "alvo": "líquido",
+     "utensilio": "colher de metal",
+     "parametro": "1 a 2 colheres (sopa)"
+    },
+    {
+     "acao": "bater",
+     "alvo": "até liso",
+     "utensilio": "colher de metal",
+     "parametro": "usar logo"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.glace-real",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Glacê real",
+   "ingredientes": [
+    "açúcar de confeiteiro",
+    "claras",
+    "suco de limão",
+    "glicerina"
+   ],
+   "utensilios": [
+    "peneira",
+    "batedor",
+    "filme"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "açúcar",
+     "utensilio": "peneira",
+     "parametro": "500 g"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras e limão aos poucos",
+     "utensilio": "batedor",
+     "parametro": "2 claras, 2 colheres"
+    },
+    {
+     "acao": "bater",
+     "alvo": "glacê",
+     "utensilio": "batedor",
+     "parametro": "cerca de 10 min até duro e acetinado"
+    },
+    {
+     "acao": "bater",
+     "alvo": "glicerina",
+     "utensilio": "batedor",
+     "parametro": "2 colheres; atrasa o endurecimento"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "glacê coberto",
+     "utensilio": "filme",
+     "parametro": "a noite toda; bater antes de usar"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.glace-chocolate",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Glacê de chocolate",
+   "ingredientes": [
+    "açúcar",
+    "água",
+    "pistoles de chocolate couverture"
+   ],
+   "utensilios": [
+    "panela",
+    "batedor",
+    "pano"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "150 g e 150 ml"
+    },
+    {
+     "acao": "bater",
+     "alvo": "chocolate",
+     "utensilio": "batedor",
+     "parametro": "300 g até derreter"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "glacê",
+     "utensilio": "panela",
+     "parametro": "3 a 5 min até 110 °C, ponto de fio"
+    },
+    {
+     "acao": "testar",
+     "alvo": "fio",
+     "utensilio": "dedos e água gelada",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "panela batida no pano",
+     "utensilio": "",
+     "parametro": "tirar bolhas; usar já"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.dar-brilho-geleia",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Dar brilho com geleia de abricó",
+   "ingredientes": [
+    "geleia de abricó ou de fruta vermelha",
+    "água"
+   ],
+   "utensilios": [
+    "peneira",
+    "panela",
+    "pincel",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "coar",
+     "alvo": "geleia",
+     "utensilio": "peneira",
+     "parametro": "100 g"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "com água",
+     "utensilio": "panela",
+     "parametro": "50 ml"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "bolo",
+     "utensilio": "pincel",
+     "parametro": "sobre a grade"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.cobrir-glace-chocolate",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Cobrir com glacê de chocolate",
+   "ingredientes": [
+    "bolo com geleia",
+    "glacê de chocolate"
+   ],
+   "utensilios": [
+    "grade de metal",
+    "papel-vegetal",
+    "concha",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "bolo na grade sobre papel",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "concha no centro",
+     "utensilio": "concha",
+     "parametro": ""
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "glacê",
+     "utensilio": "espátula",
+     "parametro": "rápido, excesso escorrendo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "grade batida",
+     "utensilio": "",
+     "parametro": "assentar"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "glacê",
+     "utensilio": "",
+     "parametro": "5 a 10 min"
+    }
+   ],
+   "ponto_critico": "trabalho rápido em uma só passada",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.escrever-chocolate",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Escrever com chocolate (Sachertorte)",
+   "ingredientes": [
+    "chocolate derretido"
+   ],
+   "utensilios": [
+    "saco de confeitar de papel"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "saco de papel",
+     "utensilio": "",
+     "parametro": "dobrar a abertura"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "bico",
+     "utensilio": "tesoura",
+     "parametro": ""
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "letras",
+     "utensilio": "saco de papel",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.glace-manteiga",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Glacê de manteiga (com zabaione)",
+   "ingredientes": [
+    "açúcar",
+    "água",
+    "gemas",
+    "ovo",
+    "manteiga sem sal amolecida",
+    "sabor"
+   ],
+   "utensilios": [
+    "panela",
+    "termômetro de açúcar",
+    "batedeira com batedor balão"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "160 g e 85 ml até bala mole"
+    },
+    {
+     "acao": "bater",
+     "alvo": "calda em fio sobre 2 gemas e 1 ovo",
+     "utensilio": "batedeira",
+     "parametro": "pela lateral da tigela, velocidade média"
+    },
+    {
+     "acao": "bater",
+     "alvo": "zabaione",
+     "utensilio": "batedeira",
+     "parametro": "até claro, grosso e frio"
+    },
+    {
+     "acao": "bater",
+     "alvo": "manteiga aos pedaços",
+     "utensilio": "batedeira",
+     "parametro": "250 g, velocidade alta, 3 a 4 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "glacê",
+     "utensilio": "geladeira",
+     "parametro": "5 a 10 min"
+    }
+   ],
+   "ponto_critico": "zabaione fresco: nem quente nem frio",
+   "erro_comum": "zabaione quente derrete a manteiga"
+  },
+  {
+   "id": "bolos.creme-manteiga",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Creme de manteiga simples",
+   "ingredientes": [
+    "manteiga sem sal",
+    "açúcar de confeiteiro",
+    "aromatizante ou corante",
+    "água quente"
+   ],
+   "utensilios": [
+    "colher de pau"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manteiga",
+     "utensilio": "colher de pau",
+     "parametro": "125 g até macia"
+    },
+    {
+     "acao": "bater",
+     "alvo": "açúcar peneirado aos poucos",
+     "utensilio": "colher de pau",
+     "parametro": "250 g"
+    },
+    {
+     "acao": "bater",
+     "alvo": "até claro e fofo",
+     "utensilio": "colher de pau",
+     "parametro": "água quente se endurecer"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.cobrir-com-creme",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Rechear e cobrir bolo com chantilly",
+   "ingredientes": [
+    "pão-de-ló em camadas",
+    "calda com kirsch",
+    "chantilly",
+    "frutas fatiadas",
+    "castanhas tostadas picadas"
+   ],
+   "utensilios": [
+    "cartão de bolo",
+    "tábua giratória",
+    "espátula",
+    "raspador liso",
+    "raspador dentado"
+   ],
+   "passos": [
+    {
+     "acao": "embeber",
+     "alvo": "camadas",
+     "utensilio": "pincel",
+     "parametro": "calda com kirsch"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "chantilly e frutas",
+     "utensilio": "espátula",
+     "parametro": "500 ml de creme e 200 g de fruta para 25 cm"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "topo e laterais",
+     "utensilio": "espátula",
+     "parametro": "girando a tábua"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "lateral lisa",
+     "utensilio": "raspador liso",
+     "parametro": "ângulo de 45°"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "lateral texturizada",
+     "utensilio": "raspador dentado",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "castanhas na lateral",
+     "utensilio": "",
+     "parametro": "bolo em cartão menor sobre papel"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.rosetas-divisoes",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Rosetas em 12 divisões",
+   "ingredientes": [
+    "chantilly",
+    "morangos com geleia"
+   ],
+   "utensilios": [
+    "faca",
+    "saco de confeitar",
+    "bico pitanga grande"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "marcas de 12 partes",
+     "utensilio": "ponta da faca",
+     "parametro": ""
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "rosetas",
+     "utensilio": "bico pitanga grande",
+     "parametro": "uma por fatia"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "morangos e castanhas",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.amolecer-geleia",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Amolecer geleia na espátula",
+   "ingredientes": [
+    "geleia sem semente peneirada"
+   ],
+   "utensilios": [
+    "tábua ou superfície plana",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "geleia",
+     "utensilio": "espátula",
+     "parametro": "vai e volta até amolecer"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "geleia grossa rasga camadas finas"
+  },
+  {
+   "id": "bolos.lace-tuiles",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Lace tuiles de laranja",
+   "ingredientes": [
+    "suco de laranja",
+    "raspas",
+    "Grand Marnier",
+    "açúcar",
+    "manteiga",
+    "amêndoas",
+    "farinha"
+   ],
+   "utensilios": [
+    "assadeira untada",
+    "garfo",
+    "rolo untado"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "todos",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "5 colheradas por vez",
+     "utensilio": "garfo",
+     "parametro": "achatar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "tuiles",
+     "utensilio": "forno",
+     "parametro": "180 °C, 5 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "tuiles",
+     "utensilio": "rolo untado",
+     "parametro": "quentes; rende 25"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.operettas",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Operettas",
+   "ingredientes": [
+    "rocambole",
+    "ganache",
+    "calda com café",
+    "glacê de manteiga",
+    "fondant de chocolate",
+    "folha de ouro"
+   ],
+   "utensilios": [
+    "faca",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "rocambole em 3",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "camadas com ganache, calda e glacê",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "fondant de chocolate",
+     "utensilio": "",
+     "parametro": "deixar firmar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "quadrados",
+     "utensilio": "faca",
+     "parametro": "rende 21"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "folha dourada",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.financiers",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Financiers",
+   "ingredientes": [
+    "passas",
+    "rum",
+    "manteiga derretida",
+    "claras",
+    "açúcar",
+    "farinha",
+    "amêndoas moídas"
+   ],
+   "utensilios": [
+    "forminhas ovais"
+   ],
+   "passos": [
+    {
+     "acao": "marinar",
+     "alvo": "passas no rum",
+     "utensilio": "",
+     "parametro": "15 min"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "forminhas",
+     "utensilio": "",
+     "parametro": "gelar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "massa",
+     "utensilio": "",
+     "parametro": "liso"
+    },
+    {
+     "acao": "assar",
+     "alvo": "financiers",
+     "utensilio": "forno",
+     "parametro": "200 °C, 10 min, em 4 levas"
+    },
+    {
+     "acao": "embeber",
+     "alvo": "rum",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.physalis-carameladas",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Physalis carameladas",
+   "ingredientes": [
+    "physalis",
+    "caramelo"
+   ],
+   "utensilios": [
+    "papel-vegetal"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "folhas puxadas e torcidas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "fruta no caramelo",
+     "utensilio": "",
+     "parametro": "sem cobrir as folhas"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "folhas para cima",
+     "utensilio": "papel-vegetal",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.bolas-sorvete-chocolate",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Bolinhas de sorvete cobertas",
+   "ingredientes": [
+    "sorvete",
+    "chocolate derretido"
+   ],
+   "utensilios": [
+    "boleador",
+    "palitos",
+    "papel-vegetal"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "bolinhas",
+     "utensilio": "boleador",
+     "parametro": "rápido"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "bolinhas no palito",
+     "utensilio": "freezer",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "chocolate",
+     "utensilio": "",
+     "parametro": "cobrir todo"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "papel-vegetal",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.tortinhas-limao",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Tortinhas de limão",
+   "ingredientes": [
+    "pâte sucrée",
+    "creme pâtissière",
+    "suco de limão",
+    "açúcar de confeiteiro"
+   ],
+   "utensilios": [
+    "forminhas de torta",
+    "maçarico"
+   ],
+   "passos": [
+    {
+     "acao": "forrar",
+     "alvo": "forminhas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar-as-cegas",
+     "alvo": "fundos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 7 a 10 min"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "creme com limão",
+     "utensilio": "",
+     "parametro": "2 limões"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "topo",
+     "utensilio": "maçarico",
+     "parametro": "rende 30"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.miroirs-maracuja",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Miroirs de maracujá",
+   "ingredientes": [
+    "musse de maracujá",
+    "geleia de maracujá"
+   ],
+   "utensilios": [
+    "fôrma",
+    "cortador de metal de 4 cm"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "musse na fôrma",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "geleia",
+     "utensilio": "",
+     "parametro": "gelar até firmar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "discos",
+     "utensilio": "cortador de 4 cm",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "miroirs",
+     "utensilio": "geladeira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.trufas-amendoa",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Trufas de amêndoa",
+   "ingredientes": [
+    "pasta de amêndoa",
+    "ganache de chocolate branco"
+   ],
+   "utensilios": [
+    "boleador",
+    "grade de metal",
+    "forminhas de petit four"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "bolinhas",
+     "utensilio": "boleador",
+     "parametro": ""
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "ganache",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "sobre a grade",
+     "utensilio": "grade de metal",
+     "parametro": "textura irregular"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "trufas",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.biscoitos-enrolados",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoitos abertos e cortados",
+   "ingredientes": [
+    "manteiga",
+    "açúcar",
+    "gemas",
+    "farinha",
+    "passas"
+   ],
+   "utensilios": [
+    "rolo",
+    "cortador de biscoito enfarinhado"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manteiga e açúcar",
+     "utensilio": "",
+     "parametro": "125 g e 150 g"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gemas, farinha e passas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "massa",
+     "utensilio": "geladeira",
+     "parametro": ""
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "massa",
+     "utensilio": "rolo",
+     "parametro": "reabrir sobras só uma vez"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "biscoitos",
+     "utensilio": "cortador enfarinhado",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "biscoitos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 15 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "reabrir várias vezes endurece"
+  },
+  {
+   "id": "bolos.enrolar-fatiar",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoitos enrolados e fatiados",
+   "ingredientes": [
+    "massa de biscoito"
+   ],
+   "utensilios": [
+    "filme",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "cilindro",
+     "utensilio": "filme",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "rolo",
+     "utensilio": "geladeira",
+     "parametro": "até firme"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rodelas iguais",
+     "utensilio": "faca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.shortbread",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Amanteigado (shortbread)",
+   "ingredientes": [
+    "manteiga",
+    "açúcar",
+    "farinha (ou farinha de arroz/semolina)"
+   ],
+   "utensilios": [
+    "assadeira 31 x 21 cm",
+    "faca",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manteiga e açúcar",
+     "utensilio": "",
+     "parametro": "115 g e 55 g"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "farinha",
+     "utensilio": "",
+     "parametro": "115 g"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "massa na fôrma",
+     "utensilio": "dedos",
+     "parametro": "comprimir e nivelar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "riscar retângulos",
+     "utensilio": "faca",
+     "parametro": "sem cortar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "shortbread",
+     "utensilio": "forno",
+     "parametro": "170 °C, 35 min"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar",
+     "utensilio": "",
+     "parametro": "ainda quente, cortar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "biscoitos",
+     "utensilio": "grade",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.biscoitos-pingados",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoitos pingados (formas livres)",
+   "ingredientes": [
+    "manteiga derretida",
+    "açúcar",
+    "claras",
+    "farinha",
+    "amêndoa moída"
+   ],
+   "utensilios": [
+    "colher",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "montinhos",
+     "utensilio": "colher",
+     "parametro": "tamanho igual e bem espaçados"
+    },
+    {
+     "acao": "assar",
+     "alvo": "biscoitos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 15 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": "pouco espaço gruda os biscoitos"
+  },
+  {
+   "id": "bolos.biscoitos-saco",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoitos com saco de confeitar",
+   "ingredientes": [
+    "massa mole de biscoito"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico pitanga"
+   ],
+   "passos": [
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "rosetas",
+     "utensilio": "bico pitanga",
+     "parametro": "na assadeira"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.biscoito-polvilhar-acucar",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoitos polvilhados com açúcar",
+   "ingredientes": [
+    "açúcar demerara"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "polvilhar",
+     "alvo": "antes de assar",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "depois de assar",
+     "utensilio": "",
+     "parametro": "mais crocante"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.biscoito-cobertura-chocolate",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoito meio coberto de chocolate",
+   "ingredientes": [
+    "chocolate derretido"
+   ],
+   "utensilios": [
+    "garfo",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "chocolate num lado",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "marcas",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "biscoitos",
+     "utensilio": "grade",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.biscoito-conhaque",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoito de conhaque (brandy snaps)",
+   "ingredientes": [
+    "manteiga",
+    "açúcar demerara",
+    "calda dourada",
+    "farinha",
+    "gengibre",
+    "conhaque"
+   ],
+   "utensilios": [
+    "assadeira untada",
+    "espátula",
+    "cabo de colher de pau untado"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga, açúcar e calda",
+     "utensilio": "panela",
+     "parametro": "115 g de cada e 2 colheres"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "farinha, gengibre e conhaque",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "4 colheradas bem espaçadas",
+     "utensilio": "",
+     "parametro": "achatar em 3 cm"
+    },
+    {
+     "acao": "assar",
+     "alvo": "biscoitos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 7 a 10 min"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "biscoitos",
+     "utensilio": "",
+     "parametro": "1 min"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "no cabo da colher",
+     "utensilio": "cabo de colher de pau",
+     "parametro": "ainda quentes"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "biscoito endurecido",
+     "utensilio": "forno",
+     "parametro": "30 s para amolecer"
+    }
+   ],
+   "ponto_critico": "moldar quente",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.biscoito-champagne",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Biscoito champagne (palito)",
+   "ingredientes": [
+    "ovos separados",
+    "açúcar",
+    "farinha",
+    "açúcar de confeiteiro"
+   ],
+   "utensilios": [
+    "saco de confeitar",
+    "bico liso de 2 cm",
+    "papel-vegetal",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "claras com metade do açúcar",
+     "utensilio": "batedor",
+     "parametro": "acetinado"
+    },
+    {
+     "acao": "bater",
+     "alvo": "gemas com o resto",
+     "utensilio": "batedor",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "gemas e farinha",
+     "utensilio": "espátula",
+     "parametro": ""
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "palitos de 10 cm",
+     "utensilio": "bico liso de 2 cm",
+     "parametro": "5 cm de distância"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "duas vezes",
+     "utensilio": "peneira",
+     "parametro": "esperar dissolver entre as camadas"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "excesso de açúcar",
+     "utensilio": "",
+     "parametro": "inclinar a assadeira"
+    },
+    {
+     "acao": "assar",
+     "alvo": "palitos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 10 min"
+    }
+   ],
+   "ponto_critico": "pérolas de açúcar",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.pasta-estencil",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Pasta de estêncil",
+   "ingredientes": [
+    "claras",
+    "açúcar de confeiteiro",
+    "farinha",
+    "manteiga derretida",
+    "baunilha"
+   ],
+   "utensilios": [
+    "tigela",
+    "batedor"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "claras e açúcar",
+     "utensilio": "batedor",
+     "parametro": "3 claras, 100 g"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "farinha",
+     "utensilio": "",
+     "parametro": "100 g"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "manteiga e baunilha",
+     "utensilio": "",
+     "parametro": "60 g"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "pasta",
+     "utensilio": "geladeira",
+     "parametro": "30 min"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.tuiles",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Tuiles",
+   "ingredientes": [
+    "pasta de estêncil"
+   ],
+   "utensilios": [
+    "assadeira untada",
+    "garfo",
+    "rolo untado",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "rodelas de 5 cm",
+     "utensilio": "garfo molhado em água fria",
+     "parametro": "6 por vez"
+    },
+    {
+     "acao": "assar",
+     "alvo": "tuiles",
+     "utensilio": "forno",
+     "parametro": "200 °C, 5 a 8 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "curvar no rolo",
+     "utensilio": "rolo untado",
+     "parametro": "quente; rende 18"
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  },
+  {
+   "id": "bolos.tulipas",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Tulipas (cestinhas)",
+   "ingredientes": [
+    "pasta de estêncil"
+   ],
+   "utensilios": [
+    "forminha ondulada",
+    "forminha menor",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "espalhar",
+     "alvo": "rodelas de 10 cm",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "tulipas",
+     "utensilio": "forno",
+     "parametro": "200 °C, 5 a 8 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "entre duas forminhas",
+     "utensilio": "forminhas",
+     "parametro": "quente; rende 8 a 10"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "tulipas",
+     "utensilio": "grade",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "",
+   "erro_comum": ""
+  }
+ ]
+}

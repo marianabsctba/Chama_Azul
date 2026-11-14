@@ -1,0 +1,5343 @@
+{
+ "acoes_novas": [
+  "misturar",
+  "escaldar",
+  "abrir(mãos)",
+  "testar",
+  "embeber",
+  "esterilizar",
+  "selar",
+  "polvilhar",
+  "rolar",
+  "escorrer",
+  "mergulhar"
+ ],
+ "alimentos": [
+  {
+   "id": "fermento-fresco",
+   "nome": "Fermento biológico fresco",
+   "forma": "tablete retangular bege-acinzentado, úmido e quebradiço"
+  },
+  {
+   "id": "fermento-seco",
+   "nome": "Fermento biológico seco granulado",
+   "forma": "grânulos bege miúdos em sachê ou pote"
+  },
+  {
+   "id": "fermento-soluvel",
+   "nome": "Fermento biológico instantâneo",
+   "forma": "pó fino bege em sachê"
+  },
+  {
+   "id": "farinha-de-trigo",
+   "nome": "Farinha de trigo",
+   "forma": "pó branco fino em saco ou monte com buraco no meio"
+  },
+  {
+   "id": "farinha-integral",
+   "nome": "Farinha de trigo integral",
+   "forma": "pó castanho com pintas de farelo"
+  },
+  {
+   "id": "fuba",
+   "nome": "Fubá",
+   "forma": "pó amarelo granuloso"
+  },
+  {
+   "id": "massa-de-pao",
+   "nome": "Massa de pão",
+   "forma": "bola lisa cor creme, elástica, dobra de volume ao crescer"
+  },
+  {
+   "id": "pao-de-forma",
+   "nome": "Pão branco de fôrma",
+   "forma": "bloco retangular de topo abaulado, casca dourada, miolo branco"
+  },
+  {
+   "id": "pao-trancado",
+   "nome": "Pão trançado",
+   "forma": "pão alongado de três tiras entrelaçadas, dourado brilhante"
+  },
+  {
+   "id": "pao-redondo",
+   "nome": "Pão redondo",
+   "forma": "cúpula baixa dourada, às vezes com corte em X no topo"
+  },
+  {
+   "id": "rosquinhas",
+   "nome": "Rosquinhas modeladas",
+   "forma": "pãezinhos de 30 a 60 g: espirais, discos empilhados, caracol, dobrado em meia-lua, folha com talhos, nó"
+  },
+  {
+   "id": "baguete",
+   "nome": "Baguete ou ciabatta",
+   "forma": "pão longo dourado cortado em fatias ovais"
+  },
+  {
+   "id": "bruschetta",
+   "nome": "Bruschetta e crostini",
+   "forma": "fatias ovais tostadas com cobertura colorida por cima"
+  },
+  {
+   "id": "pizza",
+   "nome": "Pizza",
+   "forma": "disco de 25 cm e 1 cm de espessura, borda dourada, cobertura em padrão regular"
+  },
+  {
+   "id": "calzone",
+   "nome": "Calzone",
+   "forma": "meia-lua fechada de massa dourada com dois cortes no topo"
+  },
+  {
+   "id": "focaccia",
+   "nome": "Focaccia de alecrim",
+   "forma": "pão chato grosso retangular ou redondo, cheio de covinhas, sal grosso e alecrim verde"
+  },
+  {
+   "id": "coroa-pesto",
+   "nome": "Coroa recheada de pesto",
+   "forma": "anel de massa fatiado em gomos torcidos para cima, espiral verde de recheio aparente"
+  },
+  {
+   "id": "tortilla",
+   "nome": "Tortilla de trigo",
+   "forma": "disco fino creme com pintas marrons, bordas levemente curvadas"
+  },
+  {
+   "id": "panqueca-chinesa",
+   "nome": "Panqueca chinesa",
+   "forma": "disco de 12,5 cm finíssimo como papel, branco com bolhas"
+  },
+  {
+   "id": "chapati",
+   "nome": "Chapati",
+   "forma": "disco fino de 18 cm, castanho-claro com pintas escuras, infla como balão"
+  },
+  {
+   "id": "poori",
+   "nome": "Poori",
+   "forma": "disco de 12,5 cm frito, estufado como bola dourada"
+  },
+  {
+   "id": "paratha",
+   "nome": "Paratha",
+   "forma": "quadrado de 18 cm folhado, dourado e brilhante de manteiga"
+  },
+  {
+   "id": "kugelhopf",
+   "nome": "Kugelhopf",
+   "forma": "bolo-pão alto em coroa com caneluras espirais e furo central, nozes no topo"
+  },
+  {
+   "id": "brioche",
+   "nome": "Brioche à tête",
+   "forma": "pão em fôrma canelada com bola grande e uma cabecinha redonda em cima, dourado escuro brilhante"
+  },
+  {
+   "id": "bagel",
+   "nome": "Bagel",
+   "forma": "anel grosso de massa, superfície lisa e brilhante dourada"
+  },
+  {
+   "id": "pao-bicarbonato",
+   "nome": "Pão de bicarbonato",
+   "forma": "pão redondo rústico de 20 cm, castanho, cruz funda no topo"
+  },
+  {
+   "id": "pao-de-milho",
+   "nome": "Pão de milho",
+   "forma": "disco grosso amarelo-dourado assado em frigideira de ferro, grãos de milho visíveis"
+  },
+  {
+   "id": "pao-abobrinha",
+   "nome": "Pão de abobrinha",
+   "forma": "bolo retangular de fôrma, miolo úmido com fios verdes e pinoli"
+  },
+  {
+   "id": "abobrinha",
+   "nome": "Abobrinha",
+   "forma": "cilindro verde-escuro alongado"
+  },
+  {
+   "id": "milho-grao",
+   "nome": "Grãos de milho",
+   "forma": "grãos amarelos pequenos e arredondados"
+  },
+  {
+   "id": "parmesao",
+   "nome": "Parmesão",
+   "forma": "bloco em cunha amarelo-palha de casca dura; aparas em espiral fina"
+  },
+  {
+   "id": "camarao",
+   "nome": "Camarão grande cozido",
+   "forma": "curva em C rosa-alaranjada sem casca"
+  },
+  {
+   "id": "tomate-cereja",
+   "nome": "Tomate-cereja",
+   "forma": "esfera pequena vermelha ou amarela"
+  },
+  {
+   "id": "presunto-parma",
+   "nome": "Presunto de Parma",
+   "forma": "fatia finíssima rosada com borda branca de gordura"
+  },
+  {
+   "id": "queijo-cabra",
+   "nome": "Queijo de cabra",
+   "forma": "cilindro branco macio"
+  },
+  {
+   "id": "rucula",
+   "nome": "Rúcula",
+   "forma": "folha verde recortada"
+  },
+  {
+   "id": "pimentao",
+   "nome": "Pimentão vermelho e amarelo",
+   "forma": "bloco lobado brilhante, vermelho ou amarelo"
+  },
+  {
+   "id": "cebola-roxa",
+   "nome": "Cebola roxa",
+   "forma": "globo roxo em camadas"
+  },
+  {
+   "id": "azeitona",
+   "nome": "Azeitona",
+   "forma": "oval pequena preta ou verde"
+  },
+  {
+   "id": "pinoli",
+   "nome": "Pinoli",
+   "forma": "sementinha alongada cor marfim"
+  },
+  {
+   "id": "alecrim",
+   "nome": "Alecrim",
+   "forma": "ramo com agulhas verde-escuras"
+  },
+  {
+   "id": "pesto",
+   "nome": "Pesto",
+   "forma": "pasta verde brilhante"
+  },
+  {
+   "id": "nozes",
+   "nome": "Nozes",
+   "forma": "metade enrugada castanho-clara"
+  },
+  {
+   "id": "maca",
+   "nome": "Maçã",
+   "forma": "esfera achatada vermelha, verde ou amarela, polpa branca"
+  },
+  {
+   "id": "pera",
+   "nome": "Pera",
+   "forma": "gota com base larga e pescoço fino, verde, amarela ou rosada, com cabo"
+  },
+  {
+   "id": "ruibarbo",
+   "nome": "Ruibarbo",
+   "forma": "talo comprido rosa-avermelhado tipo aipo, folhas grandes verdes"
+  },
+  {
+   "id": "abacaxi",
+   "nome": "Abacaxi",
+   "forma": "oval alto com casca em losangos marrom-dourada e coroa de folhas pontudas; polpa amarela com miolo fibroso"
+  },
+  {
+   "id": "abacaxi-anao",
+   "nome": "Abacaxi-anão",
+   "forma": "abacaxi pequeno do tamanho de uma mão, mesma casca e coroa"
+  },
+  {
+   "id": "cereja",
+   "nome": "Cereja",
+   "forma": "esfera pequena vermelho-escura brilhante com talo verde"
+  },
+  {
+   "id": "manga",
+   "nome": "Manga",
+   "forma": "oval achatada, casca verde, amarela ou vermelha, polpa laranja, caroço chato grande"
+  },
+  {
+   "id": "pessego",
+   "nome": "Pêssego",
+   "forma": "esfera aveludada amarelo-avermelhada com sulco lateral"
+  },
+  {
+   "id": "nectarina",
+   "nome": "Nectarina",
+   "forma": "esfera lisa vermelho-dourada brilhante"
+  },
+  {
+   "id": "ameixa",
+   "nome": "Ameixa",
+   "forma": "oval pequena roxa com caroço"
+  },
+  {
+   "id": "laranja",
+   "nome": "Laranja",
+   "forma": "esfera laranja de casca porosa, gomos internos"
+  },
+  {
+   "id": "limao",
+   "nome": "Limão",
+   "forma": "oval amarelo ou verde de casca lisa"
+  },
+  {
+   "id": "lima",
+   "nome": "Lima",
+   "forma": "esfera pequena verde brilhante"
+  },
+  {
+   "id": "grapefruit",
+   "nome": "Grapefruit",
+   "forma": "esfera grande amarelo-rosada, polpa vermelha"
+  },
+  {
+   "id": "kinkan",
+   "nome": "Laranjinha kinkan",
+   "forma": "oval mínima laranja brilhante, do tamanho de uma uva grande"
+  },
+  {
+   "id": "mexerica",
+   "nome": "Mexerica",
+   "forma": "esfera achatada laranja de casca solta"
+  },
+  {
+   "id": "morango",
+   "nome": "Morango",
+   "forma": "cone vermelho com sementinhas na pele e cálice verde"
+  },
+  {
+   "id": "framboesa",
+   "nome": "Framboesa",
+   "forma": "cúpula oca vermelha de bolinhas"
+  },
+  {
+   "id": "groselha",
+   "nome": "Groselha vermelha ou preta",
+   "forma": "cacho de bagas translúcidas presas num cabinho fino"
+  },
+  {
+   "id": "blueberry",
+   "nome": "Blueberry",
+   "forma": "bolinha azul-acinzentada com pó aveludado e coroinha"
+  },
+  {
+   "id": "amora",
+   "nome": "Amora",
+   "forma": "bolinha alongada preta-arroxeada de grãos"
+  },
+  {
+   "id": "uva",
+   "nome": "Uva",
+   "forma": "bago oval verde ou roxo em cacho"
+  },
+  {
+   "id": "melao-cantalupo",
+   "nome": "Melão cantalupo",
+   "forma": "esfera com casca vincada em gomos e rendada, polpa laranja, sementes no centro"
+  },
+  {
+   "id": "kiwi",
+   "nome": "Kiwi",
+   "forma": "oval peludo marrom, polpa verde com anel de sementes pretas"
+  },
+  {
+   "id": "tamara",
+   "nome": "Tâmara",
+   "forma": "oval alongada marrom brilhante e enrugada, caroço comprido"
+  },
+  {
+   "id": "figo",
+   "nome": "Figo",
+   "forma": "gota roxa com pescoço, polpa rosada cheia de sementes"
+  },
+  {
+   "id": "maracuja",
+   "nome": "Maracujá",
+   "forma": "esfera roxa ou amarela enrugada, polpa amarela com sementes pretas"
+  },
+  {
+   "id": "sapotilha",
+   "nome": "Sapotilha",
+   "forma": "oval pequena marrom de casca áspera, polpa caramelo"
+  },
+  {
+   "id": "nespera",
+   "nome": "Ameixa-amarela (nêspera)",
+   "forma": "oval pequena amarelo-alaranjada com caroços grandes"
+  },
+  {
+   "id": "caqui",
+   "nome": "Caqui",
+   "forma": "esfera achatada laranja brilhante com sépalas no topo"
+  },
+  {
+   "id": "feijoa",
+   "nome": "Feijoa",
+   "forma": "oval verde-escuro fosca"
+  },
+  {
+   "id": "tamarillo",
+   "nome": "Tamarillo",
+   "forma": "oval vermelho brilhante em forma de ovo, com cabo"
+  },
+  {
+   "id": "pepino-melao",
+   "nome": "Pepino-melão",
+   "forma": "oval amarelo com listras roxas, polpa amarelo-clara"
+  },
+  {
+   "id": "babaco",
+   "nome": "Babaco",
+   "forma": "fruto alongado de cinco faces, verde a amarelo, polpa rosa-alaranjada"
+  },
+  {
+   "id": "curuba",
+   "nome": "Curuba",
+   "forma": "maracujá alongado tipo banana, amarelo"
+  },
+  {
+   "id": "physalis",
+   "nome": "Physalis",
+   "forma": "bolinha laranja dentro de uma lanterna de palha bege"
+  },
+  {
+   "id": "goiaba",
+   "nome": "Goiaba",
+   "forma": "esfera verde-amarelada, polpa rosa com sementes"
+  },
+  {
+   "id": "papaia",
+   "nome": "Papaia",
+   "forma": "pera alongada verde-amarelada, polpa rosa-alaranjada com sementes pretas no centro"
+  },
+  {
+   "id": "mangostao",
+   "nome": "Mangostão",
+   "forma": "esfera roxa-escura de casca dura com coroa verde, gomos brancos dentro"
+  },
+  {
+   "id": "roma",
+   "nome": "Romã",
+   "forma": "esfera vermelha com coroinha, interior de sementes rubi em favos brancos"
+  },
+  {
+   "id": "figo-da-india",
+   "nome": "Figo-da-índia",
+   "forma": "oval verde a laranja com espinhos finos, polpa amarela ou rosada"
+  },
+  {
+   "id": "granadilla",
+   "nome": "Granadilla",
+   "forma": "esfera laranja lisa de casca dura, polpa gelatinosa cinza com sementes"
+  },
+  {
+   "id": "carambola",
+   "nome": "Carambola",
+   "forma": "fruto amarelo cerado de cinco quinas; fatias em estrela"
+  },
+  {
+   "id": "lichia",
+   "nome": "Lichia",
+   "forma": "bolinha de casca rosada áspera, polpa branca perolada, semente marrom"
+  },
+  {
+   "id": "kiwano",
+   "nome": "Kiwano",
+   "forma": "oval laranja cheio de chifrinhos, miolo verde gelatinoso"
+  },
+  {
+   "id": "rambutan",
+   "nome": "Rambutan",
+   "forma": "bolinha vermelha coberta de pelos macios"
+  },
+  {
+   "id": "pitaia",
+   "nome": "Pitaia",
+   "forma": "oval rosa-choque ou amarela com escamas, polpa branca ou rosa com pontinhos pretos"
+  },
+  {
+   "id": "durian",
+   "nome": "Durian",
+   "forma": "fruto grande verde-oliva coberto de espinhos grossos, polpa creme"
+  },
+  {
+   "id": "banana",
+   "nome": "Banana",
+   "forma": "curva amarela"
+  },
+  {
+   "id": "frutas-secas",
+   "nome": "Frutas secas (abricó, figo, pêssego, tâmara, ameixa)",
+   "forma": "pedaços enrugados marrons e laranjas"
+  },
+  {
+   "id": "calda-de-acucar",
+   "nome": "Calda de açúcar",
+   "forma": "líquido transparente xaroposo"
+  },
+  {
+   "id": "vinho-tinto",
+   "nome": "Vinho tinto",
+   "forma": "líquido vermelho-escuro em garrafa"
+  },
+  {
+   "id": "rum",
+   "nome": "Rum ou conhaque",
+   "forma": "líquido âmbar em garrafa"
+  },
+  {
+   "id": "zabaione",
+   "nome": "Calda de zabaione",
+   "forma": "creme amarelo-claro espumoso"
+  },
+  {
+   "id": "massa-tempura",
+   "nome": "Massa de tempura",
+   "forma": "líquido grosso creme bem fino"
+  },
+  {
+   "id": "couli",
+   "nome": "Couli de berries",
+   "forma": "calda vermelha lisa e brilhante"
+  },
+  {
+   "id": "creme-de-leite",
+   "nome": "Creme de leite",
+   "forma": "líquido branco espesso"
+  }
+ ],
+ "utensilios": [
+  {
+   "id": "vasilha",
+   "nome": "Vasilha grande",
+   "forma": "tigela funda de cerâmica ou inox"
+  },
+  {
+   "id": "peneira",
+   "nome": "Peneira",
+   "forma": "cúpula de tela metálica com aro e cabo"
+  },
+  {
+   "id": "bancada-enfarinhada",
+   "nome": "Bancada enfarinhada",
+   "forma": "tampo de madeira ou mármore polvilhado de farinha"
+  },
+  {
+   "id": "batedeira-gancho",
+   "nome": "Batedeira com gancho para massa",
+   "forma": "batedeira planetária com tigela grande e gancho em espiral"
+  },
+  {
+   "id": "pano-umido",
+   "nome": "Pano de prato úmido",
+   "forma": "tecido quadrado de algodão"
+  },
+  {
+   "id": "filme-plastico",
+   "nome": "Filme plástico",
+   "forma": "rolo de película transparente"
+  },
+  {
+   "id": "forma-de-pao",
+   "nome": "Fôrma de pão de 900 g",
+   "forma": "caixa retangular metálica funda"
+  },
+  {
+   "id": "assadeira",
+   "nome": "Assadeira",
+   "forma": "chapa metálica retangular de borda baixa"
+  },
+  {
+   "id": "grade",
+   "nome": "Grade de metal para esfriar",
+   "forma": "grelha de arame retangular com pezinhos"
+  },
+  {
+   "id": "pincel",
+   "nome": "Pincel de cozinha",
+   "forma": "pincel de cerdas com cabo"
+  },
+  {
+   "id": "tesoura",
+   "nome": "Tesoura de cozinha",
+   "forma": "tesoura de lâminas robustas"
+  },
+  {
+   "id": "faquinha",
+   "nome": "Faquinha de legumes",
+   "forma": "faca pequena de lâmina curta e pontuda"
+  },
+  {
+   "id": "faca-de-cozinha",
+   "nome": "Faca de cozinha (do chef)",
+   "forma": "faca de lâmina larga e longa"
+  },
+  {
+   "id": "faca-serrilhada",
+   "nome": "Faca serrilhada",
+   "forma": "lâmina longa com dentes"
+  },
+  {
+   "id": "colher-de-pau",
+   "nome": "Colher (cabo enfarinhado)",
+   "forma": "colher de madeira de cabo roliço"
+  },
+  {
+   "id": "descascador-legumes",
+   "nome": "Descascador de legumes",
+   "forma": "cabo com lâmina giratória fendida e ponta afiada"
+  },
+  {
+   "id": "forma-pizza",
+   "nome": "Fôrma redonda de pizza",
+   "forma": "disco metálico raso"
+  },
+  {
+   "id": "rolo",
+   "nome": "Rolo de abrir massa",
+   "forma": "cilindro de madeira com ou sem cabos"
+  },
+  {
+   "id": "chapa",
+   "nome": "Chapa de ferro (tawa)",
+   "forma": "disco de ferro grosso, plano ou levemente côncavo"
+  },
+  {
+   "id": "pegador",
+   "nome": "Pegador",
+   "forma": "pinça metálica de cozinha"
+  },
+  {
+   "id": "wok",
+   "nome": "Wok",
+   "forma": "panela funda e côncava de ferro com cabo"
+  },
+  {
+   "id": "hashi",
+   "nome": "Hashi",
+   "forma": "par de pauzinhos de madeira"
+  },
+  {
+   "id": "espatula",
+   "nome": "Espátula",
+   "forma": "lâmina plana larga com cabo"
+  },
+  {
+   "id": "frigideira-funda",
+   "nome": "Frigideira funda",
+   "forma": "frigideira de borda alta"
+  },
+  {
+   "id": "escumadeira",
+   "nome": "Escumadeira",
+   "forma": "colher larga e chata perfurada de cabo longo"
+  },
+  {
+   "id": "panela-grande",
+   "nome": "Panela grande",
+   "forma": "panela alta de inox com alças"
+  },
+  {
+   "id": "forma-kugelhopf",
+   "nome": "Fôrma de kugelhopf de 1 litro",
+   "forma": "fôrma alta em coroa com caneluras diagonais e cone central"
+  },
+  {
+   "id": "forma-brioche",
+   "nome": "Fôrma de brioche de 17,5 cm",
+   "forma": "fôrma canelada em flor, larga em cima e estreita embaixo"
+  },
+  {
+   "id": "frigideira-ferro",
+   "nome": "Frigideira de ferro de 20 cm",
+   "forma": "frigideira preta pesada de ferro fundido"
+  },
+  {
+   "id": "palito",
+   "nome": "Palito",
+   "forma": "palito fino de madeira"
+  },
+  {
+   "id": "garfo",
+   "nome": "Garfo",
+   "forma": "garfo de mesa de quatro dentes"
+  },
+  {
+   "id": "faca-canelle",
+   "nome": "Faca canelle",
+   "forma": "cabo curto com lâmina de gancho que tira tira de casca em V"
+  },
+  {
+   "id": "descarocador",
+   "nome": "Descaroçador de maçã",
+   "forma": "tubo metálico cortante com cabo"
+  },
+  {
+   "id": "descarocador-cereja",
+   "nome": "Descaroçador de cereja",
+   "forma": "alicate com concha e pino cego"
+  },
+  {
+   "id": "boleador",
+   "nome": "Boleador",
+   "forma": "cabo com colherinha hemisférica cortante"
+  },
+  {
+   "id": "cortador-biscoito",
+   "nome": "Cortador de biscoitos redondo",
+   "forma": "aro metálico cortante pequeno"
+  },
+  {
+   "id": "tabua",
+   "nome": "Tábua de corte",
+   "forma": "placa retangular de madeira ou polietileno"
+  },
+  {
+   "id": "zester",
+   "nome": "Raspador de cítricos (zester)",
+   "forma": "cabo com plaquinha de furinhos cortantes"
+  },
+  {
+   "id": "ralador",
+   "nome": "Ralador de ralo fino",
+   "forma": "placa metálica com dentes miúdos"
+  },
+  {
+   "id": "reamer",
+   "nome": "Espremedor de madeira (reamer)",
+   "forma": "cone de madeira com sulcos e cabo"
+  },
+  {
+   "id": "palito-coquetel",
+   "nome": "Palito de coquetel",
+   "forma": "espeto curto de madeira"
+  },
+  {
+   "id": "clipe",
+   "nome": "Clipe de papel esterilizado",
+   "forma": "arame dobrado aberto em gancho"
+  },
+  {
+   "id": "liquidificador",
+   "nome": "Liquidificador",
+   "forma": "jarra com lâminas sobre base motorizada"
+  },
+  {
+   "id": "mouli",
+   "nome": "Passa-legumes (Mouli)",
+   "forma": "cesto de inox com disco perfurado, lâmina e manivela"
+  },
+  {
+   "id": "saco-confeitar",
+   "nome": "Saco de confeitar",
+   "forma": "cone de pano ou plástico com bico fino"
+  },
+  {
+   "id": "prato-gelado",
+   "nome": "Prato de servir gelado",
+   "forma": "prato raso branco"
+  },
+  {
+   "id": "colher-pequena",
+   "nome": "Colherinha",
+   "forma": "colher de chá"
+  },
+  {
+   "id": "sorveteira",
+   "nome": "Sorveteira",
+   "forma": "máquina com cuba e pá giratória"
+  },
+  {
+   "id": "vidro-hermetico",
+   "nome": "Vidro esterilizado com tampa hermética",
+   "forma": "pote de vidro com tampa de borracha e fecho de arame"
+  },
+  {
+   "id": "pote-rumtopf",
+   "nome": "Pote de rumtopf",
+   "forma": "pote alto de cerâmica ou vidro com tampa"
+  },
+  {
+   "id": "espetos",
+   "nome": "Espetos",
+   "forma": "varetas metálicas ou de bambu"
+  },
+  {
+   "id": "grelha",
+   "nome": "Grelha de churrasqueira",
+   "forma": "grade de barras sobre brasa"
+  },
+  {
+   "id": "papel-aluminio",
+   "nome": "Papel-alumínio ou papel-manteiga",
+   "forma": "folha metálica ou de papel em rolo"
+  },
+  {
+   "id": "folha-bananeira",
+   "nome": "Folha de bananeira",
+   "forma": "folha verde larga e longa"
+  },
+  {
+   "id": "refratario",
+   "nome": "Refratário",
+   "forma": "travessa de vidro ou louça resistente ao forno"
+  },
+  {
+   "id": "colher-cabo-longo",
+   "nome": "Colher de metal de cabo longo",
+   "forma": "concha metálica de cabo comprido"
+  },
+  {
+   "id": "papel-toalha",
+   "nome": "Papel-toalha",
+   "forma": "rolo de papel absorvente"
+  },
+  {
+   "id": "termometro",
+   "nome": "Termômetro de fritura",
+   "forma": "haste com mostrador e clipe"
+  },
+  {
+   "id": "barbante",
+   "nome": "Barbante",
+   "forma": "fio de algodão"
+  },
+  {
+   "id": "luvas",
+   "nome": "Luvas",
+   "forma": "luvas grossas de proteção"
+  },
+  {
+   "id": "misturador-massa",
+   "nome": "Misturador de massa (raspador)",
+   "forma": "espátula de borracha flexível"
+  },
+  {
+   "id": "forno",
+   "nome": "Forno",
+   "forma": "caixa com porta de vidro e grelhas internas"
+  },
+  {
+   "id": "balanca",
+   "nome": "Balança de cozinha",
+   "forma": "base plana com visor digital"
+  },
+  {
+   "id": "panela",
+   "nome": "Panela média",
+   "forma": "panela de inox com cabo"
+  },
+  {
+   "id": "colher",
+   "nome": "Colher de sopa",
+   "forma": "colher de metal"
+  },
+  {
+   "id": "frigideira",
+   "nome": "Frigideira",
+   "forma": "frigideira rasa antiaderente com cabo"
+  }
+ ],
+ "tecnicas": [
+  {
+   "id": "paes.ativar-fermento-fresco",
+   "capitulo": "Fazendo pães",
+   "nome": "Ativar fermento fresco",
+   "ingredientes": [
+    "fermento fresco",
+    "água morna"
+   ],
+   "utensilios": [
+    "vasilha",
+    "pano-umido"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "água morna",
+     "utensilio": "vasilha",
+     "parametro": "um pouco da água da receita, no máximo 30 °C"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "fermento esfarelado na água",
+     "utensilio": "colher",
+     "parametro": "até dissolver"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "mistura coberta",
+     "utensilio": "pano-umido",
+     "parametro": "até surgirem bolhas"
+    }
+   ],
+   "ponto_critico": "água morna até 30 °C; 15 g de fermento fresco equivalem a 1 colher (sopa) do seco",
+   "erro_comum": "usar água quente demais e matar o fermento"
+  },
+  {
+   "id": "paes.ativar-fermento-seco",
+   "capitulo": "Fazendo pães",
+   "nome": "Ativar fermento seco granulado",
+   "ingredientes": [
+    "fermento seco",
+    "água morna",
+    "açúcar"
+   ],
+   "utensilios": [
+    "vasilha",
+    "pano-umido"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "água morna",
+     "utensilio": "vasilha",
+     "parametro": "parte da água da receita"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "grânulos sobre a água",
+     "utensilio": "mãos",
+     "parametro": "espalhados"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "açúcar",
+     "utensilio": "colher",
+     "parametro": "1/2 colher (chá)"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "mistura coberta",
+     "utensilio": "pano-umido",
+     "parametro": "até espumar"
+    }
+   ],
+   "ponto_critico": "espuma na superfície; temperatura máxima de 30 °C",
+   "erro_comum": "pular o açúcar ou não esperar a espuma"
+  },
+  {
+   "id": "paes.fermento-instantaneo",
+   "capitulo": "Fazendo pães",
+   "nome": "Usar fermento instantâneo",
+   "ingredientes": [
+    "fermento solúvel",
+    "farinha",
+    "líquido morno"
+   ],
+   "utensilios": [
+    "vasilha"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "fermento com os secos",
+     "utensilio": "mãos",
+     "parametro": "bem distribuído"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "líquido morno",
+     "utensilio": "colher",
+     "parametro": "até formar massa"
+    }
+   ],
+   "ponto_critico": "vai direto nos secos, sem hidratar antes; algumas marcas pedem só uma fermentação",
+   "erro_comum": "dissolver na água como o fresco ou ignorar a embalagem"
+  },
+  {
+   "id": "paes.massa-a-mao",
+   "capitulo": "Fazendo pães",
+   "nome": "Fazer e sovar massa à mão",
+   "ingredientes": [
+    "farinha de trigo",
+    "sal",
+    "fermento preparado",
+    "água morna"
+   ],
+   "utensilios": [
+    "peneira",
+    "vasilha",
+    "bancada-enfarinhada"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha e sal",
+     "utensilio": "peneira",
+     "parametro": "monte com buraco no centro"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "fermento e resto da água no buraco",
+     "utensilio": "mãos",
+     "parametro": "puxando a farinha até virar massa"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "esticar com uma mão para a frente e puxar com a outra para trás"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "massa sobre si mesma e girar",
+     "utensilio": "mãos",
+     "parametro": "repetir por 10 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bola",
+     "utensilio": "mãos",
+     "parametro": "lisa e uniforme"
+    }
+   ],
+   "ponto_critico": "10 min de sova até ficar lisa e elástica; ajustar líquido conforme a farinha",
+   "erro_comum": "pôr todo o líquido sem olhar a absorção e ficar pegajosa"
+  },
+  {
+   "id": "paes.massa-a-maquina",
+   "capitulo": "Fazendo pães",
+   "nome": "Fazer massa na batedeira",
+   "ingredientes": [
+    "farinha de trigo",
+    "sal",
+    "fermento preparado",
+    "água morna"
+   ],
+   "utensilios": [
+    "batedeira-gancho",
+    "bancada-enfarinhada"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "1/4 da farinha com sal, fermento e água",
+     "utensilio": "batedeira-gancho",
+     "parametro": "batedor comum, velocidade baixa"
+    },
+    {
+     "acao": "bater",
+     "alvo": "resto da farinha aos poucos",
+     "utensilio": "batedeira-gancho",
+     "parametro": "máquina desligada para trocar pelo gancho"
+    },
+    {
+     "acao": "bater",
+     "alvo": "massa",
+     "utensilio": "batedeira-gancho",
+     "parametro": "até soltar das laterais e abraçar o gancho"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "2 a 3 min e fazer bola"
+    }
+   ],
+   "ponto_critico": "massa desgruda da tigela e forma bola no gancho",
+   "erro_comum": "trocar o batedor com a máquina ligada"
+  },
+  {
+   "id": "paes.primeira-fermentacao",
+   "capitulo": "Fazendo pães",
+   "nome": "Deixar a massa crescer (1ª fermentação)",
+   "ingredientes": [
+    "massa de pão",
+    "óleo"
+   ],
+   "utensilios": [
+    "vasilha",
+    "pano-umido"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "vasilha e massa com pouco óleo",
+     "utensilio": "vasilha",
+     "parametro": "rolar a bola para untar"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "local morno sem vento, 1 a 2 h"
+    },
+    {
+     "acao": "testar",
+     "alvo": "massa",
+     "utensilio": "dedo",
+     "parametro": "marca do dedo fica"
+    }
+   ],
+   "ponto_critico": "dobrar de volume; a marca do dedo permanece",
+   "erro_comum": "lugar frio ou com corrente de ar, massa cria crosta"
+  },
+  {
+   "id": "paes.socar-e-descansar",
+   "capitulo": "Fazendo pães",
+   "nome": "Socar a massa crescida e descansar",
+   "ingredientes": [
+    "massa de pão crescida"
+   ],
+   "utensilios": [
+    "bancada-enfarinhada"
+   ],
+   "passos": [
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "punho",
+     "parametro": "socar para murchar"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "2 a 3 min"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "5 min antes de modelar"
+    }
+   ],
+   "ponto_critico": "ar redistribuído para miolo uniforme; 5 min de descanso",
+   "erro_comum": "modelar sem descanso e a massa encolher"
+  },
+  {
+   "id": "paes.pao-branco-forma",
+   "capitulo": "Fazendo pães",
+   "nome": "Modelar e assar pão branco de fôrma",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "forma-de-pao",
+    "filme-plastico",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "massa ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "duas porções para fôrmas de 900 g"
+    },
+    {
+     "acao": "abrir(mãos)",
+     "alvo": "massa",
+     "utensilio": "mãos",
+     "parametro": "oval"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "lados curtos até o centro",
+     "utensilio": "mãos",
+     "parametro": "emenda para baixo na fôrma untada"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa na fôrma",
+     "utensilio": "filme-plastico",
+     "parametro": "30 a 45 min até encher"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pão",
+     "utensilio": "forno",
+     "parametro": "220 °C por 20 min e depois 180 °C por cerca de 15 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "pão desenformado",
+     "utensilio": "grade",
+     "parametro": "até frio"
+    }
+   ],
+   "ponto_critico": "massa enche a fôrma antes de assar; troca de temperatura aos 20 min",
+   "erro_comum": "emenda para cima, pão abre ao assar"
+  },
+  {
+   "id": "paes.glacear",
+   "capitulo": "Fazendo pães",
+   "nome": "Glacear o pão (acabamentos)",
+   "ingredientes": [
+    "ovo e água",
+    "leite",
+    "manteiga",
+    "azeite"
+   ],
+   "utensilios": [
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "ovo com água",
+     "utensilio": "pincel",
+     "parametro": "antes de assar e de novo 10 min antes do fim: brilho dourado"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "leite",
+     "utensilio": "pincel",
+     "parametro": "antes de assar: casca macia marrom-clara"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "manteiga no pão já assado",
+     "utensilio": "pincel",
+     "parametro": "cobrir com pano e esfriar: casca macia"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "azeite",
+     "utensilio": "pincel",
+     "parametro": "antes e durante o forno: fosco, estilo caipira"
+    }
+   ],
+   "ponto_critico": "duas camadas finas são melhores que uma grossa; ordem: glacear, polvilhar, cortar",
+   "erro_comum": "pincelar com força e murchar a massa, ou deixar escorrer e grudar na assadeira"
+  },
+  {
+   "id": "paes.coberturas",
+   "capitulo": "Fazendo pães",
+   "nome": "Aplicar coberturas no pão",
+   "ingredientes": [
+    "sementes (papoula, gergelim, girassol, erva-doce, alcaravia)",
+    "flocos de aveia ou cevada",
+    "nozes picadas",
+    "queijo ralado",
+    "farinha"
+   ],
+   "utensilios": [
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "glaceado",
+     "utensilio": "pincel",
+     "parametro": "para coberturas pesadas"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "cobertura escolhida",
+     "utensilio": "mãos",
+     "parametro": "pressionar de leve"
+    }
+   ],
+   "ponto_critico": "coberturas leves só pressionadas; pesadas precisam de glaceado",
+   "erro_comum": "deixar nozes queimarem no forno"
+  },
+  {
+   "id": "paes.tranca",
+   "capitulo": "Fazendo pães",
+   "nome": "Trançar pão de três tiras",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "três tiras iguais",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "mesma espessura"
+    },
+    {
+     "acao": "trançar",
+     "alvo": "tira de fora sobre a do meio, alternando lados",
+     "utensilio": "mãos",
+     "parametro": "até o fim"
+    },
+    {
+     "acao": "selar",
+     "alvo": "pontas",
+     "utensilio": "mãos",
+     "parametro": "apertar"
+    }
+   ],
+   "ponto_critico": "tiras iguais e trança sem apertar demais",
+   "erro_comum": "pontas soltas que abrem ao crescer"
+  },
+  {
+   "id": "paes.pao-redondo",
+   "capitulo": "Fazendo pães",
+   "nome": "Modelar pão redondo",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "bordas puxadas para o centro",
+     "utensilio": "mãos",
+     "parametro": "juntar em cima"
+    },
+    {
+     "acao": "selar",
+     "alvo": "pontas",
+     "utensilio": "mãos",
+     "parametro": "apertar"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "pão virado",
+     "utensilio": "mãos",
+     "parametro": "emenda para baixo"
+    }
+   ],
+   "ponto_critico": "superfície esticada e lisa",
+   "erro_comum": "não virar o pão e assar com a emenda para cima"
+  },
+  {
+   "id": "paes.corte-em-cruz",
+   "capitulo": "Fazendo pães",
+   "nome": "Corte em cruz com tesoura",
+   "ingredientes": [
+    "pão modelado"
+   ],
+   "utensilios": [
+    "tesoura"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "dois piques em X no topo",
+     "utensilio": "tesoura",
+     "parametro": "1 cm de profundidade"
+    }
+   ],
+   "ponto_critico": "1 cm de profundidade",
+   "erro_comum": "cortar raso demais e o X sumir"
+  },
+  {
+   "id": "paes.cortes-transversais",
+   "capitulo": "Fazendo pães",
+   "nome": "Cortes transversais no pão",
+   "ingredientes": [
+    "pão modelado"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "riscos paralelos no topo",
+     "utensilio": "faquinha",
+     "parametro": "5 mm de fundo, 4 cm entre eles, num só movimento"
+    }
+   ],
+   "ponto_critico": "5 mm de profundidade a cada 4 cm",
+   "erro_comum": "serrar a massa em vez de um golpe limpo"
+  },
+  {
+   "id": "paes.testar-ponto",
+   "capitulo": "Fazendo pães",
+   "nome": "Testar se o pão está assado",
+   "ingredientes": [
+    "pão assado"
+   ],
+   "utensilios": [
+    "pano-umido",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "fundo do pão desenformado",
+     "utensilio": "dedos",
+     "parametro": "bater e ouvir som oco"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pão sem fôrma",
+     "utensilio": "forno",
+     "parametro": "mais 5 min se não soar oco"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "pão",
+     "utensilio": "grade",
+     "parametro": "até frio"
+    }
+   ],
+   "ponto_critico": "som oco ao bater",
+   "erro_comum": "tirar cedo e o pão ficar com gosto de farinha crua"
+  },
+  {
+   "id": "paes.rosca-palmier",
+   "capitulo": "Fazendo pães",
+   "nome": "Rosquinha palmier",
+   "ingredientes": [
+    "massa de pão (30 a 60 g)"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "tira de espessura uniforme",
+     "utensilio": "mãos",
+     "parametro": "rolinho"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "as duas pontas para dentro",
+     "utensilio": "mãos",
+     "parametro": "espirais que se encontram"
+    }
+   ],
+   "ponto_critico": "espirais simétricas",
+   "erro_comum": "tira irregular"
+  },
+  {
+   "id": "paes.rosca-tourelle",
+   "capitulo": "Fazendo pães",
+   "nome": "Rosquinha tourelle",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "três discos de tamanhos decrescentes",
+     "utensilio": "faquinha",
+     "parametro": "do maior ao menor"
+    },
+    {
+     "acao": "montar",
+     "alvo": "discos empilhados",
+     "utensilio": "mãos",
+     "parametro": "maior embaixo"
+    }
+   ],
+   "ponto_critico": "pilha centralizada",
+   "erro_comum": "discos do mesmo tamanho"
+  },
+  {
+   "id": "paes.rosca-caracol",
+   "capitulo": "Fazendo pães",
+   "nome": "Rosquinha caracol",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "tira longa e uniforme",
+     "utensilio": "mãos",
+     "parametro": "rolando na bancada"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tira em espiral a partir de uma ponta",
+     "utensilio": "mãos",
+     "parametro": "ponta final presa embaixo"
+    }
+   ],
+   "ponto_critico": "espiral apertada",
+   "erro_comum": "ponta solta"
+  },
+  {
+   "id": "paes.rosca-parker-house",
+   "capitulo": "Fazendo pães",
+   "nome": "Rosquinha Parker House",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "rolo",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "círculo de massa",
+     "utensilio": "rolo",
+     "parametro": "6 a 20 cm"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "vinco no meio",
+     "utensilio": "colher-de-pau",
+     "parametro": "cabo enfarinhado"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "círculo no vinco",
+     "utensilio": "mãos",
+     "parametro": "apertar para selar"
+    }
+   ],
+   "ponto_critico": "vinco central nítido",
+   "erro_comum": "não selar e abrir no forno"
+  },
+  {
+   "id": "paes.rosca-colheita",
+   "capitulo": "Fazendo pães",
+   "nome": "Rosca de colheita",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "tira de 7 cm mais larga no centro",
+     "utensilio": "mãos",
+     "parametro": "pontas afinadas"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "três talhos no topo",
+     "utensilio": "faquinha",
+     "parametro": "paralelos"
+    }
+   ],
+   "ponto_critico": "formato de grão de trigo",
+   "erro_comum": "talhos fundos demais"
+  },
+  {
+   "id": "paes.rosca-no",
+   "capitulo": "Fazendo pães",
+   "nome": "Nó de padeiro",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "tira de 15 cm",
+     "utensilio": "mãos",
+     "parametro": "uniforme"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "nó simples",
+     "utensilio": "mãos",
+     "parametro": "puxar as pontas"
+    }
+   ],
+   "ponto_critico": "15 cm de tira",
+   "erro_comum": "nó apertado demais que não cresce"
+  },
+  {
+   "id": "paes.dividir-por-igual",
+   "capitulo": "Fazendo pães",
+   "nome": "Dividir a massa em porções iguais (Truque do Chef)",
+   "ingredientes": [
+    "massa de pão"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "balança"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "massa em cilindro longo",
+     "utensilio": "mãos",
+     "parametro": "grossura uniforme"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cilindro ao meio, e cada metade ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "repetir até o número desejado"
+    },
+    {
+     "acao": "pesar",
+     "alvo": "cada pedaço",
+     "utensilio": "balança",
+     "parametro": "30 a 60 g"
+    }
+   ],
+   "ponto_critico": "pedaços de peso igual",
+   "erro_comum": "cortar no olho e rosquinhas assarem desiguais"
+  },
+  {
+   "id": "paes.bruschetta-camarao",
+   "capitulo": "Fazendo pães",
+   "nome": "Bruschetta de camarão e tomate-cereja",
+   "ingredientes": [
+    "bruschetta tostada",
+    "tomate-cereja vermelho e amarelo",
+    "camarão cozido",
+    "azeite",
+    "sal",
+    "pimenta",
+    "coentro"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "tomates-cereja",
+     "utensilio": "faquinha",
+     "parametro": "rodelas"
+    },
+    {
+     "acao": "montar",
+     "alvo": "tomates sobre o pão",
+     "utensilio": "mãos",
+     "parametro": "alternando cores"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "azeite, sal e pimenta",
+     "utensilio": "colher",
+     "parametro": "a gosto"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "camarão e coentro",
+     "utensilio": "mãos",
+     "parametro": "camarão por cima"
+    }
+   ],
+   "ponto_critico": "6 unidades, 2 a 3 por pessoa",
+   "erro_comum": "pão encharcado de azeite"
+  },
+  {
+   "id": "paes.bruschetta-pera-cabra",
+   "capitulo": "Fazendo pães",
+   "nome": "Bruschetta de pera, nozes e queijo de cabra",
+   "ingredientes": [
+    "bruschetta",
+    "queijo de cabra",
+    "rúcula",
+    "pera",
+    "limão",
+    "nozes",
+    "pimenta"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "queijo espalhado no pão",
+     "utensilio": "faquinha",
+     "parametro": "camada fina"
+    },
+    {
+     "acao": "montar",
+     "alvo": "rúcula e fatias finas de pera",
+     "utensilio": "mãos",
+     "parametro": "pera cortada na vertical"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "gotas de limão",
+     "utensilio": "mãos",
+     "parametro": "sobre a pera"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "meia noz e pimenta",
+     "utensilio": "mãos",
+     "parametro": "uma por unidade"
+    }
+   ],
+   "ponto_critico": "pera bem fina para não escurecer, com limão",
+   "erro_comum": "pera escurecida"
+  },
+  {
+   "id": "paes.bruschetta-parma-figo",
+   "capitulo": "Fazendo pães",
+   "nome": "Bruschetta de presunto de Parma e figo",
+   "ingredientes": [
+    "bruschetta",
+    "presunto de Parma",
+    "figo",
+    "pimenta",
+    "cebolinha"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "fatia de presunto dobrada",
+     "utensilio": "mãos",
+     "parametro": "uma por pão"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "figos na vertical",
+     "utensilio": "faquinha",
+     "parametro": "fatias finas"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "figo, pimenta e cebolinha",
+     "utensilio": "mãos",
+     "parametro": "pedaços grandes de cebolinha"
+    }
+   ],
+   "ponto_critico": "figo maduro mas firme",
+   "erro_comum": "figo mole que desmancha"
+  },
+  {
+   "id": "paes.bruschetta-legumes",
+   "capitulo": "Fazendo pães",
+   "nome": "Bruschetta de legumes tostados e pinoli",
+   "ingredientes": [
+    "bruschetta",
+    "pimentão vermelho e amarelo",
+    "cebola roxa",
+    "azeite",
+    "azeitona preta",
+    "pinoli tostado",
+    "manjericão",
+    "espirais de parmesão"
+   ],
+   "utensilios": [
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "assar",
+     "alvo": "pimentões e cebola",
+     "utensilio": "forno",
+     "parametro": "até tostar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "pimentões em tiras finas",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "sem sementes e miolo"
+    },
+    {
+     "acao": "montar",
+     "alvo": "pimentão e camadas de cebola abertas",
+     "utensilio": "mãos",
+     "parametro": "sobre o pão"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "azeite, azeitona, pinoli, manjericão, parmesão",
+     "utensilio": "mãos",
+     "parametro": "por cima"
+    }
+   ],
+   "ponto_critico": "pimentão sem sementes",
+   "erro_comum": "deixar pele queimada"
+  },
+  {
+   "id": "paes.espiral-parmesao",
+   "capitulo": "Fazendo pães",
+   "nome": "Espirais de parmesão",
+   "ingredientes": [
+    "parmesão em temperatura ambiente"
+   ],
+   "utensilios": [
+    "faquinha",
+    "descascador-legumes"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "triângulo num lado do bloco",
+     "utensilio": "faquinha",
+     "parametro": "maior triângulo dá espiral maior"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "fenda do triângulo",
+     "utensilio": "descascador-legumes",
+     "parametro": "puxar lâmina fina que enrola"
+    }
+   ],
+   "ponto_critico": "queijo à temperatura ambiente",
+   "erro_comum": "usar parmesão seco e quebradiço que não enrola"
+  },
+  {
+   "id": "paes.pizza",
+   "capitulo": "Fazendo pães",
+   "nome": "Massa e montagem de pizza",
+   "ingredientes": [
+    "farinha de trigo 175 g",
+    "sal",
+    "fermento instantâneo",
+    "água morna 150 ml",
+    "azeite",
+    "cobertura"
+   ],
+   "utensilios": [
+    "peneira",
+    "vasilha",
+    "forma-pizza"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha e sal com fermento",
+     "utensilio": "peneira",
+     "parametro": "buraco no meio"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "azeite e água morna juntos no buraco",
+     "utensilio": "mãos",
+     "parametro": "para o azeite se espalhar"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "mãos",
+     "parametro": "5 min"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "1 a 1 h 30"
+    },
+    {
+     "acao": "abrir(mãos)",
+     "alvo": "massa do centro para a borda, girando",
+     "utensilio": "mãos enfarinhadas",
+     "parametro": "25 cm de diâmetro, 1 cm de espessura"
+    },
+    {
+     "acao": "montar",
+     "alvo": "cobertura em padrão regular",
+     "utensilio": "mãos",
+     "parametro": "a 1 cm da borda"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pizza",
+     "utensilio": "forno",
+     "parametro": "220 °C, 15 a 20 min"
+    }
+   ],
+   "ponto_critico": "disco de 25 cm por 1 cm; cobertura distribuída por igual",
+   "erro_comum": "cobertura amontoada que cozinha desigual"
+  },
+  {
+   "id": "paes.calzone",
+   "capitulo": "Fazendo pães",
+   "nome": "Calzone",
+   "ingredientes": [
+    "massa de pizza",
+    "recheio",
+    "água"
+   ],
+   "utensilios": [
+    "faquinha",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "metade do disco",
+     "utensilio": "colher",
+     "parametro": "deixar borda livre"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "borda com água",
+     "utensilio": "pincel",
+     "parametro": "toda a volta"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "metade vazia sobre o recheio",
+     "utensilio": "mãos",
+     "parametro": "meia-lua"
+    },
+    {
+     "acao": "selar",
+     "alvo": "bordas",
+     "utensilio": "dedos",
+     "parametro": "apertar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "duas incisões no topo",
+     "utensilio": "faquinha",
+     "parametro": "saída de vapor"
+    }
+   ],
+   "ponto_critico": "borda bem selada e furos de vapor",
+   "erro_comum": "esquecer os cortes e estourar"
+  },
+  {
+   "id": "paes.focaccia",
+   "capitulo": "Fazendo pães",
+   "nome": "Focaccia de alecrim",
+   "ingredientes": [
+    "fermento",
+    "água morna 300 ml",
+    "farinha 900 g",
+    "sal",
+    "azeite",
+    "alecrim fresco",
+    "sal grosso"
+   ],
+   "utensilios": [
+    "vasilha",
+    "pano-umido",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "30 °C, 1 a 2 h até dobrar"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa com 3 colheres (sopa) de alecrim",
+     "utensilio": "mãos",
+     "parametro": "2 a 3 min e descansar 5 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "massa na fôrma enfarinhada",
+     "utensilio": "dedos enfarinhados",
+     "parametro": "cobrir e crescer 30 a 45 min"
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "covinhas na massa",
+     "utensilio": "dedos",
+     "parametro": "toda a superfície"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "sal grosso e azeite",
+     "utensilio": "mãos",
+     "parametro": "2 colheres (sopa) de azeite opcional"
+    },
+    {
+     "acao": "assar",
+     "alvo": "focaccia",
+     "utensilio": "forno",
+     "parametro": "220 °C, 30 a 35 min"
+    }
+   ],
+   "ponto_critico": "covinhas fundas; massa mais rica em azeite que a da pizza",
+   "erro_comum": "covinhas rasas que somem ao crescer"
+  },
+  {
+   "id": "paes.coroa-recheada",
+   "capitulo": "Fazendo pães",
+   "nome": "Coroa recheada de pesto",
+   "ingredientes": [
+    "massa de focaccia",
+    "pesto ou outro recheio italiano"
+   ],
+   "utensilios": [
+    "rolo",
+    "tesoura",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "retângulo",
+     "utensilio": "rolo",
+     "parametro": "40 x 30 cm"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "pesto espalhado",
+     "utensilio": "colher",
+     "parametro": "borda livre de 1 cm"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "pelo lado maior",
+     "utensilio": "mãos",
+     "parametro": "selar emenda, emenda para baixo"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "círculo unindo as pontas",
+     "utensilio": "mãos",
+     "parametro": "na assadeira enfarinhada"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "fatias a cada 5 cm",
+     "utensilio": "tesoura",
+     "parametro": "parar a 2 cm do centro"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "cada pedaço torcido para cima",
+     "utensilio": "mãos",
+     "parametro": "recheio à mostra"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "coroa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "30 a 45 min"
+    },
+    {
+     "acao": "assar",
+     "alvo": "coroa",
+     "utensilio": "forno",
+     "parametro": "190 °C, 30 a 40 min até dourar"
+    }
+   ],
+   "ponto_critico": "cortes param a 2 cm do centro",
+   "erro_comum": "cortar até o centro e separar os pedaços"
+  },
+  {
+   "id": "paes.tortilla",
+   "capitulo": "Fazendo pães",
+   "nome": "Tortilla de farinha de trigo",
+   "ingredientes": [
+    "farinha 175 g",
+    "sal",
+    "banha ou margarina",
+    "água 5 colheres (sopa)"
+   ],
+   "utensilios": [
+    "garfo",
+    "rolo",
+    "chapa",
+    "pegador",
+    "papel-aluminio"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "banha na farinha",
+     "utensilio": "garfo",
+     "parametro": "esmigalhar até incorporar"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa com a água aos poucos",
+     "utensilio": "mãos",
+     "parametro": "3 min, lisa e não pegajosa"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "massa em 6 partes",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "descansar coberta 30 min"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "chapa sem gordura",
+     "utensilio": "chapa",
+     "parametro": "até gota de água chiar"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "cada pedaço do centro para fora, girando",
+     "utensilio": "rolo",
+     "parametro": "círculo perfeito"
+    },
+    {
+     "acao": "assar",
+     "alvo": "tortilla na chapa",
+     "utensilio": "chapa",
+     "parametro": "15 a 30 s por lado, virar com pegador"
+    }
+   ],
+   "ponto_critico": "pontas começam a curvar e aparecem pintas marrons embaixo",
+   "erro_comum": "chapa fria ou gordura mal incorporada"
+  },
+  {
+   "id": "paes.panqueca-chinesa",
+   "capitulo": "Fazendo pães",
+   "nome": "Panquecas chinesas em pares",
+   "ingredientes": [
+    "água fervendo 175 ml",
+    "farinha 250 g",
+    "óleo de gergelim"
+   ],
+   "utensilios": [
+    "rolo",
+    "wok",
+    "hashi",
+    "pincel",
+    "pano-umido"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "água fervendo na farinha aos poucos",
+     "utensilio": "colher",
+     "parametro": "esfriar"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "5 min e descansar 15 min"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "12 discos",
+     "utensilio": "rolo",
+     "parametro": "7,5 cm"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "óleo de gergelim num disco e cobrir com outro",
+     "utensilio": "pincel",
+     "parametro": "6 pares"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "par",
+     "utensilio": "rolo",
+     "parametro": "12,5 cm"
+    },
+    {
+     "acao": "assar",
+     "alvo": "par na wok quente untada",
+     "utensilio": "wok",
+     "parametro": "15 a 30 s por lado, virar com hashi"
+    },
+    {
+     "acao": "separar",
+     "alvo": "as duas panquecas",
+     "utensilio": "mãos",
+     "parametro": "ainda quentes"
+    }
+   ],
+   "ponto_critico": "bolhas aparecem; separar ainda quente",
+   "erro_comum": "bordas finas demais que rasgam ao separar"
+  },
+  {
+   "id": "paes.massa-indiana",
+   "capitulo": "Fazendo pães",
+   "nome": "Massa para pães chatos indianos",
+   "ingredientes": [
+    "farinha ata ou integral 225 g",
+    "água morna 150 ml"
+   ],
+   "utensilios": [
+    "vasilha",
+    "pano-umido"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "água aos poucos no buraco da farinha",
+     "utensilio": "mãos",
+     "parametro": "uma colher por vez se faltar"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "8 min até lisa e elástica"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa em vasilha untada",
+     "utensilio": "pano-umido",
+     "parametro": "30 min"
+    }
+   ],
+   "ponto_critico": "massa macia, nem seca nem pegajosa",
+   "erro_comum": "pôr água de uma vez"
+  },
+  {
+   "id": "paes.chapati",
+   "capitulo": "Fazendo pães",
+   "nome": "Chapati",
+   "ingredientes": [
+    "massa indiana",
+    "manteiga clarificada"
+   ],
+   "utensilios": [
+    "chapa",
+    "espatula",
+    "pano-umido"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "massa em 6 bolas",
+     "utensilio": "mãos",
+     "parametro": "iguais"
+    },
+    {
+     "acao": "abrir(mãos)",
+     "alvo": "cada bola batendo entre as palmas",
+     "utensilio": "mãos enfarinhadas",
+     "parametro": "círculo de 18 cm"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "chapa seca",
+     "utensilio": "chapa",
+     "parametro": "bem quente"
+    },
+    {
+     "acao": "assar",
+     "alvo": "primeiro lado",
+     "utensilio": "chapa",
+     "parametro": "30 s até pintas marrons, virar"
+    },
+    {
+     "acao": "assar",
+     "alvo": "segundo lado apertando",
+     "utensilio": "espatula",
+     "parametro": "30 a 60 s até inflar e dourar"
+    }
+   ],
+   "ponto_critico": "pão infla na chapa",
+   "erro_comum": "chapa morna, pão não infla"
+  },
+  {
+   "id": "paes.poori",
+   "capitulo": "Fazendo pães",
+   "nome": "Poori",
+   "ingredientes": [
+    "massa indiana",
+    "óleo",
+    "manteiga derretida (opcional)"
+   ],
+   "utensilios": [
+    "frigideira-funda",
+    "colher",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "massa em 8 pedaços",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "iguais"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "cada pedaço",
+     "utensilio": "rolo",
+     "parametro": "12,5 cm"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "5 cm de óleo",
+     "utensilio": "frigideira-funda",
+     "parametro": "bem quente"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "poori",
+     "utensilio": "frigideira-funda",
+     "parametro": "10 s até inflar"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "outro lado pressionando com colher",
+     "utensilio": "colher",
+     "parametro": "10 s"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "poori",
+     "utensilio": "papel-toalha",
+     "parametro": "servir na hora"
+    }
+   ],
+   "ponto_critico": "infla em 10 s",
+   "erro_comum": "óleo frio, fica encharcado"
+  },
+  {
+   "id": "paes.paratha",
+   "capitulo": "Fazendo pães",
+   "nome": "Paratha folhado",
+   "ingredientes": [
+    "massa indiana",
+    "manteiga de búfala ou clarificada"
+   ],
+   "utensilios": [
+    "rolo",
+    "chapa",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "1 e 1/2 colher (chá) de manteiga em cada disco",
+     "utensilio": "pincel",
+     "parametro": "cobrir tudo"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "lados para formar quadrado",
+     "utensilio": "mãos",
+     "parametro": "quatro dobras"
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "quadrado polvilhado",
+     "utensilio": "rolo",
+     "parametro": "18 cm"
+    },
+    {
+     "acao": "assar",
+     "alvo": "paratha na chapa pincelando manteiga",
+     "utensilio": "chapa",
+     "parametro": "até pintas marrons, virar, pincelar de novo"
+    },
+    {
+     "acao": "servir",
+     "alvo": "em pedaços",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "quente, quando inflar em camadas"
+    }
+   ],
+   "ponto_critico": "camadas aparentes e douradas",
+   "erro_comum": "pouca manteiga e sem camadas"
+  },
+  {
+   "id": "paes.kugelhopf",
+   "capitulo": "Fazendo pães",
+   "nome": "Kugelhopf",
+   "ingredientes": [
+    "leite 250 ml",
+    "manteiga 150 g",
+    "açúcar",
+    "fermento fresco 20 g",
+    "farinha 450 g",
+    "sal",
+    "3 ovos",
+    "nozes"
+   ],
+   "utensilios": [
+    "forma-kugelhopf",
+    "vasilha",
+    "pincel",
+    "misturador-massa"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "leite",
+     "utensilio": "panela",
+     "parametro": "separar 4 colheres para o fermento e mornar"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "ovos, fermento e leite frio no centro da farinha",
+     "utensilio": "mãos",
+     "parametro": "massa lisa e pegajosa"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa erguendo e jogando na vasilha",
+     "utensilio": "mãos",
+     "parametro": "5 a 7 min até elástica"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa",
+     "utensilio": "pano-umido",
+     "parametro": "1 a 1 h 30 até dobrar"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "fôrma com manteiga, gelar 10 min e pincelar de novo",
+     "utensilio": "pincel",
+     "parametro": "camada uniforme"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "nozes com o lado redondo para baixo no fundo",
+     "utensilio": "mãos",
+     "parametro": "uma em cada canelura"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "massa socada na fôrma em todas as pregas",
+     "utensilio": "misturador-massa",
+     "parametro": "sem tirar as nozes do lugar"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa na fôrma",
+     "utensilio": "pano-umido",
+     "parametro": "30 a 40 min até passar a borda"
+    },
+    {
+     "acao": "assar",
+     "alvo": "kugelhopf",
+     "utensilio": "forno",
+     "parametro": "190 °C, 40 a 50 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "na fôrma",
+     "utensilio": "forma-kugelhopf",
+     "parametro": "5 min e desenformar"
+    }
+   ],
+   "ponto_critico": "massa muito mole, sovada batendo na vasilha; 5 min antes de desenformar",
+   "erro_comum": "desenformar quente e as nozes grudarem na fôrma"
+  },
+  {
+   "id": "paes.brioche",
+   "capitulo": "Fazendo pães",
+   "nome": "Brioche à tête",
+   "ingredientes": [
+    "fermento fresco 15 g",
+    "leite morno",
+    "farinha 375 g",
+    "açúcar",
+    "sal",
+    "6 ovos",
+    "manteiga 175 g amolecida"
+   ],
+   "utensilios": [
+    "forma-brioche",
+    "pincel",
+    "vasilha"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "5 ovos batidos com fermento no centro da farinha",
+     "utensilio": "mãos",
+     "parametro": "massa mole e pegajosa"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "8 a 10 min até bola lisa"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa em vasilha untada",
+     "utensilio": "pano-umido",
+     "parametro": "1 a 1 h 30"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa com a manteiga amolecida",
+     "utensilio": "mãos",
+     "parametro": "3 a 5 min, apertando até homogênea"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cada metade separando 1/4",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "bola grande e gota pequena"
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "centro da bola na fôrma",
+     "utensilio": "dedo enfarinhado",
+     "parametro": "até o fundo, girando para alargar"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "gota com a ponta para baixo no furo",
+     "utensilio": "dedos",
+     "parametro": "apertar para selar"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "brioches",
+     "utensilio": "pano-umido",
+     "parametro": "45 min até quase encher"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "ovo restante",
+     "utensilio": "pincel",
+     "parametro": "camada fina"
+    },
+    {
+     "acao": "assar",
+     "alvo": "brioche",
+     "utensilio": "forno",
+     "parametro": "200 °C, 25 a 30 min"
+    }
+   ],
+   "ponto_critico": "furo até o fundo para a cabeça não tombar",
+   "erro_comum": "manteiga mal incorporada ou furo raso"
+  },
+  {
+   "id": "paes.bagel",
+   "capitulo": "Fazendo pães",
+   "nome": "Bagel escaldado",
+   "ingredientes": [
+    "água e leite 250 ml",
+    "fermento fresco 15 g",
+    "farinha 450 g",
+    "sal",
+    "açúcar",
+    "manteiga",
+    "1 ovo separado"
+   ],
+   "utensilios": [
+    "panela-grande",
+    "escumadeira",
+    "assadeira",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "sovar",
+     "alvo": "massa com clara",
+     "utensilio": "mãos",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "massa",
+     "utensilio": "pano-umido",
+     "parametro": "1 h até dobrar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "20 pedaços iguais",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "após socar"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tiras de 15 cm",
+     "utensilio": "mãos",
+     "parametro": "pontas umedecidas unidas em anel"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "anéis",
+     "utensilio": "pano-umido",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "escaldar",
+     "alvo": "bagels em água fervendo com fogo baixo",
+     "utensilio": "panela-grande",
+     "parametro": "15 s ou até inflar"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "bagels",
+     "utensilio": "escumadeira",
+     "parametro": "para assadeira untada"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "gema",
+     "utensilio": "pincel",
+     "parametro": "toda a superfície"
+    },
+    {
+     "acao": "assar",
+     "alvo": "bagels",
+     "utensilio": "forno",
+     "parametro": "220 °C, 25 a 30 min"
+    }
+   ],
+   "ponto_critico": "escaldar só 15 s; a umidade dá crosta lisa e miolo denso",
+   "erro_comum": "anel mal selado que abre na água"
+  },
+  {
+   "id": "paes.pao-bicarbonato",
+   "capitulo": "Fazendo pães",
+   "nome": "Pão irlandês de bicarbonato",
+   "ingredientes": [
+    "farinha integral 500 g",
+    "sal",
+    "bicarbonato",
+    "leite semidesnatado 250 ml",
+    "água morna 100 ml"
+   ],
+   "utensilios": [
+    "peneira",
+    "faca-de-cozinha",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "secos",
+     "utensilio": "peneira",
+     "parametro": "numa vasilha"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "líquidos",
+     "utensilio": "mãos",
+     "parametro": "rápido e delicado"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa",
+     "utensilio": "bancada-enfarinhada",
+     "parametro": "só até lisa"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bola achatada",
+     "utensilio": "mãos",
+     "parametro": "20 cm"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cruz no topo",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "2 cm de profundidade"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pão",
+     "utensilio": "forno",
+     "parametro": "220 °C, 30 a 40 min"
+    }
+   ],
+   "ponto_critico": "sem fermentação; misturar pouco",
+   "erro_comum": "trabalhar demais e o pão ficar pesado"
+  },
+  {
+   "id": "paes.pao-de-milho",
+   "capitulo": "Fazendo pães",
+   "nome": "Pão de milho na frigideira de ferro",
+   "ingredientes": [
+    "farinha 175 g",
+    "fubá 75 g",
+    "sal",
+    "fermento em pó",
+    "milho em grãos 100 g",
+    "leite 250 ml",
+    "2 ovos",
+    "mel 75 g",
+    "manteiga derretida"
+   ],
+   "utensilios": [
+    "peneira",
+    "garfo",
+    "frigideira-ferro",
+    "pincel",
+    "palito"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha, fubá, sal e fermento",
+     "utensilio": "peneira",
+     "parametro": "buraco no meio"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "grãos de milho",
+     "utensilio": "garfo",
+     "parametro": "bem distribuídos"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "3/4 do líquido batido e depois o resto",
+     "utensilio": "espatula",
+     "parametro": "só até lisa"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "frigideira untada com massa e manteiga por cima",
+     "utensilio": "pincel",
+     "parametro": "casca crocante"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pão",
+     "utensilio": "frigideira-ferro",
+     "parametro": "220 °C, 25 a 30 min"
+    },
+    {
+     "acao": "testar",
+     "alvo": "centro",
+     "utensilio": "palito",
+     "parametro": "sai seco"
+    }
+   ],
+   "ponto_critico": "palito sai seco; frigideira bem untada",
+   "erro_comum": "frigideira mal untada e pão grudar"
+  },
+  {
+   "id": "paes.pao-abobrinha",
+   "capitulo": "Fazendo pães",
+   "nome": "Pão rápido de abobrinha",
+   "ingredientes": [
+    "abobrinha ralada 375 g",
+    "3 ovos",
+    "raspas e suco de limão",
+    "óleo 125 ml",
+    "farinha 375 g",
+    "fermento em pó",
+    "sal",
+    "açúcar 100 g",
+    "pinoli 75 g"
+   ],
+   "utensilios": [
+    "ralador",
+    "espatula",
+    "forma-de-pao",
+    "grade"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "abobrinha",
+     "utensilio": "ralador",
+     "parametro": "ralo grosso"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "abobrinha, ovos, limão e óleo",
+     "utensilio": "espatula",
+     "parametro": "delicadamente"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "mistura no buraco dos secos com pinoli",
+     "utensilio": "espatula",
+     "parametro": "puxando a farinha das laterais"
+    },
+    {
+     "acao": "montar",
+     "alvo": "massa na fôrma untada e enfarinhada",
+     "utensilio": "colher",
+     "parametro": "alisar com as costas da colher"
+    },
+    {
+     "acao": "bater",
+     "alvo": "fôrma na bancada",
+     "utensilio": "mãos",
+     "parametro": "tirar bolhas"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pão",
+     "utensilio": "forno",
+     "parametro": "180 °C, 55 a 60 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "pão",
+     "utensilio": "grade",
+     "parametro": "até frio"
+    }
+   ],
+   "ponto_critico": "mexer pouco para manter úmido",
+   "erro_comum": "bater demais e ficar borrachudo"
+  },
+  {
+   "id": "frutas.escolher-duras",
+   "capitulo": "Frutas",
+   "nome": "Escolher e amadurecer maçãs e peras",
+   "ingredientes": [
+    "maçã",
+    "pera"
+   ],
+   "utensilios": [
+    "saco de papel"
+   ],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "casca e polpa",
+     "utensilio": "mãos",
+     "parametro": "lisa, brilhante, firme, sem amassado"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "peras verdes num saco de papel frouxo",
+     "utensilio": "saco de papel",
+     "parametro": "temperatura ambiente até amadurecer"
+    }
+   ],
+   "ponto_critico": "perfume adocicado; polpa firme",
+   "erro_comum": "comprar peras já maduras que passam do ponto"
+  },
+  {
+   "id": "frutas.escolher-melao",
+   "capitulo": "Frutas",
+   "nome": "Escolher melão",
+   "ingredientes": [
+    "melão"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "pesar",
+     "alvo": "melão na mão",
+     "utensilio": "mãos",
+     "parametro": "pesado para o tamanho"
+    },
+    {
+     "acao": "testar",
+     "alvo": "pontas",
+     "utensilio": "dedos",
+     "parametro": "cedem de leve e têm perfume"
+    }
+   ],
+   "ponto_critico": "casca lisa sem manchas; ponta cede levemente",
+   "erro_comum": "escolher pelo tamanho e não pelo peso"
+  },
+  {
+   "id": "frutas.escolher-caroco",
+   "capitulo": "Frutas",
+   "nome": "Escolher frutas de caroço e cerejas",
+   "ingredientes": [
+    "pêssego",
+    "nectarina",
+    "ameixa",
+    "cereja",
+    "abricó"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "polpa ao longo dos veios",
+     "utensilio": "dedos",
+     "parametro": "cede de leve, não dura"
+    },
+    {
+     "acao": "testar",
+     "alvo": "cereja",
+     "utensilio": "olhos",
+     "parametro": "cheia, brilhante e talo verde"
+    }
+   ],
+   "ponto_critico": "nectarina vermelho-dourada e perfumada; evitar as verdes e duras",
+   "erro_comum": "apertar com força e machucar a pele"
+  },
+  {
+   "id": "frutas.escolher-citricas",
+   "capitulo": "Frutas",
+   "nome": "Escolher frutas cítricas",
+   "ingredientes": [
+    "limão",
+    "lima",
+    "laranja",
+    "kinkan",
+    "grapefruit",
+    "mexerica"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "pesar",
+     "alvo": "fruta na mão",
+     "utensilio": "mãos",
+     "parametro": "pesada para o tamanho"
+    },
+    {
+     "acao": "testar",
+     "alvo": "casca",
+     "utensilio": "olhos",
+     "parametro": "cor uniforme, brilhante, sem rugas"
+    }
+   ],
+   "ponto_critico": "casca mais lisa indica casca mais fina",
+   "erro_comum": "pegar fruta opaca ou enrugada"
+  },
+  {
+   "id": "frutas.escolher-berries",
+   "capitulo": "Frutas",
+   "nome": "Escolher e guardar berries",
+   "ingredientes": [
+    "morango",
+    "framboesa",
+    "amora",
+    "blueberry"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "embalagem",
+     "utensilio": "olhos",
+     "parametro": "sem manchas nem umidade, sem mofo"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "frutas",
+     "utensilio": "água",
+     "parametro": "lavar só na hora de consumir"
+    }
+   ],
+   "ponto_critico": "morango vermelho inteiro com cálice verde; blueberry firme e aveludado",
+   "erro_comum": "lavar antes de guardar e acelerar o mofo"
+  },
+  {
+   "id": "frutas.descascar-maca-simples",
+   "capitulo": "Frutas",
+   "nome": "Descascar maçã (simples)",
+   "ingredientes": [
+    "maçã"
+   ],
+   "utensilios": [
+    "descascador-legumes",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo",
+     "utensilio": "descarocador",
+     "parametro": "antes de descascar"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "casca ao redor a partir do cabo",
+     "utensilio": "descascador-legumes",
+     "parametro": "espiral contínua"
+    }
+   ],
+   "ponto_critico": "descascar logo antes de usar",
+   "erro_comum": "descascar cedo e a polpa escurecer"
+  },
+  {
+   "id": "frutas.descascar-maca-decorativo",
+   "capitulo": "Frutas",
+   "nome": "Descascar maçã em espiral decorativa",
+   "ingredientes": [
+    "maçã"
+   ],
+   "utensilios": [
+    "faca-canelle"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "tira fina única em espiral a partir do cabo",
+     "utensilio": "faca-canelle",
+     "parametro": "sem romper"
+    }
+   ],
+   "ponto_critico": "tira contínua e fina, listras de casca restante",
+   "erro_comum": "quebrar a tira"
+  },
+  {
+   "id": "frutas.descarocar-descarocador",
+   "capitulo": "Frutas",
+   "nome": "Tirar miolo com descaroçador",
+   "ingredientes": [
+    "maçã ou pera inteira"
+   ],
+   "utensilios": [
+    "descarocador"
+   ],
+   "passos": [
+    {
+     "acao": "perfurar",
+     "alvo": "fruta pelo cabo até embaixo",
+     "utensilio": "descarocador",
+     "parametro": "empurrar reto"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo",
+     "utensilio": "descarocador",
+     "parametro": "girar e puxar"
+    }
+   ],
+   "ponto_critico": "tubo centralizado no cabo",
+   "erro_comum": "entrar torto e deixar semente"
+  },
+  {
+   "id": "frutas.descarocar-descascador",
+   "capitulo": "Frutas",
+   "nome": "Tirar miolo de pera pela base",
+   "ingredientes": [
+    "pera inteira"
+   ],
+   "utensilios": [
+    "descascador-legumes"
+   ],
+   "passos": [
+    {
+     "acao": "perfurar",
+     "alvo": "base da pera",
+     "utensilio": "descascador-legumes",
+     "parametro": "ponta"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo",
+     "utensilio": "descascador-legumes",
+     "parametro": "girar e puxar devagar"
+    }
+   ],
+   "ponto_critico": "mantém cabo e forma da pera",
+   "erro_comum": "furar a lateral"
+  },
+  {
+   "id": "frutas.descarocar-boleador",
+   "capitulo": "Frutas",
+   "nome": "Tirar miolo de metades com boleador",
+   "ingredientes": [
+    "metade de maçã ou pera"
+   ],
+   "utensilios": [
+    "boleador"
+   ],
+   "passos": [
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo e sementes",
+     "utensilio": "boleador",
+     "parametro": "cavar segurando firme"
+    }
+   ],
+   "ponto_critico": "cavidade redonda limpa",
+   "erro_comum": "cavar fundo e furar a fruta"
+  },
+  {
+   "id": "frutas.aneis-maca",
+   "capitulo": "Frutas",
+   "nome": "Anéis de maçã",
+   "ingredientes": [
+    "maçã descascada e sem miolo"
+   ],
+   "utensilios": [
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "maçã deitada na horizontal",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "anéis iguais"
+    }
+   ],
+   "ponto_critico": "espessura igual",
+   "erro_comum": "fatias tortas"
+  },
+  {
+   "id": "frutas.leque-pera",
+   "capitulo": "Frutas",
+   "nome": "Leque de pera",
+   "ingredientes": [
+    "pera"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "pera",
+     "utensilio": "descascador-legumes",
+     "parametro": "mantendo o cabo"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faquinha",
+     "parametro": "e tirar miolo"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "metade virada para baixo, a partir do cabo",
+     "utensilio": "faquinha",
+     "parametro": "sem separar no topo"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "leque",
+     "utensilio": "mãos",
+     "parametro": "pressionar para abrir"
+    }
+   ],
+   "ponto_critico": "fatias unidas perto do cabo",
+   "erro_comum": "cortar até o fim e soltar as fatias"
+  },
+  {
+   "id": "frutas.meia-lua-maca",
+   "capitulo": "Frutas",
+   "nome": "Maçã em meia-lua",
+   "ingredientes": [
+    "maçã"
+   ],
+   "utensilios": [
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "maçã sem casca e miolo, na vertical",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "metades"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "metade virada para baixo",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "meias-luas"
+    }
+   ],
+   "ponto_critico": "fatias uniformes para torta",
+   "erro_comum": "fatias grossas e finas misturadas"
+  },
+  {
+   "id": "frutas.cubos-maca",
+   "capitulo": "Frutas",
+   "nome": "Picar maçã em cubos",
+   "ingredientes": [
+    "maçã"
+   ],
+   "utensilios": [
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "anéis largos",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "e empilhar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "pilha na vertical",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "segurando junta"
+    },
+    {
+     "acao": "picar",
+     "alvo": "bastões em cubinhos",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "iguais"
+    }
+   ],
+   "ponto_critico": "pouco desperdício e cubos uniformes",
+   "erro_comum": "pilha desmontar"
+  },
+  {
+   "id": "frutas.evitar-escurecimento",
+   "capitulo": "Frutas",
+   "nome": "Evitar que maçã e pera escureçam (Truque do Chef)",
+   "ingredientes": [
+    "maçã ou pera cortada",
+    "suco de limão, lima ou laranja"
+   ],
+   "utensilios": [
+    "pincel",
+    "vasilha"
+   ],
+   "passos": [
+    {
+     "acao": "espremer",
+     "alvo": "cítrico numa vasilha",
+     "utensilio": "reamer",
+     "parametro": "suco"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "polpa exposta, entre os cortes",
+     "utensilio": "pincel",
+     "parametro": "logo após cortar"
+    }
+   ],
+   "ponto_critico": "aplicar imediatamente; preferir utensílios de inox",
+   "erro_comum": "demorar e a fruta oxidar"
+  },
+  {
+   "id": "frutas.ruibarbo",
+   "capitulo": "Frutas",
+   "nome": "Preparar ruibarbo",
+   "ingredientes": [
+    "ruibarbo"
+   ],
+   "utensilios": [
+    "descascador-legumes",
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "folhas venenosas",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "fibras em tiras longas",
+     "utensilio": "descascador-legumes",
+     "parametro": "talos de fim de safra"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "base de cada talo",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "aparar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "talos na diagonal",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "pedaços iguais"
+    }
+   ],
+   "ponto_critico": "nunca servir cru; folhas sempre descartadas",
+   "erro_comum": "deixar folha ou comer cru"
+  },
+  {
+   "id": "frutas.abacaxi-tigela",
+   "capitulo": "Frutas",
+   "nome": "Tigela de casca de abacaxi",
+   "ingredientes": [
+    "abacaxi"
+   ],
+   "utensilios": [
+    "tabua",
+    "faca-de-cozinha",
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "coroa com o abacaxi deitado",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "reservar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "entre casca e polpa toda a volta",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "deixar parede firme"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "fundo para nivelar",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "abacaxi em pé"
+    },
+    {
+     "acao": "separar",
+     "alvo": "cilindro de polpa",
+     "utensilio": "garfo",
+     "parametro": "enfiar no centro e puxar inteiro"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "polpa na horizontal, sem miolo, em cubos",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "para devolver à casca"
+    }
+   ],
+   "ponto_critico": "polpa sai inteira e parede de casca intacta",
+   "erro_comum": "furar a casca"
+  },
+  {
+   "id": "frutas.abacaxi-anao",
+   "capitulo": "Frutas",
+   "nome": "Servir abacaxi-anão recheado",
+   "ingredientes": [
+    "abacaxi-anão",
+    "framboesa",
+    "maçã",
+    "laranja",
+    "kirsch ou rum",
+    "calda de açúcar",
+    "sorvete"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "abacaxi inteiro como tigela ou ao meio na vertical",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "tirar miolo duro"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "cubos de polpa com outras frutas em licor e calda",
+     "utensilio": "vasilha",
+     "parametro": "opcional"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "casca com a salada ou uma bola de sorvete",
+     "utensilio": "colher",
+     "parametro": "tampar com a coroa se inteiro"
+    },
+    {
+     "acao": "servir",
+     "alvo": "na hora",
+     "utensilio": "prato",
+     "parametro": "imediato com sorvete"
+    }
+   ],
+   "ponto_critico": "servir imediatamente com sorvete",
+   "erro_comum": "deixar o sorvete derreter"
+  },
+  {
+   "id": "frutas.abacaxi-descascar",
+   "capitulo": "Frutas",
+   "nome": "Descascar e fatiar abacaxi",
+   "ingredientes": [
+    "abacaxi"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "faquinha",
+    "tabua"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "coroa e base",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "fruta em pé"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "casca em faixas de cima para baixo",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "seguindo a curva"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "olhos",
+     "utensilio": "faquinha",
+     "parametro": "ponta"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rodelas horizontais",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "iguais"
+    }
+   ],
+   "ponto_critico": "sem olhos marrons",
+   "erro_comum": "tirar casca grossa e perder polpa"
+  },
+  {
+   "id": "frutas.abacaxi-miolo",
+   "capitulo": "Frutas",
+   "nome": "Tirar o miolo da rodela de abacaxi",
+   "ingredientes": [
+    "rodela de abacaxi"
+   ],
+   "utensilios": [
+    "cortador-biscoito"
+   ],
+   "passos": [
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo central",
+     "utensilio": "cortador-biscoito",
+     "parametro": "rodela deitada"
+    }
+   ],
+   "ponto_critico": "anel perfeito",
+   "erro_comum": "cortador menor que o miolo"
+  },
+  {
+   "id": "frutas.abacaxi-ziguezague",
+   "capitulo": "Frutas",
+   "nome": "Abacaxi em ziguezague (apresentação)",
+   "ingredientes": [
+    "abacaxi"
+   ],
+   "utensilios": [
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "fruta em quatro na vertical com coroa",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "tirar miolo de cada quarto"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "polpa rente à casca, começando pela coroa",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "movimento de serrar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "polpa na horizontal sobre a casca",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "pedaços iguais"
+    },
+    {
+     "acao": "montar",
+     "alvo": "fatias empurradas alternando lados",
+     "utensilio": "mãos",
+     "parametro": "ziguezague"
+    }
+   ],
+   "ponto_critico": "polpa solta mas apoiada na casca",
+   "erro_comum": "cortar a casca junto"
+  },
+  {
+   "id": "frutas.abacaxi-sautee",
+   "capitulo": "Frutas",
+   "nome": "Rodelas de abacaxi grelhadas ou salteadas temperadas",
+   "ingredientes": [
+    "rodelas de abacaxi",
+    "coco ralado tostado, rum, laranja, canela, cravo",
+    "ou anis estrelado e raspas de lima"
+   ],
+   "utensilios": [
+    "frigideira",
+    "grelha"
+   ],
+   "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "rodelas",
+     "utensilio": "mãos",
+     "parametro": "estilo caribenho ou asiático"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "rodelas",
+     "utensilio": "frigideira",
+     "parametro": "ou grelhar até dourar"
+    }
+   ],
+   "ponto_critico": "dourar sem desmanchar",
+   "erro_comum": "fogo baixo demais e soltar água"
+  },
+  {
+   "id": "frutas.cereja-descarocar",
+   "capitulo": "Frutas",
+   "nome": "Descaroçar cereja (e azeitona)",
+   "ingredientes": [
+    "cereja",
+    "azeitona"
+   ],
+   "utensilios": [
+    "descarocador-cereja",
+    "descascador-legumes"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "cabo",
+     "utensilio": "dedos",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "cereja com lado do cabo para cima na concha",
+     "utensilio": "descarocador-cereja",
+     "parametro": "apertar até sair o caroço"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "alternativa: ponta do descascador pelo cabo, girar e puxar",
+     "utensilio": "descascador-legumes",
+     "parametro": "sem descaroçador"
+    }
+   ],
+   "ponto_critico": "fruta inteira sem perder suco; azeitona fica pronta para rechear",
+   "erro_comum": "amassar a cereja"
+  },
+  {
+   "id": "frutas.manga-ourico",
+   "capitulo": "Frutas",
+   "nome": "Manga em cubos (ouriço)",
+   "ingredientes": [
+    "manga"
+   ],
+   "utensilios": [
+    "faquinha",
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "duas bochechas rente ao caroço",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "vertical"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "polpa em grade",
+     "utensilio": "faquinha",
+     "parametro": "até a casca sem furar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "casca para trás",
+     "utensilio": "dedos",
+     "parametro": "cubos saltam"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cubos rente à casca",
+     "utensilio": "faquinha",
+     "parametro": "repetir na outra metade"
+    }
+   ],
+   "ponto_critico": "não perfurar a casca",
+   "erro_comum": "cortar longe do caroço e perder polpa"
+  },
+  {
+   "id": "frutas.manga-fatias",
+   "capitulo": "Frutas",
+   "nome": "Manga em fatias",
+   "ingredientes": [
+    "manga não muito madura"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca fina na vertical",
+     "utensilio": "faquinha",
+     "parametro": "segurando a fruta"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cunha em V até o caroço",
+     "utensilio": "faquinha",
+     "parametro": "primeira fatia"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "dentro do V ao redor da fruta",
+     "utensilio": "faquinha",
+     "parametro": "fatias verticais"
+    }
+   ],
+   "ponto_critico": "fruta firme para não escorregar",
+   "erro_comum": "manga madura demais escapar da mão"
+  },
+  {
+   "id": "frutas.citrico-a-vif",
+   "capitulo": "Frutas",
+   "nome": "Descascar cítrico à vif e fatiar",
+   "ingredientes": [
+    "laranja ou outro cítrico"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "faca-serrilhada",
+    "tabua"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tampas das duas pontas",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "até a polpa"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "casca e película branca seguindo a curva",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "fruta em pé"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "fruta deitada",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "cerca de 3 mm, vaivém"
+    }
+   ],
+   "ponto_critico": "nada de branco amargo, polpa intacta",
+   "erro_comum": "deixar película branca"
+  },
+  {
+   "id": "frutas.citrico-remontar",
+   "capitulo": "Frutas",
+   "nome": "Remontar fatias de laranja",
+   "ingredientes": [
+    "fatias de laranja"
+   ],
+   "utensilios": [
+    "palito-coquetel"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "fatias empilhadas na ordem",
+     "utensilio": "mãos",
+     "parametro": "forma da fruta"
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "pilha",
+     "utensilio": "palito-coquetel",
+     "parametro": "prender"
+    }
+   ],
+   "ponto_critico": "ordem original das fatias",
+   "erro_comum": "pilha torta"
+  },
+  {
+   "id": "frutas.citrico-gomos",
+   "capitulo": "Frutas",
+   "nome": "Tirar gomos sem membrana (suprêmes)",
+   "ingredientes": [
+    "cítrico descascado à vif"
+   ],
+   "utensilios": [
+    "faquinha",
+    "vasilha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "dos dois lados de cada membrana",
+     "utensilio": "faquinha",
+     "parametro": "sobre vasilha"
+    },
+    {
+     "acao": "separar",
+     "alvo": "gomos virando as membranas como páginas",
+     "utensilio": "faquinha",
+     "parametro": "ao redor da fruta"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "sobra de membranas sobre os gomos",
+     "utensilio": "mãos",
+     "parametro": "todo o suco"
+    }
+   ],
+   "ponto_critico": "mínimo de polpa presa à membrana",
+   "erro_comum": "cortar fora da linha e despedaçar o gomo"
+  },
+  {
+   "id": "frutas.raspas",
+   "capitulo": "Frutas",
+   "nome": "Raspas e tiras de casca cítrica",
+   "ingredientes": [
+    "cítrico lavado"
+   ],
+   "utensilios": [
+    "zester",
+    "ralador",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "casca",
+     "utensilio": "água",
+     "parametro": "tirar camada encerada"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "tiras finas puxando o zester para si",
+     "utensilio": "zester",
+     "parametro": "pressão uniforme"
+    },
+    {
+     "acao": "ralar",
+     "alvo": "só a parte colorida",
+     "utensilio": "ralador",
+     "parametro": "ralo fino"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "raspas do ralador",
+     "utensilio": "pincel",
+     "parametro": "recolher"
+    }
+   ],
+   "ponto_critico": "só a parte colorida, sem branco",
+   "erro_comum": "ralar fundo e amargar"
+  },
+  {
+   "id": "frutas.julienne-casca",
+   "capitulo": "Frutas",
+   "nome": "Casca cítrica à julienne",
+   "ingredientes": [
+    "lima ou outro cítrico"
+   ],
+   "utensilios": [
+    "descascador-legumes",
+    "faca-de-cozinha",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca na vertical",
+     "utensilio": "descascador-legumes",
+     "parametro": "sem branco"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tiras muito finas",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "julienne"
+    },
+    {
+     "acao": "escaldar",
+     "alvo": "tiras para decorar",
+     "utensilio": "panela",
+     "parametro": "1 a 2 min em água fervendo"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "tiras",
+     "utensilio": "água fria",
+     "parametro": "e secar no papel"
+    }
+   ],
+   "ponto_critico": "escaldar 1 a 2 min amolece para decoração",
+   "erro_comum": "tiras grossas"
+  },
+  {
+   "id": "frutas.suco-citrico",
+   "capitulo": "Frutas",
+   "nome": "Extrair suco com reamer",
+   "ingredientes": [
+    "cítrico"
+   ],
+   "utensilios": [
+    "reamer",
+    "vasilha",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "rolar",
+     "alvo": "fruta na bancada",
+     "utensilio": "mãos",
+     "parametro": "pressionando para amolecer"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "transversal"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "metade sobre vasilha",
+     "utensilio": "reamer",
+     "parametro": "girar para a frente e para trás"
+    },
+    {
+     "acao": "coar",
+     "alvo": "suco",
+     "utensilio": "peneira",
+     "parametro": "tirar sementes e membranas"
+    }
+   ],
+   "ponto_critico": "rolar antes rende mais suco",
+   "erro_comum": "não coar e deixar sementes"
+  },
+  {
+   "id": "frutas.morango-calice",
+   "capitulo": "Frutas",
+   "nome": "Tirar cálice do morango",
+   "ingredientes": [
+    "morango"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "cálice",
+     "utensilio": "faquinha",
+     "parametro": "ponta, retirando só as folhas e o centro"
+    }
+   ],
+   "ponto_critico": "manter cálice se for decorar ou banhar no chocolate",
+   "erro_comum": "tirar muita polpa"
+  },
+  {
+   "id": "frutas.morango-decoracao",
+   "capitulo": "Frutas",
+   "nome": "Morango cortado para decoração",
+   "ingredientes": [
+    "morango com cálice"
+   ],
+   "utensilios": [
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "morango ao meio na vertical",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "atravessando o cálice"
+    }
+   ],
+   "ponto_critico": "cálice dividido nas duas metades",
+   "erro_comum": "cortar torto"
+  },
+  {
+   "id": "frutas.uva-descascar",
+   "capitulo": "Frutas",
+   "nome": "Descascar uva",
+   "ingredientes": [
+    "uva"
+   ],
+   "utensilios": [
+    "panela",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "escaldar",
+     "alvo": "uvas",
+     "utensilio": "panela",
+     "parametro": "10 s"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele a partir do cabinho",
+     "utensilio": "faquinha",
+     "parametro": "puxando"
+    }
+   ],
+   "ponto_critico": "10 s de escalda",
+   "erro_comum": "escaldar demais e cozinhar a uva"
+  },
+  {
+   "id": "frutas.uva-sementes",
+   "capitulo": "Frutas",
+   "nome": "Tirar sementes de uva inteira",
+   "ingredientes": [
+    "uva"
+   ],
+   "utensilios": [
+    "clipe",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descaroçar",
+     "alvo": "sementes pelo cabinho",
+     "utensilio": "clipe",
+     "parametro": "ponta em gancho esterilizada"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "metades: sementes",
+     "utensilio": "faquinha",
+     "parametro": "ponta"
+    }
+   ],
+   "ponto_critico": "uva permanece inteira",
+   "erro_comum": "clipe não esterilizado"
+  },
+  {
+   "id": "frutas.groselha-strigging",
+   "capitulo": "Frutas",
+   "nome": "Soltar groselhas do cabo (strigging)",
+   "ingredientes": [
+    "cacho de groselha"
+   ],
+   "utensilios": [
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "bagas",
+     "utensilio": "garfo",
+     "parametro": "passar os dentes ao longo do cabinho"
+    }
+   ],
+   "ponto_critico": "bagas inteiras",
+   "erro_comum": "puxar com os dedos e esmagar"
+  },
+  {
+   "id": "frutas.pure-berries",
+   "capitulo": "Frutas",
+   "nome": "Purê de berries",
+   "ingredientes": [
+    "morango ou framboesa",
+    "açúcar de confeiteiro"
+   ],
+   "utensilios": [
+    "liquidificador",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "morangos",
+     "utensilio": "liquidificador",
+     "parametro": "framboesa dispensa"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "purê",
+     "utensilio": "peneira",
+     "parametro": "fina, para tirar sementes"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "açúcar a gosto",
+     "utensilio": "colher",
+     "parametro": "até dissolver"
+    }
+   ],
+   "ponto_critico": "250 g de fruta rendem 250 ml; frutas firmes como groselha e cereja cozidas antes",
+   "erro_comum": "adoçar antes de bater"
+  },
+  {
+   "id": "frutas.pure-mouli",
+   "capitulo": "Frutas",
+   "nome": "Purê no passa-legumes",
+   "ingredientes": [
+    "framboesa ou groselha sem talo"
+   ],
+   "utensilios": [
+    "mouli",
+    "vasilha"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "disco fino no mouli sobre vasilha",
+     "utensilio": "mouli",
+     "parametro": "firme"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "frutas girando a manivela",
+     "utensilio": "mouli",
+     "parametro": "sementes ficam no cesto"
+    }
+   ],
+   "ponto_critico": "disco fino; não precisa peneirar depois",
+   "erro_comum": "disco grosso deixa passar sementes"
+  },
+  {
+   "id": "frutas.couli",
+   "capitulo": "Frutas",
+   "nome": "Couli (calda) de berries",
+   "ingredientes": [
+    "purê adoçado",
+    "Cointreau ou kirsch"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "2 colheres (sopa) de licor no purê",
+     "utensilio": "colher",
+     "parametro": "Cointreau com morango, kirsch com framboesa"
+    }
+   ],
+   "ponto_critico": "purê já adoçado",
+   "erro_comum": "excesso de licor"
+  },
+  {
+   "id": "frutas.couli-penas",
+   "capitulo": "Frutas",
+   "nome": "Decorar prato com couli em penas (Truque do Chef)",
+   "ingredientes": [
+    "couli",
+    "creme de leite"
+   ],
+   "utensilios": [
+    "prato-gelado",
+    "saco-confeitar",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "espelho de couli",
+     "utensilio": "prato-gelado",
+     "parametro": "camada fina"
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "fileira de gotas de creme em cada lado",
+     "utensilio": "saco-confeitar",
+     "parametro": "espaçadas"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "ponta da faca riscando cada gota",
+     "utensilio": "faquinha",
+     "parametro": "forma de pena"
+    }
+   ],
+   "ponto_critico": "prato gelado",
+   "erro_comum": "gotas grandes que se misturam"
+  },
+  {
+   "id": "frutas.couli-yin-yang",
+   "capitulo": "Frutas",
+   "nome": "Decorar prato com couli yin-yang (Truque do Chef)",
+   "ingredientes": [
+    "dois coulis de cores diferentes"
+   ],
+   "utensilios": [
+    "prato-gelado",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "colherada de couli de um lado",
+     "utensilio": "colher",
+     "parametro": "espalhar em gota"
+    },
+    {
+     "acao": "montar",
+     "alvo": "segunda cor em gota invertida",
+     "utensilio": "colher",
+     "parametro": "encontrar no meio"
+    }
+   ],
+   "ponto_critico": "as duas gotas se encaixam no centro",
+   "erro_comum": "caldas ralas que se misturam"
+  },
+  {
+   "id": "frutas.melao-taca",
+   "capitulo": "Frutas",
+   "nome": "Taça de melão com borda em ziguezague e bolinhas (Especial)",
+   "ingredientes": [
+    "melão cantalupo"
+   ],
+   "utensilios": [
+    "faquinha",
+    "colher-pequena",
+    "boleador"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "linha em volta da metade",
+     "utensilio": "faquinha",
+     "parametro": "risco de guia"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "ziguezague acima da linha até o centro",
+     "utensilio": "faquinha",
+     "parametro": "à van dyke"
+    },
+    {
+     "acao": "separar",
+     "alvo": "as duas metades",
+     "utensilio": "mãos",
+     "parametro": "delicadamente"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "sementes e fibras",
+     "utensilio": "colher-pequena",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bolinhas de polpa",
+     "utensilio": "boleador",
+     "parametro": "pressionar e girar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "taças",
+     "utensilio": "geladeira",
+     "parametro": "até servir"
+    }
+   ],
+   "ponto_critico": "cortes fundos até o centro, dentes regulares",
+   "erro_comum": "rasgar a borda ao separar"
+  },
+  {
+   "id": "frutas.sorbet-melao",
+   "capitulo": "Frutas",
+   "nome": "Sorbet de melão",
+   "ingredientes": [
+    "polpa de melão 200 g",
+    "suco de 1/2 limão",
+    "açúcar 30 g",
+    "água 2 colheres (sopa)"
+   ],
+   "utensilios": [
+    "liquidificador",
+    "sorveteira",
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "polpa com limão",
+     "utensilio": "liquidificador",
+     "parametro": "purê"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "água e açúcar",
+     "utensilio": "panela",
+     "parametro": "calda"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "calda no purê",
+     "utensilio": "colher",
+     "parametro": "homogêneo"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "mistura",
+     "utensilio": "sorveteira",
+     "parametro": "ou freezer 4 h batendo para quebrar cristais"
+    }
+   ],
+   "ponto_critico": "bater sempre no freezer para não cristalizar",
+   "erro_comum": "congelar sem mexer e virar gelo"
+  },
+  {
+   "id": "frutas.cantalupo-surpresa",
+   "capitulo": "Frutas",
+   "nome": "Salada de frutas em calda temperada (Cantalupo Surpresa)",
+   "ingredientes": [
+    "bolinhas de melão",
+    "manga",
+    "abacaxi",
+    "kiwi",
+    "água",
+    "açúcar",
+    "raspas e suco de limão e laranja",
+    "canela",
+    "anis estrelado",
+    "erva-doce",
+    "hortelã",
+    "sorbet de melão"
+   ],
+   "utensilios": [
+    "panela",
+    "faquinha",
+    "boleador"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "manga e abacaxi em cubos do tamanho das bolinhas",
+     "utensilio": "faquinha",
+     "parametro": "uniformes"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "kiwi em pé, sem pontas, seguindo a forma",
+     "utensilio": "faquinha",
+     "parametro": "bem fino"
+    },
+    {
+     "acao": "picar",
+     "alvo": "kiwi",
+     "utensilio": "faquinha",
+     "parametro": "cubinhos"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "água, açúcar, cítricos e especiarias",
+     "utensilio": "panela",
+     "parametro": "mexendo até dissolver"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "frutas na calda fora do fogo",
+     "utensilio": "vasilha",
+     "parametro": "esfriar e gelar"
+    },
+    {
+     "acao": "servir",
+     "alvo": "frutas nas taças com bola de sorbet e hortelã",
+     "utensilio": "colher",
+     "parametro": "imediato"
+    }
+   ],
+   "ponto_critico": "frutas do mesmo tamanho; calda fria",
+   "erro_comum": "pôr as frutas na calda fervendo no fogo"
+  },
+  {
+   "id": "frutas.kiwi",
+   "capitulo": "Frutas",
+   "nome": "Comer kiwi de colher ou fatiar",
+   "ingredientes": [
+    "kiwi"
+   ],
+   "utensilios": [
+    "faquinha",
+    "colher-pequena"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "topo",
+     "utensilio": "faquinha",
+     "parametro": "como ovo quente"
+    },
+    {
+     "acao": "servir",
+     "alvo": "polpa",
+     "utensilio": "colher-pequena",
+     "parametro": "ou descascar e fatiar"
+    }
+   ],
+   "ponto_critico": "bem maduro",
+   "erro_comum": "kiwi duro e ácido"
+  },
+  {
+   "id": "frutas.maracuja",
+   "capitulo": "Frutas",
+   "nome": "Abrir maracujá",
+   "ingredientes": [
+    "maracujá"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "colher-pequena"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "transversal"
+    },
+    {
+     "acao": "separar",
+     "alvo": "polpa com sementes",
+     "utensilio": "colher-pequena",
+     "parametro": "sementes comestíveis"
+    }
+   ],
+   "ponto_critico": "casca enrugada indica maduro",
+   "erro_comum": "derramar a polpa ao cortar"
+  },
+  {
+   "id": "frutas.sapotilha",
+   "capitulo": "Frutas",
+   "nome": "Preparar sapotilha",
+   "ingredientes": [
+    "sapotilha bem madura"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "sapotilha",
+     "utensilio": "faquinha",
+     "parametro": "só se macia"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "sementes centrais",
+     "utensilio": "faquinha",
+     "parametro": "descartar"
+    }
+   ],
+   "ponto_critico": "só comestível bem macia",
+   "erro_comum": "comer verde"
+  },
+  {
+   "id": "frutas.nespera",
+   "capitulo": "Frutas",
+   "nome": "Preparar ameixa-amarela (nêspera)",
+   "ingredientes": [
+    "nêspera"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "pele",
+     "utensilio": "faquinha",
+     "parametro": "fina"
+    },
+    {
+     "acao": "servir",
+     "alvo": "crua",
+     "utensilio": "prato",
+     "parametro": "na hora"
+    }
+   ],
+   "ponto_critico": "sempre descascada e crua",
+   "erro_comum": "cozinhar"
+  },
+  {
+   "id": "frutas.tamara-descarocar",
+   "capitulo": "Frutas",
+   "nome": "Descaroçar tâmara",
+   "ingredientes": [
+    "tâmara fresca"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descaroçar",
+     "alvo": "semente presa ao cabo",
+     "utensilio": "faquinha",
+     "parametro": "segurar firme e puxar com apoio da faca"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "cavidade (opcional)",
+     "utensilio": "colher-pequena",
+     "parametro": "doce ou salgado"
+    }
+   ],
+   "ponto_critico": "tâmara mantém a forma",
+   "erro_comum": "rasgar a fruta"
+  },
+  {
+   "id": "frutas.flor-de-figo",
+   "capitulo": "Frutas",
+   "nome": "Flor de figo",
+   "ingredientes": [
+    "figo",
+    "recheio opcional"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "cabo",
+     "utensilio": "faquinha",
+     "parametro": "cortar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cruz funda no topo",
+     "utensilio": "faquinha",
+     "parametro": "sem atravessar a base"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "quatro pétalas abertas",
+     "utensilio": "dedos",
+     "parametro": "puxar de leve"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "colherada no centro",
+     "utensilio": "colher",
+     "parametro": "opcional"
+    }
+   ],
+   "ponto_critico": "base inteira segura as pétalas",
+   "erro_comum": "cortar até embaixo e partir em quatro"
+  },
+  {
+   "id": "frutas.pepino-melao",
+   "capitulo": "Frutas",
+   "nome": "Preparar pepino-melão",
+   "ingredientes": [
+    "pepino-melão"
+   ],
+   "utensilios": [
+    "descascador-legumes",
+    "faca-de-cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca amarga",
+     "utensilio": "descascador-legumes",
+     "parametro": "toda"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "polpa",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "fatias finas"
+    }
+   ],
+   "ponto_critico": "casca sempre removida",
+   "erro_comum": "deixar casca amarga"
+  },
+  {
+   "id": "frutas.papaia",
+   "capitulo": "Frutas",
+   "nome": "Preparar papaia",
+   "ingredientes": [
+    "papaia"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "papaia",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "madura, rosa-alaranjada"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "longitudinal"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "sementes",
+     "utensilio": "colher",
+     "parametro": "raspar"
+    }
+   ],
+   "ponto_critico": "verde vira legume picado em salada; madura é crua",
+   "erro_comum": "deixar sementes"
+  },
+  {
+   "id": "frutas.mangostao",
+   "capitulo": "Frutas",
+   "nome": "Abrir mangostão",
+   "ingredientes": [
+    "mangostão"
+   ],
+   "utensilios": [
+    "faquinha",
+    "colher-pequena"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "só a casca dura ao redor",
+     "utensilio": "faquinha",
+     "parametro": "sem tocar a polpa"
+    },
+    {
+     "acao": "separar",
+     "alvo": "gomos brancos",
+     "utensilio": "colher-pequena",
+     "parametro": "delicadamente"
+    }
+   ],
+   "ponto_critico": "polpa intacta; caroços dos gomos não se comem",
+   "erro_comum": "cortar fundo e manchar a polpa"
+  },
+  {
+   "id": "frutas.roma",
+   "capitulo": "Frutas",
+   "nome": "Tirar sementes e suco de romã",
+   "ingredientes": [
+    "romã"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "peneira",
+    "vasilha",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "transversal"
+    },
+    {
+     "acao": "separar",
+     "alvo": "sementes das membranas, metade virada sobre peneira",
+     "utensilio": "dedos",
+     "parametro": "sobre vasilha"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "sementes na peneira",
+     "utensilio": "colher",
+     "parametro": "costas da colher para suco"
+    }
+   ],
+   "ponto_critico": "descartar casca, miolo e membranas amargas",
+   "erro_comum": "deixar membrana branca"
+  },
+  {
+   "id": "frutas.figo-da-india",
+   "capitulo": "Frutas",
+   "nome": "Descascar figo-da-índia",
+   "ingredientes": [
+    "figo-da-índia",
+    "limão"
+   ],
+   "utensilios": [
+    "luvas",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca espinhenta",
+     "utensilio": "faquinha",
+     "parametro": "com luvas"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "gotas de limão",
+     "utensilio": "mãos",
+     "parametro": "realça o sabor"
+    }
+   ],
+   "ponto_critico": "sempre de luvas",
+   "erro_comum": "pegar com a mão nua"
+  },
+  {
+   "id": "frutas.carambola",
+   "capitulo": "Frutas",
+   "nome": "Estrelas de carambola",
+   "ingredientes": [
+    "carambola"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "com casca na horizontal",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "estrelas"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo central",
+     "utensilio": "faquinha",
+     "parametro": "de cada fatia"
+    },
+    {
+     "acao": "testar",
+     "alvo": "provar doçura",
+     "utensilio": "boca",
+     "parametro": "ajustar molhos"
+    }
+   ],
+   "ponto_critico": "doçura varia; provar antes",
+   "erro_comum": "usar carambola ácida sem ajustar"
+  },
+  {
+   "id": "frutas.lichia",
+   "capitulo": "Frutas",
+   "nome": "Descascar lichia",
+   "ingredientes": [
+    "lichia"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca a partir do cabo",
+     "utensilio": "faquinha",
+     "parametro": "solta fácil"
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "semente marrom",
+     "utensilio": "faquinha",
+     "parametro": "não comestível"
+    }
+   ],
+   "ponto_critico": "casca rosada ou vermelha indica madura",
+   "erro_comum": "comer a semente"
+  },
+  {
+   "id": "frutas.kiwano",
+   "capitulo": "Frutas",
+   "nome": "Abrir kiwano",
+   "ingredientes": [
+    "kiwano"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "cuidado com os chifres"
+    },
+    {
+     "acao": "servir",
+     "alvo": "miolo verde",
+     "utensilio": "colher",
+     "parametro": "de colher"
+    }
+   ],
+   "ponto_critico": "crosta não se come",
+   "erro_comum": "tentar descascar"
+  },
+  {
+   "id": "frutas.pitaia",
+   "capitulo": "Frutas",
+   "nome": "Abrir pitaia",
+   "ingredientes": [
+    "pitaia"
+   ],
+   "utensilios": [
+    "faca-de-cozinha",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "ao meio",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "longitudinal"
+    },
+    {
+     "acao": "separar",
+     "alvo": "polpa",
+     "utensilio": "colher",
+     "parametro": "retirar inteira"
+    }
+   ],
+   "ponto_critico": "polpa sai em bloco",
+   "erro_comum": "comer a casca"
+  },
+  {
+   "id": "frutas.poche-calda",
+   "capitulo": "Frutas",
+   "nome": "Pochê de frutas em calda de açúcar",
+   "ingredientes": [
+    "ameixas ou outras frutas firmes",
+    "calda de açúcar",
+    "temperos (raspas, cravo, anis, canela, baunilha, alfazema, gengibre, capim-limão)"
+   ],
+   "utensilios": [
+    "panela",
+    "escumadeira",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "pochê",
+     "alvo": "frutas totalmente cobertas pela calda",
+     "utensilio": "panela",
+     "parametro": "fogo baixo, 15 a 20 min até amolecer"
+    },
+    {
+     "acao": "separar",
+     "alvo": "frutas",
+     "utensilio": "escumadeira",
+     "parametro": "reservar"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "calda",
+     "utensilio": "panela",
+     "parametro": "fervendo"
+    },
+    {
+     "acao": "coar",
+     "alvo": "calda sobre as frutas",
+     "utensilio": "peneira",
+     "parametro": "regar"
+    }
+   ],
+   "ponto_critico": "calda leve para frutas duras e de caroço, densa para berries",
+   "erro_comum": "usar fruta madura demais que desmancha"
+  },
+  {
+   "id": "frutas.poche-vinho-pera",
+   "capitulo": "Frutas",
+   "nome": "Pera pochê no vinho tinto",
+   "ingredientes": [
+    "peras descascadas e sem miolo com cabo",
+    "vinho tinto",
+    "açúcar",
+    "especiarias"
+   ],
+   "utensilios": [
+    "panela",
+    "escumadeira"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "vinho, especiarias e açúcar",
+     "utensilio": "panela",
+     "parametro": "até dissolver o açúcar"
+    },
+    {
+     "acao": "pochê",
+     "alvo": "peras",
+     "utensilio": "panela",
+     "parametro": "fogo baixo, 15 a 20 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "peras tampadas na calda",
+     "utensilio": "panela",
+     "parametro": "fora do fogo, pegam cor"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "calda sem as peras",
+     "utensilio": "panela",
+     "parametro": "e esfriar"
+    },
+    {
+     "acao": "servir",
+     "alvo": "pera fatiada com calda",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "regar"
+    }
+   ],
+   "ponto_critico": "esfriar na calda para absorver cor e sabor",
+   "erro_comum": "tirar do vinho logo e ficar pálida"
+  },
+  {
+   "id": "frutas.compota-secas",
+   "capitulo": "Frutas",
+   "nome": "Compota de frutas secas",
+   "ingredientes": [
+    "frutas secas",
+    "líquido aromático (vinho, chá, suco, rum)",
+    "água",
+    "açúcar ou mel"
+   ],
+   "utensilios": [
+    "panela",
+    "escumadeira",
+    "concha"
+   ],
+   "passos": [
+    {
+     "acao": "embeber",
+     "alvo": "frutas no líquido",
+     "utensilio": "panela",
+     "parametro": "durante a noite"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "frutas com água só para cobrir",
+     "utensilio": "panela",
+     "parametro": "leve, mexendo"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "frutas",
+     "utensilio": "panela",
+     "parametro": "15 a 25 min até tenras"
+    },
+    {
+     "acao": "separar",
+     "alvo": "frutas",
+     "utensilio": "escumadeira",
+     "parametro": "reservar"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "líquido adoçado",
+     "utensilio": "panela",
+     "parametro": "a 1/3"
+    },
+    {
+     "acao": "servir",
+     "alvo": "frutas com calda",
+     "utensilio": "concha",
+     "parametro": "uma concha"
+    }
+   ],
+   "ponto_critico": "açúcar só no fim; reduzir a um terço",
+   "erro_comum": "adoçar no início e a fruta não amolecer"
+  },
+  {
+   "id": "frutas.conserva-alcool",
+   "capitulo": "Frutas",
+   "nome": "Conservar frutas em álcool",
+   "ingredientes": [
+    "frutas recém-maduras preparadas",
+    "bebida (conhaque, kirsch, rum, uísque, Porto, vodca)",
+    "açúcar",
+    "especiarias"
+   ],
+   "utensilios": [
+    "vidro-hermetico",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "esterilizar",
+     "alvo": "vidro",
+     "utensilio": "vidro-hermetico",
+     "parametro": "antes de usar"
+    },
+    {
+     "acao": "montar",
+     "alvo": "frutas e especiarias no vidro",
+     "utensilio": "mãos",
+     "parametro": "cítricos descascados, peras descascadas"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "bebida e dissolver açúcar",
+     "utensilio": "panela",
+     "parametro": "esfriar fora do fogo"
+    },
+    {
+     "acao": "montar",
+     "alvo": "bebida sobre as frutas",
+     "utensilio": "vidro-hermetico",
+     "parametro": "até cobrir"
+    },
+    {
+     "acao": "selar",
+     "alvo": "vidro",
+     "utensilio": "vidro-hermetico",
+     "parametro": "lugar escuro e fresco 2 a 3 semanas"
+    }
+   ],
+   "ponto_critico": "frutas cobertas; se fermentar, consumir em até 1 ano",
+   "erro_comum": "fruta passada ou vidro sem esterilizar"
+  },
+  {
+   "id": "frutas.rumtopf",
+   "capitulo": "Frutas",
+   "nome": "Rumtopf, pote de rum (Truque do Chef)",
+   "ingredientes": [
+    "berries e frutas da estação",
+    "açúcar",
+    "rum"
+   ],
+   "utensilios": [
+    "pote-rumtopf",
+    "vidro-hermetico"
+   ],
+   "passos": [
+    {
+     "acao": "marinar",
+     "alvo": "frutas salpicadas de açúcar",
+     "utensilio": "vasilha",
+     "parametro": "uma noite"
+    },
+    {
+     "acao": "montar",
+     "alvo": "camadas de frutas no pote",
+     "utensilio": "pote-rumtopf",
+     "parametro": "ex.: blueberry e morango"
+    },
+    {
+     "acao": "montar",
+     "alvo": "rum cobrindo",
+     "utensilio": "pote-rumtopf",
+     "parametro": "até 2 cm da boca"
+    },
+    {
+     "acao": "selar",
+     "alvo": "pote",
+     "utensilio": "pote-rumtopf",
+     "parametro": "maturar no mínimo 1 mês"
+    }
+   ],
+   "ponto_critico": "2 cm de folga na boca; 1 mês de maturação",
+   "erro_comum": "encher até a boca"
+  },
+  {
+   "id": "frutas.grelhar-espeto",
+   "capitulo": "Frutas",
+   "nome": "Grelhar frutas em fatias ou espetos",
+   "ingredientes": [
+    "abacaxi",
+    "papaia",
+    "manga",
+    "banana",
+    "óleo",
+    "suco de limão ou mel"
+   ],
+   "utensilios": [
+    "espetos",
+    "grelha",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "frutas em fatias ou pedaços",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "horizontais ou verticais"
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "pedaços em espetos untados",
+     "utensilio": "espetos",
+     "parametro": "kebab"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "grelha com óleo e fruta com pouco limão ou mel",
+     "utensilio": "pincel",
+     "parametro": "camada mínima"
+    },
+    {
+     "acao": "grelhar",
+     "alvo": "frutas",
+     "utensilio": "grelha",
+     "parametro": "3 a 5 min, virando uma vez, listras"
+    }
+   ],
+   "ponto_critico": "virar só uma vez para marcar listras",
+   "erro_comum": "excesso de mel que queima"
+  },
+  {
+   "id": "frutas.grelhar-papillote",
+   "capitulo": "Frutas",
+   "nome": "Frutas inteiras embrulhadas na grelha",
+   "ingredientes": [
+    "frutas inteiras"
+   ],
+   "utensilios": [
+    "papel-aluminio",
+    "grelha"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "fruta em papel-alumínio",
+     "utensilio": "papel-aluminio",
+     "parametro": "fechado"
+    },
+    {
+     "acao": "grelhar",
+     "alvo": "pacote",
+     "utensilio": "grelha",
+     "parametro": "5 a 10 min"
+    }
+   ],
+   "ponto_critico": "pacote bem fechado",
+   "erro_comum": "papel furado que deixa escapar o vapor"
+  },
+  {
+   "id": "frutas.gratinar-zabaione",
+   "capitulo": "Frutas",
+   "nome": "Frutas gratinadas com zabaione",
+   "ingredientes": [
+    "morango",
+    "blueberry",
+    "calda de zabaione"
+   ],
+   "utensilios": [
+    "refratario",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "frutas decorativamente",
+     "utensilio": "refratario",
+     "parametro": "uma camada"
+    },
+    {
+     "acao": "montar",
+     "alvo": "1 colher de zabaione",
+     "utensilio": "colher",
+     "parametro": "espalha sozinha"
+    },
+    {
+     "acao": "gratinar",
+     "alvo": "sob a grelha quente",
+     "utensilio": "forno",
+     "parametro": "1 a 2 min até dourar"
+    }
+   ],
+   "ponto_critico": "dourar levemente, 1 a 2 min",
+   "erro_comum": "deixar demais e queimar"
+  },
+  {
+   "id": "frutas.calda-coco",
+   "capitulo": "Frutas",
+   "nome": "Calda cremosa de coco para frutas quentes",
+   "ingredientes": [
+    "leite de coco",
+    "gemas",
+    "açúcar",
+    "coco tostado"
+   ],
+   "utensilios": [
+    "panela",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "creme no método do creme inglês com leite de coco",
+     "utensilio": "panela",
+     "parametro": "até napar a colher"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "calda",
+     "utensilio": "vasilha",
+     "parametro": "fria"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "tiras de coco tostado",
+     "utensilio": "mãos",
+     "parametro": "na hora"
+    }
+   ],
+   "ponto_critico": "calda fria contrasta com fruta quente",
+   "erro_comum": "ferver e talhar"
+  },
+  {
+   "id": "frutas.caramelizar",
+   "capitulo": "Frutas",
+   "nome": "Cobrir frutas com calda caramelada",
+   "ingredientes": [
+    "frutas firmes 250 g (gomos de laranja, uva, cereja, pêssego, pera, abacaxi)",
+    "açúcar 50 g",
+    "água 100 ml",
+    "manteiga 15 g"
+   ],
+   "utensilios": [
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "açúcar na água",
+     "utensilio": "frigideira",
+     "parametro": "fogo baixo até dissolver"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "com a manteiga",
+     "utensilio": "frigideira",
+     "parametro": "até dourar"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "calda",
+     "utensilio": "frigideira",
+     "parametro": "fogo alto, borbulhar e engrossar"
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "frutas em camada única",
+     "utensilio": "frigideira",
+     "parametro": "balançar até cobrir"
+    }
+   ],
+   "ponto_critico": "dourado claro, nunca marrom; camada única",
+   "erro_comum": "calda escura amarga ou frutas amontoadas"
+  },
+  {
+   "id": "frutas.flambar",
+   "capitulo": "Frutas",
+   "nome": "Flambar frutas",
+   "ingredientes": [
+    "uva ou cereja",
+    "manteiga",
+    "açúcar",
+    "conhaque, rum, Madeira ou licor"
+   ],
+   "utensilios": [
+    "frigideira",
+    "colher-cabo-longo",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "frutas na manteiga com açúcar",
+     "utensilio": "frigideira",
+     "parametro": "1 a 2 min"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "bebida à parte",
+     "utensilio": "panela",
+     "parametro": "morna"
+    },
+    {
+     "acao": "flambar",
+     "alvo": "bebida acesa longe da chama, despejada nas frutas",
+     "utensilio": "panela",
+     "parametro": "fora do fogo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "regar com a calda até apagar",
+     "utensilio": "colher-cabo-longo",
+     "parametro": "servir na hora"
+    }
+   ],
+   "ponto_critico": "acender fora da chama; colher de cabo longo",
+   "erro_comum": "despejar bebida da garrafa perto do fogo"
+  },
+  {
+   "id": "frutas.tempura",
+   "capitulo": "Frutas",
+   "nome": "Frutas em tempura",
+   "ingredientes": [
+    "maçã, pera, abacaxi, manga, papaia, kiwi",
+    "farinha 50 g",
+    "fubá 50 g",
+    "fermento em pó",
+    "ovo",
+    "água gelada 200 ml",
+    "óleo"
+   ],
+   "utensilios": [
+    "papel-toalha",
+    "hashi",
+    "panela",
+    "termometro"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "frutas descascadas em fatias, gomos ou pedaços uniformes",
+     "utensilio": "faca-de-cozinha",
+     "parametro": "tamanho igual"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "secar frutas",
+     "utensilio": "papel-toalha",
+     "parametro": "bem secas"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovo com água gelada e misturar aos secos",
+     "utensilio": "garfo",
+     "parametro": "massa lisa"
+    },
+    {
+     "acao": "mergulhar",
+     "alvo": "fruta na massa e escorrer o excesso",
+     "utensilio": "hashi",
+     "parametro": "ou 2 garfos"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "frutas",
+     "utensilio": "panela",
+     "parametro": "190 °C, 2 a 3 min até dourar"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "frutas",
+     "utensilio": "papel-toalha",
+     "parametro": "servir quente"
+    }
+   ],
+   "ponto_critico": "óleo a 190 °C; fruta seca para a massa aderir",
+   "erro_comum": "fruta úmida e massa escorregar"
+  },
+  {
+   "id": "frutas.maca-assada",
+   "capitulo": "Frutas",
+   "nome": "Maçã assada inteira recheada",
+   "ingredientes": [
+    "maçã verde ou Granny Smith",
+    "limão",
+    "recheio (frutas, castanhas, especiarias)",
+    "manteiga"
+   ],
+   "utensilios": [
+    "descarocador",
+    "faquinha",
+    "refratario"
+   ],
+   "passos": [
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo",
+     "utensilio": "descarocador",
+     "parametro": "e pingar limão"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "fatia da base",
+     "utensilio": "faquinha",
+     "parametro": "para não tombar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "risco em volta da casca",
+     "utensilio": "faquinha",
+     "parametro": "para a polpa expandir"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "cavidade",
+     "utensilio": "colher",
+     "parametro": "1 a 2 colheres (sopa)"
+    },
+    {
+     "acao": "montar",
+     "alvo": "pedaço de manteiga por cima",
+     "utensilio": "mãos",
+     "parametro": "sobre o recheio"
+    },
+    {
+     "acao": "assar",
+     "alvo": "maçãs no refratário",
+     "utensilio": "forno",
+     "parametro": "200 °C, 40 a 50 min"
+    }
+   ],
+   "ponto_critico": "risco na casca evita rachar",
+   "erro_comum": "esquecer o risco e a maçã estourar"
+  },
+  {
+   "id": "frutas.metades-assadas",
+   "capitulo": "Frutas",
+   "nome": "Frutas de caroço assadas em metades recheadas",
+   "ingredientes": [
+    "pêssego ou outra fruta de caroço",
+    "limão",
+    "recheio"
+   ],
+   "utensilios": [
+    "faquinha",
+    "assadeira",
+    "palito"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "fruta ao meio e tirar caroço",
+     "utensilio": "faquinha",
+     "parametro": "seguindo o sulco"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "gotas de limão",
+     "utensilio": "mãos",
+     "parametro": "contra escurecer"
+    },
+    {
+     "acao": "montar",
+     "alvo": "metades viradas para cima",
+     "utensilio": "assadeira",
+     "parametro": "camada única, sem apertar"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "cavidade",
+     "utensilio": "colher",
+     "parametro": "pressionar de leve"
+    },
+    {
+     "acao": "assar",
+     "alvo": "frutas",
+     "utensilio": "forno",
+     "parametro": "180 °C, cerca de 15 min até macias ao espetar"
+    }
+   ],
+   "ponto_critico": "polpa macia ao espetar",
+   "erro_comum": "assadeira cheia demais e frutas cozinharem no vapor"
+  },
+  {
+   "id": "frutas.papillote-assar",
+   "capitulo": "Frutas",
+   "nome": "Frutas assadas en papillote",
+   "ingredientes": [
+    "frutas (abacaxi, banana, laranja, figo, ameixa, pera, morango, kiwi, pêssego)",
+    "açúcar",
+    "vinho ou licor",
+    "manteiga"
+   ],
+   "utensilios": [
+    "papel-aluminio",
+    "folha-bananeira",
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "fruta no centro da folha",
+     "utensilio": "papel-aluminio",
+     "parametro": "ou papel-manteiga ou folha de bananeira"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "açúcar e vinho ou licor",
+     "utensilio": "colher",
+     "parametro": "a gosto, manteiga opcional"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "folha fechando o pacote",
+     "utensilio": "mãos",
+     "parametro": "bem vedado"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "pacote",
+     "utensilio": "barbante",
+     "parametro": "firme"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pacote",
+     "utensilio": "forno",
+     "parametro": "180 °C, 15 min"
+    }
+   ],
+   "ponto_critico": "pacote vedado cozinha no próprio suco",
+   "erro_comum": "pacote mal fechado e a fruta ressecar"
+  }
+ ]
+}

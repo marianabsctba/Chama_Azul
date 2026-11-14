@@ -1,0 +1,6279 @@
+{
+ "acoes_novas": [
+  "armazenar",
+  "demolhar",
+  "despejar",
+  "escorrer",
+  "esfarelar",
+  "infusionar",
+  "misturar",
+  "moer",
+  "polvilhar",
+  "quebrar",
+  "regar",
+  "testar",
+  "tostar",
+  "virar"
+ ],
+ "utensilios": [
+  {
+   "id": "relogio-ampulheta",
+   "nome": "Relógio de cozinha / ampulheta",
+   "forma": "ampulheta de vidro em moldura ou timer redondo de mesa"
+  },
+  {
+   "id": "termometro-gordura",
+   "nome": "Termômetro para gordura",
+   "forma": "haste metálica longa com mostrador e presilha para a borda da panela"
+  },
+  {
+   "id": "termometro-carne",
+   "nome": "Termômetro para carne",
+   "forma": "espeto metálico pontudo com mostrador redondo no topo"
+  },
+  {
+   "id": "termometro-acucar",
+   "nome": "Termômetro para açúcar",
+   "forma": "tubo de vidro graduado preso a placa metálica com presilha"
+  },
+  {
+   "id": "tesoura-de-cozinha",
+   "nome": "Tesoura de cozinha",
+   "forma": "tesoura robusta de inox com cabos largos"
+  },
+  {
+   "id": "tesoura-de-aves",
+   "nome": "Tesoura de aves",
+   "forma": "tesoura curva de lâminas fortes com mola entre os cabos"
+  },
+  {
+   "id": "colheres-medidoras",
+   "nome": "Colheres medidoras",
+   "forma": "jogo de colheres de tamanhos graduados presas por argola, às vezes dupla face"
+  },
+  {
+   "id": "copo-medidor",
+   "nome": "Copo medidor",
+   "forma": "jarra transparente com alça, bico e marcações graduadas"
+  },
+  {
+   "id": "balanca",
+   "nome": "Balança de cozinha",
+   "forma": "plataforma com prato e mostrador de ponteiro ou visor digital"
+  },
+  {
+   "id": "xicaras-medidoras",
+   "nome": "Xícaras medidoras",
+   "forma": "conjunto de xícaras com cabo em frações (1/4, 1/3, 1/2, 1)"
+  },
+  {
+   "id": "descascador-giratorio",
+   "nome": "Descascador de legumes de lâmina giratória",
+   "forma": "cabo reto com lâmina fendida que gira em eixo"
+  },
+  {
+   "id": "descascador-ponta",
+   "nome": "Descascador de lâmina fixa com ponta",
+   "forma": "cabo com lâmina fendida de um lado e ponta afiada para tirar olhos"
+  },
+  {
+   "id": "tabua-de-corte",
+   "nome": "Tábua de corte",
+   "forma": "placa retangular grossa de madeira ou polipropileno"
+  },
+  {
+   "id": "tenaz",
+   "nome": "Tenaz (pegador)",
+   "forma": "duas hastes de inox unidas na base, pontas em concha que se fecham ao apertar"
+  },
+  {
+   "id": "concha",
+   "nome": "Concha",
+   "forma": "cabo longo com cuia funda hemisférica, às vezes com bico lateral"
+  },
+  {
+   "id": "escumadeira",
+   "nome": "Escumadeira",
+   "forma": "disco largo e achatado com furos ou tela, cabo longo"
+  },
+  {
+   "id": "colher-com-furos",
+   "nome": "Colher com furos",
+   "forma": "colher grande e rasa perfurada em toda a superfície"
+  },
+  {
+   "id": "descarocador",
+   "nome": "Descaroçador",
+   "forma": "duas hastes articuladas no centro, uma com aro de apoio e outra com pino"
+  },
+  {
+   "id": "faca-canelle",
+   "nome": "Faca canelle",
+   "forma": "cabo com cabeça redonda de inox e pequena lâmina em V lateral"
+  },
+  {
+   "id": "descascador-citricos",
+   "nome": "Descascador de cítricos (zester)",
+   "forma": "cabo com cabeça retangular de inox com cinco furinhos cortantes na ponta"
+  },
+  {
+   "id": "ralador-quatro-faces",
+   "nome": "Ralador de quatro faces",
+   "forma": "caixa retangular oca de quatro lados, cada lado com furos diferentes, alça no topo"
+  },
+  {
+   "id": "ralador-rotatorio",
+   "nome": "Ralador rotatório (Mouli)",
+   "forma": "câmara com tambor cilíndrico perfurado acionado por manivela e prensa"
+  },
+  {
+   "id": "ralador-plano",
+   "nome": "Ralador de face única",
+   "forma": "placa estreita de metal perfurada com cabo, para cítricos e parmesão"
+  },
+  {
+   "id": "ralador-noz-moscada",
+   "nome": "Ralador de noz-moscada",
+   "forma": "placa côncava pequena com compartimento para guardar a noz"
+  },
+  {
+   "id": "mouli-legumes",
+   "nome": "Mouli-légumes (passe-vite)",
+   "forma": "funil/tigela de inox com pés de encaixe, disco perfurado trocável e manivela com lâmina"
+  },
+  {
+   "id": "espatula-de-peixe",
+   "nome": "Espátula de peixe",
+   "forma": "lâmina larga quadrada ou retangular com rasgos, cabo em ângulo"
+  },
+  {
+   "id": "espatula",
+   "nome": "Espátula",
+   "forma": "lâmina fina, flexível e achatada de ponta arredondada com cabo"
+  },
+  {
+   "id": "espatula-em-angulo",
+   "nome": "Espátula em ângulo",
+   "forma": "lâmina retangular longa e flexível com dobra perto do cabo"
+  },
+  {
+   "id": "bulb-baster",
+   "nome": "Bulb baster",
+   "forma": "tubo longo tipo seringa com bulbo de borracha na ponta"
+  },
+  {
+   "id": "pinca",
+   "nome": "Pinça de cozinha",
+   "forma": "pinça metálica reta de uns 8 cm"
+  },
+  {
+   "id": "escova",
+   "nome": "Escova de legumes",
+   "forma": "bloco retangular com cerdas duras"
+  },
+  {
+   "id": "palitos-de-coquetel",
+   "nome": "Palitos de coquetel",
+   "forma": "palitos finos de uns 10 cm"
+  },
+  {
+   "id": "retirador-miolo-maca",
+   "nome": "Retirador de miolo de maçã",
+   "forma": "tubo cilíndrico cortante na ponta de um cabo"
+  },
+  {
+   "id": "boleador",
+   "nome": "Boleador",
+   "forma": "cabo central com uma colherinha hemisférica em cada ponta, de tamanhos diferentes"
+  },
+  {
+   "id": "colher-de-sorvete",
+   "nome": "Colher de sorvete",
+   "forma": "cabo oco grosso com colher semiesférica na ponta"
+  },
+  {
+   "id": "colher-de-sorvete-alavanca",
+   "nome": "Colher de sorvete com alavanca",
+   "forma": "cabo com gatilho e concha com lâmina raspadora interna"
+  },
+  {
+   "id": "espremedor-limao",
+   "nome": "Espremedor de limão",
+   "forma": "prato de vidro ou plástico com cone central pontudo e sulcado"
+  },
+  {
+   "id": "reamer",
+   "nome": "Reamer de madeira",
+   "forma": "cone sulcado de madeira preso a um cabo"
+  },
+  {
+   "id": "espremedor-de-batata",
+   "nome": "Espremedor de batata",
+   "forma": "disco perfurado preso a hastes em forma de garfo e cabo vertical"
+  },
+  {
+   "id": "amassador-de-batata",
+   "nome": "Amassador de batata (prensa)",
+   "forma": "dois cabos articulados, um com cesto perfurado e outro com disco que empurra"
+  },
+  {
+   "id": "espatula-de-bolo",
+   "nome": "Espátula de bolo",
+   "forma": "lâmina metálica triangular e achatada com cabo"
+  },
+  {
+   "id": "cutelo",
+   "nome": "Cutelo ocidental",
+   "forma": "lâmina retangular larga e pesada com cabo curto"
+  },
+  {
+   "id": "faca-do-chef",
+   "nome": "Faca do chef",
+   "forma": "lâmina triangular de 15 a 30 cm com fio levemente curvo"
+  },
+  {
+   "id": "faca-de-filetear",
+   "nome": "Faca de filetear",
+   "forma": "lâmina longa (~20 cm), estreita e flexível"
+  },
+  {
+   "id": "faca-de-desossar",
+   "nome": "Faca de desossar",
+   "forma": "lâmina rígida de 9 a 15 cm com ponta curva e afiada"
+  },
+  {
+   "id": "faca-serrilhada-pequena",
+   "nome": "Faca serrilhada pequena",
+   "forma": "lâmina serrilhada de ~13 cm"
+  },
+  {
+   "id": "faca-de-pao",
+   "nome": "Faca de pão",
+   "forma": "lâmina longa serrilhada"
+  },
+  {
+   "id": "faquinha",
+   "nome": "Faquinha de descascar",
+   "forma": "faca pequena de lâmina com 6 a 9 cm"
+  },
+  {
+   "id": "mezzaluna",
+   "nome": "Mezzaluna",
+   "forma": "lâmina curva em meia lua com um pegador vertical de madeira em cada ponta"
+  },
+  {
+   "id": "faca-de-trinchar",
+   "nome": "Faca de trinchar",
+   "forma": "lâmina longa e estreita; versão canelada de ponta arredondada para carne fria"
+  },
+  {
+   "id": "garfo-trinchante",
+   "nome": "Garfo trinchante",
+   "forma": "garfo longo de dois dentes afiados com protetor de mão"
+  },
+  {
+   "id": "amolador",
+   "nome": "Amolador (chaira)",
+   "forma": "haste longa de aço áspero com cabo e guarda"
+  },
+  {
+   "id": "bloco-de-facas",
+   "nome": "Bloco de facas",
+   "forma": "bloco de madeira com fendas para guardar facas"
+  },
+  {
+   "id": "frigideira",
+   "nome": "Frigideira",
+   "forma": "panela larga e baixa de fundo chato e cabo longo reto"
+  },
+  {
+   "id": "frigideira-antiaderente",
+   "nome": "Frigideira antiaderente",
+   "forma": "frigideira com revestimento escuro interno"
+  },
+  {
+   "id": "panela",
+   "nome": "Panela",
+   "forma": "recipiente cilíndrico com cabo ou alças e tampa, vários tamanhos"
+  },
+  {
+   "id": "panela-dupla",
+   "nome": "Panela dupla (banho-maria)",
+   "forma": "panela larga com outra menor encaixada por cima"
+  },
+  {
+   "id": "caldeirao",
+   "nome": "Caldeirão",
+   "forma": "panela alta, mais funda que larga, com duas alças e tampa"
+  },
+  {
+   "id": "panela-a-vapor",
+   "nome": "Panela a vapor",
+   "forma": "panela com cesto perfurado encaixado acima da água, empilhável"
+  },
+  {
+   "id": "chapa",
+   "nome": "Chapa",
+   "forma": "placa pesada de ferro, lisa ou canelada, com cabo"
+  },
+  {
+   "id": "frigideira-panqueca",
+   "nome": "Frigideira de panqueca/crêpe",
+   "forma": "frigideira de ferro fundido muito rasa (crêpe ~22 cm, blini ~12 cm)"
+  },
+  {
+   "id": "cutelo-chines",
+   "nome": "Cutelo chinês",
+   "forma": "lâmina retangular larga e achatada com cabo curto de madeira"
+  },
+  {
+   "id": "hashi",
+   "nome": "Pauzinhos (hashi)",
+   "forma": "par de varetas; as longas para cozinhar, as curtas para comer"
+  },
+  {
+   "id": "wok",
+   "nome": "Wok",
+   "forma": "tigela funda de ferro com uma ou duas alças, ~35 cm, tampa em abóbada opcional"
+  },
+  {
+   "id": "espatula-de-wok",
+   "nome": "Espátula de wok",
+   "forma": "cabo longo com pá metálica curvada e borda traseira"
+  },
+  {
+   "id": "esteira-de-bambu",
+   "nome": "Esteirinha de bambu",
+   "forma": "esteira flexível de varetas de bambu tecidas"
+  },
+  {
+   "id": "espetinhos-de-madeira",
+   "nome": "Espetinhos de madeira",
+   "forma": "varetas finas pontudas de bambu, vários comprimentos"
+  },
+  {
+   "id": "omeleteira-japonesa",
+   "nome": "Omeleteira japonesa",
+   "forma": "frigideira rasa quadrada ou retangular de ferro/alumínio com cabo grosso de madeira"
+  },
+  {
+   "id": "escumadeira-oriental",
+   "nome": "Escumadeira oriental (aranha)",
+   "forma": "cabo longo de bambu com cesto chato de arame trançado"
+  },
+  {
+   "id": "cesta-de-bambu-vapor",
+   "nome": "Cesta de bambu para vapor",
+   "forma": "dois cestos redondos empilháveis com fundo de treliça e tampa de bambu"
+  },
+  {
+   "id": "pauzinho-de-enrolar",
+   "nome": "Pauzinho de enrolar",
+   "forma": "vareta de madeira de ~60 cm com pontas retas ou afinadas"
+  },
+  {
+   "id": "omeleteira",
+   "nome": "Omeleteira",
+   "forma": "frigideira de fundo pesado e laterais curvas inclinadas, cabo inclinado"
+  },
+  {
+   "id": "caldeirao-para-peixe",
+   "nome": "Caldeirão para peixe",
+   "forma": "panela longa e estreita com grade perfurada removível e alças"
+  },
+  {
+   "id": "frigideira-funda",
+   "nome": "Fritadeira de fogão",
+   "forma": "panela funda e pesada com tampa e cesto de arame com cabo"
+  },
+  {
+   "id": "panela-de-pressao",
+   "nome": "Panela de pressão",
+   "forma": "panela funda e pesada com tampa travada, válvula e manômetro"
+  },
+  {
+   "id": "cacarola",
+   "nome": "Caçarola",
+   "forma": "panela funda de ferro, barro ou porcelana com tampa e uma ou duas alças"
+  },
+  {
+   "id": "terrina",
+   "nome": "Terrina",
+   "forma": "recipiente oval de barro de laterais retas com tampa furada"
+  },
+  {
+   "id": "prato-de-sufle",
+   "nome": "Prato de suflê",
+   "forma": "prato redondo de paredes retas verticais caneladas por fora"
+  },
+  {
+   "id": "ramekin",
+   "nome": "Ramekin",
+   "forma": "tigelinha individual redonda de paredes retas"
+  },
+  {
+   "id": "travessa-de-gratinar",
+   "nome": "Travessa de gratinar",
+   "forma": "travessa larga e rasa refratária com asas laterais"
+  },
+  {
+   "id": "forma-de-assar",
+   "nome": "Fôrma de metal para assar",
+   "forma": "fôrma retangular ou oval de fundo chato e paredes baixas, às vezes com grade"
+  },
+  {
+   "id": "grade-de-assar",
+   "nome": "Grade/suporte de assar",
+   "forma": "grelha oval ou retangular com pés para apoiar a carne"
+  },
+  {
+   "id": "espetos-de-metal",
+   "nome": "Espetos de metal",
+   "forma": "hastes metálicas longas, finas e pontudas"
+  },
+  {
+   "id": "forma-de-bolo",
+   "nome": "Fôrma de bolo",
+   "forma": "fôrma metálica redonda, quadrada ou retangular"
+  },
+  {
+   "id": "forma-com-furo",
+   "nome": "Fôrma com furo no meio",
+   "forma": "fôrma redonda com tubo central"
+  },
+  {
+   "id": "forma-fundo-removivel",
+   "nome": "Fôrma de fundo removível",
+   "forma": "aro com trava de mola e base solta"
+  },
+  {
+   "id": "forma-rocambole",
+   "nome": "Fôrma de rocambole",
+   "forma": "assadeira metálica retangular e rasa"
+  },
+  {
+   "id": "assadeira",
+   "nome": "Assadeira",
+   "forma": "chapa metálica retangular, às vezes com bordas onduladas"
+  },
+  {
+   "id": "forma-de-pao",
+   "nome": "Fôrma de pão",
+   "forma": "fôrma retangular funda; versão longa e estreita para baguete"
+  },
+  {
+   "id": "forma-de-torta",
+   "nome": "Fôrma de torta",
+   "forma": "fôrma redonda rasa de paredes inclinadas"
+  },
+  {
+   "id": "forma-torta-aberta",
+   "nome": "Fôrma de torta aberta",
+   "forma": "fôrma redonda baixa canelada com fundo removível"
+  },
+  {
+   "id": "aro-de-torta",
+   "nome": "Aro de torta",
+   "forma": "anel metálico liso ou ondulado sem fundo"
+  },
+  {
+   "id": "feijoes-para-assar",
+   "nome": "Feijões para assar",
+   "forma": "bolinhas de cerâmica ou metal"
+  },
+  {
+   "id": "forminhas",
+   "nome": "Forminhas",
+   "forma": "forminhas metálicas pequenas de bordas onduladas e formatos variados"
+  },
+  {
+   "id": "grade-para-esfriar",
+   "nome": "Grade para esfriar",
+   "forma": "grelha de arame redonda ou retangular com pés"
+  },
+  {
+   "id": "formas-decorativas",
+   "nome": "Fôrmas decorativas",
+   "forma": "fôrmas com relevos para pudins, gelatinas, musses e sorvetes"
+  },
+  {
+   "id": "cortadores",
+   "nome": "Cortadores de biscoito e massa",
+   "forma": "aros metálicos de paredes verticais em formas geométricas, flores, animais"
+  },
+  {
+   "id": "carretilha",
+   "nome": "Carretilha",
+   "forma": "roda serrilhada com cabo de madeira"
+  },
+  {
+   "id": "peneira",
+   "nome": "Peneira redonda",
+   "forma": "aro com tela de malha e cabo, encaixa sobre tigela"
+  },
+  {
+   "id": "chinois",
+   "nome": "Peneira cônica (chinois)",
+   "forma": "cone de tela fina ou chapa perfurada com cabo longo"
+  },
+  {
+   "id": "escorredor",
+   "nome": "Escorredor",
+   "forma": "bacia perfurada com uma ou duas alças e base"
+  },
+  {
+   "id": "polvilhador",
+   "nome": "Polvilhador (dredger)",
+   "forma": "pote com tampa de furos grandes ou xícara com fundo de tela"
+  },
+  {
+   "id": "centrifuga-salada",
+   "nome": "Centrífuga de salada",
+   "forma": "bacia com cesto interno giratório e tampa com manivela"
+  },
+  {
+   "id": "separador-de-ovos",
+   "nome": "Separador de ovos",
+   "forma": "colher redonda rasa com fendas laterais"
+  },
+  {
+   "id": "processador",
+   "nome": "Processador de alimentos",
+   "forma": "base motorizada com copo, lâmina em S e discos"
+  },
+  {
+   "id": "batedeira",
+   "nome": "Batedeira",
+   "forma": "motor de mesa com tigela e batedores, ou versão portátil de mão"
+  },
+  {
+   "id": "liquidificador",
+   "nome": "Liquidificador",
+   "forma": "base motorizada com copo alto e lâminas no fundo"
+  },
+  {
+   "id": "mixer",
+   "nome": "Mixer de mão (batedeira manual)",
+   "forma": "bastão motorizado com lâmina protegida na ponta"
+  },
+  {
+   "id": "sorveteira",
+   "nome": "Sorveteira",
+   "forma": "cuba com pá giratória; versão maior com refrigeração própria"
+  },
+  {
+   "id": "moedor",
+   "nome": "Moedor elétrico",
+   "forma": "pequeno cilindro motorizado com tampa e lâmina, para café e especiarias"
+  },
+  {
+   "id": "fritadeira-eletrica",
+   "nome": "Fritadeira elétrica",
+   "forma": "caixa vertical com cesto embutido e termostato"
+  },
+  {
+   "id": "tigelas",
+   "nome": "Tigelas",
+   "forma": "tigelas de inox, vidro ou cerâmica de vários tamanhos"
+  },
+  {
+   "id": "colher-de-pau",
+   "nome": "Colher de madeira",
+   "forma": "colher de madeira rígida de cabo longo"
+  },
+  {
+   "id": "espatula-de-borracha",
+   "nome": "Espátula de borracha",
+   "forma": "cabo com lâmina flexível de borracha de canto arredondado"
+  },
+  {
+   "id": "pincel",
+   "nome": "Pincel de cozinha",
+   "forma": "cabo com cerdas redondas ou chatas"
+  },
+  {
+   "id": "pilao-almofariz",
+   "nome": "Pilão e almofariz",
+   "forma": "vasilha de pedra áspera por dentro e bastão de ponta arredondada"
+  },
+  {
+   "id": "rolo-de-macarrao",
+   "nome": "Rolo de macarrão",
+   "forma": "cilindro liso e pesado, com ou sem cabos em eixo central"
+  },
+  {
+   "id": "maquina-de-macarrao",
+   "nome": "Máquina de macarrão",
+   "forma": "base com cilindros ajustáveis, manivela e cortadores acopláveis"
+  },
+  {
+   "id": "batedor-de-arame",
+   "nome": "Batedor de arame (fouet)",
+   "forma": "cabo cilíndrico com laços de arame em bulbo"
+  },
+  {
+   "id": "batedor-rotatorio",
+   "nome": "Batedor rotatório",
+   "forma": "dois batedores de quatro lâminas acionados por engrenagem e manivela"
+  },
+  {
+   "id": "saco-de-confeitar",
+   "nome": "Saco e bicos de confeitar",
+   "forma": "saco cônico de tecido ou plástico com bico metálico ou plástico de vários recortes"
+  },
+  {
+   "id": "musselina",
+   "nome": "Pano de musselina",
+   "forma": "pano fino de algodão trançado"
+  },
+  {
+   "id": "forma-de-gelo",
+   "nome": "Fôrma de gelo",
+   "forma": "bandeja plástica com cavidades em cubo"
+  },
+  {
+   "id": "panela-de-fondue",
+   "nome": "Panela de fondue",
+   "forma": "panela pesada de cerâmica ou ferro sobre réchaud"
+  },
+  {
+   "id": "garfo-de-fondue",
+   "nome": "Garfo de fondue",
+   "forma": "garfo fino de cabo longo com dois dentes"
+  },
+  {
+   "id": "forma-yorkshire",
+   "nome": "Fôrma de pudim Yorkshire",
+   "forma": "chapa com cavidades redondas individuais"
+  },
+  {
+   "id": "oroshigane",
+   "nome": "Ralador japonês (oroshigane)",
+   "forma": "placa de madeira ou metal com dentes miúdos e calha"
+  },
+  {
+   "id": "cortador-de-aspic",
+   "nome": "Cortadores de aspic",
+   "forma": "cortadores metálicos miniatura em formas variadas"
+  },
+  {
+   "id": "colher",
+   "nome": "Colher de servir",
+   "forma": "colher metálica comum de sopa"
+  },
+  {
+   "id": "garfo",
+   "nome": "Garfo",
+   "forma": "garfo de mesa de quatro dentes"
+  },
+  {
+   "id": "papel-toalha",
+   "nome": "Papel-toalha",
+   "forma": "rolo de papel absorvente em suporte"
+  },
+  {
+   "id": "barbante",
+   "nome": "Barbante culinário",
+   "forma": "rolo de fio de algodão cru"
+  },
+  {
+   "id": "forno",
+   "nome": "Forno",
+   "forma": "caixa com porta frontal de vidro, grades internas e gratinador no teto"
+  },
+  {
+   "id": "pires",
+   "nome": "Pires",
+   "forma": "pratinho raso pequeno de porcelana"
+  },
+  {
+   "id": "prato",
+   "nome": "Prato",
+   "forma": "prato raso de porcelana"
+  },
+  {
+   "id": "pote-hermetico",
+   "nome": "Pote hermético",
+   "forma": "pote de vidro com tampa de vedação"
+  },
+  {
+   "id": "saco-plastico",
+   "nome": "Saco plástico de congelar",
+   "forma": "saco plástico transparente com fecho"
+  },
+  {
+   "id": "cumbucas-refratarias",
+   "nome": "Cumbucas refratárias",
+   "forma": "tigelas individuais de cerâmica grossa com alças"
+  },
+  {
+   "id": "aro-metalico",
+   "nome": "Aro metálico de inox",
+   "forma": "anel liso sem fundo de uns 8 cm"
+  },
+  {
+   "id": "caixa-de-ovos",
+   "nome": "Caixa de ovos",
+   "forma": "bandeja de papelão com cavidades e tampa"
+  }
+ ],
+ "tecnicas": [
+  {
+   "id": "caldos.escaldar-ossos",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Escaldar ossos para caldo",
+   "ingredientes": [
+    "ossos e carcaça de frango",
+    "água"
+   ],
+   "utensilios": [
+    "panela",
+    "escorredor"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "ossos em água",
+     "utensilio": "panela",
+     "parametro": "fervura rápida, poucos minutos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "ossos",
+     "utensilio": "escorredor",
+     "parametro": "descartar a água"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "ossos",
+     "utensilio": "",
+     "parametro": "enxaguar em água corrente"
+    }
+   ],
+   "ponto_critico": "água de escaldar descartada e ossos enxaguados antes de começar o caldo, retirando gordura e impurezas",
+   "erro_comum": "usar a água da escaldadura no caldo, que fica turvo e gorduroso"
+  },
+  {
+   "id": "caldos.caldo-de-galinha",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Caldo de galinha",
+   "ingredientes": [
+    "ossos e carcaça de frango (~750 g)",
+    "cebola, salsão e cenoura picados (~500 g)",
+    "cravo",
+    "buquê garni",
+    "alho (opcional)",
+    "pimenta-do-reino em grão",
+    "água (1,5 l)"
+   ],
+   "utensilios": [
+    "panela",
+    "escumadeira",
+    "concha",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "cebola, salsão, cenoura",
+     "utensilio": "faca-do-chef",
+     "parametro": "pedaços grosseiros"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "ossos + legumes + água + aromáticos",
+     "utensilio": "panela",
+     "parametro": "levar à fervura"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": "2 a 3 h em fervura mínima"
+    },
+    {
+     "acao": "escumar",
+     "alvo": "gordura e espuma da superfície",
+     "utensilio": "escumadeira",
+     "parametro": "várias vezes durante o cozimento"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": "pressionar os sólidos com a concha"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "caldo",
+     "utensilio": "tigelas",
+     "parametro": "guardar na geladeira até 3 dias"
+    }
+   ],
+   "ponto_critico": "fervura branda por 2 a 3 h e escumação frequente; rende ~1,5 l de caldo claro e dourado",
+   "erro_comum": "ferver forte, o que emulsiona a gordura e turva o caldo"
+  },
+  {
+   "id": "caldos.desengordurar-a-frio",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Desengordurar caldo a frio",
+   "ingredientes": [
+    "caldo coado"
+   ],
+   "utensilios": [
+    "tigelas",
+    "escumadeira"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "caldo",
+     "utensilio": "tigelas",
+     "parametro": "geladeira por uma noite"
+    },
+    {
+     "acao": "desengordurar",
+     "alvo": "camada de gordura solidificada",
+     "utensilio": "escumadeira",
+     "parametro": "remover toda a crosta da superfície"
+    }
+   ],
+   "ponto_critico": "gordura totalmente endurecida na superfície após uma noite na geladeira, retirada sem sobrar película",
+   "erro_comum": "tentar retirar a gordura antes de ela solidificar, deixando resíduos"
+  },
+  {
+   "id": "caldos.coar-caldo-pressionando",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Coar caldo pressionando os sólidos",
+   "ingredientes": [
+    "caldo cozido com sólidos"
+   ],
+   "utensilios": [
+    "concha",
+    "peneira",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": "peneira fina apoiada sobre tigela, despejar com concha"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "sólidos retidos",
+     "utensilio": "concha",
+     "parametro": "pressionar com o fundo da concha até extrair o líquido"
+    }
+   ],
+   "ponto_critico": "todo o líquido extraído dos sólidos, sem fragmentos passando pela malha",
+   "erro_comum": "despejar a panela de uma vez e transbordar a peneira, ou usar malha grossa"
+  },
+  {
+   "id": "caldos.caldo-de-carne",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Caldo escuro de carne (ossos assados)",
+   "ingredientes": [
+    "ossos de vaca ou vitela (1,5 kg)",
+    "cebola",
+    "cenoura",
+    "alho-poró",
+    "salsão",
+    "purê de tomate",
+    "buquê garni",
+    "pimenta-do-reino em grão",
+    "água (3 l)"
+   ],
+   "utensilios": [
+    "forma-de-assar",
+    "panela",
+    "escumadeira",
+    "concha",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "assar",
+     "alvo": "ossos",
+     "utensilio": "forma-de-assar",
+     "parametro": "230 °C por 40 min"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "legumes junto aos ossos",
+     "utensilio": "colher-de-pau",
+     "parametro": "acrescentar na metade do tempo de forno"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "ossos + legumes + água + temperos",
+     "utensilio": "panela",
+     "parametro": "levar à fervura, juntando um pouco de água ao fundo da assadeira"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": "3 a 4 h"
+    },
+    {
+     "acao": "escumar",
+     "alvo": "gordura e resíduos",
+     "utensilio": "escumadeira",
+     "parametro": "sempre durante o cozimento"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": "pressionar com concha"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "caldo",
+     "utensilio": "",
+     "parametro": "geladeira até 3 dias; rende ~3 l"
+    }
+   ],
+   "ponto_critico": "ossos bem caramelizados no forno (cor marrom escura) sem queimar; caldo final escuro e límpido",
+   "erro_comum": "queimar os ossos ou os legumes, deixando o caldo amargo; não assar resulta em caldo claro"
+  },
+  {
+   "id": "caldos.caldo-de-peixe",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Caldo de peixe",
+   "ingredientes": [
+    "espinha e aparas de peixe branco (2 kg)",
+    "sal",
+    "cebola",
+    "cenoura",
+    "salsão",
+    "vinho branco seco (opcional)",
+    "pimenta-do-reino em grão",
+    "louro",
+    "suco de 1/2 limão",
+    "água (2,5 l)"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "tigelas",
+    "panela",
+    "escumadeira",
+    "concha",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "espinha e aparas",
+     "utensilio": "faca-do-chef",
+     "parametro": "pedaços pequenos"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "cabeça",
+     "utensilio": "faca-do-chef",
+     "parametro": "retirar olhos e guelras"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "espinhas em água fria com sal",
+     "utensilio": "tigelas",
+     "parametro": "~10 min para tirar sangue"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "legumes",
+     "utensilio": "faca-do-chef",
+     "parametro": "pedaços uniformes"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "todos os ingredientes",
+     "utensilio": "panela",
+     "parametro": "20 min após ferver, no máximo"
+    },
+    {
+     "acao": "escumar",
+     "alvo": "resíduos da superfície",
+     "utensilio": "escumadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": "pressionar com concha"
+    }
+   ],
+   "ponto_critico": "tempo de cozimento de 20 min no máximo; usar peixe magro e branco ou salmão",
+   "erro_comum": "cozinhar além de 20 min (caldo amargo) ou usar peixe oleoso como cavala"
+  },
+  {
+   "id": "caldos.desengordurar-papel-toalha",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Retirada rápida da gordura com papel-toalha",
+   "ingredientes": [
+    "caldo coado ainda quente"
+   ],
+   "utensilios": [
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "folha de papel-toalha",
+     "utensilio": "",
+     "parametro": "dobrar em quadrado"
+    },
+    {
+     "acao": "desengordurar",
+     "alvo": "superfície do caldo",
+     "utensilio": "papel-toalha",
+     "parametro": "encostar o papel na superfície e descartar; repetir"
+    }
+   ],
+   "ponto_critico": "caldo quente sem olhos de gordura visíveis após poucas passadas",
+   "erro_comum": "mergulhar o papel fundo demais e absorver caldo em vez de gordura"
+  },
+  {
+   "id": "caldos.cubos-de-caldo",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Cubos de caldo congelado",
+   "ingredientes": [
+    "caldo frio desengordurado"
+   ],
+   "utensilios": [
+    "panela",
+    "forma-de-gelo",
+    "saco-plastico"
+   ],
+   "passos": [
+    {
+     "acao": "desengordurar",
+     "alvo": "gordura sólida",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": "ferver até concentrar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "caldo concentrado",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "caldo",
+     "utensilio": "forma-de-gelo",
+     "parametro": "encher as cavidades"
+    },
+    {
+     "acao": "congelar",
+     "alvo": "bandeja",
+     "utensilio": "",
+     "parametro": "~4 h até endurecer"
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "cubos",
+     "utensilio": "saco-plastico",
+     "parametro": "fechar e guardar até 6 meses"
+    }
+   ],
+   "ponto_critico": "caldo reduzido antes de congelar; cubos totalmente sólidos após 4 h",
+   "erro_comum": "congelar caldo ainda morno ou gorduroso"
+  },
+  {
+   "id": "caldos.caldo-de-legumes",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Caldo de legumes",
+   "ingredientes": [
+    "legumes variados (~450 g: cenoura, cebola, alho-poró, salsão)",
+    "buquê garni",
+    "água (2 l)"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "panela",
+    "concha",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "legumes",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "legumes + buquê garni + água",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": "até 1 h"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": "pressionar com concha"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "caldo",
+     "utensilio": "",
+     "parametro": "geladeira 3 dias ou congelar 1 mês"
+    }
+   ],
+   "ponto_critico": "cozimento de no máximo 1 h; rende ~1,5 l de caldo leve",
+   "erro_comum": "cozinhar demais e deixar o caldo com sabor de legume passado"
+  },
+  {
+   "id": "caldos.dashi",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Dashi (caldo de alga e bonito)",
+   "ingredientes": [
+    "água (1 l)",
+    "lascas de bonito seco (25 g)",
+    "alga kombu (25 g)"
+   ],
+   "utensilios": [
+    "panela",
+    "peneira",
+    "musselina"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "água + kombu + bonito",
+     "utensilio": "panela",
+     "parametro": "levar à fervura e tirar do fogo"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "lascas de bonito",
+     "utensilio": "",
+     "parametro": "esperar assentar no fundo"
+    },
+    {
+     "acao": "coar",
+     "alvo": "líquido",
+     "utensilio": "peneira forrada com musselina",
+     "parametro": "devagar, para uma panela limpa"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo coado",
+     "utensilio": "panela",
+     "parametro": "fogo baixo 10 min"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "alga e bonito reaproveitados no caldo (opcional)",
+     "utensilio": "panela",
+     "parametro": "repetir o processo para concentrar"
+    }
+   ],
+   "ponto_critico": "retirar do fogo logo ao ferver e coar só depois que o bonito afundar; caldo claro, rende ~1 l",
+   "erro_comum": "espremer as lascas ou ferver longamente a kombu, deixando o caldo turvo e amargo"
+  },
+  {
+   "id": "caldos.caldo-de-aves-de-caca",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Caldo de aves de caça",
+   "ingredientes": [
+    "carcaça de aves de caça (1 kg)",
+    "manteiga",
+    "legumes picados (~450 g)",
+    "água (2 l)"
+   ],
+   "utensilios": [
+    "panela",
+    "escumadeira",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "carcaça em pedaços",
+     "utensilio": "panela",
+     "parametro": "dourar na manteiga"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "carcaça + legumes + água",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": "1 a 2 h"
+    },
+    {
+     "acao": "escumar",
+     "alvo": "gordura",
+     "utensilio": "escumadeira",
+     "parametro": "várias vezes"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "caldo",
+     "utensilio": "",
+     "parametro": "geladeira até 3 dias"
+    }
+   ],
+   "ponto_critico": "carcaça bem dourada antes de cobrir com água, dando cor e sabor; rende ~2 l",
+   "erro_comum": "dourar pouco e obter caldo pálido e sem profundidade"
+  },
+  {
+   "id": "caldos.clarificar-consome",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Clarificar consomê",
+   "ingredientes": [
+    "caldo de galinha, carne ou vitela (2 l)",
+    "claras (3 a 4)",
+    "suco de limão (2 colheres de sopa)",
+    "mirepoix (~350 g)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "garfo",
+    "panela",
+    "batedor-de-arame",
+    "peneira",
+    "musselina",
+    "concha"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "garfo",
+     "parametro": "até espumar"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "claras + suco de limão + mirepoix",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "mistura de claras no caldo quente",
+     "utensilio": "batedor-de-arame",
+     "parametro": "bater até ferver e formar crosta, 4 a 6 min"
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "crosta",
+     "utensilio": "concha",
+     "parametro": "abrir um buraco no centro"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "consomê",
+     "utensilio": "panela",
+     "parametro": "~1 h, sem mexer"
+    },
+    {
+     "acao": "coar",
+     "alvo": "consomê",
+     "utensilio": "peneira forrada com musselina úmida",
+     "parametro": "romper a crosta e passar com concha"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "consomê",
+     "utensilio": "panela limpa",
+     "parametro": "reaquecer antes de servir"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "julienne de trufa e cerefólio ou brunoise de legumes",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "crosta formada em 4 a 6 min e mantida intacta, sem mexer por ~1 h; líquido final transparente",
+   "erro_comum": "mexer depois que a crosta se forma, ou ferver forte, quebrando a clarificação e turvando o caldo"
+  },
+  {
+   "id": "caldos.preparar-aspic",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Preparar aspic",
+   "ingredientes": [
+    "consomê",
+    "folhas de gelatina (7 g para 500 ml)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "panela",
+    "colher",
+    "pires"
+   ],
+   "passos": [
+    {
+     "acao": "marinar",
+     "alvo": "folhas de gelatina em um pouco de consomê",
+     "utensilio": "tigelas",
+     "parametro": "2 a 3 min para hidratar"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "restante do consomê",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gelatina hidratada no consomê",
+     "utensilio": "colher",
+     "parametro": "fogo baixo até dissolver"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "1 colher de sopa de aspic em pires",
+     "utensilio": "pires",
+     "parametro": "geladeira para testar o ponto"
+    }
+   ],
+   "ponto_critico": "proporção de 7 g de gelatina para 500 ml; amostra no pires firma ao gelar",
+   "erro_comum": "ferver a mistura (enfraquece a gelatina) ou não testar e obter aspic mole"
+  },
+  {
+   "id": "sopas.pasta-in-brodo",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Pasta in brodo",
+   "ingredientes": [
+    "caldo de galinha ou peixe (1 l)",
+    "tortellini (225 g)"
+   ],
+   "utensilios": [
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo",
+     "utensilio": "panela",
+     "parametro": "abaixar o fogo"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "tortellini no caldo",
+     "utensilio": "panela",
+     "parametro": "~7 min"
+    }
+   ],
+   "ponto_critico": "tortellini cozido em ~7 min em fervura branda, sem desmanchar",
+   "erro_comum": "cozinhar em fervura forte e romper a massa"
+  },
+  {
+   "id": "sopas.stracciatella",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Stracciatella (ovo em fios no caldo)",
+   "ingredientes": [
+    "caldo (1 l)",
+    "ovos (2)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "garfo",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "ovos",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovos batidos no caldo em cozimento",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "ovos",
+     "utensilio": "panela",
+     "parametro": "retirar do fogo para que o calor do caldo cozinhe os ovos"
+    }
+   ],
+   "ponto_critico": "ovos coagulados em fios finos pelo calor residual",
+   "erro_comum": "deixar ferver com o ovo, que vira grumos borrachudos"
+  },
+  {
+   "id": "sopas.sopa-de-cebola-francesa",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa francesa de cebola (caramelizar a cebola)",
+   "ingredientes": [
+    "cebola em rodelas finas (450 g)",
+    "manteiga (75 g)",
+    "caldo de carne (1,5 l)",
+    "vinho branco seco (200 ml)",
+    "buquê garni",
+    "sal e pimenta"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "frigideira",
+    "colher-de-pau",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "cebola",
+     "utensilio": "faca-do-chef",
+     "parametro": "rodelas finas"
+    },
+    {
+     "acao": "caramelizar",
+     "alvo": "cebola na manteiga",
+     "utensilio": "frigideira",
+     "parametro": "fogo moderado, mexendo, ~20 min até dourar bem"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "caldo + vinho + buquê garni + temperos",
+     "utensilio": "panela",
+     "parametro": "mexendo"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "sopa tampada",
+     "utensilio": "panela",
+     "parametro": "30 min"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "sopa",
+     "utensilio": "",
+     "parametro": "retirar o buquê garni e acertar o sal"
+    }
+   ],
+   "ponto_critico": "cebola marrom dourada uniforme após ~20 min antes de juntar o líquido",
+   "erro_comum": "fogo alto que queima a cebola, ou caramelização curta que deixa a sopa pálida"
+  },
+  {
+   "id": "sopas.gratinar-sopa-em-cumbuca",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Gratinar sopa em cumbuca",
+   "ingredientes": [
+    "sopa de cebola",
+    "Gruyère ralado"
+   ],
+   "utensilios": [
+    "cumbucas-refratarias",
+    "ralador-quatro-faces"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "Gruyère",
+     "utensilio": "ralador-quatro-faces",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "sopa",
+     "utensilio": "cumbucas-refratarias",
+     "parametro": ""
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "queijo sobre a sopa",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "gratinar",
+     "alvo": "cumbucas",
+     "utensilio": "forno ou grelha",
+     "parametro": "~2 min até dourar"
+    }
+   ],
+   "ponto_critico": "crosta de queijo derretida e dourada em ~2 min",
+   "erro_comum": "usar cumbuca não refratária ou deixar demais e queimar o queijo"
+  },
+  {
+   "id": "sopas.sopa-chinesa",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa chinesa com fios de ovo",
+   "ingredientes": [
+    "caldo de peixe ou frango",
+    "shiitake fresco picado",
+    "cogumelos secos reidratados",
+    "tiras de peito de frango",
+    "ovo batido",
+    "temperos orientais a gosto"
+   ],
+   "utensilios": [
+    "wok",
+    "hashi"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "caldo",
+     "utensilio": "wok",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "cogumelos",
+     "utensilio": "wok",
+     "parametro": "1 min"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "tiras de frango",
+     "utensilio": "wok",
+     "parametro": "3 a 5 min, mexendo, até o frango ficar opaco"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ovo batido",
+     "utensilio": "",
+     "parametro": "fora do fogo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovo na sopa",
+     "utensilio": "hashi",
+     "parametro": "para formar fios"
+    }
+   ],
+   "ponto_critico": "ovo adicionado fora do fogo e mexido com hashi para formar fios finos",
+   "erro_comum": "jogar o ovo com o caldo fervendo forte, formando massa grossa"
+  },
+  {
+   "id": "sopas.sopa-japonesa-flores-de-cenoura",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa japonesa com flores de cenoura",
+   "ingredientes": [
+    "dashi (1 l)",
+    "cenouras médias (2)",
+    "brotos de feijão",
+    "coentro"
+   ],
+   "utensilios": [
+    "faca-canelle",
+    "faquinha",
+    "panela",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "cenouras em botões de flor",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "dashi",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "flores de cenoura no dashi",
+     "utensilio": "panela",
+     "parametro": "2 min"
+    },
+    {
+     "acao": "servir",
+     "alvo": "sopa",
+     "utensilio": "tigelas individuais",
+     "parametro": "guarnecer com broto de feijão e coentro"
+    }
+   ],
+   "ponto_critico": "flores cozidas só 2 min, mantendo forma e cor",
+   "erro_comum": "ferver demais e as flores perderem o desenho"
+  },
+  {
+   "id": "sopas.sopa-japonesa-camarao",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa japonesa de camarão",
+   "ingredientes": [
+    "camarão cozido (150 g)",
+    "dashi (1 l)",
+    "coentro"
+   ],
+   "utensilios": [
+    "faquinha",
+    "panela",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "camarão",
+     "utensilio": "",
+     "parametro": "manter a cauda intacta"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "camarão",
+     "utensilio": "faquinha",
+     "parametro": "retirar a tripa"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "dashi",
+     "utensilio": "panela",
+     "parametro": "depois abaixar o fogo"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "camarão no dashi",
+     "utensilio": "panela",
+     "parametro": "~2 min"
+    },
+    {
+     "acao": "servir",
+     "alvo": "sopa",
+     "utensilio": "tigelas aquecidas",
+     "parametro": "guarnecer com coentro"
+    }
+   ],
+   "ponto_critico": "camarão com cauda inteira e aquecido só ~2 min",
+   "erro_comum": "cozinhar demais o camarão já cozido, que endurece"
+  },
+  {
+   "id": "sopas.bouillabaisse-crioula",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Bouillabaisse crioula",
+   "ingredientes": [
+    "peixes variados com espinha (2,5 a 3 kg)",
+    "ostras frescas (12)",
+    "azeite",
+    "cebola",
+    "salsão",
+    "pimentões vermelho e verde",
+    "alho",
+    "chili seco",
+    "açafrão",
+    "salsinha",
+    "tomilho",
+    "louro",
+    "tomate sem pele e sem semente",
+    "caldo de peixe (1 l)",
+    "camarão limpo (500 g)",
+    "rum escuro"
+   ],
+   "utensilios": [
+    "faca-de-filetear",
+    "faquinha",
+    "cacarola",
+    "colher-de-pau",
+    "terrina"
+   ],
+   "passos": [
+    {
+     "acao": "escamar",
+     "alvo": "peixes",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "peixes",
+     "utensilio": "faca-de-filetear",
+     "parametro": "retirar cabeça e rabo; pedaços grandes e iguais, com ou sem espinha"
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "ostras",
+     "utensilio": "faquinha",
+     "parametro": "reservar com o líquido"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "cebola, salsão, pimentões, alho, chili",
+     "utensilio": "cacarola",
+     "parametro": "no azeite"
+    },
+    {
+     "acao": "esfarelar",
+     "alvo": "açafrão entre os dedos",
+     "utensilio": "",
+     "parametro": "juntar aos legumes"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "legumes",
+     "utensilio": "cacarola",
+     "parametro": "fogo baixo 5 min até amaciar e dourar levemente"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "ervas + tomate + caldo",
+     "utensilio": "cacarola",
+     "parametro": "depois ~30 min em fogo baixo"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "peixes firmes e oleosos primeiro, brancos por cima",
+     "utensilio": "cacarola",
+     "parametro": "~8 min, mexendo pouco"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "peixes de carne macia",
+     "utensilio": "cacarola",
+     "parametro": "6 min; camarão após 2 min; ostras no último minuto"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "sopa com rum",
+     "utensilio": "",
+     "parametro": "fora do fogo, retirar o louro"
+    },
+    {
+     "acao": "servir",
+     "alvo": "bouillabaisse",
+     "utensilio": "terrina",
+     "parametro": "tomilho por cima, rouille e torradas à parte"
+    }
+   ],
+   "ponto_critico": "ordem de entrada dos peixes por firmeza e tempos (8 min firmes, 6 min macios, ostras no fim) para nada desmanchar",
+   "erro_comum": "juntar todos os peixes de uma vez, desmanchando os macios e deixando os firmes crus"
+  },
+  {
+   "id": "sopas.molho-rouille",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Molho rouille (ferrugem)",
+   "ingredientes": [
+    "pimentão vermelho sem semente",
+    "batata cozida sem casca",
+    "purê de tomate",
+    "gema",
+    "alho",
+    "sal",
+    "pimenta caiena",
+    "azeite extravirgem (125 ml)"
+   ],
+   "utensilios": [
+    "processador"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "pimentão + batata + purê de tomate + gema + alho + temperos",
+     "utensilio": "processador",
+     "parametro": "até virar purê"
+    },
+    {
+     "acao": "emulsionar",
+     "alvo": "azeite",
+     "utensilio": "processador",
+     "parametro": "em fio, sem parar de bater"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "molho",
+     "utensilio": "",
+     "parametro": "provar e acertar"
+    }
+   ],
+   "ponto_critico": "azeite em fio contínuo com o aparelho ligado; molho liso, espesso e avermelhado",
+   "erro_comum": "despejar o azeite de uma vez e o molho talhar"
+  },
+  {
+   "id": "sopas.sopa-de-frutas",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa de frutas gelada",
+   "ingredientes": [
+    "frutas maduras",
+    "vinho ou suco de fruta",
+    "ervas frescas ou especiarias"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "liquidificador",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "frutas",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "frutas + vinho ou suco + ervas",
+     "utensilio": "liquidificador",
+     "parametro": "até virar purê"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "sopa",
+     "utensilio": "tigelas",
+     "parametro": "servir gelada"
+    }
+   ],
+   "ponto_critico": "caldo substituído por vinho ou suco; sopa bem gelada e lisa",
+   "erro_comum": "usar caldo salgado ou servir morna"
+  },
+  {
+   "id": "sopas.sopa-cremosa-de-legumes",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa cremosa de legumes",
+   "ingredientes": [
+    "legumes em cubos (ex.: cenoura)",
+    "manteiga",
+    "alho-poró ou cebola (opcional)",
+    "caldo ou água",
+    "sal e pimenta"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "panela",
+    "colher-de-pau",
+    "liquidificador"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "legumes",
+     "utensilio": "faca-do-chef",
+     "parametro": "cubos"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "legumes na manteiga",
+     "utensilio": "panela",
+     "parametro": "fogo moderado 3 a 4 min"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "legumes cobertos com caldo",
+     "utensilio": "panela",
+     "parametro": "~20 min até bem macios"
+    },
+    {
+     "acao": "bater",
+     "alvo": "sopa",
+     "utensilio": "liquidificador",
+     "parametro": ""
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "creme",
+     "utensilio": "panela",
+     "parametro": "conferir tempero e consistência"
+    }
+   ],
+   "ponto_critico": "legumes muito macios (~20 min) antes de bater, para um creme liso",
+   "erro_comum": "bater legumes ainda firmes e obter sopa granulosa"
+  },
+  {
+   "id": "sopas.pure-no-processador",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Bater sopa no processador",
+   "ingredientes": [
+    "legumes cozidos",
+    "líquido do cozimento"
+   ],
+   "utensilios": [
+    "processador",
+    "escumadeira"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "legumes do líquido",
+     "utensilio": "escumadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "legumes sem líquido",
+     "utensilio": "processador",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "purê de volta ao líquido",
+     "utensilio": "colher",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "legumes macios batidos sem líquido para não espirrar",
+   "erro_comum": "encher o processador de sopa líquida e ela vazar ou espirrar"
+  },
+  {
+   "id": "sopas.pure-com-mixer",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Bater sopa com mixer de mão",
+   "ingredientes": [
+    "sopa cozida"
+   ],
+   "utensilios": [
+    "mixer",
+    "panela",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "sopa quente dentro da panela, ou fria em tigela grande",
+     "utensilio": "mixer",
+     "parametro": "lâmina sempre submersa"
+    }
+   ],
+   "ponto_critico": "pequenas quantidades; lâmina submersa durante todo o processo",
+   "erro_comum": "levantar o mixer ligado e espirrar sopa quente"
+  },
+  {
+   "id": "sopas.pure-no-passe-vite",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Passar sopa no mouli-légumes",
+   "ingredientes": [
+    "legumes fibrosos cozidos"
+   ],
+   "utensilios": [
+    "mouli-legumes",
+    "escorredor",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "coar",
+     "alvo": "água do cozimento",
+     "utensilio": "escorredor",
+     "parametro": "escorrer toda antes"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "legumes",
+     "utensilio": "mouli-legumes",
+     "parametro": "girar a manivela; fibras ficam retidas"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "purê com o caldo",
+     "utensilio": "colher",
+     "parametro": "só depois de passar"
+    }
+   ],
+   "ponto_critico": "água totalmente escorrida antes de moer; fibras retidas no disco",
+   "erro_comum": "moer com líquido e ele escorrer por cima do disco"
+  },
+  {
+   "id": "sopas.pure-na-peneira",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Peneirar legumes com casca para sopa",
+   "ingredientes": [
+    "legumes de casca dura cozidos (ex.: pimentão)"
+   ],
+   "utensilios": [
+    "peneira",
+    "concha",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "espremer",
+     "alvo": "legumes contra a malha",
+     "utensilio": "concha",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peles retidas na peneira",
+     "utensilio": "",
+     "parametro": "descartar"
+    }
+   ],
+   "ponto_critico": "todas as peles retidas, purê liso sem fiapos",
+   "erro_comum": "usar peneira de malha grossa e deixar passar casca"
+  },
+  {
+   "id": "sopas.bisque-de-caranguejo",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Sopa cremosa de crustáceo (bisque)",
+   "ingredientes": [
+    "cenoura, cebola, batata e salsão picados",
+    "manteiga",
+    "caranguejos pequenos (12)",
+    "brandy",
+    "farinha de trigo (2 colheres de sopa)",
+    "caldo de peixe (2 l)",
+    "vinho branco seco (150 ml)",
+    "purê de tomate",
+    "buquê garni",
+    "creme de leite"
+   ],
+   "utensilios": [
+    "frigideira",
+    "colher-de-pau",
+    "processador",
+    "chinois",
+    "concha"
+   ],
+   "passos": [
+    {
+     "acao": "saltear",
+     "alvo": "legumes na manteiga",
+     "utensilio": "frigideira",
+     "parametro": "fundo pesado"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "caranguejos",
+     "utensilio": "frigideira",
+     "parametro": "fogo médio até ficarem bem escuros"
+    },
+    {
+     "acao": "flambar",
+     "alvo": "brandy sobre os caranguejos",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "farinha polvilhada",
+     "utensilio": "colher-de-pau",
+     "parametro": "1 a 2 min até incorporar"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo + vinho + purê + buquê garni",
+     "utensilio": "panela tampada",
+     "parametro": "45 min"
+    },
+    {
+     "acao": "bater",
+     "alvo": "mistura sem o buquê garni",
+     "utensilio": "processador",
+     "parametro": ""
+    },
+    {
+     "acao": "coar",
+     "alvo": "sopa",
+     "utensilio": "chinois",
+     "parametro": "pressionar com concha"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "sopa",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "emulsionar",
+     "alvo": "creme de leite",
+     "utensilio": "colher",
+     "parametro": "enriquecer no fim"
+    }
+   ],
+   "ponto_critico": "caranguejos bem tostados e flambados antes do líquido; passar no chinois para textura aveludada",
+   "erro_comum": "não peneirar e deixar pedaços de casca na sopa"
+  },
+  {
+   "id": "sopas.enriquecer-com-creme",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Enriquecer sopa com creme de leite",
+   "ingredientes": [
+    "sopa cremosa quente",
+    "creme de leite integral, fresco ou azedo"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "creme na sopa",
+     "utensilio": "colher",
+     "parametro": "no último minuto, mexendo sem parar"
+    }
+   ],
+   "ponto_critico": "usar creme de alto teor de gordura, que não talha ao aquecer",
+   "erro_comum": "usar creme light, que talha"
+  },
+  {
+   "id": "sopas.enriquecer-com-iogurte",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Enriquecer sopa com iogurte ou queijo fresco",
+   "ingredientes": [
+    "sopa quente",
+    "iogurte ou queijo fresco"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "iogurte na sopa",
+     "utensilio": "colher",
+     "parametro": "fora da fervura, no final"
+    }
+   ],
+   "ponto_critico": "sopa nunca ferve depois de receber o iogurte",
+   "erro_comum": "ferver a sopa e o iogurte talhar"
+  },
+  {
+   "id": "sopas.liaison-gema-creme",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Liaison de gema e creme",
+   "ingredientes": [
+    "gemas (2)",
+    "creme de leite integral (1 colher de sopa)",
+    "sopa quente (1 l)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "batedor-de-arame",
+    "concha"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "gemas + creme",
+     "utensilio": "batedor-de-arame",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "um pouco de sopa quente na liaison",
+     "utensilio": "concha",
+     "parametro": "temperar a mistura aos poucos"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "liaison na sopa",
+     "utensilio": "colher",
+     "parametro": "incorporar sem ferver"
+    }
+   ],
+   "ponto_critico": "proporção de 2 gemas e 1 colher de creme para 1 l; liaison aquecida antes de entrar",
+   "erro_comum": "jogar as gemas direto na sopa quente e elas coagularem"
+  },
+  {
+   "id": "decoracao.guarnicao-simples",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Guarnição simples de sopa",
+   "ingredientes": [
+    "ervas, chiffonade de espinafre ou azedinha, erva-doce, sementes tostadas, queijo ralado, raspas de limão, camarão, pétalas comestíveis"
+   ],
+   "utensilios": [
+    "pinca",
+    "pincel",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "decorar",
+     "alvo": "guarnição escolhida sobre a sopa",
+     "utensilio": "pinca",
+     "parametro": "pouco antes de servir"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "especiaria moída",
+     "utensilio": "pincel",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "guarnição que complementa o sabor sem repetir o ingrediente principal, posta na hora de servir",
+   "erro_comum": "guarnição pesada em sopa com pedaços, ou colocada cedo e afundando"
+  },
+  {
+   "id": "decoracao.anel-de-ervas",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Anel de ervas",
+   "ingredientes": [
+    "folhas pequenas de endro ou sálvia"
+   ],
+   "utensilios": [
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "decorar",
+     "alvo": "folhas em anel no centro ou na borda",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "folhas dispostas em círculo regular",
+   "erro_comum": "folhas grandes que afundam"
+  },
+  {
+   "id": "decoracao.tomate-e-ervas",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Concassée de tomate com ervas",
+   "ingredientes": [
+    "concassée de tomate",
+    "folhas de ervas"
+   ],
+   "utensilios": [
+    "colher",
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "decorar",
+     "alvo": "montinho de concassée no centro de sopa gelada",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "folhas de ervas ao redor",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "montinho centralizado e firme em sopa gelada",
+   "erro_comum": "usar tomate aguado que se espalha"
+  },
+  {
+   "id": "decoracao.trelica-de-cebolinha",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Treliça de cebolinha",
+   "ingredientes": [
+    "cebolinha"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "cebolinha",
+     "utensilio": "faca-do-chef",
+     "parametro": "em hastes iguais ou bem picadas"
+    },
+    {
+     "acao": "montar",
+     "alvo": "hastes cruzadas em treliça sobre a sopa",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "hastes paralelas cruzadas em ângulo regular",
+   "erro_comum": "hastes de tamanhos diferentes"
+  },
+  {
+   "id": "decoracao.amendoas-tostadas",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Guarnição de amêndoas ou castanhas tostadas",
+   "ingredientes": [
+    "amêndoas laminadas ou castanhas"
+   ],
+   "utensilios": [
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "tostar",
+     "alvo": "amêndoas",
+     "utensilio": "frigideira",
+     "parametro": "levemente douradas"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "amêndoas sobre sopa cremosa",
+     "utensilio": "colher",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "tostagem leve e uniforme",
+   "erro_comum": "queimar as lâminas"
+  },
+  {
+   "id": "decoracao.petalas-de-azeitona",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Flor de pétalas de azeitona",
+   "ingredientes": [
+    "azeitonas pretas sem caroço",
+    "salsinha"
+   ],
+   "utensilios": [
+    "faquinha",
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "azeitonas",
+     "utensilio": "faquinha",
+     "parametro": "fatias finas"
+    },
+    {
+     "acao": "montar",
+     "alvo": "fatias em pétalas com ramo de salsinha no centro",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "fatias finas e simétricas formando flor",
+   "erro_comum": "fatias grossas que afundam"
+  },
+  {
+   "id": "decoracao.julienne-decorativa",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Julienne decorativa",
+   "ingredientes": [
+    "salsão",
+    "cenoura"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "legumes em palitos finos",
+     "utensilio": "faca-do-chef",
+     "parametro": "julienne"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "palitos sobre sopa de legumes",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "palitos finos e de mesmo comprimento",
+   "erro_comum": "cortes irregulares"
+  },
+  {
+   "id": "decoracao.fitas-enroladas",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Fitas enroladas de legumes",
+   "ingredientes": [
+    "cenoura",
+    "abobrinha"
+   ],
+   "utensilios": [
+    "descascador-giratorio",
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "legume no comprimento",
+     "utensilio": "descascador-giratorio",
+     "parametro": "tiras finas"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tiras",
+     "utensilio": "pinca",
+     "parametro": "colocar enroladas sobre a sopa"
+    }
+   ],
+   "ponto_critico": "tiras finas e contínuas",
+   "erro_comum": "tiras grossas que quebram"
+  },
+  {
+   "id": "decoracao.miscelanea-de-legumes",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Miscelânea de cubinhos de legumes",
+   "ingredientes": [
+    "cenoura",
+    "abobrinha",
+    "salsão"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "legumes em cubinhos",
+     "utensilio": "faca-do-chef",
+     "parametro": "cubos miúdos e iguais"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "cubinhos sobre sopa clara",
+     "utensilio": "colher",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "cubos uniformes e coloridos",
+   "erro_comum": "cubos grandes e desiguais"
+  },
+  {
+   "id": "decoracao.quenelles-de-queijo-e-caviar",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Quenelles de queijo macio com caviar",
+   "ingredientes": [
+    "queijo macio",
+    "caviar ou ova de peixe"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "queijo em quenelles",
+     "utensilio": "duas colheres",
+     "parametro": "passar de uma colher para a outra"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "caviar em volta",
+     "utensilio": "colher",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "quenelles ovais lisas com três faces",
+   "erro_comum": "queijo mole demais que não segura forma"
+  },
+  {
+   "id": "decoracao.figuras-de-pimentao",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Figuras de pimentão",
+   "ingredientes": [
+    "pimentões de cores variadas"
+   ],
+   "utensilios": [
+    "cortador-de-aspic",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "pimentão em figuras",
+     "utensilio": "cortador-de-aspic",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "figuras",
+     "utensilio": "panela",
+     "parametro": "escaldar rapidamente"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "figuras sobre a sopa",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "figuras escaldadas antes, de bordas nítidas",
+   "erro_comum": "usar sem escaldar, ficando duras"
+  },
+  {
+   "id": "decoracao.figuras-de-aspic",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Figuras de aspic",
+   "ingredientes": [
+    "aspic"
+   ],
+   "utensilios": [
+    "forminhas",
+    "cortador-de-aspic",
+    "pinca"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "camada de aspic",
+     "utensilio": "forminhas",
+     "parametro": "até firmar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "figuras na gelatina",
+     "utensilio": "cortador-de-aspic",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "figuras sobre consomê gelado",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "aspic firme e consomê gelado para as figuras não derreterem",
+   "erro_comum": "usar em sopa quente"
+  },
+  {
+   "id": "decoracao.flores-de-cenoura",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Flores de cenoura com canelle",
+   "ingredientes": [
+    "cenoura"
+   ],
+   "utensilios": [
+    "faca-canelle",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "sulcos longitudinais na cenoura",
+     "utensilio": "faca-canelle",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "cenoura em rodelas",
+     "utensilio": "faquinha",
+     "parametro": "rodelas finas com borda de pétalas"
+    }
+   ],
+   "ponto_critico": "sulcos equidistantes em toda a volta",
+   "erro_comum": "sulcos desiguais"
+  },
+  {
+   "id": "decoracao.minicogumelos",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Fatias de cogumelo douradas",
+   "ingredientes": [
+    "cogumelos",
+    "manteiga ou azeite"
+   ],
+   "utensilios": [
+    "faquinha",
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "cogumelos",
+     "utensilio": "faquinha",
+     "parametro": "fatias finas"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "fatias",
+     "utensilio": "frigideira",
+     "parametro": "dourar"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "fatias sobre sopa de cogumelo",
+     "utensilio": "pinca",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "fatias finas e douradas",
+   "erro_comum": "cogumelo cozido e murcho"
+  },
+  {
+   "id": "decoracao.croutons",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Croûtons crocantes",
+   "ingredientes": [
+    "pão"
+   ],
+   "utensilios": [
+    "faca-de-pao",
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "pão em cubos ou formas",
+     "utensilio": "faca-de-pao",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "cubos",
+     "utensilio": "frigideira",
+     "parametro": "ou torrar até crocante"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "croûtons sobre sopa quente",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "croûtons secos e crocantes por inteiro",
+   "erro_comum": "pão encharcado de gordura"
+  },
+  {
+   "id": "decoracao.creme-de-leite-em-sopa",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Decorar sopa com creme de leite",
+   "ingredientes": [
+    "creme de leite levemente batido",
+    "sopa cremosa colorida"
+   ],
+   "utensilios": [
+    "colher",
+    "saco-de-confeitar"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "creme de leite",
+     "utensilio": "batedor-de-arame",
+     "parametro": "levemente, até consistência igual à da sopa"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "creme em gotas ou espiral",
+     "utensilio": "saco-de-confeitar",
+     "parametro": "na hora de servir"
+    }
+   ],
+   "ponto_critico": "creme com a mesma consistência da sopa, para ficar na superfície",
+   "erro_comum": "creme líquido que afunda ou firme demais que não se espalha"
+  },
+  {
+   "id": "decoracao.borda-romantica",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Borda romântica (corações de creme)",
+   "ingredientes": [
+    "creme de leite"
+   ],
+   "utensilios": [
+    "colher",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "decorar",
+     "alvo": "gotas de creme em volta da sopa",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "ponta da faca atravessando cada gota",
+     "utensilio": "faquinha",
+     "parametro": "formar corações ligados"
+    }
+   ],
+   "ponto_critico": "gotas de tamanho igual e espaçamento regular",
+   "erro_comum": "gotas grandes que se fundem"
+  },
+  {
+   "id": "decoracao.roda-da-catarina",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Roda da Catarina (redemoinho de pesto)",
+   "ingredientes": [
+    "pesto",
+    "creme de leite levemente batido"
+   ],
+   "utensilios": [
+    "colher",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "pesto com creme",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "1 colher de sopa da mistura no centro do prato",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "ponta da faca do centro para fora",
+     "utensilio": "faquinha",
+     "parametro": "formar redemoinho"
+    }
+   ],
+   "ponto_critico": "movimentos do centro para a borda, em raios regulares",
+   "erro_comum": "mexer demais e borrar o desenho"
+  },
+  {
+   "id": "sopas.roux-escuro",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Roux escuro",
+   "ingredientes": [
+    "óleo vegetal (2 colheres de sopa)",
+    "manteiga (25 g)",
+    "farinha de trigo (25 g)"
+   ],
+   "utensilios": [
+    "frigideira",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "óleo e manteiga",
+     "utensilio": "frigideira",
+     "parametro": "fundo pesado"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "farinha",
+     "utensilio": "colher-de-pau",
+     "parametro": "fogo baixo, sem parar, no mínimo 15 min"
+    }
+   ],
+   "ponto_critico": "roux bem escuro após 15 min sem nenhum ponto queimado",
+   "erro_comum": "parar de mexer e queimar o roux, que fica amargo"
+  },
+  {
+   "id": "sopas.gumbo",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Gumbo à moda crioula",
+   "ingredientes": [
+    "roux escuro",
+    "caldo de galinha (1,2 l)",
+    "cebola",
+    "salsão",
+    "tomate picado em lata",
+    "tomilho seco",
+    "pimenta caiena",
+    "quiabo em pedaços de 2 cm (400 g)",
+    "filé powder (sassafrás)"
+   ],
+   "utensilios": [
+    "frigideira",
+    "panela",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "caldo sobre o roux",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "cebola, salsão, tomate e temperos",
+     "utensilio": "panela",
+     "parametro": "tampado 20 min"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "quiabo",
+     "utensilio": "panela",
+     "parametro": "~10 min, só no final"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "filé powder",
+     "utensilio": "colher",
+     "parametro": "fora do fogo até engrossar um pouco"
+    }
+   ],
+   "ponto_critico": "quiabo só nos últimos 10 min e filé powder sempre fora do fogo",
+   "erro_comum": "cozinhar o quiabo demais (viscoso) ou ferver com sassafrás (fibroso)"
+  },
+  {
+   "id": "sopas.chowder-manhattan",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Chowder Manhattan",
+   "ingredientes": [
+    "batata em cubos",
+    "cebola",
+    "manteiga",
+    "caldo",
+    "tomate picado",
+    "tomilho",
+    "mariscos enlatados com o líquido"
+   ],
+   "utensilios": [
+    "panela",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "saltear",
+     "alvo": "batata e cebola na manteiga",
+     "utensilio": "panela",
+     "parametro": "até macias"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo + tomate + tomilho + temperos",
+     "utensilio": "panela",
+     "parametro": "20 min"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "mariscos e seu líquido",
+     "utensilio": "panela",
+     "parametro": "só aquecer"
+    }
+   ],
+   "ponto_critico": "mariscos entram no fim apenas para aquecer",
+   "erro_comum": "ferver os mariscos, que ficam borrachudos"
+  },
+  {
+   "id": "sopas.chowder-new-england",
+   "capitulo": "Caldos & Sopas",
+   "nome": "Chowder New England",
+   "ingredientes": [
+    "batata em cubos",
+    "cebola",
+    "manteiga",
+    "leite",
+    "mariscos enlatados com o líquido",
+    "creme de leite integral"
+   ],
+   "utensilios": [
+    "panela",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "saltear",
+     "alvo": "batata e cebola na manteiga",
+     "utensilio": "panela",
+     "parametro": "até macias"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "leite + temperos",
+     "utensilio": "panela",
+     "parametro": "20 min em fogo brando"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "mariscos e seu líquido",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "sopa",
+     "utensilio": "",
+     "parametro": "com creme de leite"
+    }
+   ],
+   "ponto_critico": "leite em fogo brando para não talhar; sopa clara e cremosa",
+   "erro_comum": "ferver o leite forte e talhar"
+  },
+  {
+   "id": "ovos.teste-de-frescor",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Testar se o ovo está fresco",
+   "ingredientes": [
+    "ovo"
+   ],
+   "utensilios": [
+    "copo-medidor"
+   ],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "ovo em copo com água",
+     "utensilio": "copo",
+     "parametro": "observar a posição"
+    }
+   ],
+   "ponto_critico": "ovo fresco deita no fundo; um pouco velho fica em pé com a ponta para baixo; estragado boia",
+   "erro_comum": "usar ovo que boia"
+  },
+  {
+   "id": "ovos.separar-com-as-maos",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Separar gema e clara com as mãos",
+   "ingredientes": [
+    "ovo frio"
+   ],
+   "utensilios": [
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "quebrar",
+     "alvo": "ovo",
+     "utensilio": "tigelas",
+     "parametro": "quebrar em tigela"
+    },
+    {
+     "acao": "separar",
+     "alvo": "clara escorrendo entre os dedos",
+     "utensilio": "mão em concha",
+     "parametro": "gema fica na palma"
+    }
+   ],
+   "ponto_critico": "ovo frio, gema intacta e nenhum traço de gema na clara",
+   "erro_comum": "furar a gema; clara com gema não monta neve"
+  },
+  {
+   "id": "ovos.separar-com-a-casca",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Separar gema e clara com a casca",
+   "ingredientes": [
+    "ovo frio"
+   ],
+   "utensilios": [
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "quebrar",
+     "alvo": "ovo ao meio",
+     "utensilio": "",
+     "parametro": "sobre a tigela"
+    },
+    {
+     "acao": "separar",
+     "alvo": "gema passando de uma metade da casca para a outra",
+     "utensilio": "",
+     "parametro": "clara cai na tigela"
+    }
+   ],
+   "ponto_critico": "gema inteira ao final, clara limpa",
+   "erro_comum": "borda afiada da casca romper a gema"
+  },
+  {
+   "id": "ovos.separar-com-separador",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Separar gema com separador de ovos",
+   "ingredientes": [
+    "ovo"
+   ],
+   "utensilios": [
+    "separador-de-ovos",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "quebrar",
+     "alvo": "ovo sobre o separador",
+     "utensilio": "separador-de-ovos",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "clara escorre pelas fendas",
+     "utensilio": "separador-de-ovos",
+     "parametro": "gema retida"
+    }
+   ],
+   "ponto_critico": "gema retida inteira",
+   "erro_comum": "quebrar o ovo com força e romper a gema"
+  },
+  {
+   "id": "ovos.desfazer-albumina-peneira",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Desfazer fibras da albumina na peneira",
+   "ingredientes": [
+    "claras"
+   ],
+   "utensilios": [
+    "peneira",
+    "colher",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "claras",
+     "utensilio": "peneira",
+     "parametro": "empurrar com a colher para romper as fibras"
+    }
+   ],
+   "ponto_critico": "claras homogêneas sem filamentos grossos, para espuma estável",
+   "erro_comum": "pular a etapa e ter espuma instável"
+  },
+  {
+   "id": "ovos.desfazer-albumina-hashi",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Desfazer fibras da albumina com pauzinhos",
+   "ingredientes": [
+    "claras"
+   ],
+   "utensilios": [
+    "hashi",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "claras levantando com pauzinhos ou garfo",
+     "utensilio": "hashi",
+     "parametro": "até soltar as fibras"
+    }
+   ],
+   "ponto_critico": "fibras grossas rompidas",
+   "erro_comum": "bater forte e começar a espumar antes da hora"
+  },
+  {
+   "id": "ovos.guardar-ovos",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Guardar ovos corretamente",
+   "ingredientes": [
+    "ovos"
+   ],
+   "utensilios": [
+    "caixa-de-ovos",
+    "pote-hermetico"
+   ],
+   "passos": [
+    {
+     "acao": "armazenar",
+     "alvo": "ovos na caixa",
+     "utensilio": "geladeira",
+     "parametro": "ponta fina para baixo, longe de cheiros fortes"
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "claras ou gemas separadas",
+     "utensilio": "pote-hermetico",
+     "parametro": "claras 1 semana, gemas e ovos sem casca 2 dias"
+    }
+   ],
+   "ponto_critico": "ponta para baixo para centralizar a gema; prazos de 1 semana (claras) e 2 dias (gemas)",
+   "erro_comum": "deixar ovos ao lado de alimentos de cheiro forte"
+  },
+  {
+   "id": "ovos.claras-em-neve-a-mao",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Claras em neve à mão",
+   "ingredientes": [
+    "claras em temperatura ambiente"
+   ],
+   "utensilios": [
+    "tigelas",
+    "batedor-de-arame"
+   ],
+   "passos": [
+    {
+     "acao": "descansar",
+     "alvo": "claras tampadas",
+     "utensilio": "tigelas",
+     "parametro": "~1 h em temperatura ambiente"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "tigela e batedor",
+     "utensilio": "",
+     "parametro": "sem nenhuma gordura"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedor-de-arame",
+     "parametro": "de baixo para cima em movimentos circulares, tigela inox ou vidro"
+    }
+   ],
+   "ponto_critico": "utensílios sem gordura e claras à temperatura ambiente; picos firmes e volume máximo",
+   "erro_comum": "tigela engordurada ou de plástico; claras não sobem"
+  },
+  {
+   "id": "ovos.claras-em-neve-batedeira",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Claras em neve na batedeira",
+   "ingredientes": [
+    "claras",
+    "pitada de sal"
+   ],
+   "utensilios": [
+    "batedeira",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedeira",
+     "parametro": "começar em velocidade baixa"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "pitada de sal",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedeira",
+     "parametro": "aumentar a velocidade conforme firmam"
+    }
+   ],
+   "ponto_critico": "velocidade crescente; para no ponto de neve firme",
+   "erro_comum": "bater demais e a clara granular e soltar água"
+  },
+  {
+   "id": "ovos.pincelar-gema-e-agua",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Pincelar com gema e água (dourar)",
+   "ingredientes": [
+    "gema (1)",
+    "água (1 colher de sopa)",
+    "pitada de sal"
+   ],
+   "utensilios": [
+    "garfo",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "gema + água + sal",
+     "utensilio": "garfo",
+     "parametro": "até homogêneo"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "pães ou massas",
+     "utensilio": "pincel",
+     "parametro": "pouco antes do forno"
+    }
+   ],
+   "ponto_critico": "camada fina e uniforme aplicada logo antes de assar",
+   "erro_comum": "excesso escorrendo e grudando na assadeira"
+  },
+  {
+   "id": "ovos.ovo-quente",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovo quente (gema mole)",
+   "ingredientes": [
+    "ovos em temperatura ambiente",
+    "sal"
+   ],
+   "utensilios": [
+    "panela",
+    "colher-com-furos",
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "água com sal",
+     "utensilio": "panela",
+     "parametro": "fervura leve"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "ovos",
+     "utensilio": "panela",
+     "parametro": "3 a 4 min contados quando a água volta a ferver"
+    },
+    {
+     "acao": "separar",
+     "alvo": "ovos da água",
+     "utensilio": "colher-com-furos",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tampa do ovo",
+     "utensilio": "faquinha",
+     "parametro": "retirar fragmentos de casca"
+    }
+   ],
+   "ponto_critico": "3 a 4 min: clara levemente firme e gema mole",
+   "erro_comum": "ovo direto da geladeira, que racha na água quente"
+  },
+  {
+   "id": "ovos.ovo-duro",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovo duro",
+   "ingredientes": [
+    "ovos em temperatura ambiente",
+    "sal"
+   ],
+   "utensilios": [
+    "panela",
+    "colher-com-furos",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "ovos em água fervendo levemente",
+     "utensilio": "panela",
+     "parametro": "6 a 10 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "ovos em água fria",
+     "utensilio": "tigelas",
+     "parametro": "imediatamente"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "ovos",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "choque em água fria logo após 6 a 10 min, sem anel escuro em volta da gema",
+   "erro_comum": "não resfriar e a gema ficar com borda esverdeada"
+  },
+  {
+   "id": "ovos.ovos-quentes-com-caviar",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovos quentes com caviar",
+   "ingredientes": [
+    "ovos quentes",
+    "caviar ou ova vermelha"
+   ],
+   "utensilios": [
+    "faquinha",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tampas dos ovos quentes",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "caviar sobre a gema",
+     "utensilio": "colher",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "gema mole intacta por baixo do caviar",
+   "erro_comum": "cozinhar demais e perder a gema líquida"
+  },
+  {
+   "id": "ovos.ovo-poche",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovo pochê",
+   "ingredientes": [
+    "ovos bem frescos",
+    "vinagre branco (1 colher de sopa)",
+    "estragão"
+   ],
+   "utensilios": [
+    "frigideira",
+    "colher-com-furos"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "água + vinagre + estragão, sem sal",
+     "utensilio": "frigideira",
+     "parametro": "frigideira larga e baixa"
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "ovos dentro da água",
+     "utensilio": "",
+     "parametro": "desligar o fogo antes; no máximo 4 por vez"
+    },
+    {
+     "acao": "pochê",
+     "alvo": "ovos tampados",
+     "utensilio": "frigideira",
+     "parametro": "~3 min até a clara ficar opaca"
+    },
+    {
+     "acao": "separar",
+     "alvo": "ovos",
+     "utensilio": "colher-com-furos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "ovos muito frescos, fogo desligado e ~3 min até clara opaca e gema mole",
+   "erro_comum": "ovo velho que espalha a clara, ou sal na água"
+  },
+  {
+   "id": "ovos.oeufs-en-cocotte",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Oeufs en cocotte (ovos ao forno em banho-maria)",
+   "ingredientes": [
+    "ovos",
+    "creme de leite (2 colheres de sopa por ovo)",
+    "manteiga",
+    "temperos"
+   ],
+   "utensilios": [
+    "ramekin",
+    "forma-de-assar",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "ramekins com manteiga",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "um ovo em cada ramekin",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "creme de leite e temperos sobre o ovo",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "ramekins tampados em banho-maria",
+     "utensilio": "forma-de-assar",
+     "parametro": "180 °C por 6 a 8 min, ramekins sobre papel-toalha"
+    }
+   ],
+   "ponto_critico": "banho-maria a 180 °C por 6 a 8 min: clara firme e gema mole",
+   "erro_comum": "esquecer o papel-toalha e a porcelana trincar ou o ovo passar do ponto"
+  },
+  {
+   "id": "ovos.huevos-rancheros",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Huevos rancheros",
+   "ingredientes": [
+    "tiras de pimentão e cebola cozidas",
+    "ovos",
+    "salsa"
+   ],
+   "utensilios": [
+    "travessa-de-gratinar"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "pimentão e cebola em pratos individuais",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "um ovo sobre cada base",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "pratos tampados",
+     "utensilio": "forno",
+     "parametro": "180 °C por 8 a 12 min"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "salsa",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "180 °C por 8 a 12 min tampado",
+   "erro_comum": "assar destampado e ressecar a clara"
+  },
+  {
+   "id": "ovos.ovos-mexidos",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovos mexidos cremosos",
+   "ingredientes": [
+    "ovos (4)",
+    "leite ou creme de leite (2 colheres de sopa)",
+    "sal e pimenta",
+    "manteiga"
+   ],
+   "utensilios": [
+    "tigelas",
+    "garfo",
+    "frigideira",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "ovos + leite + temperos",
+     "utensilio": "garfo",
+     "parametro": "~1 min"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga cobrindo o fundo",
+     "utensilio": "frigideira",
+     "parametro": "até espumar"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ovos",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovos",
+     "utensilio": "colher-de-pau",
+     "parametro": "fogo baixo, sem parar, 5 a 8 min; mais 1 a 2 min fora do fogo"
+    },
+    {
+     "acao": "servir",
+     "alvo": "ovos",
+     "utensilio": "",
+     "parametro": "imediatamente"
+    }
+   ],
+   "ponto_critico": "fogo baixo e mexer contínuo; textura cremosa, sem grumos secos",
+   "erro_comum": "fogo alto e pressa, deixando os ovos duros e borrachudos"
+  },
+  {
+   "id": "ovos.ovo-frito-regado",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovo frito com gema para cima (regado)",
+   "ingredientes": [
+    "ovos",
+    "óleo"
+   ],
+   "utensilios": [
+    "frigideira",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "um pouco de óleo",
+     "utensilio": "frigideira",
+     "parametro": "quente, sem fumaça"
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "ovos na frigideira",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "ovos",
+     "utensilio": "frigideira",
+     "parametro": "fogo moderado 3 a 4 min"
+    },
+    {
+     "acao": "regar",
+     "alvo": "óleo quente sobre a clara (ou também a gema)",
+     "utensilio": "colher",
+     "parametro": "várias vezes"
+    }
+   ],
+   "ponto_critico": "3 a 4 min regando só a clara: clara firme e gema mole e brilhante",
+   "erro_comum": "óleo fumegando, que queima a borda e endurece a clara"
+  },
+  {
+   "id": "ovos.ovo-frito-virado",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovo frito virado",
+   "ingredientes": [
+    "ovo",
+    "óleo"
+   ],
+   "utensilios": [
+    "frigideira",
+    "espatula"
+   ],
+   "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "ovo",
+     "utensilio": "frigideira",
+     "parametro": "metade do tempo"
+    },
+    {
+     "acao": "virar",
+     "alvo": "ovo",
+     "utensilio": "espatula",
+     "parametro": "com delicadeza para não romper a gema"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "outro lado",
+     "utensilio": "frigideira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "virar sem romper a gema",
+   "erro_comum": "gema estourar e perder a cor"
+  },
+  {
+   "id": "ovos.ovos-modelados",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovos modelados no aro",
+   "ingredientes": [
+    "ovo",
+    "óleo"
+   ],
+   "utensilios": [
+    "frigideira",
+    "aro-metalico"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "aro dentro da frigideira com óleo",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "ovo dentro do aro",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "ovo regando",
+     "utensilio": "frigideira",
+     "parametro": "como o ovo regado"
+    },
+    {
+     "acao": "separar",
+     "alvo": "aro",
+     "utensilio": "tenaz",
+     "parametro": "retirar o aro antes de tirar o ovo"
+    }
+   ],
+   "ponto_critico": "aro pré-aquecido e retirado antes do ovo, mantendo borda redonda",
+   "erro_comum": "aro frio que deixa a clara vazar por baixo"
+  },
+  {
+   "id": "ovos.ovo-frito-imerso",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovo frito em bastante óleo",
+   "ingredientes": [
+    "ovo",
+    "óleo ou azeite (~2 cm)"
+   ],
+   "utensilios": [
+    "frigideira-funda",
+    "escumadeira",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "óleo",
+     "utensilio": "frigideira-funda",
+     "parametro": "bem quente, sem fumaça"
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "ovo no óleo",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "regar",
+     "alvo": "óleo sobre o ovo",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "clara sobre a gema",
+     "utensilio": "escumadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "ovo",
+     "utensilio": "frigideira-funda",
+     "parametro": "1 min"
+    },
+    {
+     "acao": "coar",
+     "alvo": "ovo",
+     "utensilio": "escumadeira",
+     "parametro": "escorrer em papel-toalha"
+    }
+   ],
+   "ponto_critico": "1 min com a clara envolvendo a gema; não usar manteiga, que queima",
+   "erro_comum": "óleo frio que encharca o ovo"
+  },
+  {
+   "id": "ovos.ovos-a-escoffier",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovos à Escoffier com tomate gratinado",
+   "ingredientes": [
+    "tomates (4) cortados ao meio",
+    "pedacinhos de pão branco",
+    "salsa",
+    "cebola miúda",
+    "ovos (4)",
+    "óleo"
+   ],
+   "utensilios": [
+    "travessa-de-gratinar",
+    "frigideira-funda"
+   ],
+   "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "metades de tomate",
+     "utensilio": "",
+     "parametro": "miolo para cima"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "pão + salsa + cebola",
+     "utensilio": "tigelas",
+     "parametro": ""
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "mistura sobre os tomates",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "tomates",
+     "utensilio": "forno",
+     "parametro": "180 °C por 10 min"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "ovos em bastante óleo",
+     "utensilio": "frigideira-funda",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "ovos com tomate ao lado",
+     "utensilio": "pratos aquecidos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "tomates gratinados e ovos fritos prontos ao mesmo tempo",
+   "erro_comum": "fritar os ovos cedo e servirem frios"
+  },
+  {
+   "id": "ovos.omelete-francesa",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Omelete francesa dobrada",
+   "ingredientes": [
+    "ovos (3)",
+    "manteiga (15 g)",
+    "temperos",
+    "recheio opcional"
+   ],
+   "utensilios": [
+    "tigelas",
+    "garfo",
+    "omeleteira"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "ovos + temperos",
+     "utensilio": "garfo",
+     "parametro": "levemente, logo antes de fritar"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga",
+     "utensilio": "omeleteira",
+     "parametro": "fogo alto até espumar; frigideira de 20 cm"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ovos",
+     "utensilio": "omeleteira",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovos",
+     "utensilio": "garfo",
+     "parametro": "espalhar por igual"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "omelete",
+     "utensilio": "omeleteira",
+     "parametro": "levantando bordas para o ovo cru escorrer"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "recheio no centro (opcional)",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "omelete pela metade",
+     "utensilio": "garfo",
+     "parametro": "inclinando a frigideira"
+    }
+   ],
+   "ponto_critico": "fritura rápida em fogo alto, interior ainda úmido ao dobrar",
+   "erro_comum": "bater demais os ovos, deixando a omelete dura"
+  },
+  {
+   "id": "ovos.omelete-japonesa",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Omelete japonesa enrolada (tamagoyaki)",
+   "ingredientes": [
+    "ovo (1)",
+    "água (2 colheres de sopa)",
+    "óleo"
+   ],
+   "utensilios": [
+    "omeleteira-japonesa",
+    "espatula",
+    "hashi"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "ovo + água",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "óleo",
+     "utensilio": "omeleteira-japonesa",
+     "parametro": "aquecer"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "metade da mistura",
+     "utensilio": "omeleteira-japonesa",
+     "parametro": "inclinar para camada uniforme"
+    },
+    {
+     "acao": "separar",
+     "alvo": "bordas",
+     "utensilio": "espatula",
+     "parametro": "quando a superfície fizer bolhas"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "omelete em direção a si",
+     "utensilio": "hashi",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "rolo",
+     "utensilio": "omeleteira-japonesa",
+     "parametro": "~1 min até firmar"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "resto da mistura",
+     "utensilio": "omeleteira-japonesa",
+     "parametro": "repetir enrolando sobre o rolo"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rolo",
+     "utensilio": "faca-do-chef",
+     "parametro": "fatias ou pedaços"
+    }
+   ],
+   "ponto_critico": "camadas finas e iguais; rolo simétrico (aparar laterais se usar frigideira redonda)",
+   "erro_comum": "camada grossa que não enrola e racha"
+  },
+  {
+   "id": "ovos.tiras-de-omelete",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Tiras de omelete fina",
+   "ingredientes": [
+    "ovo batido (1)",
+    "sal",
+    "óleo (1 colher de sopa)"
+   ],
+   "utensilios": [
+    "wok",
+    "faca-do-chef"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "óleo",
+     "utensilio": "wok",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ovo",
+     "utensilio": "wok",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "omelete fina",
+     "utensilio": "wok",
+     "parametro": "fogo moderado 1 a 2 min"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "omelete",
+     "utensilio": "",
+     "parametro": "inclinar a wok para retirar e enrolar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "rolo",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rolo em tiras enviesadas",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "omelete bem fina e fria antes do corte",
+   "erro_comum": "cortar quente e as tiras desmancharem"
+  },
+  {
+   "id": "ovos.omelete-sufle",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Omelete-suflê",
+   "ingredientes": [
+    "ovos (3) separados",
+    "temperos ou açúcar",
+    "manteiga"
+   ],
+   "utensilios": [
+    "tigelas",
+    "batedor-de-arame",
+    "espatula-de-borracha",
+    "omeleteira"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "gemas e claras",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "batedor-de-arame",
+     "parametro": "neve firme"
+    },
+    {
+     "acao": "bater",
+     "alvo": "gemas temperadas (ou com açúcar até gemada)",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "claras nas gemas",
+     "utensilio": "espatula-de-borracha",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "mistura",
+     "utensilio": "omeleteira",
+     "parametro": "como a omelete francesa, sem mexer com garfo"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "omelete pela metade",
+     "utensilio": "espatula",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "incorporar sem perder ar e não mexer na frigideira",
+   "erro_comum": "mexer como omelete comum e murchar a espuma"
+  },
+  {
+   "id": "ovos.eggah",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Eggah persa (omelete assada)",
+   "ingredientes": [
+    "ovos (6)",
+    "temperos",
+    "espinafre ou outros legumes",
+    "óleo"
+   ],
+   "utensilios": [
+    "tigelas",
+    "travessa-de-gratinar",
+    "faca-do-chef"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "ovos batidos + temperos + legumes",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "travessa com óleo",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "mistura",
+     "utensilio": "travessa-de-gratinar",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "eggah",
+     "utensilio": "forno",
+     "parametro": "170 °C por 15 a 20 min até firme"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "em quadrados",
+     "utensilio": "faca-do-chef",
+     "parametro": "servir quente ou frio"
+    }
+   ],
+   "ponto_critico": "170 °C até o centro firmar (15 a 20 min)",
+   "erro_comum": "tirar antes e o centro ficar cru"
+  },
+  {
+   "id": "ovos.frittata",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Frittata",
+   "ingredientes": [
+    "ovos (7 a 10)",
+    "azeite (1 a 2 colheres de sopa)",
+    "recheio (pimentão, aspargo, alcachofra, ervas, parmesão)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "frigideira",
+    "forno"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "ovos com recheio",
+     "utensilio": "garfo",
+     "parametro": ""
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "azeite",
+     "utensilio": "frigideira",
+     "parametro": "pesada, 30 cm"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "mistura",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "frittata",
+     "utensilio": "frigideira",
+     "parametro": "fogo baixo 15 min"
+    },
+    {
+     "acao": "gratinar",
+     "alvo": "topo",
+     "utensilio": "forno",
+     "parametro": "1 a 2 min até firme e dourado"
+    }
+   ],
+   "ponto_critico": "fundo cozido em fogo baixo e topo firmado no gratinador",
+   "erro_comum": "fogo alto que queima o fundo antes de cozinhar o meio"
+  },
+  {
+   "id": "ovos.tortilla-espanhola",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Tortilla espanhola",
+   "ingredientes": [
+    "cebola",
+    "batata",
+    "azeite generoso",
+    "ovos batidos"
+   ],
+   "utensilios": [
+    "frigideira",
+    "prato"
+   ],
+   "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "cebola e batata",
+     "utensilio": "frigideira",
+     "parametro": "bastante azeite, até macias"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ovos batidos",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "primeiro lado",
+     "utensilio": "frigideira",
+     "parametro": "até dourar"
+    },
+    {
+     "acao": "virar",
+     "alvo": "tortilla com ajuda de um prato",
+     "utensilio": "prato",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "segundo lado",
+     "utensilio": "frigideira",
+     "parametro": "até dourar"
+    }
+   ],
+   "ponto_critico": "virada na frigideira, dourada dos dois lados",
+   "erro_comum": "virar com o centro muito cru e a tortilla se partir"
+  },
+  {
+   "id": "ovos.sabayon-salgado",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Sabayon salgado em banho-maria",
+   "ingredientes": [
+    "gemas (4)",
+    "vinho branco seco (100 ml)"
+   ],
+   "utensilios": [
+    "travessa-de-gratinar",
+    "panela-dupla",
+    "batedor-de-arame"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "gemas + vinho em banho-maria",
+     "utensilio": "batedor-de-arame",
+     "parametro": "até clarear e engrossar"
+    },
+    {
+     "acao": "testar",
+     "alvo": "ponto de fita",
+     "utensilio": "batedor-de-arame",
+     "parametro": "a mistura cai em fita ao levantar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "mistura fora do banho-maria",
+     "utensilio": "batedor-de-arame",
+     "parametro": "até esfriar"
+    }
+   ],
+   "ponto_critico": "ponto de fita: mistura clara e espessa que forma rastro",
+   "erro_comum": "água do banho-maria fervendo e as gemas virarem ovo mexido"
+  },
+  {
+   "id": "ovos.incorporar-claras",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Incorporar claras em neve",
+   "ingredientes": [
+    "claras em neve firme",
+    "base de gemas"
+   ],
+   "utensilios": [
+    "espatula-de-borracha",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "claras na base",
+     "utensilio": "espatula-de-borracha",
+     "parametro": "movimentos rápidos e leves de baixo para cima"
+    }
+   ],
+   "ponto_critico": "mistura homogênea sem listras brancas e com o máximo de ar",
+   "erro_comum": "mexer em círculos e derrubar o volume"
+  },
+  {
+   "id": "ovos.sufle-de-queijo",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Suflês de queijo sobre fondue",
+   "ingredientes": [
+    "sabayon de gemas e vinho",
+    "claras em neve",
+    "sal e pimenta",
+    "parmesão ralado (100 g)",
+    "creme de leite integral (200 g)",
+    "Gruyère ralado (100 g)",
+    "cebolinha"
+   ],
+   "utensilios": [
+    "panela",
+    "travessa-de-gratinar",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "claras no sabayon",
+     "utensilio": "espatula-de-borracha",
+     "parametro": "temperar"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "creme de leite",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "Gruyère no creme",
+     "utensilio": "colher",
+     "parametro": "até derreter e ficar liso"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "fondue em 4 pratos refratários",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "mistura de ovos em quenelles",
+     "utensilio": "duas colheres",
+     "parametro": "pousar sobre o fondue"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "parmesão",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "pratos",
+     "utensilio": "forno",
+     "parametro": "180 °C por ~10 min até crescer e dourar"
+    },
+    {
+     "acao": "servir",
+     "alvo": "suflês",
+     "utensilio": "",
+     "parametro": "imediatamente, com cebolinha e parmesão"
+    }
+   ],
+   "ponto_critico": "servir na hora, crescidos e dourados após ~10 min a 180 °C",
+   "erro_comum": "esperar para servir e os suflês murcharem"
+  },
+  {
+   "id": "ovos.massa-de-crepe",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Massa de crêpe",
+   "ingredientes": [
+    "farinha de trigo (125 g)",
+    "sal",
+    "ovos (2)",
+    "leite ou leite com água (300 ml)"
+   ],
+   "utensilios": [
+    "peneira",
+    "tigelas",
+    "batedor-de-arame"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha + sal",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "cova no centro",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovos puxando a farinha das bordas",
+     "utensilio": "batedor-de-arame",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "leite aos poucos",
+     "utensilio": "",
+     "parametro": "até massa fina"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa coberta",
+     "utensilio": "tigelas",
+     "parametro": "mínimo 30 min ou uma noite"
+    },
+    {
+     "acao": "bater",
+     "alvo": "massa",
+     "utensilio": "batedor-de-arame",
+     "parametro": "antes de usar"
+    }
+   ],
+   "ponto_critico": "descanso de pelo menos 30 min; massa lisa e fina (rende ~12)",
+   "erro_comum": "jogar o leite todo de uma vez e formar grumos"
+  },
+  {
+   "id": "ovos.massa-lisa-peneirada",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Massa líquida lisa (peneirar ou liquidificar)",
+   "ingredientes": [
+    "massa líquida batida"
+   ],
+   "utensilios": [
+    "peneira",
+    "liquidificador"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "massa com grumos",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "todos os ingredientes",
+     "utensilio": "liquidificador",
+     "parametro": "alternativa: ~1 min, dispensa peneira"
+    }
+   ],
+   "ponto_critico": "massa sem nenhum grumo",
+   "erro_comum": "pular a peneira e deixar pelotas de farinha"
+  },
+  {
+   "id": "ovos.curar-frigideira",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Curar frigideira de ferro (crêpe/blini)",
+   "ingredientes": [
+    "sal",
+    "óleo"
+   ],
+   "utensilios": [
+    "frigideira-panqueca",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "frigideira",
+     "utensilio": "frigideira-panqueca",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "esfregar com sal",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "retirar o sal",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "óleo",
+     "utensilio": "papel-toalha",
+     "parametro": "repetir o processo com óleo"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "depois do uso",
+     "utensilio": "pano",
+     "parametro": "sem lavar"
+    }
+   ],
+   "ponto_critico": "superfície praticamente antiaderente após curar; nunca lavar com água e sabão",
+   "erro_comum": "lavar a frigideira e perder a camada curada"
+  },
+  {
+   "id": "ovos.fritar-crepe",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Fritar crêpes",
+   "ingredientes": [
+    "massa de crêpe",
+    "manteiga"
+   ],
+   "utensilios": [
+    "frigideira-panqueca",
+    "concha",
+    "espatula"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "bolinha de manteiga",
+     "utensilio": "frigideira-panqueca",
+     "parametro": "fogo moderado até espumar; descartar o excesso"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "massa no centro",
+     "utensilio": "concha",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "inclinar a frigideira para cobrir a base",
+     "utensilio": "frigideira-panqueca",
+     "parametro": "completar se faltar"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "primeiro lado",
+     "utensilio": "frigideira-panqueca",
+     "parametro": "~1 min até dourar e surgir bolhas"
+    },
+    {
+     "acao": "virar",
+     "alvo": "crêpe",
+     "utensilio": "espatula",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "segundo lado",
+     "utensilio": "frigideira-panqueca",
+     "parametro": "30 s a 1 min"
+    },
+    {
+     "acao": "servir",
+     "alvo": "crêpe com o lado mais bonito para baixo",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "camada fina cobrindo toda a base; 1 min e 30 s a 1 min por lado",
+   "erro_comum": "excesso de manteiga ou de massa, crêpe grossa ou rasgando"
+  },
+  {
+   "id": "ovos.crepe-enrolada",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Crêpe enrolada (cigarette)",
+   "ingredientes": [
+    "crêpe",
+    "recheio"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "recheio no centro",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "dois lados opostos",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "de uma ponta à outra",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "lados dobrados antes de enrolar, recheio fechado",
+   "erro_comum": "recheio em excesso que escapa"
+  },
+  {
+   "id": "ovos.crepe-quadrada",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Crêpe quadrada (pannequet)",
+   "ingredientes": [
+    "crêpe",
+    "recheio"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "recheio no centro",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "dobrar cada lado formando quadrado",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "dobrar outra vez e virar",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "pacote quadrado com emenda para baixo",
+   "erro_comum": "dobras desalinhadas que abrem"
+  },
+  {
+   "id": "ovos.crepe-leque",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Crêpe em leque (fan)",
+   "ingredientes": [
+    "crêpe",
+    "recheio"
+   ],
+   "utensilios": [
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "recheio no centro",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "dobrar ao meio",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "dobrar ao meio de novo",
+     "utensilio": "",
+     "parametro": "formar triângulo"
+    }
+   ],
+   "ponto_critico": "triângulo com quatro camadas",
+   "erro_comum": "crêpe grossa que racha na dobra"
+  },
+  {
+   "id": "ovos.pudim-yorkshire",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Pudins Yorkshire",
+   "ingredientes": [
+    "massa de crêpe com farinha de glúten e leite + água em partes iguais",
+    "gordura vegetal ou óleo (1/2 colher de chá por molde)"
+   ],
+   "utensilios": [
+    "forma-yorkshire",
+    "forno"
+   ],
+   "passos": [
+    {
+     "acao": "despejar",
+     "alvo": "gordura em cada cavidade",
+     "utensilio": "forma-yorkshire",
+     "parametro": ""
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "fôrma",
+     "utensilio": "forno",
+     "parametro": "220 °C até quase fumegar"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "massa",
+     "utensilio": "forma-yorkshire",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "pudins",
+     "utensilio": "forno",
+     "parametro": "20 a 25 min sem abrir"
+    }
+   ],
+   "ponto_critico": "gordura quase fumegando a 220 °C quando a massa entra; pudins altos e crocantes",
+   "erro_comum": "gordura morna e os pudins não crescerem"
+  },
+  {
+   "id": "ovos.panqueca-na-chapa",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Panquecas americanas na chapa",
+   "ingredientes": [
+    "farinha de trigo (225 g)",
+    "leite (300 ml)",
+    "manteiga derretida (1 a 2 colheres de sopa)",
+    "fermento (1 a 2 colheres de chá)",
+    "ovos"
+   ],
+   "utensilios": [
+    "chapa",
+    "espatula",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "massa grossa",
+     "utensilio": "batedor-de-arame",
+     "parametro": ""
+    },
+    {
+     "acao": "testar",
+     "alvo": "temperatura da chapa com respingos de água",
+     "utensilio": "chapa",
+     "parametro": "a água deve chiar e evaporar"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "gordura leve",
+     "utensilio": "chapa",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "colheradas espaçadas",
+     "utensilio": "colher",
+     "parametro": "~5 a 10 cm de diâmetro"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "primeiro lado",
+     "utensilio": "chapa",
+     "parametro": "até bordas douradas e bolhas no centro"
+    },
+    {
+     "acao": "virar",
+     "alvo": "panqueca",
+     "utensilio": "espatula",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "segundo lado",
+     "utensilio": "chapa",
+     "parametro": "até dourar"
+    }
+   ],
+   "ponto_critico": "chapa no ponto do teste da água; virar quando surgirem bolhas no centro",
+   "erro_comum": "chapa fria que deixa a panqueca pálida e pesada"
+  },
+  {
+   "id": "queijos.avaliar-queijo-mole",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Avaliar queijo mole e semiduro",
+   "ingredientes": [
+    "queijo mole (Brie, Camembert, Pont l'Evêque)"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "casca",
+     "utensilio": "",
+     "parametro": "cor uniforme, levemente úmida"
+    },
+    {
+     "acao": "testar",
+     "alvo": "toque",
+     "utensilio": "",
+     "parametro": "elástico"
+    },
+    {
+     "acao": "testar",
+     "alvo": "aroma",
+     "utensilio": "",
+     "parametro": "nozes, adocicado; sem amoníaco"
+    }
+   ],
+   "ponto_critico": "casca uniforme, massa elástica e sem centro branco calcário",
+   "erro_comum": "comprar queijo com cheiro de amoníaco"
+  },
+  {
+   "id": "queijos.avaliar-queijo-duro",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Avaliar queijo duro e de ralar",
+   "ingredientes": [
+    "queijo duro (Emmental, parmesão, pecorino)"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "casca",
+     "utensilio": "",
+     "parametro": "nem rachada nem suada; grudada se maturada em gaze"
+    },
+    {
+     "acao": "testar",
+     "alvo": "massa",
+     "utensilio": "",
+     "parametro": "firme ou esmigalhada sem descoloração; parmesão com miolo branco-amarelado"
+    },
+    {
+     "acao": "testar",
+     "alvo": "sabor",
+     "utensilio": "",
+     "parametro": "rejeitar se muito salgado ou amargo"
+    }
+   ],
+   "ponto_critico": "casca íntegra e seca, massa sem manchas",
+   "erro_comum": "comprar com casca úmida ou rachada"
+  },
+  {
+   "id": "queijos.avaliar-fresco-azul-cabra",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Avaliar queijos frescos, azuis e de cabra",
+   "ingredientes": [
+    "queijo fresco",
+    "blue cheese",
+    "queijo de cabra"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "validade do queijo fresco",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "testar",
+     "alvo": "veios e casca do azul",
+     "utensilio": "",
+     "parametro": "veios uniformes, casca firme, sem amoníaco"
+    },
+    {
+     "acao": "testar",
+     "alvo": "queijo de cabra",
+     "utensilio": "",
+     "parametro": "úmido, levemente ardido, não azedo"
+    }
+   ],
+   "ponto_critico": "frescos dentro da validade; azuis com veios uniformes; cabra úmido e não azedo",
+   "erro_comum": "azul esfarelento e salgado demais"
+  },
+  {
+   "id": "queijos.testar-maturacao-brie",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Testar maturação de queijo mole",
+   "ingredientes": [
+    "Brie"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "fatia",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "testar",
+     "alvo": "centro e bordas",
+     "utensilio": "",
+     "parametro": "maduro: centro esponjoso e cremoso por toda a volta"
+    }
+   ],
+   "ponto_critico": "centro esponjoso e cremoso uniforme",
+   "erro_comum": "Brie passado: casca fina e listrada, amargo, amoníaco, escorrendo demais"
+  },
+  {
+   "id": "queijos.queijo-fresco-caseiro",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Queijo fresco caseiro",
+   "ingredientes": [
+    "leite pasteurizado morno (250 ml)",
+    "leitelho (250 ml)",
+    "sal (opcional)"
+   ],
+   "utensilios": [
+    "panela",
+    "termometro-acucar",
+    "tigelas",
+    "musselina",
+    "colher",
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "leite",
+     "utensilio": "panela",
+     "parametro": "27 °C"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "leitelho no leite morno",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "mistura",
+     "utensilio": "tigelas",
+     "parametro": "24 h em temperatura ambiente até coalhar"
+    },
+    {
+     "acao": "coar",
+     "alvo": "coalho",
+     "utensilio": "musselina dupla esterilizada sobre tigela",
+     "parametro": "transferir com colher e cobrir"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "coalho",
+     "utensilio": "",
+     "parametro": "~5 h"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "musselina",
+     "utensilio": "barbante",
+     "parametro": ""
+    },
+    {
+     "acao": "espremer",
+     "alvo": "soro",
+     "utensilio": "",
+     "parametro": "com as mãos"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "trouxa pendurada sobre a tigela",
+     "utensilio": "",
+     "parametro": "1 a 4 h até firmar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "queijo da musselina",
+     "utensilio": "",
+     "parametro": "consumir em 1 dia, ou 2 a 3 com sal"
+    }
+   ],
+   "ponto_critico": "leite a 27 °C e 24 h de coalhada; drenagem até ficar firme",
+   "erro_comum": "leite quente demais que mata as bactérias, ou musselina não esterilizada"
+  },
+  {
+   "id": "queijos.cobrir-bolas-de-queijo",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Bolas de queijo fresco com cobertura",
+   "ingredientes": [
+    "queijo fresco de 2 a 3 dias",
+    "pimentas moídas, páprica, gergelim tostado, cebolinha, nozes picadas"
+   ],
+   "utensilios": [
+    "prato"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "queijo em bolas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "bolas na cobertura",
+     "utensilio": "prato",
+     "parametro": "cobrir toda a superfície"
+    }
+   ],
+   "ponto_critico": "queijo firme o bastante (2 a 3 dias) para segurar a forma",
+   "erro_comum": "queijo recém-feito mole demais"
+  },
+  {
+   "id": "queijos.marinar-queijo-fresco",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Marinar queijo fresco em azeite",
+   "ingredientes": [
+    "rodelas de queijo de cabra (crottin) ou cubos de feta",
+    "azeite extravirgem",
+    "ervas, pimenta, louro, erva-doce, raspas cítricas, canela, alho, tomate seco"
+   ],
+   "utensilios": [
+    "pote-hermetico"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "queijo e temperos",
+     "utensilio": "pote esterilizado",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "azeite",
+     "utensilio": "pote",
+     "parametro": "até cobrir completamente"
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "pote fechado",
+     "utensilio": "geladeira",
+     "parametro": "2 a 3 semanas"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "queijo",
+     "utensilio": "pote",
+     "parametro": "virar o pote de vez em quando"
+    }
+   ],
+   "ponto_critico": "queijo totalmente coberto pelo azeite em pote esterilizado",
+   "erro_comum": "deixar queijo exposto acima do azeite, que estraga"
+  },
+  {
+   "id": "queijos.rechear-legumes-com-queijo",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Rechear legumes com queijo fresco no saco",
+   "ingredientes": [
+    "queijo fresco",
+    "ervas picadas",
+    "temperos",
+    "tomate-cereja sem miolo, abobrinhas escaldadas, ervilha-torta aberta"
+   ],
+   "utensilios": [
+    "tigelas",
+    "saco-de-confeitar"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "queijo + ervas + temperos",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "abobrinhas e ervilhas-tortas",
+     "utensilio": "panela",
+     "parametro": "escaldar"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "miolo dos legumes",
+     "utensilio": "boleador",
+     "parametro": ""
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "queijo nos legumes",
+     "utensilio": "saco-de-confeitar",
+     "parametro": "bico estrela"
+    }
+   ],
+   "ponto_critico": "queijo firme o bastante para o bico estrela marcar o desenho",
+   "erro_comum": "queijo mole que perde o relevo"
+  },
+  {
+   "id": "queijos.ralar-fino-rotatorio",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ralar queijo fino no ralador rotatório",
+   "ingredientes": [
+    "queijo gelado"
+   ],
+   "utensilios": [
+    "ralador-rotatorio"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "queijo",
+     "utensilio": "ralador-rotatorio",
+     "parametro": "girar a manivela"
+    }
+   ],
+   "ponto_critico": "queijo recém-saído da geladeira, lascas finas e soltas",
+   "erro_comum": "queijo morno que empapa no tambor"
+  },
+  {
+   "id": "queijos.ralar-grosso",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ralar queijo em tiras grossas",
+   "ingredientes": [
+    "queijo gelado"
+   ],
+   "utensilios": [
+    "ralador-quatro-faces"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "queijo",
+     "utensilio": "ralador-quatro-faces",
+     "parametro": "face de furos grandes"
+    }
+   ],
+   "ponto_critico": "tiras grossas uniformes",
+   "erro_comum": "ralar até o fim e machucar os dedos"
+  },
+  {
+   "id": "queijos.ralar-parmesao",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ralar parmesão fininho",
+   "ingredientes": [
+    "parmesão"
+   ],
+   "utensilios": [
+    "ralador-plano"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "parmesão",
+     "utensilio": "ralador-plano",
+     "parametro": "tiras bem finas"
+    }
+   ],
+   "ponto_critico": "pó fino e leve",
+   "erro_comum": "usar ralador grosso em queijo duro"
+  },
+  {
+   "id": "queijos.derreter-queijo",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Derreter queijo",
+   "ingredientes": [
+    "queijo ralado"
+   ],
+   "utensilios": [
+    "panela",
+    "colher-de-pau"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "queijo",
+     "utensilio": "panela",
+     "parametro": "pesada, fogo baixo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "queijo",
+     "utensilio": "colher-de-pau",
+     "parametro": "até liso"
+    }
+   ],
+   "ponto_critico": "fogo baixo: queijo liso e brilhante",
+   "erro_comum": "fogo alto que separa o queijo em grumos oleosos e borrachudos"
+  },
+  {
+   "id": "queijos.cobertura-gratinada",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Cobertura de queijo gratinado",
+   "ingredientes": [
+    "queijo que derrete bem (Gruyère, mussarela, cheddar)"
+   ],
+   "utensilios": [
+    "ralador-quatro-faces",
+    "travessa-de-gratinar"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "queijo",
+     "utensilio": "ralador-quatro-faces",
+     "parametro": ""
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "queijo sobre o prato",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "gratinar",
+     "alvo": "prato",
+     "utensilio": "grelha ou forno",
+     "parametro": "~2 min até crosta dourada"
+    }
+   ],
+   "ponto_critico": "crosta crocante e dourada em pouco tempo",
+   "erro_comum": "queijo inadequado que solta óleo ou não derrete"
+  },
+  {
+   "id": "queijos.fondue-suica",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Fondue suíça",
+   "ingredientes": [
+    "maisena (1 colher de sopa)",
+    "vinho branco seco (450 ml)",
+    "alho",
+    "Emmental, Gruyère e Comté ralados (250 g cada)",
+    "noz-moscada",
+    "sal e pimenta",
+    "pão em cubos"
+   ],
+   "utensilios": [
+    "panela-de-fondue",
+    "colher-de-pau",
+    "garfo-de-fondue"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "maisena com 2 colheres de vinho",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "esfregar alho no fundo da panela",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "vinho",
+     "utensilio": "panela-de-fondue",
+     "parametro": "depois abaixar o fogo"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "queijos adicionados aos poucos",
+     "utensilio": "colher-de-pau",
+     "parametro": "sem parar, cada porção derretendo antes da próxima"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "maisena diluída",
+     "utensilio": "colher-de-pau",
+     "parametro": "até grosso e cremoso"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "noz-moscada, sal, pimenta",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "pão no garfo, girando para não pingar",
+     "utensilio": "garfo-de-fondue",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "fogo sempre baixo e queijo em porções; mistura lisa e estável",
+   "erro_comum": "jogar todo o queijo de uma vez em fogo alto, empelotando"
+  },
+  {
+   "id": "queijos.queijo-grelhado",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Queijo de cabra grelhado com torrada",
+   "ingredientes": [
+    "queijo de cabra em rodelas (ou halloumi, mussarela, marinado)",
+    "azeite",
+    "pimenta em grão",
+    "torradas",
+    "folhas"
+   ],
+   "utensilios": [
+    "grade-de-assar",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "queijo em rodelas",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "azeite e pimenta",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "grelhar",
+     "alvo": "queijo",
+     "utensilio": "grade-de-assar",
+     "parametro": "a 3 cm do fogo, 1 a 2 min"
+    },
+    {
+     "acao": "servir",
+     "alvo": "sobre torrada quente e salada",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "1 a 2 min a 3 cm da fonte de calor: dourado por fora e firme",
+   "erro_comum": "grelhar demais e o queijo escorrer"
+  },
+  {
+   "id": "queijos.queijo-frito",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Camembert empanado frito",
+   "ingredientes": [
+    "Camembert maturado e firme em triângulos",
+    "ovo batido",
+    "migalhas de pão",
+    "óleo"
+   ],
+   "utensilios": [
+    "tigelas",
+    "frigideira-funda",
+    "termometro-gordura",
+    "escumadeira",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "Camembert em triângulos",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "ovo batido",
+     "utensilio": "",
+     "parametro": "mergulhar"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "migalhas de pão por toda a superfície",
+     "utensilio": "",
+     "parametro": "empanar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "triângulos",
+     "utensilio": "geladeira",
+     "parametro": "1 h"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "triângulos",
+     "utensilio": "frigideira-funda",
+     "parametro": "190 °C por 2 a 3 min"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "queijo",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "queijo gelado e óleo a 190 °C; casca crocante e interior mole sem vazar",
+   "erro_comum": "queijo morno ou óleo frio, e o queijo derrete para fora"
+  },
+  {
+   "id": "cremes.creme-fraiche",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Crème fraîche caseiro",
+   "ingredientes": [
+    "leitelho (500 ml)",
+    "creme de leite integral (250 ml)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "panela-dupla",
+    "termometro-acucar"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "leitelho + creme",
+     "utensilio": "tigelas",
+     "parametro": ""
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "tigela sobre água quente",
+     "utensilio": "panela-dupla",
+     "parametro": "até 30 °C"
+    },
+    {
+     "acao": "fermentar",
+     "alvo": "creme em tigela de vidro parcialmente coberta",
+     "utensilio": "",
+     "parametro": "6 a 8 h em temperatura ambiente"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "creme engrossado",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "creme tampado",
+     "utensilio": "geladeira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "aquecer só até 30 °C e descansar 6 a 8 h até engrossar",
+   "erro_comum": "aquecer demais e matar a cultura"
+  },
+  {
+   "id": "cremes.creme-coalhado",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Creme coalhado (clotted cream)",
+   "ingredientes": [
+    "creme de leite integral (600 ml)"
+   ],
+   "utensilios": [
+    "panela",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "creme",
+     "utensilio": "panela",
+     "parametro": "pesada, suavemente, 25 a 30 min até engrossar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "creme",
+     "utensilio": "",
+     "parametro": "até firmar e formar crosta"
+    },
+    {
+     "acao": "separar",
+     "alvo": "crosta",
+     "utensilio": "colher grande de metal",
+     "parametro": "descartar o líquido de baixo"
+    }
+   ],
+   "ponto_critico": "aquecimento suave por 25 a 30 min e resfriamento até a crosta firmar; dura 5 dias",
+   "erro_comum": "fogo alto que queima o fundo"
+  },
+  {
+   "id": "cremes.creme-azedo",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Creme azedo caseiro",
+   "ingredientes": [
+    "suco de limão (1 colher de sopa)",
+    "creme de leite integral (250 ml)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "suco de limão no creme",
+     "utensilio": "tigelas",
+     "parametro": "tigela de vidro"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "mistura",
+     "utensilio": "",
+     "parametro": "10 a 30 min em temperatura ambiente até engrossar"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "tigela coberta",
+     "utensilio": "geladeira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "engrossar em 10 a 30 min",
+   "erro_comum": "usar creme de baixo teor de gordura que não engrossa"
+  },
+  {
+   "id": "cremes.creme-para-bater",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Creme para bater caseiro (2:1)",
+   "ingredientes": [
+    "creme de leite integral",
+    "creme de leite simples"
+   ],
+   "utensilios": [
+    "tigelas",
+    "copo-medidor"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "2 partes de creme integral e 1 de creme simples",
+     "utensilio": "copo-medidor",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "cremes",
+     "utensilio": "colher",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "proporção 2:1 resultando em 35 a 39% de gordura",
+   "erro_comum": "inverter a proporção e o creme não firmar ao bater"
+  },
+  {
+   "id": "ervas.descascar-gengibre",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Descascar gengibre com cutelo",
+   "ingredientes": [
+    "raiz de gengibre fresca"
+   ],
+   "utensilios": [
+    "cutelo-chines",
+    "tabua-de-corte"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca do gengibre",
+     "utensilio": "cutelo-chines",
+     "parametro": "raspar com o fio, só no pedaço a usar"
+    }
+   ],
+   "ponto_critico": "remover só a casca fina, preservando a polpa; descascar apenas o que vai usar",
+   "erro_comum": "descascar a raiz toda e ela ressecar"
+  },
+  {
+   "id": "ervas.ralar-gengibre",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Ralar gengibre",
+   "ingredientes": [
+    "gengibre descascado"
+   ],
+   "utensilios": [
+    "oroshigane"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "polpa",
+     "utensilio": "oroshigane",
+     "parametro": "ou ralador de metal"
+    }
+   ],
+   "ponto_critico": "polpa em pasta com as fibras retidas",
+   "erro_comum": "pedaços fibrosos no prato"
+  },
+  {
+   "id": "ervas.preparar-erva-cidreira",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Preparar capim-limão (erva-cidreira)",
+   "ingredientes": [
+    "talos de erva-cidreira"
+   ],
+   "utensilios": [
+    "faca-do-chef"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "talos",
+     "utensilio": "faca-do-chef",
+     "parametro": "grosseiro para curry, bem fino para refogar"
+    }
+   ],
+   "ponto_critico": "talos cortados para liberar o aroma",
+   "erro_comum": "pedaços grandes e duros no prato final"
+  },
+  {
+   "id": "ervas.preparar-coentro",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Preparar coentro para curry",
+   "ingredientes": [
+    "coentro fresco"
+   ],
+   "utensilios": [
+    "faca-do-chef"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "cabos e raízes",
+     "utensilio": "faca-do-chef",
+     "parametro": "retirar"
+    },
+    {
+     "acao": "picar",
+     "alvo": "folhas",
+     "utensilio": "faca-do-chef",
+     "parametro": "bem fino"
+    }
+   ],
+   "ponto_critico": "picado fino sem talos",
+   "erro_comum": "folhas machucadas e escuras"
+  },
+  {
+   "id": "ervas.preparar-galanga",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Preparar galanga",
+   "ingredientes": [
+    "galanga"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "galanga",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "galanga",
+     "utensilio": "faquinha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "fatias finas",
+   "erro_comum": "fatias grossas fibrosas"
+  },
+  {
+   "id": "ervas.suco-de-tamarindo",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Suco azedo de tamarindo",
+   "ingredientes": [
+    "vagens de tamarindo",
+    "água"
+   ],
+   "utensilios": [
+    "tigelas",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "polpa das vagens",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "demolhar",
+     "alvo": "polpa em água",
+     "utensilio": "tigelas",
+     "parametro": "30 min"
+    },
+    {
+     "acao": "coar",
+     "alvo": "água",
+     "utensilio": "peneira",
+     "parametro": "usar o líquido"
+    }
+   ],
+   "ponto_critico": "polpa demolhada 30 min; usa-se a água",
+   "erro_comum": "usar a polpa com fibras e sementes"
+  },
+  {
+   "id": "ervas.garam-masala",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Garam masala tostado",
+   "ingredientes": [
+    "macis",
+    "canela",
+    "louro",
+    "cardamomo",
+    "cominho",
+    "pimenta-do-reino em grão",
+    "coentro em grão"
+   ],
+   "utensilios": [
+    "frigideira",
+    "pilao-almofariz",
+    "pote-hermetico"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "especiarias inteiras",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "tostar",
+     "alvo": "mistura",
+     "utensilio": "frigideira",
+     "parametro": "fogo baixo até escurecer"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "mistura",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "moer",
+     "alvo": "especiarias",
+     "utensilio": "pilao-almofariz",
+     "parametro": ""
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "pó",
+     "utensilio": "pote-hermetico",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "tostar até escurecer sem queimar e moer só depois de esfriar",
+   "erro_comum": "queimar as especiarias e amargar"
+  },
+  {
+   "id": "ervas.tostar-gergelim",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Tostar gergelim na wok",
+   "ingredientes": [
+    "sementes de gergelim"
+   ],
+   "utensilios": [
+    "wok",
+    "hashi"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "wok vazia",
+     "utensilio": "wok",
+     "parametro": "bem quente, sem fumaça"
+    },
+    {
+     "acao": "tostar",
+     "alvo": "sementes",
+     "utensilio": "wok",
+     "parametro": "fogo baixo, mexendo sem parar com hashi, até marrom escuro"
+    }
+   ],
+   "ponto_critico": "mexer constante até cor marrom uniforme",
+   "erro_comum": "parar de mexer e queimar as sementes"
+  },
+  {
+   "id": "ervas.tostar-nori",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Tostar folhas de nori",
+   "ingredientes": [
+    "folhas de nori"
+   ],
+   "utensilios": [
+    "tenaz"
+   ],
+   "passos": [
+    {
+     "acao": "tostar",
+     "alvo": "folha",
+     "utensilio": "chama direta ou forno",
+     "parametro": "passar rapidamente até mudar de cor e ficar crocante"
+    }
+   ],
+   "ponto_critico": "folha crocante e aromática sem queimar",
+   "erro_comum": "segurar demais na chama"
+  },
+  {
+   "id": "ervas.hidratar-wakame",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Hidratar wakame",
+   "ingredientes": [
+    "tiras de wakame seca",
+    "água quente"
+   ],
+   "utensilios": [
+    "tigelas",
+    "escorredor"
+   ],
+   "passos": [
+    {
+     "acao": "demolhar",
+     "alvo": "wakame em água quente",
+     "utensilio": "tigelas",
+     "parametro": ""
+    },
+    {
+     "acao": "coar",
+     "alvo": "wakame",
+     "utensilio": "escorredor",
+     "parametro": "escorrer bem antes de usar"
+    }
+   ],
+   "ponto_critico": "tiras macias e bem escorridas",
+   "erro_comum": "usar ainda encharcada e aguar o prato"
+  },
+  {
+   "id": "ervas.embeber-acafrao",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Embeber açafrão",
+   "ingredientes": [
+    "fios de açafrão",
+    "água quente"
+   ],
+   "utensilios": [
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "demolhar",
+     "alvo": "fios em água quente",
+     "utensilio": "tigelas",
+     "parametro": "10 min"
+    },
+    {
+     "acao": "coar",
+     "alvo": "líquido",
+     "utensilio": "",
+     "parametro": "usar a infusão em molhos e curry"
+    }
+   ],
+   "ponto_critico": "10 min de infusão com cor laranja intensa",
+   "erro_comum": "jogar os fios secos direto e não liberar cor"
+  },
+  {
+   "id": "ervas.preparar-wasabi",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Preparar wasabi",
+   "ingredientes": [
+    "raiz de wasabi ou wasabi em pó",
+    "água"
+   ],
+   "utensilios": [
+    "oroshigane",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "ralar",
+     "alvo": "raiz",
+     "utensilio": "oroshigane",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "pó com água",
+     "utensilio": "colher",
+     "parametro": "alternativa: formar pasta"
+    }
+   ],
+   "ponto_critico": "pasta lisa e picante",
+   "erro_comum": "excesso de água e pasta rala"
+  },
+  {
+   "id": "ervas.bouquet-garni",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Bouquet garni amarrado",
+   "ingredientes": [
+    "tomilho",
+    "louro",
+    "salsa",
+    "salsão",
+    "folha de alho-poró",
+    "variações por prato (laranja e alecrim para boi; estragão e endro para peixe; alecrim e hortelã para carneiro; sálvia para porco)"
+   ],
+   "utensilios": [
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "ervas dentro da folha de alho-poró",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "folha de alho-poró",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "feixe",
+     "utensilio": "barbante",
+     "parametro": "deixar ponta longa para retirar"
+    }
+   ],
+   "ponto_critico": "feixe firme que não solta folhas no cozimento e sai inteiro",
+   "erro_comum": "amarrar frouxo e ervas se espalharem no caldo"
+  },
+  {
+   "id": "ervas.bouquet-em-saquinho",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Buquê em saquinho de musselina (aves de caça)",
+   "ingredientes": [
+    "salsão",
+    "salsa",
+    "tomilho",
+    "manjerona",
+    "estragão",
+    "louro",
+    "6 grãos de zimbro"
+   ],
+   "utensilios": [
+    "musselina",
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "ervas e zimbro no centro da musselina",
+     "utensilio": "musselina",
+     "parametro": ""
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "trouxinha",
+     "utensilio": "barbante",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "grãos totalmente presos no saquinho",
+   "erro_comum": "musselina mal fechada que solta os grãos"
+  },
+  {
+   "id": "ervas.picar-casca-mezzaluna",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Picar casca de limão com mezzaluna",
+   "ingredientes": [
+    "casca de limão em fatias"
+   ],
+   "utensilios": [
+    "mezzaluna",
+    "tabua-de-corte"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "casca",
+     "utensilio": "mezzaluna",
+     "parametro": "movimento de vaivém até bem fino"
+    }
+   ],
+   "ponto_critico": "casca bem fina e uniforme",
+   "erro_comum": "incluir a parte branca amarga"
+  },
+  {
+   "id": "ervas.gremolata",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Gremolata",
+   "ingredientes": [
+    "casca de limão bem picada",
+    "alho",
+    "salsa"
+   ],
+   "utensilios": [
+    "mezzaluna",
+    "faca-do-chef"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "alho e salsa",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "casca + alho + salsa",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "sobre ossobuco ou cozido",
+     "utensilio": "",
+     "parametro": "no final do cozimento"
+    }
+   ],
+   "ponto_critico": "adicionar só no final para manter o frescor",
+   "erro_comum": "cozinhar junto e perder o aroma"
+  },
+  {
+   "id": "ervas.herbes-de-provence",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Herbes de Provence",
+   "ingredientes": [
+    "tomilho",
+    "alecrim",
+    "louro",
+    "manjericão",
+    "segurelha",
+    "alfazema"
+   ],
+   "utensilios": [
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "ervas frescas ou secas",
+     "utensilio": "tigelas",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "cordeiro ou porco assado",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "equilíbrio entre as seis ervas",
+   "erro_comum": "excesso de alfazema que amarga"
+  },
+  {
+   "id": "ervas.persillade",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Persillade",
+   "ingredientes": [
+    "salsa",
+    "alho"
+   ],
+   "utensilios": [
+    "faca-do-chef"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "salsa e alho juntos",
+     "utensilio": "faca-do-chef",
+     "parametro": "bem fino"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "prato",
+     "utensilio": "",
+     "parametro": "pouco antes do fim do cozimento; ou misturar com miolo de pão para recheio"
+    }
+   ],
+   "ponto_critico": "adicionar no fim do cozimento",
+   "erro_comum": "fritar o alho cru da persillade até queimar"
+  },
+  {
+   "id": "ervas.pesto-no-pilao",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Pesto no pilão",
+   "ingredientes": [
+    "manjericão (60 g)",
+    "parmesão",
+    "alho (2 a 4 dentes)",
+    "pinoli (30 g)",
+    "azeite extravirgem (4 colheres de sopa)"
+   ],
+   "utensilios": [
+    "pilao-almofariz"
+   ],
+   "passos": [
+    {
+     "acao": "moer",
+     "alvo": "manjericão + queijo + alho + pinoli",
+     "utensilio": "pilao-almofariz",
+     "parametro": "macerar"
+    },
+    {
+     "acao": "emulsionar",
+     "alvo": "azeite aos poucos",
+     "utensilio": "pilao-almofariz",
+     "parametro": "até pasta granulada"
+    }
+   ],
+   "ponto_critico": "pasta granulada com azeite incorporado aos poucos (para 250 g de massa)",
+   "erro_comum": "jogar o azeite de uma vez e separar"
+  },
+  {
+   "id": "ervas.pesto-no-liquidificador",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Pesto no liquidificador",
+   "ingredientes": [
+    "manjericão",
+    "pinoli",
+    "parmesão",
+    "alho",
+    "azeite extravirgem"
+   ],
+   "utensilios": [
+    "liquidificador"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "manjericão + pinoli + queijo + alho + metade do azeite",
+     "utensilio": "liquidificador",
+     "parametro": ""
+    },
+    {
+     "acao": "emulsionar",
+     "alvo": "resto do azeite",
+     "utensilio": "liquidificador",
+     "parametro": "aos poucos"
+    }
+   ],
+   "ponto_critico": "azeite em duas etapas para consistência cremosa",
+   "erro_comum": "bater demais e aquecer o manjericão, escurecendo"
+  },
+  {
+   "id": "ervas.molho-de-tomate-rapido",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Molho rápido de tomate (e coulis)",
+   "ingredientes": [
+    "alho",
+    "cebola",
+    "cenoura",
+    "tomate picado (fresco ou enlatado)",
+    "açúcar",
+    "sal e pimenta",
+    "azeite"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "panela",
+    "colher-de-pau",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "alho, cebola, cenoura",
+     "utensilio": "faca-do-chef",
+     "parametro": ""
+    },
+    {
+     "acao": "saltear",
+     "alvo": "aromáticos",
+     "utensilio": "panela",
+     "parametro": "fogo baixo 5 a 7 min"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "tomate + açúcar + sal + pimenta",
+     "utensilio": "panela",
+     "parametro": "até macio"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "molho",
+     "utensilio": "",
+     "parametro": "provar"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "molho (opcional)",
+     "utensilio": "peneira",
+     "parametro": "para textura de coulis"
+    }
+   ],
+   "ponto_critico": "refogado lento de 5 a 7 min sem dourar e tomate cozido até desmanchar",
+   "erro_comum": "fogo alto que queima o alho e amarga"
+  },
+  {
+   "id": "ervas.especiarias-mistas",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Especiarias mistas (mixed spice)",
+   "ingredientes": [
+    "semente de coentro (1 colher de sopa)",
+    "pimenta-da-jamaica (1 colher de chá)",
+    "cravo (1 colher de chá)",
+    "canela em pau",
+    "noz-moscada ralada (1 colher de sopa)",
+    "gengibre ralado (2 colheres de chá)"
+   ],
+   "utensilios": [
+    "moedor",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "moer",
+     "alvo": "coentro, pimenta-da-jamaica, cravo, canela",
+     "utensilio": "moedor",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "com noz-moscada e gengibre",
+     "utensilio": "tigelas",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "moagem fina e proporções corretas",
+   "erro_comum": "moer com antecedência e perder aroma"
+  },
+  {
+   "id": "ervas.pickling-spice",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Pickling spice",
+   "ingredientes": [
+    "gengibre ralado (2 colheres de sopa)",
+    "pimenta-do-reino em grão, mostarda, chili seco, pimenta-da-jamaica, endro, macis (1 colher de sopa cada)",
+    "canela em pau esmagada",
+    "louro esmagado (2)",
+    "cravo (1 colher de chá)"
+   ],
+   "utensilios": [
+    "pilao-almofariz",
+    "tigelas"
+   ],
+   "passos": [
+    {
+     "acao": "moer",
+     "alvo": "macis, canela e louro",
+     "utensilio": "pilao-almofariz",
+     "parametro": "esmagar grosseiramente"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "todas as especiarias",
+     "utensilio": "tigelas",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "especiarias esmagadas, não em pó",
+   "erro_comum": "moer fino e turvar o vinagre"
+  },
+  {
+   "id": "ervas.quatre-epices",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Quatre-épices",
+   "ingredientes": [
+    "pimenta-do-reino em grão (1 colher de sopa)",
+    "cravo (2 colheres de chá)",
+    "noz-moscada ralada (2 colheres de chá)",
+    "gengibre ralado (1 colher de chá)"
+   ],
+   "utensilios": [
+    "moedor"
+   ],
+   "passos": [
+    {
+     "acao": "moer",
+     "alvo": "pimenta e cravo",
+     "utensilio": "moedor",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "com noz-moscada e gengibre",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "variação com pimenta-da-jamaica e canela (opcional)",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "quatro especiarias em proporção",
+   "erro_comum": "excesso de cravo dominando"
+  },
+  {
+   "id": "ervas.moer-especiarias",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Moer especiarias no moedor",
+   "ingredientes": [
+    "especiarias em grão"
+   ],
+   "utensilios": [
+    "moedor"
+   ],
+   "passos": [
+    {
+     "acao": "moer",
+     "alvo": "grãos",
+     "utensilio": "moedor",
+     "parametro": "pulsar até pó fino"
+    }
+   ],
+   "ponto_critico": "pó fino e uniforme",
+   "erro_comum": "moer demais e aquecer o pó"
+  },
+  {
+   "id": "ervas.infusao-de-baunilha",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Infusão de fava de baunilha",
+   "ingredientes": [
+    "fava de baunilha",
+    "leite quente ou açúcar"
+   ],
+   "utensilios": [
+    "faquinha",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "fava ao meio no comprimento",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "infusionar",
+     "alvo": "fava no leite quente",
+     "utensilio": "panela",
+     "parametro": "30 min"
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "fava no pote de açúcar (alternativa)",
+     "utensilio": "pote",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "fava aberta no comprimento e 30 min de infusão",
+   "erro_comum": "usar a fava fechada e extrair pouco sabor"
+  },
+  {
+   "id": "ervas.raspar-sementes-baunilha",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Raspar sementes de baunilha",
+   "ingredientes": [
+    "fava de baunilha aberta"
+   ],
+   "utensilios": [
+    "faquinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "fava ao meio",
+     "utensilio": "faquinha",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "sementes",
+     "utensilio": "faquinha",
+     "parametro": "raspar com a ponta"
+    }
+   ],
+   "ponto_critico": "todas as sementes retiradas; sabor mais intenso que a fava",
+   "erro_comum": "desperdiçar sementes presas na fava"
+  },
+  {
+   "id": "ervas.guardar-ervas-frescas",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Guardar ervas frescas na geladeira",
+   "ingredientes": [
+    "ervas frescas",
+    "papel-toalha úmido"
+   ],
+   "utensilios": [
+    "saco-plastico"
+   ],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "ervas delicadas em papel-toalha levemente úmido",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "ervas",
+     "utensilio": "saco-plastico",
+     "parametro": "geladeira, 1 a 2 dias"
+    }
+   ],
+   "ponto_critico": "papel só úmido, não encharcado; uso em 1 a 2 dias",
+   "erro_comum": "ervas delicadas sem papel que escurecem"
+  },
+  {
+   "id": "ervas.secar-ervas",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Secar ervas penduradas",
+   "ingredientes": [
+    "ramos de ervas"
+   ],
+   "utensilios": [
+    "barbante",
+    "pote-hermetico"
+   ],
+   "passos": [
+    {
+     "acao": "amarrar",
+     "alvo": "ramos pelos cabos",
+     "utensilio": "barbante",
+     "parametro": ""
+    },
+    {
+     "acao": "descansar",
+     "alvo": "ramos pendurados de cabeça para baixo",
+     "utensilio": "",
+     "parametro": "local seco e ventilado até secar"
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "folhas secas",
+     "utensilio": "pote-hermetico",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "local seco e ventilado; ramos de cabeça para baixo",
+   "erro_comum": "local úmido que embolora as ervas"
+  },
+  {
+   "id": "ervas.congelar-ervas-em-cubos",
+   "capitulo": "Ervas, Temperos & Sabores do Oriente e Ocidente",
+   "nome": "Congelar ervas em cubos de gelo",
+   "ingredientes": [
+    "ervas novas colhidas de manhã",
+    "água gelada"
+   ],
+   "utensilios": [
+    "faca-do-chef",
+    "forma-de-gelo",
+    "saco-plastico"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "folhas dos talos",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "picar",
+     "alvo": "folhas",
+     "utensilio": "faca-do-chef",
+     "parametro": "louro, alecrim, sálvia e tomilho ficam inteiros com talo curto"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ervas picadas e água gelada",
+     "utensilio": "forma-de-gelo",
+     "parametro": ""
+    },
+    {
+     "acao": "congelar",
+     "alvo": "bandeja",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "cubos",
+     "utensilio": "saco-plastico",
+     "parametro": "freezer; usar direto em líquidos"
+    }
+   ],
+   "ponto_critico": "ervas colhidas antes da floração e congeladas cobertas de água",
+   "erro_comum": "picar ervas lenhosas e perder aroma"
+  }
+ ]
+}

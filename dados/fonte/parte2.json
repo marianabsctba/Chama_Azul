@@ -1,0 +1,5400 @@
+{
+ "acoes_novas": [
+  "quebrar",
+  "testar",
+  "empanar",
+  "desenformar",
+  "demolhar"
+ ],
+ "alimentos": [
+  {
+   "id": "salmao",
+   "nome": "Salmão",
+   "forma": "peixe roliço grande e alongado, dorso cinza-azulado, flancos prateados, carne laranja-rosada"
+  },
+  {
+   "id": "truta",
+   "nome": "Truta",
+   "forma": "peixe roliço médio, pele iridescente com pintas, faixa rosada lateral"
+  },
+  {
+   "id": "sardinha",
+   "nome": "Sardinha",
+   "forma": "peixe roliço pequeno e fino, prateado com dorso azul, cerca de 15 cm"
+  },
+  {
+   "id": "cavala",
+   "nome": "Cavala",
+   "forma": "peixe roliço fusiforme, dorso verde-azulado com listras onduladas escuras, barriga prateada"
+  },
+  {
+   "id": "arenque",
+   "nome": "Arenque",
+   "forma": "peixe roliço pequeno e esguio, prateado iridescente"
+  },
+  {
+   "id": "tainha",
+   "nome": "Tainha",
+   "forma": "peixe roliço cinza-prateado com listras longitudinais, cabeça achatada"
+  },
+  {
+   "id": "vermelho",
+   "nome": "Vermelho (caranho, cioba)",
+   "forma": "peixe roliço alto de lado, pele vermelho viva, olhos grandes"
+  },
+  {
+   "id": "perca",
+   "nome": "Perca",
+   "forma": "peixe roliço com faixas verticais escuras e barbatana dorsal espinhosa"
+  },
+  {
+   "id": "carpa",
+   "nome": "Carpa",
+   "forma": "peixe roliço robusto de escamas grandes douradas, boca com barbilhões"
+  },
+  {
+   "id": "bagre",
+   "nome": "Bagre",
+   "forma": "peixe roliço sem escamas, cabeça larga achatada, barbilhões longos"
+  },
+  {
+   "id": "bacalhau",
+   "nome": "Bacalhau fresco",
+   "forma": "peixe roliço grande, pele marrom-esverdeada pintada, barbilhão no queixo, linha lateral clara"
+  },
+  {
+   "id": "hadoque",
+   "nome": "Hadoque",
+   "forma": "peixe roliço parecido com o bacalhau, cinza com mancha escura atrás da guelra"
+  },
+  {
+   "id": "cacao",
+   "nome": "Cação",
+   "forma": "pequeno tubarão alongado de pele cinza áspera; vendido em postas redondas com cartilagem central"
+  },
+  {
+   "id": "enguia",
+   "nome": "Enguia",
+   "forma": "peixe serpentiforme longo, pele lisa escura"
+  },
+  {
+   "id": "merluza",
+   "nome": "Merluza (pescada)",
+   "forma": "peixe roliço alongado, prateado, boca grande"
+  },
+  {
+   "id": "peixe-anjo",
+   "nome": "Peixe-anjo (tamboril)",
+   "forma": "cabeça enorme achatada com boca larga; cauda grossa cônica de carne branca, pele marrom solta"
+  },
+  {
+   "id": "atum",
+   "nome": "Atum",
+   "forma": "peixe roliço grande e fusiforme, dorso azul-escuro, carne vermelho-escura; vendido em postas"
+  },
+  {
+   "id": "peixe-espada",
+   "nome": "Peixe-espada",
+   "forma": "corpo longo com bico em forma de espada; postas redondas de carne clara"
+  },
+  {
+   "id": "tubarao",
+   "nome": "Tubarão",
+   "forma": "corpo cinza fusiforme; vendido em postas"
+  },
+  {
+   "id": "mahi-mahi",
+   "nome": "Mahi mahi",
+   "forma": "peixe roliço de testa alta, verde-dourado vivo"
+  },
+  {
+   "id": "tilapia",
+   "nome": "Tilápia",
+   "forma": "peixe roliço alto de lado, cinza com faixas suaves, carne branca"
+  },
+  {
+   "id": "carpa-do-mar",
+   "nome": "Carpa do mar (dourada)",
+   "forma": "peixe roliço oval prateado com faixa dourada entre os olhos"
+  },
+  {
+   "id": "peixe-imperador",
+   "nome": "Peixe-imperador",
+   "forma": "peixe roliço avermelhado de corpo alto, muitas espinhas"
+  },
+  {
+   "id": "peixe-cabra",
+   "nome": "Peixe-cabra",
+   "forma": "peixe roliço avermelhado de cabeça óssea e barbatanas peitorais grandes"
+  },
+  {
+   "id": "linguado",
+   "nome": "Linguado",
+   "forma": "peixe chato oval e alongado, dois olhos do lado escuro marrom, lado de baixo branco"
+  },
+  {
+   "id": "linguado-gigante",
+   "nome": "Linguado gigante (halibute)",
+   "forma": "peixe chato muito grande, lado de cima marrom-esverdeado, de baixo branco"
+  },
+  {
+   "id": "rodovalho",
+   "nome": "Rodovalho",
+   "forma": "peixe chato quase redondo e largo, pele marrom com tubérculos, barriga branca"
+  },
+  {
+   "id": "cherne",
+   "nome": "Cherne",
+   "forma": "o livro trata como peixe chato oval de pele marrom-clara lisa, barriga branca"
+  },
+  {
+   "id": "garoupa",
+   "nome": "Garoupa",
+   "forma": "o livro lista entre os chatos; corpo largo de pele pintada"
+  },
+  {
+   "id": "peixe-galo",
+   "nome": "Peixe-galo (John Dory)",
+   "forma": "peixe muito comprimido e alto, cinza-oliva com mancha escura redonda no flanco, espinhos dorsais longos"
+  },
+  {
+   "id": "patenca",
+   "nome": "Patença (solha americana)",
+   "forma": "peixe chato oval pequeno, marrom com pintas, barriga branca"
+  },
+  {
+   "id": "arraia",
+   "nome": "Arraia",
+   "forma": "corpo em losango achatado; vendida em asas triangulares com cartilagem em raios"
+  },
+  {
+   "id": "ova-bacalhau",
+   "nome": "Ova de bacalhau defumada",
+   "forma": "bolsa alongada de membrana marrom-avermelhada cheia de ovas miúdas"
+  },
+  {
+   "id": "anchova",
+   "nome": "Anchova em conserva",
+   "forma": "filés finos marrom-avermelhados em lata ou vidro com óleo"
+  },
+  {
+   "id": "bacalhau-seco",
+   "nome": "Bacalhau salgado seco",
+   "forma": "peixe aberto em manta achatada, branco-amarelado e duro, coberto de sal"
+  },
+  {
+   "id": "salmao-defumado",
+   "nome": "Salmão defumado",
+   "forma": "lado inteiro de filé laranja brilhante, bordas mais escuras, fatias quase transparentes"
+  },
+  {
+   "id": "hadoque-defumado",
+   "nome": "Hadoque defumado",
+   "forma": "filé amarelo-dourado com pele"
+  },
+  {
+   "id": "lagosta",
+   "nome": "Lagosta",
+   "forma": "crustáceo de corpo segmentado e cauda em leque, duas garras grandes desiguais, antenas longas; azul-escura crua, laranja-avermelhada cozida, cruz marcada no dorso"
+  },
+  {
+   "id": "caranguejo",
+   "nome": "Caranguejo",
+   "forma": "carapaça oval larga, oito pernas e duas garras grandes, cauda dobrada sob o corpo; marrom cru, vermelho cozido"
+  },
+  {
+   "id": "lagostim",
+   "nome": "Lagostim",
+   "forma": "como lagosta pequena com garras finas, cauda segmentada"
+  },
+  {
+   "id": "camarao",
+   "nome": "Camarão",
+   "forma": "crustáceo curvo de casca segmentada translúcida cinza, rosa quando cozido, cauda em leque, antenas"
+  },
+  {
+   "id": "mexilhao",
+   "nome": "Mexilhão",
+   "forma": "concha alongada em gota azul-preta (ou verde na variedade da Nova Zelândia), barba fibrosa saindo da junta; carne laranja"
+  },
+  {
+   "id": "ameijoa",
+   "nome": "Amêijoa (marisco, vongole, quahog)",
+   "forma": "concha bivalve oval arredondada com estrias concêntricas, de pequena a grande"
+  },
+  {
+   "id": "ostra",
+   "nome": "Ostra",
+   "forma": "concha irregular rugosa e grossa, uma metade funda e outra chata; carne cinza-perolada"
+  },
+  {
+   "id": "vieira",
+   "nome": "Vieira",
+   "forma": "concha em leque com nervuras radiais, uma metade curva e outra plana; músculo branco cilíndrico com coral laranja em meia-lua"
+  },
+  {
+   "id": "buzio",
+   "nome": "Búzio",
+   "forma": "caracol marinho de concha espiral cônica"
+  },
+  {
+   "id": "lula",
+   "nome": "Lula",
+   "forma": "corpo em tubo (bolsa) branco com pele arroxeada e duas nadadeiras triangulares, cabeça com olhos grandes e oito braços mais dois tentáculos, pena transparente interna, saco de tinta"
+  },
+  {
+   "id": "alga-nori",
+   "nome": "Alga nori",
+   "forma": "folha retangular fina verde-escura quase preta, cerca de 20 x 18 cm"
+  },
+  {
+   "id": "wasabi",
+   "nome": "Wasabi",
+   "forma": "pasta verde clara"
+  },
+  {
+   "id": "kumquat",
+   "nome": "Kumquat",
+   "forma": "cítrico laranja oval do tamanho de uma azeitona grande"
+  },
+  {
+   "id": "mooli",
+   "nome": "Mooli (rabanete branco)",
+   "forma": "raiz branca longa e cilíndrica"
+  },
+  {
+   "id": "gengibre-conserva",
+   "nome": "Gengibre em conserva",
+   "forma": "fatias finas rosadas translúcidas"
+  },
+  {
+   "id": "folha-uva",
+   "nome": "Folha de uva",
+   "forma": "folha verde palmada de cinco lobos"
+  },
+  {
+   "id": "folha-bananeira",
+   "nome": "Folha de bananeira",
+   "forma": "folha verde larga e lisa, nervura central"
+  },
+  {
+   "id": "court-bouillon",
+   "nome": "Court bouillon",
+   "forma": "caldo claro com legumes e ervas boiando"
+  }
+ ],
+ "utensilios": [
+  {
+   "id": "tesoura-cozinha",
+   "nome": "Tesoura de cozinha",
+   "forma": "tesoura robusta de lâminas curtas e cabo grande"
+  },
+  {
+   "id": "faca-cozinha",
+   "nome": "Faca de cozinha grande (chef)",
+   "forma": "lâmina larga triangular de 20 a 25 cm"
+  },
+  {
+   "id": "escamador",
+   "nome": "Escamador",
+   "forma": "cabo com placa de dentes curtos serrilhados"
+  },
+  {
+   "id": "faca-file",
+   "nome": "Faca de filé",
+   "forma": "lâmina fina, longa e flexível de ponta aguda"
+  },
+  {
+   "id": "faca-pequena",
+   "nome": "Faca pequena",
+   "forma": "faca de legumes de lâmina curta"
+  },
+  {
+   "id": "pinca-espinhas",
+   "nome": "Pinça de espinhas",
+   "forma": "pinça metálica de pontas largas e retas"
+  },
+  {
+   "id": "colher-sopa",
+   "nome": "Colher de sopa",
+   "forma": "colher comum de metal"
+  },
+  {
+   "id": "papel-toalha",
+   "nome": "Papel-toalha",
+   "forma": "rolo de papel absorvente"
+  },
+  {
+   "id": "toalha-pequena",
+   "nome": "Toalha pequena",
+   "forma": "pano de prato dobrado"
+  },
+  {
+   "id": "tabua",
+   "nome": "Tábua de corte",
+   "forma": "placa retangular de madeira ou polietileno"
+  },
+  {
+   "id": "cutelo",
+   "nome": "Cutelo",
+   "forma": "faca retangular pesada de lâmina larga"
+  },
+  {
+   "id": "papel-manteiga",
+   "nome": "Papel-manteiga",
+   "forma": "folha de papel claro semitranslúcido"
+  },
+  {
+   "id": "palito",
+   "nome": "Palito",
+   "forma": "palito de madeira fino; versão de coquetel e versão longa"
+  },
+  {
+   "id": "wok",
+   "nome": "Wok de duas alças",
+   "forma": "panela funda de fundo arredondado e laterais inclinadas, duas alças laterais"
+  },
+  {
+   "id": "espatula",
+   "nome": "Espátula",
+   "forma": "pá metálica larga e fina com cabo"
+  },
+  {
+   "id": "processador",
+   "nome": "Processador de alimentos",
+   "forma": "base motorizada com copo e lâmina de metal"
+  },
+  {
+   "id": "pilao",
+   "nome": "Pilão",
+   "forma": "tigela pesada com socador"
+  },
+  {
+   "id": "faca-salmao",
+   "nome": "Faca para salmão defumado",
+   "forma": "lâmina muito longa, fina e flexível, reta ou com alvéolos, ponta arredondada"
+  },
+  {
+   "id": "travessa-vidro",
+   "nome": "Travessa rasa de vidro",
+   "forma": "travessa retangular transparente"
+  },
+  {
+   "id": "peso-prensa",
+   "nome": "Papelão forrado de alumínio com peso",
+   "forma": "placa coberta de alumínio com latas por cima"
+  },
+  {
+   "id": "esteira-bambu",
+   "nome": "Esteira de bambu (makisu)",
+   "forma": "esteira quadrada de varetas finas de bambu amarradas com fio"
+  },
+  {
+   "id": "pinca",
+   "nome": "Pinça de cozinha",
+   "forma": "pegador metálico de duas hastes"
+  },
+  {
+   "id": "panela-peixe",
+   "nome": "Panela para peixe (peixeira)",
+   "forma": "panela longa e oval estreita com tampa e grade furada removível com alças"
+  },
+  {
+   "id": "papel-aluminio",
+   "nome": "Papel-alumínio",
+   "forma": "folha metálica prateada"
+  },
+  {
+   "id": "assadeira",
+   "nome": "Assadeira",
+   "forma": "forma retangular rasa de metal"
+  },
+  {
+   "id": "microondas",
+   "nome": "Forno micro-ondas",
+   "forma": "caixa com porta de vidro e prato giratório"
+  },
+  {
+   "id": "panela-vapor",
+   "nome": "Panela a vapor com cesta furada",
+   "forma": "panela com cesto perfurado encaixado acima do líquido e tampa"
+  },
+  {
+   "id": "cesta-bambu",
+   "nome": "Cesta de bambu para vapor",
+   "forma": "cesto redondo de bambu com tampa trançada, encaixa na wok"
+  },
+  {
+   "id": "grelha",
+   "nome": "Grelha",
+   "forma": "grade de barras paralelas sobre o fogo"
+  },
+  {
+   "id": "suporte-peixe",
+   "nome": "Suporte para peixe",
+   "forma": "grade dupla com dobradiça e cabo longo, em formato de peixe ou quadrado"
+  },
+  {
+   "id": "pincel",
+   "nome": "Pincel de cozinha",
+   "forma": "pincel de cerdas ou silicone"
+  },
+  {
+   "id": "churrasqueira",
+   "nome": "Churrasqueira",
+   "forma": "caixa de carvão com grelha"
+  },
+  {
+   "id": "panela-pesada",
+   "nome": "Panela pesada",
+   "forma": "panela grossa de ferro"
+  },
+  {
+   "id": "martelo-pequeno",
+   "nome": "Martelo pequeno",
+   "forma": "martelinho de cozinha"
+  },
+  {
+   "id": "escova",
+   "nome": "Escova",
+   "forma": "escova de cerdas"
+  },
+  {
+   "id": "escova-dura",
+   "nome": "Escova dura",
+   "forma": "escova de cerdas rígidas para conchas"
+  },
+  {
+   "id": "frigideira",
+   "nome": "Frigideira",
+   "forma": "frigideira rasa de cabo longo"
+  },
+  {
+   "id": "frigideira-antiaderente",
+   "nome": "Frigideira antiaderente",
+   "forma": "frigideira de revestimento escuro"
+  },
+  {
+   "id": "termometro-fritura",
+   "nome": "Termômetro para frituras",
+   "forma": "haste longa com mostrador e gancho para prender na borda da panela"
+  },
+  {
+   "id": "cesta-fritura",
+   "nome": "Cesta para fritura",
+   "forma": "cesto de tela metálica com cabo"
+  },
+  {
+   "id": "escumadeira",
+   "nome": "Escumadeira",
+   "forma": "disco furado raso de cabo longo"
+  },
+  {
+   "id": "saco-plastico",
+   "nome": "Saco plástico",
+   "forma": "saco para sacudir com farinha"
+  },
+  {
+   "id": "peneira",
+   "nome": "Peneira",
+   "forma": "tela fina de metal com aro e cabo"
+  },
+  {
+   "id": "espatula-borracha",
+   "nome": "Espátula de borracha",
+   "forma": "pá flexível de borracha"
+  },
+  {
+   "id": "tigela-gelo",
+   "nome": "Tigela sobre gelo",
+   "forma": "tigela dentro de outra maior com água e gelo"
+  },
+  {
+   "id": "forminhas-timbale",
+   "nome": "Forminhas de timbale",
+   "forma": "forminhas altas e redondas de metal"
+  },
+  {
+   "id": "terrina",
+   "nome": "Terrina",
+   "forma": "forma retangular funda de 1,5 l com tampa"
+  },
+  {
+   "id": "saco-confeitar",
+   "nome": "Saco de confeitar",
+   "forma": "saco cônico com bico"
+  },
+  {
+   "id": "quebrador-lagosta",
+   "nome": "Quebrador de lagosta",
+   "forma": "alicate articulado tipo quebra-nozes reforçado, serrilhado por dentro, às vezes com dente na ponta"
+  },
+  {
+   "id": "pinca-lagosta",
+   "nome": "Garfo ou pinça para lagosta",
+   "forma": "haste fina longa com ponta em gancho ou dentes"
+  },
+  {
+   "id": "agulha-lardear",
+   "nome": "Espeto ou agulha de lardear",
+   "forma": "haste metálica longa e fina"
+  },
+  {
+   "id": "barbante",
+   "nome": "Barbante",
+   "forma": "rolo de fio de algodão"
+  },
+  {
+   "id": "abridor-ostras",
+   "nome": "Abridor de ostras",
+   "forma": "faca curta e grossa, lâmina pontuda de lados cônicos, guarda metálica junto ao cabo"
+  },
+  {
+   "id": "pano",
+   "nome": "Pano",
+   "forma": "pano de prato grosso"
+  },
+  {
+   "id": "faca-canelle",
+   "nome": "Faca canelle",
+   "forma": "faca pequena com dente em V que tira tiras de casca"
+  },
+  {
+   "id": "espetinho",
+   "nome": "Espetinho",
+   "forma": "espeto fino de madeira"
+  },
+  {
+   "id": "musselina",
+   "nome": "Musselina",
+   "forma": "tecido fino de algodão"
+  },
+  {
+   "id": "agulha-grossa",
+   "nome": "Agulha grossa",
+   "forma": "agulha de costura de buraco grande"
+  },
+  {
+   "id": "bico-rechear",
+   "nome": "Bico de rechear",
+   "forma": "saco com bico largo liso"
+  },
+  {
+   "id": "panela-funda",
+   "nome": "Panela funda",
+   "forma": "panela alta com tampa"
+  },
+  {
+   "id": "garfo",
+   "nome": "Garfo",
+   "forma": "garfo comum"
+  },
+  {
+   "id": "forminhas",
+   "nome": "Forminhas",
+   "forma": "tigelinhas pequenas"
+  },
+  {
+   "id": "borrifador",
+   "nome": "Borrifador",
+   "forma": "frasco com gatilho de spray"
+  },
+  {
+   "id": "cortador",
+   "nome": "Cortadores",
+   "forma": "moldes de metal com bordas afiadas"
+  }
+ ],
+ "tecnicas": [
+  {
+   "id": "peixes.avaliar-frescor-inteiro",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Avaliar frescor de peixe inteiro",
+   "ingredientes": [
+    "peixe inteiro"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "olhos",
+     "utensilio": "",
+     "parametro": "precisam estar cheios, úmidos, brilhantes e saltados"
+    },
+    {
+     "acao": "testar",
+     "alvo": "guelras",
+     "utensilio": "",
+     "parametro": "vermelho vivo e limpas, sem cinza nem limo"
+    },
+    {
+     "acao": "testar",
+     "alvo": "corpo",
+     "utensilio": "dedos",
+     "parametro": "firme e rígido, sem ceder nem ter caroços"
+    },
+    {
+     "acao": "testar",
+     "alvo": "pele e cores",
+     "utensilio": "",
+     "parametro": "brilhante e úmida, cores naturais vivas (truta, arenque e cavala iridescentes; salmão prateado; tainha e vermelho com vermelho vivo)"
+    },
+    {
+     "acao": "testar",
+     "alvo": "cheiro",
+     "utensilio": "",
+     "parametro": "água doce: cheiro limpo; água salgada: cheiro de mar"
+    }
+   ],
+   "ponto_critico": "Olho saltado e brilhante, guelra vermelha, carne que volta ao ser pressionada",
+   "erro_comum": "Aceitar peixe de olho fundo e opaco ou guelra acinzentada"
+  },
+  {
+   "id": "peixes.avaliar-file-posta",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Avaliar frescor de filés e postas",
+   "ingredientes": [
+    "filé ou posta de peixe"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "cheiro",
+     "utensilio": "",
+     "parametro": "fresco ou de mar, nunca forte"
+    },
+    {
+     "acao": "testar",
+     "alvo": "textura",
+     "utensilio": "dedos",
+     "parametro": "úmida, firme e elástica, nunca ressecada"
+    },
+    {
+     "acao": "separar",
+     "alvo": "escolha do corte",
+     "utensilio": "",
+     "parametro": "de preferência pedir que cortem do peixe inteiro na hora ou cortar em casa"
+    }
+   ],
+   "ponto_critico": "Superfície úmida e carne elástica",
+   "erro_comum": "Comprar corte já pronto e ressecado"
+  },
+  {
+   "id": "peixes.conservar",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Guardar peixes e frutos do mar até o preparo",
+   "ingredientes": [
+    "peixe ou fruto do mar fresco"
+   ],
+   "utensilios": [
+    "pano úmido",
+    "geladeira"
+   ],
+   "passos": [
+    {
+     "acao": "eviscerar",
+     "alvo": "peixe inteiro",
+     "utensilio": "",
+     "parametro": "tirar as vísceras prolonga a conservação"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "peixe",
+     "utensilio": "pano úmido",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "peixe embrulhado",
+     "utensilio": "geladeira",
+     "parametro": "parte mais fria, no máximo uma noite"
+    }
+   ],
+   "ponto_critico": "Cozinhar no mesmo dia da compra; peixes oleosos (cavala, arenque, salmão) estragam mais rápido",
+   "erro_comum": "Deixar peixe oleoso dias na geladeira, o óleo fica rançoso"
+  },
+  {
+   "id": "frutos.avaliar-frescor",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Avaliar frescor de frutos do mar",
+   "ingredientes": [
+    "lagosta",
+    "caranguejo",
+    "mexilhão",
+    "amêijoa",
+    "vieira",
+    "ostra",
+    "camarão",
+    "lula",
+    "búzio"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "pesar",
+     "alvo": "lagosta ou caranguejo",
+     "utensilio": "mão",
+     "parametro": "vivo: ativo e pesado para o tamanho; morto: casca inteira, garras intactas, cauda da lagosta dobrada para baixo"
+    },
+    {
+     "acao": "testar",
+     "alvo": "mexilhões e amêijoas",
+     "utensilio": "",
+     "parametro": "bater na casca: os abertos que não fecham vão fora; descartar rachados ou com crosta e lodo demais"
+    },
+    {
+     "acao": "testar",
+     "alvo": "ostra",
+     "utensilio": "",
+     "parametro": "casca perfeita e fechada, som de coisa maciça ao bater"
+    },
+    {
+     "acao": "testar",
+     "alvo": "vieira",
+     "utensilio": "",
+     "parametro": "cheiro adocicado, carne levemente cinza e translúcida, coral rosado; cheiro de enxofre reprova"
+    },
+    {
+     "acao": "testar",
+     "alvo": "camarão",
+     "utensilio": "",
+     "parametro": "firme; cozido rosa vivo; cru com casca cinza brilhante; manchas pretas ou cheiro de cloro reprovam"
+    },
+    {
+     "acao": "testar",
+     "alvo": "lula",
+     "utensilio": "",
+     "parametro": "olhos claros, carne branca e úmida"
+    },
+    {
+     "acao": "testar",
+     "alvo": "búzio",
+     "utensilio": "",
+     "parametro": "cheiro adocicado e se mexe na concha quando tocado"
+    }
+   ],
+   "ponto_critico": "Peso alto para o tamanho e moluscos que fecham ao toque",
+   "erro_comum": "Levar mexilhão aberto que não reage ou camarão com manchas pretas"
+  },
+  {
+   "id": "peixes.escolher-metodo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Escolher o método de cocção pelo tipo de peixe",
+   "ingredientes": [
+    "peixe roliço",
+    "peixe chato"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "peixes roliços",
+     "utensilio": "",
+     "parametro": "carne firme e sabor forte, aceitam ingredientes fortes"
+    },
+    {
+     "acao": "separar",
+     "alvo": "peixes chatos",
+     "utensilio": "",
+     "parametro": "carne fina e sabor leve, cocção rápida e poucos ingredientes, refogar realça"
+    },
+    {
+     "acao": "medir",
+     "alvo": "substituição",
+     "utensilio": "",
+     "parametro": "trocar só por peixe de estrutura, textura e sabor parecidos"
+    }
+   ],
+   "ponto_critico": "Cozinhar só até a proteína firmar e a carne ficar opaca",
+   "erro_comum": "Cozinhar demais e deixar o peixe duro e seco"
+  },
+  {
+   "id": "frutos.manter-vivos",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Manter moluscos vivos em salmoura",
+   "ingredientes": [
+    "moluscos ou mexilhões vivos",
+    "sal",
+    "água"
+   ],
+   "utensilios": [
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "salmoura",
+     "utensilio": "colher de sopa",
+     "parametro": "4 colheres (sopa) de sal por litro de água"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "moluscos na salmoura",
+     "utensilio": "tigela",
+     "parametro": "até a hora de cozinhar"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "moluscos",
+     "utensilio": "",
+     "parametro": "só pouco antes de cozinhar"
+    }
+   ],
+   "ponto_critico": "Água salgada, nunca água doce pura",
+   "erro_comum": "Usar água doce, que mata os moluscos, ou limpar horas antes"
+  },
+  {
+   "id": "peixes.tirar-limo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar o limo de peixe escorregadio (Truque do Chef)",
+   "ingredientes": [
+    "peixe inteiro",
+    "vinagre",
+    "água"
+   ],
+   "utensilios": [
+    "recipiente grande",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "solução",
+     "utensilio": "",
+     "parametro": "1 colher (sopa) de vinagre por litro de água"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "peixe mergulhado",
+     "utensilio": "recipiente",
+     "parametro": "esfregar as laterais com os dedos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "peixe",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": "secar"
+    }
+   ],
+   "ponto_critico": "Peixe deixa de escorregar na mão",
+   "erro_comum": "Achar que limo é sinal de peixe ruim; é natural"
+  },
+  {
+   "id": "peixes.escamar-rolico",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cortar barbatanas e escamar peixe roliço",
+   "ingredientes": [
+    "peixe roliço inteiro (salmão)"
+   ],
+   "utensilios": [
+    "tesoura de cozinha",
+    "faca de cozinha grande",
+    "escamador"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "barbatanas da barriga: peitoral, pélvica e anal",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "da cabeça ao rabo"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "barbatanas dorsais",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "virar o peixe"
+    },
+    {
+     "acao": "escamar",
+     "alvo": "corpo, do rabo para a cabeça",
+     "utensilio": "dorso da faca ou escamador",
+     "parametro": "segurar firme pelo rabo, trabalhar na pia"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "",
+     "parametro": "lavar bem"
+    }
+   ],
+   "ponto_critico": "Nenhuma escama ao passar o dedo contra o sentido delas",
+   "erro_comum": "Escamar da cabeça para o rabo ou deixar barbatanas espinhosas que ferem as mãos"
+  },
+  {
+   "id": "peixes.vandyking",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cortar o rabo em V (vandyking)",
+   "ingredientes": [
+    "peixe roliço inteiro"
+   ],
+   "utensilios": [
+    "tesoura de cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "rabo em forma de V",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "para servir o peixe inteiro"
+    }
+   ],
+   "ponto_critico": "V simétrico e limpo",
+   "erro_comum": "Cortar torto e perder o efeito decorativo"
+  },
+  {
+   "id": "peixes.eviscerar-guelras",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Eviscerar peixe roliço pelas guelras",
+   "ingredientes": [
+    "peixe roliço inteiro"
+   ],
+   "utensilios": [
+    "tesoura de cozinha",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "guelras, atrás da cabeça",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "levantar a borda e descartar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "pequena abertura embaixo da barriga",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "soltar os órgãos por dentro com a ponta da tesoura ou dedos"
+    },
+    {
+     "acao": "eviscerar",
+     "alvo": "vísceras, puxando pela abertura das guelras",
+     "utensilio": "dedos",
+     "parametro": "conferir pela barriga se nada ficou"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "cavidade",
+     "utensilio": "torneira",
+     "parametro": "água correndo das guelras ao rabo até sair clara"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": "secar"
+    }
+   ],
+   "ponto_critico": "Água saindo limpa pelo rabo; forma do peixe preservada",
+   "erro_comum": "Abrir a barriga inteira e deformar o peixe que vai à mesa com cabeça"
+  },
+  {
+   "id": "peixes.sulcos-ervas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Fazer sulcos e rechear com ervas",
+   "ingredientes": [
+    "peixe inteiro",
+    "ervas",
+    "alho",
+    "gengibre",
+    "cebolinha",
+    "erva-cidreira"
+   ],
+   "utensilios": [
+    "faca de cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "2 a 3 talhos em um lado, até a espinha",
+     "utensilio": "faca de cozinha",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "talhos do outro lado",
+     "utensilio": "faca de cozinha",
+     "parametro": "virar e repetir"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "sulcos com ervas e temperos",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Talhos chegando até a espinha, espaçados por igual",
+   "erro_comum": "Talho raso que não deixa o sabor entrar"
+  },
+  {
+   "id": "peixes.eviscerar-barriga",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Eviscerar peixe roliço pela barriga",
+   "ingredientes": [
+    "peixe roliço inteiro"
+   ],
+   "utensilios": [
+    "tesoura de cozinha",
+    "faca",
+    "colher de sopa",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "guelras",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "barriga de ponta a ponta",
+     "utensilio": "faca",
+     "parametro": "parar logo abaixo das vísceras"
+    },
+    {
+     "acao": "eviscerar",
+     "alvo": "vísceras",
+     "utensilio": "mão",
+     "parametro": "não servem para caldo"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "vasos de sangue dos dois lados da cavidade",
+     "utensilio": "colher de sopa",
+     "parametro": "raspando por dentro"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "água fria corrente e papel-toalha",
+     "parametro": "lavar e secar"
+    }
+   ],
+   "ponto_critico": "Cavidade sem sangue",
+   "erro_comum": "Deixar vasos de sangue que amargam e mancham a carne"
+  },
+  {
+   "id": "peixes.desossar-pequeno-dedos",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a espinha de peixe roliço pequeno com os dedos",
+   "ingredientes": [
+    "sardinha"
+   ],
+   "utensilios": [
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "cabeça logo atrás das guelras",
+     "utensilio": "dedos",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "barriga",
+     "utensilio": "dedo indicador",
+     "parametro": "deslizar da abertura até a barriga"
+    },
+    {
+     "acao": "eviscerar",
+     "alvo": "vísceras",
+     "utensilio": "dedos",
+     "parametro": "da cabeça ao rabo"
+    },
+    {
+     "acao": "desossar",
+     "alvo": "espinha dorsal",
+     "utensilio": "dedos",
+     "parametro": "da cabeça ao rabo, quebrar na ponta do rabo"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": "lavar e secar"
+    }
+   ],
+   "ponto_critico": "Espinha sai inteira sem rasgar a carne",
+   "erro_comum": "Usar faca em peixe tão frágil e despedaçar"
+  },
+  {
+   "id": "peixes.desossar-barriga",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a espinha dorsal pela barriga",
+   "ingredientes": [
+    "salmão eviscerado pela barriga"
+   ],
+   "utensilios": [
+    "faca de filé",
+    "tesoura de cozinha",
+    "pinça de espinhas",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "entre costelas e carne de um lado da espinha",
+     "utensilio": "faca de filé",
+     "parametro": "movimentos para cima"
+    },
+    {
+     "acao": "separar",
+     "alvo": "espinhas próximas à coluna",
+     "utensilio": "faca de filé",
+     "parametro": "deslizar a lâmina; repetir do outro lado"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "espinha dorsal nas pontas",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "descartar com as espinhas"
+    },
+    {
+     "acao": "separar",
+     "alvo": "espinhas finas",
+     "utensilio": "pinça de espinhas",
+     "parametro": "passar os dedos da cabeça ao rabo procurando restos"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Cavidade aberta pronta para recheio e nenhuma espinha ao tato",
+   "erro_comum": "Esquecer as espinhas finas"
+  },
+  {
+   "id": "peixes.tirar-espinhas-finas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Retirar espinhas finas com pinça",
+   "ingredientes": [
+    "filé ou peixe aberto"
+   ],
+   "utensilios": [
+    "pinça de espinhas"
+   ],
+   "passos": [
+    {
+     "acao": "testar",
+     "alvo": "carne",
+     "utensilio": "ponta dos dedos",
+     "parametro": "da cabeça ao rabo, dos dois lados"
+    },
+    {
+     "acao": "separar",
+     "alvo": "cada espinha",
+     "utensilio": "pinça de espinhas",
+     "parametro": "puxar no sentido da espinha"
+    }
+   ],
+   "ponto_critico": "Dedos passam sem encontrar ponta",
+   "erro_comum": "Puxar contra o sentido e rasgar a carne"
+  },
+  {
+   "id": "peixes.desossar-costas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a espinha dorsal pelas costas",
+   "ingredientes": [
+    "truta eviscerada pelas guelras"
+   ],
+   "utensilios": [
+    "tesoura de cozinha",
+    "faca de cozinha",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "dos dois lados da espinha, pelas costas",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "do rabo para a cabeça"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "espinha nas pontas da cabeça e do rabo",
+     "utensilio": "faca de cozinha",
+     "parametro": ""
+    },
+    {
+     "acao": "desossar",
+     "alvo": "espinha dorsal",
+     "utensilio": "mão",
+     "parametro": "levantar e descartar"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Barriga continua intacta",
+   "erro_comum": "Furar a barriga ao cortar pelas costas"
+  },
+  {
+   "id": "peixes.desossar-peixe-anjo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pelar e tirar a espinha do peixe-anjo",
+   "ingredientes": [
+    "peixe-anjo (tamboril) com espinha"
+   ],
+   "utensilios": [
+    "faca de filé"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "pele",
+     "utensilio": "mão",
+     "parametro": "segurar firme e puxar para trás em direção ao rabo"
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne dos dois lados da espinha central",
+     "utensilio": "faca de filé",
+     "parametro": "o texto da página só mostra o primeiro passo; restante pela foto"
+    }
+   ],
+   "ponto_critico": "Pele sai inteira",
+   "erro_comum": "Deixar a membrana que encolhe e endurece ao cozinhar"
+  },
+  {
+   "id": "peixes.files-rolico",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar filés de peixe roliço",
+   "ingredientes": [
+    "salmão eviscerado e limpo"
+   ],
+   "utensilios": [
+    "faca de filé",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "contorno atrás da cabeça",
+     "utensilio": "faca de filé",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "ao longo das costas, da cabeça ao rabo",
+     "utensilio": "faca de filé",
+     "parametro": "faca deitada, usar costelas como guia, movimentos longos"
+    },
+    {
+     "acao": "separar",
+     "alvo": "primeiro filé das espinhas laterais",
+     "utensilio": "faca de filé",
+     "parametro": "segurar a carne solta com a outra mão"
+    },
+    {
+     "acao": "separar",
+     "alvo": "segundo filé",
+     "utensilio": "faca de filé",
+     "parametro": "virar o peixe e repetir"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "membrana escura sob cada filé",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "cabeça e carcaça",
+     "utensilio": "",
+     "parametro": "guardar para caldo, sem guelras"
+    }
+   ],
+   "ponto_critico": "Mínimo de carne presa na espinha",
+   "erro_comum": "Cortes curtos e serrilhados que estragam o filé"
+  },
+  {
+   "id": "peixes.escamar-chato",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Escamar peixe chato",
+   "ingredientes": [
+    "peixe chato inteiro"
+   ],
+   "utensilios": [
+    "faca de cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "escamar",
+     "alvo": "lado escuro, do rabo para a cabeça",
+     "utensilio": "dorso da faca",
+     "parametro": "segurar o rabo, trabalhar na pia"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "pele",
+     "utensilio": "mãos sob água fria",
+     "parametro": "esfregar para soltar o resto das escamas"
+    }
+   ],
+   "ponto_critico": "Pele lisa, sem escama solta",
+   "erro_comum": "Usar o fio da faca e cortar a pele"
+  },
+  {
+   "id": "peixes.pelar-chato-inteiro",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a pele de peixe chato inteiro",
+   "ingredientes": [
+    "linguado inteiro"
+   ],
+   "utensilios": [
+    "faca",
+    "toalha pequena"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "pele escura junto ao rabo",
+     "utensilio": "faca",
+     "parametro": "soltar uma ponta"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele escura do rabo à cabeça",
+     "utensilio": "toalha pequena",
+     "parametro": "puxar de uma vez"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "contorno da cabeça no lado claro",
+     "utensilio": "faca",
+     "parametro": "só se for tirar filés"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele branca",
+     "utensilio": "dedos e toalha",
+     "parametro": "soltar pelas bordas e puxar a partir do rabo"
+    }
+   ],
+   "ponto_critico": "Peixe inteiro: só a pele escura sai, a branca fica para segurar a forma",
+   "erro_comum": "Tirar a pele branca de peixe que vai inteiro e ele desmancha"
+  },
+  {
+   "id": "peixes.files-chato",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar quatro filés de peixe chato",
+   "ingredientes": [
+    "rodovalho limpo e escamado"
+   ],
+   "utensilios": [
+    "faca de filé",
+    "tábua"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "contorno onde a carne encontra as barbatanas",
+     "utensilio": "faca de filé",
+     "parametro": "lado escuro para cima"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "linha central da cabeça ao rabo",
+     "utensilio": "faca de filé",
+     "parametro": "até o osso"
+    },
+    {
+     "acao": "separar",
+     "alvo": "primeiro filé, do centro para fora",
+     "utensilio": "faca de filé",
+     "parametro": "movimentos longos e amplos"
+    },
+    {
+     "acao": "separar",
+     "alvo": "segundo filé",
+     "utensilio": "faca de filé",
+     "parametro": "mesmo lado"
+    },
+    {
+     "acao": "separar",
+     "alvo": "terceiro e quarto filés",
+     "utensilio": "faca de filé",
+     "parametro": "virar e repetir contorno e corte central"
+    }
+   ],
+   "ponto_critico": "Rende 2 a 4 filés conforme o tamanho, espinha limpa",
+   "erro_comum": "Começar da borda em vez do centro e rasgar o filé"
+  },
+  {
+   "id": "peixes.pelar-file",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a pele de um filé",
+   "ingredientes": [
+    "filé de peixe com pele",
+    "sal"
+   ],
+   "utensilios": [
+    "faca de filé",
+    "tábua"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "carne na ponta do rabo até a pele",
+     "utensilio": "faca de filé",
+     "parametro": "pele para baixo"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "dedos",
+     "utensilio": "sal",
+     "parametro": "para segurar a pele sem escorregar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne da pele",
+     "utensilio": "faca de filé",
+     "parametro": "faca inclinada, movimentos de vaivém, afastando de você"
+    }
+   ],
+   "ponto_critico": "Pele sai limpa sem carne grudada",
+   "erro_comum": "Faca reta demais, que corta a pele, ou alta demais, que deixa carne nela"
+  },
+  {
+   "id": "peixes.file-paupiette-corte",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cortar filé de linguado ao meio no comprido",
+   "ingredientes": [
+    "filé de linguado"
+   ],
+   "utensilios": [
+    "faca de filé"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "filé pela linha central no comprido",
+     "utensilio": "faca de filé",
+     "parametro": "tiras para rolinhos"
+    }
+   ],
+   "ponto_critico": "Duas tiras de largura igual",
+   "erro_comum": "Tiras desiguais que cozinham diferente"
+  },
+  {
+   "id": "peixes.sichuan-wok",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Fritar peixe inteiro na wok e refogar no molho (Peixe Sichuan)",
+   "ingredientes": [
+    "peixe inteiro de cerca de 1 kg",
+    "sal",
+    "óleo de amendoim",
+    "alho",
+    "gengibre",
+    "vinho de arroz",
+    "pasta de pimenta",
+    "molho de soja",
+    "caldo de peixe",
+    "maisena",
+    "cebolinha",
+    "chili",
+    "açúcar",
+    "óleo de gergelim",
+    "coentro"
+   ],
+   "utensilios": [
+    "wok de duas alças",
+    "duas espátulas",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "três talhos diagonais de cada lado",
+     "utensilio": "faca",
+     "parametro": "espaços iguais"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "peixe",
+     "utensilio": "",
+     "parametro": "sal dos dois lados"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "óleo na wok",
+     "utensilio": "wok",
+     "parametro": "despejar pelas laterais até quase fumegar, por volta de 190 °C"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "peixe",
+     "utensilio": "duas espátulas",
+     "parametro": "cerca de 4 minutos, virar uma vez"
+    },
+    {
+     "acao": "coar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": "deixar só 1 colher (sopa) de óleo na wok"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "alho e gengibre",
+     "utensilio": "wok",
+     "parametro": "rápido"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "vinho, pasta de pimenta, soja, caldo e maisena diluída",
+     "utensilio": "wok",
+     "parametro": "ferver"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "peixe no molho",
+     "utensilio": "wok",
+     "parametro": "cerca de 5 minutos regando"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "molho com cebolinha, chili, açúcar e gergelim",
+     "utensilio": "wok",
+     "parametro": "peixe fora"
+    },
+    {
+     "acao": "servir",
+     "alvo": "peixe com molho",
+     "utensilio": "",
+     "parametro": "decorar com coentro"
+    }
+   ],
+   "ponto_critico": "Óleo por volta de 190 °C; peixe dourado dos dois lados",
+   "erro_comum": "Virar com uma espátula só e quebrar o peixe"
+  },
+  {
+   "id": "peixes.pasta-chili",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pasta de pimenta caseira",
+   "ingredientes": [
+    "pimenta vermelha seca",
+    "pasta de pimentão"
+   ],
+   "utensilios": [
+    "processador ou pilão"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "pimenta seca",
+     "utensilio": "processador ou pilão",
+     "parametro": "amassar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "pimenta com pasta de pimentão",
+     "utensilio": "",
+     "parametro": "1 parte de pimenta para 2 de pasta"
+    }
+   ],
+   "ponto_critico": "Proporção 1:2 dá picância moderada",
+   "erro_comum": "Usar a mesma medida de pastas compradas de forças diferentes"
+  },
+  {
+   "id": "peixes.escalopes",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cortar escalopes de filé",
+   "ingredientes": [
+    "filé de salmão"
+   ],
+   "utensilios": [
+    "faca afiada",
+    "papel-manteiga",
+    "cutelo"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "espinhas",
+     "utensilio": "pinça de espinhas",
+     "parametro": "antes de cortar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "fatias da ponta do rabo para a cabeça",
+     "utensilio": "faca afiada",
+     "parametro": "faca quase deitada, rabo voltado para você, 1 cm"
+    },
+    {
+     "acao": "amaciar",
+     "alvo": "escalopes entre papéis",
+     "utensilio": "cutelo",
+     "parametro": "achatar se quiser mais fino"
+    }
+   ],
+   "ponto_critico": "1 cm de espessura uniforme",
+   "erro_comum": "Faca em pé, que corta em cubos e não em lâminas"
+  },
+  {
+   "id": "peixes.postas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cortar postas de peixe roliço",
+   "ingredientes": [
+    "perca limpa e eviscerada"
+   ],
+   "utensilios": [
+    "faca de cozinha ou cutelo",
+    "palito"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "marcas espaçadas ao longo do peixe",
+     "utensilio": "faca",
+     "parametro": "cerca de 2,5 cm"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "carne e espinha dorsal",
+     "utensilio": "cutelo",
+     "parametro": "força firme"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "pontas da posta para dentro",
+     "utensilio": "palito",
+     "parametro": "prender para não enrolar"
+    }
+   ],
+   "ponto_critico": "Postas de 2,5 cm",
+   "erro_comum": "Postas de espessura desigual"
+  },
+  {
+   "id": "peixes.trouxinhas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Trouxinhas de escalope recheado",
+   "ingredientes": [
+    "escalope de salmão",
+    "recheio",
+    "cebolinha"
+   ],
+   "utensilios": [
+    "papel-manteiga",
+    "cutelo"
+   ],
+   "passos": [
+    {
+     "acao": "amaciar",
+     "alvo": "escalope entre papéis",
+     "utensilio": "lâmina deitada do cutelo",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "centro do escalope",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "escalope sobre o recheio",
+     "utensilio": "",
+     "parametro": "trouxinha quadrada"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "trouxinha com emenda para baixo",
+     "utensilio": "tira de cebolinha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Trouxa fechada e quadrada; cozinhar em pochê ou fritar com cuidado",
+   "erro_comum": "Fritura forte que abre a trouxinha frágil"
+  },
+  {
+   "id": "peixes.almofadas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Almofadas de filé com bolso",
+   "ingredientes": [
+    "filé grosso de salmão",
+    "recheio",
+    "cebolinha"
+   ],
+   "utensilios": [
+    "faca afiada"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "pedaços de 7,5 x 4 cm",
+     "utensilio": "faca afiada",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "bolso na face da frente",
+     "utensilio": "faca afiada",
+     "parametro": "deixar 1 cm de cada lado, sem furar atrás, em cima ou embaixo"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "bolso",
+     "utensilio": "colher",
+     "parametro": "sem exagero"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "abertura",
+     "utensilio": "tira de cebolinha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Bolso fechado nos três lados",
+   "erro_comum": "Encher demais e o recheio vaza"
+  },
+  {
+   "id": "peixes.paupiettes",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Paupiettes (rolinhos de filé)",
+   "ingredientes": [
+    "filé de peixe chato (linguado) cortado ao meio",
+    "recheio"
+   ],
+   "utensilios": [
+    "palito"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "uma ponta do filé ou o centro do rolo em pé",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "filé com a pele para dentro",
+     "utensilio": "",
+     "parametro": "parte do rabo para fora"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "rolinhos encostados ou presos",
+     "utensilio": "palito",
+     "parametro": ""
+    },
+    {
+     "acao": "pochê",
+     "alvo": "rolinhos",
+     "utensilio": "",
+     "parametro": "ou vapor, ou assar"
+    }
+   ],
+   "ponto_critico": "Espiral firme sem abrir",
+   "erro_comum": "Pele para fora, o rolo abre ao cozinhar"
+  },
+  {
+   "id": "peixes.trancas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tranças de três filés",
+   "ingredientes": [
+    "filé de cavala",
+    "filé de vermelho",
+    "filé de linguado"
+   ],
+   "utensilios": [
+    "tábua",
+    "panela a vapor"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tiras de cerca de 20 x 2 cm",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "três tiras de cores diferentes lado a lado",
+     "utensilio": "tábua",
+     "parametro": "pele para cima"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "trança regular",
+     "utensilio": "dedos",
+     "parametro": "sem apertar, encolhe ao cozinhar"
+    },
+    {
+     "acao": "vapor",
+     "alvo": "trança",
+     "utensilio": "panela a vapor",
+     "parametro": "sobre court bouillon ou caldo de peixe"
+    }
+   ],
+   "ponto_critico": "Trança frouxa e regular",
+   "erro_comum": "Apertar e a trança se rasgar ao encolher"
+  },
+  {
+   "id": "peixes.recheios",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Montar recheios para trouxinhas, almofadas e rolinhos",
+   "ingredientes": [
+    "legumes à julienne",
+    "queijo fresco",
+    "ervas",
+    "brunoise de manga e pepino",
+    "duxelles",
+    "risoto leve"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "legumes ou ervas",
+     "utensilio": "faca",
+     "parametro": "julienne ou brunoise"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "base com temperos",
+     "utensilio": "tigela",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Recheio úmido mas firme",
+   "erro_comum": "Recheio cru e duro que não cozinha junto"
+  },
+  {
+   "id": "peixes.taramasalata",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Taramasalata",
+   "ingredientes": [
+    "pão sem casca",
+    "leite",
+    "ova de bacalhau defumada",
+    "alho",
+    "azeite",
+    "óleo vegetal",
+    "limão",
+    "água quente",
+    "pimenta"
+   ],
+   "utensilios": [
+    "tigela",
+    "processador"
+   ],
+   "passos": [
+    {
+     "acao": "marinar",
+     "alvo": "pão no leite",
+     "utensilio": "tigela",
+     "parametro": "misturar com as mãos"
+    },
+    {
+     "acao": "espremer",
+     "alvo": "pão",
+     "utensilio": "mãos",
+     "parametro": "descartar o leite"
+    },
+    {
+     "acao": "emulsionar",
+     "alvo": "pão, ova, alho, azeite, óleo e limão",
+     "utensilio": "processador",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "mistura com água quente, pimenta e limão",
+     "utensilio": "processador",
+     "parametro": "provar e bater de novo"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "pasta tampada",
+     "utensilio": "geladeira",
+     "parametro": "mínimo 4 horas, melhor de um dia para o outro"
+    }
+   ],
+   "ponto_critico": "Pasta lisa e emulsionada; repouso de 4 h ou mais",
+   "erro_comum": "Deixar o leite no pão e a pasta ficar mole"
+  },
+  {
+   "id": "peixes.preparar-ova-defumada",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Preparar ova defumada",
+   "ingredientes": [
+    "ova de bacalhau defumada"
+   ],
+   "utensilios": [
+    "tigela",
+    "chaleira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "ova em pedaços",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "ova coberta com água fervente",
+     "utensilio": "tigela",
+     "parametro": "escaldar 1 a 2 minutos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "ova",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele",
+     "utensilio": "dedos",
+     "parametro": "descartar"
+    }
+   ],
+   "ponto_critico": "Escaldar só 1 a 2 minutos",
+   "erro_comum": "Escaldar demais e endurecer a ova"
+  },
+  {
+   "id": "peixes.dessalgar-anchova",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Dessalgar anchovas em lata",
+   "ingredientes": [
+    "anchovas em óleo",
+    "leite"
+   ],
+   "utensilios": [
+    "peneira",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "coar",
+     "alvo": "anchovas",
+     "utensilio": "peneira sobre tigela",
+     "parametro": "descartar o azeite"
+    },
+    {
+     "acao": "demolhar",
+     "alvo": "anchovas no leite frio",
+     "utensilio": "tigela",
+     "parametro": "20 minutos"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "anchovas",
+     "utensilio": "água fria corrente",
+     "parametro": "lavar e secar com batidinhas"
+    }
+   ],
+   "ponto_critico": "20 minutos no leite frio",
+   "erro_comum": "Usar anchova de lata direto e salgar demais o prato"
+  },
+  {
+   "id": "peixes.dessalgar-bacalhau",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Dessalgar e cozinhar bacalhau seco",
+   "ingredientes": [
+    "bacalhau salgado seco"
+   ],
+   "utensilios": [
+    "tigela",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "bacalhau em pedaços",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "demolhar",
+     "alvo": "bacalhau em água fria",
+     "utensilio": "tigela",
+     "parametro": "mínimo 2 dias se muito salgado, trocando a água 5 a 6 vezes"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "bacalhau em água fria",
+     "utensilio": "panela",
+     "parametro": "sem deixar ferver"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "bacalhau",
+     "utensilio": "panela",
+     "parametro": "fogo baixo cerca de 20 minutos até amolecer"
+    },
+    {
+     "acao": "separar",
+     "alvo": "lascas grandes",
+     "utensilio": "dedos",
+     "parametro": "descartar pele e espinhas"
+    }
+   ],
+   "ponto_critico": "Trocas de água suficientes; nunca ferver",
+   "erro_comum": "Ferver forte e deixar o bacalhau borrachudo"
+  },
+  {
+   "id": "peixes.forminhas-salmao",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Forminhas de salmão defumado recheadas",
+   "ingredientes": [
+    "fatias de salmão defumado",
+    "taramasalata"
+   ],
+   "utensilios": [
+    "forminhas"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "forminhas forradas com fatias",
+     "utensilio": "forminhas",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "taramasalata",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "forminhas",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Fatias cobrindo sem buracos",
+   "erro_comum": "Fatias grossas que não se moldam"
+  },
+  {
+   "id": "peixes.fatiar-salmao-defumado",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Fatiar lado inteiro de salmão defumado",
+   "ingredientes": [
+    "lado inteiro de salmão defumado"
+   ],
+   "utensilios": [
+    "faca para salmão defumado",
+    "pinça de espinhas",
+    "papel antiaderente"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "bordas escuras e gordurosas",
+     "utensilio": "faca",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "espinhas",
+     "utensilio": "pinça de espinhas",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "fatias finíssimas do rabo para a cabeça",
+     "utensilio": "faca para salmão defumado",
+     "parametro": "faca paralela ao peixe, vaivém suave, corte em V para evitar a faixa escura central"
+    },
+    {
+     "acao": "separar",
+     "alvo": "fatias",
+     "utensilio": "papel antiaderente",
+     "parametro": "intercalar"
+    }
+   ],
+   "ponto_critico": "Fatias quase transparentes sem rasgar",
+   "erro_comum": "Faca rígida ou inclinada que rasga a carne"
+  },
+  {
+   "id": "peixes.gravadlax",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Gravadlax (salmão curado)",
+   "ingredientes": [
+    "dois filés de salmão de 900 g sem pele",
+    "75 g de sal marinho",
+    "125 g de açúcar",
+    "2 colheres (chá) de pimenta-branca",
+    "1 maço de endro"
+   ],
+   "utensilios": [
+    "travessa rasa de vidro",
+    "papelão forrado de alumínio",
+    "peso",
+    "faca para salmão defumado"
+   ],
+   "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "um filé com sal, açúcar e pimenta",
+     "utensilio": "travessa de vidro",
+     "parametro": "pele para baixo"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "endro picado por cima",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "segundo filé sem tempero por cima",
+     "utensilio": "",
+     "parametro": "pele para cima"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "prensar",
+     "utensilio": "papelão com peso",
+     "parametro": ""
+    },
+    {
+     "acao": "marinar",
+     "alvo": "filés",
+     "utensilio": "geladeira",
+     "parametro": "3 dias virando a cada 12 horas"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "filés separados",
+     "utensilio": "faca para salmão defumado",
+     "parametro": "na diagonal, bem fino"
+    },
+    {
+     "acao": "servir",
+     "alvo": "fatias em leque",
+     "utensilio": "",
+     "parametro": "limão, endro e molho de mostarda e endro"
+    }
+   ],
+   "ponto_critico": "3 dias de cura com viradas a cada 12 h; conserva até 2 dias depois",
+   "erro_comum": "Esquecer de virar e a cura ficar desigual"
+  },
+  {
+   "id": "peixes.tostar-nori",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tostar alga nori",
+   "ingredientes": [
+    "alga nori"
+   ],
+   "utensilios": [
+    "pinça"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "alga sobre a chama",
+     "utensilio": "pinça",
+     "parametro": "balançar alguns segundos até ficar crocante; dispensável se for pré-tostada"
+    }
+   ],
+   "ponto_critico": "Alga crocante sem queimar",
+   "erro_comum": "Deixar parada no fogo e queimar"
+  },
+  {
+   "id": "peixes.sushi-rolo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Rodelas de sushi enroladas (com atum)",
+   "ingredientes": [
+    "atum sem pele",
+    "alga nori",
+    "arroz com vinagre",
+    "vinagre de arroz",
+    "wasabi"
+   ],
+   "utensilios": [
+    "esteira de bambu",
+    "faca de cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "atum em tiras de 1 cm",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "alga na ponta da esteira próxima a você",
+     "utensilio": "esteira de bambu",
+     "parametro": ""
+    },
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "camada de arroz sobre a alga",
+     "utensilio": "dedos molhados em água com vinagre",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "linha de wasabi coberta com tira de atum",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "alga em volta do arroz",
+     "utensilio": "esteira de bambu",
+     "parametro": "levantar a ponta próxima e rolar para fora"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "rolo",
+     "utensilio": "esteira de bambu",
+     "parametro": "pressionar"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "borda da alga",
+     "utensilio": "dedo molhado",
+     "parametro": "selar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rolo em 4 e cada parte ao meio",
+     "utensilio": "faca umedecida",
+     "parametro": "8 rodelas por rolo"
+    },
+    {
+     "acao": "servir",
+     "alvo": "com rosas de gengibre, coroas de pepino e molho de soja",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Faca úmida para corte limpo; 32 rodelas com 4 algas",
+   "erro_comum": "Mãos secas grudam no arroz; faca seca esmaga o rolo"
+  },
+  {
+   "id": "peixes.sashimi",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Sashimi de três peixes",
+   "ingredientes": [
+    "filé de tainha com pele",
+    "filé de salmão sem pele",
+    "filé de cavala sem pele e sem membrana",
+    "wasabi",
+    "pepino",
+    "molho de soja"
+   ],
+   "utensilios": [
+    "faca de cozinha",
+    "pinça de espinhas",
+    "travessa"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "espinhas, inclusive as finas",
+     "utensilio": "pinça de espinhas",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "peixes",
+     "utensilio": "geladeira",
+     "parametro": "bem gelado corta melhor"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "tainha bem fina contra o veio",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cavala ao meio no comprido",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "cavala e salmão",
+     "utensilio": "faca",
+     "parametro": "mesma espessura da tainha"
+    },
+    {
+     "acao": "servir",
+     "alvo": "fatias separadas por peixe",
+     "utensilio": "travessa",
+     "parametro": "wasabi, pepino e soja"
+    }
+   ],
+   "ponto_critico": "Peixe muito fresco e gelado; fatias contra o veio",
+   "erro_comum": "Cortar a favor do veio e deixar a fatia fibrosa"
+  },
+  {
+   "id": "peixes.court-bouillon",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Court bouillon",
+   "ingredientes": [
+    "2,5 l de água",
+    "700 ml de vinho branco",
+    "250 ml de vinagre de vinho branco",
+    "cenoura",
+    "cebola",
+    "buquê garni",
+    "sal grosso",
+    "pimenta em grão"
+   ],
+   "utensilios": [
+    "panela grande"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "todos menos o vinagre",
+     "utensilio": "panela grande",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "líquido",
+     "utensilio": "panela grande",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo sem tampa",
+     "utensilio": "panela grande",
+     "parametro": "15 a 20 minutos"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "vinagre",
+     "utensilio": "",
+     "parametro": "nos últimos 5 minutos"
+    }
+   ],
+   "ponto_critico": "15 a 20 minutos; vinagre só no fim",
+   "erro_comum": "Pôr o vinagre no começo"
+  },
+  {
+   "id": "peixes.poche-peixeira",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pochê de peixe inteiro na panela própria",
+   "ingredientes": [
+    "salmão inteiro limpo, escamado e eviscerado",
+    "court bouillon frio"
+   ],
+   "utensilios": [
+    "panela para peixe com suporte furado",
+    "régua",
+    "papel-manteiga"
+   ],
+   "passos": [
+    {
+     "acao": "medir",
+     "alvo": "parte mais grossa do peixe",
+     "utensilio": "régua",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe no suporte dentro da panela",
+     "utensilio": "panela para peixe",
+     "parametro": ""
+    },
+    {
+     "acao": "pochê",
+     "alvo": "peixe coberto de court bouillon frio",
+     "utensilio": "panela para peixe",
+     "parametro": "provar e levar à fervura"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "peixe",
+     "utensilio": "",
+     "parametro": "10 minutos por 2,5 cm de espessura"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "peixe no próprio líquido",
+     "utensilio": "",
+     "parametro": "para reter umidade"
+    },
+    {
+     "acao": "servir",
+     "alvo": "peixe sobre papel-manteiga",
+     "utensilio": "suporte",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "10 minutos para cada 2,5 cm na parte mais grossa",
+   "erro_comum": "Ferver forte e partir a carne"
+  },
+  {
+   "id": "peixes.poche-improvisado",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pochê de peixe grande sem panela especial",
+   "ingredientes": [
+    "peixe inteiro",
+    "court bouillon frio"
+   ],
+   "utensilios": [
+    "papel-alumínio",
+    "assadeira grande"
+   ],
+   "passos": [
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "papel-alumínio em 2 ou 3 camadas",
+     "utensilio": "papel-alumínio",
+     "parametro": "um pouco maior que o peixe"
+    },
+    {
+     "acao": "montar",
+     "alvo": "forro na assadeira com o peixe",
+     "utensilio": "assadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "pochê",
+     "alvo": "peixe coberto de court bouillon frio",
+     "utensilio": "assadeira fechada com alumínio",
+     "parametro": "mesmo tempo da peixeira"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "peixe no líquido",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Forro em camadas para levantar o peixe inteiro",
+   "erro_comum": "Alumínio fino que rasga ao tirar o peixe"
+  },
+  {
+   "id": "peixes.poche-pouca-agua",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pochê em pouco líquido",
+   "ingredientes": [
+    "postas, filés ou peixe pequeno",
+    "court bouillon"
+   ],
+   "utensilios": [
+    "panela com tampa"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "court bouillon",
+     "utensilio": "panela",
+     "parametro": "em fervura branda"
+    },
+    {
+     "acao": "pochê",
+     "alvo": "peixe tampado",
+     "utensilio": "panela",
+     "parametro": "filés 5 a 10 minutos, postas 10 a 15"
+    }
+   ],
+   "ponto_critico": "Carne totalmente opaca",
+   "erro_comum": "Ferver e ressecar o filé"
+  },
+  {
+   "id": "peixes.microondas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cozinhar peixe no micro-ondas",
+   "ingredientes": [
+    "postas",
+    "filés",
+    "trouxinhas",
+    "peixe inteiro"
+   ],
+   "utensilios": [
+    "forno micro-ondas 600 a 700 W"
+   ],
+   "passos": [
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "postas",
+     "utensilio": "micro-ondas",
+     "parametro": "2 a 3 minutos para 250 g, potência máxima"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "filés",
+     "utensilio": "micro-ondas",
+     "parametro": "45 s a 1 min para 175 g"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "trouxinhas e paupiettes com recheio pré-cozido",
+     "utensilio": "micro-ondas",
+     "parametro": "1 min e meio a 2 min"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "peixe chato inteiro",
+     "utensilio": "micro-ondas",
+     "parametro": "1 min e meio a 2 min para 250 g"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "peixe roliço inteiro sem recheio",
+     "utensilio": "micro-ondas",
+     "parametro": "2 min e meio a 3 min para 250 g"
+    }
+   ],
+   "ponto_critico": "Tempo por peso na potência máxima",
+   "erro_comum": "Passar do tempo; segundos a mais ressecam"
+  },
+  {
+   "id": "peixes.poche-defumado-leite",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pochê de peixe defumado no leite",
+   "ingredientes": [
+    "hadoque ou bacalhau defumado",
+    "leite (ou meio leite e meio água)",
+    "louro",
+    "pimenta em grão"
+   ],
+   "utensilios": [
+    "panela",
+    "faca pequena",
+    "pinça de espinhas"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "leite com louro e pimenta",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "peixe",
+     "utensilio": "panela",
+     "parametro": "fogo moderado"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "peixe tampado fora do fogo",
+     "utensilio": "panela tampada",
+     "parametro": "10 minutos"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele e partes escuras",
+     "utensilio": "faca pequena",
+     "parametro": "descartar o leite"
+    },
+    {
+     "acao": "separar",
+     "alvo": "espinhas",
+     "utensilio": "pinça de espinhas",
+     "parametro": "virar o peixe"
+    },
+    {
+     "acao": "separar",
+     "alvo": "lascas",
+     "utensilio": "garfo",
+     "parametro": "para kedgeree, suflê ou salada"
+    }
+   ],
+   "ponto_critico": "10 minutos de repouso tampado",
+   "erro_comum": "Reaproveitar o leite, salgado e forte demais"
+  },
+  {
+   "id": "peixes.preparar-cozido-servir",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Pelar e desossar peixe cozido inteiro para servir",
+   "ingredientes": [
+    "salmão pochê inteiro"
+   ],
+   "utensilios": [
+    "papel-manteiga",
+    "faca de cozinha",
+    "tesoura de cozinha",
+    "travessa"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "pele ao longo da espinha dorsal",
+     "utensilio": "faca de cozinha",
+     "parametro": "peixe sobre papel-manteiga"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele, da cabeça ao rabo",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "carne escura",
+     "utensilio": "faca de cozinha",
+     "parametro": "raspar"
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe na travessa",
+     "utensilio": "papel-manteiga",
+     "parametro": "virar com o papel"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele e carne escura do outro lado",
+     "utensilio": "faca",
+     "parametro": "repetir"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "filés de cima",
+     "utensilio": "faca de cozinha",
+     "parametro": "deitar um de cada lado"
+    },
+    {
+     "acao": "desossar",
+     "alvo": "espinha dorsal e laterais",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "cortar no rabo se preciso"
+    },
+    {
+     "acao": "montar",
+     "alvo": "filés de cima de volta",
+     "utensilio": "",
+     "parametro": "pronto para molho ou guarnição"
+    }
+   ],
+   "ponto_critico": "Peixe continua com aparência de inteiro",
+   "erro_comum": "Quebrar o filé de cima ao levantar"
+  },
+  {
+   "id": "peixes.decorar-escamas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cobrir peixe inteiro com escamas decorativas",
+   "ingredientes": [
+    "salmão pochê sem pele",
+    "pepino ou abobrinha ou pétalas de rosa",
+    "aspic ou maionese"
+   ],
+   "utensilios": [
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "pepino bem fino",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "peixe",
+     "utensilio": "aspic ou maionese",
+     "parametro": "para grudar"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "fatias sobrepostas como escamas",
+     "utensilio": "dedos",
+     "parametro": "pétalas de rosa para versão de verão"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "olho",
+     "utensilio": "salsinha",
+     "parametro": "esconder"
+    }
+   ],
+   "ponto_critico": "Sobreposição regular",
+   "erro_comum": "Sem aspic as fatias escorregam"
+  },
+  {
+   "id": "peixes.limao-musselina",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Limão embrulhado em musselina",
+   "ingredientes": [
+    "gomos de limão"
+   ],
+   "utensilios": [
+    "musselina",
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "limão em gomos",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "gomo embrulhado",
+     "utensilio": "musselina",
+     "parametro": "sementes não caem no peixe"
+    }
+   ],
+   "ponto_critico": "Pano bem fechado",
+   "erro_comum": "Sementes caindo no prato"
+  },
+  {
+   "id": "peixes.nozinhos-citricos",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Nozinhos de casca cítrica",
+   "ingredientes": [
+    "lima, limão ou laranja"
+   ],
+   "utensilios": [
+    "faca canelle"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tiras de casca de 4 cm",
+     "utensilio": "faca canelle",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "tiras",
+     "utensilio": "",
+     "parametro": "escaldar e secar"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "nó em cada tira",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Tiras flexíveis após escaldar",
+   "erro_comum": "Dar o nó cru e a casca quebrar"
+  },
+  {
+   "id": "peixes.lacos-anchova",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Laços de anchova",
+   "ingredientes": [
+    "filés de anchova",
+    "tirinhas de pimentão escaldado"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "coar",
+     "alvo": "anchovas",
+     "utensilio": "",
+     "parametro": "secar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "anchovas em tiras",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tirinhas de pimentão com anchova",
+     "utensilio": "",
+     "parametro": "formar laço"
+    }
+   ],
+   "ponto_critico": "Anchova seca para não manchar",
+   "erro_comum": "Anchova oleosa que escorrega"
+  },
+  {
+   "id": "peixes.tacinhas-kumquat",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tacinhas de kumquat",
+   "ingredientes": [
+    "kumquat",
+    "maionese",
+    "endro"
+   ],
+   "utensilios": [
+    "faca pequena"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "zigue-zague em volta",
+     "utensilio": "faca pequena",
+     "parametro": "cortes em ângulo"
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "kumquat em duas metades",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "maionese e endro",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Dentes iguais",
+   "erro_comum": "Cortar fundo e partir a fruta"
+  },
+  {
+   "id": "peixes.borboletas-limao",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Borboletas de limão verde",
+   "ingredientes": [
+    "limão",
+    "estrela de pimentão escaldado"
+   ],
+   "utensilios": [
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "rodelas de limão",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "rodelas em 4",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "dois quartos de costas formando asas",
+     "utensilio": "",
+     "parametro": "estrela no meio"
+    }
+   ],
+   "ponto_critico": "Rodelas finas e iguais",
+   "erro_comum": "Rodelas grossas"
+  },
+  {
+   "id": "peixes.enfeites-massa",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Enfeites de massa folhada",
+   "ingredientes": [
+    "massa folhada",
+    "gema"
+   ],
+   "utensilios": [
+    "cortadores",
+    "pincel",
+    "forno"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "figuras",
+     "utensilio": "cortador",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "gema",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "figuras",
+     "utensilio": "forno",
+     "parametro": "190 °C por 5 a 7 minutos até dourar"
+    }
+   ],
+   "ponto_critico": "190 °C, 5 a 7 minutos",
+   "erro_comum": "Pincelar gema nas bordas e impedir o crescimento"
+  },
+  {
+   "id": "peixes.limao-trancado",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Limão amarelo com casca trançada",
+   "ingredientes": [
+    "limão"
+   ],
+   "utensilios": [
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "pontas do limão",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tiras de casca presas no topo",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "tiras entrelaçadas",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Tiras presas na parte de cima",
+   "erro_comum": "Soltar as tiras por inteiro"
+  },
+  {
+   "id": "peixes.espirais-citricas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Espirais de casca de laranja",
+   "ingredientes": [
+    "laranja"
+   ],
+   "utensilios": [
+    "faca canelle",
+    "espetinho"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tiras de casca",
+     "utensilio": "faca canelle",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "tira no espetinho",
+     "utensilio": "espetinho",
+     "parametro": "até espiralar"
+    }
+   ],
+   "ponto_critico": "Espiral firme ao tirar do espeto",
+   "erro_comum": "Tira curta que não espirala"
+  },
+  {
+   "id": "peixes.limao-alado",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Limão alado",
+   "ingredientes": [
+    "limão"
+   ],
+   "utensilios": [
+    "faca canelle",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "sulcos na casca",
+     "utensilio": "faca canelle",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "fatia girando 180 graus sem soltar",
+     "utensilio": "faca",
+     "parametro": "girar e repetir"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "uma ponta sobre a outra",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Volta de 180 graus sem desprender",
+   "erro_comum": "Cortar até o fim e soltar a asa"
+  },
+  {
+   "id": "peixes.gengibre-frito",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Gengibre frito em tirinhas",
+   "ingredientes": [
+    "gengibre sem casca"
+   ],
+   "utensilios": [
+    "panela de fritura",
+    "termômetro para frituras"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "gengibre em tirinhas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "tirinhas",
+     "utensilio": "",
+     "parametro": "escaldar e secar"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "tirinhas",
+     "utensilio": "óleo",
+     "parametro": "180 °C por 10 segundos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "gengibre",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "180 °C por 10 s",
+   "erro_comum": "Fritar molhado e espirrar óleo"
+  },
+  {
+   "id": "peixes.tirinhas-mooli",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirinhas de mooli",
+   "ingredientes": [
+    "mooli (rabanete branco)"
+   ],
+   "utensilios": [
+    "faca",
+    "tigela com água gelada"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "mooli",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rodelas finas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tirinhas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "tirinhas em água gelada",
+     "utensilio": "tigela",
+     "parametro": "secar depois"
+    }
+   ],
+   "ponto_critico": "Tirinhas crocantes após água gelada",
+   "erro_comum": "Pular a água gelada e ficarem moles"
+  },
+  {
+   "id": "peixes.rosa-gengibre",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Rosa de gengibre em conserva",
+   "ingredientes": [
+    "fatias de gengibre em conserva"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "enrolar",
+     "alvo": "uma fatia como miolo",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "mais 3 fatias sobrepostas como pétalas",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Miolo apertado e pétalas abertas",
+   "erro_comum": "Usar pedaço em vez de fatia"
+  },
+  {
+   "id": "peixes.cebolinha-enrolada",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cebolinha enrolada",
+   "ingredientes": [
+    "parte verde da cebolinha"
+   ],
+   "utensilios": [
+    "faca",
+    "água gelada"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "cebolinha no comprido em tiras finas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "na água gelada",
+     "utensilio": "tigela",
+     "parametro": "2 a 3 horas até enrolar"
+    }
+   ],
+   "ponto_critico": "2 a 3 horas no gelo",
+   "erro_comum": "Tirar cedo e não enrolar"
+  },
+  {
+   "id": "peixes.ervas-fritas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Ervas fritas",
+   "ingredientes": [
+    "manjericão",
+    "salsinha"
+   ],
+   "utensilios": [
+    "panela de fritura"
+   ],
+   "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "folhas",
+     "utensilio": "óleo",
+     "parametro": "180 °C por 10 segundos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "folhas",
+     "utensilio": "papel-toalha",
+     "parametro": "escorrer bem"
+    }
+   ],
+   "ponto_critico": "Verde vivo e crocante em 10 s",
+   "erro_comum": "Folha úmida que estoura no óleo"
+  },
+  {
+   "id": "peixes.enfeite-pepino",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Torcidinhos de pepino",
+   "ingredientes": [
+    "pepino"
+   ],
+   "utensilios": [
+    "faca canelle",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "sulcos na casca",
+     "utensilio": "faca canelle",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rodelas finas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "um corte até o centro de cada rodela",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "torcer a rodela",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Rodela fina que torce sem partir",
+   "erro_comum": "Rodela grossa que quebra"
+  },
+  {
+   "id": "peixes.buque-ervas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Leque de ervas junto ao peixe",
+   "ingredientes": [
+    "salsinha",
+    "endro",
+    "tomilho",
+    "estragão"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "decorar",
+     "alvo": "ramos em leque ao lado do peixe cozido",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Ramos frescos e firmes",
+   "erro_comum": "Ervas murchas"
+  },
+  {
+   "id": "peixes.rosa-citrica",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Rosa de casca de limão",
+   "ingredientes": [
+    "limão"
+   ],
+   "utensilios": [
+    "faca afiada"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca em espiral com borda ondulada",
+     "utensilio": "faca afiada",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "casca como botão de rosa",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Espiral contínua",
+   "erro_comum": "Quebrar a tira no meio"
+  },
+  {
+   "id": "peixes.escamas-abobrinha",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Escamas de abobrinha",
+   "ingredientes": [
+    "abobrinha"
+   ],
+   "utensilios": [
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "abobrinha",
+     "utensilio": "",
+     "parametro": "escaldar"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rodelas",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "cada rodela em 4",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "pedaços sobrepostos no peixe",
+     "utensilio": "",
+     "parametro": "imitar escamas"
+    }
+   ],
+   "ponto_critico": "Abobrinha escaldada e flexível",
+   "erro_comum": "Abobrinha crua que não acomoda no peixe"
+  },
+  {
+   "id": "peixes.vapor-panela",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Vapor convencional em panela com cesta",
+   "ingredientes": [
+    "postas ou filés (cavala, vermelho, linguado)",
+    "court bouillon",
+    "ervas e legumes aromáticos"
+   ],
+   "utensilios": [
+    "panela a vapor com cesta furada",
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "líquido com ervas e legumes picados",
+     "utensilio": "panela",
+     "parametro": "ou forrar a cesta com erva-doce, tomilho ou endro"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "court bouillon no fundo",
+     "utensilio": "panela a vapor",
+     "parametro": "fervura branda"
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe em camada única",
+     "utensilio": "cesta furada",
+     "parametro": ""
+    },
+    {
+     "acao": "vapor",
+     "alvo": "peixe tampado",
+     "utensilio": "panela a vapor",
+     "parametro": "filés 3 a 4 min; pedaços 8 a 10 min; inteiro até 350 g 6 a 8 min; até 900 g 12 a 15 min"
+    },
+    {
+     "acao": "testar",
+     "alvo": "carne",
+     "utensilio": "garfo",
+     "parametro": "opaca, úmida e soltando lascas"
+    }
+   ],
+   "ponto_critico": "Opaco por inteiro e lascas soltando ao garfo",
+   "erro_comum": "Passar do ponto e o peixe secar e desmanchar"
+  },
+  {
+   "id": "peixes.vapor-bambu",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Vapor em cesta de bambu sobre wok",
+   "ingredientes": [
+    "peixe inteiro (vermelho)",
+    "caldo",
+    "legumes picados",
+    "temperos"
+   ],
+   "utensilios": [
+    "wok",
+    "cesta de bambu com tampa",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "wok pela metade de caldo com legumes",
+     "utensilio": "wok",
+     "parametro": "fervura lenta"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "talhos no peixe",
+     "utensilio": "faca",
+     "parametro": "inserir temperos"
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe na cesta",
+     "utensilio": "cesta de bambu",
+     "parametro": "polvilhar mais temperos"
+    },
+    {
+     "acao": "vapor",
+     "alvo": "peixe tampado",
+     "utensilio": "cesta de bambu sobre a wok",
+     "parametro": "tempos da tabela de vapor"
+    },
+    {
+     "acao": "servir",
+     "alvo": "com legumes e temperos",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Cor do peixe preservada, carne opaca",
+   "erro_comum": "Deixar a wok secar durante o vapor"
+  },
+  {
+   "id": "peixes.vapor-marinar",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Marinar peixe antes do vapor",
+   "ingredientes": [
+    "peixe",
+    "azeite",
+    "limão",
+    "vinho branco",
+    "molho de soja",
+    "cebolinha",
+    "gengibre",
+    "alho"
+   ],
+   "utensilios": [
+    "travessa"
+   ],
+   "passos": [
+    {
+     "acao": "marinar",
+     "alvo": "peixe na mistura",
+     "utensilio": "travessa",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "peixe com cebolinha, gengibre, alho, limão e erva-doce em grão",
+     "utensilio": "",
+     "parametro": "antes do vapor"
+    }
+   ],
+   "ponto_critico": "Tempero suficiente para não ficar insosso",
+   "erro_comum": "Vapor só com água e peixe sem sabor"
+  },
+  {
+   "id": "peixes.grelhar-pequeno",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Grelhar peixe pequeno inteiro",
+   "ingredientes": [
+    "sardinhas limpas",
+    "azeite",
+    "alho amassado",
+    "salsinha"
+   ],
+   "utensilios": [
+    "grelha",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "marinar",
+     "alvo": "sardinhas em azeite, alho e salsinha",
+     "utensilio": "travessa",
+     "parametro": "opcional, com talhos"
+    },
+    {
+     "acao": "grelhar",
+     "alvo": "primeiro lado",
+     "utensilio": "grelha untada",
+     "parametro": "fogo alto 2 minutos"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "marinada ou azeite",
+     "utensilio": "pincel",
+     "parametro": "após virar"
+    },
+    {
+     "acao": "grelhar",
+     "alvo": "segundo lado",
+     "utensilio": "grelha",
+     "parametro": "2 minutos até a pele dourar e estalar"
+    }
+   ],
+   "ponto_critico": "2 min por lado em fogo alto",
+   "erro_comum": "Grelha sem untar, a pele gruda e rasga"
+  },
+  {
+   "id": "peixes.churrasco-suporte",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Assar peixe inteiro na churrasqueira com suporte",
+   "ingredientes": [
+    "truta (ou cavala, cação, atum, perca)",
+    "ervas frescas ou folhas de uva",
+    "azeite ou marinada"
+   ],
+   "utensilios": [
+    "suporte para peixe com dobradiça",
+    "pincel",
+    "churrasqueira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "talhos",
+     "utensilio": "faca",
+     "parametro": "para assar por igual"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "suporte",
+     "utensilio": "azeite",
+     "parametro": "untar para não grudar"
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe com ervas ou folhas no suporte",
+     "utensilio": "suporte para peixe",
+     "parametro": "fechar bem"
+    },
+    {
+     "acao": "grelhar",
+     "alvo": "peixe",
+     "utensilio": "churrasqueira bem quente",
+     "parametro": "cerca de 3 minutos de cada lado, regando várias vezes"
+    }
+   ],
+   "ponto_critico": "Pele dourada e carne macia em cerca de 3 min por lado",
+   "erro_comum": "Virar sem suporte e o peixe se partir"
+  },
+  {
+   "id": "peixes.assar-descoberto",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Assar peixe descoberto",
+   "ingredientes": [
+    "vermelho inteiro médio",
+    "ervas ou temperos",
+    "líquido (vinho ou caldo)"
+   ],
+   "utensilios": [
+    "assadeira untada",
+    "forno"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "barriga com ervas frescas",
+     "utensilio": "",
+     "parametro": "opções: gengibre e erva-cidreira, pão com ervas e ovo, camarão com alho"
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe em camada única",
+     "utensilio": "assadeira untada",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "espalhar temperos e cobrir com líquido",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "peixe descoberto",
+     "utensilio": "forno",
+     "parametro": "180 °C por 30 minutos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "",
+     "parametro": "servir o tempero junto"
+    }
+   ],
+   "ponto_critico": "Carne opaca e pele crocante a 180 °C em 30 min",
+   "erro_comum": "Sobrepor peixes na assadeira e assar de forma desigual"
+  },
+  {
+   "id": "peixes.rechear-assar-aluminio",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Rechear pela barriga e assar no papel-alumínio",
+   "ingredientes": [
+    "peixe sem espinha pela barriga",
+    "recheio"
+   ],
+   "utensilios": [
+    "colher",
+    "palitos de coquetel",
+    "papel-alumínio untado",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "cavidade da barriga",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "fechar a abertura",
+     "utensilio": "palitos de coquetel",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "peixe",
+     "utensilio": "papel-alumínio untado",
+     "parametro": "fechar bem para não vazar caldo"
+    },
+    {
+     "acao": "assar",
+     "alvo": "pacote",
+     "utensilio": "forno",
+     "parametro": "180 °C: 25 min pequeno, 35 a 40 min grande"
+    },
+    {
+     "acao": "servir",
+     "alvo": "abrir o pacote na mesa",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Pacote vedado",
+   "erro_comum": "Alumínio mal fechado que deixa o caldo escorrer"
+  },
+  {
+   "id": "peixes.rechear-dorso",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Rechear peixe pelo dorso",
+   "ingredientes": [
+    "peixe desossado pelas costas",
+    "recheio"
+   ],
+   "utensilios": [
+    "colher",
+    "papel-alumínio"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "abertura das costas",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "peixe",
+     "utensilio": "papel-alumínio",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "peixe",
+     "utensilio": "forno",
+     "parametro": "como o recheado pela barriga"
+    }
+   ],
+   "ponto_critico": "Forma do peixe preservada",
+   "erro_comum": "Encher demais a abertura, que é pequena"
+  },
+  {
+   "id": "peixes.papillote",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Assar en papillote",
+   "ingredientes": [
+    "cherne",
+    "ramos de coentro",
+    "cenoura à julienne",
+    "vinho branco"
+   ],
+   "utensilios": [
+    "papel-manteiga ou alumínio",
+    "tesoura",
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "coração 5 cm maior que o peixe",
+     "utensilio": "tesoura",
+     "parametro": "papel-manteiga, impermeável ou alumínio"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "papel",
+     "utensilio": "manteiga ou óleo",
+     "parametro": "untar"
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe em uma metade com coentro, cenoura e 4 colheres (sopa) de vinho",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "outra metade e fechar torcendo a borda",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "trouxa",
+     "utensilio": "forno",
+     "parametro": "180 °C por 15 a 20 minutos até estufar"
+    },
+    {
+     "acao": "servir",
+     "alvo": "abrir na mesa",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Papel estufado",
+   "erro_comum": "Borda mal torcida que deixa o vapor escapar"
+  },
+  {
+   "id": "peixes.assar-folhas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Assar peixe envolto em folhas",
+   "ingredientes": [
+    "peixe",
+    "folhas de uva ou bananeira",
+    "alho-poró escaldado"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "montar",
+     "alvo": "peixe no centro da folha",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "folha em volta do peixe",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "pacote",
+     "utensilio": "tira de alho-poró escaldado",
+     "parametro": "se necessário"
+    },
+    {
+     "acao": "assar",
+     "alvo": "peixe",
+     "utensilio": "forno",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Folha cobrindo o peixe todo",
+   "erro_comum": "Folha rasgada que deixa o peixe secar"
+  },
+  {
+   "id": "peixes.crosta-sal",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Assar peixe em crosta de sal",
+   "ingredientes": [
+    "peixe inteiro limpo sem barbatanas, escamas e vísceras",
+    "sal marinho grosso",
+    "água"
+   ],
+   "utensilios": [
+    "panela pesada",
+    "borrifador",
+    "martelo pequeno",
+    "escova"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "camada de 5 cm de sal no fundo",
+     "utensilio": "panela pesada",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "peixe sobre o sal e cobrir com mais sal",
+     "utensilio": "",
+     "parametro": "1,3 kg de sal para 900 g de peixe"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "borrifar água no sal",
+     "utensilio": "borrifador",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "peixe",
+     "utensilio": "forno",
+     "parametro": "220 °C por cerca de 30 minutos"
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "crosta de sal",
+     "utensilio": "martelo pequeno",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "excesso de sal",
+     "utensilio": "escova",
+     "parametro": "servir na hora"
+    }
+   ],
+   "ponto_critico": "220 °C por 30 min; pele crocante e carne úmida sem ficar salgada",
+   "erro_comum": "Quebrar a crosta com força e despedaçar o peixe"
+  },
+  {
+   "id": "peixes.peixe-anjo-bacon",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Peixe-anjo trançado com bacon (Truque do Chef)",
+   "ingredientes": [
+    "filé de peixe-anjo",
+    "fatias de bacon",
+    "tomilho"
+   ],
+   "utensilios": [
+    "assadeira"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "bacon trançado em volta do filé",
+     "utensilio": "dedos",
+     "parametro": "folhas de tomilho entre as tiras"
+    },
+    {
+     "acao": "assar",
+     "alvo": "filé",
+     "utensilio": "forno",
+     "parametro": "180 °C por 20 minutos"
+    }
+   ],
+   "ponto_critico": "Bacon crocante e peixe úmido",
+   "erro_comum": "Trança frouxa que solta no forno"
+  },
+  {
+   "id": "peixes.empanar",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Empanar filés com farinha temperada",
+   "ingredientes": [
+    "filés",
+    "farinha ou migalhas de pão",
+    "temperos (cajun, endro e erva-doce, cebolinha e raspas de limão)"
+   ],
+   "utensilios": [
+    "prato"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "farinha com o tempero escolhido",
+     "utensilio": "prato",
+     "parametro": "cajun: páprica, cebola e alho em pó, tomilho, orégano, pimentas e sal"
+    },
+    {
+     "acao": "empanar",
+     "alvo": "filés",
+     "utensilio": "prato",
+     "parametro": "cobertura leve e por igual"
+    }
+   ],
+   "ponto_critico": "Camada fina e uniforme",
+   "erro_comum": "Camada grossa que encharca"
+  },
+  {
+   "id": "peixes.fritar-pouco-oleo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Fritar filé em pouco óleo",
+   "ingredientes": [
+    "filés empanados",
+    "manteiga",
+    "óleo"
+   ],
+   "utensilios": [
+    "frigideira",
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "partes iguais de manteiga e óleo",
+     "utensilio": "frigideira",
+     "parametro": "até a manteiga espumar"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "filé com a pele para baixo",
+     "utensilio": "frigideira",
+     "parametro": "5 minutos"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "outro lado",
+     "utensilio": "frigideira",
+     "parametro": "3 a 5 minutos até dourar"
+    },
+    {
+     "acao": "testar",
+     "alvo": "parte mais grossa",
+     "utensilio": "garfo",
+     "parametro": "firme e opaca"
+    }
+   ],
+   "ponto_critico": "Gordura espumando antes de pôr o peixe; pedaços de mesma espessura",
+   "erro_comum": "Gordura fria: cobertura encharca e solta"
+  },
+  {
+   "id": "peixes.manteiga-escura-arraia",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Fritar arraia na manteiga escura (beurre noisette)",
+   "ingredientes": [
+    "arraia sem a pele escura",
+    "farinha temperada",
+    "4 colheres (sopa) de manteiga"
+   ],
+   "utensilios": [
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "pele escura",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "empanar",
+     "alvo": "pedaços",
+     "utensilio": "farinha temperada",
+     "parametro": ""
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga até escurecer",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "arraia",
+     "utensilio": "frigideira",
+     "parametro": "8 a 10 minutos de cada lado"
+    }
+   ],
+   "ponto_critico": "Manteiga bem escura sem queimar",
+   "erro_comum": "Manteiga queimada e amarga"
+  },
+  {
+   "id": "peixes.cajun",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Peixe à moda cajun",
+   "ingredientes": [
+    "filés de vermelho",
+    "tempero cajun"
+   ],
+   "utensilios": [
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "empanar",
+     "alvo": "filés no tempero cajun",
+     "utensilio": "prato",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "primeiro lado",
+     "utensilio": "frigideira com gordura quente",
+     "parametro": "cerca de 6 minutos até a crosta tostar"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "segundo lado",
+     "utensilio": "frigideira",
+     "parametro": "virar e repetir"
+    }
+   ],
+   "ponto_critico": "Crosta escura e picante",
+   "erro_comum": "Fogo fraco e crosta mole"
+  },
+  {
+   "id": "peixes.crosta-ervas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Filé com crosta de ervas",
+   "ingredientes": [
+    "filés firmes sem pele (salmão, bacalhau, peixe-anjo)",
+    "ervas e condimentos"
+   ],
+   "utensilios": [
+    "frigideira antiaderente",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "mexer",
+     "alvo": "ervas e condimentos",
+     "utensilio": "prato",
+     "parametro": ""
+    },
+    {
+     "acao": "empanar",
+     "alvo": "filés pressionados na mistura",
+     "utensilio": "",
+     "parametro": "cobrir por igual"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "lado da crosta para baixo",
+     "utensilio": "frigideira antiaderente com pouco óleo",
+     "parametro": "7 a 10 minutos sem virar"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "pressionar o filé",
+     "utensilio": "espátula",
+     "parametro": "para o calor entrar e o suco subir"
+    }
+   ],
+   "ponto_critico": "7 a 10 min sem virar",
+   "erro_comum": "Virar e soltar a crosta"
+  },
+  {
+   "id": "peixes.fritar-imerso",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Fritar peixe com massa em bastante óleo",
+   "ingredientes": [
+    "postas ou filés",
+    "massa fina (opcional cerveja, óleo ou manteiga derretida na massa)",
+    "óleo vegetal",
+    "cubo de pão"
+   ],
+   "utensilios": [
+    "panela funda",
+    "termômetro para frituras",
+    "cesta para fritura",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "óleo",
+     "utensilio": "panela funda com termômetro",
+     "parametro": "180 a 190 °C; pôr o termômetro com óleo frio"
+    },
+    {
+     "acao": "testar",
+     "alvo": "cubo de pão",
+     "utensilio": "",
+     "parametro": "deve dourar em cerca de 30 segundos"
+    },
+    {
+     "acao": "empanar",
+     "alvo": "peixe na massa",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "uma posta grande por vez",
+     "utensilio": "cesta para fritura",
+     "parametro": "7 a 10 minutos"
+    },
+    {
+     "acao": "coar",
+     "alvo": "cesta",
+     "utensilio": "",
+     "parametro": "sacudir o excesso e escorrer em papel-toalha"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "peixe",
+     "utensilio": "",
+     "parametro": "só antes de servir"
+    }
+   ],
+   "ponto_critico": "Óleo entre 180 e 190 °C; pão doura em 30 s",
+   "erro_comum": "Muito peixe de uma vez derruba a temperatura"
+  },
+  {
+   "id": "peixes.goujons",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Goujons (tiras fritas)",
+   "ingredientes": [
+    "filé sem pele",
+    "farinha temperada",
+    "óleo"
+   ],
+   "utensilios": [
+    "faca de cozinha",
+    "saco plástico",
+    "panela funda",
+    "escumadeira ou cesta"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "tiras de 1 cm contra o veio",
+     "utensilio": "faca de cozinha",
+     "parametro": "mantém o formato"
+    },
+    {
+     "acao": "empanar",
+     "alvo": "tiras",
+     "utensilio": "saco com farinha",
+     "parametro": "fechar e sacudir"
+    },
+    {
+     "acao": "aquecer",
+     "alvo": "óleo",
+     "utensilio": "panela funda",
+     "parametro": "180 a 190 °C, cerca de um terço da panela"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "goujons",
+     "utensilio": "escumadeira ou cesta",
+     "parametro": "3 a 4 minutos até dourar"
+    },
+    {
+     "acao": "coar",
+     "alvo": "goujons",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Tiras de 1 cm, 3 a 4 min a 180 a 190 °C",
+   "erro_comum": "Encher a panela demais de óleo, que sobe e transborda"
+  },
+  {
+   "id": "peixes.musse",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Musse de peixe",
+   "ingredientes": [
+    "450 g de filé (pescada, patença, linguado ou salmão)",
+    "sal",
+    "2 claras",
+    "350 ml de creme de leite",
+    "pimenta-branca ou caiena"
+   ],
+   "utensilios": [
+    "processador com lâmina de metal",
+    "peneira fina",
+    "tigela com gelo",
+    "espátula de borracha"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "filés sem pele e sem espinha",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "peixe com sal",
+     "utensilio": "processador",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras",
+     "utensilio": "processador",
+     "parametro": "até incorporar"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "mistura",
+     "utensilio": "peneira fina",
+     "parametro": "tira espinhas restantes"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "tigela sobre outra com água e gelo",
+     "utensilio": "tigela com gelo",
+     "parametro": ""
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "creme de leite aos poucos",
+     "utensilio": "espátula de borracha",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "sal e pimenta",
+     "utensilio": "",
+     "parametro": "rende cerca de 850 g"
+    }
+   ],
+   "ponto_critico": "Mistura sobre gelo ao receber o creme",
+   "erro_comum": "Juntar o creme sem gelo e a musse talhar"
+  },
+  {
+   "id": "peixes.timbales",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Timbales de musse de peixe",
+   "ingredientes": [
+    "musse de peixe"
+   ],
+   "utensilios": [
+    "6 forminhas altas",
+    "papel impermeável untado",
+    "assadeira com água quente"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "forminhas geladas com a musse",
+     "utensilio": "forminhas",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "cobrir com papel untado",
+     "utensilio": "papel impermeável",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "banho-maria com água quase no topo",
+     "utensilio": "assadeira",
+     "parametro": "160 °C por cerca de 25 minutos até firmar"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "em pratos individuais",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Firme ao toque a 160 °C em 25 min",
+   "erro_comum": "Água baixa no banho-maria e cozimento desigual"
+  },
+  {
+   "id": "peixes.quenelles",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Quenelles de peixe",
+   "ingredientes": [
+    "musse de peixe",
+    "água"
+   ],
+   "utensilios": [
+    "duas colheres de sopa",
+    "panela",
+    "escumadeira"
+   ],
+   "passos": [
+    {
+     "acao": "moldar",
+     "alvo": "colherada de musse passada de uma colher para outra",
+     "utensilio": "duas colheres molhadas",
+     "parametro": "oval liso"
+    },
+    {
+     "acao": "pochê",
+     "alvo": "quenelles",
+     "utensilio": "panela",
+     "parametro": "5 a 10 minutos até firmar"
+    },
+    {
+     "acao": "coar",
+     "alvo": "quenelles",
+     "utensilio": "escumadeira e papel-toalha",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Oval liso; rende 18 a 19",
+   "erro_comum": "Colheres secas que grudam e deformam"
+  },
+  {
+   "id": "peixes.bolinhos",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Bolinhos de peixe",
+   "ingredientes": [
+    "peixe cru (branco ou oleoso, fresco ou defumado)",
+    "purê de batata",
+    "ovo",
+    "salsinha",
+    "temperos",
+    "migalhas de pão seco"
+   ],
+   "utensilios": [
+    "garfo",
+    "espátula",
+    "frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "amaciar",
+     "alvo": "peixe cru",
+     "utensilio": "garfo",
+     "parametro": "amassar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "purê, ovo, salsinha e temperos",
+     "utensilio": "espátula",
+     "parametro": "ovo só o necessário para dar liga; sobras de peixe cozido em partes iguais com batata"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bolinhas achatadas",
+     "utensilio": "mãos",
+     "parametro": ""
+    },
+    {
+     "acao": "empanar",
+     "alvo": "migalhas de pão",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "bolinhos",
+     "utensilio": "geladeira",
+     "parametro": "30 minutos"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "bolinhos",
+     "utensilio": "frigideira",
+     "parametro": "5 a 6 minutos de cada lado"
+    }
+   ],
+   "ponto_critico": "30 min de geladeira antes de fritar",
+   "erro_comum": "Fritar sem gelar e o bolinho desmanchar"
+  },
+  {
+   "id": "peixes.terrina-camadas",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Terrina de peixe em camadas",
+   "ingredientes": [
+    "850 g de musse de peixe",
+    "300 g de camarões cozidos",
+    "12 a 15 folhas de espinafre escaldadas",
+    "30 g de cerefólio e endro"
+   ],
+   "utensilios": [
+    "processador",
+    "terrina de 1,5 l",
+    "saco de confeitar",
+    "papel-manteiga",
+    "assadeira para banho-maria",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "bater",
+     "alvo": "cerefólio e endro até virar líquido",
+     "utensilio": "processador",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "metade da musse com as ervas",
+     "utensilio": "",
+     "parametro": "verde intenso"
+    },
+    {
+     "acao": "montar",
+     "alvo": "terrina untada forrada de espinafre",
+     "utensilio": "terrina",
+     "parametro": "sem deixar falhas"
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "camada de musse simples",
+     "utensilio": "saco de confeitar",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "camarões em folhas de espinafre",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "três fileiras de camarões",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "confeitar(saco)",
+     "alvo": "camada de musse verde",
+     "utensilio": "saco de confeitar",
+     "parametro": "filas homogêneas"
+    },
+    {
+     "acao": "assar",
+     "alvo": "banho-maria coberto com papel",
+     "utensilio": "forno",
+     "parametro": "150 °C por cerca de 1 hora, faca sai limpa do centro"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "terrina",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "terrina",
+     "utensilio": "faca",
+     "parametro": "quente ou fria, sobre molho de açafrão"
+    }
+   ],
+   "ponto_critico": "Faca sai limpa do centro",
+   "erro_comum": "Deixar falhas no espinafre e a terrina desmanchar ao desenformar"
+  },
+  {
+   "id": "frutos.matar-lagosta",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Matar lagosta de forma rápida",
+   "ingredientes": [
+    "lagosta viva"
+   ],
+   "utensilios": [
+    "congelador",
+    "faca de cozinha afiada",
+    "tábua"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "lagosta",
+     "utensilio": "congelador",
+     "parametro": "cerca de 1 hora para dessensibilizar (opcional)"
+    },
+    {
+     "acao": "separar",
+     "alvo": "lagosta de dorso para cima, garras presas",
+     "utensilio": "tábua",
+     "parametro": ""
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "centro da marca em cruz nas costas",
+     "utensilio": "faca de cozinha",
+     "parametro": "até tocar a tábua"
+    }
+   ],
+   "ponto_critico": "Ponta no centro exato da cruz",
+   "erro_comum": "Errar o ponto; estremecimento depois é só reflexo nervoso"
+  },
+  {
+   "id": "frutos.cozinhar-lagosta",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cozinhar lagosta viva",
+   "ingredientes": [
+    "lagosta viva com garras presas",
+    "court bouillon"
+   ],
+   "utensilios": [
+    "panela funda",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "court bouillon",
+     "utensilio": "panela funda",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "lagosta mergulhada, com o suporte de madeira",
+     "utensilio": "panela funda",
+     "parametro": "5 minutos para os primeiros 450 g e mais 3 para cada 450 g"
+    },
+    {
+     "acao": "coar",
+     "alvo": "lagosta",
+     "utensilio": "peneira",
+     "parametro": "deixar esfriar"
+    }
+   ],
+   "ponto_critico": "Casca vermelha; 5 min para 450 g + 3 min por 450 g extra",
+   "erro_comum": "Cozinhar demais e a carne ficar borrachuda"
+  },
+  {
+   "id": "frutos.carne-cauda-lagosta",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a carne da cauda em medalhões",
+   "ingredientes": [
+    "lagosta cozida",
+    "aspic (opcional)"
+   ],
+   "utensilios": [
+    "tesoura de cozinha",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "carapaça dos dois lados da cauda",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "barriga para cima"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "casca para trás",
+     "utensilio": "mãos",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne inteira da cauda",
+     "utensilio": "mãos",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "corte raso na curva interna",
+     "utensilio": "faca",
+     "parametro": "retirar a veia escura"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "medalhões regulares",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "medalhões sobrepostos no dorso",
+     "utensilio": "",
+     "parametro": "com aspic vira en bellevue"
+    }
+   ],
+   "ponto_critico": "Carne sai em peça única",
+   "erro_comum": "Esquecer a veia escura"
+  },
+  {
+   "id": "frutos.lagosta-meia-casca",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Abrir lagosta ao meio e tirar carne das garras",
+   "ingredientes": [
+    "lagosta cozida"
+   ],
+   "utensilios": [
+    "faca de cozinha grande",
+    "colher",
+    "quebrador de lagosta",
+    "martelinho",
+    "pinça para lagosta"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "suporte do corpo",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "lagosta ao meio da cabeça à cauda",
+     "utensilio": "faca de cozinha grande",
+     "parametro": "dorso para cima"
+    },
+    {
+     "acao": "separar",
+     "alvo": "fígado verde e coral",
+     "utensilio": "colher",
+     "parametro": "reservar; descartar o saco de areia"
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne da cauda das duas metades",
+     "utensilio": "dedos",
+     "parametro": "descartar a tripa"
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "garras logo abaixo da pinça",
+     "utensilio": "quebrador de lagosta",
+     "parametro": "sem danificar a carne"
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne da pinça pequena com a membrana",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne da pinça grande inteira",
+     "utensilio": "dedos",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Carne da garra sai inteira",
+   "erro_comum": "Comer brânquias, saco de areia ou intestino, que não são comestíveis"
+  },
+  {
+   "id": "frutos.ferver-caranguejo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Ferver caranguejo",
+   "ingredientes": [
+    "caranguejo vivo",
+    "court bouillon ou caldo Louisiana"
+   ],
+   "utensilios": [
+    "congelador",
+    "barbante",
+    "panela com tampa",
+    "escumadeira",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "resfriar",
+     "alvo": "caranguejo",
+     "utensilio": "congelador",
+     "parametro": "para dessensibilizar"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "garras",
+     "utensilio": "barbante",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "caldo suficiente para cobrir",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "caranguejo tampado",
+     "utensilio": "panela",
+     "parametro": "cerca de 5 minutos por 450 g até a casca avermelhar"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caranguejo",
+     "utensilio": "escumadeira e peneira",
+     "parametro": "esfriar"
+    }
+   ],
+   "ponto_critico": "Casca vermelha, 5 min por 450 g",
+   "erro_comum": "Não amarrar as garras"
+  },
+  {
+   "id": "frutos.carne-caranguejo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a carne do caranguejo",
+   "ingredientes": [
+    "caranguejo cozido"
+   ],
+   "utensilios": [
+    "quebrador",
+    "palito",
+    "colher",
+    "espeto ou agulha de lardear",
+    "faca de cozinha",
+    "colherinha"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "pernas e garras torcendo junto ao corpo",
+     "utensilio": "mãos",
+     "parametro": "descartar as pernas"
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "garras",
+     "utensilio": "quebrador",
+     "parametro": "tirar carne em pedaços grandes"
+    },
+    {
+     "acao": "separar",
+     "alvo": "cauda pontuda dobrando para trás",
+     "utensilio": "mãos",
+     "parametro": ""
+    },
+    {
+     "acao": "quebrar",
+     "alvo": "casca pressionando com os polegares",
+     "utensilio": "polegares",
+     "parametro": "separar o corpo"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "carne escura da casca",
+     "utensilio": "colher",
+     "parametro": "guardar separada da branca"
+    },
+    {
+     "acao": "separar",
+     "alvo": "estômago e brânquias",
+     "utensilio": "dedos",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "corpo ao meio no comprido",
+     "utensilio": "faca de cozinha",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "carne branca dos canais",
+     "utensilio": "cabo de colherinha ou espeto",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Carne branca e escura separadas",
+   "erro_comum": "Deixar brânquias ou estômago junto com a carne"
+  },
+  {
+   "id": "frutos.enfeitar-caranguejo",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Servir caranguejo na própria casca",
+   "ingredientes": [
+    "carne de caranguejo",
+    "maionese",
+    "salsinha",
+    "ovo cozido"
+   ],
+   "utensilios": [
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "borda da casca pela linha natural",
+     "utensilio": "faca ou dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "limpar",
+     "alvo": "casca",
+     "utensilio": "",
+     "parametro": "lavar e secar"
+    },
+    {
+     "acao": "montar",
+     "alvo": "carne branca em uma metade",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "carne escura com maionese",
+     "utensilio": "",
+     "parametro": "pôr na outra metade"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "gema cozida",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "salsinha, clara picada e gema peneirada",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "Casca limpa, sem membranas",
+   "erro_comum": "Pedaços de casca na carne"
+  },
+  {
+   "id": "frutos.lagostim-tripa",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar a tripa do lagostim",
+   "ingredientes": [
+    "lagostim"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "torcer a parte central da cauda e puxar",
+     "utensilio": "dedos",
+     "parametro": "a tripa sai junto; fazer antes de cozinhar"
+    }
+   ],
+   "ponto_critico": "Tripa sai inteira",
+   "erro_comum": "Tentar depois de cozido, quando é mais difícil"
+  },
+  {
+   "id": "frutos.preparar-camarao",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Descascar camarão e tirar a tripa",
+   "ingredientes": [
+    "camarão cru ou cozido"
+   ],
+   "utensilios": [
+    "faca pequena",
+    "papel-toalha"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "casca",
+     "utensilio": "dedos",
+     "parametro": "inteira ou deixando a cauda"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "corte raso ao longo do dorso",
+     "utensilio": "faca pequena",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "tripa escura",
+     "utensilio": "ponta da faca",
+     "parametro": "soltar a membrana presa"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "camarão",
+     "utensilio": "papel-toalha",
+     "parametro": "lavar e secar"
+    }
+   ],
+   "ponto_critico": "Tripa removida; no cru, antes de cozinhar",
+   "erro_comum": "Deixar a tripa, que tem textura de areia"
+  },
+  {
+   "id": "frutos.camarao-reto",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Camarão que não enrola (Truque do Chef)",
+   "ingredientes": [
+    "camarão"
+   ],
+   "utensilios": [
+    "palito de madeira comprido"
+   ],
+   "passos": [
+    {
+     "acao": "perfurar",
+     "alvo": "camarão no comprido",
+     "utensilio": "palito de madeira",
+     "parametro": "antes de cozinhar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "palito",
+     "utensilio": "",
+     "parametro": "tirar antes de servir"
+    }
+   ],
+   "ponto_critico": "Camarão sai reto",
+   "erro_comum": "Servir com o palito"
+  },
+  {
+   "id": "frutos.limpar-mexilhao",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Limpar mexilhões",
+   "ingredientes": [
+    "mexilhões vivos"
+   ],
+   "utensilios": [
+    "faca pequena",
+    "escova dura",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "crostas da casca",
+     "utensilio": "costas da faca pequena",
+     "parametro": "raspar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "barbas",
+     "utensilio": "faca e polegar",
+     "parametro": "puxar"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "conchas",
+     "utensilio": "escova dura sob água corrente",
+     "parametro": ""
+    },
+    {
+     "acao": "testar",
+     "alvo": "mexilhões",
+     "utensilio": "",
+     "parametro": "descartar rachados ou que não fecham ao bater"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "mexilhões em água fria levemente salgada",
+     "utensilio": "tigela",
+     "parametro": "até 2 horas; se lodosos, uma noite com 1 colher (sopa) de farinha e 50 g de sal"
+    }
+   ],
+   "ponto_critico": "Só vivos e fechados; água fria, não gelada",
+   "erro_comum": "Usar água gelada ou doce, que mata o molusco"
+  },
+  {
+   "id": "frutos.moules-mariniere",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Mexilhões à marinheira",
+   "ingredientes": [
+    "25 g de manteiga",
+    "2 cebolas",
+    "2 dentes de alho",
+    "200 ml de vinho branco",
+    "salsinha",
+    "450 g de mexilhões limpos",
+    "sal",
+    "pimenta"
+   ],
+   "utensilios": [
+    "panela grande e funda com tampa",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "saltear",
+     "alvo": "cebola e alho na manteiga",
+     "utensilio": "panela",
+     "parametro": "5 minutos até amaciar"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "vinho e salsinha",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "vapor",
+     "alvo": "mexilhões tampados",
+     "utensilio": "panela",
+     "parametro": "6 minutos até abrir"
+    },
+    {
+     "acao": "separar",
+     "alvo": "mexilhões fechados",
+     "utensilio": "",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "coar",
+     "alvo": "caldo",
+     "utensilio": "peneira",
+     "parametro": "tirar areia"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "caldo",
+     "utensilio": "panela limpa",
+     "parametro": "temperar"
+    },
+    {
+     "acao": "servir",
+     "alvo": "mexilhões com caldo e salsinha",
+     "utensilio": "",
+     "parametro": "4 porções"
+    }
+   ],
+   "ponto_critico": "Abertos em cerca de 6 min",
+   "erro_comum": "Servir os que não abriram"
+  },
+  {
+   "id": "frutos.abrir-mexilhao-vapor",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Abrir mexilhões no vapor",
+   "ingredientes": [
+    "mexilhões limpos",
+    "vinho, caldo de peixe ou sidra",
+    "cebolinhas, alho e ervas"
+   ],
+   "utensilios": [
+    "panela com tampa",
+    "escumadeira"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "líquido com temperos",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "vapor",
+     "alvo": "mexilhões tampados",
+     "utensilio": "panela",
+     "parametro": "6 minutos sacudindo a panela"
+    },
+    {
+     "acao": "separar",
+     "alvo": "mexilhões",
+     "utensilio": "escumadeira",
+     "parametro": "descartar os fechados"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "caldo",
+     "utensilio": "",
+     "parametro": "coar e servir junto"
+    }
+   ],
+   "ponto_critico": "Sacudir para abrirem por igual",
+   "erro_comum": "Líquido demais, que cozinha em vez de abrir no vapor"
+  },
+  {
+   "id": "frutos.anel-mexilhao",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Tirar o anel elástico do mexilhão",
+   "ingredientes": [
+    "mexilhões cozidos e abertos"
+   ],
+   "utensilios": [],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "mexilhão da concha",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "anel escuro em volta da carne",
+     "utensilio": "dedos",
+     "parametro": "puxar e descartar"
+    }
+   ],
+   "ponto_critico": "Só nos grandes, onde o anel é rijo",
+   "erro_comum": "Rasgar a carne ao puxar"
+  },
+  {
+   "id": "frutos.mexilhao-meia-concha",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Mexilhões gratinados na meia concha",
+   "ingredientes": [
+    "mexilhões cozidos",
+    "sal marinho",
+    "pesto ou manteiga de alho e ervas",
+    "concassée de tomate",
+    "louro"
+   ],
+   "utensilios": [
+    "travessa refratária",
+    "gratinador"
+   ],
+   "passos": [
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "conchas",
+     "utensilio": "dedos",
+     "parametro": "descartar a de cima"
+    },
+    {
+     "acao": "separar",
+     "alvo": "mexilhão da concha de baixo",
+     "utensilio": "dedos",
+     "parametro": "soltar mas deixar nela"
+    },
+    {
+     "acao": "montar",
+     "alvo": "conchas sobre cama de sal",
+     "utensilio": "travessa refratária",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "meia colher (chá) de pesto ou manteiga",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "gratinar",
+     "alvo": "mexilhões",
+     "utensilio": "gratinador",
+     "parametro": "2 a 3 minutos"
+    },
+    {
+     "acao": "decorar",
+     "alvo": "concassée e louro",
+     "utensilio": "",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "2 a 3 min de gratinado",
+   "erro_comum": "Conchas tombando sem a cama de sal"
+  },
+  {
+   "id": "frutos.abrir-moluscos",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Abrir amêijoas e moluscos",
+   "ingredientes": [
+    "amêijoas, vongole ou quahogs"
+   ],
+   "utensilios": [
+    "faca de ostra ou abridor",
+    "escova",
+    "colher",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "limpar",
+     "alvo": "conchas",
+     "utensilio": "escova",
+     "parametro": "tirar areia; descartar abertos ou danificados"
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "enfiar a faca no meio da concha e torcer",
+     "utensilio": "abridor",
+     "parametro": "cortar o músculo da junta"
+    },
+    {
+     "acao": "separar",
+     "alvo": "músculo do fundo",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "molusco e caldo",
+     "utensilio": "tigela",
+     "parametro": "se for sem concha"
+    }
+   ],
+   "ponto_critico": "Torção que mantém aberta enquanto corta o músculo",
+   "erro_comum": "Perder o caldo ao abrir"
+  },
+  {
+   "id": "frutos.abrir-ostra",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Abrir ostra",
+   "ingredientes": [
+    "ostra viva"
+   ],
+   "utensilios": [
+    "abridor de ostras",
+    "pano",
+    "gelo picado"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "ostra no pano com o lado curvo para baixo",
+     "utensilio": "pano",
+     "parametro": ""
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "abridor logo abaixo da junta",
+     "utensilio": "abridor de ostras",
+     "parametro": ""
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "girar o abridor entre as conchas",
+     "utensilio": "abridor de ostras",
+     "parametro": "separar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "músculo na concha de cima",
+     "utensilio": "abridor",
+     "parametro": "descartar a concha"
+    },
+    {
+     "acao": "separar",
+     "alvo": "ostra do músculo do fundo",
+     "utensilio": "abridor",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "na concha sobre gelo picado",
+     "utensilio": "",
+     "parametro": "limão e samphire escaldado"
+    }
+   ],
+   "ponto_critico": "Concha curva para baixo para não perder o líquido",
+   "erro_comum": "Segurar sem pano e cortar a mão"
+  },
+  {
+   "id": "frutos.abrir-vieira",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Abrir e limpar vieira",
+   "ingredientes": [
+    "vieira na concha"
+   ],
+   "utensilios": [
+    "abridor de ostras ou faca pequena",
+    "colher",
+    "escova",
+    "panela"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "vieira com o lado arredondado na palma",
+     "utensilio": "mão",
+     "parametro": ""
+    },
+    {
+     "acao": "abrir(frutos do mar)",
+     "alvo": "abridor entre as conchas perto da junta, girar",
+     "utensilio": "abridor de ostras",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "vieira da concha de cima",
+     "utensilio": "abridor",
+     "parametro": "raspando"
+    },
+    {
+     "acao": "separar",
+     "alvo": "vieira do músculo do fundo",
+     "utensilio": "colher",
+     "parametro": "guardar a concha se for servir"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "órgãos escuros em volta do músculo branco e do coral",
+     "utensilio": "dedos",
+     "parametro": "lavar em água corrente"
+    },
+    {
+     "acao": "separar",
+     "alvo": "músculo em forma de lua crescente da lateral",
+     "utensilio": "dedos",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "conchas esfregadas",
+     "utensilio": "panela",
+     "parametro": "5 minutos, se forem usadas para servir"
+    }
+   ],
+   "ponto_critico": "Músculo lateral removido; coral opcional",
+   "erro_comum": "Deixar o músculo em meia-lua, que endurece"
+  },
+  {
+   "id": "frutos.cozinhar-buzio",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Cozinhar búzios",
+   "ingredientes": [
+    "búzios",
+    "court bouillon"
+   ],
+   "utensilios": [
+    "panela",
+    "escumadeira",
+    "garfo"
+   ],
+   "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "court bouillon",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "búzios",
+     "utensilio": "panela",
+     "parametro": "até firmes mas macios"
+    },
+    {
+     "acao": "separar",
+     "alvo": "búzios",
+     "utensilio": "escumadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "separar",
+     "alvo": "molusco da concha",
+     "utensilio": "garfo",
+     "parametro": "lavar se tiver areia"
+    }
+   ],
+   "ponto_critico": "Firme e macio",
+   "erro_comum": "Tentar tirar vivo da concha"
+  },
+  {
+   "id": "frutos.limpar-lula",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Limpar lula",
+   "ingredientes": [
+    "lula inteira"
+   ],
+   "utensilios": [
+    "faca de cozinha"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "cabeça e tentáculos puxando do corpo",
+     "utensilio": "mãos",
+     "parametro": "reservar a tinta se for usar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "pena interna transparente",
+     "utensilio": "dedos",
+     "parametro": "descartar"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "pele arroxeada da bolsa e nadadeiras",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "nadadeiras",
+     "utensilio": "faca de cozinha",
+     "parametro": "reservar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tentáculos rente à cabeça",
+     "utensilio": "faca de cozinha",
+     "parametro": "reservar"
+    },
+    {
+     "acao": "separar",
+     "alvo": "bico dos tentáculos apertando",
+     "utensilio": "dedos",
+     "parametro": "descartar olhos e boca"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "bolsa em anéis ou deixar inteira",
+     "utensilio": "faca",
+     "parametro": "picar nadadeiras e tentáculos"
+    }
+   ],
+   "ponto_critico": "Bolsa limpa sem pena e sem pele",
+   "erro_comum": "Esquecer a pena ou romper o saco de tinta"
+  },
+  {
+   "id": "frutos.tinta-lula",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Reservar a tinta da lula",
+   "ingredientes": [
+    "saco de tinta da lula"
+   ],
+   "utensilios": [
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "separar",
+     "alvo": "saco de tinta intacto",
+     "utensilio": "dedos",
+     "parametro": ""
+    },
+    {
+     "acao": "perfurar",
+     "alvo": "saco",
+     "utensilio": "faca",
+     "parametro": "recolher a tinta na tigela"
+    }
+   ],
+   "ponto_critico": "Saco tirado sem romper",
+   "erro_comum": "Romper o saco durante a limpeza"
+  },
+  {
+   "id": "frutos.rechear-lula",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Rechear lula inteira",
+   "ingredientes": [
+    "bolsa de lula limpa",
+    "recheio (tentáculos picados, presunto, cebola, pão; ou cuscuz, salsicha, pimentão e hortelã)"
+   ],
+   "utensilios": [
+    "saco com bico de rechear ou colher",
+    "palitos",
+    "agulha grossa",
+    "barbante"
+   ],
+   "passos": [
+    {
+     "acao": "rechear",
+     "alvo": "bolsa",
+     "utensilio": "bico de rechear ou colher",
+     "parametro": "deixar espaço no topo, o recheio incha"
+    },
+    {
+     "acao": "amarrar",
+     "alvo": "abertura",
+     "utensilio": "palito ou agulha com barbante",
+     "parametro": "costurar"
+    }
+   ],
+   "ponto_critico": "Espaço livre no topo",
+   "erro_comum": "Encher até a boca e a lula estourar"
+  }
+ ]
+}

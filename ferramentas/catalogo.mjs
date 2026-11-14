@@ -1,0 +1,254 @@
+// Junta as partes do catálogo em src/dados/catalogo.json, liga cada passo a um gesto,
+// extrai a meta numérica e reconhece os alimentos. Uso: node ferramentas/catalogo.mjs [--verificar]
+import fs from 'node:fs';
+import path from 'node:path';
+
+const raiz = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1')), '..');
+const fonte = path.join(raiz, 'dados', 'fonte');
+const saida = path.join(raiz, 'src', 'dados', 'catalogo.json');
+
+const GESTOS = {
+  cortar: ['cortar', 'picar', 'fatiar', 'desossar', 'perfurar', 'descaroçar', 'rasgar', 'desfiar', 'eviscerar', 'lardear', 'marcar', 'abrir'],
+  superficie: ['descascar', 'escamar', 'raspar', 'limpar', 'ralar', 'pincelar', 'polvilhar', 'espalhar', 'regar', 'glaçar', 'esfregar', 'empanar', 'temperar', 'lavar', 'secar', 'esfarelar'],
+  ritmo: ['bater', 'mexer', 'misturar', 'dobrar(incorporar)', 'dobrar', 'emulsionar', 'sovar', 'moer', 'esmagar', 'amaciar', 'espremer', 'quebrar', 'abrir(frutos do mar)', 'abrir(rolo)', 'abrir(mãos)', 'laminar', 'esticar', 'prensar', 'torcer'],
+  calor: ['aquecer', 'ferver', 'cozinhar-lento', 'pochê', 'vapor', 'fritar', 'saltear', 'grelhar', 'reduzir', 'caramelizar', 'branquear', 'escaldar', 'tostar', 'flambar', 'temperar-chocolate', 'assar', 'gratinar', 'assar-as-cegas', 'esterilizar', 'clarificar'],
+  tempo: ['resfriar', 'congelar', 'descansar', 'fermentar', 'marinar', 'hidratar', 'deixar-de-molho', 'demolhar', 'descongelar', 'embeber', 'infusionar', 'armazenar'],
+  verter: ['coar', 'peneirar', 'despejar', 'escumar', 'desengordurar', 'escorrer', 'mergulhar'],
+  montar: ['montar', 'rechear', 'moldar', 'enrolar', 'amarrar', 'costurar', 'dobrar-folha', 'trançar', 'forrar', 'decorar', 'servir', 'desenformar', 'rechear-sob-pele', 'laminar(dobras)', 'selar', 'rolar', 'virar'],
+  confeitar: ['confeitar(saco)', 'confeitar'],
+  medir: ['medir', 'pesar'],
+  testar: ['testar', 'inspecionar'],
+  separar: ['separar'],
+};
+const acaoParaGesto = new Map();
+for (const [g, lista] of Object.entries(GESTOS)) for (const a of lista) acaoParaGesto.set(a, g);
+
+/** Variante de cada gesto, para o motor mudar o movimento pedido. */
+function variante(acao, gesto, texto) {
+  const t = texto.toLowerCase();
+  switch (gesto) {
+    case 'cortar':
+      if (acao === 'picar') return 'picar';
+      if (acao === 'fatiar') return 'fatiar';
+      if (acao === 'desossar' || acao === 'eviscerar' || acao === 'abrir') return 'contorno';
+      if (acao === 'perfurar' || acao === 'lardear' || acao === 'marcar') return 'pontos';
+      if (acao === 'descaroçar') return 'contorno';
+      if (acao === 'rasgar' || acao === 'desfiar') return 'desfiar';
+      if (/cubo|brunoise|dado|mirepoix|macedônia/.test(t)) return 'cubos';
+      if (/julienne|palito|tira|chiffonade|bastonete/.test(t)) return 'tiras';
+      return 'fatiar';
+    case 'superficie':
+      if (['descascar', 'escamar', 'raspar', 'ralar', 'esfarelar'].includes(acao)) return 'remover';
+      if (['limpar', 'lavar', 'secar'].includes(acao)) return 'limpar';
+      return 'cobrir';
+    case 'ritmo':
+      if (['bater', 'emulsionar'].includes(acao)) return 'circular-rapido';
+      if (['mexer', 'misturar'].includes(acao)) return 'circular';
+      if (['dobrar(incorporar)', 'dobrar'].includes(acao)) return 'dobrar';
+      if (['sovar', 'abrir(rolo)', 'abrir(mãos)', 'laminar', 'esticar'].includes(acao)) return 'vaivem';
+      if (['amaciar', 'quebrar'].includes(acao)) return 'golpes';
+      return 'pressionar';
+    case 'calor':
+      if (['assar', 'gratinar', 'assar-as-cegas', 'tostar'].includes(acao) && !/frigideira|panela|wok/.test(t)) return 'forno';
+      if (/\bforno\b/.test(t) && !/frigideira|wok|boca|fogo (alto|médio|baixo)/.test(t)) return 'forno';
+      if (acao === 'grelhar' && /forno|salamandra/.test(t)) return 'forno';
+      if (['fritar', 'saltear', 'caramelizar', 'flambar', 'tostar', 'grelhar'].includes(acao)) return 'frigideira';
+      return 'panela';
+    case 'tempo':
+      if (['resfriar', 'congelar', 'descongelar', 'armazenar'].includes(acao) || /geladeira|congelador|gelo/.test(t)) return 'frio';
+      if (acao === 'fermentar') return 'fermentar';
+      return 'repouso';
+    case 'verter':
+      if (['escumar', 'desengordurar'].includes(acao)) return 'escumar';
+      if (acao === 'peneirar') return 'peneirar';
+      if (acao === 'mergulhar') return 'mergulhar';
+      return 'despejar';
+    case 'montar':
+      if (['amarrar', 'costurar'].includes(acao)) return 'amarrar';
+      if (['enrolar', 'rolar', 'trançar'].includes(acao)) return acao === 'trançar' ? 'trancar' : 'enrolar';
+      if (['rechear', 'rechear-sob-pele'].includes(acao)) return 'rechear';
+      if (['dobrar-folha', 'laminar(dobras)', 'selar'].includes(acao)) return 'dobrar';
+      if (['decorar', 'servir'].includes(acao)) return 'decorar';
+      if (['desenformar', 'virar'].includes(acao)) return 'virar';
+      if (acao === 'forrar') return 'forrar';
+      return 'moldar';
+    case 'medir':
+      return acao === 'pesar' ? 'balanca' : 'jarra';
+    default:
+      return acao;
+  }
+}
+
+const num = (s) => parseFloat(s.replace(',', '.'));
+/** Extrai a meta principal do parâmetro (temperatura tem prioridade, depois medida, depois tempo). */
+function meta(texto) {
+  const t = texto.replace(/(\d)\s*º/g, '$1°');
+  const faixa = (re, unidade) => {
+    const m = t.match(re);
+    if (!m) return null;
+    const a = num(m[1]);
+    const b = m[2] ? num(m[2]) : undefined;
+    return b && b > a ? { valor: a, max: b, unidade } : { valor: a, unidade };
+  };
+  const N = '(\\d+(?:[.,]\\d+)?)';
+  const ATE = `(?:\\s*(?:a|e|-|ou)\\s*${N})?`;
+  return (
+    faixa(new RegExp(`${N}${ATE}\\s*°\\s*C`, 'i'), 'C') ||
+    faixa(new RegExp(`${N}${ATE}\\s*mm\\b`, 'i'), 'mm') ||
+    faixa(new RegExp(`${N}${ATE}\\s*cm\\b`, 'i'), 'cm') ||
+    faixa(new RegExp(`${N}${ATE}\\s*(?:min|minutos?)\\b`, 'i'), 'min') ||
+    faixa(new RegExp(`${N}${ATE}\\s*(?:h|horas?)\\b`, 'i'), 'h') ||
+    faixa(new RegExp(`${N}${ATE}\\s*(?:s|segundos?)\\b`, 'i'), 's') ||
+    faixa(new RegExp(`${N}${ATE}\\s*kg\\b`, 'i'), 'kg') ||
+    faixa(new RegExp(`${N}${ATE}\\s*g\\b`, 'i'), 'g') ||
+    faixa(new RegExp(`${N}${ATE}\\s*ml\\b`, 'i'), 'ml') ||
+    faixa(new RegExp(`${N}${ATE}\\s*litros?\\b`, 'i'), 'l') ||
+    undefined
+  );
+}
+
+const BANCADAS = [
+  { id: 'caldos', nome: 'Caldos e Sopas', cor: '#5fa8d3', teste: /^Caldos/ },
+  { id: 'ovos', nome: 'Ovos, Queijos e Cremes', cor: '#f2d16b', teste: /^Ovos/ },
+  { id: 'peixes', nome: 'Peixes e Frutos do Mar', cor: '#3d8eb9', teste: /^Peixes/ },
+  { id: 'aves', nome: 'Aves', cor: '#d9a066', teste: /^Aves/ },
+  { id: 'carnes', nome: 'Carnes', cor: '#c0504d', teste: /^Carnes/ },
+  { id: 'legumes', nome: 'Legumes e Saladas', cor: '#6aa84f', teste: /^Legumes/ },
+  { id: 'graos', nome: 'Grãos, Sementes e Castanhas', cor: '#b58b52', teste: /^Sementes/ },
+  { id: 'massas', nome: 'Massas', cor: '#e8c170', teste: /^Massas/ },
+  { id: 'molhos', nome: 'Molhos', cor: '#e07b39', teste: /^Molhos/ },
+  { id: 'paes', nome: 'Pães', cor: '#c8955c', teste: /^Fazendo/ },
+  { id: 'frutas', nome: 'Frutas', cor: '#e06666', teste: /^Frutas/ },
+  { id: 'sobremesas', nome: 'Sobremesas', cor: '#c27ba0', teste: /^Sobremesas/ },
+  { id: 'pastelaria', nome: 'Massas Doces e Folhadas', cor: '#f6b26b', teste: /^Pastelaria/ },
+  { id: 'bolos', nome: 'Bolos e Biscoitos', cor: '#a64d79', teste: /^Bolos/ },
+  { id: 'temperos', nome: 'Ervas e Temperos', cor: '#38761d', teste: /^Ervas/ },
+];
+
+const normal = (s) =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
+const semPlural = (w) => (w.length > 3 ? w.replace(/(oes|aes)$/, 'ao').replace(/(ns)$/, 'm').replace(/(es|s)$/, '') : w);
+const chave = (s) => normal(s).split(' ').map(semPlural).join(' ');
+
+const COBERTURA = /\b(azeite|oleo|manteiga|banha|gordura|sal|pimenta|acucar|farinha|mel|vinagre|molho|caldo|vinho|agua|leite|creme|gema|clara|ovo batido|glace|calda|geleia|marinada|tempero|especiaria|paprica|cominho|oregano|tomilho|alecrim|salsa|ervas?|alho picado|limao espremido|suco|fermento|amido|maisena|fuba|rosca|po)\b/;
+function ehCobertura(id, nome) {
+  const n = normal(`${id.replace(/[-_]/g, ' ')} ${nome}`);
+  return COBERTURA.test(n);
+}
+
+function main() {
+  const verificar = process.argv.includes('--verificar');
+  const partes = fs.readdirSync(fonte).filter((f) => /^parte\d+\.json$/.test(f)).sort();
+  const tecnicasBrutas = [];
+  const alimentos = new Map();
+  const tabelas = [];
+  for (const f of partes) {
+    const j = JSON.parse(fs.readFileSync(path.join(fonte, f), 'utf8'));
+    tecnicasBrutas.push(...j.tecnicas);
+    for (const a of j.alimentos ?? []) if (!alimentos.has(a.id)) alimentos.set(a.id, { id: a.id, nome: a.nome, forma: a.forma });
+    tabelas.push(...(j.tabelas ?? []));
+  }
+
+  // índice de alimentos por chave normalizada (nome e partes do nome antes de parênteses)
+  const indice = [];
+  for (const a of alimentos.values()) {
+    const nomes = new Set([a.nome, a.nome.split('(')[0], a.nome.split(',')[0], a.id.replace(/[-_]/g, ' ')]);
+    for (const n of nomes) {
+      const k = chave(n);
+      if (k.length >= 3) indice.push({ k, id: a.id });
+    }
+  }
+  indice.sort((a, b) => b.k.length - a.k.length);
+  // depois dos nomes completos, a primeira palavra do nome (frango, salmão, batata), sem repetir
+  const palavras = new Map();
+  for (const a of alimentos.values()) {
+    const w = chave(a.nome.split(/[ ,(]/)[0]);
+    if (w.length >= 4 && !palavras.has(w)) palavras.set(w, a.id);
+  }
+  for (const [k, id] of palavras) if (!indice.some((e) => e.k === k)) indice.push({ k, id });
+  const reconhecer = (texto) => {
+    const k = ' ' + chave(texto) + ' ';
+    for (const e of indice) if (k.includes(' ' + e.k + ' ')) return e.id;
+    return undefined;
+  };
+
+  const ids = new Set();
+  const problemas = [];
+  const tecnicas = tecnicasBrutas.map((t) => {
+    if (ids.has(t.id)) problemas.push(`id repetido: ${t.id}`);
+    ids.add(t.id);
+    const bancada = BANCADAS.find((b) => b.teste.test(t.capitulo));
+    if (!bancada) problemas.push(`capítulo sem bancada: ${t.capitulo}`);
+    const alim = [...new Set(t.ingredientes.map(reconhecer).filter(Boolean))];
+    // a peça principal é o primeiro ingrediente que não é tempero, gordura ou líquido de cobertura
+    const principal = alim.find((id) => !ehCobertura(id, alimentos.get(id)?.nome ?? '')) ?? alim[0];
+    let anterior = principal;
+    const passos = t.passos.map((p) => {
+      const acao = p.acao.trim();
+      let gesto = acaoParaGesto.get(acao);
+      if (!gesto) {
+        problemas.push(`ação sem gesto: ${acao} (${t.id})`);
+        gesto = 'montar';
+      }
+      const texto = `${p.alvo} ${p.utensilio} ${p.parametro}`;
+      const passo = {
+        acao,
+        gesto,
+        variante: variante(acao, gesto, texto),
+        alvo: p.alvo,
+        utensilio: p.utensilio,
+        parametro: p.parametro,
+      };
+      const m = meta(p.parametro || '');
+      if (m) passo.meta = m;
+      const cob = (id) => !!id && ehCobertura(id, alimentos.get(id)?.nome ?? '');
+      const solido = gesto === 'superficie' || gesto === 'cortar' || gesto === 'montar' || gesto === 'separar';
+      const r = reconhecer(p.alvo);
+      // pincelar, regar, temperar: o que se reconhece no alvo é a cobertura, não a peça
+      const a = solido ? [r, anterior, principal].find((x) => x && !cob(x)) : r ?? anterior ?? principal;
+      if (a) {
+        passo.alimento = a;
+        if (!cob(a)) anterior = a;
+      }
+      return passo;
+    });
+    return {
+      id: t.id,
+      capitulo: t.capitulo,
+      bancada: bancada?.id ?? 'temperos',
+      nome: t.nome,
+      ingredientes: t.ingredientes,
+      alimentos: alim,
+      utensilios: t.utensilios,
+      passos,
+      ponto_critico: t.ponto_critico,
+      erro_comum: t.erro_comum,
+    };
+  });
+
+  const texto = JSON.stringify(tecnicas);
+  if (/[\u2013\u2014]/.test(texto)) problemas.push('travessão encontrado no catálogo');
+  for (const t of tecnicas) if (!t.passos.length) problemas.push(`técnica sem passos: ${t.id}`);
+
+  const catalogo = {
+    bancadas: BANCADAS.map(({ teste, ...b }) => ({ ...b, capitulos: [...new Set(tecnicas.filter((t) => t.bancada === b.id).map((t) => t.capitulo))] })),
+    tecnicas,
+    alimentos: [...alimentos.values()],
+    tabelas,
+  };
+
+  if (problemas.length) {
+    console.error(problemas.join('\n'));
+    process.exit(1);
+  }
+  const semAlimento = tecnicas.filter((t) => !t.alimentos.length).length;
+  const comMeta = tecnicas.reduce((s, t) => s + t.passos.filter((p) => p.meta).length, 0);
+  const totalPassos = tecnicas.reduce((s, t) => s + t.passos.length, 0);
+  console.log(`catálogo: ${tecnicas.length} técnicas, ${totalPassos} passos (${comMeta} com meta), ${alimentos.size} alimentos, ${semAlimento} técnicas sem alimento reconhecido`);
+  if (!verificar) {
+    fs.mkdirSync(path.dirname(saida), { recursive: true });
+    fs.writeFileSync(saida, JSON.stringify(catalogo));
+  }
+}
+
+main();
