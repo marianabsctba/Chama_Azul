@@ -46,6 +46,11 @@ export class Mesa {
   /** Centro do fundo interno do recipiente atual (no mundo). */
   readonly centro = new THREE.Vector3();
   readonly extras: THREE.Object3D[] = [];
+  /** Miúdos (amêndoa, ervilha, uva) aparecem em punhado nos passos de panela, forno, descanso e tempero. */
+  mostrarPunhado = false;
+  private punhado: THREE.Group | null = null;
+  private punhadoDe: Peca | null = null;
+  private punhadoMats: THREE.MeshStandardMaterial[] = [];
 
   constructor(cena: THREE.Scene) {
     this.cena = cena;
@@ -73,6 +78,7 @@ export class Mesa {
   }
 
   removerPeca() {
+    this.descartarPunhado();
     if (!this.peca) return;
     this.cena.remove(this.peca);
     this.peca.descartar();
@@ -200,6 +206,73 @@ export class Mesa {
   atualizar(dt: number) {
     this.peca?.atualizar(dt);
     this.conteudo?.atualizar(dt);
+    this.atualizarPunhado();
+  }
+
+  /** Tamanho real da peça na cena (o maior lado), em metros. */
+  private tamanhoPeca(p: Peca) {
+    return Math.max(p.comprimento, p.largura, p.altura) * p.scale.x;
+  }
+
+  private descartarPunhado() {
+    if (this.punhado) this.cena.remove(this.punhado);
+    for (const m of this.punhadoMats) m.dispose();
+    this.punhadoMats = [];
+    this.punhado = null;
+    this.punhadoDe = null;
+  }
+
+  /** Cria, posiciona e colore o punhado em volta da peça principal. */
+  private atualizarPunhado() {
+    const p = this.peca;
+    if (!p || !this.mostrarPunhado || this.tamanhoPeca(p) >= 0.035) {
+      if (this.punhado) this.punhado.visible = false;
+      if (this.punhadoDe && this.punhadoDe !== p) this.descartarPunhado();
+      return;
+    }
+    if (this.punhadoDe !== p) {
+      this.descartarPunhado();
+      const g = new THREE.Group();
+      // um material por malha do alimento, sem recorte, com a cor acompanhando a peça
+      this.punhadoMats = p.forma.malhas.map((m) => {
+        const mat = (m.material as THREE.MeshStandardMaterial).clone();
+        mat.clippingPlanes = [0, 1, 2, 3].map(() => new THREE.Plane(new THREE.Vector3(0, 1, 0), 1e5));
+        return mat;
+      });
+      const n = Math.max(5, Math.min(12, Math.round(0.06 / this.tamanhoPeca(p)) + 4));
+      for (let i = 0; i < n; i++) {
+        const un = new THREE.Group();
+        p.forma.malhas.forEach((m, k) => {
+          const c = new THREE.Mesh(m.geometry, this.punhadoMats[k]);
+          c.position.copy(m.position);
+          c.quaternion.copy(m.quaternion);
+          c.scale.copy(m.scale);
+          c.castShadow = true;
+          c.receiveShadow = true;
+          un.add(c);
+        });
+        // espalhados num círculo em volta da peça, sem amontoar (ângulo dourado)
+        const a = i * 2.39996;
+        const r = Math.sqrt((i + 1) / n);
+        un.userData.desloc = new THREE.Vector2(Math.cos(a) * r, Math.sin(a) * r);
+        un.rotation.y = a * 1.7;
+        g.add(un);
+      }
+      this.punhado = g;
+      this.punhadoDe = p;
+      this.cena.add(g);
+    }
+    const g = this.punhado!;
+    g.visible = true;
+    const raio = this.recipiente ? this.bocaRaio * 0.62 : 0.055;
+    g.position.copy(p.position);
+    for (const un of g.children) {
+      const d = un.userData.desloc as THREE.Vector2;
+      un.position.set(d.x * raio, 0, d.y * raio);
+      un.scale.copy(p.scale);
+    }
+    const base = p.fragmentos[0]?.materiais;
+    if (base) this.punhadoMats.forEach((m, k) => base[k] && m.color.copy(base[k].color));
   }
 
   limparTudo() {

@@ -55,6 +55,8 @@ export class Missao {
     this.exec = null;
     this.indice++;
     if (this.indice >= this.tecnica.passos.length) {
+      this.cozinha.abrirPorta('forno', false);
+      this.cozinha.abrirPorta('geladeira', false);
       this.encerrada = true;
       this.eventos.aoFim(this.resultados);
       return;
@@ -73,6 +75,8 @@ export class Missao {
       }
       this.estacaoAtual = est;
       this.relogio.decorrido = 0;
+      // miúdos em punhado quando o passo trata do conjunto (panela, forno, descanso, tempero, ponto)
+      this.mesa.mostrarPunhado = passo.gesto === 'calor' || passo.gesto === 'tempo' || passo.gesto === 'testar' || (passo.gesto === 'superficie' && passo.variante === 'cobrir');
       const ctx: ContextoGesto = {
         cena: this.cena,
         camera: this.jogador.camera,
@@ -98,6 +102,9 @@ export class Missao {
     };
     const estacao = this.cozinha.estacoes[est];
     this.esperando = true;
+    // a porta abre enquanto a câmera chega e fecha quando o trabalho vai para outro lugar
+    this.cozinha.abrirPorta('forno', est === 'forno');
+    this.cozinha.abrirPorta('geladeira', est === 'geladeira');
     this.jogador.modo = 'trabalho';
     if (this.estacaoAtual !== est || this.indice === 0) {
       // aproxima a câmera da superfície: trabalho fino pede olho perto
@@ -148,6 +155,8 @@ export class Missao {
   }
 
   encerrar() {
+    this.cozinha.abrirPorta('forno', false);
+    this.cozinha.abrirPorta('geladeira', false);
     this.exec?.descartar();
     this.exec = null;
     this.mesa.limparTudo();
