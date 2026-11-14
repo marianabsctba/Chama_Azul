@@ -14,7 +14,7 @@ export interface Progresso {
 const CHAVE = 'chama-azul:v1';
 
 export function carregar(): Progresso {
-  const padrao: Progresso = { feitas: {}, modo: 'zen', som: true, musica: 0.6, chuva: 0.6, sensibilidade: 1 };
+  const padrao: Progresso = { feitas: {}, modo: 'zen', som: true, musica: 0.6, chuva: 0.45, sensibilidade: 1 };
   try {
     const bruto = localStorage.getItem(CHAVE);
     if (!bruto) return padrao;
