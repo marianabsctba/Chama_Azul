@@ -32,6 +32,25 @@ export interface Passo {
   parametro: string;
   meta?: Meta;          // número principal extraído do parâmetro
   alimento?: string;    // id do alimento principal do passo, se houver
+  /** Ingredientes que entram neste passo e ficam sobre ou dentro da peça. */
+  adicionar?: string[];
+  /** Líquido ou gordura do recipiente (azeite, água, caldo...). Nunca vira peça. */
+  meio?: string;
+  /** Recipiente pedido (frigideira, wok, tigela...). */
+  recipiente?: string;
+  /** Passos de inspecionar: a pergunta certa, as opções e a resposta. */
+  pergunta?: string;
+  opcoes?: string[];
+  correta?: number;
+  explicacao?: string;
+  objetos?: string[];
+  cheirar?: boolean;
+}
+
+export interface PratoFinal {
+  principal?: string;
+  acompanhamentos?: string[];
+  servir?: 'prato' | 'tigela' | 'travessa' | 'taca' | 'tabua';
 }
 
 export interface Tecnica {
@@ -45,6 +64,7 @@ export interface Tecnica {
   passos: Passo[];
   ponto_critico: string;
   erro_comum: string;
+  prato?: PratoFinal;
 }
 
 export interface Bancada {

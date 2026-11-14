@@ -1,0 +1,6216 @@
+{
+  "talos.erva_doce_preparar": {
+    "passos": [
+      {
+        "alimento": "erva_doce",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "erva_doce"
+      },
+      {
+        "alimento": "erva_doce"
+      },
+      {
+        "alimento": "erva_doce",
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "erva_doce",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "alcachofra.inteira_cozinhar": {
+    "passos": [
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra",
+        "meio": "água com limão",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra"
+      }
+    ],
+    "prato": {
+      "principal": "alcachofra",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "alcachofra.talos": {
+    "passos": [
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra",
+        "meio": "água salgada com limão",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "alcachofra",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "alcachofra.coracao": {
+    "passos": [
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra"
+      },
+      {
+        "alimento": "alcachofra",
+        "meio": "água com limão",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "alcachofra",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "alcachofra"
+      }
+    ],
+    "prato": {
+      "principal": "alcachofra",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "alcachofra.brotos": {
+    "passos": [
+      {
+        "alimento": "broto_alcachofra",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "broto_alcachofra"
+      },
+      {
+        "alimento": "broto_alcachofra",
+        "meio": "água com azeite e limão",
+        "recipiente": "panela",
+        "adicionar": [
+          "tomilho",
+          "louro"
+        ]
+      },
+      {
+        "alimento": "broto_alcachofra",
+        "meio": "líquido aromático"
+      }
+    ],
+    "prato": {
+      "principal": "broto_alcachofra",
+      "acompanhamentos": [
+        "limao",
+        "tomilho"
+      ],
+      "servir": "prato"
+    }
+  },
+  "legumes.julienne": {
+    "passos": [
+      {
+        "alimento": "nabo"
+      },
+      {
+        "alimento": "nabo"
+      },
+      {
+        "alimento": "nabo"
+      }
+    ],
+    "prato": {
+      "principal": "nabo",
+      "acompanhamentos": [
+        "cenoura"
+      ],
+      "servir": "prato"
+    }
+  },
+  "legumes.corte_girado": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "legumes.cubos": {
+    "passos": [
+      {
+        "alimento": "batata_doce"
+      },
+      {
+        "alimento": "batata_doce"
+      },
+      {
+        "alimento": "batata_doce"
+      },
+      {
+        "alimento": "batata_doce"
+      }
+    ],
+    "prato": {
+      "principal": "batata_doce",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "legumes.mirepoix": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "adicionar": [
+          "cebola",
+          "aipo",
+          "alho_poro"
+        ]
+      },
+      {
+        "alimento": "cenoura",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "cebola",
+        "aipo",
+        "alho_poro"
+      ],
+      "servir": "prato"
+    }
+  },
+  "legumes.brunoise": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "aipo",
+        "alho_poro"
+      ],
+      "servir": "prato"
+    }
+  },
+  "legumes.tiras_descascador": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "legumes.tornear": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "batata",
+        "nabo"
+      ],
+      "servir": "prato"
+    }
+  },
+  "legumes.mandolina_fatiar": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "legumes.nodosos_preparar": {
+    "passos": [
+      {
+        "alimento": "aipo_rabano"
+      },
+      {
+        "alimento": "aipo_rabano"
+      },
+      {
+        "alimento": "aipo_rabano",
+        "meio": "água com limão",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "aipo_rabano",
+      "acompanhamentos": [
+        "tupinambo",
+        "couve_rabano"
+      ],
+      "servir": "prato"
+    }
+  },
+  "legumes.couve_rabano_fatiar": {
+    "passos": [
+      {
+        "alimento": "couve_rabano"
+      },
+      {
+        "alimento": "couve_rabano"
+      }
+    ],
+    "prato": {
+      "principal": "couve_rabano",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "legumes.aipo_rabano_palitos": {
+    "passos": [
+      {
+        "alimento": "aipo_rabano"
+      },
+      {
+        "alimento": "aipo_rabano"
+      }
+    ],
+    "prato": {
+      "principal": "aipo_rabano",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.lavar": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.hasselback": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.chateaux": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.furar_assar": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.parisiennes": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "batata",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.pont_neuf": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.allumettes": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "batata",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "batata",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.frites": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "batata",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.gaufrettes": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "batata.souffles": {
+    "passos": [
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.cultivados_preparar": {
+    "passos": [
+      {
+        "alimento": "cogumelo_paris",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "cogumelo_paris"
+      }
+    ],
+    "prato": {
+      "principal": "cogumelo_paris",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.fatiar": {
+    "passos": [
+      {
+        "alimento": "cogumelo_paris"
+      }
+    ],
+    "prato": {
+      "principal": "cogumelo_paris",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.duxelles": {
+    "passos": [
+      {
+        "alimento": "cogumelo_paris"
+      },
+      {
+        "alimento": "cogumelo_paris",
+        "meio": "manteiga",
+        "recipiente": "frigideira",
+        "adicionar": [
+          "chalota"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "cogumelo_paris",
+      "acompanhamentos": [
+        "chalota"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.selvagens_limpar": {
+    "passos": [
+      {
+        "alimento": "chanterelle"
+      },
+      {
+        "alimento": "chanterelle",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "chanterelle"
+      }
+    ],
+    "prato": {
+      "principal": "chanterelle",
+      "acompanhamentos": [
+        "cepe",
+        "morel"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.orelha_de_pau": {
+    "passos": [
+      {
+        "alimento": "orelha_de_pau",
+        "meio": "água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "orelha_de_pau"
+      },
+      {
+        "alimento": "orelha_de_pau"
+      },
+      {
+        "alimento": "orelha_de_pau"
+      }
+    ],
+    "prato": {
+      "principal": "orelha_de_pau",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.secos_reconstituir": {
+    "passos": [
+      {
+        "alimento": "shiitake",
+        "meio": "água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "shiitake"
+      },
+      {
+        "alimento": "shiitake"
+      }
+    ],
+    "prato": {
+      "principal": "shiitake",
+      "acompanhamentos": [
+        "morel",
+        "cepe"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cogumelos.trufa_limpar_fatiar": {
+    "passos": [
+      {
+        "alimento": "trufa_preta"
+      },
+      {
+        "alimento": "trufa_preta"
+      },
+      {
+        "alimento": "trufa_preta"
+      }
+    ],
+    "prato": {
+      "principal": "trufa_preta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.testar_idade": {
+    "passos": [
+      {
+        "alimento": "vagem",
+        "pergunta": "O que a vagem faz ao ser dobrada ao meio?",
+        "opcoes": [
+          "Parte com um estalo limpo",
+          "Dobra mole sem quebrar",
+          "Racha só pela metade e fica presa no fio"
+        ],
+        "correta": 0,
+        "explicacao": "Vagem fresca quebra limpa; a que dobra foi colhida tarde."
+      }
+    ],
+    "prato": {
+      "principal": "vagem",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.tirar_fio": {
+    "passos": [
+      {
+        "alimento": "vagem"
+      },
+      {
+        "alimento": "vagem"
+      }
+    ],
+    "prato": {
+      "principal": "vagem",
+      "acompanhamentos": [
+        "ervilha_torta"
+      ],
+      "servir": "prato"
+    }
+  },
+  "vagens.debulhar": {
+    "passos": [
+      {
+        "alimento": "ervilha"
+      },
+      {
+        "alimento": "ervilha"
+      }
+    ],
+    "prato": {
+      "principal": "ervilha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.feijao_verde": {
+    "passos": [
+      {
+        "alimento": "feijao_verde"
+      },
+      {
+        "alimento": "feijao_verde"
+      }
+    ],
+    "prato": {
+      "principal": "feijao_verde",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.feijoes_grandes": {
+    "passos": [
+      {
+        "alimento": "fava"
+      },
+      {
+        "alimento": "fava",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "fava",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "fava"
+      }
+    ],
+    "prato": {
+      "principal": "fava",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.quiabo": {
+    "passos": [
+      {
+        "alimento": "quiabo",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "quiabo"
+      }
+    ],
+    "prato": {
+      "principal": "quiabo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.milho_espiga": {
+    "passos": [
+      {
+        "alimento": "milho"
+      },
+      {
+        "alimento": "milho"
+      },
+      {
+        "alimento": "milho",
+        "corte": "contorno"
+      }
+    ],
+    "prato": {
+      "principal": "milho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.palha_milho_secar": {
+    "passos": [
+      {
+        "alimento": "palha_milho",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "palha_milho",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "palha_milho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "vagens.tamales": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "palha_milho",
+        "adicionar": [
+          "fuba"
+        ]
+      },
+      {
+        "alimento": "carne_porco_moida",
+        "meio": "óleo",
+        "recipiente": "frigideira",
+        "adicionar": [
+          "cebola",
+          "alho",
+          "chili"
+        ]
+      },
+      {
+        "alimento": "palha_milho",
+        "adicionar": [
+          "carne_porco_moida"
+        ]
+      },
+      {
+        "alimento": "palha_milho"
+      },
+      {
+        "alimento": "palha_milho"
+      },
+      {
+        "alimento": "palha_milho",
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "palha_milho",
+      "acompanhamentos": [
+        "chili"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cebolas.descascar_aneis": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "cebola"
+      },
+      {
+        "alimento": "cebola",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "cebola"
+      },
+      {
+        "alimento": "cebola"
+      }
+    ],
+    "prato": {
+      "principal": "cebola",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cebolas.cubos": {
+    "passos": [
+      {
+        "alimento": "cebola"
+      },
+      {
+        "alimento": "cebola",
+        "corte": "deitado"
+      },
+      {
+        "alimento": "cebola"
+      },
+      {
+        "alimento": "cebola"
+      }
+    ],
+    "prato": {
+      "principal": "cebola",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cebolas.perola_descascar": {
+    "passos": [
+      {
+        "alimento": "cebola_perola",
+        "meio": "água quente",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "cebola_perola"
+      },
+      {
+        "alimento": "cebola_perola"
+      }
+    ],
+    "prato": {
+      "principal": "cebola_perola",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cebolas.alho_esmagar_picar": {
+    "passos": [
+      {
+        "alimento": "alho"
+      },
+      {
+        "alimento": "alho"
+      },
+      {
+        "alimento": "alho"
+      },
+      {
+        "alimento": "alho",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "alho"
+      }
+    ],
+    "prato": {
+      "principal": "alho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cebolas.alho_poro": {
+    "passos": [
+      {
+        "alimento": "alho_poro",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "alho_poro"
+      },
+      {
+        "alimento": "alho_poro"
+      },
+      {
+        "alimento": "alho_poro"
+      }
+    ],
+    "prato": {
+      "principal": "alho_poro",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cebolas.cebolinha_tiras": {
+    "passos": [
+      {
+        "alimento": "cebolinha",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "cebolinha"
+      },
+      {
+        "alimento": "cebolinha"
+      }
+    ],
+    "prato": {
+      "principal": "cebolinha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cebolas.cebolinha_transversal": {
+    "passos": [
+      {
+        "alimento": "cebolinha"
+      },
+      {
+        "alimento": "cebolinha"
+      }
+    ],
+    "prato": {
+      "principal": "cebolinha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "incomuns.raiz_lotus": {
+    "passos": [
+      {
+        "alimento": "raiz_lotus"
+      },
+      {
+        "alimento": "raiz_lotus"
+      },
+      {
+        "alimento": "raiz_lotus",
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "raiz_lotus",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "incomuns.cercefi": {
+    "passos": [
+      {
+        "alimento": "cercefi"
+      },
+      {
+        "alimento": "cercefi"
+      },
+      {
+        "alimento": "cercefi",
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "cercefi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "incomuns.raizes_tropicais": {
+    "passos": [
+      {
+        "alimento": "taro"
+      },
+      {
+        "alimento": "taro"
+      },
+      {
+        "alimento": "taro",
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "taro",
+      "acompanhamentos": [
+        "mandioca",
+        "eddo"
+      ],
+      "servir": "prato"
+    }
+  },
+  "incomuns.melao_amargo": {
+    "passos": [
+      {
+        "alimento": "melao_amargo"
+      },
+      {
+        "alimento": "melao_amargo"
+      },
+      {
+        "alimento": "melao_amargo",
+        "meio": "óleo",
+        "recipiente": "wok"
+      }
+    ],
+    "prato": {
+      "principal": "melao_amargo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "incomuns.algas_tostar": {
+    "passos": [
+      {
+        "alimento": "wakame",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "wakame"
+      }
+    ],
+    "prato": {
+      "principal": "wakame",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.tomate_concasse": {
+    "passos": [
+      {
+        "alimento": "tomate",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "tomate",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tomate",
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "tomate"
+      },
+      {
+        "alimento": "tomate"
+      },
+      {
+        "alimento": "tomate"
+      }
+    ],
+    "prato": {
+      "principal": "tomate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.berinjela_salgar": {
+    "passos": [
+      {
+        "alimento": "berinjela"
+      },
+      {
+        "alimento": "berinjela"
+      },
+      {
+        "alimento": "berinjela"
+      },
+      {
+        "alimento": "berinjela"
+      },
+      {
+        "alimento": "berinjela"
+      }
+    ],
+    "prato": {
+      "principal": "berinjela",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.berinjela_assar": {
+    "passos": [
+      {
+        "alimento": "berinjela",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "berinjela"
+      },
+      {
+        "alimento": "berinjela",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "berinjela",
+        "adicionar": [
+          "alho"
+        ]
+      },
+      {
+        "alimento": "berinjela"
+      }
+    ],
+    "prato": {
+      "principal": "berinjela",
+      "acompanhamentos": [
+        "alho"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.abobora_bolota": {
+    "passos": [
+      {
+        "alimento": "abobora_bolota"
+      },
+      {
+        "alimento": "abobora_bolota"
+      },
+      {
+        "alimento": "abobora_bolota"
+      }
+    ],
+    "prato": {
+      "principal": "abobora_bolota",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.abobora_noz": {
+    "passos": [
+      {
+        "alimento": "abobora_noz"
+      },
+      {
+        "alimento": "abobora_noz"
+      },
+      {
+        "alimento": "abobora_noz",
+        "corte": "cubos"
+      }
+    ],
+    "prato": {
+      "principal": "abobora_noz",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.spaghetti_squash": {
+    "passos": [
+      {
+        "alimento": "spaghetti_squash",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "spaghetti_squash"
+      },
+      {
+        "alimento": "spaghetti_squash",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "spaghetti_squash"
+      }
+    ],
+    "prato": {
+      "principal": "spaghetti_squash",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.pepino": {
+    "passos": [
+      {
+        "alimento": "pepino"
+      },
+      {
+        "alimento": "pepino"
+      },
+      {
+        "alimento": "pepino"
+      }
+    ],
+    "prato": {
+      "principal": "pepino",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.abacate_descarocar": {
+    "passos": [
+      {
+        "alimento": "abacate"
+      },
+      {
+        "alimento": "abacate"
+      },
+      {
+        "alimento": "abacate"
+      }
+    ],
+    "prato": {
+      "principal": "abacate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos_legume.abacate_fatiar": {
+    "passos": [
+      {
+        "alimento": "abacate",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "abacate"
+      },
+      {
+        "alimento": "abacate"
+      },
+      {
+        "alimento": "abacate"
+      }
+    ],
+    "prato": {
+      "principal": "abacate",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "pimentao.fatiar_cubos": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "pimentao",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "pimentao"
+      }
+    ],
+    "prato": {
+      "principal": "pimentao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pimentao.inteiro_rechear": {
+    "passos": [
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "carne-moida"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "pimentao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "chili.frescos_preparar": {
+    "passos": [
+      {
+        "alimento": "chili"
+      },
+      {
+        "alimento": "chili"
+      },
+      {
+        "alimento": "chili"
+      },
+      {
+        "alimento": "chili"
+      }
+    ],
+    "prato": {
+      "principal": "chili",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "chili.secos_reidratar": {
+    "passos": [
+      {
+        "alimento": "chili_seco",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "chili_seco",
+        "meio": "água quente",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "chili_seco"
+      },
+      {
+        "alimento": "chili_seco"
+      },
+      {
+        "alimento": null,
+        "meio": "pasta de chili",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "chili_seco",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "chili.preparar_para_rechear": {
+    "passos": [
+      {
+        "alimento": "jalapeno",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "jalapeno"
+      },
+      {
+        "alimento": "jalapeno"
+      },
+      {
+        "alimento": "poblano",
+        "corte": "contorno"
+      }
+    ],
+    "prato": {
+      "principal": "jalapeno",
+      "acompanhamentos": [
+        "poblano",
+        "anaheim"
+      ],
+      "servir": "prato"
+    }
+  },
+  "chili.rellenos_rechear": {
+    "passos": [
+      {
+        "alimento": "jalapeno",
+        "adicionar": [
+          "gruyere"
+        ]
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo",
+        "adicionar": [
+          "coentro"
+        ]
+      },
+      {
+        "alimento": "anaheim",
+        "adicionar": [
+          "caranguejo"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "jalapeno",
+      "acompanhamentos": [
+        "anaheim",
+        "gorro_escoces",
+        "lima"
+      ],
+      "servir": "prato"
+    }
+  },
+  "chili.rellenos_massa_fritar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa de farinha e ovo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa líquida",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "poblano",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "poblano"
+      }
+    ],
+    "prato": {
+      "principal": "poblano",
+      "acompanhamentos": [
+        "jalapeno"
+      ],
+      "servir": "prato"
+    }
+  },
+  "chili.rellenos_grelhar": {
+    "passos": [
+      {
+        "alimento": "poblano",
+        "recipiente": "assadeira",
+        "adicionar": [
+          "gruyere"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "poblano",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "saladas.alface_preparar": {
+    "passos": [
+      {
+        "alimento": "alface"
+      },
+      {
+        "alimento": "alface"
+      },
+      {
+        "alimento": "alface",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "alface"
+      },
+      {
+        "alimento": "alface"
+      }
+    ],
+    "prato": {
+      "principal": "alface",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "saladas.centrifugar": {
+    "passos": [
+      {
+        "alimento": "alface",
+        "recipiente": "centrífuga"
+      },
+      {
+        "alimento": "alface",
+        "recipiente": "centrífuga"
+      }
+    ],
+    "prato": {
+      "principal": "alface",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "saladas.salada_verde": {
+    "passos": [
+      {
+        "alimento": "alface",
+        "adicionar": [
+          "rucula",
+          "agriao",
+          "frisee"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "vinagrete",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "alface",
+        "meio": "vinagrete",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "alface",
+        "meio": "vinagrete",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "alface",
+      "acompanhamentos": [
+        "rucula",
+        "agriao",
+        "folha_carvalho"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "ervas.picar": {
+    "passos": [
+      {
+        "alimento": "salsa"
+      },
+      {
+        "alimento": "salsa"
+      }
+    ],
+    "prato": {
+      "principal": "salsa",
+      "acompanhamentos": [
+        "coentro"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ervas.tiras": {
+    "passos": [
+      {
+        "alimento": "manjericao"
+      },
+      {
+        "alimento": "manjericao",
+        "corte": "tiras"
+      }
+    ],
+    "prato": {
+      "principal": "manjericao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.tesoura": {
+    "passos": [
+      {
+        "alimento": "cebolinha_francesa",
+        "corte": "picar"
+      }
+    ],
+    "prato": {
+      "principal": "cebolinha_francesa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.fines_herbes": {
+    "passos": [
+      {
+        "alimento": "cebolinha_francesa",
+        "corte": "picar"
+      },
+      {
+        "alimento": "cerefolio",
+        "adicionar": [
+          "estragao",
+          "salsa"
+        ]
+      },
+      {
+        "alimento": "cerefolio",
+        "adicionar": [
+          "cebolinha_francesa"
+        ]
+      },
+      {
+        "alimento": "cerefolio"
+      }
+    ],
+    "prato": {
+      "principal": "cerefolio",
+      "acompanhamentos": [
+        "cebolinha_francesa",
+        "estragao",
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ervas.bouquet_garni": {
+    "passos": [
+      {
+        "alimento": "alho_poro",
+        "adicionar": [
+          "louro",
+          "tomilho",
+          "alecrim",
+          "salsa"
+        ]
+      },
+      {
+        "alimento": "alho_poro"
+      },
+      {
+        "alimento": "alho_poro",
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "alho_poro",
+      "acompanhamentos": [
+        "louro",
+        "tomilho",
+        "alecrim"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cozinhar.raizes_fervura": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "objetos": [
+          "faca"
+        ],
+        "meio": "água salgada",
+        "recipiente": "panela",
+        "pergunta": "O que a faca sente no centro da cenoura?",
+        "opcoes": [
+          "Entra sem resistência",
+          "Para no meio, ainda dura",
+          "Só a casca está macia"
+        ],
+        "correta": 0,
+        "explicacao": "Pronta quando a ponta da faca atravessa o centro sem esforço."
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "batata",
+        "nabo"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cozinhar.verdes_fervura": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "vagem",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "vagem"
+      },
+      {
+        "alimento": "vagem",
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "vagem",
+        "adicionar": [
+          "manteiga"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "vagem",
+      "acompanhamentos": [
+        "brocolis",
+        "ervilha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cozinhar.aspargo_em_pe": {
+    "passos": [
+      {
+        "alimento": "aspargo"
+      },
+      {
+        "alimento": null,
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "aspargo",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "aspargo",
+        "adicionar": [
+          "manteiga"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "aspargo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cozinhar.microondas": {
+    "passos": [
+      {
+        "alimento": "brocolis"
+      },
+      {
+        "alimento": "brocolis",
+        "meio": "pouca água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "brocolis"
+      }
+    ],
+    "prato": {
+      "principal": "brocolis",
+      "acompanhamentos": [
+        "couve_flor",
+        "cenoura"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cozinhar.vapor_cesta": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "recipiente": "cesta de vapor"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "água corrente"
+      },
+      {
+        "alimento": "cenoura"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "abobora_noz",
+        "vagem"
+      ],
+      "servir": "prato"
+    }
+  },
+  "cozinhar.vapor_bambu": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "recipiente": "cesta de bambu"
+      },
+      {
+        "alimento": null,
+        "meio": "água com louro",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "cenoura",
+        "recipiente": "cesta de bambu"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "vagem"
+      ],
+      "servir": "prato"
+    }
+  },
+  "assar.batata_assada": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "batata",
+        "meio": "óleo",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "assar.alho_flor": {
+    "passos": [
+      {
+        "alimento": "alho",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "alho"
+      },
+      {
+        "alimento": "alho",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "alho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "assar.beterraba": {
+    "passos": [
+      {
+        "alimento": "beterraba",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "beterraba"
+      },
+      {
+        "alimento": "beterraba",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "beterraba"
+      },
+      {
+        "alimento": "beterraba",
+        "adicionar": [
+          "manteiga"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "beterraba",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "assar.pimentao_forno": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao"
+      }
+    ],
+    "prato": {
+      "principal": "pimentao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "assar.pimentao_chama": {
+    "passos": [
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao"
+      }
+    ],
+    "prato": {
+      "principal": "pimentao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "assar.legumes_azeite": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "meio": "azeite",
+        "recipiente": "assadeira",
+        "adicionar": [
+          "abobrinha",
+          "pimentao",
+          "berinjela",
+          "cebola",
+          "alecrim"
+        ]
+      },
+      {
+        "alimento": "batata",
+        "meio": "azeite",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "alho"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [
+        "abobrinha",
+        "pimentao",
+        "berinjela"
+      ],
+      "servir": "prato"
+    }
+  },
+  "assar.gratin_dauphinois": {
+    "passos": [
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "alho",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "batata",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "batata",
+        "meio": "leite com creme",
+        "recipiente": "assadeira",
+        "adicionar": [
+          "gruyere"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [
+        "gruyere"
+      ],
+      "servir": "prato"
+    }
+  },
+  "fritar.cartouche": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "papel-manteiga"
+      },
+      {
+        "alimento": null,
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "papel-manteiga",
+        "corte": "contorno"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "fritar.suar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "manteiga",
+        "recipiente": "panela",
+        "adicionar": [
+          "cebola",
+          "aipo"
+        ]
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "cebola",
+        "aipo"
+      ],
+      "servir": "prato"
+    }
+  },
+  "fritar.glacar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga com água e açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "manteiga com açúcar",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "fritar.rosti": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "recipiente": "tigela",
+        "adicionar": [
+          "cenoura",
+          "abobrinha"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "batata",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [
+        "cenoura",
+        "abobrinha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "fritar.stir_fry": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "óleo",
+        "recipiente": "wok",
+        "adicionar": [
+          "ervilha_torta"
+        ]
+      },
+      {
+        "alimento": "cenoura"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "ervilha_torta"
+      ],
+      "servir": "prato"
+    }
+  },
+  "fritar.batata_duas_vezes": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "fritar.ninho_batata": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "recipiente": "fôrma ninho"
+      },
+      {
+        "alimento": "batata",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "fritar.alga_crespa": {
+    "passos": [
+      {
+        "alimento": "repolho"
+      },
+      {
+        "alimento": "repolho"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "repolho",
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "repolho"
+      },
+      {
+        "alimento": "repolho"
+      }
+    ],
+    "prato": {
+      "principal": "repolho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "fritar.grelhar_listrado": {
+    "passos": [
+      {
+        "alimento": "abobrinha"
+      },
+      {
+        "alimento": "abobrinha",
+        "meio": "marinada de azeite e limão",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "grelha"
+      },
+      {
+        "alimento": "abobrinha",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "abobrinha",
+      "acompanhamentos": [
+        "erva_doce",
+        "berinjela",
+        "pimentao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "pure.peneira": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "batata"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "pure.moedor": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "recipiente": "moedor"
+      },
+      {
+        "alimento": "batata",
+        "recipiente": "moedor"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "pure.processador": {
+    "passos": [
+      {
+        "alimento": "espinafre",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": "cenoura",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "espinafre",
+      "acompanhamentos": [
+        "cenoura"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "pure.enriquecer": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "meio": "leite quente com manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "pure.espinafre_cozinhar": {
+    "passos": [
+      {
+        "alimento": "espinafre"
+      },
+      {
+        "alimento": "espinafre",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espinafre",
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "espinafre",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pure.timbale": {
+    "passos": [
+      {
+        "alimento": "espinafre",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": "espinafre",
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": "espinafre",
+        "meio": "água",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": "espinafre",
+        "objetos": [
+          "palito"
+        ],
+        "pergunta": "Como sai o palito enfiado no centro da timbale?",
+        "opcoes": [
+          "Sai seco e limpo",
+          "Sai com creme verde grudado",
+          "Sai úmido só na ponta"
+        ],
+        "correta": 0,
+        "explicacao": "Palito limpo indica que o ovo firmou e dá para desenformar."
+      },
+      {
+        "alimento": "espinafre"
+      }
+    ],
+    "prato": {
+      "principal": "espinafre",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "graos.feijao_molho_cozinhar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": null,
+        "meio": "água corrente",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "feijão cozido",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "feijao_seco",
+      "acompanhamentos": [
+        "grao_de_bico"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "graos.molho_rapido": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "feijao_seco",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "graos.feijao_refrito": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "feijão com caldo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "feijão amassado",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "feijão amassado",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "feijao_roxinho",
+      "acompanhamentos": [
+        "cebola"
+      ],
+      "servir": "prato"
+    }
+  },
+  "graos.falafel": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de grão-de-bico",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de grão-de-bico",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de grão-de-bico",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "papel-toalha"
+      }
+    ],
+    "prato": {
+      "principal": "grao_de_bico",
+      "acompanhamentos": [
+        "coentro",
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "graos.homus": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "purê de grão-de-bico",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite com limão",
+        "recipiente": "processador"
+      }
+    ],
+    "prato": {
+      "principal": "grao_de_bico",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "graos.dhal": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "meio": "ghee",
+        "recipiente": "panela",
+        "adicionar": [
+          "alho"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "lentilha no ghee",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "alho",
+        "meio": "ghee",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "lentilha",
+      "acompanhamentos": [
+        "alho"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "arroz.agua_quente": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": null,
+        "meio": "água fervente",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "arroz_longo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "arroz.absorcao": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "arroz_basmati",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "arroz.pilaf": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "água corrente",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "arroz_basmati",
+      "acompanhamentos": [
+        "cebola"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "arroz.sushi": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "vinagre de arroz com açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "vinagre de arroz com açúcar",
+        "recipiente": "tigela de madeira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela de madeira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela de madeira"
+      }
+    ],
+    "prato": {
+      "principal": "arroz_japones",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "arroz.risoto": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "meio": "azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "vinho branco",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "crème fraîche",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "arroz_arborio",
+      "acompanhamentos": [
+        "parmesao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "arroz.caldo_crustaceos": {
+    "passos": [
+      {
+        "alimento": "lagostim",
+        "meio": "court bouillon",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "lagostim"
+      },
+      {
+        "alimento": "lagostim",
+        "meio": "óleo e manteiga",
+        "recipiente": "panela",
+        "adicionar": [
+          "cenoura",
+          "cebola",
+          "alho_poro"
+        ]
+      },
+      {
+        "alimento": "lagostim",
+        "meio": "conhaque",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "lagostim",
+        "adicionar": [
+          "tomate",
+          "alho"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "caldo de peixe",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "graos.polenta_mole": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "polenta",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "polenta",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "polenta com manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "polenta",
+      "acompanhamentos": [
+        "parmesao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "graos.polenta_grelhada": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "polenta",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "polenta",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tábua"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "tábua"
+      },
+      {
+        "alimento": null,
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "polenta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "graos.cuscuz": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água quente",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga derretida",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "cuscuz",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "graos.cuscuzeiro": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ensopado",
+        "recipiente": "cuscuzeiro"
+      },
+      {
+        "alimento": null,
+        "meio": "vapor",
+        "recipiente": "cuscuzeiro"
+      }
+    ],
+    "prato": {
+      "principal": "cuscuz",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "graos.bulgur": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "bulgur",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "graos.pipoca": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "milho_pipoca",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "castanhas.pistache_descascar": {
+    "passos": [
+      {
+        "alimento": "pistache"
+      }
+    ],
+    "prato": {
+      "principal": "pistache",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.escaldar_pelar": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "meio": "água fervente",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "amendoa"
+      },
+      {
+        "alimento": "amendoa"
+      }
+    ],
+    "prato": {
+      "principal": "amendoa",
+      "acompanhamentos": [
+        "pistache"
+      ],
+      "servir": "prato"
+    }
+  },
+  "castanhas.tostar_pelar": {
+    "passos": [
+      {
+        "alimento": "avela",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "avela",
+        "recipiente": "pano"
+      },
+      {
+        "alimento": "avela",
+        "recipiente": "pano"
+      }
+    ],
+    "prato": {
+      "principal": "avela",
+      "acompanhamentos": [
+        "castanha_para"
+      ],
+      "servir": "prato"
+    }
+  },
+  "castanhas.tiras": {
+    "passos": [
+      {
+        "alimento": "amendoa"
+      }
+    ],
+    "prato": {
+      "principal": "amendoa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.laminas": {
+    "passos": [
+      {
+        "alimento": "amendoa"
+      }
+    ],
+    "prato": {
+      "principal": "amendoa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.picar": {
+    "passos": [
+      {
+        "alimento": "amendoa"
+      }
+    ],
+    "prato": {
+      "principal": "amendoa",
+      "acompanhamentos": [
+        "noz"
+      ],
+      "servir": "prato"
+    }
+  },
+  "castanhas.triturar": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": "amendoa",
+        "recipiente": "moedor"
+      }
+    ],
+    "prato": {
+      "principal": "amendoa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.tostar": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "amendoa",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "amendoa",
+      "acompanhamentos": [
+        "avela",
+        "noz"
+      ],
+      "servir": "prato"
+    }
+  },
+  "castanhas.portuguesa_cortar": {
+    "passos": [
+      {
+        "alimento": "castanha_portuguesa"
+      }
+    ],
+    "prato": {
+      "principal": "castanha_portuguesa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.portuguesa_tostar": {
+    "passos": [
+      {
+        "alimento": "castanha_portuguesa"
+      },
+      {
+        "alimento": "castanha_portuguesa",
+        "recipiente": "grelha"
+      },
+      {
+        "alimento": "castanha_portuguesa"
+      }
+    ],
+    "prato": {
+      "principal": "castanha_portuguesa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.portuguesa_escaldar": {
+    "passos": [
+      {
+        "alimento": "castanha_portuguesa",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "castanha_portuguesa"
+      },
+      {
+        "alimento": "castanha_portuguesa"
+      }
+    ],
+    "prato": {
+      "principal": "castanha_portuguesa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "castanhas.manteiga": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": "manteiga",
+        "recipiente": "processador",
+        "adicionar": [
+          "amendoa"
+        ]
+      },
+      {
+        "alimento": "manteiga"
+      },
+      {
+        "alimento": "manteiga"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [
+        "amendoa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "coco.abrir": {
+    "passos": [
+      {
+        "alimento": "coco"
+      },
+      {
+        "alimento": "coco"
+      },
+      {
+        "alimento": "coco"
+      },
+      {
+        "alimento": "coco"
+      },
+      {
+        "alimento": "coco"
+      }
+    ],
+    "prato": {
+      "principal": "coco",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "coco.leite": {
+    "passos": [
+      {
+        "alimento": "coco"
+      },
+      {
+        "alimento": "coco",
+        "meio": "água fervente",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "coco",
+        "recipiente": "pano fino"
+      },
+      {
+        "alimento": null,
+        "meio": "leite de coco",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "coco",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "massa.fresca_mao": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos com azeite",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos com farinha",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos com farinha",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa_fresca",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa_fresca"
+      }
+    ],
+    "prato": {
+      "principal": "massa_fresca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.fresca_processador": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha com azeite e ovo",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": "massa_fresca",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa_fresca"
+      }
+    ],
+    "prato": {
+      "principal": "massa_fresca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.aromatizar": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos com espinafre",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovo com purê de tomate",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovo com ervas e açafrão",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "massa_fresca",
+      "acompanhamentos": [
+        "espinafre",
+        "tomate"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.ervas_laminadas": {
+    "passos": [
+      {
+        "alimento": "massa_fresca",
+        "adicionar": [
+          "salsa"
+        ]
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "massa_fresca",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "massa_fresca",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.abrir_mao": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      }
+    ],
+    "prato": {
+      "principal": "massa_fresca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.abrir_maquina": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      }
+    ],
+    "prato": {
+      "principal": "massa_fresca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.cortar_mao": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "tagliatelle"
+      },
+      {
+        "alimento": "tagliatelle"
+      },
+      {
+        "alimento": "tagliatelle"
+      }
+    ],
+    "prato": {
+      "principal": "tagliatelle",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.cortar_maquina": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "tagliatelle"
+      },
+      {
+        "alimento": "tagliatelle"
+      }
+    ],
+    "prato": {
+      "principal": "tagliatelle",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.lasanha_secar": {
+    "passos": [
+      {
+        "alimento": "lasanha"
+      },
+      {
+        "alimento": "lasanha"
+      }
+    ],
+    "prato": {
+      "principal": "lasanha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.guardar": {
+    "passos": [
+      {
+        "alimento": "tagliatelle"
+      },
+      {
+        "alimento": "tagliatelle",
+        "recipiente": "pote fechado"
+      }
+    ],
+    "prato": {
+      "principal": "tagliatelle",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.ravioli_dobra": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca",
+        "adicionar": [
+          "espinafre"
+        ]
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "raviolo"
+      }
+    ],
+    "prato": {
+      "principal": "raviolo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.ravioli_forma": {
+    "passos": [
+      {
+        "alimento": "massa_fresca",
+        "recipiente": "fôrma de ravióli"
+      },
+      {
+        "alimento": "massa_fresca",
+        "recipiente": "fôrma de ravióli",
+        "adicionar": [
+          "espinafre"
+        ]
+      },
+      {
+        "alimento": "massa_fresca",
+        "recipiente": "fôrma de ravióli"
+      }
+    ],
+    "prato": {
+      "principal": "raviolo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.tortellini": {
+    "passos": [
+      {
+        "alimento": "massa_fresca",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "massa_fresca",
+        "adicionar": [
+          "carne_porco_moida"
+        ]
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "tortellini"
+      },
+      {
+        "alimento": "tortellini"
+      },
+      {
+        "alimento": "tortellini"
+      }
+    ],
+    "prato": {
+      "principal": "tortellini",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.recheio_frango_salvia": {
+    "passos": [
+      {
+        "alimento": "frango",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "frango",
+        "recipiente": "processador",
+        "adicionar": [
+          "cebola",
+          "alho",
+          "salsa"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "recheio de frango",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "frango",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "massa.canelone": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca",
+        "meio": "água com óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "massa_fresca",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa_fresca",
+        "adicionar": [
+          "espinafre"
+        ]
+      },
+      {
+        "alimento": "canelone"
+      },
+      {
+        "alimento": "canelone",
+        "meio": "molho de tomate",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "canelone",
+        "recipiente": "assadeira",
+        "adicionar": [
+          "parmesao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "canelone",
+      "acompanhamentos": [
+        "parmesao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.gnocchi_semolina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite com semolina",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "semolina cozida",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "semolina com ovos",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "semolina com ovos",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "semolina firme",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "gnocchi",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "gnocchi",
+        "recipiente": "assadeira",
+        "adicionar": [
+          "manteiga",
+          "parmesao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "gnocchi",
+      "acompanhamentos": [
+        "parmesao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.gnocchi_batata": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "batata",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "gnocchi"
+      },
+      {
+        "alimento": "gnocchi",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "gnocchi"
+      }
+    ],
+    "prato": {
+      "principal": "gnocchi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.gnocchi_vincar": {
+    "passos": [
+      {
+        "alimento": "gnocchi"
+      }
+    ],
+    "prato": {
+      "principal": "gnocchi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.cozinhar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com sal e azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espaguete",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espaguete",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espaguete",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": "espaguete",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "espaguete",
+      "acompanhamentos": [
+        "penne"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.comprida": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com sal e óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espaguete",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espaguete",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": "espaguete",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "espaguete",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.testar_al_dente": {
+    "passos": [
+      {
+        "alimento": "espaguete",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "espaguete",
+        "objetos": [
+          "garfo"
+        ],
+        "pergunta": "Como está o fio de espaguete ao morder?",
+        "opcoes": [
+          "Tenro, com leve resistência no centro",
+          "Duro, com miolo branco cru",
+          "Mole, sem resistência nenhuma"
+        ],
+        "correta": 0,
+        "explicacao": "Al dente é sem gosto de cru e ainda com leve resistência."
+      }
+    ],
+    "prato": {
+      "principal": "espaguete",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.asiatica_cozinhar": {
+    "passos": [
+      {
+        "alimento": "macarrao_ovo",
+        "meio": "água salgada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "macarrao_ovo",
+        "meio": "água fria",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "macarrao_ovo",
+        "meio": "óleo",
+        "recipiente": "wok"
+      }
+    ],
+    "prato": {
+      "principal": "macarrao_ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.ravioli_cortador": {
+    "passos": [
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca",
+        "corte": "contorno"
+      }
+    ],
+    "prato": {
+      "principal": "raviolo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.molho_manteiga_ervas": {
+    "passos": [
+      {
+        "alimento": "chalota",
+        "meio": "vinho e vinagre",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga emulsionada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho de manteiga com ervas",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho de manteiga com ervas",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [
+        "manjericao",
+        "cerefolio",
+        "salsa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "massa.asiatica_hidratar": {
+    "passos": [
+      {
+        "alimento": "macarrao_arroz",
+        "meio": "água quente",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "macarrao_arroz",
+        "recipiente": "escorredor"
+      }
+    ],
+    "prato": {
+      "principal": "macarrao_arroz",
+      "acompanhamentos": [
+        "macarrao_transparente"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.wonton": {
+    "passos": [
+      {
+        "alimento": "folha_wonton",
+        "adicionar": [
+          "carne_porco_moida"
+        ]
+      },
+      {
+        "alimento": "folha_wonton"
+      },
+      {
+        "alimento": "folha_wonton"
+      },
+      {
+        "alimento": "repolho",
+        "recipiente": "cesta de bambu"
+      },
+      {
+        "alimento": "folha_wonton",
+        "meio": "água",
+        "recipiente": "cesta de bambu"
+      }
+    ],
+    "prato": {
+      "principal": "folha_wonton",
+      "acompanhamentos": [
+        "repolho"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.pasteizinhos_chineses": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água fervente com farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "folha_wonton"
+      },
+      {
+        "alimento": "folha_wonton",
+        "adicionar": [
+          "camarao",
+          "cebolinha"
+        ]
+      },
+      {
+        "alimento": "folha_wonton"
+      },
+      {
+        "alimento": "folha_wonton",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "folha_wonton",
+        "meio": "água",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "folha_wonton",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.forma_pastel": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "fôrma de pastel"
+      },
+      {
+        "alimento": "folha_wonton",
+        "recipiente": "fôrma de pastel"
+      },
+      {
+        "alimento": "folha_wonton",
+        "recipiente": "fôrma de pastel",
+        "adicionar": [
+          "carne_porco_moida"
+        ]
+      },
+      {
+        "alimento": "folha_wonton",
+        "recipiente": "fôrma de pastel"
+      }
+    ],
+    "prato": {
+      "principal": "folha_wonton",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "massa.rolinho_primavera": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "óleo",
+        "recipiente": "wok",
+        "adicionar": [
+          "pimentao",
+          "cebolinha"
+        ]
+      },
+      {
+        "alimento": "folha_rolinho",
+        "adicionar": [
+          "cenoura",
+          "pimentao",
+          "tofu"
+        ]
+      },
+      {
+        "alimento": "folha_rolinho"
+      },
+      {
+        "alimento": "folha_rolinho"
+      },
+      {
+        "alimento": "folha_rolinho"
+      },
+      {
+        "alimento": "folha_rolinho",
+        "meio": "óleo",
+        "recipiente": "cesta de fritura"
+      },
+      {
+        "alimento": "folha_rolinho"
+      }
+    ],
+    "prato": {
+      "principal": "folha_rolinho",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "massa.minirolinho": {
+    "passos": [
+      {
+        "alimento": "folha_rolinho"
+      },
+      {
+        "alimento": "folha_rolinho",
+        "adicionar": [
+          "cenoura"
+        ]
+      },
+      {
+        "alimento": "folha_rolinho",
+        "meio": "óleo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "folha_rolinho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "molhos.roux_branco": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "roux",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.roux_louro": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "roux",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.roux_escuro": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "roux escuro",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.branco": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "roux",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho branco",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho branco",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.bechamel": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "meio": "leite",
+        "recipiente": "panela",
+        "adicionar": [
+          "alho",
+          "louro"
+        ]
+      },
+      {
+        "alimento": "cebola",
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "leite com roux",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.evitar_crosta": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho com manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.veloute": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "roux",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "roux",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "velouté",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "velouté",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.corrigir_empelotado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.veloute_variacoes": {
+    "passos": [
+      {
+        "alimento": "tomate",
+        "meio": "velouté",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "salsa",
+        "meio": "velouté com limão",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "velouté com suco de laranja",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.escuro_basico": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo de carne",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água com araruta",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho escuro",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.escuro_liquidos": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "molho escuro com vinho Madeira",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho escuro",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.escuro_tutano": {
+    "passos": [
+      {
+        "alimento": "tutano",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tutano"
+      },
+      {
+        "alimento": "tutano",
+        "meio": "molho escuro",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.espagnole": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "molho escuro",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cogumelo_paris",
+        "meio": "molho escuro",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cogumelo_paris",
+        "meio": "molho escuro com tomate",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho escuro",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho escuro",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.manter_quente": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.chaudfroid": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo concentrado",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo com aspic",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "chaudfroid",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "peito-de-frango",
+        "meio": "chaudfroid",
+        "recipiente": "grelha"
+      },
+      {
+        "alimento": "peito-de-frango",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "peito-de-frango",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "molhos.hollandaise_mao": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas com água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga clarificada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "hollandaise com limão",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga_clarificada",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.hollandaise_maquina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas com água",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga clarificada",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "hollandaise com limão",
+        "recipiente": "processador"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga_clarificada",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.hollandaise_corrigir": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "molho talhado com gelo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gema com água quente",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga_clarificada",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.hollandaise_variacoes": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "hollandaise com crème fraîche",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "hollandaise com mostarda",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "hollandaise com suco de laranja",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga noisette",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga_clarificada",
+      "acompanhamentos": [
+        "laranja"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.manteiga_clarificar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga clarificada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga_clarificada",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.bearnaise": {
+    "passos": [
+      {
+        "alimento": "chalota",
+        "meio": "vinagre",
+        "recipiente": "panela",
+        "adicionar": [
+          "estragao"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "gemas",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga clarificada",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "béarnaise",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga_clarificada",
+      "acompanhamentos": [
+        "estragao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.beurre_blanc": {
+    "passos": [
+      {
+        "alimento": "chalota",
+        "meio": "vinagre",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "crème fraîche",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga",
+      "acompanhamentos": [
+        "chalota"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.montar_manteiga": {
+    "passos": [
+      {
+        "alimento": "manteiga",
+        "meio": "molho quente",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.maionese_mao": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gema com mostarda",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite e óleo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "maionese com vinagre",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "mostarda_dijon"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.maionese_maquina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovo com mostarda",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "maionese com vinagre",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "processador"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "mostarda_dijon"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.maionese_corrigir": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "vinagre com maionese",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gema",
+        "recipiente": "processador"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "molhos.maionese_variacoes": {
+    "passos": [
+      {
+        "alimento": "alho",
+        "meio": "maionese",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pimentao",
+        "meio": "maionese",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "maionese com chantilly",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "salsa",
+        "meio": "maionese",
+        "recipiente": "tigela",
+        "adicionar": [
+          "estragao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "alho",
+        "pimentao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.vinagrete": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "vinagre com mostarda",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "vinagrete",
+        "recipiente": "garrafa"
+      }
+    ],
+    "prato": {
+      "principal": "vinagre",
+      "acompanhamentos": [
+        "mostarda_dijon"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "molhos.cozido": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas com vinagre e manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme azedo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "molho",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "paes.ativar-fermento-fresco": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "fermento-fresco",
+        "meio": "água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "fermento dissolvido",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "fermento-fresco",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "paes.ativar-fermento-seco": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "água com fermento seco",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "água com fermento e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "fermento espumando",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "fermento-seco",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "paes.fermento-instantaneo": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "líquido morno",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "fermento-soluvel",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "paes.massa-a-mao": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "fermento com água",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa-de-pao"
+      }
+    ],
+    "prato": {
+      "principal": "massa-de-pao",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.massa-a-maquina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com fermento",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": null,
+        "meio": "massa mole",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      }
+    ],
+    "prato": {
+      "principal": "massa-de-pao",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.primeira-fermentacao": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela",
+        "pergunta": "O que acontece ao apertar a massa crescida com o dedo?",
+        "opcoes": [
+          "A marca do dedo fica",
+          "A massa volta na hora e apaga a marca",
+          "A massa murcha inteira e solta ar"
+        ],
+        "correta": 0,
+        "explicacao": "Massa no ponto dobrou de volume e guarda a marca do dedo."
+      }
+    ],
+    "prato": {
+      "principal": "massa-de-pao",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "paes.socar-e-descansar": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      }
+    ],
+    "prato": {
+      "principal": "massa-de-pao",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.pao-branco-forma": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de pão"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de pão"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "recipiente": "fôrma de pão"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-forma",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.glacear": {
+    "passos": [
+      {
+        "alimento": "pao-redondo"
+      },
+      {
+        "alimento": "pao-redondo"
+      },
+      {
+        "alimento": "pao-redondo"
+      },
+      {
+        "alimento": "pao-redondo"
+      }
+    ],
+    "prato": {
+      "principal": "pao-redondo",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.coberturas": {
+    "passos": [
+      {
+        "alimento": "pao-redondo"
+      },
+      {
+        "alimento": "pao-redondo",
+        "adicionar": [
+          "aveia"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "pao-redondo",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.tranca": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "pao-trancado"
+      },
+      {
+        "alimento": "pao-trancado"
+      }
+    ],
+    "prato": {
+      "principal": "pao-trancado",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.pao-redondo": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "pao-redondo"
+      }
+    ],
+    "prato": {
+      "principal": "pao-redondo",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.corte-em-cruz": {
+    "passos": [
+      {
+        "alimento": "pao-redondo",
+        "corte": "pontos"
+      }
+    ],
+    "prato": {
+      "principal": "pao-redondo",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.cortes-transversais": {
+    "passos": [
+      {
+        "alimento": "baguete",
+        "corte": "pontos"
+      }
+    ],
+    "prato": {
+      "principal": "baguete",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.testar-ponto": {
+    "passos": [
+      {
+        "alimento": "pao-redondo",
+        "pergunta": "Que som faz o fundo do pão ao receber batidinhas?",
+        "opcoes": [
+          "Som oco",
+          "Som abafado e pesado",
+          "Nenhum som, a casca afunda"
+        ],
+        "correta": 0,
+        "explicacao": "Pão assado soa oco; abafado volta mais 5 minutos ao forno."
+      },
+      {
+        "alimento": "pao-redondo",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "pao-redondo",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "pao-redondo",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.rosca-palmier": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "rosquinhas"
+      }
+    ],
+    "prato": {
+      "principal": "rosquinhas",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.rosca-tourelle": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "rosquinhas"
+      }
+    ],
+    "prato": {
+      "principal": "rosquinhas",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.rosca-caracol": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "rosquinhas"
+      }
+    ],
+    "prato": {
+      "principal": "rosquinhas",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.rosca-parker-house": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "rosquinhas"
+      }
+    ],
+    "prato": {
+      "principal": "rosquinhas",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.rosca-colheita": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "rosquinhas",
+        "corte": "pontos"
+      }
+    ],
+    "prato": {
+      "principal": "rosquinhas",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.rosca-no": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "rosquinhas"
+      }
+    ],
+    "prato": {
+      "principal": "rosquinhas",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.dividir-por-igual": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "balança"
+      }
+    ],
+    "prato": {
+      "principal": "massa-de-pao",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.bruschetta-camarao": {
+    "passos": [
+      {
+        "alimento": "tomate-cereja"
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "tomate-cereja"
+        ]
+      },
+      {
+        "alimento": "bruschetta"
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "camarao",
+          "coentro"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bruschetta",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.bruschetta-pera-cabra": {
+    "passos": [
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "rucula",
+          "pera"
+        ]
+      },
+      {
+        "alimento": "bruschetta"
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "noz"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bruschetta",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.bruschetta-parma-figo": {
+    "passos": [
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "presunto-parma"
+        ]
+      },
+      {
+        "alimento": "figo"
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "figo",
+          "cebolinha"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bruschetta",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.bruschetta-legumes": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "pimentao",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "pimentao",
+          "cebola_roxa"
+        ]
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "azeitona",
+          "pinoli",
+          "manjericao",
+          "parmesao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bruschetta",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.espiral-parmesao": {
+    "passos": [
+      {
+        "alimento": "parmesao"
+      },
+      {
+        "alimento": "parmesao"
+      }
+    ],
+    "prato": {
+      "principal": "parmesao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "paes.pizza": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite e água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pizza"
+      },
+      {
+        "alimento": "pizza",
+        "adicionar": [
+          "tomate",
+          "manjericao"
+        ]
+      },
+      {
+        "alimento": "pizza",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "pizza",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.calzone": {
+    "passos": [
+      {
+        "alimento": "pizza",
+        "adicionar": [
+          "presunto-parma"
+        ]
+      },
+      {
+        "alimento": "pizza"
+      },
+      {
+        "alimento": "calzone"
+      },
+      {
+        "alimento": "calzone"
+      },
+      {
+        "alimento": "calzone",
+        "corte": "pontos"
+      }
+    ],
+    "prato": {
+      "principal": "calzone",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.focaccia": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "adicionar": [
+          "alecrim"
+        ]
+      },
+      {
+        "alimento": "focaccia",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "focaccia",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "focaccia",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "focaccia",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "focaccia",
+      "acompanhamentos": [
+        "alecrim"
+      ],
+      "servir": "tabua"
+    }
+  },
+  "paes.coroa-recheada": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "adicionar": [
+          "pesto"
+        ]
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "coroa-pesto",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "coroa-pesto"
+      },
+      {
+        "alimento": "coroa-pesto"
+      },
+      {
+        "alimento": "coroa-pesto"
+      },
+      {
+        "alimento": "coroa-pesto",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "coroa-pesto",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.tortilla": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha com banha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": null,
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "tortilla"
+      },
+      {
+        "alimento": "tortilla",
+        "recipiente": "chapa"
+      }
+    ],
+    "prato": {
+      "principal": "tortilla",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.panqueca-chinesa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água fervendo com farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "panqueca-chinesa"
+      },
+      {
+        "alimento": "panqueca-chinesa"
+      },
+      {
+        "alimento": "panqueca-chinesa"
+      },
+      {
+        "alimento": "panqueca-chinesa",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "panqueca-chinesa"
+      }
+    ],
+    "prato": {
+      "principal": "panqueca-chinesa",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.massa-indiana": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "massa-de-pao",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "paes.chapati": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "chapati"
+      },
+      {
+        "alimento": null,
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "chapati",
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "chapati",
+        "recipiente": "chapa"
+      }
+    ],
+    "prato": {
+      "principal": "chapati",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.poori": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "poori"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "poori",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "poori",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "poori"
+      }
+    ],
+    "prato": {
+      "principal": "poori",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.paratha": {
+    "passos": [
+      {
+        "alimento": "paratha"
+      },
+      {
+        "alimento": "paratha"
+      },
+      {
+        "alimento": "paratha"
+      },
+      {
+        "alimento": "paratha",
+        "meio": "manteiga clarificada",
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "paratha"
+      }
+    ],
+    "prato": {
+      "principal": "paratha",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.kugelhopf": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos, fermento e leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma de kugelhopf"
+      },
+      {
+        "alimento": "noz",
+        "recipiente": "fôrma de kugelhopf"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de kugelhopf"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de kugelhopf"
+      },
+      {
+        "alimento": "kugelhopf",
+        "recipiente": "fôrma de kugelhopf"
+      },
+      {
+        "alimento": "kugelhopf"
+      }
+    ],
+    "prato": {
+      "principal": "kugelhopf",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.brioche": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovos com fermento",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "adicionar": [
+          "manteiga"
+        ]
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de brioche"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de brioche"
+      },
+      {
+        "alimento": "brioche",
+        "recipiente": "fôrma de brioche"
+      },
+      {
+        "alimento": "brioche",
+        "recipiente": "fôrma de brioche"
+      },
+      {
+        "alimento": "brioche",
+        "recipiente": "fôrma de brioche"
+      }
+    ],
+    "prato": {
+      "principal": "brioche",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.bagel": {
+    "passos": [
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "bagel"
+      },
+      {
+        "alimento": "bagel"
+      },
+      {
+        "alimento": "bagel",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "bagel",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "bagel"
+      },
+      {
+        "alimento": "bagel",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "bagel",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.pao-bicarbonato": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite e água morna",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "pao-bicarbonato"
+      },
+      {
+        "alimento": "pao-bicarbonato",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "pao-bicarbonato",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "pao-bicarbonato",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.pao-de-milho": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "secos com milho",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de milho",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de milho",
+        "recipiente": "frigideira de ferro"
+      },
+      {
+        "alimento": "pao-de-milho",
+        "recipiente": "frigideira de ferro"
+      },
+      {
+        "alimento": "pao-de-milho",
+        "objetos": [
+          "palito"
+        ],
+        "recipiente": "frigideira de ferro",
+        "pergunta": "Como sai o palito enfiado no centro do pão de milho?",
+        "opcoes": [
+          "Sai seco",
+          "Sai com massa mole grudada",
+          "Sai engordurado e úmido"
+        ],
+        "correta": 0,
+        "explicacao": "Palito seco mostra que o centro assou."
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-milho",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "paes.pao-abobrinha": {
+    "passos": [
+      {
+        "alimento": "abobrinha"
+      },
+      {
+        "alimento": "abobrinha",
+        "meio": "ovos e óleo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa com pinoli",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-abobrinha",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-abobrinha"
+      }
+    ],
+    "prato": {
+      "principal": "pao-abobrinha",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "frutas.escolher-duras": {
+    "passos": [
+      {
+        "alimento": "maca",
+        "pergunta": "Como devem estar a casca e a polpa da maçã?",
+        "opcoes": [
+          "Lisa, brilhante e firme, sem amassados",
+          "Opaca e cedendo ao apertar",
+          "Enrugada e com manchas marrons"
+        ],
+        "correta": 0,
+        "explicacao": "Fruta boa tem casca lisa e brilhante e polpa firme."
+      },
+      {
+        "alimento": "pera",
+        "recipiente": "saco de papel"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [
+        "pera"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.escolher-melao": {
+    "passos": [
+      {
+        "alimento": "melao-cantalupo"
+      },
+      {
+        "alimento": "melao-cantalupo",
+        "cheirar": true,
+        "pergunta": "Como está a ponta do melão?",
+        "opcoes": [
+          "Cede de leve e tem perfume doce",
+          "Dura como pedra e sem cheiro",
+          "Afunda mole e cheira azedo"
+        ],
+        "correta": 0,
+        "explicacao": "Melão maduro cede levemente na ponta e perfuma."
+      }
+    ],
+    "prato": {
+      "principal": "melao-cantalupo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.escolher-caroco": {
+    "passos": [
+      {
+        "alimento": "pessego",
+        "pergunta": "Como está a polpa do pêssego ao longo dos veios?",
+        "opcoes": [
+          "Cede de leve, sem estar dura",
+          "Dura e esverdeada",
+          "Mole e machucada"
+        ],
+        "correta": 0,
+        "explicacao": "Pêssego no ponto cede levemente ao toque, sem machucar."
+      },
+      {
+        "alimento": "cereja",
+        "pergunta": "Como deve estar a cereja?",
+        "opcoes": [
+          "Cheia, brilhante e de talo verde",
+          "Murcha, com talo escuro e seco",
+          "Opaca e rachada"
+        ],
+        "correta": 0,
+        "explicacao": "Cereja fresca é firme, brilhante e tem talo verde."
+      }
+    ],
+    "prato": {
+      "principal": "pessego",
+      "acompanhamentos": [
+        "cereja",
+        "nectarina",
+        "ameixa"
+      ],
+      "servir": "prato"
+    }
+  }
+}

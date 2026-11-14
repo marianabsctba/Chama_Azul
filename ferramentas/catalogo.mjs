@@ -279,6 +279,57 @@ function main() {
     };
   });
 
+  // composição revisada à mão: peça, o que se adiciona, meio, perguntas de inspeção e prato
+  const dirComp = path.join(raiz, 'dados', 'composicao');
+  const comp = {};
+  if (fs.existsSync(dirComp)) {
+    for (const f of fs.readdirSync(dirComp).filter((x) => /^parte\d+\.json$/.test(x)).sort()) Object.assign(comp, JSON.parse(fs.readFileSync(path.join(dirComp, f), 'utf8')));
+  }
+  const VARIANTES_CORTE = new Set(['fatiar', 'tiras', 'cubos', 'picar', 'deitado', 'contorno', 'pontos', 'aparar', 'desfiar']);
+  const PREPARO = /^(recipiente|monte|pasta)$/;
+  let aplicadas = 0;
+  for (const t of tecnicas) {
+    const c = comp[t.id];
+    if (!c) continue;
+    if (!Array.isArray(c.passos) || c.passos.length !== t.passos.length) {
+      problemas.push(`composição com ${c.passos?.length} passos para ${t.passos.length}: ${t.id}`);
+      continue;
+    }
+    aplicadas++;
+    c.passos.forEach((cp, i) => {
+      const p = t.passos[i];
+      const valido = (id) => {
+        if (!alimentos.has(id)) {
+          problemas.push(`id de alimento inexistente "${id}" em ${t.id} passo ${i + 1}`);
+          return false;
+        }
+        return true;
+      };
+      if ('alimento' in cp) {
+        if (cp.alimento === null) delete p.alimento;
+        else if (valido(cp.alimento)) p.alimento = cp.alimento;
+      }
+      if (cp.adicionar?.length) p.adicionar = cp.adicionar.filter(valido);
+      for (const k of ['meio', 'recipiente', 'pergunta', 'explicacao']) if (typeof cp[k] === 'string' && cp[k]) p[k] = cp[k];
+      if (Array.isArray(cp.opcoes) && cp.opcoes.length >= 2) {
+        p.opcoes = cp.opcoes;
+        p.correta = Math.max(0, Math.min(cp.opcoes.length - 1, cp.correta ?? 0));
+      }
+      if (Array.isArray(cp.objetos)) p.objetos = cp.objetos;
+      if (cp.cheirar) p.cheirar = true;
+      if (cp.corte && p.gesto === 'cortar' && VARIANTES_CORTE.has(cp.corte)) p.variante = cp.corte;
+    });
+    if (c.prato) {
+      const pr = {};
+      if (c.prato.principal && alimentos.has(c.prato.principal)) pr.principal = c.prato.principal;
+      if (Array.isArray(c.prato.acompanhamentos)) pr.acompanhamentos = c.prato.acompanhamentos.filter((id) => alimentos.has(id)).slice(0, 3);
+      if (['prato', 'tigela', 'travessa', 'taca', 'tabua'].includes(c.prato.servir)) pr.servir = c.prato.servir;
+      t.prato = pr;
+    }
+  }
+  void PREPARO;
+  if (Object.keys(comp).length) console.log(`composição revisada aplicada em ${aplicadas} técnicas`);
+
   const texto = JSON.stringify(tecnicas);
   if (/[\u2013\u2014]/.test(texto)) problemas.push('travessão encontrado no catálogo');
   for (const t of tecnicas) if (!t.passos.length) problemas.push(`técnica sem passos: ${t.id}`);

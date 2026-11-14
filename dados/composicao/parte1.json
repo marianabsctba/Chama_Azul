@@ -1,0 +1,6766 @@
+{
+  "caldos.escaldar-ossos": {
+    "passos": [
+      {
+        "alimento": "carcaca-de-ave",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "meio": "água"
+      }
+    ],
+    "prato": {
+      "principal": "carcaca-de-ave",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "caldos.caldo-de-galinha": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "corte": "picar"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "adicionar": [
+          "cebola",
+          "cenoura",
+          "aipo"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.desengordurar-a-frio": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.coar-caldo-pressionando": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "meio": "caldo",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.caldo-de-carne": {
+    "passos": [
+      {
+        "alimento": "tutano",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "tutano",
+        "adicionar": [
+          "cebola",
+          "cenoura",
+          "alho_poro"
+        ],
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "tutano",
+        "adicionar": [
+          "aipo"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tutano",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.caldo-de-peixe": {
+    "passos": [
+      {
+        "alimento": "merluza",
+        "corte": "picar"
+      },
+      {
+        "alimento": "merluza"
+      },
+      {
+        "alimento": "merluza",
+        "meio": "água com sal",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "cebola",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "merluza",
+        "adicionar": [
+          "cebola",
+          "cenoura",
+          "aipo",
+          "louro"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.desengordurar-papel-toalha": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.cubos-de-caldo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "forma de gelo"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "forma de gelo"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "saco plástico"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.caldo-de-legumes": {
+    "passos": [
+      {
+        "alimento": "alho_poro"
+      },
+      {
+        "alimento": "alho_poro",
+        "adicionar": [
+          "cenoura",
+          "cebola",
+          "aipo"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "alho_poro",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.dashi": {
+    "passos": [
+      {
+        "alimento": "kombu",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "kombu",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "kombu",
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.caldo-de-aves-de-caca": {
+    "passos": [
+      {
+        "alimento": "carcaca-de-ave",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "adicionar": [
+          "cebola",
+          "cenoura",
+          "aipo"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "carcaca-de-ave",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "caldos.clarificar-consome": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras com limão e mirepoix",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "trufa_preta",
+          "cerefolio"
+        ],
+        "meio": "caldo"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "cerefolio",
+        "trufa_preta"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "caldos.preparar-aspic": {
+    "passos": [
+      {
+        "alimento": "gelatina-folha",
+        "meio": "caldo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "aspic",
+        "recipiente": "pires"
+      }
+    ],
+    "prato": {
+      "principal": "aspic",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sopas.pasta-in-brodo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tortellini",
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "tortellini",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.stracciatella": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovo batido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.sopa-de-cebola-francesa": {
+    "passos": [
+      {
+        "alimento": "cebola"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "cebola",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.gratinar-sopa-em-cumbuca": {
+    "passos": [
+      {
+        "alimento": "gruyere"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa de cebola",
+        "recipiente": "cumbuca"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "gruyere"
+        ],
+        "meio": "sopa de cebola",
+        "recipiente": "cumbuca"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa de cebola",
+        "recipiente": "cumbuca"
+      }
+    ],
+    "prato": {
+      "principal": "gruyere",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.sopa-chinesa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "shiitake",
+        "meio": "caldo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "peito-de-frango",
+        "meio": "caldo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "wok"
+      }
+    ],
+    "prato": {
+      "principal": "peito-de-frango",
+      "acompanhamentos": [
+        "shiitake"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.sopa-japonesa-flores-de-cenoura": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "adicionar": [
+          "coentro"
+        ],
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [
+        "coentro"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.sopa-japonesa-camarao": {
+    "passos": [
+      {
+        "alimento": "camarao"
+      },
+      {
+        "alimento": "camarao"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "camarao",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "camarao",
+        "adicionar": [
+          "coentro"
+        ],
+        "meio": "caldo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "camarao",
+      "acompanhamentos": [
+        "coentro"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.bouillabaisse-crioula": {
+    "passos": [
+      {
+        "alimento": "vermelho"
+      },
+      {
+        "alimento": "vermelho",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "ostra"
+      },
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "cebola",
+          "aipo",
+          "alho",
+          "chili_seco"
+        ],
+        "meio": "azeite",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "pimentao",
+        "meio": "azeite",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "pimentao",
+        "meio": "azeite",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "tomate",
+        "adicionar": [
+          "tomilho",
+          "louro"
+        ],
+        "meio": "caldo",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "vermelho",
+        "meio": "caldo",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "vermelho",
+        "adicionar": [
+          "camarao",
+          "ostra"
+        ],
+        "meio": "caldo",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "vermelho",
+        "meio": "caldo",
+        "recipiente": "caçarola"
+      },
+      {
+        "alimento": "vermelho",
+        "adicionar": [
+          "tomilho"
+        ],
+        "meio": "caldo",
+        "recipiente": "terrina"
+      }
+    ],
+    "prato": {
+      "principal": "vermelho",
+      "acompanhamentos": [
+        "camarao",
+        "ostra"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.molho-rouille": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "batata",
+          "alho"
+        ],
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "molho rouille",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "pimentao",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.sopa-de-frutas": {
+    "passos": [
+      {
+        "alimento": "morango"
+      },
+      {
+        "alimento": "morango",
+        "adicionar": [
+          "framboesa",
+          "hortela"
+        ],
+        "meio": "vinho",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa de frutas",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "morango",
+        "hortela"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.sopa-cremosa-de-legumes": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de cenoura",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de cenoura",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.pure-no-processador": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.pure-com-mixer": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.pure-no-passe-vite": {
+    "passos": [
+      {
+        "alimento": "aipo",
+        "recipiente": "escorredor"
+      },
+      {
+        "alimento": "aipo",
+        "recipiente": "mouli-légumes"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.pure-na-peneira": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "pimentao",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.bisque-de-caranguejo": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "adicionar": [
+          "cebola",
+          "batata",
+          "aipo"
+        ],
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "caranguejo",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "caranguejo",
+        "meio": "brandy",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "caranguejo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "caranguejo",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "bisque",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "bisque",
+        "recipiente": "chinois"
+      },
+      {
+        "alimento": null,
+        "meio": "bisque",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "caranguejo"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.enriquecer-com-creme": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.enriquecer-com-iogurte": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "iogurte",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.liaison-gema-creme": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas e creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas e creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.guarnicao-simples": {
+    "passos": [
+      {
+        "alimento": null,
+        "adicionar": [
+          "espinafre"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "espinafre"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.anel-de-ervas": {
+    "passos": [
+      {
+        "alimento": null,
+        "adicionar": [
+          "endro"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "endro"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.tomate-e-ervas": {
+    "passos": [
+      {
+        "alimento": null,
+        "adicionar": [
+          "tomate"
+        ],
+        "meio": "sopa gelada",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "manjericao"
+        ],
+        "meio": "sopa gelada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "tomate",
+        "manjericao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.trelica-de-cebolinha": {
+    "passos": [
+      {
+        "alimento": "cebolinha"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "cebolinha"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.amendoas-tostadas": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "amendoa"
+        ],
+        "meio": "sopa cremosa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "amendoa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.petalas-de-azeitona": {
+    "passos": [
+      {
+        "alimento": "azeitona"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "azeitona",
+          "salsa"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "azeitona",
+        "salsa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.julienne-decorativa": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "cenoura",
+          "aipo"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "cenoura",
+        "aipo"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.fitas-enroladas": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "corte": "tiras"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "cenoura",
+          "abobrinha"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "cenoura",
+        "abobrinha"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.miscelanea-de-legumes": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "cenoura",
+          "abobrinha",
+          "aipo"
+        ],
+        "meio": "sopa clara",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "cenoura",
+        "abobrinha",
+        "aipo"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.quenelles-de-queijo-e-caviar": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "adicionar": [
+          "ova-bacalhau"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [
+        "ova-bacalhau"
+      ],
+      "servir": "prato"
+    }
+  },
+  "decoracao.figuras-de-pimentao": {
+    "passos": [
+      {
+        "alimento": "pimentao"
+      },
+      {
+        "alimento": "pimentao",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "pimentao"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "pimentao"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.figuras-de-aspic": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "aspic",
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": null,
+        "meio": "aspic",
+        "recipiente": "tábua"
+      },
+      {
+        "alimento": null,
+        "meio": "consomê gelado",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.flores-de-cenoura": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "cenoura"
+      }
+    ],
+    "prato": {
+      "principal": "cenoura",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "decoracao.minicogumelos": {
+    "passos": [
+      {
+        "alimento": "cogumelo_paris"
+      },
+      {
+        "alimento": "cogumelo_paris",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "cogumelo_paris"
+        ],
+        "meio": "sopa de cogumelo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "cogumelo_paris"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.croutons": {
+    "passos": [
+      {
+        "alimento": "pao-de-forma"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "pao-de-forma"
+        ],
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [
+        "pao-de-forma"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.creme-de-leite-em-sopa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.borda-romantica": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "decoracao.roda-da-catarina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "pesto com creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "pesto"
+        ],
+        "meio": "sopa",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": null,
+        "meio": "sopa",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.roux-escuro": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo e manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "roux",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "farinha",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.gumbo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cebola",
+        "adicionar": [
+          "aipo",
+          "tomate",
+          "tomilho"
+        ],
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "quiabo",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "quiabo",
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "quiabo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sopas.chowder-manhattan": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "cebola"
+        ],
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "tomate",
+          "tomilho"
+        ],
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "ameijoa"
+        ],
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [
+        "ameijoa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "sopas.chowder-new-england": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "cebola"
+        ],
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "ameijoa"
+        ],
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "batata",
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [
+        "ameijoa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "ovos.teste-de-frescor": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "meio": "água",
+        "recipiente": "copo",
+        "pergunta": "Como fica um ovo fresco no copo com água?",
+        "opcoes": [
+          "Deita no fundo do copo.",
+          "Fica em pé com a ponta para baixo.",
+          "Boia na superfície."
+        ],
+        "correta": 0,
+        "explicacao": "Ovo fresco deita no fundo; em pé já está velho e, se boiar, está estragado.",
+        "objetos": [
+          "copo-agua"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.separar-com-as-maos": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.separar-com-a-casca": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.separar-com-separador": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "recipiente": "separador de ovos"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "separador de ovos"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.desfazer-albumina-peneira": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.desfazer-albumina-hashi": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.guardar-ovos": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "recipiente": "caixa de ovos"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "pote hermético"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.claras-em-neve-a-mao": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-frances",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.claras-em-neve-batedeira": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-frances",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.pincelar-gema-e-agua": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gema e água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "meio": "gema e água",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "pao-redondo",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "ovos.ovo-quente": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ovo"
+      },
+      {
+        "alimento": "ovo",
+        "corte": "fatiar"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovo-duro": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "ovo"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovos-quentes-com-caviar": {
+    "passos": [
+      {
+        "alimento": "ovo"
+      },
+      {
+        "alimento": "ovo",
+        "adicionar": [
+          "ova-bacalhau"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "ova-bacalhau"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovo-poche": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com vinagre",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "água",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "água",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "estragao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ovos.oeufs-en-cocotte": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "ramequim"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "ramequim"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "creme de leite",
+        "recipiente": "ramequim"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "creme de leite",
+        "recipiente": "ramequim"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.huevos-rancheros": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "cebola"
+        ],
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "ovo"
+        ],
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "pimentao",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "salsa"
+        ],
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "pimentao",
+        "cebola",
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovos-mexidos": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos mexidos",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos mexidos",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovo-frito-regado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovo-frito-virado": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovos-modelados": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovo-frito-imerso": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "papel-toalha"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovos-a-escoffier": {
+    "passos": [
+      {
+        "alimento": "tomate"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "adicionar": [
+          "salsa",
+          "cebola"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "tomate",
+        "adicionar": [
+          "pao-de-forma",
+          "salsa"
+        ]
+      },
+      {
+        "alimento": "tomate",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "ovo",
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "ovo",
+        "adicionar": [
+          "tomate"
+        ],
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "ovo",
+      "acompanhamentos": [
+        "tomate"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ovos.omelete-francesa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "omeleteira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "omeleteira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "omeleteira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "manteiga",
+        "recipiente": "omeleteira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "adicionar": [
+          "gruyere"
+        ],
+        "recipiente": "omeleteira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "recipiente": "omeleteira"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.omelete-japonesa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovo batido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "omeleteira japonesa"
+      },
+      {
+        "alimento": null,
+        "meio": "ovo batido",
+        "recipiente": "omeleteira japonesa"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "óleo",
+        "recipiente": "omeleteira japonesa"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "recipiente": "omeleteira japonesa"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "óleo",
+        "recipiente": "omeleteira japonesa"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "ovo batido",
+        "recipiente": "omeleteira japonesa"
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.tiras-de-omelete": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": null,
+        "meio": "ovo batido",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "corte": "tiras"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.omelete-sufle": {
+    "passos": [
+      {
+        "alimento": "ovo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras e gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "manteiga",
+        "recipiente": "omeleteira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "recipiente": "omeleteira"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.eggah": {
+    "passos": [
+      {
+        "alimento": "espinafre",
+        "meio": "ovos batidos",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos com espinafre",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "tortilla",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "tortilla",
+        "corte": "cubos"
+      }
+    ],
+    "prato": {
+      "principal": "tortilla",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.frittata": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "aspargo",
+          "parmesao"
+        ],
+        "meio": "ovos batidos",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "tortilla",
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "tortilla",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "tortilla",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.tortilla-espanhola": {
+    "passos": [
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "cebola"
+        ],
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "batata",
+        "meio": "ovos batidos",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "tortilla",
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "tortilla",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "tortilla",
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "tortilla",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.sabayon-salgado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas e vinho",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "sabayon",
+        "recipiente": "banho-maria",
+        "pergunta": "O sabayon chegou ao ponto de fita?",
+        "opcoes": [
+          "Cai do batedor em fita que marca a superfície.",
+          "Escorre ralo como no começo.",
+          "Forma grumos firmes no batedor."
+        ],
+        "correta": 0,
+        "explicacao": "No ponto de fita a mistura clara e espessa deixa um rastro antes de sumir.",
+        "objetos": [
+          "colher"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "sabayon",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "zabaione",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.incorporar-claras": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras e gemas",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-frances",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ovos.sufle-de-queijo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "sabayon com claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "gruyere",
+        "meio": "creme de leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "fondue de queijo",
+        "recipiente": "prato refratário"
+      },
+      {
+        "alimento": null,
+        "meio": "fondue de queijo",
+        "recipiente": "prato refratário"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "parmesao"
+        ],
+        "meio": "fondue de queijo",
+        "recipiente": "prato refratário"
+      },
+      {
+        "alimento": null,
+        "meio": "fondue de queijo",
+        "recipiente": "prato refratário"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "cebolinha"
+        ],
+        "meio": "fondue de queijo",
+        "recipiente": "prato refratário"
+      }
+    ],
+    "prato": {
+      "principal": "sufle-baunilha",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ovos.massa-de-crepe": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.massa-lisa-peneirada": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa líquida",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "massa líquida",
+        "recipiente": "liquidificador"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.curar-frigideira": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "sal",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.fritar-crepe": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "crepe-de-ervas",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.crepe-enrolada": {
+    "passos": [
+      {
+        "alimento": "crepe-de-ervas",
+        "adicionar": [
+          "cogumelo_paris"
+        ]
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.crepe-quadrada": {
+    "passos": [
+      {
+        "alimento": "crepe-de-ervas",
+        "adicionar": [
+          "cogumelo_paris"
+        ]
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.crepe-leque": {
+    "passos": [
+      {
+        "alimento": "crepe-de-ervas",
+        "adicionar": [
+          "cogumelo_paris"
+        ]
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      },
+      {
+        "alimento": "crepe-de-ervas"
+      }
+    ],
+    "prato": {
+      "principal": "crepe-de-ervas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.pudim-yorkshire": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "fôrma de Yorkshire"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "fôrma de Yorkshire"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "fôrma de Yorkshire"
+      },
+      {
+        "alimento": "bouchee",
+        "recipiente": "fôrma de Yorkshire"
+      }
+    ],
+    "prato": {
+      "principal": "bouchee",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.panqueca-na-chapa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa de panqueca",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "chapa",
+        "pergunta": "A chapa já está quente o bastante?",
+        "opcoes": [
+          "Os respingos de água chiam e evaporam na hora.",
+          "A água fica parada sobre a chapa.",
+          "A chapa solta fumaça escura."
+        ],
+        "correta": 0,
+        "explicacao": "Chapa no ponto faz a água chiar e sumir; água parada é chapa fria e fumaça é calor demais.",
+        "objetos": [
+          "copo-agua"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de panqueca",
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "panqueca-chinesa",
+        "meio": "manteiga",
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "panqueca-chinesa",
+        "recipiente": "chapa"
+      },
+      {
+        "alimento": "panqueca-chinesa",
+        "recipiente": "chapa"
+      }
+    ],
+    "prato": {
+      "principal": "panqueca-chinesa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.avaliar-queijo-mole": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "Como deve estar a casca do queijo mole?",
+        "opcoes": [
+          "Cor uniforme e levemente úmida.",
+          "Rachada e ressecada.",
+          "Com manchas escuras e pegajosa."
+        ],
+        "correta": 0,
+        "explicacao": "Casca boa tem cor uniforme e um leve úmido."
+      },
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "Como o queijo responde ao toque?",
+        "opcoes": [
+          "Cede e volta, elástico.",
+          "Duro como pedra.",
+          "Afunda e não volta."
+        ],
+        "correta": 0,
+        "explicacao": "Queijo mole no ponto é elástico ao toque."
+      },
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "Como está o aroma do queijo?",
+        "opcoes": [
+          "Lembra nozes e é adocicado.",
+          "Cheira a amoníaco.",
+          "Cheira azedo como leite talhado."
+        ],
+        "correta": 0,
+        "explicacao": "Aroma de nozes é bom sinal; amoníaco indica queijo passado.",
+        "cheirar": true
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "queijos.avaliar-queijo-duro": {
+    "passos": [
+      {
+        "alimento": "parmesao",
+        "pergunta": "Como deve estar a casca do parmesão?",
+        "opcoes": [
+          "Íntegra e seca.",
+          "Rachada.",
+          "Suada e úmida."
+        ],
+        "correta": 0,
+        "explicacao": "A casca boa não está rachada nem suada."
+      },
+      {
+        "alimento": "parmesao",
+        "pergunta": "Como deve estar a massa por dentro?",
+        "opcoes": [
+          "Firme, branco-amarelada e sem manchas.",
+          "Com manchas e descolorida.",
+          "Mole e úmida."
+        ],
+        "correta": 0,
+        "explicacao": "Massa de queijo duro é firme ou esmigalhada, sem descoloração.",
+        "objetos": [
+          "faca"
+        ]
+      },
+      {
+        "alimento": "parmesao",
+        "pergunta": "O que faz rejeitar o queijo na prova?",
+        "opcoes": [
+          "Gosto muito salgado ou amargo.",
+          "Gosto rico e equilibrado.",
+          "Leve sabor de nozes."
+        ],
+        "correta": 0,
+        "explicacao": "Queijo duro muito salgado ou amargo deve ser recusado."
+      }
+    ],
+    "prato": {
+      "principal": "parmesao",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "queijos.avaliar-fresco-azul-cabra": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "Como saber se o queijo fresco serve?",
+        "opcoes": [
+          "Está dentro da validade da embalagem.",
+          "Venceu há dois dias, mas parece bom.",
+          "A embalagem não tem data."
+        ],
+        "correta": 0,
+        "explicacao": "Queijo fresco só se compra e usa dentro da validade.",
+        "objetos": [
+          "embalagem"
+        ]
+      },
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "Como devem estar os veios do queijo azul?",
+        "opcoes": [
+          "Uniformes, com casca firme e sem amoníaco.",
+          "Concentrados num canto, cheirando a amoníaco.",
+          "Quase ausentes, com casca mole."
+        ],
+        "correta": 0,
+        "explicacao": "Azul bom tem veios distribuídos e casca firme, sem cheiro de amoníaco."
+      },
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "Como deve estar o queijo de cabra?",
+        "opcoes": [
+          "Úmido e levemente ardido.",
+          "Seco e quebradiço.",
+          "Azedo."
+        ],
+        "correta": 0,
+        "explicacao": "Queijo de cabra bom é úmido e levemente picante, nunca azedo."
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "queijos.testar-maturacao-brie": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "pergunta": "O Brie cortado está maduro?",
+        "opcoes": [
+          "Centro esponjoso e cremoso por toda a volta.",
+          "Faixa branca e calcária no centro.",
+          "Bordas duras e centro seco."
+        ],
+        "correta": 0,
+        "explicacao": "Maduro é cremoso de ponta a ponta, sem miolo calcário.",
+        "objetos": [
+          "faca"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "queijos.queijo-fresco-caseiro": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite coalhando",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "coalhada",
+        "recipiente": "musselina"
+      },
+      {
+        "alimento": null,
+        "meio": "coalhada",
+        "recipiente": "musselina"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "recipiente": "musselina"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "recipiente": "musselina"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "recipiente": "musselina"
+      },
+      {
+        "alimento": "queijo-cabra"
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.cobrir-bolas-de-queijo": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "adicionar": [
+          "cebolinha",
+          "nozes"
+        ],
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.marinar-queijo-fresco": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra",
+        "adicionar": [
+          "louro",
+          "alho",
+          "tomilho"
+        ],
+        "recipiente": "pote"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "meio": "azeite",
+        "recipiente": "pote"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "meio": "azeite",
+        "recipiente": "pote"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "meio": "azeite",
+        "recipiente": "pote"
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.rechear-legumes-com-queijo": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra",
+        "adicionar": [
+          "cebolinha_francesa"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "abobrinha",
+        "adicionar": [
+          "ervilha_torta"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tomate-cereja"
+      },
+      {
+        "alimento": "tomate-cereja",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "tomate-cereja",
+      "acompanhamentos": [
+        "abobrinha",
+        "ervilha_torta"
+      ],
+      "servir": "prato"
+    }
+  },
+  "queijos.ralar-fino-rotatorio": {
+    "passos": [
+      {
+        "alimento": "gruyere"
+      }
+    ],
+    "prato": {
+      "principal": "gruyere",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.ralar-grosso": {
+    "passos": [
+      {
+        "alimento": "gruyere"
+      }
+    ],
+    "prato": {
+      "principal": "gruyere",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.ralar-parmesao": {
+    "passos": [
+      {
+        "alimento": "parmesao"
+      }
+    ],
+    "prato": {
+      "principal": "parmesao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.derreter-queijo": {
+    "passos": [
+      {
+        "alimento": "gruyere",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "queijo derretido",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "gruyere",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "queijos.cobertura-gratinada": {
+    "passos": [
+      {
+        "alimento": "gruyere"
+      },
+      {
+        "alimento": null,
+        "adicionar": [
+          "gruyere"
+        ],
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": null,
+        "recipiente": "travessa"
+      }
+    ],
+    "prato": {
+      "principal": "gruyere",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "queijos.fondue-suica": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "vinho com maisena",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "alho",
+        "recipiente": "panela de fondue"
+      },
+      {
+        "alimento": null,
+        "meio": "vinho",
+        "recipiente": "panela de fondue"
+      },
+      {
+        "alimento": "gruyere",
+        "meio": "vinho",
+        "recipiente": "panela de fondue"
+      },
+      {
+        "alimento": null,
+        "meio": "fondue de queijo",
+        "recipiente": "panela de fondue"
+      },
+      {
+        "alimento": null,
+        "meio": "fondue de queijo",
+        "recipiente": "panela de fondue"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "meio": "fondue de queijo",
+        "recipiente": "panela de fondue"
+      }
+    ],
+    "prato": {
+      "principal": "gruyere",
+      "acompanhamentos": [
+        "pao-de-forma"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "queijos.queijo-grelhado": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "meio": "azeite"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "recipiente": "grelha"
+      },
+      {
+        "alimento": "bruschetta",
+        "adicionar": [
+          "queijo-cabra",
+          "rucula"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [
+        "bruschetta",
+        "rucula"
+      ],
+      "servir": "prato"
+    }
+  },
+  "queijos.queijo-frito": {
+    "passos": [
+      {
+        "alimento": "queijo-cabra"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "meio": "ovo batido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "queijo-cabra"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "recipiente": "geladeira"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "meio": "óleo",
+        "recipiente": "frigideira funda"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "recipiente": "papel-toalha"
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "cremes.creme-fraiche": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leitelho e creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "crème fraîche",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "crème fraîche",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme_fraiche",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "cremes.creme-coalhado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme coalhado",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme_de_leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "cremes.creme-azedo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme com limão",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme azedo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme azedo",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme_fraiche",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "cremes.creme-para-bater": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "copo medidor"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme_de_leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.descascar-gengibre": {
+    "passos": [
+      {
+        "alimento": "tupinambo"
+      }
+    ],
+    "prato": {
+      "principal": "tupinambo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.ralar-gengibre": {
+    "passos": [
+      {
+        "alimento": "tupinambo"
+      }
+    ],
+    "prato": {
+      "principal": "tupinambo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.preparar-erva-cidreira": {
+    "passos": [
+      {
+        "alimento": "cebolinha"
+      }
+    ],
+    "prato": {
+      "principal": "cebolinha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.preparar-coentro": {
+    "passos": [
+      {
+        "alimento": "coentro"
+      },
+      {
+        "alimento": "coentro"
+      }
+    ],
+    "prato": {
+      "principal": "coentro",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.preparar-galanga": {
+    "passos": [
+      {
+        "alimento": "tupinambo"
+      },
+      {
+        "alimento": "tupinambo"
+      }
+    ],
+    "prato": {
+      "principal": "tupinambo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.suco-de-tamarindo": {
+    "passos": [
+      {
+        "alimento": "tamara"
+      },
+      {
+        "alimento": "tamara",
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "água de tamarindo",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "tamara",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.garam-masala": {
+    "passos": [
+      {
+        "alimento": "louro",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "louro",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "louro",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "especiarias moídas",
+        "recipiente": "pilão"
+      },
+      {
+        "alimento": null,
+        "meio": "garam masala",
+        "recipiente": "pote"
+      }
+    ],
+    "prato": {
+      "principal": "louro",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.tostar-gergelim": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "wok"
+      },
+      {
+        "alimento": null,
+        "meio": "gergelim",
+        "recipiente": "wok"
+      }
+    ],
+    "prato": {
+      "principal": "quinoa",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.tostar-nori": {
+    "passos": [
+      {
+        "alimento": "alga-nori",
+        "recipiente": "forno"
+      }
+    ],
+    "prato": {
+      "principal": "alga-nori",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.hidratar-wakame": {
+    "passos": [
+      {
+        "alimento": "wakame",
+        "meio": "água quente",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "wakame",
+        "recipiente": "escorredor"
+      }
+    ],
+    "prato": {
+      "principal": "wakame",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.embeber-acafrao": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com açafrão",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "infusão de açafrão",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caldo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.preparar-wasabi": {
+    "passos": [
+      {
+        "alimento": "mandioquinha"
+      },
+      {
+        "alimento": null,
+        "meio": "wasabi em pó com água",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "wasabi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.bouquet-garni": {
+    "passos": [
+      {
+        "alimento": "alho_poro",
+        "adicionar": [
+          "tomilho",
+          "louro",
+          "salsa",
+          "aipo"
+        ]
+      },
+      {
+        "alimento": "alho_poro"
+      },
+      {
+        "alimento": "alho_poro"
+      }
+    ],
+    "prato": {
+      "principal": "alho_poro",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.bouquet-em-saquinho": {
+    "passos": [
+      {
+        "alimento": null,
+        "adicionar": [
+          "estragao",
+          "louro",
+          "salsa",
+          "tomilho"
+        ],
+        "recipiente": "musselina"
+      },
+      {
+        "alimento": null,
+        "recipiente": "musselina"
+      }
+    ],
+    "prato": {
+      "principal": "estragao",
+      "acompanhamentos": [
+        "louro",
+        "tomilho"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ervas.picar-casca-mezzaluna": {
+    "passos": [
+      {
+        "alimento": "limao"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.gremolata": {
+    "passos": [
+      {
+        "alimento": "salsa"
+      },
+      {
+        "alimento": "salsa",
+        "adicionar": [
+          "alho",
+          "limao"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "ossobuco",
+        "adicionar": [
+          "salsa"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "ossobuco",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ervas.herbes-de-provence": {
+    "passos": [
+      {
+        "alimento": "tomilho",
+        "adicionar": [
+          "alecrim",
+          "louro",
+          "manjericao"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "perna-de-cordeiro",
+        "adicionar": [
+          "tomilho",
+          "alecrim"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "perna-de-cordeiro",
+      "acompanhamentos": [
+        "alecrim"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "ervas.persillade": {
+    "passos": [
+      {
+        "alimento": "salsa"
+      },
+      {
+        "alimento": "carre-de-cordeiro",
+        "adicionar": [
+          "salsa",
+          "alho"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "carre-de-cordeiro",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "ervas.pesto-no-pilao": {
+    "passos": [
+      {
+        "alimento": "manjericao",
+        "adicionar": [
+          "pinoli",
+          "alho",
+          "parmesao"
+        ],
+        "recipiente": "pilão"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "pilão"
+      }
+    ],
+    "prato": {
+      "principal": "pesto",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.pesto-no-liquidificador": {
+    "passos": [
+      {
+        "alimento": "manjericao",
+        "adicionar": [
+          "pinoli",
+          "alho",
+          "parmesao"
+        ],
+        "meio": "azeite",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "liquidificador"
+      }
+    ],
+    "prato": {
+      "principal": "pesto",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.molho-de-tomate-rapido": {
+    "passos": [
+      {
+        "alimento": "cebola"
+      },
+      {
+        "alimento": "cebola",
+        "adicionar": [
+          "alho",
+          "cenoura"
+        ],
+        "meio": "azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tomate",
+        "meio": "azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho de tomate",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho de tomate",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "couli",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.especiarias-mistas": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "especiarias em grão",
+        "recipiente": "moedor"
+      },
+      {
+        "alimento": null,
+        "meio": "especiarias moídas",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "noz",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.pickling-spice": {
+    "passos": [
+      {
+        "alimento": "louro",
+        "recipiente": "pilão"
+      },
+      {
+        "alimento": "louro",
+        "adicionar": [
+          "chili_seco",
+          "endro"
+        ],
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "louro",
+      "acompanhamentos": [
+        "chili_seco"
+      ],
+      "servir": "prato"
+    }
+  },
+  "ervas.quatre-epices": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "pimenta e cravo",
+        "recipiente": "moedor"
+      },
+      {
+        "alimento": null,
+        "meio": "especiarias moídas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "especiarias moídas",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "noz",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.moer-especiarias": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "especiarias em grão",
+        "recipiente": "moedor"
+      }
+    ],
+    "prato": {
+      "principal": "noz",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.infusao-de-baunilha": {
+    "passos": [
+      {
+        "alimento": "vagem",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "vagem",
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "vagem",
+        "recipiente": "pote de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "leite",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "ervas.raspar-sementes-baunilha": {
+    "passos": [
+      {
+        "alimento": "vagem",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "vagem"
+      }
+    ],
+    "prato": {
+      "principal": "vagem",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.guardar-ervas-frescas": {
+    "passos": [
+      {
+        "alimento": "salsa"
+      },
+      {
+        "alimento": "salsa",
+        "recipiente": "saco plástico"
+      }
+    ],
+    "prato": {
+      "principal": "salsa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.secar-ervas": {
+    "passos": [
+      {
+        "alimento": "tomilho"
+      },
+      {
+        "alimento": "tomilho"
+      },
+      {
+        "alimento": "tomilho",
+        "recipiente": "pote"
+      }
+    ],
+    "prato": {
+      "principal": "tomilho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ervas.congelar-ervas-em-cubos": {
+    "passos": [
+      {
+        "alimento": "manjericao"
+      },
+      {
+        "alimento": "manjericao"
+      },
+      {
+        "alimento": "manjericao",
+        "meio": "água gelada",
+        "recipiente": "forma de gelo"
+      },
+      {
+        "alimento": "manjericao",
+        "meio": "água gelada",
+        "recipiente": "forma de gelo"
+      },
+      {
+        "alimento": null,
+        "recipiente": "saco plástico"
+      }
+    ],
+    "prato": {
+      "principal": "manjericao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.avaliar-frescor-inteiro": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "pergunta": "Como devem estar os olhos da truta?",
+        "opcoes": [
+          "Cheios, brilhantes e saltados.",
+          "Fundos e opacos.",
+          "Leitosos e secos."
+        ],
+        "correta": 0,
+        "explicacao": "Olho saltado e brilhante é sinal de peixe fresco."
+      },
+      {
+        "alimento": "truta",
+        "pergunta": "Que cor devem ter as guelras?",
+        "opcoes": [
+          "Vermelho vivo e limpas.",
+          "Cinza com limo.",
+          "Marrom escuro."
+        ],
+        "correta": 0,
+        "explicacao": "Guelra fresca é vermelha viva, sem cinza nem limo."
+      },
+      {
+        "alimento": "truta",
+        "pergunta": "O que acontece ao apertar o corpo com o dedo?",
+        "opcoes": [
+          "A carne é firme e volta na hora.",
+          "A marca do dedo fica.",
+          "Cede mole e tem caroços."
+        ],
+        "correta": 0,
+        "explicacao": "Peixe fresco é firme e rígido, sem ceder."
+      },
+      {
+        "alimento": "truta",
+        "pergunta": "Como deve estar a pele?",
+        "opcoes": [
+          "Brilhante, úmida e iridescente.",
+          "Opaca e seca.",
+          "Pegajosa e desbotada."
+        ],
+        "correta": 0,
+        "explicacao": "A truta fresca tem pele brilhante e cores vivas."
+      },
+      {
+        "alimento": "truta",
+        "pergunta": "Como deve ser o cheiro da truta?",
+        "opcoes": [
+          "Limpo, de água doce.",
+          "Forte e amoniacal.",
+          "Azedo."
+        ],
+        "correta": 0,
+        "explicacao": "Peixe de água doce fresco tem cheiro limpo.",
+        "cheirar": true
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.avaliar-file-posta": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "pergunta": "Como deve ser o cheiro do filé?",
+        "opcoes": [
+          "Fresco, lembrando o mar.",
+          "Forte, de peixe passado.",
+          "Azedo."
+        ],
+        "correta": 0,
+        "explicacao": "Filé fresco cheira a mar, nunca forte.",
+        "cheirar": true
+      },
+      {
+        "alimento": "salmao",
+        "pergunta": "Como está a textura ao tocar?",
+        "opcoes": [
+          "Úmida, firme e elástica.",
+          "Ressecada nas bordas.",
+          "Mole, sem voltar."
+        ],
+        "correta": 0,
+        "explicacao": "Carne boa é úmida e volta ao ser pressionada."
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.conservar": {
+    "passos": [
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "geladeira"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "frutos.avaliar-frescor": {
+    "passos": [
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "mexilhao",
+        "pergunta": "O que fazer com o mexilhão aberto que não fecha ao bater?",
+        "opcoes": [
+          "Descartar.",
+          "Cozinhar assim mesmo.",
+          "Deixar de molho até fechar."
+        ],
+        "correta": 0,
+        "explicacao": "Molusco aberto que não fecha ao toque está morto e vai fora."
+      },
+      {
+        "alimento": "ostra",
+        "pergunta": "Que som a ostra boa faz ao bater na casca?",
+        "opcoes": [
+          "Som maciço, de casca cheia.",
+          "Som oco.",
+          "Estala, porque a casca está rachada."
+        ],
+        "correta": 0,
+        "explicacao": "Ostra fresca é fechada e soa maciça."
+      },
+      {
+        "alimento": "vieira",
+        "pergunta": "Como deve cheirar a vieira?",
+        "opcoes": [
+          "Adocicado.",
+          "A enxofre.",
+          "A amoníaco."
+        ],
+        "correta": 0,
+        "explicacao": "Vieira fresca tem cheiro doce; enxofre reprova.",
+        "cheirar": true
+      },
+      {
+        "alimento": "camarao",
+        "pergunta": "Qual camarão cru está bom?",
+        "opcoes": [
+          "Firme, com casca cinza brilhante.",
+          "Com manchas pretas.",
+          "Com cheiro de cloro."
+        ],
+        "correta": 0,
+        "explicacao": "Manchas pretas e cheiro de cloro reprovam o camarão."
+      },
+      {
+        "alimento": "lula",
+        "pergunta": "Como deve estar a lula fresca?",
+        "opcoes": [
+          "Olhos claros, carne branca e úmida.",
+          "Carne rosada e seca.",
+          "Olhos turvos e cheiro forte."
+        ],
+        "correta": 0,
+        "explicacao": "Lula fresca tem olhos claros e carne branca e úmida."
+      },
+      {
+        "alimento": "buzio",
+        "pergunta": "Como saber se o búzio está bom?",
+        "opcoes": [
+          "Cheira adocicado e se mexe ao ser tocado.",
+          "Fica parado e cheira forte.",
+          "Está solto e seco na concha."
+        ],
+        "correta": 0,
+        "explicacao": "Búzio vivo se mexe na concha e tem cheiro doce.",
+        "cheirar": true
+      }
+    ],
+    "prato": {
+      "principal": "lagosta",
+      "acompanhamentos": [
+        "mexilhao",
+        "ostra"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.escolher-metodo": {
+    "passos": [
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [
+        "truta"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "frutos.manter-vivos": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "salmoura",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "mexilhao",
+        "meio": "salmoura",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "mexilhao"
+      }
+    ],
+    "prato": {
+      "principal": "mexilhao",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "peixes.tirar-limo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com vinagre",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "truta",
+        "meio": "água com vinagre",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.escamar-rolico": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "salmao",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.vandyking": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "corte": "aparar"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.eviscerar-guelras": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "truta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.sulcos-ervas": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "truta",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "truta",
+        "adicionar": [
+          "alho",
+          "cebolinha",
+          "coentro"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.eviscerar-barriga": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "truta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.desossar-pequeno-dedos": {
+    "passos": [
+      {
+        "alimento": "sardinha"
+      },
+      {
+        "alimento": "sardinha"
+      },
+      {
+        "alimento": "sardinha"
+      },
+      {
+        "alimento": "sardinha"
+      },
+      {
+        "alimento": "sardinha"
+      }
+    ],
+    "prato": {
+      "principal": "sardinha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.desossar-barriga": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.tirar-espinhas-finas": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "pergunta": "Ao passar os dedos no filé pronto, o que se sente?",
+        "opcoes": [
+          "Nenhuma ponta de espinha, da cabeça ao rabo.",
+          "Pontinhas duras ao longo da linha do meio.",
+          "Escamas soltas."
+        ],
+        "correta": 0,
+        "explicacao": "Filé limpo deixa os dedos passarem sem achar ponta."
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.desossar-costas": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.desossar-peixe-anjo": {
+    "passos": [
+      {
+        "alimento": "peixe-anjo"
+      },
+      {
+        "alimento": "peixe-anjo"
+      }
+    ],
+    "prato": {
+      "principal": "peixe-anjo",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.files-rolico": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.escamar-chato": {
+    "passos": [
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.pelar-chato-inteiro": {
+    "passos": [
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "linguado"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.files-chato": {
+    "passos": [
+      {
+        "alimento": "rodovalho",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "rodovalho",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "rodovalho"
+      },
+      {
+        "alimento": "rodovalho"
+      },
+      {
+        "alimento": "rodovalho"
+      }
+    ],
+    "prato": {
+      "principal": "rodovalho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.pelar-file": {
+    "passos": [
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.file-paupiette-corte": {
+    "passos": [
+      {
+        "alimento": "linguado"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.sichuan-wok": {
+    "passos": [
+      {
+        "alimento": "carpa",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "carpa"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "carpa",
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "carpa",
+        "recipiente": "papel-toalha"
+      },
+      {
+        "alimento": "alho",
+        "adicionar": [
+          "tupinambo"
+        ],
+        "meio": "óleo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": null,
+        "meio": "molho de pimenta",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "carpa",
+        "meio": "molho de pimenta",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "cebolinha",
+        "adicionar": [
+          "chili"
+        ],
+        "meio": "molho de pimenta",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "carpa",
+        "adicionar": [
+          "cebolinha",
+          "chili",
+          "coentro"
+        ],
+        "recipiente": "travessa"
+      }
+    ],
+    "prato": {
+      "principal": "carpa",
+      "acompanhamentos": [
+        "coentro"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.pasta-chili": {
+    "passos": [
+      {
+        "alimento": "chili_seco",
+        "recipiente": "pilão"
+      },
+      {
+        "alimento": null,
+        "meio": "pasta de pimenta",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "chili_seco",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "peixes.escalopes": {
+    "passos": [
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.postas": {
+    "passos": [
+      {
+        "alimento": "perca"
+      },
+      {
+        "alimento": "perca"
+      },
+      {
+        "alimento": "perca"
+      }
+    ],
+    "prato": {
+      "principal": "perca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.trouxinhas": {
+    "passos": [
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "cebolinha"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.almofadas": {
+    "passos": [
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "cebolinha"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.paupiettes": {
+    "passos": [
+      {
+        "alimento": "linguado",
+        "adicionar": [
+          "cogumelo_paris"
+        ]
+      },
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado",
+        "meio": "caldo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.trancas": {
+    "passos": [
+      {
+        "alimento": "cavala"
+      },
+      {
+        "alimento": "cavala",
+        "adicionar": [
+          "vermelho",
+          "linguado"
+        ]
+      },
+      {
+        "alimento": "cavala"
+      },
+      {
+        "alimento": "cavala",
+        "meio": "court bouillon",
+        "recipiente": "panela a vapor"
+      }
+    ],
+    "prato": {
+      "principal": "cavala",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.recheios": {
+    "passos": [
+      {
+        "alimento": "cenoura"
+      },
+      {
+        "alimento": "queijo-cabra",
+        "adicionar": [
+          "cenoura",
+          "cebolinha_francesa"
+        ],
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "queijo-cabra",
+      "acompanhamentos": [
+        "cenoura"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "peixes.taramasalata": {
+    "passos": [
+      {
+        "alimento": "pao-de-forma",
+        "meio": "leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pao-de-forma"
+      },
+      {
+        "alimento": "ova-bacalhau",
+        "adicionar": [
+          "pao-de-forma",
+          "alho"
+        ],
+        "meio": "azeite",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "taramasalata",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "taramasalata",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "ova-bacalhau",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "peixes.preparar-ova-defumada": {
+    "passos": [
+      {
+        "alimento": "ova-bacalhau"
+      },
+      {
+        "alimento": "ova-bacalhau",
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "ova-bacalhau",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "ova-bacalhau"
+      }
+    ],
+    "prato": {
+      "principal": "ova-bacalhau",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.dessalgar-anchova": {
+    "passos": [
+      {
+        "alimento": "anchova",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "anchova",
+        "meio": "leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "anchova"
+      }
+    ],
+    "prato": {
+      "principal": "anchova",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.dessalgar-bacalhau": {
+    "passos": [
+      {
+        "alimento": "bacalhau-seco"
+      },
+      {
+        "alimento": "bacalhau-seco",
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "bacalhau-seco",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "bacalhau-seco",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "bacalhau-seco"
+      }
+    ],
+    "prato": {
+      "principal": "bacalhau-seco",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.forminhas-salmao": {
+    "passos": [
+      {
+        "alimento": "salmao-defumado",
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": "salmao-defumado",
+        "adicionar": [
+          "ova-bacalhau"
+        ],
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": "salmao-defumado"
+      }
+    ],
+    "prato": {
+      "principal": "salmao-defumado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.fatiar-salmao-defumado": {
+    "passos": [
+      {
+        "alimento": "salmao-defumado"
+      },
+      {
+        "alimento": "salmao-defumado"
+      },
+      {
+        "alimento": "salmao-defumado"
+      },
+      {
+        "alimento": "salmao-defumado"
+      }
+    ],
+    "prato": {
+      "principal": "salmao-defumado",
+      "acompanhamentos": [],
+      "servir": "tabua"
+    }
+  },
+  "peixes.gravadlax": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "endro"
+        ],
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "geladeira"
+      },
+      {
+        "alimento": "salmao",
+        "corte": "deitado"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "limao",
+          "endro"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [
+        "limao",
+        "endro"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.tostar-nori": {
+    "passos": [
+      {
+        "alimento": "alga-nori"
+      }
+    ],
+    "prato": {
+      "principal": "alga-nori",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.sushi-rolo": {
+    "passos": [
+      {
+        "alimento": "atum"
+      },
+      {
+        "alimento": "alga-nori",
+        "recipiente": "esteira de bambu"
+      },
+      {
+        "alimento": "alga-nori",
+        "adicionar": [
+          "arroz_japones"
+        ],
+        "recipiente": "esteira de bambu"
+      },
+      {
+        "alimento": "alga-nori",
+        "adicionar": [
+          "wasabi",
+          "atum"
+        ],
+        "recipiente": "esteira de bambu"
+      },
+      {
+        "alimento": "alga-nori",
+        "recipiente": "esteira de bambu"
+      },
+      {
+        "alimento": "alga-nori",
+        "recipiente": "esteira de bambu"
+      },
+      {
+        "alimento": "alga-nori"
+      },
+      {
+        "alimento": "alga-nori"
+      },
+      {
+        "alimento": "alga-nori",
+        "adicionar": [
+          "gengibre-conserva",
+          "pepino"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "alga-nori",
+      "acompanhamentos": [
+        "gengibre-conserva",
+        "pepino"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.sashimi": {
+    "passos": [
+      {
+        "alimento": "tainha"
+      },
+      {
+        "alimento": "tainha",
+        "recipiente": "geladeira"
+      },
+      {
+        "alimento": "tainha"
+      },
+      {
+        "alimento": "cavala",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "tainha",
+          "cavala",
+          "wasabi",
+          "pepino"
+        ],
+        "recipiente": "travessa"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [
+        "tainha",
+        "cavala",
+        "pepino"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.court-bouillon": {
+    "passos": [
+      {
+        "alimento": "cenoura",
+        "adicionar": [
+          "cebola"
+        ],
+        "meio": "água e vinho",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "meio": "água e vinho",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "court bouillon",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "court bouillon",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "court-bouillon",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "peixes.poche-peixeira": {
+    "passos": [
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "panela para peixe"
+      },
+      {
+        "alimento": "salmao",
+        "meio": "court bouillon",
+        "recipiente": "panela para peixe"
+      },
+      {
+        "alimento": "salmao",
+        "meio": "court bouillon",
+        "recipiente": "panela para peixe"
+      },
+      {
+        "alimento": "salmao",
+        "meio": "court bouillon",
+        "recipiente": "panela para peixe"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "travessa"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.poche-improvisado": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "papel-alumínio"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "salmao",
+        "meio": "court bouillon",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "salmao",
+        "meio": "court bouillon",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.poche-pouca-agua": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "court bouillon",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "merluza",
+        "meio": "court bouillon",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "merluza",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.microondas": {
+    "passos": [
+      {
+        "alimento": "merluza",
+        "recipiente": "micro-ondas"
+      },
+      {
+        "alimento": "merluza",
+        "recipiente": "micro-ondas"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "micro-ondas"
+      },
+      {
+        "alimento": "linguado",
+        "recipiente": "micro-ondas"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "micro-ondas"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.poche-defumado-leite": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite com louro",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "hadoque-defumado",
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "hadoque-defumado",
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "hadoque-defumado"
+      },
+      {
+        "alimento": "hadoque-defumado"
+      },
+      {
+        "alimento": "hadoque-defumado"
+      }
+    ],
+    "prato": {
+      "principal": "hadoque-defumado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.preparar-cozido-servir": {
+    "passos": [
+      {
+        "alimento": "salmao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "salmao"
+      },
+      {
+        "alimento": "salmao"
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.decorar-escamas": {
+    "passos": [
+      {
+        "alimento": "pepino"
+      },
+      {
+        "alimento": "salmao",
+        "meio": "aspic"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "pepino"
+        ]
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "salsa"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [
+        "pepino"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.limao-musselina": {
+    "passos": [
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao",
+        "recipiente": "musselina"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.nozinhos-citricos": {
+    "passos": [
+      {
+        "alimento": "laranja"
+      },
+      {
+        "alimento": "laranja",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "laranja"
+      }
+    ],
+    "prato": {
+      "principal": "laranja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.lacos-anchova": {
+    "passos": [
+      {
+        "alimento": "anchova"
+      },
+      {
+        "alimento": "anchova"
+      },
+      {
+        "alimento": "anchova",
+        "adicionar": [
+          "pimentao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "anchova",
+      "acompanhamentos": [
+        "pimentao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.tacinhas-kumquat": {
+    "passos": [
+      {
+        "alimento": "kumquat",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "kumquat"
+      },
+      {
+        "alimento": "kumquat",
+        "adicionar": [
+          "endro"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "kumquat",
+      "acompanhamentos": [
+        "endro"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.borboletas-limao": {
+    "passos": [
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao",
+        "adicionar": [
+          "pimentao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [
+        "pimentao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.enfeites-massa": {
+    "passos": [
+      {
+        "alimento": "massa-folhada",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "massa-folhada",
+        "meio": "gema"
+      },
+      {
+        "alimento": "massa-folhada",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "massa-folhada",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.limao-trancado": {
+    "passos": [
+      {
+        "alimento": "limao",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.espirais-citricas": {
+    "passos": [
+      {
+        "alimento": "laranja"
+      },
+      {
+        "alimento": "laranja"
+      }
+    ],
+    "prato": {
+      "principal": "laranja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.limao-alado": {
+    "passos": [
+      {
+        "alimento": "limao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "limao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "limao"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.gengibre-frito": {
+    "passos": [
+      {
+        "alimento": "tupinambo",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "tupinambo",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "tupinambo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "tupinambo",
+        "recipiente": "papel-toalha"
+      }
+    ],
+    "prato": {
+      "principal": "tupinambo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.tirinhas-mooli": {
+    "passos": [
+      {
+        "alimento": "mooli"
+      },
+      {
+        "alimento": "mooli"
+      },
+      {
+        "alimento": "mooli",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "mooli",
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "mooli",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.rosa-gengibre": {
+    "passos": [
+      {
+        "alimento": "gengibre-conserva"
+      },
+      {
+        "alimento": "gengibre-conserva"
+      }
+    ],
+    "prato": {
+      "principal": "gengibre-conserva",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.cebolinha-enrolada": {
+    "passos": [
+      {
+        "alimento": "cebolinha"
+      },
+      {
+        "alimento": "cebolinha",
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "cebolinha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.ervas-fritas": {
+    "passos": [
+      {
+        "alimento": "manjericao",
+        "adicionar": [
+          "salsa"
+        ],
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "manjericao",
+        "recipiente": "papel-toalha"
+      }
+    ],
+    "prato": {
+      "principal": "manjericao",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.enfeite-pepino": {
+    "passos": [
+      {
+        "alimento": "pepino",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "pepino"
+      },
+      {
+        "alimento": "pepino"
+      },
+      {
+        "alimento": "pepino"
+      }
+    ],
+    "prato": {
+      "principal": "pepino",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.buque-ervas": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "adicionar": [
+          "endro",
+          "salsa",
+          "tomilho",
+          "estragao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [
+        "endro",
+        "salsa"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.rosa-citrica": {
+    "passos": [
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.escamas-abobrinha": {
+    "passos": [
+      {
+        "alimento": "abobrinha",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "abobrinha"
+      },
+      {
+        "alimento": "abobrinha"
+      },
+      {
+        "alimento": "salmao",
+        "adicionar": [
+          "abobrinha"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "salmao",
+      "acompanhamentos": [
+        "abobrinha"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.vapor-panela": {
+    "passos": [
+      {
+        "alimento": "erva_doce",
+        "adicionar": [
+          "tomilho",
+          "endro"
+        ],
+        "meio": "court bouillon",
+        "recipiente": "panela a vapor"
+      },
+      {
+        "alimento": null,
+        "meio": "court bouillon",
+        "recipiente": "panela a vapor"
+      },
+      {
+        "alimento": "vermelho",
+        "recipiente": "cesta furada"
+      },
+      {
+        "alimento": "vermelho",
+        "recipiente": "panela a vapor"
+      },
+      {
+        "alimento": "vermelho",
+        "recipiente": "panela a vapor",
+        "pergunta": "O peixe já está cozido no vapor?",
+        "opcoes": [
+          "Opaco, úmido e soltando lascas no garfo.",
+          "Translúcido no centro.",
+          "Seco e esfarelando."
+        ],
+        "correta": 0,
+        "explicacao": "Pronto é opaco por inteiro e solta lascas, ainda úmido.",
+        "objetos": [
+          "garfo"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "vermelho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.vapor-bambu": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "vermelho",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "vermelho",
+        "adicionar": [
+          "tupinambo",
+          "cebolinha"
+        ],
+        "recipiente": "cesta de bambu"
+      },
+      {
+        "alimento": "vermelho",
+        "recipiente": "cesta de bambu"
+      },
+      {
+        "alimento": "vermelho",
+        "adicionar": [
+          "cenoura"
+        ],
+        "recipiente": "travessa"
+      }
+    ],
+    "prato": {
+      "principal": "vermelho",
+      "acompanhamentos": [
+        "cebolinha"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.vapor-marinar": {
+    "passos": [
+      {
+        "alimento": "vermelho",
+        "meio": "marinada",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "vermelho",
+        "adicionar": [
+          "cebolinha",
+          "tupinambo",
+          "alho",
+          "limao"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "vermelho",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.grelhar-pequeno": {
+    "passos": [
+      {
+        "alimento": "sardinha",
+        "adicionar": [
+          "alho",
+          "salsa"
+        ],
+        "meio": "azeite",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "sardinha",
+        "recipiente": "grelha"
+      },
+      {
+        "alimento": "sardinha",
+        "meio": "azeite",
+        "recipiente": "grelha"
+      },
+      {
+        "alimento": "sardinha",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "sardinha",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.churrasco-suporte": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "corte": "pontos"
+      },
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "suporte para peixe"
+      },
+      {
+        "alimento": "truta",
+        "adicionar": [
+          "folha-uva",
+          "tomilho"
+        ],
+        "recipiente": "suporte para peixe"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "churrasqueira"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.assar-descoberto": {
+    "passos": [
+      {
+        "alimento": "vermelho",
+        "adicionar": [
+          "tomilho",
+          "salsa"
+        ]
+      },
+      {
+        "alimento": "vermelho",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "vermelho",
+        "meio": "vinho",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "vermelho",
+        "meio": "vinho",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "vermelho",
+      "acompanhamentos": [
+        "tomilho"
+      ],
+      "servir": "travessa"
+    }
+  },
+  "peixes.rechear-assar-aluminio": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "adicionar": [
+          "cogumelo_paris"
+        ]
+      },
+      {
+        "alimento": "truta"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "papel-alumínio"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "papel-alumínio"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "travessa"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.rechear-dorso": {
+    "passos": [
+      {
+        "alimento": "truta",
+        "adicionar": [
+          "cogumelo_paris"
+        ]
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "papel-alumínio"
+      },
+      {
+        "alimento": "truta",
+        "recipiente": "papel-alumínio"
+      }
+    ],
+    "prato": {
+      "principal": "truta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.papillote": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "papel-manteiga",
+        "corte": "contorno"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "papel-manteiga"
+      },
+      {
+        "alimento": "cherne",
+        "adicionar": [
+          "coentro",
+          "cenoura"
+        ],
+        "meio": "vinho",
+        "recipiente": "papel-manteiga"
+      },
+      {
+        "alimento": "cherne",
+        "recipiente": "papel-manteiga"
+      },
+      {
+        "alimento": "cherne",
+        "recipiente": "papel-manteiga"
+      },
+      {
+        "alimento": "cherne",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "cherne",
+      "acompanhamentos": [
+        "cenoura",
+        "coentro"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.assar-folhas": {
+    "passos": [
+      {
+        "alimento": "folha-uva",
+        "adicionar": [
+          "truta"
+        ]
+      },
+      {
+        "alimento": "folha-uva"
+      },
+      {
+        "alimento": "folha-uva",
+        "adicionar": [
+          "alho_poro"
+        ]
+      },
+      {
+        "alimento": "folha-uva",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "folha-uva",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.crosta-sal": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "sal grosso",
+        "recipiente": "panela pesada"
+      },
+      {
+        "alimento": "carpa-do-mar",
+        "meio": "sal grosso",
+        "recipiente": "panela pesada"
+      },
+      {
+        "alimento": "carpa-do-mar",
+        "meio": "sal grosso",
+        "recipiente": "panela pesada"
+      },
+      {
+        "alimento": "carpa-do-mar",
+        "meio": "sal grosso",
+        "recipiente": "panela pesada"
+      },
+      {
+        "alimento": "carpa-do-mar",
+        "meio": "sal grosso"
+      },
+      {
+        "alimento": "carpa-do-mar"
+      }
+    ],
+    "prato": {
+      "principal": "carpa-do-mar",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "peixes.peixe-anjo-bacon": {
+    "passos": [
+      {
+        "alimento": "peixe-anjo",
+        "adicionar": [
+          "pancetta",
+          "tomilho"
+        ]
+      },
+      {
+        "alimento": "peixe-anjo",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "peixe-anjo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.empanar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha temperada",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "merluza",
+        "meio": "farinha temperada",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "merluza",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.fritar-pouco-oleo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga e óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "merluza",
+        "meio": "manteiga e óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "merluza",
+        "meio": "manteiga e óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "merluza",
+        "meio": "manteiga e óleo",
+        "recipiente": "frigideira",
+        "pergunta": "O filé já está pronto?",
+        "opcoes": [
+          "Firme e opaco na parte mais grossa.",
+          "Translúcido no meio.",
+          "Mole e brilhante por dentro."
+        ],
+        "correta": 0,
+        "explicacao": "O filé está pronto quando a parte mais grossa fica firme e opaca.",
+        "objetos": [
+          "garfo"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "merluza",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.manteiga-escura-arraia": {
+    "passos": [
+      {
+        "alimento": "arraia"
+      },
+      {
+        "alimento": "arraia",
+        "meio": "farinha temperada",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "arraia",
+        "meio": "manteiga escura",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "arraia",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.cajun": {
+    "passos": [
+      {
+        "alimento": "vermelho",
+        "meio": "tempero cajun",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "vermelho",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "vermelho",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "vermelho",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.crosta-ervas": {
+    "passos": [
+      {
+        "alimento": "salsa",
+        "adicionar": [
+          "endro",
+          "cebolinha_francesa"
+        ],
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "peixe-anjo",
+        "adicionar": [
+          "salsa",
+          "endro"
+        ]
+      },
+      {
+        "alimento": "peixe-anjo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "peixe-anjo",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "peixe-anjo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.fritar-imerso": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela funda"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "meio": "óleo",
+        "recipiente": "panela funda",
+        "pergunta": "O óleo está na temperatura certa?",
+        "opcoes": [
+          "O cubo de pão doura em cerca de 30 segundos.",
+          "O pão fica claro e encharcado.",
+          "O pão escurece na hora e solta fumaça."
+        ],
+        "correta": 0,
+        "explicacao": "Entre 180 e 190 °C o cubo de pão doura em cerca de 30 segundos.",
+        "objetos": [
+          "termometro"
+        ]
+      },
+      {
+        "alimento": "hadoque",
+        "meio": "massa de fritura",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "hadoque",
+        "meio": "óleo",
+        "recipiente": "cesta para fritura"
+      },
+      {
+        "alimento": "hadoque",
+        "recipiente": "papel-toalha"
+      },
+      {
+        "alimento": "hadoque"
+      }
+    ],
+    "prato": {
+      "principal": "hadoque",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.goujons": {
+    "passos": [
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado",
+        "meio": "farinha temperada",
+        "recipiente": "saco"
+      },
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela funda"
+      },
+      {
+        "alimento": "linguado",
+        "meio": "óleo",
+        "recipiente": "panela funda"
+      },
+      {
+        "alimento": "linguado",
+        "recipiente": "papel-toalha"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.musse": {
+    "passos": [
+      {
+        "alimento": "linguado"
+      },
+      {
+        "alimento": "linguado",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "tigela com gelo"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe com creme",
+        "recipiente": "tigela com gelo"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "peixes.timbales": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "timbale de peixe",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.quenelles": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "musse de peixe",
+        "recipiente": "colher"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "escumadeira"
+      }
+    ],
+    "prato": {
+      "principal": "linguado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "peixes.bolinhos": {
+    "passos": [
+      {
+        "alimento": "merluza"
+      },
+      {
+        "alimento": "batata",
+        "adicionar": [
+          "merluza",
+          "salsa"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "batata"
+      },
+      {
+        "alimento": "batata",
+        "meio": "migalhas de pão",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": "batata",
+        "recipiente": "geladeira"
+      },
+      {
+        "alimento": "batata",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "batata",
+      "acompanhamentos": [
+        "salsa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "peixes.terrina-camadas": {
+    "passos": [
+      {
+        "alimento": "cerefolio",
+        "adicionar": [
+          "endro"
+        ],
+        "recipiente": "processador"
+      },
+      {
+        "alimento": null,
+        "meio": "musse verde",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "espinafre",
+        "recipiente": "terrina"
+      },
+      {
+        "alimento": "espinafre",
+        "meio": "musse de peixe",
+        "recipiente": "terrina"
+      },
+      {
+        "alimento": "espinafre",
+        "adicionar": [
+          "camarao"
+        ],
+        "recipiente": "terrina"
+      },
+      {
+        "alimento": "espinafre",
+        "recipiente": "terrina"
+      },
+      {
+        "alimento": null,
+        "meio": "musse verde",
+        "recipiente": "terrina"
+      },
+      {
+        "alimento": null,
+        "meio": "terrina de peixe",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "terrina de peixe",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": null,
+        "meio": "terrina de peixe",
+        "recipiente": "tábua"
+      }
+    ],
+    "prato": {
+      "principal": "camarao",
+      "acompanhamentos": [
+        "espinafre",
+        "cerefolio"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutos.matar-lagosta": {
+    "passos": [
+      {
+        "alimento": "lagosta",
+        "recipiente": "congelador"
+      },
+      {
+        "alimento": "lagosta",
+        "recipiente": "tábua"
+      },
+      {
+        "alimento": "lagosta",
+        "recipiente": "tábua"
+      }
+    ],
+    "prato": {
+      "principal": "lagosta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "frutos.cozinhar-lagosta": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "court bouillon",
+        "recipiente": "panela funda"
+      },
+      {
+        "alimento": "lagosta",
+        "meio": "court bouillon",
+        "recipiente": "panela funda"
+      },
+      {
+        "alimento": "lagosta",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "lagosta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "frutos.carne-cauda-lagosta": {
+    "passos": [
+      {
+        "alimento": "lagosta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta"
+      }
+    ],
+    "prato": {
+      "principal": "lagosta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "frutos.lagosta-meia-casca": {
+    "passos": [
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta"
+      },
+      {
+        "alimento": "lagosta"
+      }
+    ],
+    "prato": {
+      "principal": "lagosta",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "frutos.ferver-caranguejo": {
+    "passos": [
+      {
+        "alimento": "caranguejo",
+        "recipiente": "congelador"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "caranguejo",
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "caranguejo",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "caranguejo",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "frutos.carne-caranguejo": {
+    "passos": [
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "caranguejo"
+      }
+    ],
+    "prato": {
+      "principal": "caranguejo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutos.enfeitar-caranguejo": {
+    "passos": [
+      {
+        "alimento": "caranguejo",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "caranguejo"
+      },
+      {
+        "alimento": "ovo",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "caranguejo",
+        "adicionar": [
+          "salsa",
+          "ovo"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "caranguejo",
+      "acompanhamentos": [
+        "salsa",
+        "ovo"
+      ],
+      "servir": "prato"
+    }
+  }
+}

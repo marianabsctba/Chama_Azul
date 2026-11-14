@@ -1,0 +1,6291 @@
+{
+  "frutas.escolher-citricas": {
+    "passos": [
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao",
+        "pergunta": "Como deve estar a casca do limão?",
+        "opcoes": [
+          "Cor uniforme, brilhante e sem rugas",
+          "Opaca e um pouco enrugada",
+          "Com manchas e macia ao toque"
+        ],
+        "correta": 0,
+        "explicacao": "Casca lisa e brilhante indica fruta suculenta e de casca fina."
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [
+        "laranja",
+        "lima"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.escolher-berries": {
+    "passos": [
+      {
+        "alimento": "morango",
+        "pergunta": "Como está a caixa de morangos?",
+        "opcoes": [
+          "Úmida, com uma fruta mofada no fundo",
+          "Seca, sem manchas nem mofo",
+          "Com frutas amassadas e sem cálice"
+        ],
+        "correta": 1,
+        "explicacao": "Umidade e mofo se espalham rápido; escolha caixas secas.",
+        "objetos": [
+          "embalagem"
+        ]
+      },
+      {
+        "alimento": "morango",
+        "meio": "água"
+      }
+    ],
+    "prato": {
+      "principal": "morango",
+      "acompanhamentos": [
+        "framboesa",
+        "blueberry"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.descascar-maca-simples": {
+    "passos": [
+      {
+        "alimento": "maca"
+      },
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.descascar-maca-decorativo": {
+    "passos": [
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.descarocar-descarocador": {
+    "passos": [
+      {
+        "alimento": "maca"
+      },
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.descarocar-descascador": {
+    "passos": [
+      {
+        "alimento": "pera"
+      },
+      {
+        "alimento": "pera"
+      }
+    ],
+    "prato": {
+      "principal": "pera",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.descarocar-boleador": {
+    "passos": [
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.aneis-maca": {
+    "passos": [
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.leque-pera": {
+    "passos": [
+      {
+        "alimento": "pera"
+      },
+      {
+        "alimento": "pera",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "pera"
+      },
+      {
+        "alimento": "pera"
+      }
+    ],
+    "prato": {
+      "principal": "pera",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.meia-lua-maca": {
+    "passos": [
+      {
+        "alimento": "maca"
+      },
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.cubos-maca": {
+    "passos": [
+      {
+        "alimento": "maca"
+      },
+      {
+        "alimento": "maca",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "maca",
+        "corte": "cubos"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.evitar-escurecimento": {
+    "passos": [
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "maca",
+        "meio": "suco de limão"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.ruibarbo": {
+    "passos": [
+      {
+        "alimento": "ruibarbo",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "ruibarbo"
+      },
+      {
+        "alimento": "ruibarbo",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "ruibarbo"
+      }
+    ],
+    "prato": {
+      "principal": "ruibarbo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.abacaxi-tigela": {
+    "passos": [
+      {
+        "alimento": "abacaxi",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "abacaxi",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "abacaxi",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi",
+        "corte": "cubos"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.abacaxi-anao": {
+    "passos": [
+      {
+        "alimento": "abacaxi-anao",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "abacaxi-anao",
+        "adicionar": [
+          "framboesa",
+          "maca",
+          "laranja"
+        ],
+        "meio": "calda de açúcar"
+      },
+      {
+        "alimento": "abacaxi-anao",
+        "adicionar": [
+          "sorvete-bola"
+        ]
+      },
+      {
+        "alimento": "abacaxi-anao"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi-anao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.abacaxi-descascar": {
+    "passos": [
+      {
+        "alimento": "abacaxi",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.abacaxi-miolo": {
+    "passos": [
+      {
+        "alimento": "abacaxi"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.abacaxi-ziguezague": {
+    "passos": [
+      {
+        "alimento": "abacaxi",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "abacaxi",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.abacaxi-sautee": {
+    "passos": [
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.cereja-descarocar": {
+    "passos": [
+      {
+        "alimento": "cereja"
+      },
+      {
+        "alimento": "cereja"
+      },
+      {
+        "alimento": "cereja"
+      }
+    ],
+    "prato": {
+      "principal": "cereja",
+      "acompanhamentos": [
+        "azeitona"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.manga-ourico": {
+    "passos": [
+      {
+        "alimento": "manga",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "manga",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "manga"
+      },
+      {
+        "alimento": "manga"
+      }
+    ],
+    "prato": {
+      "principal": "manga",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.manga-fatias": {
+    "passos": [
+      {
+        "alimento": "manga"
+      },
+      {
+        "alimento": "manga"
+      },
+      {
+        "alimento": "manga"
+      }
+    ],
+    "prato": {
+      "principal": "manga",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.citrico-a-vif": {
+    "passos": [
+      {
+        "alimento": "laranja",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "laranja"
+      },
+      {
+        "alimento": "laranja"
+      }
+    ],
+    "prato": {
+      "principal": "laranja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.citrico-remontar": {
+    "passos": [
+      {
+        "alimento": "laranja"
+      },
+      {
+        "alimento": "laranja"
+      }
+    ],
+    "prato": {
+      "principal": "laranja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.citrico-gomos": {
+    "passos": [
+      {
+        "alimento": "laranja",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "laranja"
+      },
+      {
+        "alimento": "laranja"
+      }
+    ],
+    "prato": {
+      "principal": "laranja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.raspas": {
+    "passos": [
+      {
+        "alimento": "limao",
+        "meio": "água"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.julienne-casca": {
+    "passos": [
+      {
+        "alimento": "lima"
+      },
+      {
+        "alimento": "lima"
+      },
+      {
+        "alimento": "lima",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "lima",
+        "meio": "água fria"
+      }
+    ],
+    "prato": {
+      "principal": "lima",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.suco-citrico": {
+    "passos": [
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": null,
+        "meio": "suco de limão",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "limao",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "frutas.morango-calice": {
+    "passos": [
+      {
+        "alimento": "morango"
+      }
+    ],
+    "prato": {
+      "principal": "morango",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.morango-decoracao": {
+    "passos": [
+      {
+        "alimento": "morango"
+      }
+    ],
+    "prato": {
+      "principal": "morango",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.uva-descascar": {
+    "passos": [
+      {
+        "alimento": "uva",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "uva"
+      }
+    ],
+    "prato": {
+      "principal": "uva",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.uva-sementes": {
+    "passos": [
+      {
+        "alimento": "uva"
+      },
+      {
+        "alimento": "uva"
+      }
+    ],
+    "prato": {
+      "principal": "uva",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.groselha-strigging": {
+    "passos": [
+      {
+        "alimento": "groselha"
+      }
+    ],
+    "prato": {
+      "principal": "groselha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.pure-berries": {
+    "passos": [
+      {
+        "alimento": "morango",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de morango",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de morango",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "couli",
+      "acompanhamentos": [
+        "morango"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "frutas.pure-mouli": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "framboesa",
+        "recipiente": "passa-legumes"
+      }
+    ],
+    "prato": {
+      "principal": "couli",
+      "acompanhamentos": [
+        "framboesa"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "frutas.couli": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "purê de morango com licor",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "couli",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "frutas.couli-penas": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "couli",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": null,
+        "meio": "couli",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": null,
+        "meio": "couli",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "couli",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.couli-yin-yang": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "couli",
+        "recipiente": "prato"
+      },
+      {
+        "alimento": null,
+        "meio": "couli",
+        "recipiente": "prato"
+      }
+    ],
+    "prato": {
+      "principal": "couli",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.melao-taca": {
+    "passos": [
+      {
+        "alimento": "melao-cantalupo",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "melao-cantalupo",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "melao-cantalupo"
+      },
+      {
+        "alimento": "melao-cantalupo"
+      },
+      {
+        "alimento": "melao-cantalupo"
+      },
+      {
+        "alimento": "melao-cantalupo"
+      }
+    ],
+    "prato": {
+      "principal": "melao-cantalupo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.sorbet-melao": {
+    "passos": [
+      {
+        "alimento": "melao-cantalupo",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de melão",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de melão",
+        "recipiente": "sorveteira"
+      }
+    ],
+    "prato": {
+      "principal": "sorbet",
+      "acompanhamentos": [
+        "hortela"
+      ],
+      "servir": "taca"
+    }
+  },
+  "frutas.cantalupo-surpresa": {
+    "passos": [
+      {
+        "alimento": "manga"
+      },
+      {
+        "alimento": "kiwi"
+      },
+      {
+        "alimento": "kiwi",
+        "corte": "cubos"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "melao-cantalupo",
+        "adicionar": [
+          "manga",
+          "abacaxi",
+          "kiwi"
+        ],
+        "meio": "calda de açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "melao-cantalupo",
+        "adicionar": [
+          "sorbet",
+          "hortela"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "melao-cantalupo",
+      "acompanhamentos": [
+        "kiwi",
+        "manga"
+      ],
+      "servir": "taca"
+    }
+  },
+  "frutas.kiwi": {
+    "passos": [
+      {
+        "alimento": "kiwi",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "kiwi"
+      }
+    ],
+    "prato": {
+      "principal": "kiwi",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.maracuja": {
+    "passos": [
+      {
+        "alimento": "maracuja"
+      },
+      {
+        "alimento": "maracuja"
+      }
+    ],
+    "prato": {
+      "principal": "maracuja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.sapotilha": {
+    "passos": [
+      {
+        "alimento": "sapotilha"
+      },
+      {
+        "alimento": "sapotilha"
+      }
+    ],
+    "prato": {
+      "principal": "sapotilha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.nespera": {
+    "passos": [
+      {
+        "alimento": "nespera"
+      },
+      {
+        "alimento": "nespera"
+      }
+    ],
+    "prato": {
+      "principal": "nespera",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.tamara-descarocar": {
+    "passos": [
+      {
+        "alimento": "tamara"
+      },
+      {
+        "alimento": "tamara",
+        "adicionar": [
+          "amendoa"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "tamara",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.flor-de-figo": {
+    "passos": [
+      {
+        "alimento": "figo"
+      },
+      {
+        "alimento": "figo"
+      },
+      {
+        "alimento": "figo"
+      },
+      {
+        "alimento": "figo"
+      }
+    ],
+    "prato": {
+      "principal": "figo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.pepino-melao": {
+    "passos": [
+      {
+        "alimento": "pepino-melao"
+      },
+      {
+        "alimento": "pepino-melao"
+      }
+    ],
+    "prato": {
+      "principal": "pepino-melao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.papaia": {
+    "passos": [
+      {
+        "alimento": "papaia"
+      },
+      {
+        "alimento": "papaia"
+      },
+      {
+        "alimento": "papaia"
+      }
+    ],
+    "prato": {
+      "principal": "papaia",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.mangostao": {
+    "passos": [
+      {
+        "alimento": "mangostao",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "mangostao"
+      }
+    ],
+    "prato": {
+      "principal": "mangostao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.roma": {
+    "passos": [
+      {
+        "alimento": "roma"
+      },
+      {
+        "alimento": "roma",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": "roma",
+        "recipiente": "peneira"
+      }
+    ],
+    "prato": {
+      "principal": "roma",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.figo-da-india": {
+    "passos": [
+      {
+        "alimento": "figo-da-india"
+      },
+      {
+        "alimento": "figo-da-india",
+        "meio": "suco de limão"
+      }
+    ],
+    "prato": {
+      "principal": "figo-da-india",
+      "acompanhamentos": [
+        "limao"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.carambola": {
+    "passos": [
+      {
+        "alimento": "carambola"
+      },
+      {
+        "alimento": "carambola"
+      },
+      {
+        "alimento": "carambola",
+        "pergunta": "O que fazer antes de usar a carambola num molho?",
+        "opcoes": [
+          "Provar, porque a doçura varia de fruta para fruta",
+          "Nada, toda carambola amarela é doce",
+          "Escaldar para tirar a acidez"
+        ],
+        "correta": 0,
+        "explicacao": "A doçura muda muito; prove e ajuste o molho."
+      }
+    ],
+    "prato": {
+      "principal": "carambola",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.lichia": {
+    "passos": [
+      {
+        "alimento": "lichia"
+      },
+      {
+        "alimento": "lichia"
+      }
+    ],
+    "prato": {
+      "principal": "lichia",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.kiwano": {
+    "passos": [
+      {
+        "alimento": "kiwano",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "kiwano"
+      }
+    ],
+    "prato": {
+      "principal": "kiwano",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.pitaia": {
+    "passos": [
+      {
+        "alimento": "pitaia"
+      },
+      {
+        "alimento": "pitaia"
+      }
+    ],
+    "prato": {
+      "principal": "pitaia",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.poche-calda": {
+    "passos": [
+      {
+        "alimento": "ameixa",
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ameixa"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ameixa",
+        "meio": "calda de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "ameixa",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "frutas.poche-vinho-pera": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "vinho tinto",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "pera",
+        "meio": "vinho tinto",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "pera",
+        "meio": "vinho tinto",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de vinho",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "pera",
+        "meio": "calda de vinho"
+      }
+    ],
+    "prato": {
+      "principal": "pera",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.compota-secas": {
+    "passos": [
+      {
+        "alimento": "ameixa",
+        "meio": "chá",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ameixa",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ameixa",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ameixa"
+      },
+      {
+        "alimento": null,
+        "meio": "calda",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "ameixa",
+        "meio": "calda"
+      }
+    ],
+    "prato": {
+      "principal": "ameixa",
+      "acompanhamentos": [
+        "figo",
+        "tamara"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "frutas.conserva-alcool": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "pera",
+        "recipiente": "vidro"
+      },
+      {
+        "alimento": null,
+        "meio": "conhaque",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "pera",
+        "meio": "conhaque",
+        "recipiente": "vidro"
+      },
+      {
+        "alimento": "pera",
+        "meio": "conhaque",
+        "recipiente": "vidro"
+      }
+    ],
+    "prato": {
+      "principal": "pera",
+      "acompanhamentos": [
+        "laranja"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "frutas.rumtopf": {
+    "passos": [
+      {
+        "alimento": "morango",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "morango",
+        "adicionar": [
+          "blueberry"
+        ],
+        "recipiente": "pote"
+      },
+      {
+        "alimento": "morango",
+        "meio": "rum",
+        "recipiente": "pote"
+      },
+      {
+        "alimento": "morango",
+        "meio": "rum",
+        "recipiente": "pote"
+      }
+    ],
+    "prato": {
+      "principal": "morango",
+      "acompanhamentos": [
+        "blueberry"
+      ],
+      "servir": "taca"
+    }
+  },
+  "frutas.grelhar-espeto": {
+    "passos": [
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi",
+        "adicionar": [
+          "manga",
+          "papaia"
+        ]
+      },
+      {
+        "alimento": "abacaxi",
+        "meio": "suco de limão"
+      },
+      {
+        "alimento": "abacaxi",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [
+        "manga",
+        "papaia"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.grelhar-papillote": {
+    "passos": [
+      {
+        "alimento": "banana",
+        "recipiente": "papel-alumínio"
+      },
+      {
+        "alimento": "banana",
+        "recipiente": "grelha"
+      }
+    ],
+    "prato": {
+      "principal": "banana",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.gratinar-zabaione": {
+    "passos": [
+      {
+        "alimento": "morango",
+        "adicionar": [
+          "blueberry"
+        ],
+        "recipiente": "refratário"
+      },
+      {
+        "alimento": "morango",
+        "adicionar": [
+          "zabaione"
+        ]
+      },
+      {
+        "alimento": "morango",
+        "recipiente": "refratário"
+      }
+    ],
+    "prato": {
+      "principal": "morango",
+      "acompanhamentos": [
+        "blueberry"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.calda-coco": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite de coco",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de coco",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de coco",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme-anglaise",
+      "acompanhamentos": [
+        "coco"
+      ],
+      "servir": "tigela"
+    }
+  },
+  "frutas.caramelizar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "abacaxi",
+        "meio": "caramelo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [
+        "cereja",
+        "uva"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.flambar": {
+    "passos": [
+      {
+        "alimento": "cereja",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "conhaque",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cereja",
+        "meio": "conhaque",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "cereja",
+        "meio": "calda",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "cereja",
+      "acompanhamentos": [
+        "uva"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.tempura": {
+    "passos": [
+      {
+        "alimento": "maca"
+      },
+      {
+        "alimento": "maca"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de tempura",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "maca",
+        "meio": "massa de tempura"
+      },
+      {
+        "alimento": "maca",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "maca"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [
+        "abacaxi",
+        "manga"
+      ],
+      "servir": "prato"
+    }
+  },
+  "frutas.maca-assada": {
+    "passos": [
+      {
+        "alimento": "maca",
+        "meio": "suco de limão"
+      },
+      {
+        "alimento": "maca",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "maca",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "maca",
+        "adicionar": [
+          "noz"
+        ]
+      },
+      {
+        "alimento": "maca",
+        "adicionar": [
+          "manteiga"
+        ]
+      },
+      {
+        "alimento": "maca",
+        "recipiente": "refratário"
+      }
+    ],
+    "prato": {
+      "principal": "maca",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.metades-assadas": {
+    "passos": [
+      {
+        "alimento": "pessego",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "pessego",
+        "meio": "suco de limão"
+      },
+      {
+        "alimento": "pessego",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "pessego",
+        "adicionar": [
+          "amendoa"
+        ]
+      },
+      {
+        "alimento": "pessego",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "pessego",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "frutas.papillote-assar": {
+    "passos": [
+      {
+        "alimento": "abacaxi",
+        "adicionar": [
+          "banana",
+          "morango"
+        ],
+        "recipiente": "papel-alumínio"
+      },
+      {
+        "alimento": "abacaxi",
+        "adicionar": [
+          "manteiga"
+        ],
+        "meio": "licor"
+      },
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi"
+      },
+      {
+        "alimento": "abacaxi",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "abacaxi",
+      "acompanhamentos": [
+        "banana",
+        "morango"
+      ],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.merengue-frances": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-frances",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.merengue-italiano": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-italiano",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.merengue-suico": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras com açúcar",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "claras com açúcar",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-suico",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.pavlova": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pavlova",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "pavlova"
+      },
+      {
+        "alimento": "pavlova"
+      },
+      {
+        "alimento": "pavlova"
+      }
+    ],
+    "prato": {
+      "principal": "pavlova",
+      "acompanhamentos": [
+        "framboesa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.encher-saco-confeitar": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "saco de confeitar"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "saco de confeitar"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "saco de confeitar"
+      }
+    ],
+    "prato": {
+      "principal": "merengue-frances",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.merengue-conchas": {
+    "passos": [
+      {
+        "alimento": "concha-merengue",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "concha-merengue"
+      }
+    ],
+    "prato": {
+      "principal": "concha-merengue",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.merengue-ninhos": {
+    "passos": [
+      {
+        "alimento": "ninho-merengue",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "ninho-merengue"
+      },
+      {
+        "alimento": "ninho-merengue"
+      }
+    ],
+    "prato": {
+      "principal": "ninho-merengue",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.merengue-disco": {
+    "passos": [
+      {
+        "alimento": "disco-merengue",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "disco-merengue"
+      }
+    ],
+    "prato": {
+      "principal": "disco-merengue",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.servir-merengues": {
+    "passos": [
+      {
+        "alimento": "concha-merengue",
+        "adicionar": [
+          "ganache"
+        ]
+      },
+      {
+        "alimento": "concha-merengue",
+        "adicionar": [
+          "espiral-chocolate"
+        ]
+      },
+      {
+        "alimento": "concha-merengue"
+      },
+      {
+        "alimento": "ninho-merengue",
+        "adicionar": [
+          "morango",
+          "framboesa"
+        ],
+        "meio": "Cointreau"
+      },
+      {
+        "alimento": "disco-merengue",
+        "adicionar": [
+          "blueberry"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "concha-merengue",
+      "acompanhamentos": [
+        "ninho-merengue",
+        "disco-merengue"
+      ],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.dissolver-gelatina-po": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água fria",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gelatina dissolvida",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "gelatina-po",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.dissolver-gelatina-folha": {
+    "passos": [
+      {
+        "alimento": "gelatina-folha",
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "gelatina-folha"
+      },
+      {
+        "alimento": "gelatina-folha",
+        "meio": "líquido quente",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "gelatina-folha",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.musse-fruta": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gelatina",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de groselha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de groselha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "purê com creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "musse",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "musse",
+        "recipiente": "taça"
+      }
+    ],
+    "prato": {
+      "principal": "musse-fruta",
+      "acompanhamentos": [
+        "groselha"
+      ],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.musse-chocolate": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra",
+        "adicionar": [
+          "manteiga"
+        ],
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate com gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "musse",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "musse",
+        "recipiente": "taça"
+      }
+    ],
+    "prato": {
+      "principal": "musse-chocolate",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.sufle-frio-frutas": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "fôrma de suflê"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de framboesa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de framboesa",
+        "recipiente": "fôrma de suflê"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de framboesa",
+        "recipiente": "fôrma de suflê"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de framboesa",
+        "recipiente": "fôrma de suflê"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de framboesa",
+        "recipiente": "fôrma de suflê"
+      }
+    ],
+    "prato": {
+      "principal": "sufle-frio",
+      "acompanhamentos": [
+        "framboesa"
+      ],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.gelatina-frutas-camadas": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com suco",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "morango",
+        "adicionar": [
+          "framboesa",
+          "uva"
+        ],
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "morango",
+        "meio": "gelatina líquida",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "gelatina-frutas",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "gelatina-frutas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.gelatina-frutas-aleatoria": {
+    "passos": [
+      {
+        "alimento": "morango",
+        "adicionar": [
+          "uva",
+          "blueberry"
+        ],
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "morango",
+        "meio": "gelatina líquida",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "gelatina-frutas",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "gelatina-frutas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.creme-anglaise": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite com gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "creme-anglaise",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.creme-patissiere": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas e farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite com gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme-patissiere",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.recuperar-creme-talhado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme talhado",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "creme-anglaise",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.custard-ingles-assado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "custard",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.potinhos-franceses": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "potinhos"
+      }
+    ],
+    "prato": {
+      "principal": "custard",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.bavaroise": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme anglaise",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme anglaise",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "água fria",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "bavaroise",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "bavaroise"
+      }
+    ],
+    "prato": {
+      "principal": "bavaroise",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.cobertura-brulee": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme assado",
+        "recipiente": "ramequim"
+      },
+      {
+        "alimento": null,
+        "meio": "creme assado",
+        "recipiente": "ramequim"
+      },
+      {
+        "alimento": null,
+        "meio": "creme assado",
+        "recipiente": "ramequim"
+      }
+    ],
+    "prato": {
+      "principal": "creme-brulee",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.creme-caramelo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": "creme-caramelo",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": "creme-caramelo"
+      }
+    ],
+    "prato": {
+      "principal": "creme-caramelo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.pudim-arroz-cozido": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "pudim-arroz",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.pudim-arroz-assado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "refratário"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "refratário"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "refratário"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "refratário"
+      }
+    ],
+    "prato": {
+      "principal": "pudim-arroz",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.forrar-forma-sufle": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma de suflê"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma de suflê"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma de suflê"
+      }
+    ],
+    "prato": {
+      "principal": "sufle-baunilha",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.limpar-borda-sufle": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa de suflê",
+        "recipiente": "fôrma de suflê"
+      }
+    ],
+    "prato": {
+      "principal": "sufle-baunilha",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.sufle-baunilha-assado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho branco",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho com gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de suflê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de suflê",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de suflê",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de suflê",
+        "recipiente": "forminhas"
+      }
+    ],
+    "prato": {
+      "principal": "sufle-baunilha",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.charlotte-quente": {
+    "passos": [
+      {
+        "alimento": "maca",
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "maca",
+        "adicionar": [
+          "noz"
+        ],
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "pao-de-forma"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "meio": "manteiga",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "adicionar": [
+          "maca"
+        ],
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-de-forma",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "charlotte-maca",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "charlotte-maca"
+      },
+      {
+        "alimento": "charlotte-maca"
+      }
+    ],
+    "prato": {
+      "principal": "charlotte-maca",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "sobremesas.pudim-vapor": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "fôrma de pudim"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma de pudim"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "pudim-vapor",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.calda-acucar-simples": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.calda-fina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com açúcar",
+        "recipiente": "jarra"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.calda-media": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com açúcar",
+        "recipiente": "jarra"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.calda-grossa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com açúcar",
+        "recipiente": "jarra"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.calda-fervida-sem-cristais": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.teste-dedo-agua-gelada": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "água gelada",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.ponto-fio": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "pergunta": "O que a calda faz entre os dedos molhados?",
+        "opcoes": [
+          "Forma um fio ao abrir os dedos",
+          "Forma uma bolinha mole",
+          "Quebra como vidro"
+        ],
+        "correta": 0,
+        "explicacao": "A 110 °C a calda puxa um fio curto entre os dedos.",
+        "objetos": [
+          "copo-agua",
+          "termometro"
+        ],
+        "meio": "calda de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.ponto-bala-mole": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "pergunta": "Como fica a bolinha de calda na água gelada?",
+        "opcoes": [
+          "Dissolve e some na água",
+          "Mantém a forma e cede ao apertar",
+          "Fica dura e estala"
+        ],
+        "correta": 1,
+        "explicacao": "Entre 116 e 118 °C a bolinha é mole e maleável.",
+        "objetos": [
+          "copo-agua",
+          "termometro"
+        ],
+        "meio": "calda de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.ponto-bala-dura": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "pergunta": "Como fica a bolinha de calda na água gelada?",
+        "opcoes": [
+          "Mole, cede ao apertar",
+          "Estala e quebra como vidro",
+          "Firme e flexível, ainda pegajosa"
+        ],
+        "correta": 2,
+        "explicacao": "A 125 °C a bolinha é firme, flexível e ainda gruda.",
+        "objetos": [
+          "copo-agua",
+          "termometro"
+        ],
+        "meio": "calda de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.ponto-crosta-mole": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "pergunta": "Como reage o fio de calda ao morder?",
+        "opcoes": [
+          "Quebra mas gruda nos dentes",
+          "Quebra limpo, sem grudar",
+          "Dobra sem quebrar"
+        ],
+        "correta": 0,
+        "explicacao": "A 134 °C o fio quebra, mas ainda gruda nos dentes.",
+        "objetos": [
+          "copo-agua",
+          "termometro"
+        ],
+        "meio": "calda de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.ponto-crosta-dura": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "pergunta": "Como reage o fio de calda na água gelada?",
+        "opcoes": [
+          "Mole e pegajoso",
+          "Muito quebradiço, estala",
+          "Quebra e gruda nos dentes"
+        ],
+        "correta": 1,
+        "explicacao": "A 145 °C o fio fica muito quebradiço; logo depois vira caramelo.",
+        "objetos": [
+          "copo-agua",
+          "termometro"
+        ],
+        "meio": "calda de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "calda-de-acucar",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.caramelo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "caramelo",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.praline": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "adicionar": [
+          "avela"
+        ],
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "praline",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "praline"
+      }
+    ],
+    "prato": {
+      "principal": "praline",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.nougatine": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "amendoa",
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "nougatine"
+      },
+      {
+        "alimento": "nougatine"
+      },
+      {
+        "alimento": "nougatine"
+      }
+    ],
+    "prato": {
+      "principal": "nougatine",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.picar-chocolate": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra"
+      },
+      {
+        "alimento": "chocolate-barra"
+      }
+    ],
+    "prato": {
+      "principal": "chocolate-barra",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.ralar-chocolate": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra"
+      }
+    ],
+    "prato": {
+      "principal": "chocolate-barra",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.derreter-chocolate": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra"
+      },
+      {
+        "alimento": "chocolate-barra",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "chocolate-barra",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.ganache": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra"
+      },
+      {
+        "alimento": "chocolate-barra",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate com creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ganache",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "ganache",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.temperar-chocolate": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "banho-maria"
+      }
+    ],
+    "prato": {
+      "principal": "chocolate-barra",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.tacas-chocolate": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "forminha de papel"
+      },
+      {
+        "alimento": "taca-chocolate"
+      },
+      {
+        "alimento": "taca-chocolate"
+      }
+    ],
+    "prato": {
+      "principal": "taca-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.formas-chocolate-cortadas": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "formas-chocolate"
+      },
+      {
+        "alimento": "formas-chocolate"
+      },
+      {
+        "alimento": "formas-chocolate"
+      }
+    ],
+    "prato": {
+      "principal": "formas-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.fitas-chocolate": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "fita-chocolate"
+      },
+      {
+        "alimento": "bolo-camadas",
+        "adicionar": [
+          "fita-chocolate"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bolo-camadas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.gateau-deux-pierre": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma de rocambole"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "framboesa",
+        "meio": "licor"
+      },
+      {
+        "alimento": null,
+        "meio": "musse de chocolate",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "meio": "calda com licor",
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "musse-chocolate",
+          "framboesa"
+        ],
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "gateau-deux-pierre",
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "gateau-deux-pierre"
+      },
+      {
+        "alimento": "gateau-deux-pierre",
+        "adicionar": [
+          "fita-chocolate"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "gateau-deux-pierre",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.bolas-sorvete-congeladas": {
+    "passos": [
+      {
+        "alimento": "sorvete-bola"
+      },
+      {
+        "alimento": "sorvete-bola",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "sorvete-bola"
+      }
+    ],
+    "prato": {
+      "principal": "sorvete-bola",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.sorvete-cremoso": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme anglaise",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme anglaise",
+        "recipiente": "sorveteira"
+      },
+      {
+        "alimento": null,
+        "meio": "creme com chantilly",
+        "recipiente": "sorveteira"
+      },
+      {
+        "alimento": null,
+        "meio": "sorvete",
+        "recipiente": "sorveteira"
+      }
+    ],
+    "prato": {
+      "principal": "sorvete-bola",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.semifreddo": {
+    "passos": [
+      {
+        "alimento": "framboesa",
+        "recipiente": "liquidificador"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de framboesa",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "purê de framboesa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme com framboesa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "semifreddo",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "semifreddo"
+      }
+    ],
+    "prato": {
+      "principal": "semifreddo",
+      "acompanhamentos": [
+        "framboesa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.parfait": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas com calda",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "aros"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "aros"
+      },
+      {
+        "alimento": null,
+        "meio": "creme",
+        "recipiente": "aros"
+      },
+      {
+        "alimento": "parfait",
+        "recipiente": "aros"
+      },
+      {
+        "alimento": "parfait"
+      }
+    ],
+    "prato": {
+      "principal": "parfait",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.sorbet-maquina": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com purê de blueberry",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com purê de blueberry",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sorbet",
+        "recipiente": "sorveteira"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sorbet",
+        "recipiente": "sorveteira"
+      },
+      {
+        "alimento": "sorbet",
+        "recipiente": "sorveteira"
+      }
+    ],
+    "prato": {
+      "principal": "sorbet",
+      "acompanhamentos": [
+        "blueberry"
+      ],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.sorbet-mao": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda com purê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com purê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sorbet",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "sorbet",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.fruits-givres": {
+    "passos": [
+      {
+        "alimento": "limao",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao"
+      },
+      {
+        "alimento": "limao",
+        "adicionar": [
+          "sorbet"
+        ]
+      },
+      {
+        "alimento": "fruit-givre"
+      }
+    ],
+    "prato": {
+      "principal": "fruit-givre",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.sorbet-saco-confeitar": {
+    "passos": [
+      {
+        "alimento": "sorbet",
+        "recipiente": "taça"
+      },
+      {
+        "alimento": "sorbet",
+        "recipiente": "taça"
+      },
+      {
+        "alimento": "sorbet",
+        "adicionar": [
+          "raspas-carameladas"
+        ],
+        "recipiente": "taça"
+      }
+    ],
+    "prato": {
+      "principal": "sorbet",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.granita-cafe": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "café",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "café com calda",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "granita",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "granita",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "granita",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "granita",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.folhas-chocolate": {
+    "passos": [
+      {
+        "alimento": "louro"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": "louro",
+        "meio": "chocolate derretido"
+      },
+      {
+        "alimento": "louro"
+      },
+      {
+        "alimento": "folha-chocolate"
+      }
+    ],
+    "prato": {
+      "principal": "folha-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.fios-caramelo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "fio-caramelo"
+      },
+      {
+        "alimento": "fio-caramelo"
+      }
+    ],
+    "prato": {
+      "principal": "fio-caramelo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.duplo-polvilhamento": {
+    "passos": [
+      {
+        "alimento": "formas-chocolate"
+      },
+      {
+        "alimento": "formas-chocolate"
+      }
+    ],
+    "prato": {
+      "principal": "formas-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.espirais-chocolate": {
+    "passos": [
+      {
+        "alimento": "chocolate-barra"
+      }
+    ],
+    "prato": {
+      "principal": "espiral-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.cestas-onduladas": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "pasta de estêncil",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "cesta-ondulada"
+      },
+      {
+        "alimento": "cesta-ondulada"
+      },
+      {
+        "alimento": "cesta-ondulada",
+        "corte": "contorno"
+      }
+    ],
+    "prato": {
+      "principal": "cesta-ondulada",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.cigarros-chocolate": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "cigarro-chocolate"
+      }
+    ],
+    "prato": {
+      "principal": "cigarro-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.raspas-lima-carameladas": {
+    "passos": [
+      {
+        "alimento": "raspas-carameladas",
+        "meio": "calda fina",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "raspas-carameladas",
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "raspas-carameladas"
+      },
+      {
+        "alimento": "raspas-carameladas"
+      }
+    ],
+    "prato": {
+      "principal": "raspas-carameladas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.penants-maracuja": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "pasta de estêncil",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "pasta de estêncil",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "pennant-maracuja"
+      },
+      {
+        "alimento": "pennant-maracuja"
+      }
+    ],
+    "prato": {
+      "principal": "pennant-maracuja",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "sobremesas.zabaione": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "gemas e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas e açúcar",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas com vinho",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "zabaione",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "zabaione",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "zabaione",
+      "acompanhamentos": [],
+      "servir": "taca"
+    }
+  },
+  "sobremesas.manteiga-conhaque": {
+    "passos": [
+      {
+        "alimento": "manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga batida",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga com conhaque",
+        "recipiente": "ramequim"
+      }
+    ],
+    "prato": {
+      "principal": "manteiga-conhaque",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.butterscotch": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com creme",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "butterscotch",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "sobremesas.chantilly": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "chantilly",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "pastelaria.pate-brisee": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "manteiga",
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "farofa de massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovo batido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee"
+      }
+    ],
+    "prato": {
+      "principal": "pate-brisee",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.pate-sucree": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "manteiga",
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pate-brisee"
+      }
+    ],
+    "prato": {
+      "principal": "pate-brisee",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.massa-podre-inglesa": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "manteiga",
+        "meio": "farinha",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "pate-brisee",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.forrar-forma-torta": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "fundo-torta",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "fundo-torta",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "fundo-torta"
+      }
+    ],
+    "prato": {
+      "principal": "fundo-torta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.assar-as-cegas": {
+    "passos": [
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta",
+        "adicionar": [
+          "feijoes-assar"
+        ]
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta"
+      }
+    ],
+    "prato": {
+      "principal": "fundo-torta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.barquinhas": {
+    "passos": [
+      {
+        "alimento": "barquinha",
+        "recipiente": "forminha"
+      },
+      {
+        "alimento": "barquinha"
+      },
+      {
+        "alimento": "barquinha"
+      },
+      {
+        "alimento": "barquinha"
+      },
+      {
+        "alimento": "barquinha"
+      },
+      {
+        "alimento": "barquinha",
+        "adicionar": [
+          "creme-patissiere",
+          "morango"
+        ]
+      },
+      {
+        "alimento": "barquinha"
+      }
+    ],
+    "prato": {
+      "principal": "barquinha",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.torta-simples": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "torta-tampa",
+        "adicionar": [
+          "maca"
+        ],
+        "recipiente": "prato de torta"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa"
+      }
+    ],
+    "prato": {
+      "principal": "torta-tampa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.torta-dupla": {
+    "passos": [
+      {
+        "alimento": "fundo-torta",
+        "recipiente": "prato de torta"
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta",
+        "adicionar": [
+          "ruibarbo"
+        ]
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa"
+      }
+    ],
+    "prato": {
+      "principal": "torta-tampa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.borda-pregas": {
+    "passos": [
+      {
+        "alimento": "fundo-torta"
+      }
+    ],
+    "prato": {
+      "principal": "fundo-torta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.borda-folhas": {
+    "passos": [
+      {
+        "alimento": "pate-brisee",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa"
+      }
+    ],
+    "prato": {
+      "principal": "torta-tampa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.borda-tranca": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "torta-tampa"
+      },
+      {
+        "alimento": "torta-tampa"
+      }
+    ],
+    "prato": {
+      "principal": "torta-tampa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.trelica": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "torta-trelica"
+      },
+      {
+        "alimento": "torta-trelica"
+      }
+    ],
+    "prato": {
+      "principal": "torta-trelica",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.rosinha-massa": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "rosinha-massa"
+      }
+    ],
+    "prato": {
+      "principal": "rosinha-massa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.tarte-tatin": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "tarte-tatin",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "tarte-tatin"
+      },
+      {
+        "alimento": "tarte-tatin"
+      },
+      {
+        "alimento": "tarte-tatin"
+      }
+    ],
+    "prato": {
+      "principal": "tarte-tatin",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.pate-a-choux": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água com manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "pate-choux",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "pastelaria.bombas-choux": {
+    "passos": [
+      {
+        "alimento": "bomba-choux",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "bomba-choux"
+      },
+      {
+        "alimento": "bomba-choux"
+      },
+      {
+        "alimento": "bomba-choux"
+      }
+    ],
+    "prato": {
+      "principal": "bomba-choux",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.eclair": {
+    "passos": [
+      {
+        "alimento": "eclair",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "eclair"
+      },
+      {
+        "alimento": "eclair"
+      },
+      {
+        "alimento": "eclair"
+      },
+      {
+        "alimento": "eclair"
+      },
+      {
+        "alimento": "eclair",
+        "adicionar": [
+          "creme-patissiere"
+        ]
+      },
+      {
+        "alimento": "eclair",
+        "adicionar": [
+          "glace-chocolate"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "eclair",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.bomba-caramelo-amendoa": {
+    "passos": [
+      {
+        "alimento": "amendoa",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "bomba-choux",
+        "meio": "caramelo"
+      },
+      {
+        "alimento": "bomba-choux",
+        "adicionar": [
+          "amendoa"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bomba-choux",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.profiteroles": {
+    "passos": [
+      {
+        "alimento": "profiterole",
+        "adicionar": [
+          "chantilly"
+        ]
+      },
+      {
+        "alimento": "profiterole",
+        "adicionar": [
+          "glace-chocolate"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "profiterole",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.decorar-saco-papel-fondant": {
+    "passos": [
+      {
+        "alimento": "bolo-camadas"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-camadas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.choux-fritos": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "choux-frito",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "choux-frito",
+        "meio": "óleo",
+        "recipiente": "panela",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "choux-frito",
+        "meio": "óleo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "choux-frito"
+      },
+      {
+        "alimento": "choux-frito"
+      }
+    ],
+    "prato": {
+      "principal": "choux-frito",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.creme-mousseline": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "creme pâtissière",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme com manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme mousseline",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "creme-musseline",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "pastelaria.croquembouche": {
+    "passos": [
+      {
+        "alimento": "nougatine"
+      },
+      {
+        "alimento": "nougatine",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "nougatine",
+        "adicionar": [
+          "glace-real"
+        ]
+      },
+      {
+        "alimento": "bomba-choux",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "bomba-choux",
+        "adicionar": [
+          "creme-musseline"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caramelo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "bomba-choux",
+        "meio": "caramelo"
+      },
+      {
+        "alimento": null,
+        "recipiente": "cone"
+      },
+      {
+        "alimento": "bomba-choux",
+        "recipiente": "cone"
+      },
+      {
+        "alimento": "croquembouche"
+      },
+      {
+        "alimento": "croquembouche",
+        "adicionar": [
+          "nougatine"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "croquembouche",
+      "acompanhamentos": [],
+      "servir": "travessa"
+    }
+  },
+  "pastelaria.filo-camadas": {
+    "passos": [
+      {
+        "alimento": "filo",
+        "meio": "manteiga",
+        "recipiente": "travessa"
+      },
+      {
+        "alimento": "filo",
+        "adicionar": [
+          "noz"
+        ]
+      },
+      {
+        "alimento": "filo",
+        "meio": "manteiga"
+      },
+      {
+        "alimento": "filo"
+      },
+      {
+        "alimento": "baklava"
+      },
+      {
+        "alimento": "baklava"
+      }
+    ],
+    "prato": {
+      "principal": "baklava",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.filo-cigarro": {
+    "passos": [
+      {
+        "alimento": "filo",
+        "meio": "manteiga"
+      },
+      {
+        "alimento": "filo",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      },
+      {
+        "alimento": "filo"
+      },
+      {
+        "alimento": "filo-cigarro"
+      },
+      {
+        "alimento": "filo-cigarro"
+      }
+    ],
+    "prato": {
+      "principal": "filo-cigarro",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.filo-triangulo": {
+    "passos": [
+      {
+        "alimento": "filo",
+        "meio": "manteiga"
+      },
+      {
+        "alimento": "filo",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      },
+      {
+        "alimento": "filo-triangulo"
+      },
+      {
+        "alimento": "filo-triangulo"
+      }
+    ],
+    "prato": {
+      "principal": "filo-triangulo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.filo-bolsa": {
+    "passos": [
+      {
+        "alimento": "filo",
+        "meio": "manteiga"
+      },
+      {
+        "alimento": "filo",
+        "adicionar": [
+          "queijo-cabra"
+        ]
+      },
+      {
+        "alimento": "filo-bolsa"
+      },
+      {
+        "alimento": "filo-bolsa"
+      }
+    ],
+    "prato": {
+      "principal": "filo-bolsa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.strudel": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha com óleo e água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "maca",
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "filo"
+      },
+      {
+        "alimento": "filo",
+        "meio": "manteiga"
+      },
+      {
+        "alimento": "filo",
+        "adicionar": [
+          "maca",
+          "noz"
+        ]
+      },
+      {
+        "alimento": "strudel"
+      },
+      {
+        "alimento": "strudel",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "strudel"
+      }
+    ],
+    "prato": {
+      "principal": "strudel",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.detrempe": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "farinha com água e manteiga",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "detrempe"
+      },
+      {
+        "alimento": "detrempe",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "detrempe"
+      }
+    ],
+    "prato": {
+      "principal": "detrempe",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.folhada-incorporar-manteiga": {
+    "passos": [
+      {
+        "alimento": "manteiga"
+      },
+      {
+        "alimento": "detrempe"
+      },
+      {
+        "alimento": "detrempe",
+        "adicionar": [
+          "manteiga"
+        ]
+      },
+      {
+        "alimento": "detrempe"
+      },
+      {
+        "alimento": "massa-folhada"
+      }
+    ],
+    "prato": {
+      "principal": "massa-folhada",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.folhada-dobra-carta": {
+    "passos": [
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      }
+    ],
+    "prato": {
+      "principal": "massa-folhada",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.folhada-virar": {
+    "passos": [
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      }
+    ],
+    "prato": {
+      "principal": "massa-folhada",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.bouchees": {
+    "passos": [
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "bouchee"
+      },
+      {
+        "alimento": "bouchee",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "bouchee",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "bouchee",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.tranche": {
+    "passos": [
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "tranche"
+      }
+    ],
+    "prato": {
+      "principal": "tranche",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "pastelaria.feuilletes": {
+    "passos": [
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "massa-folhada",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "massa-folhada"
+      },
+      {
+        "alimento": "feuillete"
+      },
+      {
+        "alimento": "feuillete",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "feuillete",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.untar-polvilhar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.forrar-base": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.dupla-forracao": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-frutas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.forrar-forma-pao": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "fôrma de pão"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma de pão"
+      },
+      {
+        "alimento": null,
+        "recipiente": "fôrma de pão"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-gengibre",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.encher-forma": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa leve",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de frutas",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de frutas",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de pão-de-ló",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [
+        "bolo-frutas"
+      ],
+      "servir": "prato"
+    }
+  },
+  "bolos.teste-pao-de-lo": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "pergunta": "O que acontece ao apertar o centro do pão-de-ló?",
+        "opcoes": [
+          "Afunda e fica marcado",
+          "Cede e volta ao lugar",
+          "Solta líquido"
+        ],
+        "correta": 1,
+        "explicacao": "Pronto, a massa volta ao apertar e solta das laterais."
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.teste-bolo-fruta": {
+    "passos": [
+      {
+        "alimento": "bolo-frutas",
+        "pergunta": "Como sai o palito do centro do bolo de frutas?",
+        "opcoes": [
+          "Com massa úmida grudada",
+          "Limpo",
+          "Com migalhas secas e quentes por fora"
+        ],
+        "correta": 1,
+        "explicacao": "Palito limpo indica o centro cozido.",
+        "objetos": [
+          "palito"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bolo-frutas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.desenformar-esfriar": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "grade"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "grade"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.metodo-cremoso-mao": {
+    "passos": [
+      {
+        "alimento": "manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "sanduiche-victoria",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.metodo-tudo-em-um": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "batedeira"
+      }
+    ],
+    "prato": {
+      "principal": "sanduiche-victoria",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.sanduiche-victoria": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "grade"
+      },
+      {
+        "alimento": "sanduiche-victoria"
+      },
+      {
+        "alimento": "sanduiche-victoria"
+      }
+    ],
+    "prato": {
+      "principal": "sanduiche-victoria",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.massa-mais-leve": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "batedeira"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.metodo-esfregar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "farinha com manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "bolo-frutas",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-frutas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.enfarinhar-frutas": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-frutas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.metodo-dissolver": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga com melado",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga com melado",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "bolo-gengibre",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-gengibre",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.pao-de-lo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "ovos e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos e açúcar",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.pao-de-lo-enriquecido": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.rocambole": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma de rocambole"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "grade"
+      },
+      {
+        "alimento": "pao-de-lo"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "chantilly"
+        ]
+      },
+      {
+        "alimento": "pao-de-lo"
+      },
+      {
+        "alimento": "rocambole"
+      },
+      {
+        "alimento": "rocambole"
+      }
+    ],
+    "prato": {
+      "principal": "rocambole",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.apertar-rocambole": {
+    "passos": [
+      {
+        "alimento": "rocambole"
+      }
+    ],
+    "prato": {
+      "principal": "rocambole",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.bolo-de-anjo": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "merengue",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "bolo-de-anjo",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "bolo-de-anjo",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-de-anjo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.torta-chocolate-austriaca": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de chocolate",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "torta-chocolate",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "torta-chocolate",
+        "pergunta": "Como deve estar o centro da torta ao sair do forno?",
+        "opcoes": [
+          "Firme e seco",
+          "Levemente macio, firma ao esfriar",
+          "Líquido e balançando"
+        ],
+        "correta": 1,
+        "explicacao": "Sem farinha, a torta sai macia no centro e firma ao esfriar."
+      }
+    ],
+    "prato": {
+      "principal": "torta-chocolate",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.cortar-embeber": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "corte": "deitado"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "meio": "calda com licor"
+      }
+    ],
+    "prato": {
+      "principal": "pao-de-lo",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.rechear-sobrepor": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "chantilly"
+        ]
+      },
+      {
+        "alimento": "pao-de-lo"
+      },
+      {
+        "alimento": "pao-de-lo"
+      },
+      {
+        "alimento": "bolo-camadas"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-camadas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.bolo-merengue": {
+    "passos": [
+      {
+        "alimento": "disco-merengue",
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "disco-merengue",
+        "adicionar": [
+          "musse-chocolate"
+        ],
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "bolo-merengue",
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "bolo-merengue"
+      }
+    ],
+    "prato": {
+      "principal": "bolo-merengue",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.base-biscoito": {
+    "passos": [
+      {
+        "alimento": "biscoito-cortado",
+        "recipiente": "saco"
+      },
+      {
+        "alimento": null,
+        "meio": "migalhas com manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "base-biscoito",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "base-biscoito",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "base-biscoito",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.cheesecake-gelado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de queijo com framboesa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de queijo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "base-biscoito",
+        "meio": "creme de queijo",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "cheesecake-gelado",
+        "recipiente": "fôrma"
+      }
+    ],
+    "prato": {
+      "principal": "cheesecake-gelado",
+      "acompanhamentos": [
+        "framboesa"
+      ],
+      "servir": "prato"
+    }
+  },
+  "bolos.soltar-aro-desmontavel": {
+    "passos": [
+      {
+        "alimento": "cheesecake-gelado",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "cheesecake-gelado"
+      }
+    ],
+    "prato": {
+      "principal": "cheesecake-gelado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.cheesecake-assado": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "fundo-torta",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "fundo-torta",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "recheio de queijo",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "fundo-torta",
+        "meio": "recheio de queijo",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "cheesecake-assado",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "cheesecake-assado",
+        "pergunta": "Como saber se o cheesecake está assado?",
+        "opcoes": [
+          "Palito sai limpo e a massa solta da parede",
+          "Palito sai com creme mole grudado",
+          "Basta o topo dourar"
+        ],
+        "correta": 0,
+        "explicacao": "O centro cozido deixa o palito limpo e a massa se solta da fôrma.",
+        "objetos": [
+          "palito"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "cheesecake-assado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.estencil-toalhinha": {
+    "passos": [
+      {
+        "alimento": "sanduiche-victoria"
+      },
+      {
+        "alimento": "sanduiche-victoria"
+      },
+      {
+        "alimento": "sanduiche-victoria"
+      }
+    ],
+    "prato": {
+      "principal": "sanduiche-victoria",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.saco-papel": {
+    "passos": [
+      {
+        "alimento": null,
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "recipiente": "bancada",
+        "corte": "aparar"
+      }
+    ],
+    "prato": {
+      "principal": "glace-real",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.glace-acucar": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "açúcar de confeiteiro",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "glace-real",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "bolos.glace-real": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "açúcar de confeiteiro",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "glace-real",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "bolos.glace-chocolate": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "calda com chocolate",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê de chocolate",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "pergunta": "Que ponto o glacê mostra entre os dedos molhados?",
+        "opcoes": [
+          "Forma um fio",
+          "Vira uma bolinha dura",
+          "Escorre sem formar nada"
+        ],
+        "correta": 0,
+        "explicacao": "A 110 °C o glacê está no ponto de fio.",
+        "objetos": [
+          "copo-agua",
+          "termometro"
+        ],
+        "meio": "glacê de chocolate"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê de chocolate",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "glace-chocolate",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "bolos.dar-brilho-geleia": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "geleia de abricó",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "geleia de abricó",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "sachertorte",
+        "meio": "geleia de abricó",
+        "recipiente": "grade"
+      }
+    ],
+    "prato": {
+      "principal": "sachertorte",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.cobrir-glace-chocolate": {
+    "passos": [
+      {
+        "alimento": "sachertorte",
+        "recipiente": "grade"
+      },
+      {
+        "alimento": "sachertorte",
+        "adicionar": [
+          "glace-chocolate"
+        ]
+      },
+      {
+        "alimento": "sachertorte"
+      },
+      {
+        "alimento": "sachertorte"
+      },
+      {
+        "alimento": "sachertorte"
+      }
+    ],
+    "prato": {
+      "principal": "sachertorte",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.escrever-chocolate": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "saco de papel"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate derretido",
+        "recipiente": "saco de papel",
+        "corte": "aparar"
+      },
+      {
+        "alimento": "sachertorte"
+      }
+    ],
+    "prato": {
+      "principal": "sachertorte",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.glace-manteiga": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas com calda",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": null,
+        "meio": "zabaione",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê de manteiga",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê de manteiga",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "glace-manteiga",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "bolos.creme-manteiga": {
+    "passos": [
+      {
+        "alimento": "manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de manteiga",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "creme de manteiga",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "glace-manteiga",
+      "acompanhamentos": [],
+      "servir": "tigela"
+    }
+  },
+  "bolos.cobrir-com-creme": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo",
+        "meio": "calda com kirsch"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "chantilly",
+          "morango"
+        ]
+      },
+      {
+        "alimento": "bolo-camadas"
+      },
+      {
+        "alimento": "bolo-camadas"
+      },
+      {
+        "alimento": "bolo-camadas"
+      },
+      {
+        "alimento": "bolo-camadas",
+        "adicionar": [
+          "amendoa"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bolo-camadas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.rosetas-divisoes": {
+    "passos": [
+      {
+        "alimento": "bolo-camadas",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "bolo-camadas",
+        "adicionar": [
+          "chantilly"
+        ]
+      },
+      {
+        "alimento": "bolo-camadas",
+        "adicionar": [
+          "morango",
+          "avela"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "bolo-camadas",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.amolecer-geleia": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "geleia",
+        "recipiente": "bancada"
+      }
+    ],
+    "prato": {
+      "principal": "sanduiche-victoria",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.lace-tuiles": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "massa de laranja",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "lace-tuile",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "lace-tuile"
+      },
+      {
+        "alimento": "lace-tuile"
+      }
+    ],
+    "prato": {
+      "principal": "lace-tuile",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.operettas": {
+    "passos": [
+      {
+        "alimento": "pao-de-lo"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "ganache",
+          "glace-manteiga"
+        ]
+      },
+      {
+        "alimento": "operetta",
+        "adicionar": [
+          "glace-chocolate"
+        ]
+      },
+      {
+        "alimento": "operetta",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "operetta"
+      }
+    ],
+    "prato": {
+      "principal": "operetta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.financiers": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "rum",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "financier",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": "financier",
+        "meio": "rum"
+      }
+    ],
+    "prato": {
+      "principal": "financier",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.physalis-carameladas": {
+    "passos": [
+      {
+        "alimento": "physalis"
+      },
+      {
+        "alimento": "physalis",
+        "meio": "caramelo"
+      },
+      {
+        "alimento": "physalis-caramelada"
+      }
+    ],
+    "prato": {
+      "principal": "physalis-caramelada",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.bolas-sorvete-chocolate": {
+    "passos": [
+      {
+        "alimento": "sorvete-bola"
+      },
+      {
+        "alimento": "sorvete-bola"
+      },
+      {
+        "alimento": "sorvete-bola",
+        "meio": "chocolate derretido"
+      },
+      {
+        "alimento": "bola-sorvete-coberta"
+      }
+    ],
+    "prato": {
+      "principal": "bola-sorvete-coberta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.tortinhas-limao": {
+    "passos": [
+      {
+        "alimento": "fundo-torta",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta",
+        "adicionar": [
+          "creme-patissiere"
+        ]
+      },
+      {
+        "alimento": "tortinha-limao"
+      },
+      {
+        "alimento": "tortinha-limao"
+      }
+    ],
+    "prato": {
+      "principal": "tortinha-limao",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.miroirs-maracuja": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "musse de maracujá",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": null,
+        "meio": "geleia de maracujá",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "miroir",
+        "corte": "contorno"
+      },
+      {
+        "alimento": "miroir"
+      }
+    ],
+    "prato": {
+      "principal": "miroir",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.trufas-amendoa": {
+    "passos": [
+      {
+        "alimento": "trufa-amendoa"
+      },
+      {
+        "alimento": "trufa-amendoa",
+        "meio": "ganache"
+      },
+      {
+        "alimento": "trufa-amendoa",
+        "recipiente": "grade"
+      },
+      {
+        "alimento": "trufa-amendoa"
+      }
+    ],
+    "prato": {
+      "principal": "trufa-amendoa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoitos-enrolados": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "biscoito-cortado"
+      },
+      {
+        "alimento": "biscoito-cortado",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "biscoito-cortado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.enrolar-fatiar": {
+    "passos": [
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "pate-brisee"
+      },
+      {
+        "alimento": "biscoito-cortado"
+      }
+    ],
+    "prato": {
+      "principal": "biscoito-cortado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.shortbread": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "shortbread",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "shortbread",
+        "corte": "pontos"
+      },
+      {
+        "alimento": "shortbread",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "shortbread"
+      },
+      {
+        "alimento": "shortbread",
+        "recipiente": "grade"
+      }
+    ],
+    "prato": {
+      "principal": "shortbread",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoitos-pingados": {
+    "passos": [
+      {
+        "alimento": "tuile",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "tuile",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "tuile",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoitos-saco": {
+    "passos": [
+      {
+        "alimento": "biscoito-roseta",
+        "recipiente": "assadeira"
+      }
+    ],
+    "prato": {
+      "principal": "biscoito-roseta",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoito-polvilhar-acucar": {
+    "passos": [
+      {
+        "alimento": "biscoito-cortado"
+      },
+      {
+        "alimento": "biscoito-cortado"
+      }
+    ],
+    "prato": {
+      "principal": "biscoito-cortado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoito-cobertura-chocolate": {
+    "passos": [
+      {
+        "alimento": "biscoito-cortado",
+        "adicionar": [
+          "glace-chocolate"
+        ]
+      },
+      {
+        "alimento": "biscoito-cortado"
+      },
+      {
+        "alimento": "biscoito-cortado",
+        "recipiente": "grade"
+      }
+    ],
+    "prato": {
+      "principal": "biscoito-cortado",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoito-conhaque": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "brandy-snap",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "brandy-snap"
+      },
+      {
+        "alimento": "brandy-snap"
+      },
+      {
+        "alimento": "brandy-snap"
+      },
+      {
+        "alimento": "brandy-snap"
+      }
+    ],
+    "prato": {
+      "principal": "brandy-snap",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.biscoito-champagne": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "gemas",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "biscoito-champagne",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "biscoito-champagne"
+      },
+      {
+        "alimento": "biscoito-champagne"
+      },
+      {
+        "alimento": "biscoito-champagne"
+      }
+    ],
+    "prato": {
+      "principal": "biscoito-champagne",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.pasta-estencil": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "claras e açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "pasta de estêncil",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "pasta de estêncil",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "tuile",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.tuiles": {
+    "passos": [
+      {
+        "alimento": "tuile",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "tuile"
+      },
+      {
+        "alimento": "tuile"
+      }
+    ],
+    "prato": {
+      "principal": "tuile",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "bolos.tulipas": {
+    "passos": [
+      {
+        "alimento": "tulipa",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "tulipa"
+      },
+      {
+        "alimento": "tulipa"
+      },
+      {
+        "alimento": "tulipa",
+        "recipiente": "grade"
+      }
+    ],
+    "prato": {
+      "principal": "tulipa",
+      "acompanhamentos": [],
+      "servir": "prato"
+    }
+  }
+}
