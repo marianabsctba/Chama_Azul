@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Galeria de alimentos</title>
+    <style>
+      html, body { margin: 0; background: #e9eef4; font: 12px system-ui; }
+      canvas { display: block; }
+      #rotulos { position: absolute; inset: 0; pointer-events: none; }
+      #rotulos div { position: absolute; text-align: center; color: #10294a; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <div id="rotulos"></div>
+    <script type="module" src="/src/galeria.ts"></script>
+  </body>
+</html>
