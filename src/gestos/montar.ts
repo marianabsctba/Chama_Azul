@@ -158,10 +158,32 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
   let recheio: THREE.Mesh | null = null;
   let folha: THREE.Mesh | null = null;
   const fios: THREE.Mesh[] = [];
+  // recheio: um montinho do tamanho da colher pedida, no lugar e na cor certos
+  let recheioRaio = 0.02;
   if (v === 'rechear') {
-    recheio = new THREE.Mesh(new THREE.SphereGeometry(1, 20, 14), new THREE.MeshStandardMaterial({ color: ehLiquido(passo.alvo) ? '#f1e2b8' : '#a8794d', roughness: 0.7 }));
-    recheio.position.copy(topo(0));
+    const txt = `${passo.alvo} ${passo.parametro} ${ctx.tecnica.ingredientes.join(' ')}`.toLowerCase();
+    const cores: [RegExp, string][] = [
+      [/chocolate|ganache/, '#4a2a18'],
+      [/espinafre|pesto|ervas|erva|verde|acelga/, '#5d8a3a'],
+      [/queijo|ricota|requeij|mussarela|parmes/, '#f3ead2'],
+      [/cogumelo|duxelles/, '#7a6450'],
+      [/camar|peixe|salm|caranguejo|lagost/, '#f0c8b0'],
+      [/carne|lingui|frango|porco|cordeiro|vitela|moída|moida|salsicha/, '#8a5a3c'],
+      [/maç|maca|frutas? vermelh|geleia|framboesa|morango|cereja|ameixa/, '#b8423b'],
+      [/creme de confeiteiro|creme|custard/, '#f2d98a'],
+      [/arroz|risoto/, '#efe6cf'],
+    ];
+    const cor = cores.find(([re]) => re.test(txt))?.[1] ?? '#c9a36b';
+    const maximo = Math.min(peca.comprimento, peca.largura) * s * 0.22;
+    recheioRaio = /colher(es)? \(?ch[aá]/.test(txt) ? 0.011 : /colher(es)? \(?sopa/.test(txt) ? 0.016 : 0.022;
+    recheioRaio = Math.max(0.006, Math.min(recheioRaio, maximo, 0.035));
+    const geo = new THREE.SphereGeometry(1, 20, 14);
+    geo.scale(1, 0.55, 1);
+    recheio = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: cor, roughness: 0.75 }));
+    const canto = /canto|ponta|beirada|extremidade/.test(txt);
+    recheio.position.copy(canto ? topo(-L * 0.28, -peca.largura * 0.22) : topo(0));
     recheio.scale.setScalar(0.0001);
+    recheio.castShadow = true;
     mesa.adicionarExtra(recheio);
   }
   if (v === 'forrar') {
@@ -227,7 +249,7 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
         hud.medidores([{ rotulo: 'Trança', valor: progresso, texto: `${ladoTranca} de 8` }]);
       } else if (v === 'rechear') {
         if (entrada.pressionado) enchimento = Math.min(1.3, enchimento + dt * 0.35);
-        recheio!.scale.setScalar(0.0001 + enchimento * peca.largura * s * 0.35);
+        recheio!.scale.setScalar(0.0001 + (enchimento / 0.85) * recheioRaio);
         hud.medidores([{ rotulo: 'Recheio', valor: enchimento / 1.3, faixa: [0.75 / 1.3, 0.95 / 1.3] }]);
         if (!entrada.pressionado && enchimento > 0.3 && hud.botao('Pronto')) {
           nota = clamp(1 - Math.abs(enchimento - 0.85) * 3);
