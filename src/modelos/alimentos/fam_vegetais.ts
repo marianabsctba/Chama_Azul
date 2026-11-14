@@ -107,15 +107,37 @@ export const gEsferoide: Gerador = (k) => {
     sp.push(cabinho(0, H * 0.95, 0, R * 0.25, R * 0.06, c3, 0.1));
     for (const g of sp) out.push(parte(g, 'fosco'));
   } else if (v === 'cebola') {
+    // casca seca com nervuras finas de polo a polo, manchas de casca mais clara descascando,
+    // pescoço seco torcido no topo e o disco de raízes embaixo
+    const fq = 1 / R;
     const cor: CorFn = (x, y, z, t, a) => {
-      const veio = Math.abs(Math.sin(a * 11 + fbm(x * 30, y * 30, z * 30, s) * 1.5)) ** 6;
-      return mul(mix(c1, c2, veio * 0.45 + suave(0.85, 1, t) * 0.4), 1 + 0.07 * fbm(x * 60, y * 60, z * 60, s));
+      const w = fbm(x * fq * 1.5, y * fq * 1.5, z * fq * 1.5, s) * 1.2;
+      const veio = Math.abs(Math.sin(a * 13 + w)) ** 10;
+      const veio2 = Math.abs(Math.sin(a * 31 + w * 2)) ** 14;
+      const lasca = suave(0.25, 0.45, fbm(x * fq * 2.2, y * fq * 2.2, z * fq * 2.2, s + 7));
+      let c = mul(c1, 0.95 + 0.12 * fbm(x * fq * 6, y * fq * 6, z * fq * 6, s));
+      c = mix(c, mul(c1, 1.25), lasca * 0.45);
+      c = mix(c, c2, veio * 0.5 + veio2 * 0.25);
+      // pescoço e base mais escuros e secos
+      return mix(c, mul(c2, 0.85), suave(0.82, 0.97, t) * 0.7 + suave(0.1, 0.0, t) * 0.6);
     };
-    out.push(parte(fruto({ R, H, pescoco: 0.22, finoPescoco: 0.12, covaBase: 0.04, cor, s, l: k.L }), k.ac, true));
-    for (let i = 0; i < 7; i++) {
-      const ang = k.r.f(0, TAU), rr = k.r.f(0, R * 0.12);
-      const L = R * k.r.f(0.15, 0.3);
-      out.push(parte(caule([V(Math.cos(ang) * rr, H * 0.02, Math.sin(ang) * rr), V(Math.cos(ang) * (rr + L), -L * 0.15, Math.sin(ang) * (rr + L))], R * 0.012, R * 0.006, () => mul(c2, 0.9), 4), 'fosco'));
+    out.push(parte(fruto({ R, H, pescoco: 0.14, finoPescoco: 0.2, covaBase: 0.06, largCova: 0.25, cor, s, l: k.L, m: 40, n: 26 }), k.ac, true));
+    // pescoço seco: tufo de casca torcida
+    const yTopo = H * 1.05;
+    out.push(parte(tubo([V(0, yTopo - R * 0.08, 0), V(R * 0.03, yTopo + R * 0.08, 0), V(R * 0.1, yTopo + R * 0.18, R * 0.02)], {
+      raio: (t) => R * lerp(0.1, 0.035, t), achata: 0.6, m: 7, n: 8,
+      cor: (x, y, z) => mul(mix(c1, c2, 0.6), 0.9 + 0.2 * ruido(x * 900, y * 900, z * 900, s)),
+    }), 'fosco'));
+    // disco de raízes e raízes finas e claras
+    out.push(parte(tf(elipsoide(R * 0.2, R * 0.035, R * 0.2, () => mul(c2, 0.75), 4, 10), [0, H * 0.04, 0]), 'fosco'));
+    const corRaiz = mix(c1, [0.75, 0.66, 0.5], 0.6);
+    for (let i = 0; i < 12; i++) {
+      const ang = k.r.f(0, TAU), rr = k.r.f(0, R * 0.14);
+      const L = R * k.r.f(0.12, 0.28);
+      const p0 = V(Math.cos(ang) * rr, H * 0.04, Math.sin(ang) * rr);
+      const p1 = V(Math.cos(ang) * (rr + L * 0.6), -L * 0.05, Math.sin(ang) * (rr + L * 0.6));
+      const p2 = V(Math.cos(ang + 0.4) * (rr + L), L * 0.05, Math.sin(ang + 0.4) * (rr + L));
+      out.push(parte(caule([p0, p1, p2], R * 0.012, R * 0.006, () => corRaiz, 4), 'fosco'));
     }
   } else if (v === 'raiz') {
     // beterraba, nabo, rabanete: globo com cauda fina e talos curtos
@@ -164,22 +186,30 @@ export const gEsferoide: Gerador = (k) => {
     // deitado ao longo de X, irregular, com olhos, anéis ou pelos
     const L = k.T, ry = (L * k.A) / 2, rz = (L * k.L) / 2;
     const amp = k.tem('nodoso') ? 0.2 : k.tem('liso') ? 0.04 : 0.09;
+    const fo = 4.5 / L;
     const cor: CorFn = (x, y, z) => {
       let c = mul(c1, 1 + 0.1 * fbm(x * 70, y * 70, z * 70, s));
-      if (k.tem('olhos')) c = mix(c, c2, 1 - suave(0.05, 0.12, celula(x * 60, y * 60, z * 60, s)));
+      if (k.tem('olhos')) {
+        // manchas de terra, olhos escuros e pontinhos de lenticela
+        c = mix(c, mul(c1, 0.75), suave(0.0, 0.5, fbm(x * fo * 1.5, y * fo * 1.5, z * fo * 1.5, s + 3)) * 0.6);
+        c = mix(c, c2, (1 - suave(0.14, 0.3, celula(x * fo, y * fo, z * fo, s))) * 0.95);
+        c = mix(c, mul(c2, 1.1), (1 - suave(0.2, 0.35, celula(x * fo * 3.5, y * fo * 3.5, z * fo * 3.5, s + 1))) * 0.45);
+      }
       if (k.tem('aneis')) c = mix(c, c2, Math.abs(Math.sin(x * 260 + fbm(x * 30, y * 30, z * 30, s) * 2)) ** 10 * 0.8);
       if (k.tem('pelos')) c = mix(c, c2, suave(0.2, 0.6, ruido(x * 400, y * 400, z * 400, s)) * 0.6);
       if (k.tem('verruga')) c = mix(c, c2, 1 - suave(0.15, 0.3, celula(x * 220, y * 220, z * 220, s)));
       return c;
     };
     out.push(parte(corpo({
-      x0: -L / 2, x1: L / 2, n: 24, m: 24, cor,
+      x0: -L / 2, x1: L / 2, n: 32, m: 36, cor,
       perfil: (t) => {
         const u = 2 * t - 1;
         const sx = Math.sqrt(Math.max(0, 1 - Math.abs(u) ** 2.4));
         return { ry: ry * sx, rz: rz * sx };
       },
       mod: (t, a) => 1 + amp * fbm(t * 4, Math.cos(a) * 1.3, Math.sin(a) * 1.3, s),
+      // olhos levemente afundados
+      desloc: k.tem('olhos') ? (p) => { p.multiplyScalar(1 - 0.04 * (1 - suave(0.1, 0.3, celula(p.x * fo, p.y * fo, p.z * fo, s)))); } : undefined,
     }), k.ac, true));
     if (k.tem('raizes')) {
       for (let i = 0; i < 10; i++) {
@@ -298,7 +328,7 @@ export const gFuso: Gerador = (k) => {
   let curva = 0, faces = 0, ampFace = 0, verr = 0, gota = 0, ponta0 = 0.3, ponta1 = 0.3, segm = 0, ondas = 0;
   let tampa = false;
   switch (v) {
-    case 'banana': curva = 0.15; faces = 5; ampFace = 0.06; ponta0 = 0.6; ponta1 = 0.5; break;
+    case 'banana': curva = 0.15; faces = 5; ampFace = 0.1; ponta0 = 0.55; ponta1 = 0.45; break;
     case 'pepino': verr = 0.25; ponta0 = 0.25; ponta1 = 0.2; break;
     case 'berinjela': gota = 0.45; ponta0 = 0.15; ponta1 = 0.15; break;
     case 'abobrinha': gota = 0.12; ponta0 = 0.12; ponta1 = 0.15; faces = 6; ampFace = 0.015; break;
@@ -317,8 +347,14 @@ export const gFuso: Gerador = (k) => {
   }
   const cor: CorFn = (x, y, z, t, a) => {
     let c = mul(c1, 1 + 0.06 * fbm(x * 60, y * 60, z * 60, s));
-    if (k.tem('listras')) c = mix(c, c2, suave(0.0, 0.5, Math.sin(a * 9 + fbm(x * 25, y * 25, z * 25, s) * 2.5)) * 0.7);
-    if (k.tem('pintas')) c = mix(c, c2, (1 - suave(0.1, 0.22, celula(x * 160, y * 160, z * 160, s))) * 0.8);
+    if (k.tem('listras')) {
+      // listras claras finas e interrompidas, mais marcadas perto da ponta da flor
+      const w = fbm(x * 18, y * 18, z * 18, s) * 1.2;
+      const lin = 1 - suave(0.0, 0.4, Math.abs(Math.sin(a * 5 + w)));
+      const quebra = suave(-0.2, 0.3, fbm(x * 40, y * 40, z * 40, s + 9));
+      c = mix(c, c2, lin * quebra * 0.55 * lerp(0.6, 1, t));
+    }
+    if (k.tem('pintas')) c = mix(c, mix(c1, c2, 0.7), (1 - suave(0.12, 0.25, celula(x * 110, y * 110, z * 110, s))) * 0.6);
     if (k.tem('aneis')) c = mix(c, c2, Math.abs(Math.sin(x * 300 + fbm(x * 30, y * 30, z * 30, s) * 2)) ** 14 * 0.7);
     if (k.tem('manchado')) c = mix(c, c2, suave(0.2, 0.6, fbm(x * 30, y * 30, z * 30, s + 5)) * 0.6);
     if (v === 'banana') c = mix(c, mul(c2, 0.5), suave(0.94, 0.99, t) + suave(0.04, 0.0, t) * 0.8);
@@ -328,7 +364,7 @@ export const gFuso: Gerador = (k) => {
   const corTampa: CorFn = (x, y, z) => mul(ci, 1 + 0.05 * fbm(x * 80, y * 80, z * 80, s));
   const base = R;
   out.push(parte(corpo({
-    x0: -L / 2, x1: L / 2, n: 36, m: 24, cor, corTampa, tampa,
+    x0: -L / 2, x1: L / 2, n: 40, m: 36, cor, corTampa, tampa,
     perfil: (t) => {
       const u = 2 * t - 1;
       let r = R;
@@ -360,7 +396,7 @@ export const gFuso: Gerador = (k) => {
     }
     out.push(parte(caule([V(-L / 2 + L * 0.02, base, 0), V(-L / 2 - L * 0.05, base + R * 0.1, 0), V(-L / 2 - L * 0.1, base + R * 0.3, 0)], r0 * 0.22, r0 * 0.16, () => mul(c3, 0.85), 6), 'fosco'));
   } else if (v === 'banana') {
-    const yb = base + 0; // ponta da haste no x0
+    const yb = base + curva * L; // a ponta sobe com a curva, a haste acompanha
     out.push(parte(caule([V(-L / 2 + L * 0.02, yb, 0), V(-L / 2 - L * 0.04, yb + R * 0.4, 0), V(-L / 2 - L * 0.08, yb + R * 1.0, 0)], R * 0.28, R * 0.22, () => mix(c1, c3, 0.6), 6), 'fosco'));
   } else if (k.tem('cabo')) {
     out.push(parte(caule([V(-L / 2 + L * 0.01, base, 0), V(-L / 2 - L * 0.04, base, 0)], R * 0.15, R * 0.12, () => c3, 6), 'fosco'));
@@ -390,16 +426,31 @@ export const gFolhoso: Gerador = (k) => {
   };
   if (v === 'repolho' || v === 'bruxelas') {
     out.push(parte(fruto({ R: R * 0.92, H: H * 0.95, covaBase: 0.04, cor: corVeio(c1, c2), s, ruido: 0.03, m: 32 }), k.ac, true));
-    const nf = v === 'repolho' ? 7 : 5;
+    const nf = v === 'repolho' ? 6 : 5;
     for (let i = 0; i < nf; i++) {
       const ang = (i / nf) * TAU + k.r.f(-0.3, 0.3);
+      const alto = k.r.f(0.72, 0.86);
+      const solta = 1.04 + 0.03 * (i % 2);
+      // folha com nervura central e laterais claras
+      const corF: CorFn = (x, y, z, t, a) => {
+        const aa = Math.abs(((a + PI) % TAU) - PI);
+        const central = 1 - suave(0.0, 0.07, aa);
+        const lat = Math.abs(Math.sin((aa * 2.2 - t * 3.2) * 3)) ** 16 * suave(0.9, 0.2, aa) * 0.6;
+        return mul(mix(mul(c1, 0.9 - 0.08 * t), c2, Math.max(central, lat) * 0.75), 1 + 0.06 * fbm(x * 50, y * 50, z * 50, s + i));
+      };
       const fl = torno({
         caminho: (sx) => {
-          const th = lerp(0.15, 0.62, sx) * PI;
+          const th = lerp(0.1, alto, sx) * PI;
           return [R * Math.sin(th), H / 2 - (H / 2) * Math.cos(th)];
         },
-        n: 10, m: 12, cor: corVeio(mul(c1, 0.92), c2),
-        mod: (t, a) => (Math.abs(((a + PI) % TAU) - PI) < 1.1 ? 1.02 + 0.03 * Math.sin(t * 9) : 0.6),
+        n: 14, m: 32, cor: corF,
+        mod: (t, a) => {
+          // largura angular diminui no alto (topo arredondado); fora dela a folha se recolhe para dentro
+          const aa = Math.abs(((a + PI) % TAU) - PI);
+          const meia = 1.25 * Math.sqrt(Math.max(0, 1 - t ** 2.2)) + 0.05;
+          const f = suave(meia, meia - 0.3, aa);
+          return lerp(0.6, solta + 0.025 * Math.sin(t * 9 + aa * 4), f);
+        },
       });
       tf(fl, [0, 0, 0], [0, ang, 0]);
       out.push(parte(fl, k.ac));
@@ -408,8 +459,8 @@ export const gFolhoso: Gerador = (k) => {
     out.push(parte(tf(elipsoide(R * 0.15, R * 0.06, R * 0.15, () => mul(c2, 0.95), 4, 10), [0, R * 0.04, 0]), 'fosco'));
   } else if (v === 'alface' || v === 'frisee') {
     const crespa = v === 'frisee' || k.tem('crespa');
-    out.push(parte(fruto({ R: R * 0.55, H: H * 0.7, cor: corVeio(mix(c1, c2, 0.4), c2), s, ruido: 0.05 }), k.ac, true));
-    const nf = crespa ? 16 : 12;
+    out.push(parte(fruto({ R: R * 0.42, H: H * 0.6, cor: corVeio(mix(c1, c2, 0.4), c2), s, ruido: 0.05 }), k.ac, true));
+    const nf = crespa ? 16 : 14;
     for (let i = 0; i < nf; i++) {
       const ang = (i / nf) * TAU * 2.3 + k.r.f(-0.2, 0.2);
       const camada = i / nf;
@@ -417,7 +468,7 @@ export const gFolhoso: Gerador = (k) => {
       const g = folha(Lf, W, mix(c1, c2, camada * 0.4), mix(c2, rgb1(1, 1, 0.85), 0.4), {
         contorno: crespa ? contornos.recortada : contornos.redonda, curva: crespa ? lerp(0.25, 0.8, camada) : lerp(0.6, 1.4, camada), concha: 0.35, ondula: crespa ? 0.12 : 0.06, n: 12, m: 10, s,
       });
-      tf(g, [0, R * 0.05, 0], [0, -ang, crespa ? lerp(0.12, 0.7, camada) : lerp(0.45, 1.0, camada)]);
+      tf(g, [0, R * 0.05, 0], [0, -ang, crespa ? lerp(0.3, 1.0, camada) : lerp(0.2, 1.05, camada)]);
       out.push(parte(g, k.ac));
     }
   } else if (v === 'alcachofra') {
@@ -473,19 +524,23 @@ export const gBulbo: Gerador = (k) => {
   const R = k.T / 2, H = k.T * k.A;
   if (v === 'alho') {
     const nd = k.v.n ?? 9;
+    // casca branca com estrias arroxeadas finas, mais fortes perto da base
     const corD: CorFn = (x, y, z) => {
-      const veio = Math.abs(Math.sin(Math.atan2(z, x) * 30 + y * 200)) ** 10;
-      return mix(mul(c1, 1 + 0.05 * fbm(x * 90, y * 90, z * 90, s)), c2, veio * 0.4 + suave(H * 0.5, 0, y) * 0.0);
+      const w = fbm(x * 120, y * 120, z * 120, s) * 1.5;
+      const veio = Math.abs(Math.sin(Math.atan2(z, x) * 26 + w)) ** 3;
+      const base = suave(H * 0.75, H * 0.05, y);
+      return mix(mul(c1, 1 + 0.06 * fbm(x * 90, y * 90, z * 90, s)), c2, veio * (0.3 + 0.5 * base) + base * 0.15);
     };
-    // dentes em gomos em volta do eixo
+    // dentes em gomos em volta do eixo, inclinados para o centro no topo
     for (let i = 0; i < nd; i++) {
       const ang = (i / nd) * TAU;
-      const d = fruto({ R: R * 0.42, H: H * 0.95, pescoco: 0.3, finoPescoco: 0.15, l: 0.75, cor: corD, s: s + i, n: 14, m: 14 });
-      tf(d, [Math.cos(ang) * R * 0.45, 0, Math.sin(ang) * R * 0.45], [0, -ang, 0.2], [1, 1, 1]);
-      // inclina para o centro no topo
+      const d = fruto({ R: R * 0.46, H: H * 0.8, pescoco: 0.16, finoPescoco: 0.3, l: 0.7, cor: corD, s: s + i, n: 14, m: 16 });
+      tf(d, [Math.cos(ang) * R * 0.5, 0, Math.sin(ang) * R * 0.5], [0, -ang, 0.24], [1, 1, 1]);
       out.push(parte(d, 'fosco', true));
     }
-    out.push(parte(fruto({ R: R * 0.55, H: H * 1.08, pescoco: 0.3, finoPescoco: 0.12, cor: corD, s }), 'fosco', true));
+    out.push(parte(fruto({ R: R * 0.62, H: H * 0.86, pescoco: 0.14, finoPescoco: 0.2, covaBase: 0.05, cor: corD, s }), 'fosco', true));
+    // talinho seco cortado no topo
+    out.push(parte(caule([V(0, H * 0.8, 0), V(0, H * 0.98, 0), V(R * 0.03, H * 1.06, 0)], R * 0.07, R * 0.05, () => mul(mix(c1, [0.7, 0.6, 0.45], 0.5), 0.95), 6), 'fosco'));
     out.push(parte(tf(elipsoide(R * 0.35, R * 0.05, R * 0.35, () => mul(c2, 0.8), 4, 10), [0, 0, 0]), 'fosco'));
   } else if (v === 'chalota') {
     const cor = tomE(c1, 0.1, 50, s);
@@ -587,11 +642,14 @@ export const gTalo: Gerador = (k) => {
     c = mul(c, 1 + 0.06 * fbm(x * 60, y * 120, z * 120, s) + 0.06 * Math.sin(a * 14));
     return c;
   };
+  // ponta do talo mais curto: as folhas do topo nascem dali, sem ficar soltas
+  let fimMin = L / 2;
   for (let i = 0; i < nt; i++) {
     const ang = nt > 1 ? (i / nt) * TAU : 0;
     const off = nt > 1 ? Rr * 1.2 : 0;
     const yz = V(0, Math.cos(ang) * off * 0.6, Math.sin(ang) * off);
     const Li = L * (nt > 1 ? k.r.f(0.85, 1) : 1);
+    fimMin = Math.min(fimMin, -L / 2 + Li);
     const ranhura = v === 'aipo' || v === 'cardo' || v === 'ruibarbo';
     const g = corpo({
       x0: -L / 2, x1: -L / 2 + Li * (v === 'poro' ? 0.55 : 1), n: nt > 3 ? 18 : 28, m: ranhura ? 18 : 14, cor: corT, tampa: true,
@@ -640,7 +698,7 @@ export const gTalo: Gerador = (k) => {
     for (let f = 0; f < nf; f++) {
       const W = v === 'ruibarbo' ? L * 0.55 : L * 0.18;
       const g = folha(v === 'ruibarbo' ? L * 0.5 : L * 0.2, W, c3, mul(c3, 1.2), { contorno: v === 'ruibarbo' ? contornos.palmada : contornos.recortada, ondula: 0.15, concha: 0.2, n: 12, m: 10, s: s + f });
-      tf(g, [L / 2 - L * 0.04, Rr * 2, (f - (nf - 1) / 2) * Rr * 1.5], [0, (f - (nf - 1) / 2) * 0.4, 0.15]);
+      tf(g, [fimMin - L * 0.03, Rr * 2, (f - (nf - 1) / 2) * Rr * 1.5], [0, (f - (nf - 1) / 2) * 0.4, 0.15]);
       out.push(parte(g, 'acetinado'));
     }
   }
@@ -716,6 +774,28 @@ export const gErva: Gerador = (k) => {
   };
   const ct = ctMap[k.v.d?.split(' ')[0] ?? 'oval'] ?? contornos.oval;
   const corCaule = tomE(c3, 0.08, 200, s);
+  if (v === 'folha' && k.tem('palmada') && !k.tem('semcabo')) {
+    // folha de parreira: cinco lobos serrilhados saindo do encaixe do cabo, nervuras em leque
+    const R = L * 0.46, esp = Math.max(0.0007, R * 0.012);
+    const aN = (3 * PI) / 2; // ângulo do encaixe do cabo (lado -X)
+    const lobo = (a: number) => Math.abs(Math.sin(2.5 * (a - aN)));
+    const contorno = (a: number) => (0.66 + 0.34 * lobo(a) ** 0.6) * (1 - 0.07 * Math.abs(Math.sin(a * 46))) * (1 - 0.25 * Math.exp(-(((a - aN + PI) % TAU - PI) ** 2) / 0.02));
+    const cor: CorFn = (x, y, z) => {
+      const a = Math.atan2(x, z);
+      const r = Math.hypot(x, z) / R;
+      const nerv = (1 - suave(0, 0.05, Math.abs(Math.cos(2.5 * (a - aN))))) * suave(0.95, 0.1, r);
+      const sec = Math.abs(Math.sin(r * 18 + a * 5)) ** 20 * 0.35 * suave(0.9, 0.3, r);
+      return mul(mix(c1, c2, Math.max(nerv * 0.75, sec)), 1 + 0.08 * fbm(x * 90, y * 90, z * 90, s));
+    };
+    const g = torno({
+      caminho: [[0, 0], [R * 0.5, 0], [R, 0], [R, esp], [R * 0.5, esp], [0, esp]], n: 30, m: 80, cor,
+      mod: (t, a) => contorno(a),
+      desloc: (p) => { const r = Math.hypot(p.x, p.z) / R; p.y += R * 0.12 * r * r + R * 0.03 * Math.sin(Math.atan2(p.x, p.z) * 5) * r; },
+    });
+    out.push(parte(g, k.ac, true));
+    if (!k.tem('semcabo')) out.push(parte(caule([V(-R * 0.1, esp, 0), V(-R * 0.6, esp * 1.5, R * 0.02), V(-R * 1.05, esp * 2, R * 0.05)], R * 0.035, R * 0.025, corCaule, 5), 'acetinado'));
+    return out;
+  }
   if (v === 'folha') {
     // folha solta grande (louro, parreira, bananeira, espinafre)
     const W = L * k.L;
@@ -880,7 +960,7 @@ export const gCogumelo: Gerador = (k) => {
   for (let c = 0; c < nc; c++) {
     const esc = nc > 1 ? k.r.f(0.7, 1) : 1;
     const off = nc > 1 ? V((c - (nc - 1) / 2) * R * 1.1, 0, k.r.f(-R, R) * 0.4) : V();
-    const rC = R * esc, hT = H * 0.55 * esc, rT = R * (v === 'cepe' ? 0.4 : v === 'chanterelle' ? 0.22 : 0.2) * esc;
+    const rC = R * esc, hT = H * (v === 'paris' ? 0.5 : 0.55) * esc, rT = R * (v === 'cepe' ? 0.4 : v === 'chanterelle' ? 0.22 : v === 'paris' ? 0.32 : 0.2) * esc;
     const corChapeu: CorFn = (x, y, z, t, a) => {
       let cc = mul(c1, 1 + 0.07 * fbm(x * 60, y * 60, z * 60, s));
       if (k.tem('flocos')) cc = mix(cc, c2, (1 - suave(0.1, 0.25, celula(x * 140, y * 140, z * 140, s))) * 0.7);
@@ -926,8 +1006,10 @@ export const gCogumelo: Gerador = (k) => {
       chapeu = fruto({ R: rC, H: hc * 1.6, pescoco: 0.5, finoPescoco: 0.35, cor: corChapeu, s, ruido: 0.12, fRuido: 6 / rC, m: 26 });
     } else {
       const plano = v === 'shiitake' ? 0.55 : v === 'pied_de_mouton' ? 0.65 : 1;
+      // paris: cúpula alta com a borda virada para dentro, mostrando o talo grosso embaixo
+      const cupula: [number, number][] = [[0, 0], [rT * 1.1, hc * 0.06], [rC * 0.8, hc * 0.12], [rC * 0.97, hc * 0.28], [rC, hc * 0.55], [rC * 0.86, hc * 0.95], [rC * 0.5, hc * 1.22], [0, hc * 1.3]];
       chapeu = torno({
-        caminho: [[0, 0], [rT * 1.2, hc * 0.05], [rC * 0.85, hc * 0.12], [rC, hc * 0.3], [rC * 0.92, hc * 0.7 * plano], [rC * 0.55, hc * plano], [0, hc * 1.05 * plano]],
+        caminho: v === 'paris' ? cupula : [[0, 0], [rT * 1.2, hc * 0.05], [rC * 0.85, hc * 0.12], [rC, hc * 0.3], [rC * 0.92, hc * 0.7 * plano], [rC * 0.55, hc * plano], [0, hc * 1.05 * plano]],
         n: 18, m: 28, cor: corChapeu,
         mod: (t, a) => 1 + (k.tem('irregular') ? 0.08 * fbm(Math.cos(a), Math.sin(a), t, s) : 0.015 * Math.sin(a * 5)),
       });

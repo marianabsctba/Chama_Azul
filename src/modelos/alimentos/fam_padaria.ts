@@ -90,7 +90,7 @@ export const gPao: Gerador = (k) => {
         return mix(crosta(x, y, z, 0, 0), mul(c2, 1.05), corte * suave(H * 0.6, H * 0.9, y) * 0.9);
       };
       out.push(parte(corpo({
-        x0: -L / 2, x1: L / 2, n: 40, m: 24, exp: 2.2, cor,
+        x0: -L / 2, x1: L / 2, n: 72, m: 36, exp: 2.2, cor,
         perfil: (t) => { const e = Math.sqrt(suave(0, 0.1, t)) * Math.sqrt(suave(1, 0.9, t)); return { ry: (H / 2) * e, rz: (W / 2) * e, cy: H / 2 }; },
         desloc: (p) => {
           if (p.y < H * 0.2) p.y = H * 0.2 - (H * 0.2 - p.y) * 0.4;

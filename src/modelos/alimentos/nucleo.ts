@@ -255,6 +255,8 @@ export interface OpcCorpo extends Omit<OpcMalha, 'polos'> {
   tampa?: boolean;
   /** Espaçamento uniforme dos anéis (senão concentra nas pontas). */
   linear?: boolean;
+  /** Anéis em cada tampa plana (padrão 3); mais anéis deixam pintar desenhos na tampa. */
+  aneisTampa?: number;
 }
 
 const UX = V(1, 0, 0), UY = V(0, 1, 0), UZ = V(0, 0, 1);
@@ -275,9 +277,10 @@ export function corpo(o: OpcCorpo): THREE.BufferGeometry {
     return o.tampa ? 0.5 * s + 0.25 * (1 - Math.cos(PI * s)) : 0.5 * (1 - Math.cos(PI * s));
   };
   if (o.tampa) {
-    for (const k of [0.3, 0.62, 0.88]) anel(0, k, true);
+    const ks = o.aneisTampa ? Array.from({ length: o.aneisTampa }, (_, i) => (i + 1) / (o.aneisTampa! + 0.6)) : [0.3, 0.62, 0.88];
+    for (const k of ks) anel(0, k, true);
     for (let i = 0; i <= n; i++) anel(tt(i));
-    for (const k of [0.88, 0.62, 0.3]) anel(1, k, true);
+    for (const k of [...ks].reverse()) anel(1, k, true);
   } else {
     for (let i = 1; i < n; i++) anel(tt(i));
   }

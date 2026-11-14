@@ -115,23 +115,27 @@ export const gBaga: Gerador = (k) => {
   const v = k.v.v;
   const R = k.T / 2, H = k.T * k.A;
   if (v === 'morango') {
+    // sementinhas amarelas em covinhas, ombro mais claro só perto do cálice
+    const fs = 4 / R;
     const cor: CorFn = (x, y, z) => {
-      const sem = 1 - suave(0.12, 0.2, celula(x * 260, y * 260, z * 260, s));
-      return mix(mul(mix(c1, ci, suave(H * 0.85, H, y) * 0.6), 1 + 0.05 * fbm(x * 60, y * 60, z * 60, s)), c2, sem);
+      const sem = 1 - suave(0.24, 0.36, celula(x * fs, y * fs, z * fs, s));
+      const cova = 1 - suave(0.3, 0.55, celula(x * fs, y * fs, z * fs, s));
+      const base = mul(mix(c1, ci, suave(H * 0.88, H, y) * 0.35), 1 + 0.06 * fbm(x * 60, y * 60, z * 60, s) - cova * 0.18);
+      return mix(base, c2, sem * 0.9);
     };
-    // cone arredondado com a ponta para baixo
+    // coração arredondado com a ponta para baixo e ombros largos em cima
     out.push(parte(torno({
       caminho: (u) => {
         const th = u * PI;
-        let r = R * Math.sin(th) * (0.4 + 0.6 * u ** 0.7);
-        const h = (H / 2) * (1 - Math.cos(th)) ** 1;
-        return [r, h - (u > 0.9 ? (u - 0.9) * H * 0.4 : 0)];
+        const r = R * Math.sin(th) ** 0.8 * (0.12 + 0.88 * u ** 0.85);
+        const h = (H / 2) * (1 - Math.cos(th));
+        return [r, h - (u > 0.85 ? (u - 0.85) * H * 0.5 : 0)];
       },
-      n: 32, m: 40, cor, mod: (t, a) => 1 + 0.02 * ruido(Math.cos(a) * 5, t * 8, Math.sin(a) * 5, s),
+      n: 32, m: 40, cor, mod: (t, a) => 1 + 0.025 * ruido(Math.cos(a) * 5, t * 8, Math.sin(a) * 5, s),
     }), 'brilhante', true));
-    const sp = sepalas(7, R * 0.75, R * 0.25, c3, V(0, H * 0.94, 0), -0.25, k.r);
+    const sp = sepalas(8, R * 0.72, R * 0.26, c3, V(0, H * 0.95, 0), 0.0, k.r);
     for (const g of sp) out.push(parte(g, 'acetinado'));
-    out.push(parte(cabinho(0, H * 0.95, 0, H * 0.25, R * 0.07, c3, 0.2), 'acetinado'));
+    out.push(parte(cabinho(0, H * 0.92, 0, H * 0.14, R * 0.08, c3, 0.15), 'acetinado'));
     return out;
   }
   if (v === 'framboesa' || v === 'amora') {
@@ -202,7 +206,7 @@ export const gTropical: Gerador = (k) => {
     case 'abacaxi': {
       // em pé construído e depois deitado: comprimento em X é o fruto mais a coroa
       const Ht = k.T; // comprimento total
-      const Hc = Ht * 0.58, Rc = Ht * (k.L ?? 0.22) * 0.5 / 0.5 * 0.5;
+      const Hc = Ht * 0.64, Rc = Ht * (k.L ?? 0.22) * 0.5 / 0.5 * 0.5;
       const ns = 8;
       const esc = (y: number, a: number) => {
         const u = (a / TAU) * ns + (y / Hc) * 6, w = (a / TAU) * ns - (y / Hc) * 6;
@@ -215,7 +219,7 @@ export const gTropical: Gerador = (k) => {
         const espinho = suave(0.85, 1, e);
         return mul(mix(c, mul(c2, 0.6), espinho), 1 + 0.06 * fbm(x * 80, y * 80, z * 80, s));
       };
-      const corpoA = fruto({ R: Rc, H: Hc, cor, s, m: 40, n: 30, covaTopo: 0.02 });
+      const corpoA = fruto({ R: Rc, H: Hc, cor, s, m: 52, n: 36, covaTopo: 0.02 });
       // relevo das escamas
       const pa = corpoA.getAttribute('position');
       for (let i = 0; i < pa.count; i++) {
@@ -227,7 +231,7 @@ export const gTropical: Gerador = (k) => {
       }
       corpoA.computeVertexNormals();
       out.push(parte(deitar(corpoA), 'fosco', true));
-      for (const g of coroaFolhas(k.v.n ?? 26, Ht * 0.42, c3, V(0, Hc * 0.96, 0), k.r)) out.push(parte(deitar(g), 'acetinado'));
+      for (const g of coroaFolhas(k.v.n ?? 26, Ht * 0.36, c3, V(0, Hc * 0.96, 0), k.r, 0.05)) out.push(parte(deitar(g), 'acetinado'));
       return out;
     }
     case 'manga': {

@@ -149,7 +149,19 @@ export const gBolo: Gerador = (k) => {
     if (k.tem('ouro') && y > H * 0.95) c = mix(c, [0.85, 0.65, 0.2], 1 - suave(R * 0.08, R * 0.12, Math.hypot(x - R * 0.2, z)));
     if (k.tem('fitas') && lado) c = mix(c, mul(c1, 0.75), Math.abs(Math.sin(Math.atan2(z, x) * 30)) ** 4);
     if (k.tem('cigarros') && lado) c = mix(c, mul(c2, 0.8), Math.abs(Math.sin(Math.atan2(z, x) * 40)) ** 2);
-    if (k.tem('frutasdentro')) c = mix(c, c3, 1 - suave(0.1, 0.2, celula(x * 70, y * 70, z * 70, s)));
+    if (k.tem('frutasdentro')) {
+      // pedaços de fruta cristalizada e passas aparecendo na massa escura
+      const ff = 4.5 / R;
+      const cel = celula(x * ff, y * ff, z * ff, s);
+      const tipo = ruido(Math.floor(x * ff) * 7.1, Math.floor(y * ff) * 3.3, Math.floor(z * ff) * 5.7, s + 2);
+      const fruta: RGB = tipo > 0.3 ? c3 : tipo > -0.2 ? [0.55, 0.42, 0.08] : [0.12, 0.05, 0.03];
+      c = mix(c, fruta, (1 - suave(0.16, 0.3, cel)) * 0.9);
+    }
+    if (k.tem('crosta')) {
+      // casca dourada mais escura em cima e nos lados, com poros
+      const poro = 1 - suave(0.08, 0.18, celula(x * 260, y * 260, z * 260, s));
+      c = mul(mix(c, c2, suave(H * 0.85, H, y) * 0.8 + 0.25), 1 - poro * 0.12);
+    }
     if (k.tem('calda')) c = mix(c, c2, suave(H * 0.62, H * 0.8, y + H * 0.08 * Math.sin(Math.atan2(z, x) * 7)));
     return c;
   };
@@ -166,7 +178,24 @@ export const gBolo: Gerador = (k) => {
         out.push(parte(corpo({ x0: -R, x1: R, n: 18, m: 36, exp: 8, tampa: true, linear: true, cor: corQ, corTampa: corQ, perfil: () => ({ ry: H / 2, rz: R * k.L, cy: H / 2 }) }), k.ac, true));
       } else {
         const b = Math.min(R, H) * 0.08;
-        out.push(parte(torno({ caminho: [[0, 0], [R * 0.9, 0], [R, b], [R, H - b], [R - b * 1.2, H], [R * 0.5, H], [0, H]], n: 30, m: 40, cor, mod: k.tem('canelado') ? (t, a) => 1 + 0.04 * Math.abs(Math.cos(a * 8)) : undefined }), k.ac, true));
+        // bolo de frutas e pão de ló: topo levemente abaulado e malha mais fina para os pedaços aparecerem
+        const domo = k.tem('frutasdentro') || k.tem('crosta') ? 0.06 : 0;
+        const fino = k.tem('frutasdentro');
+        out.push(parte(torno({
+          caminho: [[0, 0], [R * 0.9, 0], [R, b], [R, H - b], [R - b * 1.2, H], [R * 0.5, H * (1 + domo * 0.7)], [0, H * (1 + domo)]],
+          n: fino ? 44 : 30, m: fino ? 60 : 40, cor,
+          mod: k.tem('canelado') ? (t, a) => 1 + 0.04 * Math.abs(Math.cos(a * 8)) : undefined,
+          desloc: domo ? (p) => { if (p.y > H * 0.9) p.y += H * 0.02 * fbm(p.x * 30, 0, p.z * 30, s); } : undefined,
+        }), k.ac, true));
+        if (k.tem('frutasdentro')) {
+          // cerejas cristalizadas e amêndoas por cima
+          for (let i = 0; i < 9; i++) {
+            const a = (i / 9) * TAU, rr = R * (i % 3 === 0 ? 0.3 : 0.62);
+            const yTopo = H * (1 + domo * (1 - (rr / R) ** 2) * 0.9);
+            if (i % 2 === 0) out.push(parte(tf(elipsoide(R * 0.07, R * 0.05, R * 0.07, (x, y, z) => mul(c3, 0.9 + 0.2 * ruido(x * 300, y * 300, z * 300, s)), 6, 10), [Math.cos(a) * rr, yTopo, Math.sin(a) * rr]), 'brilhante'));
+            else out.push(parte(tf(elipsoide(R * 0.09, R * 0.025, R * 0.05, () => [0.62, 0.42, 0.24], 5, 8), [Math.cos(a) * rr, yTopo, Math.sin(a) * rr], [0, -a, 0]), 'acetinado'));
+          }
+        }
       }
       if (k.tem('leque')) {
         for (let i = 0; i < 9; i++) {
@@ -212,9 +241,27 @@ export const gBolo: Gerador = (k) => {
         const r = Math.hypot(y - Rr, z) / Rr;
         const ang = Math.atan2(z, y - Rr);
         const f = (r * 3.2 - ang / TAU) % 1;
-        return mix(ci, c2, suave(0.65, 0.8, f < 0 ? f + 1 : f));
+        const ff = f < 0 ? f + 1 : f;
+        // massa clara, faixa de recheio e a casca dourada fininha de cada volta
+        const c = mix(ci, c2, suave(0.62, 0.72, ff) * (1 - suave(0.86, 0.92, ff)));
+        return mix(c, c1, suave(0.9, 0.97, ff) * 0.8 + suave(0.93, 0.99, r));
       };
-      out.push(parte(corpo({ x0: -L / 2, x1: L / 2, n: 24, m: 30, tampa: true, cor: (x, y, z) => mul(c1, 1 + 0.05 * fbm(x * 70, y * 70, z * 70, s)), corTampa: espiral, perfil: () => ({ ry: Rr, rz: Rr, cy: Rr }), desloc: (p) => { if (p.y < Rr * 0.15) p.y = Rr * 0.15 - (Rr * 0.15 - p.y) * 0.3; } }), k.ac, true));
+      // casca dourada com açúcar polvilhado por cima; nas pontas, a espiral de massa e recheio
+      // emenda da última volta da massa, de lado: um degrau com um fio de recheio aparecendo
+      const aEmenda = 1.15;
+      const casca: CorFn = (x, y, z, t, a) => {
+        const dA = Math.abs(a - aEmenda);
+        if (dA < 0.06) return mix(c2, mul(c1, 0.6), dA / 0.06);
+        const c = mul(c1, 0.95 + 0.1 * fbm(x * 70, y * 70, z * 70, s));
+        // superfície assada: dourado mais escuro em cima, mais claro embaixo
+        return mul(c, lerp(0.92, 1.05, suave(Rr * 1.8, Rr * 0.4, y)));
+      };
+      out.push(parte(corpo({
+        x0: -L / 2, x1: L / 2, n: 20, m: 64, tampa: true, aneisTampa: 14, cor: casca, corTampa: espiral,
+        perfil: () => ({ ry: Rr, rz: Rr, cy: Rr }),
+        mod: (t, a) => 0.965 + 0.035 * (((a - aEmenda) % TAU) + TAU) % TAU / TAU + 0.01 * fbm(t * 8, Math.cos(a) * 2, Math.sin(a) * 2, s),
+        desloc: (p) => { if (p.y < Rr * 0.15) p.y = Rr * 0.15 - (Rr * 0.15 - p.y) * 0.3; },
+      }), k.ac, true));
       return out;
     }
   }
