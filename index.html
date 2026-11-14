@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chama Azul</title>
+    <meta name="description" content="Cozinha-escola em 3D, em primeira pessoa, para relaxar e praticar técnicas culinárias." />
+    <meta name="theme-color" content="#08172d" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 80'%3E%3Cpath d='M32 4c6 14 22 24 22 44a22 22 0 0 1-44 0c0-12 7-18 10-26 2 8 6 12 10 13-3-10-1-21 2-31z' fill='%233f86e0'/%3E%3Cpath d='M32 40c4 7 10 11 10 19a10 10 0 0 1-20 0c0-6 5-10 10-19z' fill='%23eaf6ff'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <canvas id="jogo" tabindex="0"></canvas>
+    <div id="ui"></div>
+    <div class="carregando" id="carregando">
+      <div>
+        <svg class="chama" viewBox="0 0 64 80" aria-hidden="true"><path d="M32 4c6 14 22 24 22 44a22 22 0 0 1-44 0c0-12 7-18 10-26 2 8 6 12 10 13-3-10-1-21 2-31z" fill="#3f86e0"/><path d="M32 40c4 7 10 11 10 19a10 10 0 0 1-20 0c0-6 5-10 10-19z" fill="#eaf6ff"/></svg>
+        <p id="frase">Acendendo o fogão...</p>
+      </div>
+    </div>
+    <noscript>A Chama Azul precisa de JavaScript e WebGL para funcionar.</noscript>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
