@@ -5,6 +5,7 @@ import type { Cozinha, Tecnica } from './tipos';
 import type { Mesa } from './gestos/mesa';
 import { criarFormaAlimento, familiaDe } from './modelos/alimentos';
 import { Peca } from './pecas/peca';
+import { estadoInicial } from './pecas/conteudo';
 
 const DOCE = new Set(['sobremesas', 'pastelaria', 'bolos']);
 const SOPA = new Set(['caldos']);
@@ -59,7 +60,16 @@ function poca(raio: number, cor: THREE.Color, brilho: number): THREE.Mesh {
 
 export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnica: Tecnica): Prato {
   const doce = DOCE.has(tecnica.bancada);
-  const sopa = SOPA.has(tecnica.bancada) || (!mesa.peca && !!mesa.conteudo);
+  const servir = tecnica.prato?.servir;
+  const ehPreparo = (id?: string) => !id || ['recipiente', 'monte', 'pasta'].includes(familiaDe(id) ?? 'recipiente');
+  // o prato revisado manda: se a peça na mesa não é a principal, a principal entra no lugar
+  const principalRev = tecnica.prato?.principal;
+  if (principalRev && !ehPreparo(principalRev) && mesa.pecaChave !== principalRev) {
+    mesa.removerPeca();
+    mesa.garantirPeca(principalRev, new THREE.Vector3());
+  }
+  const preparoPrincipal = principalRev && ehPreparo(principalRev) ? principalRev : undefined;
+  const sopa = servir === 'tigela' || servir === 'taca' || (!servir && (SOPA.has(tecnica.bancada) || (!mesa.peca && !!mesa.conteudo))) || (!mesa.peca && !!preparoPrincipal);
   const estacao = doce ? cozinha.estacoes.confeitaria : cozinha.estacoes.corte;
   const centro = estacao.superficie.clone();
   const grupo = new THREE.Group();
@@ -69,12 +79,28 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // a louça se adapta à peça (tamanho real): prato raso, prato grande ou travessa
   const pecaAntes = mesa.peca;
   const real = pecaAntes ? Math.min(0.6, Math.max(pecaAntes.comprimento, pecaAntes.largura)) : 0.12;
-  const raio = sopa ? 0.12 : THREE.MathUtils.clamp(real * 0.66, 0.13, 0.3);
-  grupo.add(louca(raio, sopa));
+  const raio = servir === 'taca' ? 0.07 : sopa ? 0.12 : servir === 'travessa' ? THREE.MathUtils.clamp(real * 0.7, 0.2, 0.32) : THREE.MathUtils.clamp(real * 0.66, 0.13, 0.3);
+  if (servir === 'tabua') {
+    // tábua de madeira para pães e frios
+    const tabua = new THREE.Mesh(new THREE.BoxGeometry(raio * 2.3, 0.022, raio * 1.5), new THREE.MeshStandardMaterial({ color: '#b98a55', roughness: 0.75 }));
+    tabua.position.y = 0.011;
+    tabua.castShadow = true;
+    tabua.receiveShadow = true;
+    grupo.add(tabua);
+  } else if (servir === 'taca') {
+    // taça de vidro com pé, para sobremesas de taça
+    const perfil = [[0, 0], [0.045, 0], [0.045, 0.006], [0.006, 0.012], [0.006, 0.07], [0.03, 0.08], [0.068, 0.13], [0.07, 0.135], [0.066, 0.132], [0.028, 0.084], [0, 0.078]].map(([x, y]) => new THREE.Vector2(x, y));
+    const taca = new THREE.Mesh(new THREE.LatheGeometry(perfil, 48), new THREE.MeshStandardMaterial({ color: '#eef6ff', roughness: 0.05, transparent: true, opacity: 0.35, side: THREE.DoubleSide, depthWrite: false }));
+    grupo.add(taca);
+  } else {
+    const l = louca(raio, sopa);
+    if (servir === 'travessa') l.scale.z = 0.72;
+    grupo.add(l);
+  }
   const piso = sopa ? 0.016 : 0.012;
 
   // o que sobrou na mesa entra no prato
-  const corConteudo = mesa.conteudo?.estado.cor.clone();
+  const corConteudo = mesa.conteudo?.estado.cor.clone() ?? (preparoPrincipal ? new THREE.Color(estadoInicial(preparoPrincipal.replace(/[-_]/g, ' ')).cor) : undefined);
   const brilho = mesa.conteudo?.estado.brilho ?? 0.6;
   const peca = mesa.peca;
   const capa = mesa.capa;
@@ -82,9 +108,9 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   mesa.limparExtras();
   mesa.removerRecipiente(true);
   if (sopa && corConteudo) {
-    // sopa: a tigela cheia
-    const caldo = poca(raio * 0.82, corConteudo, brilho);
-    caldo.position.y = 0.05;
+    // sopa: a tigela cheia (ou a taça)
+    const caldo = poca(raio * (servir === 'taca' ? 0.9 : 0.82), corConteudo, brilho);
+    caldo.position.y = servir === 'taca' ? 0.122 : 0.05;
     grupo.add(caldo);
   } else if (corConteudo) {
     const molho = poca(raio * 0.55, corConteudo, brilho);
@@ -116,8 +142,10 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   }
 
   // guarnições: os outros ingredientes da técnica, pequenos e arrumados em volta
-  const principal = tecnica.passos.find((p) => p.alimento)?.alimento;
-  const guarnicoes = tecnica.alimentos.filter((id) => id !== principal && familiaDe(id) && !['recipiente', 'monte', 'pasta'].includes(familiaDe(id)!)).slice(0, 3);
+  const principal = principalRev ?? tecnica.passos.find((p) => p.alimento)?.alimento;
+  const guarnicoes = (tecnica.prato?.acompanhamentos ?? tecnica.alimentos)
+    .filter((id) => id !== principal && familiaDe(id) && !['recipiente', 'monte', 'pasta'].includes(familiaDe(id)!))
+    .slice(0, 3);
   // todo prato sai com um toque final: salsa nos salgados, hortelã e frutinha nos doces
   const toque = doce ? ['hortela', 'framboesa'] : ['salsa'];
   for (const id of toque) if (guarnicoes.length < 3 && familiaDe(id) && !guarnicoes.includes(id)) guarnicoes.push(id);

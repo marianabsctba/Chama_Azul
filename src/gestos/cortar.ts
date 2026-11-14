@@ -54,13 +54,18 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
     peca.add(m);
     guias.push({ eixo, pos, feito: false, malha: m });
   };
+  // aparar: só as duas pontas (talo, ponta, rabo, barbatana, gordura da borda)
+  if (v === 'aparar') {
+    criarGuia('x', L / 2 - L * 0.08);
+    criarGuia('x', -L / 2 + L * 0.08);
+  }
   // cortes longitudinais primeiro (tiras, cubos, picar)
   if (v === 'tiras' || v === 'cubos' || v === 'picar') {
     const nz = Math.max(1, Math.min(3, Math.round(W / passoVisual) - 1));
     for (let i = 1; i <= nz; i++) criarGuia('z', -W / 2 + (W * i) / (nz + 1));
   }
   const maxX = v === 'picar' ? 8 : 6;
-  const nx = Math.max(2, Math.min(maxX, Math.floor((L * 0.8) / passoVisual)));
+  const nx = v === 'aparar' ? 0 : Math.max(2, Math.min(maxX, Math.floor((L * 0.8) / passoVisual)));
   // começa pela ponta direita, como quem fatia de verdade
   for (let i = 1; i <= nx; i++) criarGuia('x', L / 2 - L * 0.08 - passoVisual * i + passoVisual * 0.5);
 

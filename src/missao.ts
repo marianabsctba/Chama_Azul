@@ -92,6 +92,8 @@ export class Missao {
       };
       try {
         this.exec = FABRICAS[passo.gesto](ctx);
+        const proprio = passo.gesto === 'montar' && (passo.variante === 'decorar' || passo.variante === 'rechear');
+        if (passo.adicionar?.length && !proprio) this.mesa.adicionarSobre(passo.adicionar, passo.gesto === 'calor' || passo.gesto === 'superficie' ? 'espalhado' : 'linha');
       } catch (e) {
         console.error('falha ao iniciar gesto', passo, e);
         this.resultados.push({ nota: 1, comentario: '', pulado: true });

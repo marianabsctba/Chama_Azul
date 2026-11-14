@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { Peca } from '../pecas/peca';
 import { Capa, capaDoTexto } from '../pecas/capa';
 import { Conteudo, estadoInicial } from '../pecas/conteudo';
-import { criarFormaAlimento, criarFormaGenerica } from '../modelos/alimentos';
+import { criarFormaAlimento, criarFormaGenerica, familiaDe } from '../modelos/alimentos';
 import { criarUtensilio, pontosDoUtensilio } from '../modelos/utensilios';
 import type { Estacao } from '../tipos';
 
@@ -12,6 +12,23 @@ const LIQUIDO = /\b(caldo|sopa|molho|creme|claras?|gemas?|ovos batidos|massa l[i
 
 export function ehLiquido(texto: string) {
   return LIQUIDO.test(texto);
+}
+
+/** Líquidos, pós e cremes não viram peça sólida em cena. */
+export function ehPreparo(id: string | undefined) {
+  if (!id) return true;
+  const f = familiaDe(id);
+  return !f || f === 'recipiente' || f === 'monte' || f === 'pasta';
+}
+
+/** O passo trabalha uma peça sólida? (com a composição revisada, o alimento já vem certo) */
+export function temPeca(passo: { alimento?: string; alvo: string; meio?: string }) {
+  return !!passo.alimento && !ehPreparo(passo.alimento);
+}
+
+/** Texto do conteúdo do recipiente: o meio revisado ou o alvo do passo. */
+export function textoConteudo(passo: { alvo: string; meio?: string }) {
+  return passo.meio ?? passo.alvo;
 }
 
 const UTENSILIO_PADRAO: Record<string, string> = {
@@ -208,6 +225,45 @@ export class Mesa {
     g.position.copy(ponto).sub(pontaMundo);
   }
 
+  /**
+   * Põe sobre a peça (ou no conteúdo) os ingredientes que entram no passo. Eles ficam presos à peça
+   * e seguem com ela para a panela, o forno e o prato.
+   */
+  adicionarSobre(ids: string[], modo: 'linha' | 'espalhado' | 'centro' = 'linha') {
+    const p = this.peca;
+    const n = ids.length;
+    ids.forEach((id, i) => {
+      let item: Peca;
+      try {
+        item = new Peca(criarFormaAlimento(id));
+      } catch {
+        return;
+      }
+      if (p) {
+        const tamPeca = Math.min(p.comprimento, p.largura) * p.scale.x;
+        const alvo = THREE.MathUtils.clamp(tamPeca * 0.45, 0.012, 0.05);
+        const s = alvo / Math.max(item.comprimento, item.largura, 1e-3) / p.scale.x;
+        item.scale.setScalar(s);
+        const fx = modo === 'centro' ? 0 : n === 1 ? 0 : -0.3 + (0.6 * i) / (n - 1);
+        const fz = modo === 'espalhado' ? (i % 2 ? 0.25 : -0.25) : 0;
+        const x = fx * p.comprimento;
+        const sec = p.forma.secao(x);
+        const z = fz * p.largura;
+        const r = sec.raioZ > 0 ? Math.min(0.95, Math.abs(z) / sec.raioZ) : 0;
+        item.position.set(x, sec.centroY + sec.raioY * Math.sqrt(1 - r * r) * 0.92, z);
+        item.rotation.y = i * 1.3;
+        p.add(item);
+      } else if (this.conteudo) {
+        const s = 0.035 / Math.max(item.comprimento, item.largura, 1e-3);
+        item.scale.setScalar(s);
+        const a = i * 2.4;
+        item.position.set(Math.cos(a) * this.bocaRaio * 0.4, this.conteudo.estado.nivel, Math.sin(a) * this.bocaRaio * 0.4);
+        this.conteudo.add(item);
+        this.extras.push(item);
+      }
+    });
+  }
+
   adicionarExtra(o: THREE.Object3D) {
     this.extras.push(o);
     this.cena.add(o);
@@ -228,6 +284,7 @@ export class Mesa {
   atualizar(dt: number) {
     this.peca?.atualizar(dt);
     this.conteudo?.atualizar(dt);
+    if (this.conteudo) for (const c of this.conteudo.children) if (c instanceof Peca) c.atualizar(dt);
     this.atualizarPunhado();
   }
 

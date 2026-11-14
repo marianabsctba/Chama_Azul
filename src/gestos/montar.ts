@@ -4,8 +4,9 @@ import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar } from './base';
 import { anguloDaEstacao, ehLiquido } from './mesa';
-import { criarFormaGenerica, familiaDe } from '../modelos/alimentos';
+import { criarFormaAlimento, criarFormaGenerica, familiaDe } from '../modelos/alimentos';
 import { estadoInicial } from '../pecas/conteudo';
+import { criarUtensilio } from '../modelos/utensilios';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
 
@@ -133,12 +134,16 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
       pontos,
       'Clique nos pontos marcados para dispor a guarnição com capricho.',
       (i) => {
-        const g = new Peca(criarFormaGenerica(/erva|salsa|folha|cerefólio|ciboulette|cebolinha/.test(passo.alvo) ? 'folha de salsa' : passo.alvo || 'guarnição'));
+        // a guarnição revisada (pepino, gengibre, ervas) ou um palpite pelo texto
+        const lista = passo.adicionar?.length ? passo.adicionar : null;
+        const forma = lista ? criarFormaAlimento(lista[i % lista.length]) : criarFormaGenerica(/erva|salsa|folha|cerefólio|ciboulette|cebolinha/.test(passo.alvo) ? 'folha de salsa' : passo.alvo || 'guarnição');
+        const g = new Peca(forma);
         const maior = Math.max(g.comprimento, g.largura);
-        g.scale.setScalar(Math.min(1, (0.035 / maior)));
-        g.position.copy(pontos[i]);
-        g.rotation.y = Math.random() * Math.PI;
-        ctx.mesa.adicionarExtra(g);
+        g.scale.setScalar(Math.min(1, 0.035 / maior) / peca.scale.x);
+        // fica preso à peça: vai junto para o prato
+        g.position.copy(peca.worldToLocal(pontos[i].clone()));
+        g.rotation.y = i * 1.9;
+        peca.add(g);
       },
       (n) => comentar(n, 'Apresentação caprichada.', 'Bonito.', 'Ficou meio torto, mas gostoso.'),
     );
@@ -179,7 +184,9 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
     recheioRaio = Math.max(0.006, Math.min(recheioRaio, maximo, 0.035));
     const geo = new THREE.SphereGeometry(1, 20, 14);
     geo.scale(1, 0.55, 1);
-    recheio = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: cor, roughness: 0.75 }));
+    // a cor vem do ingrediente revisado do recheio, quando houver
+    const corRecheio = passo.adicionar?.[0] ? (() => { try { return new Peca(criarFormaAlimento(passo.adicionar![0])).corInterna.getStyle(); } catch { return cor; } })() : cor;
+    recheio = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: corRecheio, roughness: 0.75 }));
     const canto = /canto|ponta|beirada|extremidade/.test(txt);
     recheio.position.copy(canto ? topo(-L * 0.28, -peca.largura * 0.22) : topo(0));
     recheio.scale.setScalar(0.0001);
@@ -254,6 +261,10 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
         if (!entrada.pressionado && enchimento > 0.3 && hud.botao('Pronto')) {
           nota = clamp(1 - Math.abs(enchimento - 0.85) * 3);
           progresso = 1;
+          // o recheio passa a fazer parte da peça (vai junto para o forno e o prato)
+          const i = mesa.extras.indexOf(recheio!);
+          if (i >= 0) mesa.extras.splice(i, 1);
+          peca.attach(recheio!);
         }
       } else if (v === 'dobrar') {
         if (entrada.cliqueNovo) inicioArraste = entrada.px.clone();
@@ -437,21 +448,24 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
 
 /** Observar e decidir: o jogador vê a peça num estado e diz se está no ponto. */
 export function gestoTestar(ctx: ContextoGesto): Execucao {
-  const { passo, mesa, estacao, hud, tecnica } = ctx;
+  const { passo, mesa, estacao, hud, tecnica, camera } = ctx;
   // havendo uma peça de verdade na técnica, ela aparece; só preparos líquidos vão para a tigela
   const fam = passo.alimento ? familiaDe(passo.alimento) : undefined;
   const solido = !!passo.alimento && !!fam && !['recipiente', 'monte', 'pasta'].includes(fam);
-  const caldinho = solido && ehLiquido(passo.alvo);
+  const revisada = !!passo.opcoes?.length;
+  const caldinho = solido && !revisada && ehLiquido(passo.alvo);
   const estados = [0.55, 1, 1.4];
   const sorteio = (tecnica.id.length * 7 + passo.alvo.length * 3) % 3;
   const estado = estados[sorteio];
+  let peca: Peca | null = null;
   if (solido) {
-    const peca = mesa.garantirPeca(passo.alimento!, estacao.superficie.clone());
+    peca = mesa.garantirPeca(passo.alimento!, estacao.superficie.clone());
     if (!mesa.recipiente) {
       peca.position.copy(estacao.superficie);
       peca.rotation.y = anguloDaEstacao(estacao);
     }
-    peca.definirCozimento(Math.max(peca.cozimento, 0) > 0.2 ? estado : estado * 0.6);
+    // com pergunta revisada, a peça fica como está (o visual não entrega nem contradiz a resposta)
+    if (!revisada) peca.definirCozimento(Math.max(peca.cozimento, 0) > 0.2 ? estado : estado * 0.6);
     if (caldinho) {
       // o suco ou caldo que escorre aparece numa pocinha ao lado da peça
       const cor = new THREE.Color(estadoInicial(passo.alvo + ' ' + passo.parametro).cor);
@@ -464,34 +478,98 @@ export function gestoTestar(ctx: ContextoGesto): Execucao {
     }
   } else {
     if (!mesa.recipiente) mesa.garantirRecipiente('tigela', estacao.superficie.clone(), 'tigela');
-    const c = mesa.garantirConteudo(passo.alvo, 0.45);
-    c.estado.espessura = [0.15, 0.55, 0.95][sorteio];
-    c.estado.picos = /clara|neve|creme|chantilly/.test(passo.alvo) ? [0.1, 0.8, 1][sorteio] : 0;
+    const c = mesa.garantirConteudo(passo.meio ?? passo.alvo, 0.45);
+    if (!revisada) {
+      c.estado.espessura = [0.15, 0.55, 0.95][sorteio];
+      c.estado.picos = /clara|neve|creme|chantilly/.test(passo.alvo) ? [0.1, 0.8, 1][sorteio] : 0;
+    }
   }
-  const opcoes = ['Ainda não', 'No ponto', 'Passou do ponto'];
+  // objetos do teste: bandeja com filme, termômetro, palito, copo d'água...
+  const base = peca ? peca.position.clone() : estacao.superficie.clone();
+  const tam = peca ? Math.max(peca.comprimento, peca.largura) * peca.scale.x : 0.12;
+  for (const o of passo.objetos ?? []) {
+    if (o === 'embalagem' && peca) {
+      const bandeja = new THREE.Mesh(new THREE.BoxGeometry(tam * 1.25, 0.012, tam * 0.85), new THREE.MeshStandardMaterial({ color: '#f3f3ee', roughness: 0.9 }));
+      bandeja.position.copy(base).add(new THREE.Vector3(0, 0.006, 0));
+      bandeja.rotation.y = peca.rotation.y;
+      bandeja.receiveShadow = true;
+      mesa.adicionarExtra(bandeja);
+      peca.position.y += 0.012;
+      const filme = new THREE.Mesh(new THREE.BoxGeometry(tam * 1.25, peca.altura * peca.scale.y + 0.01, tam * 0.85), new THREE.MeshStandardMaterial({ color: '#eef6ff', roughness: 0.05, transparent: true, opacity: 0.18, depthWrite: false }));
+      filme.position.copy(base).add(new THREE.Vector3(0, 0.012 + (peca.altura * peca.scale.y + 0.01) / 2, 0));
+      filme.rotation.y = peca.rotation.y;
+      mesa.adicionarExtra(filme);
+    } else if (o === 'copo-agua') {
+      const copo = new THREE.Mesh(new THREE.CylinderGeometry(0.04, 0.036, 0.12, 32, 1, true), new THREE.MeshStandardMaterial({ color: '#e8f4ff', roughness: 0.05, transparent: true, opacity: 0.25, side: THREE.DoubleSide, depthWrite: false }));
+      const agua = new THREE.Mesh(new THREE.CylinderGeometry(0.038, 0.035, 0.09, 32), new THREE.MeshStandardMaterial({ color: '#bfe0f2', roughness: 0.05, transparent: true, opacity: 0.45, depthWrite: false }));
+      const pos = base.clone().add(new THREE.Vector3(-tam * 0.9 - 0.05, 0, 0));
+      copo.position.copy(pos).add(new THREE.Vector3(0, 0.06, 0));
+      agua.position.copy(pos).add(new THREE.Vector3(0, 0.046, 0));
+      mesa.adicionarExtra(copo);
+      mesa.adicionarExtra(agua);
+    } else {
+      const nomes: Record<string, string> = { termometro: 'termômetro de espeto', palito: 'palito', faca: 'faca de legumes', garfo: 'garfo', colher: 'colher' };
+      const u = criarUtensilio(nomes[o] ?? o);
+      if (u) {
+        u.position.copy(base).add(new THREE.Vector3(tam * 0.7 + 0.04, 0, 0.06));
+        u.rotation.y = -0.6;
+        mesa.adicionarExtra(u);
+      }
+    }
+  }
+  // opções: as revisadas (embaralhadas sempre do mesmo jeito para a mesma técnica) ou o ponto genérico
+  let opcoes = ['Ainda não', 'No ponto', 'Passou do ponto'];
+  let certa = sorteio;
+  if (revisada) {
+    const ordem = passo.opcoes!.map((_, i) => i);
+    let semente = [...(tecnica.id + passo.alvo)].reduce((h, ch) => (h * 31 + ch.charCodeAt(0)) % 9973, 7);
+    for (let i = ordem.length - 1; i > 0; i--) {
+      semente = (semente * 9301 + 49297) % 233280;
+      const j = semente % (i + 1);
+      [ordem[i], ordem[j]] = [ordem[j], ordem[i]];
+    }
+    opcoes = ordem.map((i) => passo.opcoes![i]);
+    certa = ordem.indexOf(passo.correta ?? 0);
+  }
+  const pergunta = passo.pergunta ?? `${passo.alvo}: como está?`;
+  // cheirar: a peça sobe até perto do rosto e volta
+  let t = 0;
+  const origem = peca?.position.clone();
   const exec: Execucao = {
     concluido: false,
     nota: 0,
     comentario: '',
-    atualizar() {
-      hud.dica(`Observe com atenção. ${passo.parametro ? 'Referência: ' + passo.parametro + '.' : ''}`);
+    atualizar(dt) {
+      t += dt;
+      if (passo.cheirar && peca && origem) {
+        const k = t < 0.9 ? suaveCurva(t / 0.9) : t < 2 ? 1 : Math.max(0, 1 - (t - 2) / 0.7);
+        const perto = camera.position.clone().add(new THREE.Vector3(0, -0.12, 0).applyQuaternion(camera.quaternion)).lerp(origem, 0.55);
+        peca.position.lerpVectors(origem, perto, k);
+        hud.dica(t < 2 ? 'Aproxime e sinta o cheiro...' : 'Agora responda.');
+      } else hud.dica(revisada ? 'Observe com atenção e escolha.' : `Observe com atenção. ${passo.parametro ? 'Referência: ' + passo.parametro + '.' : ''}`);
       hud.medidores([]);
-      const r = hud.escolha(`${passo.alvo}: como está?`, opcoes);
+      if (passo.cheirar && t < 1.2) return;
+      const r = hud.escolha(pergunta, opcoes);
       if (r >= 0) {
         hud.escolha(null);
-        const certo = r === sorteio;
+        const certo = r === certa;
         exec.nota = certo ? 1 : 0.35;
-        exec.comentario = certo ? `Isso. ${tecnica.ponto_critico}` : `Na verdade estava "${opcoes[sorteio].toLowerCase()}". ${tecnica.ponto_critico}`;
+        const porque = passo.explicacao ?? tecnica.ponto_critico;
+        exec.comentario = certo ? `Isso. ${porque}` : `A resposta era "${opcoes[certa]}". ${porque}`;
         if (certo) audio.acerto(1);
         exec.concluido = true;
       }
     },
     descartar() {
       hud.escolha(null);
+      if (peca && origem) peca.position.copy(origem);
+      mesa.limparExtras();
     },
   };
   return exec;
 }
+
+const suaveCurva = (x: number) => x * x * (3 - 2 * x);
 
 /** Separar: puxar uma parte para longe da outra com calma. */
 export function gestoSeparar(ctx: ContextoGesto): Execucao {

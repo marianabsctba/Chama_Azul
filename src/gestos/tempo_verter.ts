@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar, formatarTempo, minutos } from './base';
-import { anguloDaEstacao, aoLado, ehLiquido } from './mesa';
+import { anguloDaEstacao, aoLado, temPeca, textoConteudo } from './mesa';
 import { Particulas } from '../pecas/particulas';
 import { audio } from '../motor/audio';
 import { criarUtensilio } from '../modelos/utensilios';
@@ -15,14 +15,14 @@ const PADRAO_MIN: Record<string, number> = {
 export function gestoTempo(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, hud, relogio } = ctx;
   const alvo = minutos(passo.parametro) ?? PADRAO_MIN[passo.acao] ?? 20;
-  const solido = passo.alimento && !ehLiquido(passo.alvo);
+  const solido = temPeca(passo);
   const peca = solido ? mesa.garantirPeca(passo.alimento!, estacao.superficie.clone()) : null;
   if (peca) {
     peca.position.copy(estacao.superficie);
     peca.rotation.y = anguloDaEstacao(estacao);
   } else {
     mesa.garantirRecipiente('tigela', estacao.superficie.clone(), 'tigela');
-    mesa.garantirConteudo(passo.alvo, 0.45);
+    mesa.garantirConteudo(textoConteudo(passo), 0.45);
   }
   const escala0 = peca?.scale.clone();
   const fermenta = passo.variante === 'fermentar' || /dobr|cres/.test(passo.parametro);
@@ -91,7 +91,7 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
   const origemTexto = /panela|tigela|jarra|frigideira|caçarola|liquidificador|vasilha/i.test(passo.alvo + passo.utensilio) ? passo.alvo + ' ' + passo.utensilio : 'panela';
   mesa.removerPeca();
   const origem = mesa.garantirRecipiente(origemTexto.includes('panela') ? 'panela' : 'tigela', aoLado(estacao, -0.17), 'panela');
-  const conteudo = mesa.garantirConteudo(passo.alvo, 0.6);
+  const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.6);
   const destinoPos = aoLado(estacao, 0.17);
   const destino = criarUtensilio('tigela grande') ?? new THREE.Group();
   destino.position.copy(destinoPos);
@@ -171,7 +171,7 @@ function gestoEscumar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud, cena } = ctx;
   mesa.removerPeca();
   const rec = mesa.garantirRecipiente(/panela|caçarola/i.test(passo.utensilio) ? passo.utensilio : 'panela', estacao.superficie.clone(), 'panela');
-  const conteudo = mesa.garantirConteudo(passo.alvo, 0.6);
+  const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.6);
   conteudo.estado.ondas = 0.25;
   const espuma = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), new THREE.MeshStandardMaterial({ color: /gordura|desengord/.test(passo.acao + passo.alvo) ? '#f2d46a' : '#efe4c8', roughness: 0.8 }), 26);
   const posicoes: (THREE.Vector3 | null)[] = [];
@@ -293,7 +293,7 @@ export function gestoMedir(ctx: ContextoGesto): Execucao {
   }
   mesa.removerPeca();
   mesa.garantirRecipiente(balanca ? 'tigela' : 'jarra medidora', estacao.superficie.clone(), 'tigela');
-  const conteudo = mesa.garantirConteudo(passo.alvo, 0.02);
+  const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.02);
   conteudo.estado.nivel = 0.002;
   const fluxo = new Particulas(conteudo.estado.cor, 200, 'esfera', 1);
   cena.add(fluxo);

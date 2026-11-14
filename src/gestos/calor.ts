@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar, formatarTempo, minutos, temperaturas } from './base';
-import { ehLiquido } from './mesa';
+import { ehLiquido, temPeca, textoConteudo } from './mesa';
 import { Particulas } from '../pecas/particulas';
 import { audio } from '../motor/audio';
 
@@ -20,7 +20,7 @@ interface Perfil {
 function perfil(ctx: ContextoGesto): Perfil {
   const { passo } = ctx;
   const a = passo.acao;
-  const texto = `${passo.alvo} ${passo.parametro}`;
+  const texto = `${passo.alvo} ${passo.parametro} ${passo.meio ?? ''}`;
   const temps = temperaturas(passo.parametro).filter((t) => t >= 20 && t <= 300);
   const tempo = minutos(passo.parametro);
   const base = (p: Omit<Perfil, 'tempoMin'>, padraoMin: number): Perfil => ({ ...p, tempoMin: tempo ?? padraoMin });
@@ -59,9 +59,13 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, hud, cozinha, cena, relogio } = ctx;
   const p = perfil(ctx);
   const noForno = p.meio === 'forno';
-  const liquido = ehLiquido(passo.alvo) || !passo.alimento;
-  // recipiente certo para o meio
-  const recipienteTexto = noForno
+  const solido = temPeca(passo);
+  const liquido = !solido || (!passo.meio && ehLiquido(passo.alvo));
+  const gordura = /azeite|[oó]leo|manteiga|gordura|banha/i.test(passo.meio ?? '');
+  // recipiente certo para o meio (o revisado vale mais que o palpite)
+  const recipienteTexto = passo.recipiente
+    ? passo.recipiente
+    : noForno
     ? /forma|assadeira|travessa|ramequim|tabuleiro/i.test(passo.utensilio) ? passo.utensilio : 'assadeira'
     : /panela|frigideira|wok|caçarola|sauteuse|cuscuzeira|vapor|bambu|tacho|banho/i.test(passo.utensilio)
       ? passo.utensilio
@@ -70,15 +74,16 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
   const rec = mesa.garantirRecipiente(recipienteTexto, onde, noForno ? 'assadeira' : 'panela');
   void rec;
   let conteudo = null as ReturnType<typeof mesa.garantirConteudo> | null;
-  if (!noForno && (p.meio !== 'seco' || liquido)) {
-    const meioTexto = p.meio === 'oleo' ? 'óleo' : p.meio === 'acucar' ? 'calda de açúcar' : p.meio === 'chocolate' ? 'chocolate' : liquido ? passo.alvo : 'água';
-    conteudo = mesa.garantirConteudo(meioTexto, p.meio === 'oleo' && !liquido ? 0.35 : 0.55);
+  if (!noForno && (p.meio !== 'seco' || liquido || passo.meio)) {
+    // o meio revisado (azeite, água, caldo) entra como líquido no recipiente, nunca como garrafa
+    const meioTexto = passo.meio ?? (p.meio === 'oleo' ? 'óleo' : p.meio === 'acucar' ? 'calda de açúcar' : p.meio === 'chocolate' ? 'chocolate' : liquido ? textoConteudo(passo) : 'água');
+    conteudo = mesa.garantirConteudo(meioTexto, gordura && solido ? 0.12 : p.meio === 'oleo' && !liquido ? 0.35 : 0.55);
   }
   // a peça vai junto, menor para caber
   let peca = null as ReturnType<typeof mesa.garantirPeca> | null;
-  if (passo.alimento && !ehLiquido(passo.alvo)) {
+  if (solido) {
     const ant = mesa.peca && mesa.pecaChave === passo.alimento ? mesa.peca : null;
-    peca = ant ?? mesa.garantirPeca(passo.alimento, onde.clone());
+    peca = ant ?? mesa.garantirPeca(passo.alimento!, onde.clone());
     const maior = Math.max(peca.comprimento, peca.largura);
     const caber = (mesa.bocaRaio * 1.6) / maior;
     if (peca.scale.x > caber) peca.scale.setScalar(caber);

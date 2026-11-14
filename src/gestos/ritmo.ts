@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar } from './base';
-import { anguloDaEstacao, ehLiquido } from './mesa';
+import { anguloDaEstacao, ehLiquido, temPeca, textoConteudo } from './mesa';
 import { audio } from '../motor/audio';
 import { pontosDoUtensilio } from '../modelos/utensilios';
 
@@ -22,7 +22,7 @@ export function gestoRitmo(ctx: ContextoGesto): Execucao {
   const v = ctx.passo.variante;
   if (ELETRO.test(ctx.passo.utensilio) && v !== 'vaivem' && v !== 'golpes') return ritmoEletrico(ctx);
   if (v === 'circular' || v === 'circular-rapido' || v === 'dobrar') {
-    if (v !== 'dobrar' || ehLiquido(ctx.passo.alvo) || !ctx.passo.alimento) return ritmoNaTigela(ctx);
+    if (v !== 'dobrar' || !temPeca(ctx.passo) || (!ctx.passo.meio && ehLiquido(ctx.passo.alvo))) return ritmoNaTigela(ctx);
   }
   return ritmoNaPeca(ctx);
 }
@@ -34,7 +34,7 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const recipienteTexto = /tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande';
   mesa.removerPeca();
   mesa.garantirRecipiente(recipienteTexto, estacao.superficie.clone(), 'tigela grande');
-  const conteudo = mesa.garantirConteudo(passo.alvo, 0.4);
+  const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.4);
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   const nivel0 = conteudo.estado.nivel;
@@ -267,7 +267,7 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   const liquidificador = /liquidificador|mixer/i.test(passo.utensilio);
   mesa.bocaRaio = liquidificador ? 0.045 : 0.07;
   mesa.fundoY = fundo.y - 0.012;
-  const conteudo = mesa.garantirConteudo(passo.alvo, 0.3);
+  const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.3);
   conteudo.position.set(fundo.x, mesa.fundoY, fundo.z);
   conteudo.estado.nivel = liquidificador ? 0.05 : 0.03;
   const alvo = alvoDoConteudo(texto);

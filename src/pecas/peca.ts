@@ -278,6 +278,8 @@ export class Peca extends THREE.Group {
   atualizar(dt: number) {
     const k = 1 - Math.exp(-dt * 10);
     this.updateMatrixWorld(true);
+    // o que foi adicionado sobre a peça (recheio, guarnição) segue com ela
+    for (const c of this.children) if (c instanceof Peca) c.atualizar(dt);
     for (const f of this.fragmentos) {
       f.grupo.position.lerp(f.alvo, k);
       f.grupo.updateMatrixWorld(true);
@@ -495,6 +497,7 @@ export class Peca extends THREE.Group {
   }
 
   descartar() {
+    for (const c of [...this.children]) if (c instanceof Peca) c.descartar();
     for (const f of [...this.fragmentos]) this.removerFragmento(f);
     for (const g of this.coresOriginais.keys()) g.dispose();
   }
