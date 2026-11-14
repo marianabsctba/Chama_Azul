@@ -290,7 +290,7 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
     comentario: '',
     atualizar(dt) {
       t += dt;
-      hud.dica(`Ajuste a velocidade com a roda do mouse (ou Q e E, ou arrastando para cima e para baixo). Velocidade ${faixa[0]} a ${faixa[1]} para este ponto.`);
+      hud.dica(`Ajuste a velocidade com os botões − e + (ou a roda do mouse). Velocidade ${faixa[0]} a ${faixa[1]} para este ponto.`);
       if (entrada.roda) vel -= entrada.roda;
       if (entrada.apertou('e') || entrada.apertou('+') || entrada.apertou('=')) vel += 1;
       if (entrada.apertou('q') || entrada.apertou('-')) vel -= 1;

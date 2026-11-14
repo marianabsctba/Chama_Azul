@@ -261,7 +261,8 @@ async function iniciar() {
     telas.mostrar(telas.dicaAndar, true);
   }
 
-  const toque = celular ? new ControlesToque(ui, entrada, () => estado === 'andar' && abrirCaderno()) : null;
+  // os botões − + ⏩ servem para todo mundo; joystick e botão do caderno só no toque
+  const toque = new ControlesToque(ui, entrada, () => estado === 'andar' && abrirCaderno());
   hud.btnPular.addEventListener('click', () => missao?.pular());
   hud.btnSair.addEventListener('click', () => sairDaMissao());
 
@@ -373,7 +374,7 @@ async function iniciar() {
       const esc = missao.relogio.escala;
       hud.definirTempo(esc > 1 ? `Relógio da cozinha ×${esc} · ${formatarTempo(missao.relogio.decorrido / 60)}` : '');
     }
-    toque?.mostrar(estado === 'andar' && !jogador.voando ? 'andar' : estado === 'missao' ? 'trabalho' : 'nada');
+    toque.mostrar(estado === 'andar' && !jogador.voando && (celular || entrada.toque) ? 'andar' : estado === 'missao' ? 'trabalho' : 'nada');
     cozinha.atualizar(dt, tempo);
     audio.atualizar();
     renderer.render(cena, camera);

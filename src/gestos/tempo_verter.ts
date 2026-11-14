@@ -43,9 +43,11 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
         if (entrada.roda) ajuste = Math.max(0, ajuste - entrada.roda * passoMin);
         if (entrada.apertou('e') || entrada.apertou('+') || entrada.apertou('=')) ajuste += passoMin;
         if (entrada.apertou('q') || entrada.apertou('-')) ajuste = Math.max(0, ajuste - passoMin);
-        hud.dica(`${frio ? 'Leve à geladeira' : fermenta ? 'Cubra e deixe crescer' : 'Deixe descansar'}: gire o timer com a roda do mouse (ou Q e E) até o tempo certo e clique em Iniciar.`);
+        hud.dica(`${frio ? 'Leve à geladeira' : fermenta ? 'Cubra e deixe crescer' : 'Deixe descansar'}: gire o timer com os botões − e + (ou a roda do mouse) até o tempo certo e clique em Iniciar.`);
         hud.medidores([{ rotulo: 'Timer', valor: clamp(ajuste / (alvo * 2)), texto: formatarTempo(ajuste) }]);
-        if (hud.botao('Iniciar') && ajuste > 0) {
+        const clicouIniciar = hud.botao('Iniciar');
+        if (clicouIniciar && ajuste <= 0) hud.aviso('Gire o timer primeiro: botões − e + (ou a roda do mouse).', 'ajuste');
+        if (clicouIniciar && ajuste > 0) {
           iniciado = true;
           const erro = Math.abs(ajuste - alvo) / Math.max(alvo, 1);
           nota = clamp(1 - erro * 1.5);

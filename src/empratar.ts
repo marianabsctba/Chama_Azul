@@ -66,7 +66,10 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   grupo.position.copy(centro);
   cena.add(grupo);
   grupo.updateMatrixWorld(true);
-  const raio = sopa ? 0.12 : 0.15;
+  // a louça se adapta à peça (tamanho real): prato raso, prato grande ou travessa
+  const pecaAntes = mesa.peca;
+  const real = pecaAntes ? Math.min(0.6, Math.max(pecaAntes.comprimento, pecaAntes.largura)) : 0.12;
+  const raio = sopa ? 0.12 : THREE.MathUtils.clamp(real * 0.66, 0.13, 0.3);
   grupo.add(louca(raio, sopa));
   const piso = sopa ? 0.016 : 0.012;
 
@@ -94,14 +97,10 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     mesa.pecaChave = '';
     mesa.capa = null;
     peca.removeFromParent();
-    peca.updateMatrixWorld(true);
-    const caixa = new THREE.Box3();
-    for (const m of peca.malhas()) caixa.expandByObject(m);
-    const tam = caixa.getSize(new THREE.Vector3());
-    const maior = Math.max(tam.x, tam.z);
-    const alvo = sopa ? raio * 0.9 : raio * 1.25;
-    const s = maior > alvo ? alvo / maior : maior < 0.04 ? 0.05 / Math.max(maior, 1e-3) : 1;
-    peca.scale.multiplyScalar(s);
+    // de volta ao tamanho real (a panela pode ter encolhido a peça para caber)
+    const natural = Math.max(peca.comprimento, peca.largura);
+    const alvo = sopa ? raio * 0.9 : raio * 1.5;
+    peca.scale.setScalar(natural > alvo ? alvo / natural : natural < 0.03 ? 0.04 / Math.max(natural, 1e-3) : 1);
     peca.rotation.set(0, -0.35, 0);
     peca.position.set(0, (sopa ? 0.045 : piso), 0);
     grupo.add(peca);

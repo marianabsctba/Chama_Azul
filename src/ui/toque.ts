@@ -112,6 +112,7 @@ export class ControlesToque {
 /** Troca as instruções de mouse e teclado por instruções de toque. */
 export function textoParaToque(t: string): string {
   return t
+    .replace(/ \(ou a roda do mouse\)/g, '')
     .replace(/com a roda do mouse \(ou Q e E\)/g, 'com os botões − e +')
     .replace(/com a roda do mouse \(ou Q e E, ou arrastando para cima e para baixo\)/g, 'com os botões − e +, ou arrastando para cima e para baixo')
     .replace(/a roda do mouse \(ou Q e E\)/g, 'os botões − e +')

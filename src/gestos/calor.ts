@@ -215,10 +215,10 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
       if (peca) lista.push({ rotulo: 'Cozimento', valor: clamp(cozimento / 1.4), texto: cozimento < 0.8 ? 'cru' : cozimento < 1.12 ? 'no ponto' : 'passando', faixa: [0.8 / 1.4, 1.12 / 1.4] });
       hud.medidores(lista);
       const instr = noForno
-        ? `Ajuste o forno para ${alvoForno} °C com a roda do mouse (ou Q e E).`
+        ? `Ajuste o forno para ${alvoForno} °C com os botões − e + (ou a roda do mouse).`
         : p.meio === 'chocolate'
           ? `Derreta e ajuste a temperatura: agora ${alvo} °C. Roda do mouse controla a chama; chama apagada esfria.`
-          : `Leve a ${p.meio === 'agua' && alvo >= 99 ? 'fervura forte' : alvo + ' °C'} com a roda do mouse (ou Q e E).`;
+          : `Leve a ${p.meio === 'agua' && alvo >= 99 ? 'fervura forte' : alvo + ' °C'} com os botões − e + (ou a roda do mouse).`;
       hud.dica(`${instr} Segure Espaço para acelerar o tempo.${pronto ? ' Está no ponto: retire quando quiser.' : ''}`);
       const podeFlambar = p.flambar && !flambou && T >= 70;
       const clicou = hud.botao(podeFlambar ? 'Flambar' : pronto ? (noForno ? 'Tirar do forno' : 'Tirar do fogo') : null);

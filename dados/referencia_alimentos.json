@@ -1,0 +1,3122 @@
+[
+ {
+  "id": "salmao",
+  "nome": "Salmão",
+  "familia": "peixe",
+  "forma": "peixe roliço grande e alongado, dorso cinza-azulado, flancos prateados, carne laranja-rosada"
+ },
+ {
+  "id": "truta",
+  "nome": "Truta",
+  "familia": "peixe",
+  "forma": "peixe roliço médio, pele iridescente com pintas, faixa rosada lateral"
+ },
+ {
+  "id": "sardinha",
+  "nome": "Sardinha",
+  "familia": "peixe",
+  "forma": "peixe roliço pequeno e fino, prateado com dorso azul, cerca de 15 cm"
+ },
+ {
+  "id": "cavala",
+  "nome": "Cavala",
+  "familia": "peixe",
+  "forma": "peixe roliço fusiforme, dorso verde-azulado com listras onduladas escuras, barriga prateada"
+ },
+ {
+  "id": "arenque",
+  "nome": "Arenque",
+  "familia": "peixe",
+  "forma": "peixe roliço pequeno e esguio, prateado iridescente"
+ },
+ {
+  "id": "tainha",
+  "nome": "Tainha",
+  "familia": "peixe",
+  "forma": "peixe roliço cinza-prateado com listras longitudinais, cabeça achatada"
+ },
+ {
+  "id": "vermelho",
+  "nome": "Vermelho (caranho, cioba)",
+  "familia": "peixe",
+  "forma": "peixe roliço alto de lado, pele vermelho viva, olhos grandes"
+ },
+ {
+  "id": "perca",
+  "nome": "Perca",
+  "familia": "peixe",
+  "forma": "peixe roliço com faixas verticais escuras e barbatana dorsal espinhosa"
+ },
+ {
+  "id": "carpa",
+  "nome": "Carpa",
+  "familia": "peixe",
+  "forma": "peixe roliço robusto de escamas grandes douradas, boca com barbilhões"
+ },
+ {
+  "id": "bagre",
+  "nome": "Bagre",
+  "familia": "peixe",
+  "forma": "peixe roliço sem escamas, cabeça larga achatada, barbilhões longos"
+ },
+ {
+  "id": "bacalhau",
+  "nome": "Bacalhau fresco",
+  "familia": "peixe",
+  "forma": "peixe roliço grande, pele marrom-esverdeada pintada, barbilhão no queixo, linha lateral clara"
+ },
+ {
+  "id": "hadoque",
+  "nome": "Hadoque",
+  "familia": "peixe",
+  "forma": "peixe roliço parecido com o bacalhau, cinza com mancha escura atrás da guelra"
+ },
+ {
+  "id": "cacao",
+  "nome": "Cação",
+  "familia": "file_peixe",
+  "forma": "pequeno tubarão alongado de pele cinza áspera; vendido em postas redondas com cartilagem central"
+ },
+ {
+  "id": "enguia",
+  "nome": "Enguia",
+  "familia": "peixe",
+  "forma": "peixe serpentiforme longo, pele lisa escura"
+ },
+ {
+  "id": "merluza",
+  "nome": "Merluza (pescada)",
+  "familia": "peixe",
+  "forma": "peixe roliço alongado, prateado, boca grande"
+ },
+ {
+  "id": "peixe-anjo",
+  "nome": "Peixe-anjo (tamboril)",
+  "familia": "peixe",
+  "forma": "cabeça enorme achatada com boca larga; cauda grossa cônica de carne branca, pele marrom solta"
+ },
+ {
+  "id": "atum",
+  "nome": "Atum",
+  "familia": "file_peixe",
+  "forma": "peixe roliço grande e fusiforme, dorso azul-escuro, carne vermelho-escura; vendido em postas"
+ },
+ {
+  "id": "peixe-espada",
+  "nome": "Peixe-espada",
+  "familia": "file_peixe",
+  "forma": "corpo longo com bico em forma de espada; postas redondas de carne clara"
+ },
+ {
+  "id": "tubarao",
+  "nome": "Tubarão",
+  "familia": "file_peixe",
+  "forma": "corpo cinza fusiforme; vendido em postas"
+ },
+ {
+  "id": "mahi-mahi",
+  "nome": "Mahi mahi",
+  "familia": "peixe",
+  "forma": "peixe roliço de testa alta, verde-dourado vivo"
+ },
+ {
+  "id": "tilapia",
+  "nome": "Tilápia",
+  "familia": "peixe",
+  "forma": "peixe roliço alto de lado, cinza com faixas suaves, carne branca"
+ },
+ {
+  "id": "carpa-do-mar",
+  "nome": "Carpa do mar (dourada)",
+  "familia": "peixe",
+  "forma": "peixe roliço oval prateado com faixa dourada entre os olhos"
+ },
+ {
+  "id": "peixe-imperador",
+  "nome": "Peixe-imperador",
+  "familia": "peixe",
+  "forma": "peixe roliço avermelhado de corpo alto, muitas espinhas"
+ },
+ {
+  "id": "peixe-cabra",
+  "nome": "Peixe-cabra",
+  "familia": "peixe",
+  "forma": "peixe roliço avermelhado de cabeça óssea e barbatanas peitorais grandes"
+ },
+ {
+  "id": "linguado",
+  "nome": "Linguado",
+  "familia": "peixe_chato",
+  "forma": "peixe chato oval e alongado, dois olhos do lado escuro marrom, lado de baixo branco"
+ },
+ {
+  "id": "linguado-gigante",
+  "nome": "Linguado gigante (halibute)",
+  "familia": "peixe_chato",
+  "forma": "peixe chato muito grande, lado de cima marrom-esverdeado, de baixo branco"
+ },
+ {
+  "id": "rodovalho",
+  "nome": "Rodovalho",
+  "familia": "peixe_chato",
+  "forma": "peixe chato quase redondo e largo, pele marrom com tubérculos, barriga branca"
+ },
+ {
+  "id": "cherne",
+  "nome": "Cherne",
+  "familia": "peixe",
+  "forma": "o livro trata como peixe chato oval de pele marrom-clara lisa, barriga branca"
+ },
+ {
+  "id": "garoupa",
+  "nome": "Garoupa",
+  "familia": "peixe",
+  "forma": "o livro lista entre os chatos; corpo largo de pele pintada"
+ },
+ {
+  "id": "peixe-galo",
+  "nome": "Peixe-galo (John Dory)",
+  "familia": "peixe",
+  "forma": "peixe muito comprimido e alto, cinza-oliva com mancha escura redonda no flanco, espinhos dorsais longos"
+ },
+ {
+  "id": "patenca",
+  "nome": "Patença (solha americana)",
+  "familia": "peixe_chato",
+  "forma": "peixe chato oval pequeno, marrom com pintas, barriga branca"
+ },
+ {
+  "id": "arraia",
+  "nome": "Arraia",
+  "familia": "peixe_chato",
+  "forma": "corpo em losango achatado; vendida em asas triangulares com cartilagem em raios"
+ },
+ {
+  "id": "ova-bacalhau",
+  "nome": "Ova de bacalhau defumada",
+  "familia": "file_peixe",
+  "forma": "bolsa alongada de membrana marrom-avermelhada cheia de ovas miúdas"
+ },
+ {
+  "id": "anchova",
+  "nome": "Anchova em conserva",
+  "familia": "file_peixe",
+  "forma": "filés finos marrom-avermelhados em lata ou vidro com óleo"
+ },
+ {
+  "id": "bacalhau-seco",
+  "nome": "Bacalhau salgado seco",
+  "familia": "file_peixe",
+  "forma": "peixe aberto em manta achatada, branco-amarelado e duro, coberto de sal"
+ },
+ {
+  "id": "salmao-defumado",
+  "nome": "Salmão defumado",
+  "familia": "file_peixe",
+  "forma": "lado inteiro de filé laranja brilhante, bordas mais escuras, fatias quase transparentes"
+ },
+ {
+  "id": "hadoque-defumado",
+  "nome": "Hadoque defumado",
+  "familia": "file_peixe",
+  "forma": "filé amarelo-dourado com pele"
+ },
+ {
+  "id": "lagosta",
+  "nome": "Lagosta",
+  "familia": "crustaceo",
+  "forma": "crustáceo de corpo segmentado e cauda em leque, duas garras grandes desiguais, antenas longas; azul-escura crua, laranja-avermelhada cozida, cruz marcada no dorso"
+ },
+ {
+  "id": "caranguejo",
+  "nome": "Caranguejo",
+  "familia": "crustaceo",
+  "forma": "carapaça oval larga, oito pernas e duas garras grandes, cauda dobrada sob o corpo; marrom cru, vermelho cozido"
+ },
+ {
+  "id": "lagostim",
+  "nome": "Lagostim",
+  "familia": "crustaceo",
+  "forma": "como lagosta pequena com garras finas, cauda segmentada"
+ },
+ {
+  "id": "camarao",
+  "nome": "Camarão",
+  "familia": "crustaceo",
+  "forma": "crustáceo curvo de casca segmentada translúcida cinza, rosa quando cozido, cauda em leque, antenas"
+ },
+ {
+  "id": "mexilhao",
+  "nome": "Mexilhão",
+  "familia": "bivalve",
+  "forma": "concha alongada em gota azul-preta (ou verde na variedade da Nova Zelândia), barba fibrosa saindo da junta; carne laranja"
+ },
+ {
+  "id": "ameijoa",
+  "nome": "Amêijoa (marisco, vongole, quahog)",
+  "familia": "bivalve",
+  "forma": "concha bivalve oval arredondada com estrias concêntricas, de pequena a grande"
+ },
+ {
+  "id": "ostra",
+  "nome": "Ostra",
+  "familia": "bivalve",
+  "forma": "concha irregular rugosa e grossa, uma metade funda e outra chata; carne cinza-perolada"
+ },
+ {
+  "id": "vieira",
+  "nome": "Vieira",
+  "familia": "bivalve",
+  "forma": "concha em leque com nervuras radiais, uma metade curva e outra plana; músculo branco cilíndrico com coral laranja em meia-lua"
+ },
+ {
+  "id": "buzio",
+  "nome": "Búzio",
+  "familia": "concha_espiral",
+  "forma": "caracol marinho de concha espiral cônica"
+ },
+ {
+  "id": "lula",
+  "nome": "Lula",
+  "familia": "cefalopode",
+  "forma": "corpo em tubo (bolsa) branco com pele arroxeada e duas nadadeiras triangulares, cabeça com olhos grandes e oito braços mais dois tentáculos, pena transparente interna, saco de tinta"
+ },
+ {
+  "id": "alga-nori",
+  "nome": "Alga nori",
+  "familia": "placa",
+  "forma": "folha retangular fina verde-escura quase preta, cerca de 20 x 18 cm"
+ },
+ {
+  "id": "wasabi",
+  "nome": "Wasabi",
+  "familia": "pasta",
+  "forma": "pasta verde clara"
+ },
+ {
+  "id": "kumquat",
+  "nome": "Kumquat",
+  "familia": "citrico",
+  "forma": "cítrico laranja oval do tamanho de uma azeitona grande"
+ },
+ {
+  "id": "mooli",
+  "nome": "Mooli (rabanete branco)",
+  "familia": "fuso",
+  "forma": "raiz branca longa e cilíndrica"
+ },
+ {
+  "id": "gengibre-conserva",
+  "nome": "Gengibre em conserva",
+  "familia": "placa",
+  "forma": "fatias finas rosadas translúcidas"
+ },
+ {
+  "id": "folha-uva",
+  "nome": "Folha de uva",
+  "familia": "erva",
+  "forma": "folha verde palmada de cinco lobos"
+ },
+ {
+  "id": "folha-bananeira",
+  "nome": "Folha de bananeira",
+  "familia": "erva",
+  "forma": "folha verde larga e lisa, nervura central"
+ },
+ {
+  "id": "court-bouillon",
+  "nome": "Court bouillon",
+  "familia": "recipiente",
+  "forma": "caldo claro com legumes e ervas boiando"
+ },
+ {
+  "id": "frango-inteiro",
+  "nome": "Frango inteiro",
+  "familia": "ave",
+  "forma": "ave média de 1,2 a 2 kg, corpo oval compacto, peito arredondado em cima, duas pernas dobradas, asas curtas; pele creme lisa"
+ },
+ {
+  "id": "galinha-para-cozer",
+  "nome": "Galinha para cozer",
+  "familia": "ave",
+  "forma": "ave mais velha e maior que o frango, peito magro com osso firme, pele levemente manchada, carne um pouco mais escura"
+ },
+ {
+  "id": "capao",
+  "nome": "Capão",
+  "familia": "ave",
+  "forma": "frango macho castrado, grande e cheio, peito largo e gordo"
+ },
+ {
+  "id": "frango-de-leite",
+  "nome": "Frango de leite",
+  "familia": "ave",
+  "forma": "frango bem pequeno (porção individual), coxas grossas e peito estreito, pele úmida creme"
+ },
+ {
+  "id": "pato",
+  "nome": "Pato",
+  "familia": "ave",
+  "forma": "ave de corpo comprido e peito estreito, pele seca e lisa com camada grossa de gordura embaixo, pouco rendimento de carne"
+ },
+ {
+  "id": "ganso",
+  "nome": "Ganso",
+  "familia": "ave",
+  "forma": "ave grande de peito cheio, pele clara, gordura amarela visível dentro da cavidade"
+ },
+ {
+  "id": "peru",
+  "nome": "Peru",
+  "familia": "ave",
+  "forma": "ave grande (4 a 9 kg), peito e coxas volumosos, carne pálida e magra"
+ },
+ {
+  "id": "galinha-dangola",
+  "nome": "Galinha d'angola",
+  "familia": "ave",
+  "forma": "ave de peito longo e magro, pele dourada, carne escura"
+ },
+ {
+  "id": "faisao",
+  "nome": "Faisão",
+  "familia": "ave",
+  "forma": "ave de caça de cerca de 1 kg, formato alongado, carne magra com cheiro forte de caça"
+ },
+ {
+  "id": "perdiz",
+  "nome": "Perdiz",
+  "familia": "ave",
+  "forma": "ave de caça pequena e roliça, carne clara e macia"
+ },
+ {
+  "id": "tetraz",
+  "nome": "Tetraz",
+  "familia": "ave",
+  "forma": "ave de caça pequena, carne vermelha bem escura, pele úmida"
+ },
+ {
+  "id": "codorna",
+  "nome": "Codorna",
+  "familia": "ave",
+  "forma": "ave minúscula (palma da mão), forma arredondada e carnuda"
+ },
+ {
+  "id": "coelho",
+  "nome": "Coelho",
+  "familia": "ave",
+  "forma": "corpo alongado com dorso arredondado, quatro patas, carne rosa clara magra; cortado em 6 a 9 pedaços"
+ },
+ {
+  "id": "miudos-de-ave",
+  "nome": "Miúdos de ave",
+  "familia": "miudo",
+  "forma": "pescoço (cilindro segmentado), moela (bolota dura), coração (pequeno cone vermelho) e fígado (lóbulos macios marrom avermelhados), em saquinho dentro da ave"
+ },
+ {
+  "id": "figado-de-frango",
+  "nome": "Fígado de frango",
+  "familia": "miudo",
+  "forma": "dois lóbulos macios e brilhantes marrom avermelhados unidos por membrana, com possível mancha verde de bílis"
+ },
+ {
+  "id": "furcula",
+  "nome": "Fúrcula (osso da sorte)",
+  "familia": "peca_ave",
+  "forma": "osso fino em forma de V na base do pescoço da ave"
+ },
+ {
+  "id": "peito-de-frango",
+  "nome": "Peito de frango desossado (suprême)",
+  "familia": "peca_ave",
+  "forma": "peça em gota achatada, branca rosada, com um filé pequeno solto por baixo e um nervo branco"
+ },
+ {
+  "id": "perna-de-frango",
+  "nome": "Perna de frango (coxa e sobrecoxa)",
+  "familia": "peca_ave",
+  "forma": "coxa em forma de baqueta e sobrecoxa mais larga, unidas pela junta do joelho com linha de gordura branca"
+ },
+ {
+  "id": "asa-de-frango",
+  "nome": "Asa de ave",
+  "familia": "peca_ave",
+  "forma": "três segmentos articulados, a ponta fina é geralmente cortada"
+ },
+ {
+  "id": "peito-de-pato",
+  "nome": "Peito de pato (magret)",
+  "familia": "peca_ave",
+  "forma": "peça longa, oval e grossa, sem osso, com camada espessa de pele e gordura em cima"
+ },
+ {
+  "id": "carcaca-de-ave",
+  "nome": "Carcaça de ave",
+  "familia": "peca_ave",
+  "forma": "esqueleto do tronco com costelas e osso das costas, usado para caldo"
+ },
+ {
+  "id": "acem",
+  "nome": "Acém",
+  "familia": "carne",
+  "forma": "peça grande e magra com algum tecido conjuntivo, vendida inteira desossada ou em cubos"
+ },
+ {
+  "id": "file-mignon",
+  "nome": "Filé mignon",
+  "familia": "carne",
+  "forma": "peça cilíndrica longa que afina numa ponta, com cordão lateral (músculo) e membrana prateada"
+ },
+ {
+  "id": "costela-bovina",
+  "nome": "Costela bovina para assar (filé de costela)",
+  "familia": "carne_osso",
+  "forma": "bloco de carne marmorizada apoiado numa fileira de ossos curvos, capa uniforme de gordura"
+ },
+ {
+  "id": "contrafile",
+  "nome": "Contrafilé",
+  "familia": "carne",
+  "forma": "bife grosso retangular com faixa de gordura creme numa borda"
+ },
+ {
+  "id": "alcatra",
+  "nome": "Alcatra",
+  "familia": "carne",
+  "forma": "peça ou bife magro com veios claros, cerca de 2,5 cm de espessura"
+ },
+ {
+  "id": "capa-de-file",
+  "nome": "Capa de filé / aba",
+  "familia": "carne",
+  "forma": "peça achatada de carne magra cercada por camada de gordura, fibras longas"
+ },
+ {
+  "id": "fraldinha",
+  "nome": "Fraldinha",
+  "familia": "carne",
+  "forma": "peça fina e achatada com fibras bem visíveis e algum tecido conjuntivo"
+ },
+ {
+  "id": "peito-bovino",
+  "nome": "Peito bovino",
+  "familia": "carne",
+  "forma": "peça plana e grossa, com gordura em camadas, para cozimento longo"
+ },
+ {
+  "id": "lagarto",
+  "nome": "Lagarto",
+  "familia": "carne",
+  "forma": "peça cilíndrica alongada e magra"
+ },
+ {
+  "id": "carne-moida",
+  "nome": "Carne moída",
+  "familia": "carne_moida",
+  "forma": "massa de fios de carne vermelha com pontos de gordura; mais clara quanto mais gorda"
+ },
+ {
+  "id": "carne-salgada",
+  "nome": "Carne bovina salgada",
+  "familia": "carne",
+  "forma": "peça curada de cor rosada intensa"
+ },
+ {
+  "id": "peito-de-vitela",
+  "nome": "Peito de vitela",
+  "familia": "carne_osso",
+  "forma": "peça larga e plana com costelas e cartilagem do esterno por baixo, carne rosa clara"
+ },
+ {
+  "id": "costeleta-de-vitela",
+  "nome": "Costeleta de vitela",
+  "familia": "carne_osso",
+  "forma": "bife com osso de costela branco e liso, borda de gordura branca"
+ },
+ {
+  "id": "ossobuco",
+  "nome": "Mocotó (perna) de vitela / ossobuco",
+  "familia": "carne_osso",
+  "forma": "rodela de 5 cm de canela com osso redondo e tutano no centro, cercado de carne e nervos"
+ },
+ {
+  "id": "escalope-de-vitela",
+  "nome": "Escalope de vitela",
+  "familia": "carne",
+  "forma": "fatia fina e larga de carne rosa pálida sem gordura, cortada do coxão mole"
+ },
+ {
+  "id": "lombo-de-vitela",
+  "nome": "Lombo de vitela",
+  "familia": "carne_osso",
+  "forma": "peça magra com osso liso e branco, fina capa de gordura branca"
+ },
+ {
+  "id": "carre-de-cordeiro",
+  "nome": "Carré (costela) de cordeiro",
+  "familia": "carne_osso",
+  "forma": "meia caixa torácica com 6 a 9 costelas finas e curvas e um olho de lombo na base"
+ },
+ {
+  "id": "coroa-de-cordeiro",
+  "nome": "Coroa de cordeiro",
+  "familia": "carne_osso",
+  "forma": "dois carrés limpos curvados em círculo com ossos apontando para cima como uma coroa"
+ },
+ {
+  "id": "guarda-de-honra",
+  "nome": "Guarda de honra",
+  "familia": "carne_osso",
+  "forma": "dois carrés de pé, frente a frente, com ossos cruzados como espadas"
+ },
+ {
+  "id": "perna-de-cordeiro",
+  "nome": "Perna de cordeiro (gigot)",
+  "familia": "carne",
+  "forma": "peça em formato de pera com osso da canela saliente numa ponta e osso pélvico na outra, pele fina"
+ },
+ {
+  "id": "perna-borboleta",
+  "nome": "Perna de cordeiro em borboleta",
+  "familia": "carne",
+  "forma": "perna desossada aberta em peça larga e achatada de espessura irregular, lembrando asas"
+ },
+ {
+  "id": "paleta-de-cordeiro",
+  "nome": "Paleta de cordeiro",
+  "familia": "carne",
+  "forma": "peça triangular irregular com osso chato da escápula e osso da paleta"
+ },
+ {
+  "id": "lombo-de-cordeiro",
+  "nome": "Lombo de cordeiro",
+  "familia": "carne_osso",
+  "forma": "sela com osso da espinha no centro e dois filés longos dos lados, abas de gordura"
+ },
+ {
+  "id": "noisette-de-cordeiro",
+  "nome": "Noisette de cordeiro",
+  "familia": "carne",
+  "forma": "medalhão redondo de 3 cm do lombo desossado, às vezes envolto em gordura e amarrado"
+ },
+ {
+  "id": "costeleta-de-cordeiro",
+  "nome": "Costeleta de cordeiro",
+  "familia": "carne_osso",
+  "forma": "pequeno medalhão de carne com cabo de osso fino"
+ },
+ {
+  "id": "canela-de-cordeiro",
+  "nome": "Canela de cordeiro (shank)",
+  "familia": "carne_osso",
+  "forma": "pedaço da perna com osso branco central e muito tecido conjuntivo"
+ },
+ {
+  "id": "lombo-de-porco",
+  "nome": "Lombo de porco",
+  "familia": "carne_osso",
+  "forma": "peça longa retangular com costelas de um lado e osso da espinha, capa de gordura branca"
+ },
+ {
+  "id": "file-de-porco",
+  "nome": "Filé de lombo de porco (filé mignon suíno)",
+  "familia": "carne",
+  "forma": "cilindro pequeno e magro que afina numa ponta, com tendão prateado"
+ },
+ {
+  "id": "costeleta-de-porco",
+  "nome": "Costeleta de porco",
+  "familia": "carne_osso",
+  "forma": "bife grosso com osso de costela e borda de gordura com membrana"
+ },
+ {
+  "id": "costelinha-de-porco",
+  "nome": "Costelinha de porco",
+  "familia": "carne_osso",
+  "forma": "tira de costelas finas paralelas com pouca carne entre elas"
+ },
+ {
+  "id": "barriga-de-porco",
+  "nome": "Barriga (ventre) de porco",
+  "familia": "carne",
+  "forma": "bloco retangular em camadas alternadas de carne e gordura, pele lisa"
+ },
+ {
+  "id": "pernil",
+  "nome": "Pernil / presunto",
+  "familia": "carne",
+  "forma": "perna traseira grande em forma de pera, coberta por pele grossa e camada de gordura; curado vira presunto"
+ },
+ {
+  "id": "paleta-de-porco",
+  "nome": "Paleta de porco",
+  "familia": "carne",
+  "forma": "peça dianteira rosa escura com pontos de gordura e pele elástica"
+ },
+ {
+  "id": "toucinho",
+  "nome": "Toucinho / bacon",
+  "familia": "carne",
+  "forma": "placa ou fatias longas listradas de gordura branca e carne rosa; defumado fica com couro marrom"
+ },
+ {
+  "id": "pancetta",
+  "nome": "Pancetta / petit salé",
+  "familia": "carne",
+  "forma": "barriga curada, salgada, em bloco ou fatias"
+ },
+ {
+  "id": "linguica",
+  "nome": "Linguiça",
+  "familia": "linguica",
+  "forma": "cilindro de carne moída dentro de tripa, em gomos torcidos; a Cumberland é uma tira longa enrolada em espiral"
+ },
+ {
+  "id": "salsicha-frankfurter",
+  "nome": "Salsicha tipo Frankfurter",
+  "familia": "linguica",
+  "forma": "cilindro fino e liso, já cozido"
+ },
+ {
+  "id": "invólucro",
+  "nome": "Tripa para linguiça",
+  "familia": "linguica",
+  "forma": "tubo fino translúcido e flexível, vendido salgado"
+ },
+ {
+  "id": "peritonio",
+  "nome": "Peritônio (crépine)",
+  "familia": "placa",
+  "forma": "membrana fina rendada com veios de gordura branca, como uma rede"
+ },
+ {
+  "id": "figado-de-cordeiro",
+  "nome": "Fígado de cordeiro",
+  "familia": "miudo",
+  "forma": "órgão liso e brilhante marrom escuro com membrana opaca e dutos internos"
+ },
+ {
+  "id": "figado-de-novilho",
+  "nome": "Fígado de novilho",
+  "familia": "miudo",
+  "forma": "órgão grande, macio, cor marrom avermelhada"
+ },
+ {
+  "id": "figado-de-porco",
+  "nome": "Fígado de porco",
+  "familia": "miudo",
+  "forma": "órgão de lóbulos marcados, sabor forte"
+ },
+ {
+  "id": "rim",
+  "nome": "Rim (boi, vitela, porco ou cordeiro)",
+  "familia": "miudo",
+  "forma": "órgão em forma de feijão, firme, envolto em membrana brilhante e às vezes em gordura branca; miolo gorduroso branco no centro"
+ },
+ {
+  "id": "sebo-de-rim",
+  "nome": "Gordura de rim (sebo)",
+  "familia": "miudo",
+  "forma": "massa branca cremosa e quebradiça em volta do rim"
+ },
+ {
+  "id": "coracao",
+  "nome": "Coração",
+  "familia": "miudo",
+  "forma": "órgão cônico muscular e firme com cavidades internas e dutos no topo, gordura na parte de cima"
+ },
+ {
+  "id": "lingua",
+  "nome": "Língua bovina",
+  "familia": "miudo",
+  "forma": "peça alongada e grossa coberta por pele áspera, com ossinhos e cartilagem na base"
+ },
+ {
+  "id": "timo",
+  "nome": "Glândula timo (moleja)",
+  "familia": "miudo",
+  "forma": "lóbulos brancos macios e irregulares envoltos em membranas"
+ },
+ {
+  "id": "pe-de-porco",
+  "nome": "Pé de porco",
+  "familia": "miudo",
+  "forma": "pata com casco dividido, pele grossa, ossos e cartilagem, pelos entre os dedos"
+ },
+ {
+  "id": "rabada",
+  "nome": "Rabada",
+  "familia": "carne_osso",
+  "forma": "rabo de boi segmentado em rodelas que afinam, osso central redondo, gordura externa"
+ },
+ {
+  "id": "bucho",
+  "nome": "Bucho",
+  "familia": "placa",
+  "forma": "lâmina cor de marfim com textura de favo ou toalha, do estômago do boi"
+ },
+ {
+  "id": "maltose",
+  "nome": "Maltose",
+  "familia": "recipiente",
+  "forma": "calda grossa, escura e grudenta de cereais fermentados"
+ },
+ {
+  "id": "folha-de-bananeira",
+  "nome": "Folha de bananeira",
+  "familia": "placa",
+  "forma": "folha verde larga e lisa, cortada em quadrados"
+ },
+ {
+  "id": "massa-folhada",
+  "nome": "Massa folhada",
+  "familia": "placa",
+  "forma": "placa de massa em camadas aberta a 5 mm"
+ },
+ {
+  "id": "crepe-de-ervas",
+  "nome": "Crêpe de ervas",
+  "familia": "pao_chato",
+  "forma": "disco fino de massa com ervas"
+ },
+ {
+  "id": "duxelles",
+  "nome": "Duxelles",
+  "familia": "pasta",
+  "forma": "pasta escura de cogumelos picadinhos refogados"
+ },
+ {
+  "id": "manteiga-clarificada",
+  "nome": "Manteiga clarificada",
+  "familia": "recipiente",
+  "forma": "líquido dourado transparente"
+ },
+ {
+  "id": "aspic",
+  "nome": "Aspic",
+  "familia": "recipiente",
+  "forma": "gelatina de caldo, líquida quando morna e firme quando fria"
+ },
+ {
+  "id": "cenoura",
+  "nome": "Cenoura",
+  "familia": "cone",
+  "forma": "cone alongado laranja com rama verde"
+ },
+ {
+  "id": "batata",
+  "nome": "Batata",
+  "familia": "esferoide",
+  "forma": "tubérculo oval arredondado, casca bege ou vermelha, polpa creme"
+ },
+ {
+  "id": "batata_doce",
+  "nome": "Batata-doce",
+  "familia": "fuso",
+  "forma": "tubérculo fusiforme de casca roxa ou rosada e polpa laranja ou creme"
+ },
+ {
+  "id": "beterraba",
+  "nome": "Beterraba",
+  "familia": "esferoide",
+  "forma": "raiz globosa roxo-escura com talos avermelhados"
+ },
+ {
+  "id": "nabo",
+  "nome": "Nabo",
+  "familia": "esferoide",
+  "forma": "raiz globosa branca com topo arroxeado"
+ },
+ {
+  "id": "rabanete",
+  "nome": "Rabanete",
+  "familia": "esferoide",
+  "forma": "pequena esfera vermelha com polpa branca e cauda fina"
+ },
+ {
+  "id": "mandioquinha",
+  "nome": "Mandioquinha",
+  "familia": "cone",
+  "forma": "raiz cônica curta amarelo-clara"
+ },
+ {
+  "id": "cebola",
+  "nome": "Cebola",
+  "familia": "esferoide",
+  "forma": "bulbo esférico com casca dourada seca e camadas brancas"
+ },
+ {
+  "id": "cebola_roxa",
+  "nome": "Cebola roxa",
+  "familia": "esferoide",
+  "forma": "bulbo esférico de casca e camadas roxas"
+ },
+ {
+  "id": "cebola_perola",
+  "nome": "Cebola-pérola",
+  "familia": "esferoide",
+  "forma": "cebolinha esférica do tamanho de uma bola de gude, casca fina"
+ },
+ {
+  "id": "chalota",
+  "nome": "Chalota (cebola miúda)",
+  "familia": "bulbo",
+  "forma": "bulbo pequeno alongado de casca cobre e polpa rosada"
+ },
+ {
+  "id": "alho",
+  "nome": "Alho",
+  "familia": "bulbo",
+  "forma": "cabeça arredondada branca formada por dentes em gomos"
+ },
+ {
+  "id": "alho_poro",
+  "nome": "Alho-poró",
+  "familia": "talo",
+  "forma": "cilindro longo branco que passa a folhas verde-escuras achatadas"
+ },
+ {
+  "id": "cebolinha",
+  "nome": "Cebolinha verde",
+  "familia": "talo",
+  "forma": "haste fina tubular verde com base branca e raiz"
+ },
+ {
+  "id": "tomate",
+  "nome": "Tomate",
+  "familia": "esferoide",
+  "forma": "esfera vermelha brilhante com cálice verde"
+ },
+ {
+  "id": "berinjela",
+  "nome": "Berinjela",
+  "familia": "fuso",
+  "forma": "fruto alongado em gota, casca roxo-escura brilhante e cálice verde"
+ },
+ {
+  "id": "berinjela_branca",
+  "nome": "Berinjela branca",
+  "familia": "fuso",
+  "forma": "fruto ovoide branco ou amarelado, lembra um ovo"
+ },
+ {
+  "id": "berinjela_ervilha",
+  "nome": "Berinjela-ervilha",
+  "familia": "cacho",
+  "forma": "bolinhas verdes do tamanho de ervilhas em cacho"
+ },
+ {
+  "id": "berinjela_thai",
+  "nome": "Berinjela thai",
+  "familia": "esferoide",
+  "forma": "bola pequena verde com listras claras"
+ },
+ {
+  "id": "pimentao",
+  "nome": "Pimentão",
+  "familia": "pimenta",
+  "forma": "fruto oco quadrado de 3 a 4 gomos, vermelho, verde, amarelo ou laranja"
+ },
+ {
+  "id": "chili",
+  "nome": "Chili (pimenta)",
+  "familia": "pimenta",
+  "forma": "fruto pequeno cônico vermelho ou verde, brilhante, com cabo"
+ },
+ {
+  "id": "jalapeno",
+  "nome": "Jalapeño",
+  "familia": "pimenta",
+  "forma": "pimenta verde roliça de 5 a 8 cm com ponta romba"
+ },
+ {
+  "id": "poblano",
+  "nome": "Poblano",
+  "familia": "pimenta",
+  "forma": "pimenta grande verde-escura em forma de coração achatado"
+ },
+ {
+  "id": "anaheim",
+  "nome": "Anaheim",
+  "familia": "pimenta",
+  "forma": "pimenta longa e fina verde ou vermelha"
+ },
+ {
+  "id": "gorro_escoces",
+  "nome": "Pimenta gorro escocês",
+  "familia": "pimenta",
+  "forma": "pimenta pequena e enrugada em forma de chapéu, amarela, laranja ou vermelha"
+ },
+ {
+  "id": "habanero",
+  "nome": "Habanero",
+  "familia": "pimenta",
+  "forma": "pimenta pequena em lanterna laranja"
+ },
+ {
+  "id": "chili_seco",
+  "nome": "Chili seco",
+  "familia": "pimenta",
+  "forma": "pimenta desidratada vermelho-escura enrugada"
+ },
+ {
+  "id": "abacate",
+  "nome": "Abacate",
+  "familia": "tropical",
+  "forma": "fruto em pera com casca verde-escura rugosa, polpa verde-clara e caroço marrom redondo"
+ },
+ {
+  "id": "pepino",
+  "nome": "Pepino",
+  "familia": "fuso",
+  "forma": "cilindro longo verde-escuro com polpa clara e sementes"
+ },
+ {
+  "id": "abobrinha",
+  "nome": "Abobrinha",
+  "familia": "fuso",
+  "forma": "cilindro verde com listras claras"
+ },
+ {
+  "id": "abobora_bolota",
+  "nome": "Abóbora bolota",
+  "familia": "abobora",
+  "forma": "abóbora pequena em forma de bolota com gomos, casca verde-escura"
+ },
+ {
+  "id": "abobora_noz",
+  "nome": "Abóbora noz (butternut)",
+  "familia": "abobora",
+  "forma": "abóbora em forma de garrafa com casca bege e polpa laranja"
+ },
+ {
+  "id": "spaghetti_squash",
+  "nome": "Abóbora espaguete",
+  "familia": "abobora",
+  "forma": "abóbora oval amarela cuja polpa vira fios"
+ },
+ {
+  "id": "moranga",
+  "nome": "Moranga",
+  "familia": "abobora",
+  "forma": "abóbora achatada com gomos, casca laranja"
+ },
+ {
+  "id": "repolho",
+  "nome": "Repolho",
+  "familia": "folhoso",
+  "forma": "esfera compacta de folhas verde-claras sobrepostas"
+ },
+ {
+  "id": "repolho_roxo",
+  "nome": "Repolho roxo",
+  "familia": "folhoso",
+  "forma": "esfera compacta de folhas roxas com nervuras brancas"
+ },
+ {
+  "id": "brocolis",
+  "nome": "Brócolis",
+  "familia": "talo",
+  "forma": "árvore com talo verde grosso e buquês verde-escuros compactos"
+ },
+ {
+  "id": "couve_flor",
+  "nome": "Couve-flor",
+  "familia": "talo",
+  "forma": "cabeça branca de buquês compactos envolta em folhas verdes"
+ },
+ {
+  "id": "couve_de_bruxelas",
+  "nome": "Couve-de-bruxelas",
+  "familia": "folhoso",
+  "forma": "mini repolhos verdes do tamanho de uma noz"
+ },
+ {
+  "id": "espinafre",
+  "nome": "Espinafre",
+  "familia": "erva",
+  "forma": "folhas verde-escuras ovais com talo fino"
+ },
+ {
+  "id": "acelga",
+  "nome": "Acelga suíça",
+  "familia": "erva",
+  "forma": "folhas verdes largas e onduladas com talo central branco grosso"
+ },
+ {
+  "id": "mostarda_chinesa",
+  "nome": "Mostarda chinesa",
+  "familia": "erva",
+  "forma": "folhas verdes largas de talo grosso claro"
+ },
+ {
+  "id": "dente_de_leao",
+  "nome": "Dente-de-leão",
+  "familia": "erva",
+  "forma": "folhas estreitas verdes de borda serrilhada"
+ },
+ {
+  "id": "azedinha",
+  "nome": "Azedinha",
+  "familia": "erva",
+  "forma": "folhas verdes em ponta de lança"
+ },
+ {
+  "id": "folha_parreira",
+  "nome": "Folha de parreira",
+  "familia": "erva",
+  "forma": "folha verde larga com cinco lóbulos"
+ },
+ {
+  "id": "aspargo",
+  "nome": "Aspargo verde",
+  "familia": "talo",
+  "forma": "haste verde reta com ponta em botão escamoso"
+ },
+ {
+  "id": "aspargo_branco",
+  "nome": "Aspargo branco",
+  "familia": "talo",
+  "forma": "haste grossa branco-marfim com ponta amarelada"
+ },
+ {
+  "id": "cardo",
+  "nome": "Alcachofra-brava (cardo)",
+  "familia": "talo",
+  "forma": "talos longos cinza-esverdeados parecidos com aipo"
+ },
+ {
+  "id": "aipo",
+  "nome": "Aipo (salsão)",
+  "familia": "talo",
+  "forma": "maço de talos verde-claros acanalados com folhas no topo"
+ },
+ {
+  "id": "erva_doce",
+  "nome": "Erva-doce (funcho)",
+  "familia": "bulbo",
+  "forma": "bulbo branco arredondado com hastes verdes e folhas plumosas"
+ },
+ {
+  "id": "alcachofra",
+  "nome": "Alcachofra",
+  "familia": "folhoso",
+  "forma": "flor globosa de brácteas verdes carnudas sobrepostas, com talo"
+ },
+ {
+  "id": "broto_alcachofra",
+  "nome": "Broto de alcachofra",
+  "familia": "folhoso",
+  "forma": "alcachofra miniatura verde-arroxeada"
+ },
+ {
+  "id": "aipo_rabano",
+  "nome": "Aipo-rábano",
+  "familia": "esferoide",
+  "forma": "raiz globosa nodosa bege com raízes finas"
+ },
+ {
+  "id": "couve_rabano",
+  "nome": "Couve-rábano",
+  "familia": "bulbo",
+  "forma": "bulbo esférico verde-claro ou roxo com hastes saindo dos lados"
+ },
+ {
+  "id": "tupinambo",
+  "nome": "Alcachofra de Jerusalém",
+  "familia": "esferoide",
+  "forma": "tubérculo pequeno nodoso bege lembrando gengibre"
+ },
+ {
+  "id": "cogumelo_paris",
+  "nome": "Cogumelo branco cultivado",
+  "familia": "cogumelo",
+  "forma": "chapéu branco arredondado com talo curto"
+ },
+ {
+  "id": "shiitake",
+  "nome": "Shiitake",
+  "familia": "cogumelo",
+  "forma": "chapéu marrom largo com bordas curvas e talo fibroso"
+ },
+ {
+  "id": "cogumelo_ostra",
+  "nome": "Cogumelo ostra",
+  "familia": "cogumelo",
+  "forma": "leque cinza ou creme em camadas"
+ },
+ {
+  "id": "chanterelle",
+  "nome": "Chanterelle",
+  "familia": "cogumelo",
+  "forma": "funil dourado com bordas onduladas"
+ },
+ {
+  "id": "cepe",
+  "nome": "Cèpe (porcini)",
+  "familia": "cogumelo",
+  "forma": "cogumelo rechonchudo com chapéu marrom bulboso e talo grosso"
+ },
+ {
+  "id": "morel",
+  "nome": "Morel",
+  "familia": "cogumelo",
+  "forma": "cabeça cônica marrom com textura de favo de mel"
+ },
+ {
+  "id": "pied_de_mouton",
+  "nome": "Pied de mouton",
+  "familia": "cogumelo",
+  "forma": "cogumelo creme carnudo com espinhos sob o chapéu"
+ },
+ {
+  "id": "pied_bleu",
+  "nome": "Pied bleu",
+  "familia": "cogumelo",
+  "forma": "cogumelo de chapéu lilás-acinzentado"
+ },
+ {
+  "id": "orelha_de_pau",
+  "nome": "Orelha-de-pau",
+  "familia": "cogumelo",
+  "forma": "fungo seco escuro e enrugado que hidratado vira lóbulos gelatinosos pretos"
+ },
+ {
+  "id": "trufa_preta",
+  "nome": "Trufa preta",
+  "familia": "esferoide",
+  "forma": "tubérculo irregular preto de casca verrugosa"
+ },
+ {
+  "id": "trufa_branca",
+  "nome": "Trufa branca",
+  "familia": "esferoide",
+  "forma": "tubérculo irregular bege claro"
+ },
+ {
+  "id": "vagem",
+  "nome": "Vagem",
+  "familia": "vagem",
+  "forma": "vagem fina verde cilíndrica"
+ },
+ {
+  "id": "ervilha_torta",
+  "nome": "Ervilha-torta",
+  "familia": "vagem",
+  "forma": "vagem verde achatada e translúcida"
+ },
+ {
+  "id": "ervilha",
+  "nome": "Ervilha",
+  "familia": "vagem",
+  "forma": "vagem verde inchada com bolinhas verdes"
+ },
+ {
+  "id": "feijao_verde",
+  "nome": "Feijão verde largo",
+  "familia": "vagem",
+  "forma": "vagem larga e chata verde com grãos arroxeados"
+ },
+ {
+  "id": "fava",
+  "nome": "Fava",
+  "familia": "vagem",
+  "forma": "vagem grossa verde com grãos grandes achatados"
+ },
+ {
+  "id": "quiabo",
+  "nome": "Quiabo",
+  "familia": "vagem",
+  "forma": "vagem verde pentagonal pontuda e penugenta"
+ },
+ {
+  "id": "milho",
+  "nome": "Milho-verde",
+  "familia": "espiga",
+  "forma": "espiga cilíndrica de grãos amarelos envolta em palha verde com cabelos"
+ },
+ {
+  "id": "palha_milho",
+  "nome": "Palha de milho",
+  "familia": "erva",
+  "forma": "folha longa verde ou bege seca"
+ },
+ {
+  "id": "raiz_lotus",
+  "nome": "Raiz de lótus",
+  "familia": "fuso",
+  "forma": "rizoma bege em segmentos, com furos que formam flor ao fatiar"
+ },
+ {
+  "id": "dasheen",
+  "nome": "Dasheen",
+  "familia": "esferoide",
+  "forma": "raiz tropical marrom peluda de casca grossa"
+ },
+ {
+  "id": "mandioca",
+  "nome": "Mandioca",
+  "familia": "fuso",
+  "forma": "raiz longa de casca marrom e polpa branca"
+ },
+ {
+  "id": "cercefi",
+  "nome": "Cercefi",
+  "familia": "cone",
+  "forma": "raiz longa e fina de casca escura e polpa branca"
+ },
+ {
+  "id": "loofah",
+  "nome": "Loofah",
+  "familia": "fuso",
+  "forma": "cabaça alongada verde com sulcos"
+ },
+ {
+  "id": "melao_amargo",
+  "nome": "Melão amargo chinês",
+  "familia": "fuso",
+  "forma": "fruto verde alongado de casca rugosa e verrugosa"
+ },
+ {
+  "id": "araruta_india",
+  "nome": "Araruta do leste da Índia",
+  "familia": "esferoide",
+  "forma": "raiz dura de casca grossa marrom"
+ },
+ {
+  "id": "eddo",
+  "nome": "Eddo",
+  "familia": "esferoide",
+  "forma": "tubérculo pequeno peludo marrom"
+ },
+ {
+  "id": "rabanete_pingente",
+  "nome": "Rabanete pingente",
+  "familia": "cone",
+  "forma": "raiz verde alongada"
+ },
+ {
+  "id": "feijao_jardim",
+  "nome": "Feijão grande de jardim",
+  "familia": "vagem",
+  "forma": "vagem verde muito longa"
+ },
+ {
+  "id": "taro",
+  "nome": "Taro",
+  "familia": "esferoide",
+  "forma": "raiz marrom com anéis e polpa branca pintalgada de roxo"
+ },
+ {
+  "id": "wakame",
+  "nome": "Wakame",
+  "familia": "alga",
+  "forma": "alga verde-escura em tiras finas"
+ },
+ {
+  "id": "arame",
+  "nome": "Arame",
+  "familia": "alga",
+  "forma": "alga preta em fios finos"
+ },
+ {
+  "id": "kombu",
+  "nome": "Kombu",
+  "familia": "placa",
+  "forma": "placa larga verde-escura de alga seca"
+ },
+ {
+  "id": "dulse",
+  "nome": "Dulse",
+  "familia": "erva",
+  "forma": "alga avermelhada em folhas"
+ },
+ {
+  "id": "alface",
+  "nome": "Alface",
+  "familia": "folhoso",
+  "forma": "cabeça de folhas verdes macias ou crespas"
+ },
+ {
+  "id": "rucula",
+  "nome": "Rúcula",
+  "familia": "erva",
+  "forma": "folhas verdes recortadas alongadas"
+ },
+ {
+  "id": "agriao",
+  "nome": "Agrião",
+  "familia": "erva",
+  "forma": "raminhos com folhas redondas verde-escuras"
+ },
+ {
+  "id": "frisee",
+  "nome": "Frisée",
+  "familia": "folhoso",
+  "forma": "cabeça de folhas finas recortadas verde-amareladas"
+ },
+ {
+  "id": "folha_carvalho",
+  "nome": "Alface folha de carvalho",
+  "familia": "folhoso",
+  "forma": "folhas lobadas vermelho-esverdeadas"
+ },
+ {
+  "id": "endivia",
+  "nome": "Endívia",
+  "familia": "folhoso",
+  "forma": "cone alongado de folhas brancas com pontas amarelas"
+ },
+ {
+  "id": "salsa",
+  "nome": "Salsa",
+  "familia": "erva",
+  "forma": "ramo com folhas recortadas verde vivas"
+ },
+ {
+  "id": "manjericao",
+  "nome": "Manjericão",
+  "familia": "erva",
+  "forma": "ramo com folhas ovais verde brilhantes"
+ },
+ {
+  "id": "cerefolio",
+  "nome": "Cerefólio",
+  "familia": "erva",
+  "forma": "ramo de folhas delicadas tipo renda"
+ },
+ {
+  "id": "estragao",
+  "nome": "Estragão",
+  "familia": "erva",
+  "forma": "ramo de folhas finas e longas"
+ },
+ {
+  "id": "tomilho",
+  "nome": "Tomilho",
+  "familia": "erva",
+  "forma": "raminho lenhoso com folhinhas minúsculas"
+ },
+ {
+  "id": "alecrim",
+  "nome": "Alecrim",
+  "familia": "erva",
+  "forma": "galho lenhoso com folhas em agulha"
+ },
+ {
+  "id": "louro",
+  "nome": "Louro",
+  "familia": "erva",
+  "forma": "folha oval verde-escura brilhante"
+ },
+ {
+  "id": "cebolinha_francesa",
+  "nome": "Cebolinha-francesa (ciboulette)",
+  "familia": "erva",
+  "forma": "hastes verdes muito finas e tubulares"
+ },
+ {
+  "id": "hortela",
+  "nome": "Hortelã",
+  "familia": "erva",
+  "forma": "folhas verdes rugosas com serrilhado"
+ },
+ {
+  "id": "endro",
+  "nome": "Endro",
+  "familia": "erva",
+  "forma": "ramo de folhas plumosas verde-azuladas"
+ },
+ {
+  "id": "coentro",
+  "nome": "Coentro",
+  "familia": "erva",
+  "forma": "ramo de folhas recortadas arredondadas"
+ },
+ {
+  "id": "feijao_seco",
+  "nome": "Feijões secos (vários)",
+  "familia": "monte",
+  "forma": "grãos ovais em várias cores: preto, branco, rajado, vermelho, creme"
+ },
+ {
+  "id": "feijao_aduki",
+  "nome": "Feijão aduki",
+  "familia": "monte",
+  "forma": "grão pequeno vermelho-escuro"
+ },
+ {
+  "id": "feijao_fradinho",
+  "nome": "Feijão-fradinho",
+  "familia": "monte",
+  "forma": "grão creme com olho preto"
+ },
+ {
+  "id": "feijao_preto",
+  "nome": "Feijão-preto",
+  "familia": "monte",
+  "forma": "grão oval preto brilhante"
+ },
+ {
+  "id": "feijao_manteiga",
+  "nome": "Feijão-manteiga",
+  "familia": "monte",
+  "forma": "grão grande achatado creme"
+ },
+ {
+  "id": "feijao_branco",
+  "nome": "Feijão branco",
+  "familia": "monte",
+  "forma": "grão oval branco"
+ },
+ {
+  "id": "feijao_roxinho",
+  "nome": "Feijão roxinho",
+  "familia": "monte",
+  "forma": "grão em rim vermelho-escuro"
+ },
+ {
+  "id": "feijao_mungo",
+  "nome": "Feijão-mungo",
+  "familia": "monte",
+  "forma": "grão minúsculo verde"
+ },
+ {
+  "id": "feijao_soja",
+  "nome": "Soja",
+  "familia": "monte",
+  "forma": "grão redondo amarelo-claro"
+ },
+ {
+  "id": "grao_de_bico",
+  "nome": "Grão-de-bico",
+  "familia": "monte",
+  "forma": "grão bege redondo com bico"
+ },
+ {
+  "id": "lentilha",
+  "nome": "Lentilha",
+  "familia": "monte",
+  "forma": "disco pequeno achatado verde, marrom, vermelho ou amarelo"
+ },
+ {
+  "id": "ervilha_partida",
+  "nome": "Ervilha partida",
+  "familia": "monte",
+  "forma": "meia-esfera verde ou amarela"
+ },
+ {
+  "id": "arroz_longo",
+  "nome": "Arroz agulha (grão longo)",
+  "familia": "monte",
+  "forma": "grão longo fino branco ou bege"
+ },
+ {
+  "id": "arroz_basmati",
+  "nome": "Arroz basmati",
+  "familia": "monte",
+  "forma": "grão muito longo e fino branco ou integral"
+ },
+ {
+  "id": "arroz_jasmim",
+  "nome": "Arroz tailandês (jasmim)",
+  "familia": "monte",
+  "forma": "grão longo branco translúcido"
+ },
+ {
+  "id": "arroz_arborio",
+  "nome": "Arroz arbório",
+  "familia": "monte",
+  "forma": "grão curto gordo pérola"
+ },
+ {
+  "id": "arroz_japones",
+  "nome": "Arroz japonês",
+  "familia": "monte",
+  "forma": "grão curto redondo brilhante"
+ },
+ {
+  "id": "arroz_selvagem",
+  "nome": "Arroz selvagem",
+  "familia": "monte",
+  "forma": "grão longo fino preto-amarronzado"
+ },
+ {
+  "id": "arroz_pudding",
+  "nome": "Arroz para pudim",
+  "familia": "monte",
+  "forma": "grão curto e redondo"
+ },
+ {
+  "id": "polenta",
+  "nome": "Polenta (fubá)",
+  "familia": "monte",
+  "forma": "farinha granulada amarelo-dourada"
+ },
+ {
+  "id": "cuscuz",
+  "nome": "Cuscuz marroquino",
+  "familia": "monte",
+  "forma": "grânulos pequenos amarelo-claros"
+ },
+ {
+  "id": "bulgur",
+  "nome": "Bulgur (trigo quebrado)",
+  "familia": "monte",
+  "forma": "grânulos marrom-dourados irregulares"
+ },
+ {
+  "id": "milho_pipoca",
+  "nome": "Milho de pipoca",
+  "familia": "monte",
+  "forma": "grão pequeno amarelo duro que estoura em flocos brancos"
+ },
+ {
+  "id": "cevada",
+  "nome": "Cevada",
+  "familia": "monte",
+  "forma": "grão pérola bege oval"
+ },
+ {
+  "id": "trigo_sarraceno",
+  "nome": "Trigo-sarraceno",
+  "familia": "monte",
+  "forma": "grão triangular marrom"
+ },
+ {
+  "id": "milhete",
+  "nome": "Painço (milhete)",
+  "familia": "monte",
+  "forma": "grão minúsculo redondo amarelo"
+ },
+ {
+  "id": "aveia",
+  "nome": "Aveia",
+  "familia": "monte",
+  "forma": "flocos achatados bege"
+ },
+ {
+  "id": "quinoa",
+  "nome": "Quinoa",
+  "familia": "monte",
+  "forma": "grão minúsculo redondo creme"
+ },
+ {
+  "id": "centeio",
+  "nome": "Centeio",
+  "familia": "monte",
+  "forma": "grão alongado acinzentado"
+ },
+ {
+  "id": "canjica",
+  "nome": "Canjica",
+  "familia": "monte",
+  "forma": "grão grande branco ou amarelo inchado"
+ },
+ {
+  "id": "trigo_grao",
+  "nome": "Trigo em grão",
+  "familia": "monte",
+  "forma": "grão oval dourado"
+ },
+ {
+  "id": "amendoa",
+  "nome": "Amêndoa",
+  "familia": "castanha",
+  "forma": "semente em gota achatada com pele marrom e polpa branca"
+ },
+ {
+  "id": "pistache",
+  "nome": "Pistache",
+  "familia": "castanha",
+  "forma": "semente verde com pele roxa dentro de casca bege entreaberta"
+ },
+ {
+  "id": "avela",
+  "nome": "Avelã",
+  "familia": "castanha",
+  "forma": "esfera pequena marrom com pele fina escura"
+ },
+ {
+  "id": "castanha_para",
+  "nome": "Castanha-do-pará",
+  "familia": "castanha",
+  "forma": "semente alongada triangular com pele marrom"
+ },
+ {
+  "id": "noz",
+  "nome": "Noz",
+  "familia": "castanha",
+  "forma": "metade enrugada em forma de cérebro, marrom-clara"
+ },
+ {
+  "id": "noz_peca",
+  "nome": "Noz-pecã",
+  "familia": "castanha",
+  "forma": "metade alongada ondulada marrom avermelhada"
+ },
+ {
+  "id": "pinoli",
+  "nome": "Pinoli",
+  "familia": "castanha",
+  "forma": "semente pequena alongada marfim"
+ },
+ {
+  "id": "amendoim",
+  "nome": "Amendoim",
+  "familia": "castanha",
+  "forma": "vagem bege com duas sementes de pele vermelha"
+ },
+ {
+  "id": "castanha_portuguesa",
+  "nome": "Castanha portuguesa",
+  "familia": "castanha",
+  "forma": "semente marrom brilhante com um lado chato e ponta"
+ },
+ {
+  "id": "coco",
+  "nome": "Coco seco",
+  "familia": "tropical",
+  "forma": "esfera marrom fibrosa com três olhos, polpa branca e água"
+ },
+ {
+  "id": "farinha",
+  "nome": "Farinha de trigo",
+  "familia": "monte",
+  "forma": "pó branco"
+ },
+ {
+  "id": "semolina",
+  "nome": "Semolina",
+  "familia": "monte",
+  "forma": "farinha granulada amarelo-clara"
+ },
+ {
+  "id": "ovo",
+  "nome": "Ovo",
+  "familia": "esferoide",
+  "forma": "oval com casca branca ou marrom, gema amarela"
+ },
+ {
+  "id": "massa_fresca",
+  "nome": "Massa fresca de ovo",
+  "familia": "placa",
+  "forma": "folha lisa amarelo-clara"
+ },
+ {
+  "id": "tagliatelle",
+  "nome": "Tagliatelle",
+  "familia": "massa",
+  "forma": "fitas planas de cerca de 1 cm enroladas em ninho"
+ },
+ {
+  "id": "lasanha",
+  "nome": "Folhas de lasanha",
+  "familia": "placa",
+  "forma": "retângulos planos de massa"
+ },
+ {
+  "id": "raviolo",
+  "nome": "Ravióli",
+  "familia": "massa",
+  "forma": "almofadinha quadrada de massa com borda serrilhada"
+ },
+ {
+  "id": "tortellini",
+  "nome": "Tortellini",
+  "familia": "massa",
+  "forma": "anel de massa dobrada em meia-lua com pontas unidas"
+ },
+ {
+  "id": "canelone",
+  "nome": "Canelone",
+  "familia": "massa",
+  "forma": "tubo de massa recheado"
+ },
+ {
+  "id": "gnocchi",
+  "nome": "Gnocchi",
+  "familia": "massa",
+  "forma": "bolinha oval de massa com vincos de garfo"
+ },
+ {
+  "id": "espaguete",
+  "nome": "Espaguete",
+  "familia": "massa",
+  "forma": "fio longo e fino cilíndrico"
+ },
+ {
+  "id": "penne",
+  "nome": "Penne",
+  "familia": "massa",
+  "forma": "tubo curto cortado em diagonal"
+ },
+ {
+  "id": "rigatoni",
+  "nome": "Rigatoni",
+  "familia": "massa",
+  "forma": "tubo curto largo e estriado"
+ },
+ {
+  "id": "conchiglie",
+  "nome": "Conchiglie",
+  "familia": "massa",
+  "forma": "massa curta em forma de concha"
+ },
+ {
+  "id": "ditalini",
+  "nome": "Ditalini",
+  "familia": "massa",
+  "forma": "tubinho curto"
+ },
+ {
+  "id": "orecchiette",
+  "nome": "Orecchiette",
+  "familia": "massa",
+  "forma": "disco côncavo em forma de orelhinha"
+ },
+ {
+  "id": "fusilli",
+  "nome": "Fusilli",
+  "familia": "massa",
+  "forma": "espiral curta"
+ },
+ {
+  "id": "farfalle",
+  "nome": "Farfalle",
+  "familia": "massa",
+  "forma": "laço ou gravatinha"
+ },
+ {
+  "id": "macarrao_transparente",
+  "nome": "Macarrão de feijão (transparente)",
+  "familia": "massa",
+  "forma": "fios translúcidos muito finos"
+ },
+ {
+  "id": "macarrao_ovo",
+  "nome": "Macarrão de ovo asiático",
+  "familia": "massa",
+  "forma": "feixes compactos de fios amarelos"
+ },
+ {
+  "id": "macarrao_arroz",
+  "nome": "Macarrão de arroz",
+  "familia": "massa",
+  "forma": "fios ou fitas brancas opacas"
+ },
+ {
+  "id": "soba",
+  "nome": "Soba",
+  "familia": "massa",
+  "forma": "fios marrom-acinzentados finos"
+ },
+ {
+  "id": "folha_rolinho",
+  "nome": "Folha de rolinho primavera",
+  "familia": "placa",
+  "forma": "quadrado fino translúcido de massa"
+ },
+ {
+  "id": "folha_wonton",
+  "nome": "Folha de wonton",
+  "familia": "placa",
+  "forma": "quadrado amarelo-claro de 7,5 cm"
+ },
+ {
+  "id": "escargot",
+  "nome": "Escargot",
+  "familia": "concha_espiral",
+  "forma": "molusco marrom enrolado"
+ },
+ {
+  "id": "manteiga",
+  "nome": "Manteiga",
+  "familia": "barra",
+  "forma": "tablete amarelo-claro"
+ },
+ {
+  "id": "manteiga_clarificada",
+  "nome": "Manteiga clarificada",
+  "familia": "recipiente",
+  "forma": "líquido dourado translúcido"
+ },
+ {
+  "id": "leite",
+  "nome": "Leite",
+  "familia": "recipiente",
+  "forma": "líquido branco"
+ },
+ {
+  "id": "creme_de_leite",
+  "nome": "Creme de leite",
+  "familia": "recipiente",
+  "forma": "líquido espesso branco-marfim"
+ },
+ {
+  "id": "creme_fraiche",
+  "nome": "Crème fraîche",
+  "familia": "recipiente",
+  "forma": "creme espesso levemente ácido branco"
+ },
+ {
+  "id": "caldo",
+  "nome": "Caldo (carne, vitela, galinha ou peixe)",
+  "familia": "recipiente",
+  "forma": "líquido translúcido dourado ou marrom"
+ },
+ {
+  "id": "araruta",
+  "nome": "Araruta (amido)",
+  "familia": "monte",
+  "forma": "pó branco fino"
+ },
+ {
+  "id": "tutano",
+  "nome": "Tutano",
+  "familia": "carne_osso",
+  "forma": "gordura bege dentro de osso cilíndrico"
+ },
+ {
+  "id": "vinagre",
+  "nome": "Vinagre",
+  "familia": "recipiente",
+  "forma": "líquido translúcido"
+ },
+ {
+  "id": "azeite",
+  "nome": "Azeite de oliva",
+  "familia": "recipiente",
+  "forma": "líquido verde-dourado"
+ },
+ {
+  "id": "oleo",
+  "nome": "Óleo vegetal",
+  "familia": "recipiente",
+  "forma": "líquido amarelo-claro"
+ },
+ {
+  "id": "mostarda_dijon",
+  "nome": "Mostarda Dijon",
+  "familia": "pasta",
+  "forma": "pasta amarela clara"
+ },
+ {
+  "id": "limao",
+  "nome": "Limão",
+  "familia": "citrico",
+  "forma": "fruto oval amarelo ou verde"
+ },
+ {
+  "id": "tofu",
+  "nome": "Tofu",
+  "familia": "barra",
+  "forma": "bloco branco macio"
+ },
+ {
+  "id": "parmesao",
+  "nome": "Parmesão",
+  "familia": "queijo",
+  "forma": "bloco duro amarelo-palha"
+ },
+ {
+  "id": "gruyere",
+  "nome": "Gruyère",
+  "familia": "queijo",
+  "forma": "queijo amarelo-claro"
+ },
+ {
+  "id": "frango",
+  "nome": "Peito de frango",
+  "familia": "peca_ave",
+  "forma": "filé rosado"
+ },
+ {
+  "id": "carne_porco_moida",
+  "nome": "Carne de porco moída",
+  "familia": "carne_moida",
+  "forma": "massa rosada"
+ },
+ {
+  "id": "fermento-fresco",
+  "nome": "Fermento biológico fresco",
+  "familia": "barra",
+  "forma": "tablete retangular bege-acinzentado, úmido e quebradiço"
+ },
+ {
+  "id": "fermento-seco",
+  "nome": "Fermento biológico seco granulado",
+  "familia": "monte",
+  "forma": "grânulos bege miúdos em sachê ou pote"
+ },
+ {
+  "id": "fermento-soluvel",
+  "nome": "Fermento biológico instantâneo",
+  "familia": "monte",
+  "forma": "pó fino bege em sachê"
+ },
+ {
+  "id": "farinha-de-trigo",
+  "nome": "Farinha de trigo",
+  "familia": "monte",
+  "forma": "pó branco fino em saco ou monte com buraco no meio"
+ },
+ {
+  "id": "farinha-integral",
+  "nome": "Farinha de trigo integral",
+  "familia": "monte",
+  "forma": "pó castanho com pintas de farelo"
+ },
+ {
+  "id": "fuba",
+  "nome": "Fubá",
+  "familia": "monte",
+  "forma": "pó amarelo granuloso"
+ },
+ {
+  "id": "massa-de-pao",
+  "nome": "Massa de pão",
+  "familia": "massa_bola",
+  "forma": "bola lisa cor creme, elástica, dobra de volume ao crescer"
+ },
+ {
+  "id": "pao-de-forma",
+  "nome": "Pão branco de fôrma",
+  "familia": "pao",
+  "forma": "bloco retangular de topo abaulado, casca dourada, miolo branco"
+ },
+ {
+  "id": "pao-trancado",
+  "nome": "Pão trançado",
+  "familia": "pao",
+  "forma": "pão alongado de três tiras entrelaçadas, dourado brilhante"
+ },
+ {
+  "id": "pao-redondo",
+  "nome": "Pão redondo",
+  "familia": "pao",
+  "forma": "cúpula baixa dourada, às vezes com corte em X no topo"
+ },
+ {
+  "id": "rosquinhas",
+  "nome": "Rosquinhas modeladas",
+  "familia": "pao",
+  "forma": "pãezinhos de 30 a 60 g: espirais, discos empilhados, caracol, dobrado em meia-lua, folha com talhos, nó"
+ },
+ {
+  "id": "baguete",
+  "nome": "Baguete ou ciabatta",
+  "familia": "pao",
+  "forma": "pão longo dourado cortado em fatias ovais"
+ },
+ {
+  "id": "bruschetta",
+  "nome": "Bruschetta e crostini",
+  "familia": "pao",
+  "forma": "fatias ovais tostadas com cobertura colorida por cima"
+ },
+ {
+  "id": "pizza",
+  "nome": "Pizza",
+  "familia": "pao_chato",
+  "forma": "disco de 25 cm e 1 cm de espessura, borda dourada, cobertura em padrão regular"
+ },
+ {
+  "id": "calzone",
+  "nome": "Calzone",
+  "familia": "pao",
+  "forma": "meia-lua fechada de massa dourada com dois cortes no topo"
+ },
+ {
+  "id": "focaccia",
+  "nome": "Focaccia de alecrim",
+  "familia": "pao_chato",
+  "forma": "pão chato grosso retangular ou redondo, cheio de covinhas, sal grosso e alecrim verde"
+ },
+ {
+  "id": "coroa-pesto",
+  "nome": "Coroa recheada de pesto",
+  "familia": "pao",
+  "forma": "anel de massa fatiado em gomos torcidos para cima, espiral verde de recheio aparente"
+ },
+ {
+  "id": "tortilla",
+  "nome": "Tortilla de trigo",
+  "familia": "pao_chato",
+  "forma": "disco fino creme com pintas marrons, bordas levemente curvadas"
+ },
+ {
+  "id": "panqueca-chinesa",
+  "nome": "Panqueca chinesa",
+  "familia": "pao_chato",
+  "forma": "disco de 12,5 cm finíssimo como papel, branco com bolhas"
+ },
+ {
+  "id": "chapati",
+  "nome": "Chapati",
+  "familia": "pao_chato",
+  "forma": "disco fino de 18 cm, castanho-claro com pintas escuras, infla como balão"
+ },
+ {
+  "id": "poori",
+  "nome": "Poori",
+  "familia": "pao",
+  "forma": "disco de 12,5 cm frito, estufado como bola dourada"
+ },
+ {
+  "id": "paratha",
+  "nome": "Paratha",
+  "familia": "pao_chato",
+  "forma": "quadrado de 18 cm folhado, dourado e brilhante de manteiga"
+ },
+ {
+  "id": "kugelhopf",
+  "nome": "Kugelhopf",
+  "familia": "pao",
+  "forma": "bolo-pão alto em coroa com caneluras espirais e furo central, nozes no topo"
+ },
+ {
+  "id": "brioche",
+  "nome": "Brioche à tête",
+  "familia": "pao",
+  "forma": "pão em fôrma canelada com bola grande e uma cabecinha redonda em cima, dourado escuro brilhante"
+ },
+ {
+  "id": "bagel",
+  "nome": "Bagel",
+  "familia": "pao",
+  "forma": "anel grosso de massa, superfície lisa e brilhante dourada"
+ },
+ {
+  "id": "pao-bicarbonato",
+  "nome": "Pão de bicarbonato",
+  "familia": "pao",
+  "forma": "pão redondo rústico de 20 cm, castanho, cruz funda no topo"
+ },
+ {
+  "id": "pao-de-milho",
+  "nome": "Pão de milho",
+  "familia": "pao",
+  "forma": "disco grosso amarelo-dourado assado em frigideira de ferro, grãos de milho visíveis"
+ },
+ {
+  "id": "pao-abobrinha",
+  "nome": "Pão de abobrinha",
+  "familia": "pao",
+  "forma": "bolo retangular de fôrma, miolo úmido com fios verdes e pinoli"
+ },
+ {
+  "id": "milho-grao",
+  "nome": "Grãos de milho",
+  "familia": "monte",
+  "forma": "grãos amarelos pequenos e arredondados"
+ },
+ {
+  "id": "tomate-cereja",
+  "nome": "Tomate-cereja",
+  "familia": "esferoide",
+  "forma": "esfera pequena vermelha ou amarela"
+ },
+ {
+  "id": "presunto-parma",
+  "nome": "Presunto de Parma",
+  "familia": "carne",
+  "forma": "fatia finíssima rosada com borda branca de gordura"
+ },
+ {
+  "id": "queijo-cabra",
+  "nome": "Queijo de cabra",
+  "familia": "queijo",
+  "forma": "cilindro branco macio"
+ },
+ {
+  "id": "cebola-roxa",
+  "nome": "Cebola roxa",
+  "familia": "esferoide",
+  "forma": "globo roxo em camadas"
+ },
+ {
+  "id": "azeitona",
+  "nome": "Azeitona",
+  "familia": "caroco",
+  "forma": "oval pequena preta ou verde"
+ },
+ {
+  "id": "pesto",
+  "nome": "Pesto",
+  "familia": "pasta",
+  "forma": "pasta verde brilhante"
+ },
+ {
+  "id": "nozes",
+  "nome": "Nozes",
+  "familia": "castanha",
+  "forma": "metade enrugada castanho-clara"
+ },
+ {
+  "id": "maca",
+  "nome": "Maçã",
+  "familia": "esferoide",
+  "forma": "esfera achatada vermelha, verde ou amarela, polpa branca"
+ },
+ {
+  "id": "pera",
+  "nome": "Pera",
+  "familia": "esferoide",
+  "forma": "gota com base larga e pescoço fino, verde, amarela ou rosada, com cabo"
+ },
+ {
+  "id": "ruibarbo",
+  "nome": "Ruibarbo",
+  "familia": "talo",
+  "forma": "talo comprido rosa-avermelhado tipo aipo, folhas grandes verdes"
+ },
+ {
+  "id": "abacaxi",
+  "nome": "Abacaxi",
+  "familia": "tropical",
+  "forma": "oval alto com casca em losangos marrom-dourada e coroa de folhas pontudas; polpa amarela com miolo fibroso"
+ },
+ {
+  "id": "abacaxi-anao",
+  "nome": "Abacaxi-anão",
+  "familia": "tropical",
+  "forma": "abacaxi pequeno do tamanho de uma mão, mesma casca e coroa"
+ },
+ {
+  "id": "cereja",
+  "nome": "Cereja",
+  "familia": "caroco",
+  "forma": "esfera pequena vermelho-escura brilhante com talo verde"
+ },
+ {
+  "id": "manga",
+  "nome": "Manga",
+  "familia": "tropical",
+  "forma": "oval achatada, casca verde, amarela ou vermelha, polpa laranja, caroço chato grande"
+ },
+ {
+  "id": "pessego",
+  "nome": "Pêssego",
+  "familia": "caroco",
+  "forma": "esfera aveludada amarelo-avermelhada com sulco lateral"
+ },
+ {
+  "id": "nectarina",
+  "nome": "Nectarina",
+  "familia": "caroco",
+  "forma": "esfera lisa vermelho-dourada brilhante"
+ },
+ {
+  "id": "ameixa",
+  "nome": "Ameixa",
+  "familia": "caroco",
+  "forma": "oval pequena roxa com caroço"
+ },
+ {
+  "id": "laranja",
+  "nome": "Laranja",
+  "familia": "citrico",
+  "forma": "esfera laranja de casca porosa, gomos internos"
+ },
+ {
+  "id": "lima",
+  "nome": "Lima",
+  "familia": "citrico",
+  "forma": "esfera pequena verde brilhante"
+ },
+ {
+  "id": "grapefruit",
+  "nome": "Grapefruit",
+  "familia": "citrico",
+  "forma": "esfera grande amarelo-rosada, polpa vermelha"
+ },
+ {
+  "id": "kinkan",
+  "nome": "Laranjinha kinkan",
+  "familia": "citrico",
+  "forma": "oval mínima laranja brilhante, do tamanho de uma uva grande"
+ },
+ {
+  "id": "mexerica",
+  "nome": "Mexerica",
+  "familia": "citrico",
+  "forma": "esfera achatada laranja de casca solta"
+ },
+ {
+  "id": "morango",
+  "nome": "Morango",
+  "familia": "baga",
+  "forma": "cone vermelho com sementinhas na pele e cálice verde"
+ },
+ {
+  "id": "framboesa",
+  "nome": "Framboesa",
+  "familia": "baga",
+  "forma": "cúpula oca vermelha de bolinhas"
+ },
+ {
+  "id": "groselha",
+  "nome": "Groselha vermelha ou preta",
+  "familia": "cacho",
+  "forma": "cacho de bagas translúcidas presas num cabinho fino"
+ },
+ {
+  "id": "blueberry",
+  "nome": "Blueberry",
+  "familia": "baga",
+  "forma": "bolinha azul-acinzentada com pó aveludado e coroinha"
+ },
+ {
+  "id": "amora",
+  "nome": "Amora",
+  "familia": "baga",
+  "forma": "bolinha alongada preta-arroxeada de grãos"
+ },
+ {
+  "id": "uva",
+  "nome": "Uva",
+  "familia": "cacho",
+  "forma": "bago oval verde ou roxo em cacho"
+ },
+ {
+  "id": "melao-cantalupo",
+  "nome": "Melão cantalupo",
+  "familia": "esferoide",
+  "forma": "esfera com casca vincada em gomos e rendada, polpa laranja, sementes no centro"
+ },
+ {
+  "id": "kiwi",
+  "nome": "Kiwi",
+  "familia": "tropical",
+  "forma": "oval peludo marrom, polpa verde com anel de sementes pretas"
+ },
+ {
+  "id": "tamara",
+  "nome": "Tâmara",
+  "familia": "fuso",
+  "forma": "oval alongada marrom brilhante e enrugada, caroço comprido"
+ },
+ {
+  "id": "figo",
+  "nome": "Figo",
+  "familia": "tropical",
+  "forma": "gota roxa com pescoço, polpa rosada cheia de sementes"
+ },
+ {
+  "id": "maracuja",
+  "nome": "Maracujá",
+  "familia": "tropical",
+  "forma": "esfera roxa ou amarela enrugada, polpa amarela com sementes pretas"
+ },
+ {
+  "id": "sapotilha",
+  "nome": "Sapotilha",
+  "familia": "tropical",
+  "forma": "oval pequena marrom de casca áspera, polpa caramelo"
+ },
+ {
+  "id": "nespera",
+  "nome": "Ameixa-amarela (nêspera)",
+  "familia": "caroco",
+  "forma": "oval pequena amarelo-alaranjada com caroços grandes"
+ },
+ {
+  "id": "caqui",
+  "nome": "Caqui",
+  "familia": "esferoide",
+  "forma": "esfera achatada laranja brilhante com sépalas no topo"
+ },
+ {
+  "id": "feijoa",
+  "nome": "Feijoa",
+  "familia": "tropical",
+  "forma": "oval verde-escuro fosca"
+ },
+ {
+  "id": "tamarillo",
+  "nome": "Tamarillo",
+  "familia": "caroco",
+  "forma": "oval vermelho brilhante em forma de ovo, com cabo"
+ },
+ {
+  "id": "pepino-melao",
+  "nome": "Pepino-melão",
+  "familia": "tropical",
+  "forma": "oval amarelo com listras roxas, polpa amarelo-clara"
+ },
+ {
+  "id": "babaco",
+  "nome": "Babaco",
+  "familia": "tropical",
+  "forma": "fruto alongado de cinco faces, verde a amarelo, polpa rosa-alaranjada"
+ },
+ {
+  "id": "curuba",
+  "nome": "Curuba",
+  "familia": "tropical",
+  "forma": "maracujá alongado tipo banana, amarelo"
+ },
+ {
+  "id": "physalis",
+  "nome": "Physalis",
+  "familia": "baga",
+  "forma": "bolinha laranja dentro de uma lanterna de palha bege"
+ },
+ {
+  "id": "goiaba",
+  "nome": "Goiaba",
+  "familia": "tropical",
+  "forma": "esfera verde-amarelada, polpa rosa com sementes"
+ },
+ {
+  "id": "papaia",
+  "nome": "Papaia",
+  "familia": "tropical",
+  "forma": "pera alongada verde-amarelada, polpa rosa-alaranjada com sementes pretas no centro"
+ },
+ {
+  "id": "mangostao",
+  "nome": "Mangostão",
+  "familia": "tropical",
+  "forma": "esfera roxa-escura de casca dura com coroa verde, gomos brancos dentro"
+ },
+ {
+  "id": "roma",
+  "nome": "Romã",
+  "familia": "tropical",
+  "forma": "esfera vermelha com coroinha, interior de sementes rubi em favos brancos"
+ },
+ {
+  "id": "figo-da-india",
+  "nome": "Figo-da-índia",
+  "familia": "tropical",
+  "forma": "oval verde a laranja com espinhos finos, polpa amarela ou rosada"
+ },
+ {
+  "id": "granadilla",
+  "nome": "Granadilla",
+  "familia": "tropical",
+  "forma": "esfera laranja lisa de casca dura, polpa gelatinosa cinza com sementes"
+ },
+ {
+  "id": "carambola",
+  "nome": "Carambola",
+  "familia": "tropical",
+  "forma": "fruto amarelo cerado de cinco quinas; fatias em estrela"
+ },
+ {
+  "id": "lichia",
+  "nome": "Lichia",
+  "familia": "tropical",
+  "forma": "bolinha de casca rosada áspera, polpa branca perolada, semente marrom"
+ },
+ {
+  "id": "kiwano",
+  "nome": "Kiwano",
+  "familia": "tropical",
+  "forma": "oval laranja cheio de chifrinhos, miolo verde gelatinoso"
+ },
+ {
+  "id": "rambutan",
+  "nome": "Rambutan",
+  "familia": "tropical",
+  "forma": "bolinha vermelha coberta de pelos macios"
+ },
+ {
+  "id": "pitaia",
+  "nome": "Pitaia",
+  "familia": "tropical",
+  "forma": "oval rosa-choque ou amarela com escamas, polpa branca ou rosa com pontinhos pretos"
+ },
+ {
+  "id": "durian",
+  "nome": "Durian",
+  "familia": "tropical",
+  "forma": "fruto grande verde-oliva coberto de espinhos grossos, polpa creme"
+ },
+ {
+  "id": "banana",
+  "nome": "Banana",
+  "familia": "fuso",
+  "forma": "curva amarela"
+ },
+ {
+  "id": "frutas-secas",
+  "nome": "Frutas secas (abricó, figo, pêssego, tâmara, ameixa)",
+  "familia": "monte",
+  "forma": "pedaços enrugados marrons e laranjas"
+ },
+ {
+  "id": "calda-de-acucar",
+  "nome": "Calda de açúcar",
+  "familia": "recipiente",
+  "forma": "líquido transparente xaroposo"
+ },
+ {
+  "id": "vinho-tinto",
+  "nome": "Vinho tinto",
+  "familia": "recipiente",
+  "forma": "líquido vermelho-escuro em garrafa"
+ },
+ {
+  "id": "rum",
+  "nome": "Rum ou conhaque",
+  "familia": "recipiente",
+  "forma": "líquido âmbar em garrafa"
+ },
+ {
+  "id": "zabaione",
+  "nome": "Calda de zabaione",
+  "familia": "recipiente",
+  "forma": "creme amarelo-claro espumoso"
+ },
+ {
+  "id": "massa-tempura",
+  "nome": "Massa de tempura",
+  "familia": "recipiente",
+  "forma": "líquido grosso creme bem fino"
+ },
+ {
+  "id": "couli",
+  "nome": "Couli de berries",
+  "familia": "recipiente",
+  "forma": "calda vermelha lisa e brilhante"
+ },
+ {
+  "id": "creme-de-leite",
+  "nome": "Creme de leite",
+  "familia": "recipiente",
+  "forma": "líquido branco espesso"
+ },
+ {
+  "id": "merengue-frances",
+  "nome": "Merengue francês",
+  "familia": "pasta",
+  "forma": "espuma branca brilhante com picos"
+ },
+ {
+  "id": "merengue-italiano",
+  "nome": "Merengue italiano",
+  "familia": "pasta",
+  "forma": "espuma densa acetinada em picos firmes"
+ },
+ {
+  "id": "merengue-suico",
+  "nome": "Merengue suíço",
+  "familia": "pasta",
+  "forma": "espuma branca muito firme"
+ },
+ {
+  "id": "pavlova",
+  "nome": "Pavlova",
+  "familia": "merengue",
+  "forma": "disco de merengue de 20 cm com borda alta e cavidade, recheio de creme e frutas"
+ },
+ {
+  "id": "concha-merengue",
+  "nome": "Concha de merengue",
+  "familia": "merengue",
+  "forma": "gota arredondada e lisa, branca"
+ },
+ {
+  "id": "ninho-merengue",
+  "nome": "Ninho de merengue",
+  "familia": "merengue",
+  "forma": "cesta espiral estriada de 5 cm"
+ },
+ {
+  "id": "disco-merengue",
+  "nome": "Disco de merengue",
+  "familia": "merengue",
+  "forma": "disco plano em espiral"
+ },
+ {
+  "id": "gelatina-folha",
+  "nome": "Gelatina em folha",
+  "familia": "placa",
+  "forma": "folha retangular transparente com textura de grade"
+ },
+ {
+  "id": "gelatina-po",
+  "nome": "Gelatina em pó",
+  "familia": "monte",
+  "forma": "pó granulado"
+ },
+ {
+  "id": "musse-fruta",
+  "nome": "Musse de fruta",
+  "familia": "recipiente",
+  "forma": "creme aerado colorido em taça"
+ },
+ {
+  "id": "musse-chocolate",
+  "nome": "Musse de chocolate",
+  "familia": "recipiente",
+  "forma": "creme marrom escuro aerado"
+ },
+ {
+  "id": "sufle-frio",
+  "nome": "Suflê frio de framboesa",
+  "familia": "recipiente",
+  "forma": "cilindro rosa acima da borda do pote"
+ },
+ {
+  "id": "gelatina-frutas",
+  "nome": "Gelatina de frutas",
+  "familia": "bolo",
+  "forma": "bloco translúcido com frutas suspensas em camadas"
+ },
+ {
+  "id": "creme-anglaise",
+  "nome": "Creme anglaise",
+  "familia": "recipiente",
+  "forma": "líquido amarelo espesso"
+ },
+ {
+  "id": "creme-patissiere",
+  "nome": "Creme pâtissière",
+  "familia": "pasta",
+  "forma": "creme amarelo grosso"
+ },
+ {
+  "id": "creme-musseline",
+  "nome": "Creme mousseline",
+  "familia": "pasta",
+  "forma": "creme amarelado firme de saco"
+ },
+ {
+  "id": "custard",
+  "nome": "Custard",
+  "familia": "recipiente",
+  "forma": "creme dourado em travessa com noz-moscada"
+ },
+ {
+  "id": "bavaroise",
+  "nome": "Bavaroise",
+  "familia": "bolo",
+  "forma": "cúpula alta canelada desenformada"
+ },
+ {
+  "id": "creme-brulee",
+  "nome": "Creme brûlée",
+  "familia": "recipiente",
+  "forma": "ramequim com crosta de vidro âmbar"
+ },
+ {
+  "id": "creme-caramelo",
+  "nome": "Creme caramelo",
+  "familia": "bolo",
+  "forma": "pudim pequeno com calda escorrendo"
+ },
+ {
+  "id": "pudim-arroz",
+  "nome": "Pudim de arroz",
+  "familia": "recipiente",
+  "forma": "grãos em creme em travessa, crosta dourada"
+ },
+ {
+  "id": "sufle-baunilha",
+  "nome": "Suflê de baunilha",
+  "familia": "recipiente",
+  "forma": "cilindro dourado crescido acima do ramequim"
+ },
+ {
+  "id": "charlotte-maca",
+  "nome": "Charlotte de maçã",
+  "familia": "bolo",
+  "forma": "cúpula de fatias de pão douradas sobrepostas"
+ },
+ {
+  "id": "pudim-vapor",
+  "nome": "Pudim no vapor",
+  "familia": "recipiente",
+  "forma": "fôrma tampada com alumínio e alça de barbante"
+ },
+ {
+  "id": "calda-acucar",
+  "nome": "Calda de açúcar",
+  "familia": "recipiente",
+  "forma": "líquido transparente viscoso"
+ },
+ {
+  "id": "caramelo",
+  "nome": "Caramelo",
+  "familia": "recipiente",
+  "forma": "líquido âmbar brilhante"
+ },
+ {
+  "id": "praline",
+  "nome": "Praline",
+  "familia": "confeito",
+  "forma": "placa âmbar com castanhas, quebrada em cacos"
+ },
+ {
+  "id": "nougatine",
+  "nome": "Nougatine",
+  "familia": "confeito",
+  "forma": "placa fina âmbar com amêndoas laminadas"
+ },
+ {
+  "id": "ganache",
+  "nome": "Ganache",
+  "familia": "pasta",
+  "forma": "creme marrom brilhante"
+ },
+ {
+  "id": "chocolate-barra",
+  "nome": "Barra de chocolate",
+  "familia": "barra",
+  "forma": "retângulo marrom"
+ },
+ {
+  "id": "taca-chocolate",
+  "nome": "Taça de chocolate",
+  "familia": "confeito",
+  "forma": "copinho fino canelado de chocolate"
+ },
+ {
+  "id": "formas-chocolate",
+  "nome": "Formas de chocolate",
+  "familia": "confeito",
+  "forma": "discos e quadrados finos de 2 mm"
+ },
+ {
+  "id": "fita-chocolate",
+  "nome": "Fita de chocolate",
+  "familia": "confeito",
+  "forma": "fita larga ondulada flexível"
+ },
+ {
+  "id": "gateau-deux-pierre",
+  "nome": "Gâteau des Deux Pierre",
+  "familia": "bolo",
+  "forma": "bolo redondo de 23 cm envolto em fitas de chocolate, leque no topo"
+ },
+ {
+  "id": "sorvete-bola",
+  "nome": "Bola de sorvete",
+  "familia": "esferoide",
+  "forma": "esfera"
+ },
+ {
+  "id": "semifreddo",
+  "nome": "Semifreddo",
+  "familia": "bolo",
+  "forma": "cilindro rosado fatiado"
+ },
+ {
+  "id": "parfait",
+  "nome": "Parfait",
+  "familia": "bolo",
+  "forma": "cilindro de 8 cm amarelo-claro"
+ },
+ {
+  "id": "sorbet",
+  "nome": "Sorbet",
+  "familia": "esferoide",
+  "forma": "bola lisa colorida"
+ },
+ {
+  "id": "fruit-givre",
+  "nome": "Limão recheado de sorbet",
+  "familia": "citrico",
+  "forma": "casca de limão oca com cúpula de sorbet e tampa"
+ },
+ {
+  "id": "granita",
+  "nome": "Granita de café",
+  "familia": "recipiente",
+  "forma": "cristais de gelo marrons soltos em taça"
+ },
+ {
+  "id": "folha-chocolate",
+  "nome": "Folha de chocolate",
+  "familia": "confeito",
+  "forma": "folha com veios marcados"
+ },
+ {
+  "id": "fio-caramelo",
+  "nome": "Fios de caramelo",
+  "familia": "confeito",
+  "forma": "rendado âmbar de fios"
+ },
+ {
+  "id": "espiral-chocolate",
+  "nome": "Espiral de chocolate",
+  "familia": "confeito",
+  "forma": "lasca enrolada"
+ },
+ {
+  "id": "cesta-ondulada",
+  "nome": "Cesta ondulada",
+  "familia": "confeito",
+  "forma": "cesta dourada em forma de sol com bordas onduladas"
+ },
+ {
+  "id": "cigarro-chocolate",
+  "nome": "Cigarro de chocolate",
+  "familia": "confeito",
+  "forma": "tubinho enrolado"
+ },
+ {
+  "id": "raspas-carameladas",
+  "nome": "Raspas carameladas",
+  "familia": "confeito",
+  "forma": "tiras finas translúcidas açucaradas"
+ },
+ {
+  "id": "pennant-maracuja",
+  "nome": "Pennant de maracujá",
+  "familia": "confeito",
+  "forma": "biscoito curvo em bandeirola com sementes pretas"
+ },
+ {
+  "id": "manteiga-conhaque",
+  "nome": "Manteiga com conhaque",
+  "familia": "pasta",
+  "forma": "pasta clara"
+ },
+ {
+  "id": "butterscotch",
+  "nome": "Molho butterscotch",
+  "familia": "recipiente",
+  "forma": "calda castanha"
+ },
+ {
+  "id": "chantilly",
+  "nome": "Creme chantilly",
+  "familia": "pasta",
+  "forma": "creme branco em picos"
+ },
+ {
+  "id": "pate-brisee",
+  "nome": "Pâte brisée",
+  "familia": "massa_bola",
+  "forma": "bola de massa clara"
+ },
+ {
+  "id": "fundo-torta",
+  "nome": "Fundo de torta",
+  "familia": "torta",
+  "forma": "casca de massa dourada em fôrma canelada"
+ },
+ {
+  "id": "feijoes-assar",
+  "nome": "Feijões para assar",
+  "familia": "monte",
+  "forma": "bolinhas de cerâmica ou metal"
+ },
+ {
+  "id": "barquinha",
+  "nome": "Barquinha",
+  "familia": "torta",
+  "forma": "tortinha oval em forma de barco com frutas"
+ },
+ {
+  "id": "torta-tampa",
+  "nome": "Torta com tampa",
+  "familia": "torta",
+  "forma": "prato de torta com tampa e furo central"
+ },
+ {
+  "id": "torta-trelica",
+  "nome": "Torta com treliça",
+  "familia": "torta",
+  "forma": "torta com tiras cruzadas"
+ },
+ {
+  "id": "rosinha-massa",
+  "nome": "Rosinha de massa",
+  "familia": "folhado",
+  "forma": "flor de pétalas de massa"
+ },
+ {
+  "id": "tarte-tatin",
+  "nome": "Tarte Tatin",
+  "familia": "torta",
+  "forma": "torta invertida com frutas caramelizadas"
+ },
+ {
+  "id": "pate-choux",
+  "nome": "Pâte à choux",
+  "familia": "pasta",
+  "forma": "massa amarela lisa brilhante"
+ },
+ {
+  "id": "bomba-choux",
+  "nome": "Bombinha de choux",
+  "familia": "choux",
+  "forma": "bolinha oca dourada"
+ },
+ {
+  "id": "eclair",
+  "nome": "Éclair",
+  "familia": "choux",
+  "forma": "bastão dourado de 8 cm com cobertura brilhante"
+ },
+ {
+  "id": "profiterole",
+  "nome": "Profiterole",
+  "familia": "choux",
+  "forma": "bombinha com calda de chocolate"
+ },
+ {
+  "id": "choux-frito",
+  "nome": "Choux frito",
+  "familia": "choux",
+  "forma": "bastão de 3 cm frito e polvilhado"
+ },
+ {
+  "id": "croquembouche",
+  "nome": "Croquembouche",
+  "familia": "choux",
+  "forma": "cone alto de bombinhas coladas com caramelo sobre disco de nougatine"
+ },
+ {
+  "id": "filo",
+  "nome": "Massa filo",
+  "familia": "placa",
+  "forma": "folhas finas translúcidas"
+ },
+ {
+  "id": "baklava",
+  "nome": "Baklava",
+  "familia": "folhado",
+  "forma": "camadas de filo cortadas em losangos com mel"
+ },
+ {
+  "id": "filo-cigarro",
+  "nome": "Cigarro de filo",
+  "familia": "folhado",
+  "forma": "rolinho dourado"
+ },
+ {
+  "id": "filo-triangulo",
+  "nome": "Triângulo de filo",
+  "familia": "folhado",
+  "forma": "triângulo folhado"
+ },
+ {
+  "id": "filo-bolsa",
+  "nome": "Bolsinha de filo",
+  "familia": "folhado",
+  "forma": "trouxinha torcida no topo"
+ },
+ {
+  "id": "strudel",
+  "nome": "Strudel",
+  "familia": "folhado",
+  "forma": "rolo dourado em ferradura"
+ },
+ {
+  "id": "detrempe",
+  "nome": "Détrempe",
+  "familia": "massa_bola",
+  "forma": "bola de massa com X no topo"
+ },
+ {
+  "id": "bouchee",
+  "nome": "Bouchée",
+  "familia": "folhado",
+  "forma": "cilindro folhado oco"
+ },
+ {
+  "id": "tranche",
+  "nome": "Tranche",
+  "familia": "folhado",
+  "forma": "retângulo folhado com bordas altas"
+ },
+ {
+  "id": "feuillete",
+  "nome": "Feuilleté",
+  "familia": "folhado",
+  "forma": "losango folhado com bordas cruzadas"
+ },
+ {
+  "id": "sanduiche-victoria",
+  "nome": "Sanduíche Victoria",
+  "familia": "bolo",
+  "forma": "dois discos de bolo com geleia"
+ },
+ {
+  "id": "bolo-frutas",
+  "nome": "Bolo de frutas",
+  "familia": "bolo",
+  "forma": "bolo redondo alto escuro com frutas"
+ },
+ {
+  "id": "bolo-gengibre",
+  "nome": "Bolo de gengibre",
+  "familia": "bolo",
+  "forma": "bolo quadrado escuro"
+ },
+ {
+  "id": "pao-de-lo",
+  "nome": "Pão-de-ló",
+  "familia": "bolo",
+  "forma": "disco de bolo amarelo fofo"
+ },
+ {
+  "id": "rocambole",
+  "nome": "Rocambole",
+  "familia": "bolo",
+  "forma": "rolo com espiral de recheio"
+ },
+ {
+  "id": "bolo-de-anjo",
+  "nome": "Bolo de anjo",
+  "familia": "bolo",
+  "forma": "anel alto branco com furo central"
+ },
+ {
+  "id": "torta-chocolate",
+  "nome": "Torta de chocolate",
+  "familia": "bolo",
+  "forma": "bolo redondo denso escuro"
+ },
+ {
+  "id": "bolo-camadas",
+  "nome": "Bolo em camadas",
+  "familia": "bolo",
+  "forma": "bolo cilíndrico com camadas e cobertura"
+ },
+ {
+  "id": "bolo-merengue",
+  "nome": "Bolo de merengue",
+  "familia": "bolo",
+  "forma": "discos de merengue intercalados com musse, cigarros na lateral"
+ },
+ {
+  "id": "base-biscoito",
+  "nome": "Base de biscoito",
+  "familia": "pao_chato",
+  "forma": "disco de migalhas compactadas"
+ },
+ {
+  "id": "cheesecake-gelado",
+  "nome": "Cheesecake gelado",
+  "familia": "bolo",
+  "forma": "cilindro rosado sobre base de biscoito"
+ },
+ {
+  "id": "cheesecake-assado",
+  "nome": "Cheesecake assado",
+  "familia": "bolo",
+  "forma": "torta alta dourada com desenho de açúcar rendado"
+ },
+ {
+  "id": "glace-real",
+  "nome": "Glacê real",
+  "familia": "pasta",
+  "forma": "pasta branca dura"
+ },
+ {
+  "id": "glace-chocolate",
+  "nome": "Glacê de chocolate",
+  "familia": "recipiente",
+  "forma": "cobertura espelhada escura"
+ },
+ {
+  "id": "sachertorte",
+  "nome": "Sachertorte",
+  "familia": "bolo",
+  "forma": "bolo coberto de chocolate com nome escrito"
+ },
+ {
+  "id": "glace-manteiga",
+  "nome": "Glacê de manteiga",
+  "familia": "pasta",
+  "forma": "creme amarelado fofo"
+ },
+ {
+  "id": "lace-tuile",
+  "nome": "Lace tuile",
+  "familia": "confeito",
+  "forma": "telha rendada curva"
+ },
+ {
+  "id": "operetta",
+  "nome": "Operetta",
+  "familia": "bolo",
+  "forma": "quadradinho em camadas com folha dourada"
+ },
+ {
+  "id": "financier",
+  "nome": "Financier",
+  "familia": "confeito",
+  "forma": "bolinho oval dourado"
+ },
+ {
+  "id": "physalis-caramelada",
+  "nome": "Physalis caramelada",
+  "familia": "baga",
+  "forma": "fruta laranja brilhante com pétalas secas para cima"
+ },
+ {
+  "id": "bola-sorvete-coberta",
+  "nome": "Bolinha de sorvete coberta",
+  "familia": "esferoide",
+  "forma": "esfera de chocolate no palito"
+ },
+ {
+  "id": "tortinha-limao",
+  "nome": "Tortinha de limão",
+  "familia": "torta",
+  "forma": "tortinha com topo caramelizado"
+ },
+ {
+  "id": "miroir",
+  "nome": "Miroir de maracujá",
+  "familia": "bolo",
+  "forma": "disco de 4 cm com topo espelhado amarelo"
+ },
+ {
+  "id": "trufa-amendoa",
+  "nome": "Trufa de amêndoa",
+  "familia": "esferoide",
+  "forma": "bolinha branca rugosa"
+ },
+ {
+  "id": "biscoito-cortado",
+  "nome": "Biscoito cortado",
+  "familia": "confeito",
+  "forma": "biscoito plano recortado"
+ },
+ {
+  "id": "shortbread",
+  "nome": "Shortbread",
+  "familia": "confeito",
+  "forma": "retângulos dourados açucarados"
+ },
+ {
+  "id": "biscoito-roseta",
+  "nome": "Biscoito roseta",
+  "familia": "confeito",
+  "forma": "roseta estriada"
+ },
+ {
+  "id": "brandy-snap",
+  "nome": "Biscoito de conhaque",
+  "familia": "confeito",
+  "forma": "tubo rendado dourado"
+ },
+ {
+  "id": "biscoito-champagne",
+  "nome": "Biscoito champagne",
+  "familia": "confeito",
+  "forma": "palito de 10 cm com pérolas de açúcar"
+ },
+ {
+  "id": "tuile",
+  "nome": "Tuile",
+  "familia": "confeito",
+  "forma": "telha curva fina"
+ },
+ {
+  "id": "tulipa",
+  "nome": "Tulipa",
+  "familia": "confeito",
+  "forma": "cestinha ondulada de biscoito"
+ }
+]
