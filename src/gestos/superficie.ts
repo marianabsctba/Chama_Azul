@@ -6,6 +6,44 @@ import { anguloDaEstacao } from './mesa';
 import { Particulas } from '../pecas/particulas';
 import { audio } from '../motor/audio';
 
+/**
+ * Como o livro limpa em cada passo: com a faca rente (gordura, pele, nervos), sob água,
+ * com escova, com os dedos, ou com pano e papel.
+ */
+export type ModoLimpar = 'lamina' | 'agua' | 'escova' | 'mao' | 'pano' | 'utensilio';
+
+export function modoLimpar(acao: string, alvo: string, utensilio: string, parametro: string): ModoLimpar {
+  const u = (utensilio || '').toLowerCase();
+  const t = `${acao} ${alvo} ${parametro}`.toLowerCase();
+  if (/faca|faquinha|cutelo|descascador|tesoura/.test(u)) return 'lamina';
+  if (/escova/.test(u)) return 'escova';
+  if (/papel|pano|toalha|centr[ií]fuga/.test(u)) return 'pano';
+  if (/m[aã]o|dedo|palma|polegar/.test(u)) return /[aá]gua/.test(u) ? 'agua' : 'mao';
+  if (/[aá]gua|torneira|escorredor/.test(u)) return 'agua';
+  if (u) return 'utensilio';
+  // sem utensílio no livro: o texto diz
+  if (/gordura|nervo|tend[aã]o|membrana|cartilag|aparas|bordas/.test(t)) return 'lamina';
+  if (/lavar|enxagu|[aá]gua|molho/.test(t)) return 'agua';
+  if (/semente|folhas|cabelos|talo|caule|peles|dedo|casca|puxad/.test(t)) return 'mao';
+  return 'pano';
+}
+
+/** Cor do que sai na limpeza: gordura e pele claras, terra escura, umidade azulada. */
+function corDaSujeira(modo: ModoLimpar, texto: string): THREE.Color {
+  const t = texto.toLowerCase();
+  if (/secar|umidade|escorrer/.test(t)) return new THREE.Color('#a9cfe0');
+  if (modo === 'lamina' || /gordura|pele|nervo|membrana|tend/.test(t)) {
+    if (/gordura|toucinho/.test(t)) return new THREE.Color('#f3ead8');
+    if (/pele/.test(t)) return new THREE.Color('#e9cfb4');
+    if (/escur|sangue|b[ií]lis/.test(t)) return new THREE.Color('#5a2a26');
+    return new THREE.Color('#efe6dc');
+  }
+  if (/semente/.test(t)) return new THREE.Color('#f2e6b0');
+  if (/sal\b|a[cç][uú]car|farinha/.test(t)) return new THREE.Color('#fbf8f0');
+  if (/folha|talo|caule/.test(t)) return new THREE.Color('#a8a060');
+  return new THREE.Color('#6d5a3a');
+}
+
 /** Cor da cobertura conforme o que se passa na peça. */
 function corDaCobertura(texto: string): THREE.Color {
   const t = texto.toLowerCase();
@@ -33,15 +71,15 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   const corCobrir = corDaCobertura(texto);
   peca.zerarCobertura();
   peca.definirElegiveis(ctx.camera);
-  if (v === 'limpar') {
-    // sujeirinhas ou umidade para tirar
-    const sujeira = /secar/.test(passo.acao) ? new THREE.Color('#a9cfe0') : new THREE.Color('#6d5a3a');
-    peca.salpicar(sujeira, 0.12, ctx.tecnica.id.length);
-  }
+  const modo: ModoLimpar | null = v === 'limpar' ? modoLimpar(passo.acao, passo.alvo, passo.utensilio, passo.parametro) : null;
+  const sujeira = modo ? corDaSujeira(modo, texto) : null;
+  if (sujeira) peca.salpicar(sujeira, 0.12, ctx.tecnica.id.length);
   const padrao = v === 'remover' ? 'remover' : v === 'limpar' ? 'limpar' : 'cobrir';
-  const ferramenta = mesa.pegarFerramenta(passo.utensilio, padrao);
+  // na água e com os dedos não há utensílio na mão; sem utensílio no livro e com faca no texto, a faca
+  const ferramenta = modo === 'agua' || modo === 'mao' ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(modo === 'lamina' && !/faca|faquinha|cutelo|descascador|tesoura/i.test(passo.utensilio) ? 'faca' : modo === 'pano' && !passo.utensilio ? 'pano' : passo.utensilio, padrao);
   const cor = v === 'remover' ? peca.corInterna : corCobrir;
-  const lascas = new Particulas(v === 'remover' ? '#c9b48a' : corCobrir, 120, v === 'remover' ? 'lasca' : 'esfera');
+  const corParticula = modo === 'agua' ? '#bfe4ff' : modo && sujeira ? sujeira : v === 'remover' ? '#c9b48a' : corCobrir;
+  const lascas = new Particulas(corParticula, modo === 'agua' ? 200 : 120, v === 'remover' || modo === 'lamina' ? 'lasca' : 'esfera');
   cena.add(lascas);
   const escala = peca.scale.x;
   const raio = Math.max(0.016, Math.max(peca.comprimento, peca.largura) * escala * 0.08, Math.min(peca.comprimento, peca.largura) * escala * 0.3);
@@ -50,7 +88,15 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   let ultimo: THREE.Vector3 | null = null;
   let excesso = 0;
   let girar = 0;
-  const verbo = { remover: 'Passe o utensílio sobre a peça, em faixas, até tirar tudo.', cobrir: 'Passe por toda a superfície de forma uniforme.', limpar: 'Esfregue até a superfície ficar limpa.' }[v as 'remover'] ?? 'Passe por toda a superfície.';
+  const verboLimpar: Record<ModoLimpar, string> = {
+    lamina: `Passe a faca rente à peça, em faixas, tirando ${passo.alvo}.`,
+    agua: 'Passe a peça sob a água, por todos os lados, até ficar limpa.',
+    escova: 'Esfregue com a escova, por todos os lados, até sair a sujeira.',
+    mao: `Com os dedos, tire ${passo.alvo}, por toda a peça.`,
+    pano: /secar/.test(passo.acao) ? 'Passe o pano por toda a peça até secar.' : 'Passe por toda a peça até ficar limpa.',
+    utensilio: `Passe o utensílio por toda a peça, tirando ${passo.alvo}.`,
+  };
+  const verbo = modo ? verboLimpar[modo] : { remover: 'Passe o utensílio sobre a peça, em faixas, até tirar tudo.', cobrir: 'Passe por toda a superfície de forma uniforme.' }[v as 'remover'] ?? 'Passe por toda a superfície.';
 
   const exec: Execucao = {
     concluido: false,
@@ -66,7 +112,8 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
       if (ponto && ferramenta) {
         const n = hit?.face?.normal.clone().transformDirection(hit.object.matrixWorld) ?? new THREE.Vector3(0, 1, 0);
         // cabo vindo da direita, de quem segura com a mão direita
-        mesa.ferramentaEm(ponto.clone().addScaledVector(n, 0.003), peca.rotation.y + Math.PI * 0.85, -0.6, 0);
+        // a faca entra quase deitada, rente à carne
+        mesa.ferramentaEm(ponto.clone().addScaledVector(n, 0.003), peca.rotation.y + Math.PI * 0.85, modo === 'lamina' ? -0.18 : -0.6, 0);
       }
       if (entrada.pressionado && hit) {
         const mov = ultimo ? hit.point.distanceTo(ultimo) : 0;
@@ -74,11 +121,14 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
         if (mov > 0.0004 || v === 'cobrir') {
           const ganho = peca.pintar(hit.point, raio, v === 'limpar' ? 'restaurar' : v === 'remover' ? 'remover' : 'cobrir', cor, 0.22 + mov * 20);
           if (ganho < 0.05) excesso += dt; // insistindo onde já está pronto
-          if (Math.random() < 0.6) {
-            const vel = v === 'remover' ? new THREE.Vector3((Math.random() - 0.5) * 0.4, 0.5, (Math.random() - 0.5) * 0.4) : new THREE.Vector3(0, -0.2, 0);
-            lascas.emitir(hit.point.clone().add(new THREE.Vector3(0, v === 'cobrir' ? 0.05 : 0.004, 0)), vel, { vida: 0.9, tam: v === 'remover' ? 0.006 : 0.0025, gravidade: -4 });
+          if (modo === 'agua') {
+            // fio de água caindo de cima sobre o ponto
+            for (let k = 0; k < 3; k++) lascas.emitir(hit.point.clone().add(new THREE.Vector3((Math.random() - 0.5) * 0.01, 0.16 + Math.random() * 0.04, (Math.random() - 0.5) * 0.01)), new THREE.Vector3(0, -1.2, 0), { vida: 0.35, tam: 0.0025, gravidade: -6 });
+          } else if (Math.random() < 0.6) {
+            const vel = v === 'remover' || modo === 'lamina' ? new THREE.Vector3((Math.random() - 0.5) * 0.4, 0.5, (Math.random() - 0.5) * 0.4) : new THREE.Vector3(0, -0.2, 0);
+            lascas.emitir(hit.point.clone().add(new THREE.Vector3(0, v === 'cobrir' ? 0.05 : 0.004, 0)), vel, { vida: 0.9, tam: v === 'remover' || modo === 'lamina' ? 0.006 : 0.0025, gravidade: -4 });
           }
-          audio.batedor(Math.min(1, mov * 400) * 0.5);
+          audio.batedor(Math.min(1, mov * 400) * (modo === 'agua' || modo === 'mao' ? 0.15 : 0.5));
         }
       } else {
         // escapar da borda por um instante não zera o arraste; só soltar o botão zera

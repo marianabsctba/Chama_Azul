@@ -572,22 +572,118 @@ export function gestoTestar(ctx: ContextoGesto): Execucao {
 const suaveCurva = (x: number) => x * x * (3 - 2 * x);
 
 /** Separar: puxar uma parte para longe da outra com calma. */
+/**
+ * Como o livro usa "separar": tirar uma parte do alimento (filés, metades), tirar algo que está
+ * nele (papel, barbante, espinhas, pele, tripa) ou tirar o alimento inteiro de onde está
+ * (da água, do cesto, escolher os bons).
+ */
+export type ModoSeparar = 'partes' | 'retirar' | 'inteira';
+
+const RE_RETIRAR = /papel|filme|barbante|^fio|palito|espeto|espinha|f[uú]rcula|esc[aá]pula|costela|carca[cç]a|pele|membrana|crosta|semente|miolo|tripa|barba|bico|pena|est[oô]mago|br[aâ]nquia|f[ií]gado|anel escuro|cord[aã]o|tend|toucinho|embalagem|raiz|talo duro|cone central|tutano|saco de tinta|m[uú]sculo|erva-cidreira|excesso|^aro|musselina|^bordas|^sementes|polpa das vagens|^miúdos|f[oô]rma de cima|fecho|toalhinha|colarinho|folha natural/i;
+const RE_INTEIRA = /escolh|firmes|[uú]midos|compactos|rol[ií]ço|cheias|da [aá]gua|[aá]gua fria|[aá]gua acidulada|[aá]gua com|no cesto|cesto de bambu|escorr|desenform|^mexilh[oõ]es|^b[uú]zios|^ovos$|forminhas|sobre a f[oô]rma|lado a lado|recipiente fechado|alguns fios|vasilha firmada|legumes firmes|gr[aã]os soltos|no buraco|encostado|^peixes|escolha do corte|^folhas de|na toalha|da musselina|casca seca|casca lisa|submerso|do l[ií]quido|no pano|na palma|dorso para cima|no moedor|^frutas$|^choux$|gema na cova/i;
+
+export function modoSeparar(alvo: string): ModoSeparar {
+  if (RE_INTEIRA.test(alvo)) return 'inteira';
+  if (RE_RETIRAR.test(alvo)) return 'retirar';
+  return 'partes';
+}
+
+/** O que sai do alimento no modo "retirar", com a forma do que é. */
+function objetoRetirado(alvo: string, peca: Peca): THREE.Object3D {
+  const L = peca.comprimento;
+  const W = Math.max(peca.largura, L * 0.4);
+  const H = peca.altura;
+  const g = new THREE.Group();
+  const mat = (cor: string, rough = 0.7, opts: THREE.MeshStandardMaterialParameters = {}) => new THREE.MeshStandardMaterial({ color: cor, roughness: rough, ...opts });
+  const a = alvo.toLowerCase();
+  if (/papel|filme|musselina|embalagem|toalhinha|colarinho/.test(a)) {
+    // folha por baixo do alimento, sobrando para o lado de puxar
+    const filme = /filme/.test(a);
+    const folha = new THREE.Mesh(new THREE.BoxGeometry(L * 1.5, 0.0008, W * 1.35), mat(filme ? '#e8f4ff' : /musselina/.test(a) ? '#f4efe2' : '#efe2c0', 0.85, filme ? { transparent: true, opacity: 0.5 } : {}));
+    folha.position.set(L * 0.2, filme ? H + 0.001 : 0.0005, 0);
+    g.add(folha);
+  } else if (/barbante|^fio|cord[aã]o|^aro|f[oô]rma de cima|fecho/.test(a)) {
+    // voltas de barbante em torno da peça
+    const metal = /^aro|f[oô]rma|fecho/.test(a);
+    const n = metal ? 1 : 3;
+    for (let i = 0; i < n; i++) {
+      const anel = new THREE.Mesh(new THREE.TorusGeometry(1, 0.06, 6, 28), metal ? mat('#c9ccd0', 0.3, { metalness: 0.9 }) : matFio);
+      anel.scale.set(W * 0.55, H * 0.6, 1);
+      anel.rotation.y = Math.PI / 2;
+      anel.position.set((i - (n - 1) / 2) * L * 0.25, H * 0.5, 0);
+      g.add(anel);
+    }
+  } else if (/palito|espeto/.test(a)) {
+    for (let i = 0; i < 2; i++) {
+      const pal = new THREE.Mesh(new THREE.CylinderGeometry(0.0015, 0.0015, W * 1.4, 6), mat('#d8b884', 0.8));
+      pal.rotation.x = Math.PI / 2;
+      pal.position.set((i - 0.5) * L * 0.4, H * 0.55, 0);
+      g.add(pal);
+    }
+  } else if (/espinha|f[uú]rcula|esc[aá]pula|costela|carca[cç]a|tutano/.test(a)) {
+    // ossos claros: espinha central com espinhas finas, ou osso em V
+    const osso = mat('#f1ead8', 0.5);
+    const fina = /espinha/.test(a);
+    const eixo = new THREE.Mesh(new THREE.CylinderGeometry(fina ? 0.0012 : 0.003, fina ? 0.0012 : 0.003, L * 0.8, 6), osso);
+    eixo.rotation.z = Math.PI / 2;
+    eixo.position.y = H + 0.002;
+    g.add(eixo);
+    for (let i = 0; i < (fina ? 9 : 4); i++) {
+      for (const lado of [-1, 1]) {
+        const r = new THREE.Mesh(new THREE.CylinderGeometry(fina ? 0.0006 : 0.002, fina ? 0.0006 : 0.002, W * (fina ? 0.32 : 0.4), 5), osso);
+        r.rotation.x = Math.PI / 2 - lado * 0.5;
+        r.position.set(-L * 0.35 + (i * L * 0.7) / ((fina ? 9 : 4) - 1), H + 0.002, lado * W * 0.14);
+        g.add(r);
+      }
+    }
+  } else if (/pele|membrana|crosta|^bordas|toucinho/.test(a)) {
+    // camada fina por cima, na cor da casca
+    const cor = /crosta|bordas/.test(a) ? '#d9a75a' : /toucinho/.test(a) ? '#f3e6dc' : /membrana/.test(a) ? '#efe4dc' : '#e9c9a8';
+    const capa = new THREE.Mesh(new THREE.BoxGeometry(L * 0.85, 0.0015, W * 0.75), mat(cor, 0.6, /membrana/.test(a) ? { transparent: true, opacity: 0.75 } : {}));
+    capa.position.y = H + 0.001;
+    g.add(capa);
+  } else {
+    // pedacinho escuro ou miúdo: tripa, barbas, bico, sementes, miolo, fígado, músculo...
+    const cor = /tripa|bico|barba|anel/.test(a) ? '#3a2a22' : /f[ií]gado|coral/.test(a) ? '#5a7a3a' : /semente|polpa/.test(a) ? '#2a1a12' : /tinta/.test(a) ? '#111111' : /m[uú]sculo/.test(a) ? '#f2e8dc' : /miolo|cone|talo|raiz/.test(a) ? '#c8d8a0' : /erva|folha/.test(a) ? '#4f7a3a' : '#8a5a40';
+    const n = /semente/.test(a) ? 14 : /barba|tripa/.test(a) ? 6 : 1;
+    for (let i = 0; i < n; i++) {
+      const b = new THREE.Mesh(n > 1 ? new THREE.SphereGeometry(Math.min(0.003, L * 0.03), 6, 5) : new THREE.SphereGeometry(1, 10, 8), mat(cor, 0.5));
+      if (n === 1) b.scale.set(L * 0.18, Math.max(H * 0.18, 0.004), W * 0.18);
+      b.position.set(n > 1 ? (i / n - 0.5) * L * 0.5 : 0, H + 0.002, n > 1 ? Math.sin(i * 2.3) * W * 0.08 : 0);
+      g.add(b);
+    }
+  }
+  g.traverse((o) => { if (o instanceof THREE.Mesh) o.castShadow = true; });
+  return g;
+}
+
 export function gestoSeparar(ctx: ContextoGesto): Execucao {
-  const { passo, mesa, estacao, entrada, camera, hud } = ctx;
+  const { passo, estacao, entrada, camera, hud } = ctx;
   const peca = prepararPeca(ctx);
-  if (peca.fragmentos.length < 2) peca.cortar('x', 0);
-  const lado = peca.fragmentos.filter((f) => f.x0 >= -1e-4);
+  const modo = modoSeparar(passo.alvo);
+  let lado = peca.fragmentos;
+  let retirado: THREE.Object3D | null = null;
+  if (modo === 'partes') {
+    if (peca.fragmentos.length < 2) peca.cortar('x', 0);
+    lado = peca.fragmentos.filter((f) => f.x0 >= -1e-4);
+  } else if (modo === 'retirar') {
+    lado = [];
+    retirado = objetoRetirado(passo.alvo, peca);
+    retirado.scale.setScalar(1);
+    peca.add(retirado);
+  }
   const alvoDist = 0.12 / Math.max(peca.scale.x, 0.01);
   let dist = 0;
   let pressa = 0;
   let segurando = false;
   const inicio = new THREE.Vector3();
+  const dica = modo === 'retirar' ? `Segure e puxe com calma para a direita, até a marca: ${passo.alvo}.` : modo === 'inteira' ? 'Segure e leve com calma para a direita, até a marca.' : 'Segure a parte da direita e puxe com calma para longe, até a marca.';
   const exec: Execucao = {
     concluido: false,
     nota: 0,
     comentario: '',
     atualizar(dt) {
-      hud.dica('Segure a parte da direita e puxe com calma para longe, até a marca.');
+      hud.dica(dica);
       const ponto = entrada.noPlano(camera, estacao.superficie.y + 0.02);
       if (entrada.cliqueNovo && ponto) {
         segurando = true;
@@ -601,17 +697,30 @@ export function gestoSeparar(ctx: ContextoGesto): Execucao {
         if (vel > 0.6) pressa += dt;
         dist = novo;
       }
-      for (const f of lado) peca.moverFragmento(f, new THREE.Vector3(dist + 0.004, dist > 0.01 ? 0.002 : 0, 0));
       const prog = clamp(dist / alvoDist);
-      hud.medidores([{ rotulo: 'Separado', valor: prog }]);
+      if (retirado) {
+        // o que sai sobe um pouco e vai embora para o lado
+        retirado.position.set(dist, Math.sin(prog * Math.PI) * 0.03 / Math.max(peca.scale.x, 0.01), 0);
+        retirado.visible = prog < 0.98;
+      } else {
+        for (const f of lado) peca.moverFragmento(f, new THREE.Vector3(dist + (modo === 'partes' ? 0.004 : 0), dist > 0.01 ? 0.002 : 0, 0));
+      }
+      hud.medidores([{ rotulo: modo === 'retirar' ? 'Retirado' : 'Separado', valor: prog }]);
       if (prog >= 1) {
         exec.nota = clamp(1 - pressa * 0.8);
-        exec.comentario = comentar(exec.nota, 'Separado limpo, sem rasgar.', 'Separado, com um puxão mais forte.', 'Puxou rápido demais; pode romper.');
+        exec.comentario = modo === 'retirar'
+          ? comentar(exec.nota, 'Saiu inteiro, sem estragar o alimento.', 'Saiu, com um puxão mais forte.', 'Puxou rápido demais; pode rasgar o alimento.')
+          : comentar(exec.nota, 'Separado limpo, sem rasgar.', 'Separado, com um puxão mais forte.', 'Puxou rápido demais; pode romper.');
         exec.concluido = true;
       }
     },
     descartar() {
-      void passo;
+      if (retirado) {
+        retirado.removeFromParent();
+        retirado.traverse((o) => { if (o instanceof THREE.Mesh) { o.geometry.dispose(); if (o.material !== matFio) (o.material as THREE.Material).dispose(); } });
+      }
+      // o alimento inteiro volta para o lugar dele
+      if (modo === 'inteira') for (const f of peca.fragmentos) peca.moverFragmento(f, new THREE.Vector3(0, 0, 0));
     },
   };
   return exec;

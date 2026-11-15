@@ -441,6 +441,37 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     mesa.removerPeca();
   }
   // a peça principal: tamanho real, um pouco fora do centro, fatias em leque
+  // rolo de sushi: as rodelas de maki em fila, com a alga por fora, o arroz e o recheio à mostra
+  if (peca && mesa.peca && /sushi-rolo|maki/.test(tecnica.id)) {
+    mesa.removerPeca();
+    const fila = new THREE.Group();
+    const r = 0.016;
+    const alt = 0.02;
+    const mAlga = new THREE.MeshStandardMaterial({ color: '#1c2418', roughness: 0.8 });
+    const mArroz = new THREE.MeshStandardMaterial({ color: '#f6f3ea', roughness: 0.95 });
+    const mAtum = new THREE.MeshStandardMaterial({ color: '#b8283a', roughness: 0.5 });
+    const mWasabi = new THREE.MeshStandardMaterial({ color: '#8ab84a', roughness: 0.7 });
+    for (let i = 0; i < 8; i++) {
+      const g = new THREE.Group();
+      const alga = new THREE.Mesh(new THREE.CylinderGeometry(r, r, alt, 28, 1, true), mAlga);
+      const arroz = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.96, r * 0.96, alt * 1.002, 28), mArroz);
+      const atum = new THREE.Mesh(new THREE.BoxGeometry(r * 0.75, alt * 1.006, r * 0.6), mAtum);
+      const wasabi = new THREE.Mesh(new THREE.CylinderGeometry(r * 0.12, r * 0.12, alt * 1.008, 10), mWasabi);
+      wasabi.position.x = r * 0.42;
+      for (const m of [alga, arroz, atum, wasabi]) { m.castShadow = true; g.add(m); }
+      // rodelas em pé, viradas para cima, em duas fileiras levemente defasadas
+      g.position.set(-poco * 0.55 + (i % 4) * r * 2.3, piso + alt / 2, (i < 4 ? -1 : 1) * r * 1.15 + (i < 4 ? 0 : r * 0.5));
+      g.rotation.y = i * 0.7;
+      fila.add(g);
+    }
+    grupo.add(fila);
+    // molho de soja num potinho
+    const pote = new THREE.Mesh(new THREE.CylinderGeometry(0.024, 0.02, 0.014, 24), new THREE.MeshStandardMaterial({ color: '#f4f4f0', roughness: 0.3 }));
+    pote.position.set(poco * 0.62, piso + 0.007, -poco * 0.3);
+    const soja = new THREE.Mesh(new THREE.CylinderGeometry(0.021, 0.021, 0.001, 24), new THREE.MeshStandardMaterial({ color: '#2a140a', roughness: 0.1 }));
+    soja.position.set(poco * 0.62, piso + 0.013, -poco * 0.3);
+    grupo.add(pote, soja);
+  }
   if (peca && mesa.peca) {
     mesa.peca = null;
     mesa.pecaChave = '';
