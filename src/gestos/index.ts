@@ -28,7 +28,9 @@ const VASOS = 'frigideira|wok|panela|caçarola|chapa|aro|banho-maria|assadeira|t
 /** Vasos que ficam no fogo: o passo feito neles acontece no fogão. */
 export const VASO_FOGO = /frigideira|wok|panela|caçarola|chapa|^aro|banho-maria/i;
 /** Ações que, logo depois de um passo no fogo, continuam no mesmo vaso (mexer o ovo na frigideira, virar a crêpe). */
-const CONTINUA_NO_FOGO = /mexer|virar|enrolar|dobrar|despejar|regar|quebrar|inclinar|moldar|espalhar|rechear|misturar|adicionar|incorporar|soltar|separar|amassar|pressionar|testar/i;
+const CONTINUA_NO_FOGO = /mexer|virar|despejar|regar|quebrar|inclinar|adicionar|soltar|testar/i;
+/** Omeletes e crêpes se enrolam e dobram dentro da própria frigideira. */
+const DOBRA_NA_FRIGIDEIRA = /enrolar|dobrar/i;
 
 /**
  * Onde o passo acontece, como o livro diz: o recipiente revisado, o que o texto nomeia
@@ -42,7 +44,7 @@ export function vasoDoPasso(t: Tecnica, i: number, fundo = 0): string | undefine
   const nomeado = texto.match(new RegExp(`\\b(?:na|no|numa|num|em|dentro d[ao]|sobre a|sobre o)\\s+(${VASOS})`, 'i')) ?? (p.utensilio ?? '').match(new RegExp(`(${VASOS})`, 'i'));
   if (nomeado) return nomeado[1].toLowerCase();
   if (/t[aá]bua|prato|travessa|papel|grelha|tigela/i.test(texto)) return undefined;
-  if (i > 0 && p.gesto !== 'calor' && p.gesto !== 'cortar' && p.gesto !== 'tempo' && p.gesto !== 'medir' && CONTINUA_NO_FOGO.test(p.acao) && !/escorr|coar|peneir/i.test(p.acao)) {
+  if (i > 0 && p.gesto !== 'calor' && p.gesto !== 'cortar' && p.gesto !== 'tempo' && p.gesto !== 'medir' && (CONTINUA_NO_FOGO.test(p.acao) || (t.bancada === 'ovos' && DOBRA_NA_FRIGIDEIRA.test(p.acao))) && !/escorr|coar|peneir/i.test(p.acao)) {
     const ant = t.passos[i - 1];
     const vasoAnt = ant.gesto === 'calor' && ant.variante !== 'forno' ? vasoDoPasso(t, i - 1, fundo + 1) ?? (ant.variante === 'frigideira' ? 'frigideira' : 'panela') : vasoDoPasso(t, i - 1, fundo + 1);
     if (vasoAnt && VASO_FOGO.test(vasoAnt)) return vasoAnt;
@@ -73,8 +75,9 @@ export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | nul
     case 'verter':
       return p.variante === 'escumar' ? 'fogao' : /escorrer/.test(p.acao) ? 'pia' : DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
     case 'testar':
-      // testa onde a coisa está
-      return anterior ?? 'corte';
+      // testa onde a coisa está; o que estava no forno ou na geladeira sai para a bancada, à vista
+      if (!anterior || anterior === 'forno' || anterior === 'geladeira' || anterior === 'balanca') return DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
+      return anterior;
     default:
       return DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
   }

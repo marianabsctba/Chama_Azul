@@ -18,11 +18,16 @@ const geoMarca = new THREE.SphereGeometry(1, 14, 10);
 function prepararPeca(ctx: ContextoGesto) {
   const { passo, mesa, estacao } = ctx;
   const chave = passo.alimento ?? passo.alvo;
-  if (!ctx.vaso || !VASO_NO_FOGO.test(ctx.vaso)) mesa.removerRecipiente(true);
+  // forrar e amarrar seguem o fluxo próprio; os outros gestos montam dentro do vaso que o livro manda
+  const naBancada = !['forrar', 'amarrar', 'enrolar', 'trancar'].includes(passo.variante);
+  if (!ctx.vaso || !(VASO_NO_FOGO.test(ctx.vaso) || naBancada)) mesa.removerRecipiente(true);
   const peca = mesa.garantirPeca(chave, estacao.superficie.clone());
   peca.rotation.y = anguloDaEstacao(estacao);
-  // no vaso que o livro manda (virar a crêpe na frigideira, moldar o ovo no aro); senão na bancada
-  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone())) peca.position.copy(estacao.superficie);
+  // no vaso que o livro manda (virar a crêpe na frigideira, rechear as forminhas, montar no aro); senão na bancada
+  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone(), naBancada)) {
+    if (ctx.vaso && !VASO_NO_FOGO.test(ctx.vaso)) mesa.removerRecipiente(true);
+    peca.position.copy(estacao.superficie);
+  }
   peca.updateMatrixWorld(true);
   return peca;
 }
@@ -391,15 +396,40 @@ function corDoCreme(texto: string) {
 
 export function gestoConfeitar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud, cena } = ctx;
-  mesa.removerPeca();
-  mesa.removerRecipiente(true);
-  // prato de base
-  const base = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.15, 0.012, 48), new THREE.MeshStandardMaterial({ color: '#f7f7fb', roughness: 0.35 }));
-  base.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.006, 0));
-  base.receiveShadow = true;
-  mesa.adicionarExtra(base);
-  const y = estacao.superficie.y + 0.013;
   const texto = `${passo.alvo} ${passo.parametro}`;
+  const onde = `${texto} ${passo.utensilio} ${ctx.vaso ?? ''}`.toLowerCase();
+  // a base é onde o livro confeita: sobre o bolo, na assadeira, na taça ou num prato
+  let y = estacao.superficie.y + 0.013;
+  const famBase = passo.alimento ? familiaDe(passo.alimento) : undefined;
+  if (passo.alimento && famBase && ['bolo', 'torta', 'pao', 'massa_bola', 'legume', 'raiz', 'bulbo', 'fuso', 'esferoide', 'cone'].includes(famBase) && !/assadeira|papel|tabuleiro/.test(onde)) {
+    mesa.removerRecipiente(true);
+    const bolo = mesa.garantirPeca(passo.alimento, estacao.superficie.clone());
+    bolo.position.copy(estacao.superficie);
+    bolo.updateMatrixWorld(true);
+    y = new THREE.Box3().setFromObject(bolo).max.y + 0.002;
+  } else if (/ta[cç]a|copo/.test(onde)) {
+    mesa.removerPeca();
+    const taca = mesa.garantirRecipiente('taça', estacao.superficie.clone(), 'tigela');
+    y = new THREE.Box3().setFromObject(taca).max.y - 0.02;
+  } else {
+    mesa.removerPeca();
+    mesa.removerRecipiente(true);
+    const assadeira = /assadeira|papel|tabuleiro|[eé]clair|bomba|choux|biscoito|suspiro|merengue|palito|desenhos|enfeite/.test(onde);
+    const base = assadeira
+      ? new THREE.Mesh(new THREE.BoxGeometry(0.32, 0.012, 0.24), new THREE.MeshStandardMaterial({ color: '#f1e6cc', roughness: 0.9 }))
+      : new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.15, 0.012, 48), new THREE.MeshStandardMaterial({ color: '#f7f7fb', roughness: 0.35 }));
+    base.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.006, 0));
+    base.rotation.y = anguloDaEstacao(estacao);
+    base.receiveShadow = true;
+    mesa.adicionarExtra(base);
+    if (assadeira) {
+      // a assadeira de metal por baixo do papel
+      const metal = new THREE.Mesh(new THREE.BoxGeometry(0.34, 0.008, 0.26), new THREE.MeshStandardMaterial({ color: '#8f959c', roughness: 0.4, metalness: 0.7 }));
+      metal.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.002, 0));
+      metal.rotation.y = base.rotation.y;
+      mesa.adicionarExtra(metal);
+    }
+  }
   // desenho a seguir: linhas para bombas e éclairs, espiral para rosetas, círculo para bordas
   const caminho: THREE.Vector3[] = [];
   const c = estacao.superficie.clone().setY(y);

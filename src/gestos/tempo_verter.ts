@@ -100,7 +100,68 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
   return exec;
 }
 
+/**
+ * Mergulhar: a peça (ou a ponta dela) desce no conteúdo da tigela e volta coberta. Segurar o botão
+ * desce, soltar sobe; vale quando afunda até a marca e sai sem pressa.
+ */
+function gestoMergulhar(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud } = ctx;
+  mesa.garantirRecipiente(/panela|caçarola/i.test(passo.utensilio + passo.alvo) ? 'panela' : 'tigela', estacao.superficie.clone(), 'tigela');
+  const meio = passo.meio ?? (/caramelo/i.test(passo.alvo + passo.parametro) ? 'caramelo' : /chocolate|ganache/i.test(passo.alvo + passo.parametro) ? 'chocolate' : /massa/i.test(passo.alvo + passo.parametro) ? 'massa mole' : textoConteudo(passo));
+  const conteudo = mesa.garantirConteudo(meio, 0.6);
+  const superficieY = conteudo.position.y + conteudo.estado.nivel;
+  const peca = passo.alimento ? mesa.garantirPeca(passo.alimento, estacao.superficie.clone()) : null;
+  const ferramenta = peca ? null : mesa.pegarFerramenta(passo.utensilio || 'colher', 'circular');
+  let alto = 0.06;
+  if (peca) {
+    const maior = Math.max(peca.comprimento, peca.largura);
+    if (maior * peca.scale.x > mesa.bocaRaio * 1.2) peca.scale.setScalar((mesa.bocaRaio * 1.2) / maior);
+    peca.rotation.set(0, anguloDaEstacao(estacao), 0);
+    alto = peca.altura * peca.scale.x;
+  }
+  // só a ponta ou o topo mergulha (bomba no caramelo, fruta na massa): uns 60% da altura
+  const fundoAlvo = superficieY - alto * 0.6;
+  const acima = superficieY + 0.06;
+  let prof = 0;
+  let mergulhou = false;
+  let pressa = 0;
+  let coberto = false;
+  const cor = conteudo.estado.cor.clone();
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica(mergulhou ? 'Agora solte para tirar com calma e escorrer o excesso.' : 'Segure para mergulhar até a marca.');
+      const antes = prof;
+      prof = clamp(prof + (entrada.pressionado ? dt * 1.2 : -dt * 0.9));
+      if (Math.abs(prof - antes) / Math.max(dt, 1e-3) > 1.6) pressa += dt;
+      const y = acima + (fundoAlvo - acima) * prof;
+      if (peca) peca.position.set(mesa.centro.x, y, mesa.centro.z);
+      else if (ferramenta) mesa.ferramentaEm(new THREE.Vector3(mesa.centro.x, y, mesa.centro.z), 0, -1.3, 0);
+      if (prof > 0.9) mergulhou = true;
+      if (peca && mergulhou && !coberto) {
+        // a parte que entrou sai coberta da calda, do caramelo ou da massa
+        coberto = true;
+        const base = peca.getWorldPosition(new THREE.Vector3());
+        for (const dx of [-0.3, 0, 0.3]) peca.pintar(base.clone().add(new THREE.Vector3(dx * peca.comprimento * peca.scale.x, 0.002, 0)), Math.max(0.02, alto * 0.9), 'cobrir', cor, 1);
+      }
+      hud.medidores([{ rotulo: 'Mergulho', valor: prof, faixa: [0.9, 1] }]);
+      if (mergulhou && prof <= 0.02) {
+        exec.nota = clamp(1 - pressa * 0.6);
+        exec.comentario = comentar(exec.nota, 'Mergulhou por igual e escorreu o excesso.', 'Coberto, com um pouco de pressa.', 'Rápido demais: a cobertura fica irregular.');
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      hud.medidores([]);
+    },
+  };
+  return exec;
+}
+
 export function gestoVerter(ctx: ContextoGesto): Execucao {
+  if (ctx.passo.variante === 'mergulhar') return gestoMergulhar(ctx);
   if (ctx.passo.variante === 'escumar') return gestoEscumar(ctx);
   if (ctx.passo.variante === 'peneirar') return gestoPeneirar(ctx);
   const { passo, mesa, estacao, entrada, hud, cena } = ctx;
@@ -330,15 +391,104 @@ function gestoPeneirar(ctx: ContextoGesto): Execucao {
   return exec;
 }
 
+/**
+ * Medir comprimento ou espessura (régua no peixe, lâmina da mandolina, marcas de 2,5 cm): a régua ao
+ * lado da peça e um marcador que corre enquanto segura; soltar na medida do livro.
+ */
+function gestoMedirComprimento(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud } = ctx;
+  const m = passo.meta;
+  const alvoCm = m && (m.unidade === 'cm' || m.unidade === 'mm') ? (m.unidade === 'mm' ? m.valor / 10 : m.valor) : 2.5;
+  const fino = alvoCm < 1.5;
+  mesa.removerRecipiente(true);
+  const peca = passo.alimento ? mesa.garantirPeca(passo.alimento, estacao.superficie.clone()) : null;
+  if (peca) {
+    peca.position.copy(estacao.superficie);
+    peca.rotation.y = anguloDaEstacao(estacao);
+  }
+  // régua de aço com riscos a cada centímetro (e meio centímetro quando a medida é fina)
+  const compr = fino ? 0.06 : Math.max(0.12, alvoCm / 100 * 2.2);
+  const regua = new THREE.Group();
+  const aco = new THREE.MeshStandardMaterial({ color: '#c9ced4', roughness: 0.3, metalness: 0.8 });
+  const barra = new THREE.Mesh(new THREE.BoxGeometry(compr, 0.002, 0.022), aco);
+  regua.add(barra);
+  const risco = new THREE.MeshBasicMaterial({ color: '#2a2e33' });
+  const passoRisco = fino ? 0.001 : 0.01;
+  for (let x = 0, i = 0; x <= compr + 1e-6; x += passoRisco, i++) {
+    const r = new THREE.Mesh(new THREE.BoxGeometry(0.0006, 0.0005, i % (fino ? 5 : 1) === 0 ? 0.01 : 0.005), risco);
+    r.position.set(-compr / 2 + x, 0.0013, -0.006);
+    regua.add(r);
+  }
+  const marcador = new THREE.Mesh(new THREE.BoxGeometry(0.0015, 0.004, 0.024), new THREE.MeshBasicMaterial({ color: '#ff7a3a' }));
+  regua.add(marcador);
+  const ang = anguloDaEstacao(estacao);
+  regua.rotation.y = ang;
+  regua.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.002, 0.06).applyAxisAngle(new THREE.Vector3(0, 1, 0), ang));
+  mesa.adicionarExtra(regua);
+  let medidoCm = 0;
+  const maxCm = compr * 100;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica(`Segure para correr o marcador pela régua e solte em ${alvoCm.toLocaleString('pt-BR')} cm.`);
+      if (entrada.pressionado) medidoCm = Math.min(maxCm, medidoCm + dt * Math.max(0.4, alvoCm * 0.6));
+      marcador.position.x = -compr / 2 + medidoCm / 100;
+      hud.medidores([{ rotulo: 'Régua', valor: clamp(medidoCm / maxCm), texto: `${medidoCm.toFixed(1)} cm`, faixa: [(alvoCm * 0.95) / maxCm, (alvoCm * 1.05) / maxCm] }]);
+      if (!entrada.pressionado && medidoCm > 0 && hud.botao('Pronto')) {
+        const erro = Math.abs(medidoCm - alvoCm) / alvoCm;
+        exec.nota = clamp(1 - erro * 4);
+        exec.comentario = comentar(exec.nota, 'Medida exata.', `Perto: ${medidoCm.toFixed(1)} cm para ${alvoCm} cm.`, `Longe: ${medidoCm.toFixed(1)} cm para ${alvoCm} cm.`);
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      hud.botao(null);
+    },
+  };
+  return exec;
+}
+
 export function gestoMedir(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, hud, cena } = ctx;
   const m = passo.meta;
+  const textoMedir = `${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
+  if ((m && (m.unidade === 'cm' || m.unidade === 'mm')) || /r[eé]gua|espessura|l[aâ]mina|grade|marca|calibre|mandolina/.test(textoMedir)) return gestoMedirComprimento(ctx);
   const balanca = passo.variante === 'balanca';
   let alvo = 100;
   let unidade = balanca ? 'g' : 'ml';
   if (m && ['g', 'kg', 'ml', 'l'].includes(m.unidade)) {
     alvo = m.unidade === 'kg' || m.unidade === 'l' ? m.valor * 1000 : m.valor;
     unidade = m.unidade === 'kg' ? 'g' : m.unidade === 'l' ? 'ml' : m.unidade;
+  }
+  // pesar uma peça (a ave, a ballotine): a própria peça vai ao prato da balança
+  if (balanca && passo.alimento) {
+    mesa.removerRecipiente(true);
+    const peca = mesa.garantirPeca(passo.alimento, estacao.superficie.clone());
+    peca.position.copy(estacao.superficie);
+    peca.rotation.y = anguloDaEstacao(estacao);
+    const pesoAlvo = m && ['g', 'kg'].includes(m.unidade) ? (m.unidade === 'kg' ? m.valor * 1000 : m.valor) : Math.round(peca.comprimento * peca.largura * peca.altura * 600000) || 500;
+    let lido = 0;
+    const exec: Execucao = {
+      concluido: false,
+      nota: 0,
+      comentario: '',
+      atualizar(dt) {
+        hud.dica('Espere o ponteiro da balança assentar e confirme o peso.');
+        lido += (pesoAlvo - lido) * Math.min(1, dt * 2.5);
+        hud.medidores([{ rotulo: 'Balança', valor: clamp(lido / (pesoAlvo * 1.5)), texto: `${Math.round(lido)} g`, faixa: [0.6, 0.7] }]);
+        if (Math.abs(lido - pesoAlvo) < pesoAlvo * 0.01 && hud.botao('Pronto')) {
+          exec.nota = 1;
+          exec.comentario = comentar(1, `${Math.round(pesoAlvo)} g na balança.`, '', '');
+          exec.concluido = true;
+        }
+      },
+      descartar() {
+        hud.botao(null);
+      },
+    };
+    return exec;
   }
   mesa.removerPeca();
   mesa.garantirRecipiente(balanca ? 'tigela' : 'jarra medidora', estacao.superficie.clone(), 'tigela');

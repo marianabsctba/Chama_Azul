@@ -102,6 +102,13 @@ export class Missao {
         this.exec = FABRICAS[passo.gesto](ctx);
         const proprio = passo.gesto === 'montar' && (passo.variante === 'decorar' || passo.variante === 'rechear');
         if (passo.adicionar?.length && !proprio) this.mesa.adicionarSobre(passo.adicionar, passo.gesto === 'calor' || passo.gesto === 'superficie' ? 'espalhado' : 'linha');
+        // técnica que começa com a peça já assada ou cozida (trinchar, fatiar o assado): ela entra no ponto
+        const est0 = this.tecnica.prato?.estado;
+        const semFogo = !this.tecnica.passos.some((p) => p.gesto === 'calor') && /trinch|fatiar|desfiar|testar|cortar costelas|cozid|assad|servir|enfeitar|decorar|glacear|desenformar|apertar|al dente/i.test(this.tecnica.nome);
+        if (est0 && est0 !== 'cru' && semFogo && this.mesa.peca && this.mesa.pecaChave === (this.tecnica.prato?.principal ?? this.mesa.pecaChave)) {
+          const alvo = est0 === 'cozido' ? 1 : est0 === 'dourado' ? 1.08 : 1.2;
+          if (this.mesa.peca.cozimento < alvo) this.mesa.peca.definirCozimento(alvo);
+        }
         this.enquadrar(est, estacao);
       } catch (e) {
         console.error('falha ao iniciar gesto', passo, e);

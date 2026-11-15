@@ -168,10 +168,17 @@ export class Mesa {
    * Põe a peça dentro do vaso do passo (frigideira, panela, aro), no centro do fundo.
    * Devolve false quando o passo não tem vaso e a peça fica na bancada.
    */
-  colocarNoVaso(peca: Peca, vaso: string | undefined, onde: THREE.Vector3): boolean {
-    // só os vasos de fogo levam a peça para dentro; na bancada, cada gesto monta a cena dele
-    if (!vaso || !/frigideira|wok|panela|caçarola|chapa|^aro$/i.test(vaso)) return false;
-    this.garantirRecipiente(vaso, onde, 'frigideira');
+  colocarNoVaso(peca: Peca, vaso: string | undefined, onde: THREE.Vector3, bancada = false): boolean {
+    if (!vaso) return false;
+    const fogo = /frigideira|wok|panela|caçarola|chapa|^aro$/i.test(vaso);
+    // na bancada: fôrma, aro, forminhas, terrina, ramequim, travessa, assadeira, refratário, prato
+    const deBancada = bancada && /f[oô]rma|aros?|forminha|terrina|ramequi|travessa|assadeira|refrat[aá]ri|prato|tigela|vidro|pote|cesta|esteira|grade/i.test(vaso);
+    if (!fogo && !deBancada) return false;
+    this.garantirRecipiente(vaso, onde, fogo ? 'frigideira' : 'assadeira');
+    // a peça cabe no vaso
+    const maior = Math.max(peca.comprimento, peca.largura);
+    const caber = (this.bocaRaio * 1.7) / Math.max(maior, 1e-3);
+    if (peca.scale.x > caber) peca.scale.setScalar(caber);
     peca.position.set(this.centro.x, this.fundoY, this.centro.z);
     return true;
   }

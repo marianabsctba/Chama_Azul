@@ -310,6 +310,15 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
         segurar(new THREE.Vector3(c.x + Math.cos(mem.ang) * r, mesa.conteudo.position.y + mesa.conteudo.estado.nivel, c.z + Math.sin(mem.ang) * r));
         return;
       }
+      if (v === 'mergulhar') {
+        // segura até afundar e solta para subir
+        const m3 = h.med('Mergulho');
+        if (mem.fase === 0) {
+          e.pressionado = true;
+          if (m3 && m3.valor >= 0.95) mem.fase = 1;
+        } else e.pressionado = false;
+        return;
+      }
       if (v === 'peneirar') {
         e.pressionado = true;
         if (mem.fase++ % 3 === 0) mem.sinal = mem.sinal === 1 ? -1 : 1;
@@ -323,7 +332,7 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
       return;
     }
     case 'medir': {
-      const m2 = h.med('Balança') ?? h.med('Jarra');
+      const m2 = h.med('Balança') ?? h.med('Jarra') ?? h.med('Régua');
       if (m2?.faixa && m2.valor < (m2.faixa[0] + m2.faixa[1]) / 2 - 0.004) e.pressionado = true;
       else if (h.botaoTexto === 'Pronto') h.clicar = true;
       return;
