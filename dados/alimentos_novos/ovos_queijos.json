@@ -1,1 +1,22 @@
-[]
+[
+  { "id": "ovo-gema", "nome": "Gema de ovo separada", "forma": "gema inteira em domo laranja brilhante, com um fio de clara e a calaza" },
+  { "id": "ovo-cocotte", "nome": "Ovo en cocotte", "forma": "ovo assado no ramequim: clara firme, gema brilhante velada e creme com pimenta em volta" },
+  { "id": "ovo-rancheros", "nome": "Huevos rancheros", "forma": "ovo assado sobre uma cama de tiras de pimentão vermelho e verde e cebola, com salsa picada" },
+  { "id": "ovo-frito-imerso", "nome": "Ovo frito em bastante óleo", "forma": "clara estufada envolvendo a gema, com bolhas douradas e saia rendada crocante" },
+  { "id": "ovo-frito-modelado", "nome": "Ovo frito modelado no aro", "forma": "disco de clara perfeitamente redondo de borda reta, gema bem no centro" },
+  { "id": "ovo-frito-virado", "nome": "Ovo frito virado", "forma": "clara de borda irregular dourada e rendada cobrindo a gema, que forma um domo amarelado" },
+  { "id": "ovo-quente-caviar", "nome": "Ovo quente com caviar", "forma": "ovo quente no oveiro com a tampa cortada e um montinho de caviar sobre a gema" },
+  { "id": "tomate-gratinado", "nome": "Tomate gratinado com pão e salsa", "forma": "meio tomate vermelho com farofa de pão dourada e salsa por cima" },
+  { "id": "omelete-francesa", "nome": "Omelete francesa dobrada", "forma": "omelete enrolada em charuto liso e amarelo claro, pontas finas e a emenda por baixo" },
+  { "id": "omelete-sufle", "nome": "Omelete-suflê", "forma": "meia-lua alta e aerada, dourada por fora com rachaduras claras" },
+  { "id": "omelete-japonesa", "nome": "Omelete japonesa (tamagoyaki)", "forma": "bloco retangular de ovo enrolado em camadas e fatias mostrando a espiral" },
+  { "id": "tortilla-espanhola", "nome": "Tortilla espanhola de batata", "forma": "bolo de ovo grosso de borda redonda e dourada, com fatias de batata em camadas no corte" },
+  { "id": "sufle-quenelle", "nome": "Suflê de queijo em quenelle", "forma": "quenelle estufada e dourada com parmesão gratinado e rachaduras claras" },
+  { "id": "camembert", "nome": "Camembert", "forma": "roda pequena e alta de casca branca aveludada com manchas creme" },
+  { "id": "brie-cortado", "nome": "Brie cortado", "forma": "roda larga e baixa de casca branca aveludada, com uma cunha puxada mostrando a massa cremosa cor de palha" },
+  { "id": "camembert-empanado", "nome": "Camembert empanado", "forma": "triângulo de queijo coberto de farinha de rosca dourada e frita" },
+  { "id": "queijo-azul", "nome": "Queijo azul", "forma": "cunha de massa marfim com veios azul-esverdeados e casca rústica bege" },
+  { "id": "queijo-fresco", "nome": "Queijo fresco caseiro", "forma": "domo branco e úmido com a trama da musselina e as pregas do nó" },
+  { "id": "bolinhas-queijo", "nome": "Bolinhas de queijo cobertas", "forma": "quatro bolinhas de queijo fresco roladas na páprica, no gergelim, na noz picada e nas ervas" },
+  { "id": "queijo-marinado", "nome": "Queijo marinado no azeite", "forma": "crottin enrugado e cubos de feta com alecrim, louro, pimenta vermelha e grãos de pimenta" }
+]

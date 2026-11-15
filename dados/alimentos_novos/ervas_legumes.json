@@ -1,1 +1,127 @@
-[]
+[
+  {
+    "id": "capim-limao",
+    "nome": "Capim-limão",
+    "forma": "talos de capim-limão de base bulbosa clara cortada e pontas de folha verdes"
+  },
+  {
+    "id": "tamarindo",
+    "nome": "Tamarindo",
+    "forma": "vagens de casca parda quebradiça, uma aberta mostrando a polpa marrom pegajosa com fibras"
+  },
+  {
+    "id": "bouquet-garni",
+    "nome": "Bouquet garni",
+    "forma": "feixe de ervas enrolado na folha de alho-poró e amarrado com barbante de ponta longa"
+  },
+  {
+    "id": "saquinho-ervas",
+    "nome": "Saquinho de musselina com ervas",
+    "forma": "trouxinha de musselina franzida e amarrada com barbante, ervas aparecendo pelo pano"
+  },
+  {
+    "id": "casca-limao-picada",
+    "nome": "Casca de limão picada",
+    "forma": "montinho de casca de limão picada bem fina"
+  },
+  {
+    "id": "garam-masala",
+    "nome": "Garam masala",
+    "forma": "montinho de especiarias tostadas moídas, marrom-escuro"
+  },
+  {
+    "id": "quatre-epices",
+    "nome": "Quatre-épices",
+    "forma": "montinho de pimenta, cravo, noz-moscada e gengibre moídos, marrom acinzentado"
+  },
+  {
+    "id": "especiarias-mistas",
+    "nome": "Especiarias mistas",
+    "forma": "montinho de especiarias doces moídas, marrom quente"
+  },
+  {
+    "id": "especiaria-moida",
+    "nome": "Especiarias moídas",
+    "forma": "montinho de especiarias moídas no moedor"
+  },
+  {
+    "id": "pickling-spice",
+    "nome": "Pickling spice",
+    "forma": "montinho de especiarias inteiras e esmagadas: mostarda, pimentas, cravo, canela, louro e chili"
+  },
+  {
+    "id": "cubos-gelo-ervas",
+    "nome": "Cubos de gelo com ervas",
+    "forma": "cubos de gelo com ervas picadas presas dentro e folhinhas na superfície"
+  },
+  {
+    "id": "feixe-aspargos",
+    "nome": "Feixe de aspargos",
+    "forma": "aspargos com a metade de baixo descascada, amarrados em feixe com barbante"
+  },
+  {
+    "id": "talos-alcachofra",
+    "nome": "Talos de alcachofra",
+    "forma": "palitos de talo de alcachofra descascado e cozido, empilhados"
+  },
+  {
+    "id": "fundo-alcachofra",
+    "nome": "Fundo de alcachofra",
+    "forma": "disco côncavo de fundo de alcachofra limpo, lados aparados"
+  },
+  {
+    "id": "cenoura-torneada",
+    "nome": "Cenoura torneada",
+    "forma": "cenoura torneada em barril de sete faces"
+  },
+  {
+    "id": "batata-chateau",
+    "nome": "Batata château",
+    "forma": "quarto de batata aparado em barril de sete faces"
+  },
+  {
+    "id": "pepino-torneado",
+    "nome": "Pepino torneado",
+    "forma": "pepino torneado em barril de sete faces com restos de casca verde"
+  },
+  {
+    "id": "batata-hasselback",
+    "nome": "Batata hasselback",
+    "forma": "batata de base reta com lâminas finas cortadas até quase o fundo"
+  },
+  {
+    "id": "batata-parisienne",
+    "nome": "Batata parisienne",
+    "forma": "bolinha de batata tirada no boleador e dourada na manteiga"
+  },
+  {
+    "id": "batata-gaufrette",
+    "nome": "Batata gaufrette",
+    "forma": "fatia de batata ondulada em treliça com furinhos"
+  },
+  {
+    "id": "berinjela-losangos",
+    "nome": "Berinjela riscada em losangos",
+    "forma": "metade de berinjela com a polpa riscada em losangos e lâminas de alho"
+  },
+  {
+    "id": "rosti-legumes",
+    "nome": "Rösti de legumes",
+    "forma": "bolinho achatado de legumes em julienne frito e dourado"
+  },
+  {
+    "id": "ninho-batata",
+    "nome": "Ninho de batata palha",
+    "forma": "cesta de batata palha frita em forma de tigela"
+  },
+  {
+    "id": "pipoca",
+    "nome": "Pipoca",
+    "forma": "flocos brancos de pipoca estourada"
+  },
+  {
+    "id": "chaudfroid-frango",
+    "nome": "Frango em chaudfroid",
+    "forma": "fatias de peito de frango cobertas por camada lisa e marfim de chaudfroid"
+  }
+]

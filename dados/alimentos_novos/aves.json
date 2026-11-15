@@ -1,1 +1,27 @@
-[]
+[
+  { "id": "frango-amarrado", "nome": "Frango de leite amarrado", "forma": "frango pequeno cru de peito para cima, pontas das coxas presas por um laço de barbante que desce à sambiquira e corre pelos flancos até o pescoço" },
+  { "id": "peru-costurado", "nome": "Peru costurado com barbante", "forma": "ave grande crua com pontos de barbante atravessando a junta das coxas e as asas, pontas da asa e da perna amarradas de cada lado e laço nos tornozelos" },
+  { "id": "frango-com-espetos", "nome": "Frango fechado com espetos", "forma": "frango cru inteiro atravessado por dois espetos de metal com argola: um pelas asas e pela pele do pescoço, outro pelas coxas e pelo rabo" },
+  { "id": "frango-borboleta", "nome": "Frango achatado em borboleta", "forma": "frango cru aberto pelas costas e achatado, peito em dois lobos no meio, sobrecoxas abertas atrás, asas dobradas, preso por dois espetos cruzados" },
+  { "id": "frango-grelhado-meia", "nome": "Frango achatado grelhado em metade", "forma": "meia ave achatada grelhada, pele dourada caramelizada com marcas escuras da grelha, carne branca à mostra no corte do meio e um espeto" },
+  { "id": "escalope-de-frango", "nome": "Escalope de frango batido", "forma": "lâmina fina e larga de peito cru em gota irregular, rosada e brilhante, bordas mais finas" },
+  { "id": "schnitzel-de-frango", "nome": "Escalope empanado (schnitzel)", "forma": "escalope fino empanado e frito, crosta de migalhas dourada e granulada com losangos marcados pelo dorso da faca" },
+  { "id": "espetinho-de-frango", "nome": "Espetinho de coxa de frango com legumes", "forma": "espeto de metal com pedaços de coxa marinada dobrados ao meio alternados com pimentão vermelho e verde e gomos de cebola" },
+  { "id": "sate-de-frango", "nome": "Espetinho de saté de frango", "forma": "tira fina de peito marinada com açafrão enfiada em zigue-zague num espeto de bambu, grelhada com pontas tostadas" },
+  { "id": "peito-de-pato-riscado", "nome": "Peito de pato com pele riscada", "forma": "magret cru oval: carne vermelho-escura embaixo e capa grossa de pele e gordura em cima riscada em losangos rasos" },
+  { "id": "pato-em-chaudfroid", "nome": "Pato em chaudfroid fatiado", "forma": "cinco fatias ovais de peito de pato em leque, napadas de chaudfroid marfim brilhante, com tirinhas de casca de laranja por cima" },
+  { "id": "frango-desossado-aberto", "nome": "Frango desossado aberto (ballotine)", "forma": "ave crua desossada pelas costas e aberta em placa, pele embaixo dobrando na borda, filés de peito rosados no meio e sobrecoxas mais escuras atrás" },
+  { "id": "ballotine-amarrada", "nome": "Frango em ballotine amarrada", "forma": "cilindro de ave recheada envolto na própria pele crua, pontas franzidas, amarrado com fio no comprimento e sete laços na largura" },
+  { "id": "fatias-de-ballotine", "nome": "Frango em ballotine fatiada", "forma": "rodelas de ballotine em leque: anel de pele dourada, carne branca e recheio rosado com pistache no centro" },
+  { "id": "rodelas-de-roulade", "nome": "Peito de frango enrolado em rodelas", "forma": "rodelas ovais cortadas na diagonal de rolinho de peito cozido, espiral de frango branco, queijo de cabra e espinafre" },
+  { "id": "peito-em-folha-de-bananeira", "nome": "Peito de frango no vapor em folha de bananeira", "forma": "quadrado de folha de bananeira verde com bordas erguidas, peito pincelado de hoisin por cima com lâminas de erva-cidreira e gengibre" },
+  { "id": "fatia-de-terrina-de-coelho", "nome": "Coelho em terrina fatiada", "forma": "fatia retangular de terrina: borda de bacon listrado, recheio moído rosado com pistache e cranberry, faixa do meio com pedaços de lombo de coelho e fio de aspic" },
+  { "id": "cogumelo-torneado", "nome": "Cogumelo torneado", "forma": "chapéu de cogumelo branco com sulcos curvos do centro à borda, como cata-vento, e estrela marcada no topo" },
+  { "id": "croute-de-pao-coracao", "nome": "Pão em croûte de coração com salsa", "forma": "torrada de pão em forma de coração, dourada, com a ponta coberta de salsa picada" },
+  { "id": "pepino-em-conserva-leque", "nome": "Pepino em conserva em leque", "forma": "pepino em conserva pequeno fatiado no comprimento sem soltar a base e aberto em leque, casca verde-escura e polpa clara com sementes" },
+  { "id": "tomate-rosa-de-casca", "nome": "Tomate em rosa de casca", "forma": "tira contínua de casca de tomate enrolada em espiral formando uma rosa, vermelho brilhante por fora e polpa por dentro" },
+  { "id": "endivia-barquinho", "nome": "Endívia em barquinho com concassée", "forma": "folha de endívia côncava, branca com ponta amarelo-esverdeada, com cubinhos de tomate na base" },
+  { "id": "endivia-roxa", "nome": "Endívia roxa", "forma": "cone alongado de folhas bordô com nervuras e base claras" },
+  { "id": "abobrinha-flor-frita", "nome": "Abobrinha em flor frita", "forma": "flor de abobrinha frita em botão, pétalas alaranjadas tostadas nas pontas, cálice verde e cabinho" },
+  { "id": "pera-recheada", "nome": "Pera cozida recheada com geleia", "forma": "pera cozida dourada e brilhante com a tampa cortada e recolocada torta, geleia de groselha vermelha aparecendo na fresta" }
+]

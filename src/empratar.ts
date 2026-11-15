@@ -5,6 +5,7 @@ import * as THREE from 'three';
 import type { Cozinha, Tecnica, EstadoServido } from './tipos';
 import type { Mesa } from './gestos/mesa';
 import { criarFormaAlimento, familiaDe } from './modelos/alimentos';
+import { NOVOS } from './modelos/alimentos/novos';
 import { Peca } from './pecas/peca';
 import { estadoInicial } from './pecas/conteudo';
 import { decorarSopa, SOPA_DA_DECORACAO } from './decoracao_sopa';
@@ -383,7 +384,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   }
   // se a técnica levou o alimento ao fogo, ele chega ao prato cozido (mesmo que a peça tenha sido trocada)
   // modelos que já são o preparo pronto (ovo frito, crêpe, omelete) não levam tinta de cozimento por cima
-  const jaPronto = /^(ovo-|ovos-mexidos|omelete|frittata|crepe|panqueca-americana|pudim-yorkshire)/.test(mesa.pecaChave);
+  const jaPronto = mesa.pecaChave in NOVOS || /^(ovo-|ovos-mexidos|omelete|frittata|crepe|panqueca-americana|pudim-yorkshire)/.test(mesa.pecaChave);
   const foiAoFogo = !jaPronto && tecnica.passos.some((p) => p.gesto === 'calor' && (!p.alimento || p.alimento === mesa.pecaChave || p.adicionar?.includes(mesa.pecaChave)));
   if (foiAoFogo && mesa.peca && mesa.peca.cozimento < 1) mesa.peca.definirCozimento(1);
   const ficha = tecnica.prato ?? {};

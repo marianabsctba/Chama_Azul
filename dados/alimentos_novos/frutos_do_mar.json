@@ -1,1 +1,18 @@
-[]
+[
+  { "id": "lagosta-inteira-cozida", "nome": "Lagosta vermelha depois de cozida", "forma": "lagosta inteira de casca vermelho-alaranjada, cauda em segmentos, garras grandes e antenas longas" },
+  { "id": "lagosta-meia-casca", "nome": "Lagosta cozida aberta ao meio na casca", "forma": "duas metades de lagosta deitadas na casca vermelha, carne branca da cauda à mostra, fígado verde e coral na cabeça, carne das garras inteira" },
+  { "id": "medalhoes-lagosta", "nome": "Lagosta em medalhões da cauda", "forma": "seis medalhões de carne branca em espiral de fibras, bordinha vermelha, sobrepostos em fila" },
+  { "id": "camarao-descascado", "nome": "Camarão cru descascado e sem tripa", "forma": "camarão cru curvo em C, cinza translúcido em segmentos, corte raso no dorso sem a tripa, leque da cauda com casca" },
+  { "id": "camarao-reto-cozido", "nome": "Camarão cozido reto e rosado", "forma": "camarão descascado cozido esticado, faixas rosa-alaranjadas nos segmentos e barriga branca, cauda vermelha" },
+  { "id": "mexilhao-aberto", "nome": "Mexilhão cozido com a concha aberta", "forma": "duas valvas preto-azuladas abertas na charneira, nácar perolado por dentro e a carne laranja numa delas" },
+  { "id": "mexilhao-gratinado", "nome": "Mexilhão gratinado na meia concha", "forma": "meia concha com o mexilhão, pesto gratinado com farelo dourado e cubinhos de tomate" },
+  { "id": "carne-mexilhao", "nome": "Mexilhão cozido fora da concha e sem anel", "forma": "carne oval laranja de mexilhão cozido, sem o anel escuro do manto, com o pé claro" },
+  { "id": "ameijoa-meia-concha", "nome": "Amêijoa aberta na meia concha", "forma": "valva creme com riscos em zigue-zague, branca e roxa por dentro, com a amêijoa rosada" },
+  { "id": "ostra-meia-concha", "nome": "Ostra aberta na meia concha", "forma": "concha funda e áspera em lâminas, nácar claro com a borda arroxeada, corpo cinza-creme franjado pelo manto escuro" },
+  { "id": "vieira-limpa", "nome": "Vieira limpa com coral", "forma": "músculo branco em cilindro baixo com fibras em pé e o coral alaranjado de ponta creme preso ao lado" },
+  { "id": "buzio-cozido", "nome": "Búzio cozido fora da concha", "forma": "pé musculoso claro com o opérculo marrom por cima e as vísceras escuras enroladas em espiral" },
+  { "id": "salicornia", "nome": "Salicórnia escaldada", "forma": "raminhos suculentos verdes e brilhantes, em gomos, com galhinhos laterais" },
+  { "id": "aneis-lula", "nome": "Lula limpa em anéis com tentáculos", "forma": "anéis brancos da bolsa de lula crua e um feixe de tentáculos rosados com ventosas" },
+  { "id": "lula-recheada", "nome": "Lula recheada e costurada", "forma": "bolsa de lula branca estufada pelo recheio, boca franzida presa por um palito" },
+  { "id": "carne-caranguejo", "nome": "Caranguejo em carne branca e escura separadas", "forma": "monte de fios de carne branca com o rosado das garras ao lado de um monte de carne escura cremosa" }
+]

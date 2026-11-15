@@ -85,7 +85,7 @@
       }
     ],
     "prato": {
-      "principal": "maca",
+      "principal": "maca-espiral",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -133,10 +133,10 @@
       }
     ],
     "prato": {
-      "principal": "maca",
+      "principal": "maca-metade-boleada",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru",
       "quantidade": 2
     }
@@ -148,11 +148,12 @@
       }
     ],
     "prato": {
-      "principal": "maca",
+      "principal": "anel-maca",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 4
     }
   },
   "frutas.leque-pera": {
@@ -284,7 +285,7 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi",
+      "principal": "abacaxi-tigela",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -317,10 +318,8 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi-anao",
-      "acompanhamentos": [
-        "sorvete-bola"
-      ],
+      "principal": "abacaxi-anao-recheado",
+      "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
       "estado": "cru"
@@ -357,11 +356,12 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi",
+      "principal": "anel-abacaxi",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 3
     }
   },
   "frutas.abacaxi-ziguezague": {
@@ -382,10 +382,10 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi",
+      "principal": "abacaxi-ziguezague",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -447,10 +447,10 @@
       }
     ],
     "prato": {
-      "principal": "manga",
+      "principal": "manga-ourico",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "cubos",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -505,7 +505,7 @@
       }
     ],
     "prato": {
-      "principal": "laranja",
+      "principal": "laranja-remontada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -526,10 +526,10 @@
       }
     ],
     "prato": {
-      "principal": "laranja",
+      "principal": "supremes-laranja",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -763,10 +763,11 @@
       }
     ],
     "prato": {
-      "principal": "couli",
+      "principal": "couli-penas",
       "acompanhamentos": [],
       "servir": "prato",
-      "liquido": "#b01e30"
+      "liquido": null,
+      "forma": "inteiro"
     }
   },
   "frutas.couli-yin-yang": {
@@ -783,10 +784,11 @@
       }
     ],
     "prato": {
-      "principal": "couli",
+      "principal": "couli-yin-yang",
       "acompanhamentos": [],
       "servir": "prato",
-      "liquido": "#b01e30"
+      "liquido": null,
+      "forma": "inteiro"
     }
   },
   "frutas.melao-taca": {
@@ -813,7 +815,7 @@
       }
     ],
     "prato": {
-      "principal": "melao-cantalupo",
+      "principal": "melao-taca",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -843,10 +845,11 @@
       }
     ],
     "prato": {
-      "principal": "sorbet",
+      "principal": "sorbet-melao",
       "acompanhamentos": [],
       "servir": "taca",
-      "estado": "cru"
+      "estado": "cru",
+      "forma": "inteiro"
     }
   },
   "frutas.cantalupo-surpresa": {
@@ -885,14 +888,13 @@
       }
     ],
     "prato": {
-      "principal": "melao-cantalupo",
+      "principal": "salada-melao",
       "acompanhamentos": [
-        "sorbet",
-        "kiwi",
+        "sorbet-melao",
         "hortela"
       ],
       "servir": "taca",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru",
       "liquido": "#f1dca6",
       "claro": true
@@ -909,7 +911,7 @@
       }
     ],
     "prato": {
-      "principal": "kiwi",
+      "principal": "kiwi-topo",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -1006,7 +1008,7 @@
       }
     ],
     "prato": {
-      "principal": "figo",
+      "principal": "flor-figo",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -1084,10 +1086,10 @@
       }
     ],
     "prato": {
-      "principal": "roma",
+      "principal": "sementes-roma",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -1250,11 +1252,11 @@
       }
     ],
     "prato": {
-      "principal": "pera",
+      "principal": "pera-vinho",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cozido",
+      "forma": "inteiro",
+      "estado": null,
       "liquido": "#5a1a2a",
       "claro": true
     }
@@ -1393,15 +1395,12 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi",
-      "acompanhamentos": [
-        "manga",
-        "papaia",
-        "banana"
-      ],
+      "principal": "espeto-frutas",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "dourado"
+      "forma": "inteiro",
+      "estado": null,
+      "quantidade": 2
     }
   },
   "frutas.grelhar-papillote": {
@@ -1416,11 +1415,11 @@
       }
     ],
     "prato": {
-      "principal": "banana",
+      "principal": "papillote-banana",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado"
+      "estado": null
     }
   },
   "frutas.gratinar-zabaione": {
@@ -1473,11 +1472,11 @@
       }
     ],
     "prato": {
-      "acompanhamentos": [
-        "coco"
-      ],
+      "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#f4ecd8"
+      "liquido": "#f4ecd8",
+      "principal": "coco-tostado",
+      "forma": "inteiro"
     }
   },
   "frutas.caramelizar": {
@@ -1578,14 +1577,11 @@
       }
     ],
     "prato": {
-      "principal": "maca",
-      "acompanhamentos": [
-        "abacaxi",
-        "manga"
-      ],
+      "principal": "tempura-frutas",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "dourado"
+      "forma": "inteiro",
+      "estado": null
     }
   },
   "frutas.maca-assada": {
@@ -1690,14 +1686,11 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi",
-      "acompanhamentos": [
-        "banana",
-        "morango"
-      ],
+      "principal": "papillote-frutas",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "cozido"
+      "forma": "inteiro",
+      "estado": null
     }
   },
   "sobremesas.merengue-frances": {
@@ -1840,10 +1833,11 @@
       }
     ],
     "prato": {
-      "principal": "merengue-frances",
+      "principal": "saco-confeitar-cheio",
       "acompanhamentos": [],
-      "servir": "tigelinha",
-      "liquido": "#f8f4ea"
+      "servir": "tabua",
+      "liquido": null,
+      "forma": "inteiro"
     }
   },
   "sobremesas.merengue-conchas": {
@@ -1933,7 +1927,7 @@
       }
     ],
     "prato": {
-      "principal": "concha-merengue",
+      "principal": "conchas-merengue-ganache",
       "acompanhamentos": [
         "ninho-merengue",
         "disco-merengue"
@@ -2550,7 +2544,9 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "ramequim"
+      "servir": "tabua",
+      "principal": "forma-sufle-forrada",
+      "forma": "inteiro"
     }
   },
   "sobremesas.limpar-borda-sufle": {
@@ -2562,10 +2558,11 @@
       }
     ],
     "prato": {
-      "principal": "sufle-baunilha",
+      "principal": "sufle-cru-nivelado",
       "acompanhamentos": [],
-      "servir": "ramequim",
-      "estado": "cru"
+      "servir": "prato",
+      "estado": null,
+      "forma": "inteiro"
     }
   },
   "sobremesas.sufle-baunilha-assado": {
@@ -2696,11 +2693,11 @@
       }
     ],
     "prato": {
-      "principal": "pudim-vapor",
+      "principal": "pudim-vapor-embrulhado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cozido"
+      "estado": null
     }
   },
   "sobremesas.calda-acucar-simples": {
@@ -2832,10 +2829,10 @@
       }
     ],
     "prato": {
-      "principal": "calda-de-acucar",
+      "principal": "calda-ponto-bala-mole",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#f0dfae",
+      "liquido": "#dcecf0",
       "claro": true
     }
   },
@@ -2864,10 +2861,10 @@
       }
     ],
     "prato": {
-      "principal": "calda-de-acucar",
+      "principal": "calda-ponto-fio",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#f3e8c2",
+      "liquido": "#dcecf0",
       "claro": true
     }
   },
@@ -2896,10 +2893,10 @@
       }
     ],
     "prato": {
-      "principal": "calda-de-acucar",
+      "principal": "calda-ponto-bala-mole",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#f0dfae",
+      "liquido": "#dcecf0",
       "claro": true
     }
   },
@@ -2928,10 +2925,10 @@
       }
     ],
     "prato": {
-      "principal": "calda-de-acucar",
+      "principal": "calda-ponto-bala-dura",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#ecd59a",
+      "liquido": "#dcecf0",
       "claro": true
     }
   },
@@ -2960,10 +2957,10 @@
       }
     ],
     "prato": {
-      "principal": "calda-de-acucar",
+      "principal": "calda-ponto-crosta-mole",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#e8c97f",
+      "liquido": "#dcecf0",
       "claro": true
     }
   },
@@ -2992,10 +2989,10 @@
       }
     ],
     "prato": {
-      "principal": "calda-de-acucar",
+      "principal": "calda-ponto-crosta-dura",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#e2b964",
+      "liquido": "#dcecf0",
       "claro": true
     }
   },
@@ -3515,7 +3512,7 @@
       }
     ],
     "prato": {
-      "principal": "sorbet",
+      "principal": "sorbet-blueberry",
       "acompanhamentos": [],
       "servir": "taca",
       "quantidade": 2
@@ -3593,7 +3590,7 @@
       }
     ],
     "prato": {
-      "principal": "sorbet",
+      "principal": "sorbet-roseta",
       "acompanhamentos": [
         "raspas-carameladas"
       ],
@@ -3697,10 +3694,11 @@
       }
     ],
     "prato": {
-      "principal": "formas-chocolate",
+      "principal": "formas-chocolate-polvilhadas",
       "acompanhamentos": [],
       "servir": "prato",
-      "quantidade": 3
+      "quantidade": null,
+      "forma": "inteiro"
     }
   },
   "sobremesas.espirais-chocolate": {
@@ -4004,11 +4002,11 @@
       }
     ],
     "prato": {
-      "principal": "pate-brisee",
+      "principal": "farofa-massa-podre",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.forrar-forma-torta": {
@@ -4148,11 +4146,11 @@
       }
     ],
     "prato": {
-      "principal": "torta-tampa",
+      "principal": "torta-crua-funil",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.torta-dupla": {
@@ -4188,11 +4186,11 @@
       }
     ],
     "prato": {
-      "principal": "torta-tampa",
+      "principal": "torta-dupla-crua",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.borda-pregas": {
@@ -4202,11 +4200,11 @@
       }
     ],
     "prato": {
-      "principal": "fundo-torta",
+      "principal": "fundo-torta-pregas",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.borda-folhas": {
@@ -4226,11 +4224,11 @@
       }
     ],
     "prato": {
-      "principal": "torta-tampa",
+      "principal": "torta-borda-folhas",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.borda-tranca": {
@@ -4249,11 +4247,11 @@
       }
     ],
     "prato": {
-      "principal": "torta-tampa",
+      "principal": "torta-borda-tranca",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.trelica": {
@@ -4442,10 +4440,10 @@
       }
     ],
     "prato": {
-      "principal": "bomba-choux",
+      "principal": "bomba-caramelo-amendoa",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 3
     }
   },
@@ -4479,7 +4477,7 @@
       }
     ],
     "prato": {
-      "principal": "bolo-camadas",
+      "principal": "bolo-fondant-desenhos",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -4891,11 +4889,11 @@
       }
     ],
     "prato": {
-      "principal": "massa-folhada",
+      "principal": "massa-folhada-marcada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "pastelaria.bouchees": {
@@ -5004,7 +5002,9 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "principal": "forma-bolo-untada",
+      "forma": "inteiro"
     }
   },
   "bolos.forrar-base": {
@@ -5029,7 +5029,9 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "principal": "forma-bolo-disco-papel",
+      "forma": "inteiro"
     }
   },
   "bolos.dupla-forracao": {
@@ -5061,7 +5063,9 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "principal": "forma-bolo-dupla-forracao",
+      "forma": "inteiro"
     }
   },
   "bolos.forrar-forma-pao": {
@@ -5081,7 +5085,9 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "principal": "forma-pao-forrada",
+      "forma": "inteiro"
     }
   },
   "bolos.encher-forma": {
@@ -5109,8 +5115,10 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tigelinha",
-      "liquido": "#ecd29a"
+      "servir": "tabua",
+      "liquido": null,
+      "principal": "forma-bolo-massa-crua",
+      "forma": "inteiro"
     }
   },
   "bolos.teste-pao-de-lo": {
@@ -5561,11 +5569,11 @@
       }
     ],
     "prato": {
-      "principal": "pao-de-lo",
+      "principal": "pao-de-lo-camadas-embebidas",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "dourado"
+      "estado": null
     }
   },
   "bolos.rechear-sobrepor": {
@@ -5769,11 +5777,11 @@
       }
     ],
     "prato": {
-      "principal": "sanduiche-victoria",
+      "principal": "bolo-estencil-renda",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado"
+      "estado": null
     }
   },
   "bolos.saco-papel": {
@@ -5798,7 +5806,9 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "principal": "saco-papel-cone",
+      "forma": "inteiro"
     }
   },
   "bolos.glace-acucar": {
@@ -5925,11 +5935,11 @@
       }
     ],
     "prato": {
-      "principal": "torta-chocolate",
+      "principal": "bolo-brilho-abrico",
       "acompanhamentos": [],
-      "servir": "prato",
+      "servir": "tabua",
       "forma": "inteiro",
-      "estado": "dourado"
+      "estado": null
     }
   },
   "bolos.cobrir-glace-chocolate": {
@@ -6074,7 +6084,7 @@
       }
     ],
     "prato": {
-      "principal": "bolo-camadas",
+      "principal": "bolo-chantilly-castanhas",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -6101,10 +6111,8 @@
       }
     ],
     "prato": {
-      "principal": "bolo-camadas",
-      "acompanhamentos": [
-        "morango"
-      ],
+      "principal": "bolo-rosetas-morango",
+      "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
     }
@@ -6388,11 +6396,12 @@
       }
     ],
     "prato": {
-      "principal": "biscoito-cortado",
+      "principal": "rolo-biscoito-rodelas",
       "acompanhamentos": [],
       "servir": "tabua",
-      "estado": "cru",
-      "quantidade": 5
+      "estado": null,
+      "quantidade": null,
+      "forma": "inteiro"
     }
   },
   "bolos.shortbread": {
@@ -6447,10 +6456,10 @@
       }
     ],
     "prato": {
-      "principal": "tuile",
+      "principal": "biscoito-pingado-amendoa",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 5
     }
   },
@@ -6479,10 +6488,10 @@
       }
     ],
     "prato": {
-      "principal": "biscoito-cortado",
+      "principal": "biscoito-demerara",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 5
     }
   },
@@ -6503,10 +6512,10 @@
       }
     ],
     "prato": {
-      "principal": "biscoito-cortado",
+      "principal": "biscoito-meio-chocolate",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 4
     }
   },

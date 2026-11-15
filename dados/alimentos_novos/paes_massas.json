@@ -1,1 +1,24 @@
-[]
+[
+  { "id": "massa-colorida", "nome": "Massa fresca colorida", "forma": "folhas de massa em leque: amarela de ovos, verde de espinafre, vermelha de tomate e preta de tinta de lula" },
+  { "id": "massa-ervas", "nome": "Massa com ervas prensadas", "forma": "quadrado de massa fina cozida com uma folha de salsa prensada aparecendo por dentro" },
+  { "id": "gnocchi-romana", "nome": "Gnocchi alla romana", "forma": "discos de semolina sobrepostos, gratinados com manteiga e parmesão" },
+  { "id": "raviolo-quadrado", "nome": "Ravióli quadrado", "forma": "almofadinha quadrada de massa com recheio no meio e borda em zigue-zague" },
+  { "id": "raviolo-redondo", "nome": "Ravióli redondo", "forma": "almofadinha redonda de massa com borda canelada do cortador" },
+  { "id": "tortellino", "nome": "Tortellini fechado no dedo", "forma": "anel de massa recheada com a aba da costura virada para cima e as pontas cruzadas" },
+  { "id": "nhoque-vincado", "nome": "Nhoque vincado no garfo", "forma": "oval arqueado de massa de batata com estrias do garfo de um lado" },
+  { "id": "wonton", "nome": "Wonton fechado e torcido", "forma": "bolsinha de recheio com a massa apertada no pescoço e torcida em pétalas" },
+  { "id": "pastelzinho-chines", "nome": "Pastelzinho chinês de pregas", "forma": "meia-lua gorda com pregas na costura de cima e a base frita dourada" },
+  { "id": "pastel-meia-lua", "nome": "Pastel em meia-lua", "forma": "meia-lua estufada de massa crua com a borda selada e dentada pela fôrma" },
+  { "id": "rolinho-primavera", "nome": "Rolinho primavera frito", "forma": "cilindro de massa frita com bolhas douradas, emenda e pontas dobradas" },
+  { "id": "minirolinho", "nome": "Minirolinho primavera frito", "forma": "rolinho primavera pequeno, frito e dourado" },
+  { "id": "pao-cruz", "nome": "Pão com corte em cruz", "forma": "bola de massa crua enfarinhada com dois piques de tesoura em X no topo" },
+  { "id": "baguete-riscada", "nome": "Baguete crua riscada", "forma": "baguete crua enfarinhada com riscos paralelos e oblíquos no topo" },
+  { "id": "rosca-palmier", "nome": "Rosquinha palmier", "forma": "tira enrolada pelas duas pontas até o meio, duas espirais que se encontram, dourada" },
+  { "id": "rosca-caracol", "nome": "Rosquinha caracol", "forma": "tira enrolada em espiral plana, a ponta presa embaixo, dourada" },
+  { "id": "rosca-tourelle", "nome": "Rosquinha tourelle", "forma": "três discos de massa empilhados do maior ao menor, dourados" },
+  { "id": "rosca-parker-house", "nome": "Rosquinha Parker House", "forma": "círculo de massa dobrado no vinco, a metade de cima menor deitada sobre a de baixo" },
+  { "id": "rosca-colheita", "nome": "Rosquinha de colheita", "forma": "grão de trigo de pontas finas com três talhos paralelos no topo" },
+  { "id": "rosca-no", "nome": "Nó de padeiro", "forma": "tira de massa amarrada num nó simples, dourada e brilhante" },
+  { "id": "espiral-parmesao", "nome": "Parmesão em espirais", "forma": "lâminas finas de parmesão enroladas em espiral" },
+  { "id": "tamale", "nome": "Tamale na palha de milho", "forma": "pacotinho de palha de milho com as pontas dobradas para cima e amarrado com tirinhas de palha" }
+]

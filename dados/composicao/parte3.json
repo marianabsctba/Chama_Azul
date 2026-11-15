@@ -75,11 +75,11 @@
       }
     ],
     "prato": {
-      "principal": "alcachofra",
+      "principal": "talos-alcachofra",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "tiras",
-      "estado": "cozido"
+      "forma": "inteiro",
+      "estado": null
     }
   },
   "alcachofra.coracao": {
@@ -108,11 +108,11 @@
       }
     ],
     "prato": {
-      "principal": "alcachofra",
+      "principal": "fundo-alcachofra",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cozido",
+      "estado": null,
       "quantidade": 2
     }
   },
@@ -290,8 +290,11 @@
       }
     ],
     "prato": {
-      "principal": "cenoura",
-      "acompanhamentos": [],
+      "principal": "cenoura-torneada",
+      "acompanhamentos": [
+        "batata-chateau",
+        "pepino-torneado"
+      ],
       "servir": "prato",
       "forma": "inteiro",
       "estado": "cru",
@@ -399,7 +402,7 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "batata-hasselback",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -416,7 +419,7 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "batata-chateau",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -465,11 +468,11 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "batata-parisienne",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 8
     }
   },
@@ -556,11 +559,12 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "batata-gaufrette",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 4
     }
   },
   "batata.souffles": {
@@ -919,11 +923,11 @@
       }
     ],
     "prato": {
-      "principal": "palha_milho",
+      "principal": "tamale",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cozido",
+      "estado": null,
       "quantidade": 3
     }
   },
@@ -1283,7 +1287,7 @@
       }
     ],
     "prato": {
-      "principal": "berinjela",
+      "principal": "berinjela-losangos",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -1832,7 +1836,7 @@
       }
     ],
     "prato": {
-      "principal": "alho_poro",
+      "principal": "bouquet-garni",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -2328,11 +2332,12 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "rosti-legumes",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "ralado",
-      "estado": "dourado"
+      "forma": "inteiro",
+      "estado": null,
+      "quantidade": 3
     }
   },
   "fritar.stir_fry": {
@@ -2420,11 +2425,11 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "ninho-batata",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "desfiado",
-      "estado": "dourado"
+      "forma": "inteiro",
+      "estado": null
     }
   },
   "fritar.alga_crespa": {
@@ -2613,8 +2618,11 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "ramequim",
-      "liquido": "#4d7a32"
+      "servir": "prato",
+      "liquido": null,
+      "principal": "timbale-espinafre",
+      "forma": "inteiro",
+      "quantidade": 2
     }
   },
   "graos.feijao_molho_cozinhar": {
@@ -3222,7 +3230,7 @@
       }
     ],
     "prato": {
-      "principal": "milho_pipoca",
+      "principal": "pipoca",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -3598,7 +3606,7 @@
       }
     ],
     "prato": {
-      "principal": "massa_fresca",
+      "principal": "massa-colorida",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -3627,11 +3635,12 @@
       }
     ],
     "prato": {
-      "principal": "massa_fresca",
+      "principal": "massa-ervas",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cozido"
+      "estado": null,
+      "quantidade": 4
     }
   },
   "massa.abrir_mao": {
@@ -3797,7 +3806,7 @@
       }
     ],
     "prato": {
-      "principal": "raviolo",
+      "principal": "raviolo-quadrado",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -3824,7 +3833,7 @@
       }
     ],
     "prato": {
-      "principal": "raviolo",
+      "principal": "raviolo-quadrado",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -3861,7 +3870,7 @@
       }
     ],
     "prato": {
-      "principal": "tortellini",
+      "principal": "tortellino",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -3990,12 +3999,12 @@
       }
     ],
     "prato": {
-      "principal": "gnocchi",
+      "principal": "gnocchi-romana",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
-      "quantidade": 6
+      "estado": null,
+      "quantidade": null
     }
   },
   "massa.gnocchi_batata": {
@@ -4032,11 +4041,11 @@
       }
     ],
     "prato": {
-      "principal": "gnocchi",
+      "principal": "nhoque-vincado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cozido",
+      "estado": null,
       "quantidade": 10
     }
   },
@@ -4047,7 +4056,7 @@
       }
     ],
     "prato": {
-      "principal": "gnocchi",
+      "principal": "nhoque-vincado",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -4192,7 +4201,7 @@
       }
     ],
     "prato": {
-      "principal": "raviolo",
+      "principal": "raviolo-redondo",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -4274,11 +4283,11 @@
       }
     ],
     "prato": {
-      "principal": "folha_wonton",
+      "principal": "wonton",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cozido",
+      "estado": null,
       "quantidade": 6
     }
   },
@@ -4332,11 +4341,11 @@
       }
     ],
     "prato": {
-      "principal": "folha_wonton",
+      "principal": "pastelzinho-chines",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 6
     }
   },
@@ -4364,7 +4373,7 @@
       }
     ],
     "prato": {
-      "principal": "folha_wonton",
+      "principal": "pastel-meia-lua",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -4413,11 +4422,11 @@
       }
     ],
     "prato": {
-      "principal": "folha_rolinho",
+      "principal": "rolinho-primavera",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 3
     }
   },
@@ -4439,11 +4448,11 @@
       }
     ],
     "prato": {
-      "principal": "folha_rolinho",
+      "principal": "minirolinho",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
+      "estado": null,
       "quantidade": 6
     }
   },
@@ -4813,11 +4822,11 @@
       }
     ],
     "prato": {
-      "principal": "peito-de-frango",
+      "principal": "chaudfroid-frango",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cozido"
+      "forma": "inteiro",
+      "estado": null
     }
   },
   "molhos.hollandaise_mao": {
@@ -5484,7 +5493,7 @@
       }
     ],
     "prato": {
-      "principal": "pao-redondo",
+      "principal": "pao-cruz",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -5499,7 +5508,7 @@
       }
     ],
     "prato": {
-      "principal": "baguete",
+      "principal": "baguete-riscada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -5546,11 +5555,11 @@
       }
     ],
     "prato": {
-      "principal": "rosquinhas",
+      "principal": "rosca-palmier",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "paes.rosca-tourelle": {
@@ -5564,11 +5573,11 @@
       }
     ],
     "prato": {
-      "principal": "rosquinhas",
+      "principal": "rosca-tourelle",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "paes.rosca-caracol": {
@@ -5581,11 +5590,11 @@
       }
     ],
     "prato": {
-      "principal": "rosquinhas",
+      "principal": "rosca-caracol",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "paes.rosca-parker-house": {
@@ -5601,11 +5610,11 @@
       }
     ],
     "prato": {
-      "principal": "rosquinhas",
+      "principal": "rosca-parker-house",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "paes.rosca-colheita": {
@@ -5619,11 +5628,11 @@
       }
     ],
     "prato": {
-      "principal": "rosquinhas",
+      "principal": "rosca-colheita",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "paes.rosca-no": {
@@ -5636,11 +5645,11 @@
       }
     ],
     "prato": {
-      "principal": "rosquinhas",
+      "principal": "rosca-no",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": null
     }
   },
   "paes.dividir-por-igual": {
@@ -5804,10 +5813,10 @@
       }
     ],
     "prato": {
-      "principal": "parmesao",
+      "principal": "espiral-parmesao",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "lascas",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
