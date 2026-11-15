@@ -17,7 +17,24 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
   const alvo = minutos(passo.parametro) ?? PADRAO_MIN[passo.acao] ?? 20;
   const solido = temPeca(passo);
   const peca = solido ? mesa.garantirPeca(passo.alimento!, estacao.superficie.clone()) : null;
-  if (peca) {
+  const texto = `${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
+  // em água gelada, água fria ou com gelo: a peça vai para a tigela com água e cubos de gelo
+  const banhoFrio = passo.variante === 'frio' && /gelad|gelo|[aá]gua fria/.test(texto) && !/geladeira|freezer/.test(texto);
+  if (peca && banhoFrio) {
+    mesa.garantirRecipiente('tigela grande', estacao.superficie.clone(), 'tigela');
+    mesa.garantirConteudo('água gelada', 0.6);
+    peca.position.set(mesa.centro.x, mesa.fundoY, mesa.centro.z);
+    peca.rotation.y = anguloDaEstacao(estacao);
+    const gelo = new THREE.MeshStandardMaterial({ color: '#eef8ff', roughness: 0.08, transparent: true, opacity: 0.7 });
+    for (let i = 0; i < 7; i++) {
+      const cubo = new THREE.Mesh(new THREE.BoxGeometry(0.018, 0.016, 0.018), gelo);
+      const a = i * 0.9;
+      const r = mesa.bocaRaio * (0.35 + (i % 3) * 0.18);
+      cubo.position.set(mesa.centro.x + Math.cos(a) * r, (mesa.conteudo?.position.y ?? mesa.fundoY) + (mesa.conteudo?.estado.nivel ?? 0.03), mesa.centro.z + Math.sin(a) * r);
+      cubo.rotation.set(i, i * 2, 0);
+      mesa.adicionarExtra(cubo);
+    }
+  } else if (peca) {
     peca.position.copy(estacao.superficie);
     peca.rotation.y = anguloDaEstacao(estacao);
   } else {

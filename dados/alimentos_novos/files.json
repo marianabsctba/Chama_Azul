@@ -1,0 +1,47 @@
+[
+  {
+    "id": "file-de-salmao",
+    "nome": "Filé de salmão",
+    "forma": "filé cru de salmão em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-linguado",
+    "nome": "Filé de linguado",
+    "forma": "filé cru de linguado em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-merluza",
+    "nome": "Filé de merluza",
+    "forma": "filé cru de merluza em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-rodovalho",
+    "nome": "Filé de rodovalho",
+    "forma": "filé cru de rodovalho em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-cavala",
+    "nome": "Filé de cavala",
+    "forma": "filé cru de cavala em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-peixe-anjo",
+    "nome": "Filé de peixe-anjo",
+    "forma": "filé cru de peixe-anjo em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-perca",
+    "nome": "Filé de perca",
+    "forma": "filé cru de perca em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-vermelho",
+    "nome": "Filé de vermelho",
+    "forma": "filé cru de vermelho em lado, sem cabeça nem espinha, carne à mostra"
+  },
+  {
+    "id": "file-de-hadoque",
+    "nome": "Filé de hadoque",
+    "forma": "filé cru de hadoque em lado, sem cabeça nem espinha, carne à mostra"
+  }
+]

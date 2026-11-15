@@ -53,6 +53,10 @@ export class Mesa {
   readonly cena: THREE.Scene;
   peca: Peca | null = null;
   pecaChave = '';
+  /** Nome da técnica em curso: dá o sabor (e a cor) às bases neutras do recipiente. */
+  contexto = '';
+  /** Ação do passo em curso (sovar, quebrar...), para saber quando o livro usa as mãos. */
+  acao = '';
   recipiente: THREE.Group | null = null;
   recipienteChave = '';
   conteudo: Conteudo | null = null;
@@ -178,7 +182,7 @@ export class Mesa {
     const caixa = new THREE.Box3().setFromObject(this.recipiente);
     const alturaUtil = Math.max(0.02, (caixa.max.y - this.fundoY) * 0.85);
     if (!this.conteudo) {
-      const e = estadoInicial(texto);
+      const e = estadoInicial(texto, this.contexto);
       const c = new Conteudo(this.bocaRaio * 0.95, e.cor, alturaUtil * nivelRel);
       c.estado.espessura = e.espessura;
       c.estado.brilho = e.brilho;
@@ -202,6 +206,13 @@ export class Mesa {
 
   /** Utensílio que acompanha o mouse. */
   pegarFerramenta(texto: string, padrao: string): THREE.Group | null {
+    // o livro faz com as mãos (sovar, socar, quebrar o talo, esfarelar, espremer, rasgar): sem utensílio
+    // utensílio que não é ferramenta de mão (bancada enfarinhada, tábua, vasilha) também conta como mãos
+    const semUtensilio = !texto || /^(m[aã]os?|dedos?|palmas?|punho|polegares?)/i.test(texto.trim()) || /m[aã]os|dedos|palma|punho|polegar|bancada|superf[ií]cie|t[aá]bua|vasilha|tigela/i.test(texto) || !criarUtensilio(texto);
+    if (semUtensilio && /sovar|socar|quebrar|esfarelar|espremer|rasgar|torcer|achatar|amassar com|abrir com os dedos|despelar|descascar com os dedos|puxar/i.test(this.acao)) {
+      this.soltarFerramenta();
+      return null;
+    }
     const t = texto && !/^(m[aã]os?|dedos?)$/i.test(texto.trim()) ? texto : UTENSILIO_PADRAO[padrao] ?? padrao;
     if (this.ferramenta && this.ferramentaChave === t) return this.ferramenta;
     this.soltarFerramenta();

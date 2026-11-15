@@ -76,7 +76,7 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   if (sujeira) peca.salpicar(sujeira, 0.12, ctx.tecnica.id.length);
   const padrao = v === 'remover' ? 'remover' : v === 'limpar' ? 'limpar' : 'cobrir';
   // na água e com os dedos não há utensílio na mão; sem utensílio no livro e com faca no texto, a faca
-  const ferramenta = modo === 'agua' || modo === 'mao' ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(modo === 'lamina' && !/faca|faquinha|cutelo|descascador|tesoura/i.test(passo.utensilio) ? 'faca' : modo === 'pano' && !passo.utensilio ? 'pano' : passo.utensilio, padrao);
+  const ferramenta = modo === 'agua' || modo === 'mao' ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(modo === 'lamina' && !/faca|faquinha|cutelo|descascador|tesoura/i.test(passo.utensilio) ? 'faca' : modo === 'pano' ? 'pano' : passo.utensilio, padrao);
   const cor = v === 'remover' ? peca.corInterna : corCobrir;
   const corParticula = modo === 'agua' ? '#bfe4ff' : modo && sujeira ? sujeira : v === 'remover' ? '#c9b48a' : corCobrir;
   const lascas = new Particulas(corParticula, modo === 'agua' ? 200 : 120, v === 'remover' || modo === 'lamina' ? 'lasca' : 'esfera');

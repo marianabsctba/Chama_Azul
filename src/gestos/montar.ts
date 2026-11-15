@@ -76,8 +76,51 @@ function sequencia(ctx: ContextoGesto, pontos: THREE.Vector3[], dica: string, ao
   return exec;
 }
 
+/** Louça em que o prato vai à mesa, pela ficha do livro, para os passos de servir e decorar. */
+function loucaDoServir(servir?: string): string {
+  if (!servir) return 'prato';
+  if (/tigela|cumbuca|tigelinha/.test(servir)) return 'tigela';
+  if (/xicara/.test(servir)) return 'tigelinha';
+  if (/taca|copo/.test(servir)) return 'taça';
+  if (/ramequim/.test(servir)) return 'ramequim';
+  return 'prato';
+}
+
+/**
+ * Decorar ou servir sem peça sólida: o livro põe a guarnição sobre a sopa, o creme ou o molho
+ * já na louça. Mostra a louça com o conteúdo e cada clique deposita um elemento por cima.
+ */
+function decorarServido(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, tecnica } = ctx;
+  const ficha = tecnica.prato;
+  mesa.removerPeca();
+  mesa.garantirRecipiente(loucaDoServir(ficha?.servir), estacao.superficie.clone(), 'prato');
+  const conteudo = mesa.garantirConteudo(passo.meio ?? (ficha?.liquido ? tecnica.nome : passo.alvo), 0.55);
+  if (ficha?.liquido) conteudo.estado.cor.set(ficha.liquido);
+  const topo = (conteudo.position?.y ?? mesa.fundoY) + conteudo.estado.nivel + 0.003;
+  const r = mesa.bocaRaio * 0.45;
+  const pontos = [0, 1.25, 2.5, 3.75, 5].map((a) => new THREE.Vector3(mesa.centro.x + Math.cos(a) * r * (a === 0 ? 0 : 1), topo, mesa.centro.z + Math.sin(a) * r * (a === 0 ? 0 : 1)));
+  const lista = passo.adicionar?.length ? passo.adicionar : (ficha?.acompanhamentos ?? []);
+  return sequencia(
+    ctx,
+    pontos,
+    'Clique nos pontos marcados para pôr a guarnição sobre o prato.',
+    (i) => {
+      const forma = lista.length ? criarFormaAlimento(lista[i % lista.length]) : criarFormaGenerica(/erva|salsa|folha|cerefólio|cebolinha|coentro|endro/.test(passo.alvo) ? 'folha de salsa' : passo.alvo || 'guarnição');
+      const g = new Peca(forma);
+      g.scale.setScalar(Math.min(1, 0.028 / Math.max(g.comprimento, g.largura, 1e-3)));
+      g.position.copy(pontos[i]);
+      g.rotation.y = i * 1.7;
+      mesa.adicionarExtra(g);
+    },
+    (n) => comentar(n, 'Apresentação caprichada.', 'Bonito.', 'Ficou meio torto, mas gostoso.'),
+  );
+}
+
 export function gestoMontar(ctx: ContextoGesto): Execucao {
   const v = ctx.passo.variante;
+  // servir ou decorar o que já está na louça (sopa, creme, molho): a louça com o conteúdo em cena
+  if (!ctx.passo.alimento && (v === 'decorar' || /^servir/.test(ctx.passo.acao))) return decorarServido(ctx);
   const peca = prepararPeca(ctx);
   const { passo, mesa, entrada, camera, hud, estacao } = ctx;
   const L = peca.comprimento;

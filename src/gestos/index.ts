@@ -56,8 +56,14 @@ export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | nul
   switch (p.gesto) {
     case 'calor':
       return p.variante === 'forno' ? 'forno' : 'fogao';
-    case 'tempo':
-      return p.variante === 'frio' ? 'geladeira' : DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
+    case 'tempo': {
+      // frio fora da geladeira: água gelada, água corrente, grade, no próprio líquido, temperatura ambiente
+      const texto = `${p.acao} ${p.alvo} ${p.utensilio} ${p.parametro}`.toLowerCase();
+      const naBancada = /gelad|gelo|[aá]gua fria|[aá]gua corrente|grade|ambiente|desligado|pr[oó]prio l[ií]quido|no l[ií]quido|escorrid|refogado|mistura$/.test(texto) && !/geladeira|freezer|congel|refriger/.test(texto);
+      if (p.variante === 'frio' && !naBancada) return 'geladeira';
+      if (p.variante === 'frio' && /[aá]gua corrente/.test(texto)) return 'pia';
+      return DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
+    }
     case 'medir':
       return 'balanca';
     case 'confeitar':

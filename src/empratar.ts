@@ -314,7 +314,7 @@ function corDaSopa(tecnica: Tecnica): { cor: THREE.Color; brilho: number } | nul
 /** Cor do molho do prato: o que ficou na panela, ou o clássico da bancada. */
 function corMolho(tecnica: Tecnica, mesa: Mesa, preparo?: string): { cor: THREE.Color; brilho: number } | null {
   if (mesa.conteudo) return { cor: mesa.conteudo.estado.cor.clone(), brilho: mesa.conteudo.estado.brilho };
-  if (preparo) return { cor: new THREE.Color(estadoInicial(preparo.replace(/[-_]/g, ' ')).cor), brilho: 0.7 };
+  if (preparo) return { cor: new THREE.Color(estadoInicial(preparo.replace(/[-_]/g, ' '), tecnica.nome).cor), brilho: 0.7 };
   // sem molho na técnica, sem molho no prato: nada que o livro não peça
   void tecnica;
   return null;
@@ -785,7 +785,7 @@ function servirPequena(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnica:
   cena.add(grupo);
   const louca = criarLoucaPequena(tipo);
   grupo.add(louca.g);
-  const corLiquido = ficha.liquido ?? (mesa.conteudo ? '#' + mesa.conteudo.estado.cor.getHexString() : preparo ? '#' + new THREE.Color(estadoInicial(preparo.replace(/[-_]/g, ' ')).cor).getHexString() : null);
+  const corLiquido = ficha.liquido ?? (mesa.conteudo ? '#' + mesa.conteudo.estado.cor.getHexString() : preparo ? '#' + new THREE.Color(estadoInicial(preparo.replace(/[-_]/g, ' '), tecnica.nome).cor).getHexString() : null);
   const peca = mesa.peca;
   mesa.soltarFerramenta();
   mesa.limparExtras();

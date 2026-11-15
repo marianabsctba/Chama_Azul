@@ -66,6 +66,8 @@ export class Missao {
       return;
     }
     const passo = this.tecnica.passos[this.indice];
+    this.mesa.contexto = this.tecnica.nome;
+    this.mesa.acao = `${passo.acao} ${passo.parametro}`;
     const vaso = vasoDoPasso(this.tecnica, this.indice);
     const est = estacaoDoPasso(passo, this.tecnica, this.estacaoAtual, vaso);
     this.eventos.aoPasso(this.indice, this.tecnica.passos.length);
@@ -100,6 +102,7 @@ export class Missao {
         this.exec = FABRICAS[passo.gesto](ctx);
         const proprio = passo.gesto === 'montar' && (passo.variante === 'decorar' || passo.variante === 'rechear');
         if (passo.adicionar?.length && !proprio) this.mesa.adicionarSobre(passo.adicionar, passo.gesto === 'calor' || passo.gesto === 'superficie' ? 'espalhado' : 'linha');
+        this.enquadrar(est, estacao);
       } catch (e) {
         console.error('falha ao iniciar gesto', passo, e);
         this.resultados.push({ nota: 1, comentario: '', pulado: true });
@@ -130,7 +133,37 @@ export class Missao {
 
   /** O gesto do passo atual já está em cena e recebendo a mão? */
   get pronto() {
-    return !!this.exec && !this.esperando && this.pausaEntrePassos <= 0;
+    return !!this.exec && !this.esperando && this.pausaEntrePassos <= 0 && !this.jogador.voando;
+  }
+
+  /**
+   * Enquadra o que está em cena no passo (alimento, recipiente, peneira, tigela de destino) pelo
+   * tamanho real: a codorna não some na tábua e o peru não cola na tela.
+   */
+  private enquadrar(est: CenaEstacao, estacao: { superficie: THREE.Vector3; camera: THREE.Vector3 }) {
+    if (est === 'forno' || est === 'geladeira' || est === 'balanca') return;
+    const caixa = new THREE.Box3();
+    // a peça e o recipiente; os extras (guias da faca, marcas) só entram quando são a outra vasilha do despejo
+    const passo = this.tecnica.passos[this.indice];
+    const extras = passo?.gesto === 'verter' ? this.mesa.extras.filter((o) => o instanceof THREE.Group) : [];
+    for (const o of [this.mesa.recipiente, ...extras]) if (o) caixa.expandByObject(o);
+    // a peça pelo próprio tamanho (as guias da faca e as marcas presas a ela não contam)
+    const pc = this.mesa.peca;
+    if (pc) {
+      pc.updateMatrixWorld(true);
+      const s = pc.scale.x;
+      const meio = Math.max(pc.comprimento, pc.largura) * s * 0.5;
+      const base = pc.getWorldPosition(new THREE.Vector3());
+      caixa.expandByPoint(base.clone().add(new THREE.Vector3(-meio, 0, -meio)));
+      caixa.expandByPoint(base.clone().add(new THREE.Vector3(meio, pc.altura * s, meio)));
+    }
+    if (caixa.isEmpty()) return;
+    const centro = caixa.getCenter(new THREE.Vector3());
+    const raio = THREE.MathUtils.clamp(caixa.getSize(new THREE.Vector3()).length() / 2, 0.05, 0.55);
+    const fov = (this.jogador.camera.fov * Math.PI) / 180;
+    const d = THREE.MathUtils.clamp((raio / Math.sin(fov / 2)) * 1.2, 0.26, 1.5);
+    const dir = estacao.camera.clone().sub(estacao.superficie).normalize();
+    this.jogador.voar(centro.clone().addScaledVector(dir, d), centro, 0.45);
   }
 
   /** Pula o passo atual (conta como feito no modo zen, nota zero no modo prova). */

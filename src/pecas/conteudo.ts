@@ -74,6 +74,14 @@ export class Conteudo extends THREE.Group {
     this.material.color.copy(e.cor);
     this.material.emissive.copy(e.cor).multiplyScalar(0.22);
     this.material.roughness = 1 - e.brilho * 0.9;
+    // líquido ralo (água, caldo, óleo, vinho) deixa ver o que está dentro: ossos, legumes, ovos
+    const ralo = e.espessura < 0.12;
+    if (this.material.transparent !== ralo) {
+      this.material.transparent = ralo;
+      this.material.depthWrite = !ralo;
+      this.material.needsUpdate = true;
+    }
+    this.material.opacity = ralo ? 0.5 + e.espessura * 2.5 : 1;
   }
 
   /** Interpola o estado para outro (t de 0 a 1). */
@@ -92,28 +100,54 @@ export class Conteudo extends THREE.Group {
 }
 
 /** Cor e textura iniciais de um preparo a partir do texto do alvo. */
-export function estadoInicial(texto: string): { cor: string; espessura: number; brilho: number } {
+/** Sabores que tingem a base neutra (creme, calda, purê, massa) com a cor do que ela é. */
+const SABORES: [RegExp, string, number, number][] = [
+  [/caf[eé]|expresso|espresso/, '#3b2416', 0.1, 0.85],
+  [/chocolate|cacau|ganache|sacher/, '#4a2a18', 0.5, 0.8],
+  [/caramelo|butterscotch|toffee|praline|nougatine|[aâ]mbar|melado|tatin/, '#b8681e', 0.35, 0.95],
+  [/blueberry|mirtilo|amora|cassis/, '#4a2654', 0.35, 0.8],
+  [/framboesa|morango|groselha|cereja|frutas vermelhas|cranberry|beterraba/, '#b5203b', 0.3, 0.8],
+  [/maracuj[aá]|manga|damasco|abric[oó]|p[eê]ssego|mel[aã]o|cantalupo|ab[oó]bora|cenoura/, '#e8902e', 0.35, 0.7],
+  [/lim[aã]o|lima|citr/, '#f1e48a', 0.2, 0.8],
+  [/pimenta[oõ]|piment[aã]o|tomate|vermelh/, '#c8432b', 0.35, 0.5],
+  [/espinafre|ervilha|pesto|agri[aã]o|br[oó]colis|verde/, '#4f7a2b', 0.5, 0.5],
+  [/cogumelo|duxelles|shiitake/, '#5e4a36', 0.6, 0.4],
+  [/caldo escuro|demi|molho escuro|espagnole|espanhol|tutano|carne/, '#6b3a1e', 0.25, 0.7],
+  [/gengibre|melado|especiaria/, '#8a5a2a', 0.4, 0.6],
+];
+
+/** Bases neutras que ganham a cor do sabor da técnica. */
+const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#e9d9a8', '#efdcb2', '#f0dfa4', '#e8d7b0', '#c99a52']);
+
+/**
+ * Cor, espessura e brilho do que está no recipiente. O texto do passo decide a base; quando a base
+ * é neutra (creme, calda, massa, purê, caldo genérico), o sabor da técnica dá a cor (o creme do
+ * musse de chocolate é marrom, a calda do caramelo é âmbar, o purê de blueberry é roxo).
+ */
+export function estadoInicial(texto: string, contexto = ''): { cor: string; espessura: number; brilho: number } {
   const t = texto.toLowerCase();
   const tabela: [RegExp, string, number, number][] = [
     [/clara/, '#f3eed2', 0.15, 0.7],
     [/gema|creme de ovos|zabaione|sabayon/, '#f2b632', 0.4, 0.6],
     [/ovo/, '#f0c24b', 0.2, 0.6],
     [/chocolate|ganache/, '#4a2a18', 0.5, 0.8],
-    [/caramelo|calda|açúcar|xarope/, '#e9d9a8', 0.25, 0.9],
+    [/caramelo|butterscotch|toffee/, '#b8681e', 0.35, 0.95],
+    [/caf[eé]/, '#3b2416', 0.1, 0.85],
+    [/calda|açúcar|xarope/, '#e9d9a8', 0.25, 0.9],
     [/maionese|aïoli|aioli/, '#f4e6a6', 0.6, 0.6],
     [/hollandaise|holandês|béarnaise|bearnaise/, '#f1d27a', 0.5, 0.6],
     [/manteiga/, '#f7e08c', 0.5, 0.6],
     [/creme de leite|chantilly|nata|creme/, '#fbf6e9', 0.3, 0.5],
-    [/leite|béchamel|bechamel|bechamel/, '#f6f1e4', 0.2, 0.5],
+    [/leite|béchamel|bechamel/, '#f6f1e4', 0.2, 0.5],
     [/tomate|vermelh/, '#c8432b', 0.35, 0.5],
     [/caldo escuro|demi|molho escuro|roux escuro|espanhol/, '#6b3a1e', 0.25, 0.7],
-    [/caldo de peixe|fumet|caldo branco|caldo de galinha|consomê|consome/, '#e3c98a', 0.05, 0.9],
+    [/caldo de peixe|fumet|caldo branco|caldo de galinha|consomê|consome|dashi/, '#e3c98a', 0.05, 0.9],
     [/caldo|sopa|bouillon/, '#c99a52', 0.08, 0.85],
     [/roux/, '#e7c77d', 0.6, 0.4],
     [/óleo|azeite|gordura|fritura/, '#e8c45a', 0.02, 1],
     [/vinho tinto/, '#5b1a24', 0.02, 0.9],
     [/vinho|vinagre/, '#e9dc9c', 0.02, 0.9],
-    [/água|salmoura/, '#bcd8e6', 0.0, 1],
+    [/água|salmoura|gelo/, '#bcd8e6', 0.0, 1],
     [/massa de pão|massa|farinha|pão/, '#efdcb2', 0.95, 0.15],
     [/arroz|risoto/, '#efe6cf', 0.8, 0.3],
     [/purê|batata/, '#f0dfa4', 0.8, 0.3],
@@ -122,6 +156,11 @@ export function estadoInicial(texto: string): { cor: string; espessura: number; 
     [/limão|lima/, '#f1ec9a', 0.05, 0.9],
     [/pesto|erva|verde/, '#4f7a2b', 0.6, 0.5],
   ];
-  for (const [re, cor, esp, br] of tabela) if (re.test(t)) return { cor, espessura: esp, brilho: br };
-  return { cor: '#e8d7b0', espessura: 0.3, brilho: 0.5 };
+  let base: { cor: string; espessura: number; brilho: number } = { cor: '#e8d7b0', espessura: 0.3, brilho: 0.5 };
+  for (const [re, cor, esp, br] of tabela) if (re.test(t)) { base = { cor, espessura: esp, brilho: br }; break; }
+  if (NEUTRAS.has(base.cor)) {
+    const tudo = `${t} ${contexto.toLowerCase()}`;
+    for (const [re, cor, esp, br] of SABORES) if (re.test(tudo)) return { cor, espessura: Math.max(base.espessura, esp), brilho: br };
+  }
+  return base;
 }
