@@ -1,7 +1,7 @@
 // Tempo (descansar, fermentar, gelar, marinar), verter (coar, despejar, escumar, peneirar) e medir.
 import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
-import { clamp, comentar, formatarTempo, minutos } from './base';
+import { clamp, comentar, formatarTempo, minutos, suave } from './base';
 import { anguloDaEstacao, aoLado, temPeca, textoConteudo } from './mesa';
 import { Particulas } from '../pecas/particulas';
 import { audio } from '../motor/audio';
@@ -104,12 +104,25 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
     mesa.adicionarExtra(peneira);
   }
   const caixaDest = new THREE.Box3().setFromObject(destino);
+  // topo do destino, contando a peneira por cima
+  let topoDest = caixaDest.max.y;
+  for (const o of mesa.extras) topoDest = Math.max(topoDest, new THREE.Box3().setFromObject(o).max.y);
+  const caixaOrigem = new THREE.Box3().setFromObject(origem);
   const fluxo = new Particulas(conteudo.estado.cor, 220, 'esfera', 0.95);
   cena.add(fluxo);
   const nivel0 = conteudo.estado.nivel;
   const origemPos0 = origem.position.clone();
   // o conteúdo fica no centro da boca, que não é a origem do modelo quando há cabo
   const desloc = mesa.centro.clone().sub(origemPos0).setY(mesa.fundoY - origemPos0.y);
+  const dir0 = destinoPos.clone().sub(origemPos0).setY(0).normalize();
+  // o bico: a borda da boca do lado do destino, guardada no espaço do modelo
+  origem.updateMatrixWorld(true);
+  const bicoLocal = origem.worldToLocal(new THREE.Vector3(mesa.centro.x, caixaOrigem.max.y, mesa.centro.z).addScaledVector(dir0, mesa.bocaRaio * 1.02));
+  // onde a panela vai: levantada acima do destino, com o bico sobre o centro dele
+  const alturaPanela = caixaOrigem.max.y - caixaOrigem.min.y;
+  const subida = Math.max(0, topoDest + 0.03 - origemPos0.y);
+  const avanco = Math.max(0, destinoPos.clone().sub(new THREE.Vector3(mesa.centro.x, destinoPos.y, mesa.centro.z)).length() - mesa.bocaRaio * 2.1);
+  void alturaPanela;
   let inclinacao = 0;
   let alvoInclinacao = 0;
   let yInicio: number | null = null;
@@ -132,11 +145,15 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
       } else yInicio = null;
       if (entrada.roda) alvoInclinacao = clamp(alvoInclinacao - entrada.roda * 0.07, 0, 1.4);
       inclinacao += (alvoInclinacao - inclinacao) * Math.min(1, dt * 8);
-      // inclina na direção do destino
-      const dir = destinoPos.clone().sub(origemPos0).setY(0).normalize();
+      // primeiro a panela sobe e vai para cima do destino; depois inclina sobre ele
+      const dir = dir0;
       const eixo = new THREE.Vector3(-dir.z, 0, dir.x);
-      origem.quaternion.setFromAxisAngle(eixo, -inclinacao);
-      origem.position.copy(origemPos0).addScaledVector(dir, Math.sin(inclinacao) * 0.06).add(new THREE.Vector3(0, Math.sin(inclinacao) * 0.08, 0));
+      const levantar = suave(clamp(inclinacao / 0.35));
+      const giro = Math.max(0, inclinacao - 0.15);
+      origem.quaternion.setFromAxisAngle(eixo, -giro);
+      const pivo = new THREE.Vector3(mesa.centro.x, origemPos0.y, mesa.centro.z).addScaledVector(dir, mesa.bocaRaio);
+      origem.position.copy(origemPos0).sub(pivo).applyQuaternion(origem.quaternion).add(pivo)
+        .add(new THREE.Vector3(0, subida * levantar, 0)).addScaledVector(dir, avanco * levantar);
       conteudo.position.copy(origem.position).add(desloc.clone().applyQuaternion(origem.quaternion));
       conteudo.quaternion.copy(origem.quaternion);
       // fluxo depende da inclinação contra o nível restante
@@ -150,8 +167,9 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
         const q = vazao * dt * 0.22;
         transferido = Math.min(1, transferido + q);
         if (vazao > 0.75) derramado += q;
-        const bico = conteudo.position.clone().addScaledVector(dir, mesa.bocaRaio * 1.05).setY(caixaDest.max.y + 0.12);
-        for (let i = 0; i < 3; i++) fluxo.emitir(bico, dir.clone().multiplyScalar(0.25 + vazao * 0.3), { vida: 0.6, tam: 0.004 + vazao * 0.003, gravidade: -6, espalhar: vazao > 0.75 ? 0.9 : 0.12 });
+        origem.updateMatrixWorld(true);
+        const bico = origem.localToWorld(bicoLocal.clone());
+        for (let i = 0; i < 3; i++) fluxo.emitir(bico, dir.clone().multiplyScalar(0.06 + vazao * 0.08), { vida: 0.6, tam: 0.004 + vazao * 0.003, gravidade: -6, espalhar: vazao > 0.75 ? 0.9 : 0.12 });
       }
       conteudo.estado.nivel = Math.max(0.002, nivel0 * (1 - transferido));
       fluxo.atualizar(dt);

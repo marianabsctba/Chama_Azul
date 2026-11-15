@@ -113,11 +113,18 @@ export class Missao {
       let perto = { corte: 0.55, confeitaria: 0.55, balanca: 0.6, fogao: 0.75, pia: 0.7, geladeira: 0.85, forno: 0.85, caderno: 1 }[est] ?? 0.7;
       // aparelhos altos (batedeira, processador) pedem um passo atrás
       if (passo.gesto === 'ritmo' && /batedeira|processador|liquidificador|mixer/i.test(passo.utensilio)) perto = 1.05;
+      // despejar: as duas vasilhas inteiras em cena
+      if (passo.gesto === 'verter' && passo.variante === 'despejar') perto = 1.15;
       const cam = estacao.superficie.clone().add(estacao.camera.clone().sub(estacao.superficie).multiplyScalar(perto));
       this.jogador.voar(cam, estacao.superficie, this.indice === 0 ? 1.4 : 0.9, comecar);
     } else {
       comecar();
     }
+  }
+
+  /** O gesto do passo atual já está em cena e recebendo a mão? */
+  get pronto() {
+    return !!this.exec && !this.esperando && this.pausaEntrePassos <= 0;
   }
 
   /** Pula o passo atual (conta como feito no modo zen, nota zero no modo prova). */

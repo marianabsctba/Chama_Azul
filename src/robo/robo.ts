@@ -177,7 +177,8 @@ function visiveis(cena: THREE.Object3D, filtro: (m: THREE.Mesh) => boolean) {
 /** Uma jogada do robô: ajusta a entrada para o quadro seguinte. */
 export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.PerspectiveCamera, cena: THREE.Scene, mem: Memoria, dt: number) {
   const passo = m.tecnica.passos[m.indice];
-  if (!passo) return;
+  // só mexe quando o gesto está em cena (no navegador a câmera leva um tempo voando até a bancada)
+  if (!passo || !m.pronto) return;
   const mesa = m.mesa;
   mem.t += dt;
   e.pressionado = false;
