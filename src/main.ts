@@ -11,6 +11,7 @@ import { HudHtml } from './ui/hud';
 import { Telas } from './ui/telas';
 import { Missao, estrelas } from './missao';
 import { empratar, type Prato } from './empratar';
+import { EntradaFalsa, HudFalso, jogar, memoriaNova } from './robo/robo';
 import { NOME_GESTO } from './gestos';
 import { carregar, registrar, salvar } from './progresso';
 import { Peca } from './pecas/peca';
@@ -88,6 +89,16 @@ async function iniciar() {
   let estado: Estado = 'menu';
   let missao: Missao | null = null;
   let prato: Prato | null = null;
+  // ?robo=1: o robô dos testes joga sozinho, com a cozinha renderizada (para fotografar as técnicas)
+  const params = new URLSearchParams(location.search);
+  const robo = params.get('robo') === '1';
+  const entradaRobo = new EntradaFalsa();
+  const hudRobo = new HudFalso();
+  hudRobo.espelho = hud;
+  let memRobo = memoriaNova();
+  let indiceRobo = -1;
+  let pausadoRobo = false;
+  let fotoLimpa = params.get('limpo') === '1';
   let anguloPrato = 0;
 
   const telas = new Telas(ui, catalogo, progresso, {
@@ -194,7 +205,10 @@ async function iniciar() {
     hud.mostrar(true);
     estado = 'missao';
     audio.iniciar();
-    missao = new Missao(t, cena, cozinha, jogador, entrada, hud, progresso.modo, {
+    memRobo = memoriaNova();
+    indiceRobo = -1;
+    pausadoRobo = false;
+    missao = new Missao(t, cena, cozinha, jogador, (robo ? entradaRobo : entrada) as never, robo ? hudRobo : hud, robo ? 'zen' : progresso.modo, {
       aoPasso(i, total) {
         const p = t.passos[i];
         hud.marcarPasso(i, 'atual');
@@ -207,6 +221,11 @@ async function iniciar() {
         if (r.comentario && !r.pulado) hud.aviso(r.comentario, r.nota >= 0.6 ? 'bom' : 'neutro');
         hud.medidores([]);
         hud.botao(null);
+        if (robo) {
+          // pausa até a foto deste passo ser tirada
+          pausadoRobo = true;
+          (window as unknown as Record<string, unknown>).fotoPasso = i;
+        }
       },
       aoFim(resultados) {
         const e = estrelas(resultados);
@@ -331,6 +350,13 @@ async function iniciar() {
     get prato() {
       return prato;
     },
+    continuar() {
+      pausadoRobo = false;
+      (window as unknown as Record<string, unknown>).fotoPasso = null;
+    },
+    set fotoLimpa(v: boolean) {
+      fotoLimpa = v;
+    },
   };
 
   const relogio = new THREE.Clock();
@@ -361,15 +387,30 @@ async function iniciar() {
       // volta lenta em torno do prato, de cima e de lado, como foto de cardápio
       prato.atualizar(dt);
       anguloPrato += dt * 0.22;
-      const r = prato.raio * 2.9;
+      // foto de cardápio: perto, de cima e de lado, balançando devagar
+      const r = prato.raio * 2.05;
       const base = prato.centro;
       const frente = cozinha.inicio.posicao.clone().sub(base).setY(0).normalize();
       const a0 = Math.atan2(frente.z, frente.x);
-      const alvoCam = new THREE.Vector3(base.x + Math.cos(a0 + Math.sin(anguloPrato) * 0.7) * r, base.y + r * 0.75, base.z + Math.sin(a0 + Math.sin(anguloPrato) * 0.7) * r);
+      const alvoCam = new THREE.Vector3(base.x + Math.cos(a0 + Math.sin(anguloPrato) * 0.45) * r, base.y + r * 0.95, base.z + Math.sin(a0 + Math.sin(anguloPrato) * 0.45) * r);
       camera.position.lerp(alvoCam, Math.min(1, dt * 1.6));
-      camera.lookAt(base);
+      // o prato fica do lado esquerdo da tela, livre do painel de estrelas
+      const lado = new THREE.Vector3().subVectors(base, camera.position).setY(0).normalize().cross(new THREE.Vector3(0, 1, 0));
+      camera.lookAt(fotoLimpa ? base : base.clone().addScaledVector(lado, window.innerWidth > 760 ? r * 0.32 : 0).add(new THREE.Vector3(0, window.innerWidth > 760 ? 0 : -r * 0.25, 0)));
     }
-    if (missao && estado === 'missao') {
+    if (missao && estado === 'missao' && robo) {
+      // o robô joga em passos fixos, várias vezes por quadro, e espera a foto de cada passo
+      for (let k = 0; k < 8 && !pausadoRobo && !missao.encerrada; k++) {
+        if (missao.indice !== indiceRobo) {
+          indiceRobo = missao.indice;
+          memRobo = memoriaNova();
+          entradaRobo.pressionado = false;
+        }
+        jogar(missao, entradaRobo, hudRobo, camera, cena, memRobo, 1 / 30);
+        missao.atualizar(1 / 30);
+        entradaRobo.fimDoQuadro();
+      }
+    } else if (missao && estado === 'missao') {
       missao.atualizar(dt);
       const esc = missao.relogio.escala;
       hud.definirTempo(esc > 1 ? `Relógio da cozinha ×${esc} · ${formatarTempo(missao.relogio.decorrido / 60)}` : '');
