@@ -2142,24 +2142,24 @@
         "recipiente": "omeleteira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "meio": "manteiga",
         "recipiente": "omeleteira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "adicionar": [
           "gruyere"
         ],
         "recipiente": "omeleteira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "recipiente": "omeleteira"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "omelete",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2182,30 +2182,30 @@
         "recipiente": "omeleteira japonesa"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "meio": "óleo",
         "recipiente": "omeleteira japonesa"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "recipiente": "omeleteira japonesa"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "meio": "óleo",
         "recipiente": "omeleteira japonesa"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "meio": "ovo batido",
         "recipiente": "omeleteira japonesa"
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "omelete"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "omelete",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2223,23 +2223,23 @@
         "recipiente": "wok"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "meio": "óleo",
         "recipiente": "wok"
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "omelete"
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "omelete"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "corte": "tiras"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "omelete",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2266,17 +2266,17 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "meio": "manteiga",
         "recipiente": "omeleteira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "omelete",
         "recipiente": "omeleteira"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "omelete",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2299,16 +2299,16 @@
         "recipiente": "travessa"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "recipiente": "travessa"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "corte": "cubos"
       }
     ],
     "prato": {
-      "principal": "tortilla",
+      "principal": "frittata",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2335,17 +2335,17 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "meio": "azeite",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "recipiente": "frigideira"
       }
     ],
     "prato": {
-      "principal": "tortilla",
+      "principal": "frittata",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2366,22 +2366,22 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "meio": "azeite",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "recipiente": "prato"
       },
       {
-        "alimento": "tortilla",
+        "alimento": "frittata",
         "meio": "azeite",
         "recipiente": "frigideira"
       }
     ],
     "prato": {
-      "principal": "tortilla",
+      "principal": "frittata",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2705,12 +2705,12 @@
         "recipiente": "fôrma de Yorkshire"
       },
       {
-        "alimento": "bouchee",
+        "alimento": "pudim-yorkshire",
         "recipiente": "fôrma de Yorkshire"
       }
     ],
     "prato": {
-      "principal": "bouchee",
+      "principal": "pudim-yorkshire",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2984,7 +2984,8 @@
         "alimento": "queijo-cabra",
         "adicionar": [
           "cebolinha",
-          "nozes"
+          "nozes",
+          "gergelim"
         ],
         "recipiente": "prato"
       }
@@ -3353,11 +3354,11 @@
   "ervas.descascar-gengibre": {
     "passos": [
       {
-        "alimento": "tupinambo"
+        "alimento": "gengibre"
       }
     ],
     "prato": {
-      "principal": "tupinambo",
+      "principal": "gengibre",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -3365,11 +3366,11 @@
   "ervas.ralar-gengibre": {
     "passos": [
       {
-        "alimento": "tupinambo"
+        "alimento": "gengibre"
       }
     ],
     "prato": {
-      "principal": "tupinambo",
+      "principal": "gengibre",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -3404,14 +3405,14 @@
   "ervas.preparar-galanga": {
     "passos": [
       {
-        "alimento": "tupinambo"
+        "alimento": "galanga"
       },
       {
-        "alimento": "tupinambo"
+        "alimento": "galanga"
       }
     ],
     "prato": {
-      "principal": "tupinambo",
+      "principal": "galanga",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -3482,7 +3483,7 @@
       }
     ],
     "prato": {
-      "principal": "quinoa",
+      "principal": "gergelim",
       "acompanhamentos": [],
       "servir": "tigela"
     }
@@ -3540,7 +3541,7 @@
   "ervas.preparar-wasabi": {
     "passos": [
       {
-        "alimento": "mandioquinha"
+        "alimento": "wasabi-raiz"
       },
       {
         "alimento": null,
@@ -3858,16 +3859,16 @@
   "ervas.infusao-de-baunilha": {
     "passos": [
       {
-        "alimento": "vagem",
+        "alimento": "fava-baunilha",
         "corte": "contorno"
       },
       {
-        "alimento": "vagem",
+        "alimento": "fava-baunilha",
         "meio": "leite",
         "recipiente": "panela"
       },
       {
-        "alimento": "vagem",
+        "alimento": "fava-baunilha",
         "recipiente": "pote de açúcar"
       }
     ],
@@ -3880,15 +3881,15 @@
   "ervas.raspar-sementes-baunilha": {
     "passos": [
       {
-        "alimento": "vagem",
+        "alimento": "fava-baunilha",
         "corte": "contorno"
       },
       {
-        "alimento": "vagem"
+        "alimento": "fava-baunilha"
       }
     ],
     "prato": {
-      "principal": "vagem",
+      "principal": "fava-baunilha",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -4303,7 +4304,8 @@
         "adicionar": [
           "alho",
           "cebolinha",
-          "coentro"
+          "coentro",
+          "gengibre"
         ]
       }
     ],
@@ -4595,7 +4597,7 @@
       {
         "alimento": "alho",
         "adicionar": [
-          "tupinambo"
+          "gengibre"
         ],
         "meio": "óleo",
         "recipiente": "wok"
@@ -5556,26 +5558,26 @@
   "peixes.gengibre-frito": {
     "passos": [
       {
-        "alimento": "tupinambo",
+        "alimento": "gengibre",
         "corte": "tiras"
       },
       {
-        "alimento": "tupinambo",
+        "alimento": "gengibre",
         "meio": "água",
         "recipiente": "panela"
       },
       {
-        "alimento": "tupinambo",
+        "alimento": "gengibre",
         "meio": "óleo",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "tupinambo",
+        "alimento": "gengibre",
         "recipiente": "papel-toalha"
       }
     ],
     "prato": {
-      "principal": "tupinambo",
+      "principal": "gengibre",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -5805,7 +5807,7 @@
       {
         "alimento": "vermelho",
         "adicionar": [
-          "tupinambo",
+          "gengibre",
           "cebolinha"
         ],
         "recipiente": "cesta de bambu"
@@ -5841,7 +5843,7 @@
         "alimento": "vermelho",
         "adicionar": [
           "cebolinha",
-          "tupinambo",
+          "gengibre",
           "alho",
           "limao"
         ]
@@ -6120,7 +6122,7 @@
       {
         "alimento": "peixe-anjo",
         "adicionar": [
-          "pancetta",
+          "bacon",
           "tomilho"
         ]
       },

@@ -1090,7 +1090,7 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "figado-de-frango",
+    "alimento": "foie-gras",
     "recipiente": "frigideira"
    },
    {
@@ -1109,7 +1109,7 @@
    {
     "alimento": "codorna",
     "adicionar": [
-     "figado-de-frango",
+     "foie-gras",
      "cepe"
     ]
    },
@@ -1315,7 +1315,7 @@
    {
     "alimento": "peru",
     "adicionar": [
-     "toucinho"
+     "bacon"
     ]
    },
    {
@@ -1542,7 +1542,7 @@
    {
     "alimento": "faisao",
     "adicionar": [
-     "toucinho"
+     "bacon"
     ]
    },
    {
@@ -1564,7 +1564,7 @@
    {
     "alimento": "faisao",
     "adicionar": [
-     "toucinho"
+     "bacon"
     ],
     "recipiente": "assadeira"
    },
@@ -1639,7 +1639,8 @@
     "alimento": "alho",
     "adicionar": [
      "chili",
-     "cebolinha"
+     "cebolinha",
+     "gengibre"
     ],
     "meio": "óleo",
     "recipiente": "wok"
@@ -2089,7 +2090,8 @@
    {
     "alimento": "peito-de-frango",
     "adicionar": [
-     "cebolinha"
+     "cebolinha",
+     "gengibre"
     ]
    },
    {
@@ -2349,7 +2351,7 @@
    {
     "alimento": "codorna",
     "adicionar": [
-     "toucinho"
+     "bacon"
     ]
    },
    {
@@ -2418,21 +2420,21 @@
     "recipiente": "tigela"
    },
    {
-    "alimento": null,
+    "alimento": "pate",
     "recipiente": "tigela"
    },
    {
-    "alimento": null,
+    "alimento": "pate",
     "meio": "manteiga clarificada",
     "recipiente": "tigela"
    },
    {
-    "alimento": null,
+    "alimento": "pate",
     "recipiente": "tigela"
    }
   ],
   "prato": {
-   "principal": "figado-de-frango",
+   "principal": "pate",
    "acompanhamentos": [
     "baguete"
    ],
@@ -2455,36 +2457,36 @@
     "adicionar": [
      "ovo",
      "pistache",
-     "groselha"
+     "cranberry"
     ],
     "recipiente": "tigela"
    },
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "recipiente": "fôrma de terrina"
    },
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "adicionar": [
      "coelho"
     ],
     "recipiente": "fôrma de terrina"
    },
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "recipiente": "fôrma de terrina"
    },
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "recipiente": "fôrma de terrina"
    },
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "meio": "aspic",
     "recipiente": "fôrma de terrina"
    },
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "recipiente": "fôrma de terrina"
    }
   ],
@@ -2492,7 +2494,7 @@
    "principal": "coelho",
    "acompanhamentos": [
     "pistache",
-    "toucinho"
+    "bacon"
    ],
    "servir": "tabua"
   }
@@ -2850,7 +2852,10 @@
    },
    {
     "alimento": "peito-de-pato",
-    "recipiente": "travessa"
+    "recipiente": "travessa",
+    "adicionar": [
+     "pate"
+    ]
    },
    {
     "alimento": "peito-de-pato",
@@ -3272,7 +3277,8 @@
    {
     "alimento": "escalope-de-vitela",
     "adicionar": [
-     "presunto-parma"
+     "presunto-parma",
+     "salvia"
     ]
    },
    {
@@ -3525,7 +3531,8 @@
    {
     "alimento": "escalope-de-vitela",
     "adicionar": [
-     "presunto-parma"
+     "presunto-parma",
+     "salvia"
     ],
     "meio": "manteiga e azeite",
     "recipiente": "frigideira"
@@ -5521,22 +5528,22 @@
  "porco.molho-cranberry": {
   "passos": [
    {
-    "alimento": "groselha",
+    "alimento": "cranberry",
     "meio": "água",
     "recipiente": "panela"
    },
    {
-    "alimento": "groselha",
+    "alimento": "cranberry",
     "meio": "vinho do Porto",
     "recipiente": "panela"
    },
    {
-    "alimento": "groselha",
+    "alimento": "cranberry",
     "recipiente": "tigela"
    }
   ],
   "prato": {
-   "principal": "groselha",
+   "principal": "cranberry",
    "acompanhamentos": [],
    "servir": "tigela"
   }
@@ -5601,7 +5608,8 @@
     "alimento": "file-de-porco",
     "adicionar": [
      "alho",
-     "limao"
+     "limao",
+     "salvia"
     ],
     "meio": "leite",
     "recipiente": "panela"
@@ -5641,7 +5649,10 @@
     "alimento": "costeleta-de-porco"
    },
    {
-    "alimento": "costeleta-de-porco"
+    "alimento": "costeleta-de-porco",
+    "adicionar": [
+     "salvia"
+    ]
    },
    {
     "alimento": "costeleta-de-porco"
@@ -5765,11 +5776,11 @@
  "bacon.esticar": {
   "passos": [
    {
-    "alimento": "toucinho"
+    "alimento": "bacon"
    }
   ],
   "prato": {
-   "principal": "toucinho",
+   "principal": "bacon",
    "acompanhamentos": [],
    "servir": "prato"
   }
@@ -5777,17 +5788,17 @@
  "bacon.enrolar": {
   "passos": [
    {
-    "alimento": "toucinho",
+    "alimento": "bacon",
     "adicionar": [
      "ameixa"
     ]
    },
    {
-    "alimento": "toucinho"
+    "alimento": "bacon"
    }
   ],
   "prato": {
-   "principal": "toucinho",
+   "principal": "bacon",
    "acompanhamentos": [
     "ameixa"
    ],
@@ -6228,7 +6239,7 @@
    {
     "alimento": "coracao",
     "adicionar": [
-     "toucinho",
+     "bacon",
      "cebola"
     ]
    },

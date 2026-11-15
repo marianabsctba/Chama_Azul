@@ -2594,22 +2594,22 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": null,
+        "alimento": "falafel",
         "meio": "massa de grão-de-bico",
         "recipiente": "tigela"
       },
       {
-        "alimento": null,
+        "alimento": "falafel",
         "meio": "óleo",
         "recipiente": "frigideira"
       },
       {
-        "alimento": null,
+        "alimento": "falafel",
         "recipiente": "papel-toalha"
       }
     ],
     "prato": {
-      "principal": "grao_de_bico",
+      "principal": "falafel",
       "acompanhamentos": [
         "coentro",
         "limao"
@@ -2962,21 +2962,21 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": null,
+        "alimento": "polenta-firme",
         "recipiente": "tábua"
       },
       {
-        "alimento": null,
+        "alimento": "polenta-firme",
         "meio": "azeite",
         "recipiente": "tábua"
       },
       {
-        "alimento": null,
+        "alimento": "polenta-firme",
         "recipiente": "grelha"
       }
     ],
     "prato": {
-      "principal": "polenta",
+      "principal": "polenta-firme",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -3684,7 +3684,8 @@
         "adicionar": [
           "cebola",
           "alho",
-          "salsa"
+          "salsa",
+          "salvia"
         ]
       },
       {
