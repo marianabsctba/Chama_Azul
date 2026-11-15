@@ -111,6 +111,9 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
   // o conteúdo fica no centro da boca, que não é a origem do modelo quando há cabo
   const desloc = mesa.centro.clone().sub(origemPos0).setY(mesa.fundoY - origemPos0.y);
   let inclinacao = 0;
+  let alvoInclinacao = 0;
+  let yInicio: number | null = null;
+  let base = 0;
   let transferido = 0;
   let derramado = 0;
   const exec: Execucao = {
@@ -118,9 +121,17 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
     nota: 0,
     comentario: '',
     atualizar(dt) {
-      hud.dica('Segure o botão e suba o mouse para inclinar o recipiente. Despeje num fio constante, sem transbordar.');
-      if (entrada.pressionado) inclinacao = clamp(inclinacao - entrada.deltaPx.y * 0.004, 0, 1.4);
-      else inclinacao = Math.max(0, inclinacao - dt * 1.2);
+      hud.dica('Clique e suba o mouse para inclinar (ou use os botões − e +). A panela fica na inclinação em que você soltar. Despeje num fio constante, sem transbordar.');
+      // arrasto curto: a inclinação segue a altura do mouse desde o clique, e fica onde você soltar
+      if (entrada.pressionado) {
+        if (yInicio === null) {
+          yInicio = entrada.px.y;
+          base = alvoInclinacao;
+        }
+        alvoInclinacao = clamp(base + (yInicio - entrada.px.y) / 140, 0, 1.4);
+      } else yInicio = null;
+      if (entrada.roda) alvoInclinacao = clamp(alvoInclinacao - entrada.roda * 0.07, 0, 1.4);
+      inclinacao += (alvoInclinacao - inclinacao) * Math.min(1, dt * 8);
       // inclina na direção do destino
       const dir = destinoPos.clone().sub(origemPos0).setY(0).normalize();
       const eixo = new THREE.Vector3(-dir.z, 0, dir.x);
@@ -130,8 +141,11 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
       conteudo.quaternion.copy(origem.quaternion);
       // fluxo depende da inclinação contra o nível restante
       const restante = 1 - transferido;
-      const limiar = 1.15 - restante * 0.85;
-      const vazao = clamp((inclinacao - limiar) * 1.6);
+      // o líquido começa a sair cedo e o limiar sobe pouco conforme esvazia
+      const limiar = 0.25 + (1 - restante) * 0.55;
+      let vazao = clamp((inclinacao - limiar) * 1.6);
+      // no Zen o fio nunca passa do ponto de respingar
+      if (ctx.modo === 'zen') vazao = Math.min(vazao, 0.72);
       if (vazao > 0 && restante > 0) {
         const q = vazao * dt * 0.22;
         transferido = Math.min(1, transferido + q);
