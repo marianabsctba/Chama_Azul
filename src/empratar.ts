@@ -543,22 +543,35 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     mesa.pecaChave = '';
     mesa.capa = null;
     peca.removeFromParent();
+    // em ficha de corte, a quantidade é o número de pedaços da própria peça, não cópias dela
+    const pecasDoCorte = ['pedacos', 'fatias', 'medalhoes', 'tiras', 'cubos'].includes(ficha.forma ?? '') ? ficha.quantidade : undefined;
     if (porcionar) {
-      // medalhões do miolo da peça: cinco cortes no meio, as pontas ficam de fora do prato
+      // medalhões do miolo da peça: as pontas ficam de fora do prato
       const L = peca.comprimento;
-      for (let i = 0; i <= 5; i++) peca.cortar('x', -L * 0.2 + (L * 0.4 * i) / 5);
-      for (const f of [...peca.fragmentos]) if (f.x1 <= -L * 0.2 + 1e-4 || f.x0 >= L * 0.2 - 1e-4) f.grupo.visible = false;
+      const n = Math.max(2, Math.min(8, pecasDoCorte ?? 5));
+      const meia = Math.min(0.4, 0.08 * n) / 2;
+      for (let i = 0; i <= n; i++) peca.cortar('x', -L * meia + (L * 2 * meia * i) / n);
+      for (const f of [...peca.fragmentos]) if (f.x1 <= -L * meia + 1e-4 || f.x0 >= L * meia - 1e-4) f.grupo.visible = false;
     }
     if (ficha.forma === 'fatias' && peca.fragmentos.length < 3) {
       // fatias do miolo em leque, como o livro serve
       const L = peca.comprimento;
-      for (let i = 0; i <= 7; i++) peca.cortar('x', -L * 0.35 + (L * 0.7 * i) / 7);
+      const n = Math.max(3, Math.min(10, pecasDoCorte ?? 7));
+      for (let i = 0; i <= n; i++) peca.cortar('x', -L * 0.35 + (L * 0.7 * i) / n);
       for (const f of [...peca.fragmentos]) if (f.x1 <= -L * 0.35 + 1e-4 || f.x0 >= L * 0.35 - 1e-4) f.grupo.visible = false;
     } else if (ficha.forma === 'pedacos' && peca.fragmentos.length < 3) {
+      // pedaços separados, um pouco afastados uns dos outros, como fica a peça destrinchada
       const L = peca.comprimento;
       const W = peca.largura;
-      for (const x of [-L / 6, L / 6]) peca.cortar('x', x);
-      peca.cortar('z', W * 0.05);
+      const n = Math.max(2, Math.min(12, pecasDoCorte ?? 6));
+      const emX = n >= 4 ? Math.ceil(n / 2) : n;
+      for (let i = 1; i < emX; i++) peca.cortar('x', -L / 2 + (L * i) / emX);
+      if (n >= 4) peca.cortar('z', W * 0.03);
+      for (const f of peca.fragmentos) {
+        const cx = (f.x0 + f.x1) / 2;
+        const cz = (f.z0 + f.z1) / 2;
+        peca.moverFragmento(f, new THREE.Vector3(cx * 0.45, 0, cz * 0.9 + Math.sign(cz) * W * 0.12));
+      }
     }
     const natural = porcionar ? peca.comprimento * 0.55 : Math.max(peca.comprimento, peca.largura);
     const alvo = tipo === 'tigela' ? poco * 1.1 : tipo === 'taca' ? 0.09 : tipo === 'travessa' ? R * 1.6 : doce ? poco * 1.4 : poco * 1.75;
@@ -575,7 +588,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       apresentado.rotation.y = -0.5;
       grupo.add(apresentado);
     }
-    const monte = telhas || miudoCorte || ficha.forma === 'inteiro' ? 0 : emMonte(peca);
+    const monte = telhas || miudoCorte || ficha.forma === 'inteiro' || ficha.forma === 'pedacos' ? 0 : emMonte(peca);
     // ralado, lascas e desfiado: o montinho no lugar da peça
     if (ficha.forma === 'ralado' || ficha.forma === 'lascas' || ficha.forma === 'desfiado') {
       for (const f of peca.fragmentos) f.grupo.visible = false;
@@ -592,7 +605,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     peca.position.x -= meio.x + poco * 0.06;
     peca.position.z -= meio.z - poco * 0.04;
     // mais unidades do principal (3 crepes, 6 bolinhos), em fileira ao lado da primeira
-    const qtd = Math.min(12, ficha.quantidade ?? 1);
+    const qtd = pecasDoCorte ? 1 : Math.min(12, ficha.quantidade ?? 1);
     if (qtd > 1 && principalRev) {
       let larg = Math.max(c2.max.x - c2.min.x, c2.max.z - c2.min.z) * 1.08;
       const temCobertura = peca.children.some((c) => c instanceof Peca);

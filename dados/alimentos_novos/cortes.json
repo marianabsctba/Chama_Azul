@@ -1,0 +1,22 @@
+[
+  {
+    "id": "frango-em-oito-pedacos",
+    "nome": "Frango em oito pedaços",
+    "forma": "frango cru destrinchado nas juntas: duas coxas, duas sobrecoxas, duas asas e o peito em duas metades, arrumados na tábua"
+  },
+  {
+    "id": "frango-assado-em-pedacos",
+    "nome": "Frango assado em pedaços",
+    "forma": "frango assado e trinchado: coxas, sobrecoxas, asas e peito dourados"
+  },
+  {
+    "id": "pato-em-quatro",
+    "nome": "Pato em quatro",
+    "forma": "pato cru cortado em quatro: dois peitos com a asa e duas pernas inteiras"
+  },
+  {
+    "id": "coelho-em-pedacos",
+    "nome": "Coelho em pedaços",
+    "forma": "coelho cru cortado: pernas traseiras em dois, dianteiras inteiras e o lombo em três"
+  }
+]

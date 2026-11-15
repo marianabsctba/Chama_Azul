@@ -716,12 +716,12 @@
    }
   ],
   "prato": {
-   "principal": "pato",
+   "principal": "pato-em-quatro",
    "acompanhamentos": [],
    "servir": "tabua",
-   "forma": "pedacos",
-   "estado": "cru",
-   "quantidade": 4
+   "forma": "inteiro",
+   "estado": null,
+   "quantidade": null
   }
  },
  "aves.oito-pedacos": {
@@ -749,12 +749,12 @@
    }
   ],
   "prato": {
-   "principal": "frango-inteiro",
+   "principal": "frango-em-oito-pedacos",
    "acompanhamentos": [],
    "servir": "tabua",
-   "forma": "pedacos",
-   "estado": "cru",
-   "quantidade": 8
+   "forma": "inteiro",
+   "estado": null,
+   "quantidade": null
   }
  },
  "aves.coelho-cortar": {
@@ -773,12 +773,12 @@
    }
   ],
   "prato": {
-   "principal": "coelho",
+   "principal": "coelho-em-pedacos",
    "acompanhamentos": [],
    "servir": "tabua",
-   "forma": "pedacos",
-   "estado": "cru",
-   "quantidade": 8
+   "forma": "inteiro",
+   "estado": null,
+   "quantidade": null
   }
  },
  "aves.supreme": {
@@ -1469,12 +1469,12 @@
    }
   ],
   "prato": {
-   "principal": "frango-inteiro",
+   "principal": "frango-assado-em-pedacos",
    "acompanhamentos": [],
    "servir": "travessa",
-   "forma": "pedacos",
-   "estado": "dourado",
-   "quantidade": 8
+   "forma": "inteiro",
+   "estado": null,
+   "quantidade": null
   }
  },
  "aves.fatiar-assada": {
