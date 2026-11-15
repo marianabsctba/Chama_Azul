@@ -326,7 +326,17 @@ function main() {
       const pr = {};
       if (c.prato.principal && alimentos.has(c.prato.principal)) pr.principal = c.prato.principal;
       if (Array.isArray(c.prato.acompanhamentos)) pr.acompanhamentos = c.prato.acompanhamentos.filter((id) => alimentos.has(id)).slice(0, 3);
-      if (['prato', 'tigela', 'travessa', 'taca', 'tabua'].includes(c.prato.servir)) pr.servir = c.prato.servir;
+      if (['prato', 'tigela', 'travessa', 'taca', 'tabua', 'tigelinha', 'ramequim', 'xicara', 'molheira', 'pote', 'cumbuca', 'copo'].includes(c.prato.servir)) pr.servir = c.prato.servir;
+      else if (c.prato.servir) problemas.push(`louça desconhecida "${c.prato.servir}" em ${t.id}`);
+      if (['inteiro', 'fatias', 'medalhoes', 'tiras', 'cubos', 'pedacos', 'ralado', 'lascas', 'desfiado'].includes(c.prato.forma)) pr.forma = c.prato.forma;
+      else if (c.prato.forma) problemas.push(`forma desconhecida "${c.prato.forma}" em ${t.id}`);
+      if (['cru', 'cozido', 'dourado', 'tostado'].includes(c.prato.estado)) pr.estado = c.prato.estado;
+      else if (c.prato.estado) problemas.push(`estado desconhecido "${c.prato.estado}" em ${t.id}`);
+      if (Number.isInteger(c.prato.quantidade) && c.prato.quantidade > 1) pr.quantidade = Math.min(12, c.prato.quantidade);
+      if (typeof c.prato.liquido === 'string' && /^#[0-9a-f]{6}$/i.test(c.prato.liquido)) pr.liquido = c.prato.liquido;
+      else if (c.prato.liquido) problemas.push(`cor de líquido inválida "${c.prato.liquido}" em ${t.id}`);
+      if (c.prato.claro) pr.claro = true;
+      if (c.prato.granulado) pr.granulado = true;
       t.prato = pr;
     }
   }

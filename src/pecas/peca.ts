@@ -42,6 +42,8 @@ export class Peca extends THREE.Group {
   readonly corCozida: THREE.Color;
   /** 0 = cru, 1 = no ponto, acima de 1 = passando do ponto. */
   cozimento = 0;
+  /** Cores de vértice antes do primeiro cozimento, para o tom cozido partir sempre do cru. */
+  private coresCruas = new Map<THREE.BufferGeometry, Float32Array>();
   /** Escala visual do volume (fermentar, bater). */
   volume = 1;
   private larguraZ: number;
@@ -143,6 +145,8 @@ export class Peca extends THREE.Group {
       this.removerFragmento(f);
     }
     this.espalhar();
+    // as faces novas do corte nascem no mesmo ponto de cozimento da peça
+    if (divididos && this.cozimento > 0) this.aplicarTampas();
     return divididos;
   }
 
@@ -224,7 +228,7 @@ export class Peca extends THREE.Group {
     geo.rotateY(Math.PI / 2);
     geo.scale(1, s.raioY * 0.97, s.raioZ * 0.97);
     geo.translate(x, s.centroY, 0);
-    this.colorir(geo, this.corInterna);
+    this.colorir(geo, this.internaAtual());
     void f;
     return geo;
   }
@@ -247,7 +251,7 @@ export class Peca extends THREE.Group {
     const geo = new THREE.ShapeGeometry(new THREE.Shape([...lado, ...outro.reverse()]));
     geo.rotateX(Math.PI / 2);
     geo.translate(0, y, 0);
-    this.colorir(geo, this.corInterna);
+    this.colorir(geo, this.internaAtual());
     return geo;
   }
 
@@ -270,7 +274,7 @@ export class Peca extends THREE.Group {
     const forma = new THREE.Shape(contorno);
     const geo = new THREE.ShapeGeometry(forma);
     geo.translate(0, 0, z);
-    this.colorir(geo, this.corInterna);
+    this.colorir(geo, this.internaAtual());
     return geo;
   }
 
@@ -315,16 +319,55 @@ export class Peca extends THREE.Group {
 
   private aplicarCozimento() {
     const c = Math.max(0, this.cozimento);
-    const t = Math.min(1, c) * 0.85;
+    const t = Math.min(1, c);
     const queimado = Math.max(0, Math.min(1, (c - 1.15) * 2));
-    const alvo = this.corCozida.clone();
-    // normaliza o tom cozido para multiplicar a cor de vértice sem escurecer tudo
-    const m = Math.max(alvo.r, alvo.g, alvo.b, 0.001);
-    alvo.multiplyScalar(1 / m);
-    const cor = BRANCO.clone().lerp(alvo, t).lerp(new THREE.Color(0.18, 0.12, 0.08), queimado * 0.8);
+    const coz = this.corCozida;
+    const lumCoz = Math.max(0.05, coz.r * 0.3 + coz.g * 0.59 + coz.b * 0.11);
+    // a superfície vai de fato para a cor cozida (selada, dourada), guardando o relevo de luz e sombra da cor crua
+    const k = t * 0.82;
+    // cru de novo (ou ainda cru): o próximo cozimento parte das cores atuais, com o que foi pincelado ou empanado
+    if (c === 0) this.coresCruas.clear();
+    for (const m of this.forma.malhas) {
+      const g = m.geometry as THREE.BufferGeometry;
+      const attr = g.getAttribute('color') as THREE.BufferAttribute;
+      if (!this.coresCruas.has(g)) this.coresCruas.set(g, (attr.array as Float32Array).slice());
+      const cru = this.coresCruas.get(g)!;
+      const orig = this.coresOriginais.get(g);
+      const arr = attr.array as Float32Array;
+      for (let i = 0; i < arr.length; i += 3) {
+        const lum = cru[i] * 0.3 + cru[i + 1] * 0.59 + cru[i + 2] * 0.11;
+        const f = Math.min(1.35, Math.max(0.65, lum / lumCoz));
+        for (let j = 0; j < 3; j++) {
+          const alvo = [coz.r, coz.g, coz.b][j] * f;
+          const v = cru[i + j] + (alvo - cru[i + j]) * k;
+          arr[i + j] = v;
+          if (orig) orig[i + j] = v;
+        }
+      }
+      attr.needsUpdate = true;
+    }
+    const cor = BRANCO.clone().lerp(new THREE.Color(0.18, 0.12, 0.08), queimado * 0.8);
+    for (const f of this.fragmentos) for (const mat of f.materiais) mat.color.copy(cor);
+    this.aplicarTampas();
+  }
+
+  /** Cor de dentro conforme o cozimento: carne vermelha fica rosada (ao ponto), o resto puxa de leve para o tom cozido. */
+  private internaAtual(): THREE.Color {
+    const t = Math.min(1, Math.max(0, this.cozimento));
+    const ci = this.corInterna;
+    const vermelha = ci.r > ci.g * 1.6 && ci.r > 0.1;
+    const alvo = vermelha ? ci.clone().lerp(new THREE.Color('#c87868'), 0.75) : ci.clone().lerp(this.corCozida, 0.3);
+    return ci.clone().lerp(alvo, t);
+  }
+
+  /** Recolore as faces de corte conforme o cozimento. */
+  private aplicarTampas() {
+    const cor = this.internaAtual();
     for (const f of this.fragmentos) {
-      for (const mat of f.materiais) mat.color.copy(cor);
-      for (const tp of f.tampas) (tp.material as THREE.MeshStandardMaterial).color.copy(BRANCO.clone().lerp(alvo, t * 0.4));
+      for (const tp of f.tampas) {
+        this.colorir(tp.geometry as THREE.BufferGeometry, cor);
+        (tp.material as THREE.MeshStandardMaterial).color.copy(BRANCO);
+      }
     }
   }
 

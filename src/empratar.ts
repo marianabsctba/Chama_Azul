@@ -1,12 +1,14 @@
-// Empratamento gourmet: no fim da técnica, a peça vai para a louça certa e o prato é montado
-// como em restaurante (molho em pincelada e pontos, base em quenelle, fatias em leque,
-// microverdes, guarnição em número ímpar, flor de sal), e a câmera passeia em volta.
+// Empratamento: no fim da técnica, o que ela produziu vai para a louça certa, arrumado como em
+// restaurante (fatias em leque, molho da panela em pincelada, guarnição do próprio livro em
+// número ímpar), sem nada que o livro não peça; e a câmera passeia em volta.
 import * as THREE from 'three';
-import type { Cozinha, Tecnica } from './tipos';
+import type { Cozinha, Tecnica, EstadoServido } from './tipos';
 import type { Mesa } from './gestos/mesa';
 import { criarFormaAlimento, familiaDe } from './modelos/alimentos';
 import { Peca } from './pecas/peca';
 import { estadoInicial } from './pecas/conteudo';
+import { decorarSopa, SOPA_DA_DECORACAO } from './decoracao_sopa';
+import { criarLoucaPequena, superficie, LOUCAS_PEQUENAS, type LoucaPequena } from './loucas';
 
 const DOCE = new Set(['sobremesas', 'pastelaria', 'bolos']);
 const SOPA = new Set(['caldos']);
@@ -312,13 +314,8 @@ function corDaSopa(tecnica: Tecnica): { cor: THREE.Color; brilho: number } | nul
 function corMolho(tecnica: Tecnica, mesa: Mesa, preparo?: string): { cor: THREE.Color; brilho: number } | null {
   if (mesa.conteudo) return { cor: mesa.conteudo.estado.cor.clone(), brilho: mesa.conteudo.estado.brilho };
   if (preparo) return { cor: new THREE.Color(estadoInicial(preparo.replace(/[-_]/g, ' ')).cor), brilho: 0.7 };
-  const b = tecnica.bancada;
-  if (b === 'carnes') return { cor: new THREE.Color('#5a2a14'), brilho: 0.85 }; // demi-glace
-  if (b === 'aves') return { cor: new THREE.Color('#8a5a2a'), brilho: 0.8 }; // jus
-  if (b === 'peixes') return { cor: new THREE.Color('#efe2b8'), brilho: 0.7 }; // beurre blanc
-  if (b === 'legumes' || b === 'graos' || b === 'temperos') return { cor: new THREE.Color('#5f8f32'), brilho: 0.9 }; // azeite de ervas
-  if (b === 'frutas' || b === 'sobremesas' || b === 'bolos' || b === 'pastelaria') return { cor: new THREE.Color('#b5203b'), brilho: 0.9 }; // coulis
-  if (b === 'ovos') return { cor: new THREE.Color('#f1d27a'), brilho: 0.6 }; // hollandaise
+  // sem molho na técnica, sem molho no prato: nada que o livro não peça
+  void tecnica;
   return null;
 }
 
@@ -328,6 +325,40 @@ function pecaDe(id: string): Peca | null {
   } catch {
     return null;
   }
+}
+
+/** Ponto de cozimento de cada estado da ficha. */
+const COZIMENTO: Record<EstadoServido, number> = { cru: 0, cozido: 1, dourado: 1.08, tostado: 1.2 };
+
+/**
+ * Montinho do que a técnica deixou miúdo: ralado (fios finos e curtos), lascas (flocos
+ * achatados) ou desfiado (fibras compridas), na cor de dentro e de fora da peça.
+ */
+function montinho(peca: Peca, forma: 'ralado' | 'lascas' | 'desfiado', raio = 0.03): THREE.Group {
+  const g = new THREE.Group();
+  const dentro = peca.corInterna.clone();
+  const fora = peca.corCozida.clone();
+  const cozido = Math.min(1, peca.cozimento);
+  const n = Math.round((forma === 'ralado' ? 420 : forma === 'lascas' ? 40 : 130) * Math.max(0.5, (raio / 0.045) ** 2));
+  const geo = forma === 'ralado' ? new THREE.BoxGeometry(0.012, 0.0012, 0.0012) : forma === 'lascas' ? new THREE.BoxGeometry(0.02, 0.004, 0.014) : new THREE.BoxGeometry(0.04, 0.0025, 0.0025);
+  const inst = new THREE.InstancedMesh(geo, new THREE.MeshStandardMaterial({ roughness: 0.75 }), n);
+  const o = new THREE.Object3D();
+  const cor = new THREE.Color();
+  let sd = 7;
+  const rnd = () => ((sd = (sd * 9301 + 49297) % 233280) / 233280);
+  for (let i = 0; i < n; i++) {
+    const a = rnd() * Math.PI * 2;
+    const r = Math.sqrt(rnd()) * raio;
+    const alto = (1 - r / (raio * 1.1)) * raio * (forma === 'lascas' ? 0.45 : 0.6);
+    o.position.set(Math.cos(a) * r, 0.002 + rnd() * alto, Math.sin(a) * r);
+    o.rotation.set((rnd() - 0.5) * (forma === 'lascas' ? 0.6 : 1.4), rnd() * Math.PI * 2, (rnd() - 0.5) * (forma === 'lascas' ? 0.6 : 1.2));
+    o.updateMatrix();
+    inst.setMatrixAt(i, o.matrix);
+    inst.setColorAt(i, cor.copy(dentro).lerp(fora, cozido * (forma === 'lascas' ? 0.25 : 0.5) + rnd() * 0.1));
+  }
+  inst.castShadow = true;
+  g.add(inst);
+  return g;
 }
 
 /** Coloca uma peça pequena com o maior lado do tamanho pedido. */
@@ -350,12 +381,19 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     mesa.removerPeca();
     mesa.garantirPeca(principalRev, new THREE.Vector3());
   }
+  // se a técnica levou o alimento ao fogo, ele chega ao prato cozido (mesmo que a peça tenha sido trocada)
+  const foiAoFogo = tecnica.passos.some((p) => p.gesto === 'calor' && (!p.alimento || p.alimento === mesa.pecaChave || p.adicionar?.includes(mesa.pecaChave)));
+  if (foiAoFogo && mesa.peca && mesa.peca.cozimento < 1) mesa.peca.definirCozimento(1);
+  const ficha = tecnica.prato ?? {};
+  // o ponto que o livro dá ao resultado manda sobre o que o jogo calculou
+  if (ficha.estado && mesa.peca) mesa.peca.definirCozimento(COZIMENTO[ficha.estado]);
   const preparoPrincipal = principalRev && ehPreparo(principalRev) ? principalRev : undefined;
+  if (ficha.servir && (LOUCAS_PEQUENAS as string[]).includes(ficha.servir)) return servirPequena(cena, cozinha, mesa, tecnica, ficha.servir as LoucaPequena, preparoPrincipal);
   const real = mesa.peca ? Math.max(mesa.peca.comprimento, mesa.peca.largura) : 0.1;
-  let tipo: Louca = tecnica.prato?.servir ?? (SOPA.has(tecnica.bancada) || (!mesa.peca && (!!mesa.conteudo || !!preparoPrincipal)) ? 'tigela' : 'prato');
+  let tipo: Louca = (tecnica.prato?.servir as Louca | undefined) ?? (SOPA.has(tecnica.bancada) || (!mesa.peca && (!!mesa.conteudo || !!preparoPrincipal)) ? 'tigela' : 'prato');
   // proteína grande vira porção de restaurante: medalhões em leque num prato, não a peça inteira na travessa
-  const porcionar = !!mesa.peca && PROTEINA.has(tecnica.bancada) && real > 0.2 && mesa.peca.fragmentos.length < 3 && familiaDe(mesa.pecaChave) !== 'ave' && !/peixe/.test(familiaDe(mesa.pecaChave) ?? '');
-  if (porcionar) tipo = 'prato';
+  const porcionar = ficha.forma === 'medalhoes' || (!ficha.forma && !!mesa.peca && PROTEINA.has(tecnica.bancada) && real > 0.2) && mesa.peca.fragmentos.length < 3 && familiaDe(mesa.pecaChave) !== 'ave' && !/peixe/.test(familiaDe(mesa.pecaChave) ?? '');
+  if (porcionar && !ficha.servir) tipo = 'prato';
   if (tipo === 'prato' && real > 0.32 && !porcionar) tipo = 'travessa';
   const estacao = doce ? cozinha.estacoes.confeitaria : cozinha.estacoes.corte;
   const centro = estacao.superficie.clone();
@@ -370,7 +408,19 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   const { g: louca, poco, piso } = criarLouca(tipo, R);
   grupo.add(louca);
 
-  const molho = (tipo === 'tigela' && !doce ? corDaSopa(tecnica) : null) ?? corMolho(tecnica, mesa, preparoPrincipal);
+  // técnica de decorar sopa: a decoração dela por cima de uma sopa que a valorize
+  const decoSopa = tipo === 'tigela' ? decorarSopa(tecnica.id, poco) : null;
+  const corDeco = decoSopa ? SOPA_DA_DECORACAO[tecnica.id.replace(/^decoracao\./, '')] : undefined;
+  const molho = (tipo === 'tigela' && !doce ? (corDeco ? { cor: new THREE.Color(corDeco[0]), brilho: corDeco[1] } : corDaSopa(tecnica)) : null) ?? corMolho(tecnica, mesa, preparoPrincipal);
+  // sopa clara em louça branca some: vai para a cerâmica azul-escura da casa
+  if (tipo === 'tigela' && molho) {
+    const hsl = { h: 0, s: 0, l: 0 };
+    molho.cor.getHSL(hsl);
+    if (hsl.l > 0.7) {
+      const corpo = louca.children[0];
+      if (corpo instanceof THREE.Mesh) corpo.material = new THREE.MeshStandardMaterial({ color: '#1f3b63', roughness: 0.42, metalness: 0.05 });
+    }
+  }
   const cremosa = /creme|cremosa|velout|vichyssoise|bisque|batida|bater|mixer|processador|mouli|pur[eê]/i.test(tecnica.nome);
   // doce que não é de fatiar (pavlova, suspiro, torta inteira) vai ao prato inteiro, sem as marcas do jogo
   if (doce && mesa.peca && mesa.peca.fragmentos.length > 1 && !tecnica.passos.some((p) => p.gesto === 'cortar') && tecnica.prato?.principal) {
@@ -393,7 +443,11 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       caldo.rotation.x = -Math.PI / 2;
       caldo.position.y = nivel;
       grupo.add(caldo);
-      if (tipo === 'tigela' && !doce && cremosa) {
+      if (decoSopa) {
+        decoSopa.position.y = nivel + 0.0004;
+        decoSopa.scale.setScalar(1.35);
+        grupo.add(decoSopa);
+      } else if (tipo === 'tigela' && !doce && cremosa) {
         const creme = espiralCreme(poco * 0.75);
         creme.position.y = nivel + 0.0008;
         grupo.add(creme);
@@ -413,15 +467,9 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     grupo.add(d);
   }
 
-  // base: quenelle de purê sob as proteínas (como nos pratos de restaurante)
+  // altura de onde a peça principal assenta
   const nivelPrincipal = tipo === 'tigela' ? 0.032 : tipo === 'taca' ? 0.12 : piso;
   let alturaBase = 0;
-  if (peca && PROTEINA.has(tecnica.bancada) && tipo !== 'tigela' && tipo !== 'tabua') {
-    const q = quenelle('#f0dfa4', Math.min(0.07, poco * 0.75));
-    q.position.set(-poco * 0.05, nivelPrincipal + 0.006, poco * 0.12);
-    q.rotation.y = 0.5;
-    grupo.add(q);
-  }
   if (!peca && doce && tipo === 'prato') {
     // doce sem peça: quenelle do creme no centro
     const q = quenelle(molho?.cor.getStyle() ?? '#f2d98a', 0.06);
@@ -431,11 +479,13 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   }
 
   const ultimoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar')?.variante;
-  const miudoCorte = ultimoCorte === 'tiras' || ultimoCorte === 'cubos' || ultimoCorte === 'picar' ? ultimoCorte : null;
+  const miudoCorte = ficha.forma === 'tiras' || ficha.forma === 'cubos' ? ficha.forma : ficha.forma ? null : ultimoCorte === 'tiras' || ultimoCorte === 'cubos' || ultimoCorte === 'picar' ? ultimoCorte : null;
   let feixeFeito = false;
   const passoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar' && p.variante === miudoCorte);
   const metaCorte = passoCorte?.meta;
   const medidaCorte = metaCorte && (metaCorte.unidade === 'mm' || metaCorte.unidade === 'cm') ? metaCorte.valor * (metaCorte.unidade === 'mm' ? 0.001 : 0.01) : undefined;
+  // a decoração da sopa já mostra o que a técnica produz
+  if (decoSopa && mesa.peca) mesa.removerPeca();
   // sopa: peça inteira grande (um tomate, um bloco de queijo) não vai por cima do caldo
   if (peca && tipo === 'tigela' && Math.max(peca.comprimento, peca.largura) > 0.06 && peca.fragmentos.length < 3) {
     mesa.removerPeca();
@@ -472,6 +522,12 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     soja.position.set(poco * 0.62, piso + 0.013, -poco * 0.3);
     grupo.add(pote, soja);
   }
+  // o que só temperou ou passou pela peça (alho esfregado, ervas da marinada) não vai ao prato;
+  // fica o que o livro serve junto
+  if (peca) {
+    const servidos = new Set(tecnica.prato?.acompanhamentos ?? []);
+    for (const c of [...peca.children]) if (c instanceof Peca && c.userData.alimento && !servidos.has(c.userData.alimento)) { peca.remove(c); c.descartar(); }
+  }
   if (peca && mesa.peca) {
     mesa.peca = null;
     mesa.pecaChave = '';
@@ -483,12 +539,23 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       for (let i = 0; i <= 5; i++) peca.cortar('x', -L * 0.2 + (L * 0.4 * i) / 5);
       for (const f of [...peca.fragmentos]) if (f.x1 <= -L * 0.2 + 1e-4 || f.x0 >= L * 0.2 - 1e-4) f.grupo.visible = false;
     }
+    if (ficha.forma === 'fatias' && peca.fragmentos.length < 3) {
+      // fatias do miolo em leque, como o livro serve
+      const L = peca.comprimento;
+      for (let i = 0; i <= 7; i++) peca.cortar('x', -L * 0.35 + (L * 0.7 * i) / 7);
+      for (const f of [...peca.fragmentos]) if (f.x1 <= -L * 0.35 + 1e-4 || f.x0 >= L * 0.35 - 1e-4) f.grupo.visible = false;
+    } else if (ficha.forma === 'pedacos' && peca.fragmentos.length < 3) {
+      const L = peca.comprimento;
+      const W = peca.largura;
+      for (const x of [-L / 6, L / 6]) peca.cortar('x', x);
+      peca.cortar('z', W * 0.05);
+    }
     const natural = porcionar ? peca.comprimento * 0.55 : Math.max(peca.comprimento, peca.largura);
     const alvo = tipo === 'tigela' ? poco * 1.1 : tipo === 'taca' ? 0.09 : tipo === 'travessa' ? R * 1.6 : doce ? poco * 1.4 : poco * 1.75;
     peca.scale.setScalar(natural > alvo ? alvo / natural : natural < 0.03 ? 0.04 / Math.max(natural, 1e-3) : 1);
     peca.rotation.set(0, -0.45, 0);
     peca.position.set(0, nivelPrincipal + alturaBase, 0);
-    const telhas = emTelhas(peca);
+    const telhas = ficha.forma === 'inteiro' || ficha.forma === 'pedacos' ? 0 : emTelhas(peca);
     if (telhas) peca.scale.setScalar(Math.min(peca.scale.x, (poco * 1.5) / telhas));
     if (miudoCorte && !telhas) {
       for (const f of peca.fragmentos) f.grupo.visible = false;
@@ -498,7 +565,14 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       apresentado.rotation.y = -0.5;
       grupo.add(apresentado);
     }
-    const monte = telhas || miudoCorte ? 0 : emMonte(peca);
+    const monte = telhas || miudoCorte || ficha.forma === 'inteiro' ? 0 : emMonte(peca);
+    // ralado, lascas e desfiado: o montinho no lugar da peça
+    if (ficha.forma === 'ralado' || ficha.forma === 'lascas' || ficha.forma === 'desfiado') {
+      for (const f of peca.fragmentos) f.grupo.visible = false;
+      const m = montinho(peca, ficha.forma, Math.min(0.06, poco * 0.5));
+      m.position.set(-poco * 0.05, nivelPrincipal, poco * 0.02);
+      grupo.add(m);
+    }
     if (monte) peca.scale.setScalar(Math.min(peca.scale.x, (poco * 1.1) / monte));
     grupo.add(peca);
     for (let k = 0; k < 30; k++) peca.atualizar(1 / 30);
@@ -507,13 +581,40 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     const meio = grupo.worldToLocal(c2.getCenter(new THREE.Vector3()));
     peca.position.x -= meio.x + poco * 0.06;
     peca.position.z -= meio.z - poco * 0.04;
+    // mais unidades do principal (3 crepes, 6 bolinhos), em fileira ao lado da primeira
+    const qtd = Math.min(12, ficha.quantidade ?? 1);
+    if (qtd > 1 && principalRev) {
+      let larg = Math.max(c2.max.x - c2.min.x, c2.max.z - c2.min.z) * 1.08;
+      const porLinha = qtd <= 3 ? qtd : Math.ceil(Math.sqrt(qtd));
+      // todas as unidades cabem no prato: encolhe se precisar
+      const cabe = (poco * 1.9) / porLinha;
+      if (larg > cabe) {
+        peca.scale.multiplyScalar(cabe / larg);
+        larg = cabe;
+        peca.position.x = 0;
+        peca.position.z = 0;
+      }
+      for (let i = 1; i < qtd; i++) {
+        const copia = pecaDe(principalRev);
+        if (!copia) break;
+        copia.scale.copy(peca.scale);
+        copia.rotation.copy(peca.rotation);
+        copia.definirCozimento(peca.cozimento);
+        const col = i % porLinha;
+        const lin = Math.floor(i / porLinha);
+        copia.position.set(peca.position.x + col * larg - ((porLinha - 1) * larg) / 2 + (lin % 2) * larg * 0.3, peca.position.y + lin * 0.004, peca.position.z + lin * larg * 0.9);
+        copia.atualizar(0);
+        grupo.add(copia);
+      }
+      if (porLinha > 1) peca.position.x -= ((porLinha - 1) * larg) / 2;
+    }
     // microverdes por cima da peça, em cinco folhinhas
     for (let k = 0; k < 4; k++) peca.atualizar(1 / 30);
     grupo.updateMatrixWorld(true);
     const topo = caixaVisivel(peca);
     const cTopo = grupo.worldToLocal(topo.getCenter(new THREE.Vector3()));
     const y = grupo.worldToLocal(topo.max.clone()).y;
-    const erva = doce ? 'hortela' : 'cerefolio';
+    const erva = (tecnica.prato?.acompanhamentos ?? []).find((id) => familiaDe(id) === 'erva');
     // doce: as frutas da receita por cima, num montinho, antes da hortelã
     const fruta = doce ? (tecnica.prato?.acompanhamentos ?? []).find((id) => familiaDe(id) && familiaDe(id) !== 'erva') : undefined;
     if (fruta) {
@@ -524,7 +625,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
         if (f) grupo.add(f);
       }
     }
-    for (let i = 0; i < (doce ? 2 : 5); i++) {
+    for (let i = 0; erva && i < (doce ? 2 : 5); i++) {
       const a = i * 1.26;
       const f = miudo(erva, doce ? 0.022 : 0.014, new THREE.Vector3(cTopo.x + Math.cos(a) * 0.008, y - 0.002, cTopo.z + Math.sin(a) * 0.008), a * 1.7);
       if (f) grupo.add(f);
@@ -535,7 +636,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   const principal = principalRev ?? tecnica.passos.find((p) => p.alimento)?.alimento;
   // temperos e aromáticos inteiros não vão ao prato como guarnição
   const AROMATICOS = /^(alho|cebola|cebola-roxa|chalota|louro|cravo|anis|canela|pimenta|zimbro|cardamomo|noz-moscada|gengibre|galanga|limao-kaffir|capim)/;
-  let guarnicoes = (tecnica.prato?.acompanhamentos ?? tecnica.alimentos).filter((id) => id !== principal && familiaDe(id) && !['recipiente', 'monte', 'pasta', 'bulbo'].includes(familiaDe(id)!) && !AROMATICOS.test(id)).slice(0, 3);
+  let guarnicoes = (tecnica.prato?.acompanhamentos ?? []).filter((id) => id !== principal && familiaDe(id) && !['recipiente', 'monte', 'pasta', 'bulbo'].includes(familiaDe(id)!) && !AROMATICOS.test(id)).slice(0, 3);
   const tamReal = (id: string) => {
     const t = pecaDe(id);
     if (!t) return 0.04;
@@ -545,8 +646,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   };
   // na sopa só boia o que é miúdo de verdade (ervas, pedacinhos); nada de tomate inteiro no caldo
   if (tipo === 'tigela') guarnicoes = guarnicoes.filter((id) => familiaDe(id) === 'erva' || tamReal(id) < 0.03);
-  else if (!guarnicoes.length) guarnicoes = doce ? ['framboesa'] : ['tomate-cereja'].filter((id) => familiaDe(id));
-  if (!guarnicoes.length && !doce && tipo !== 'tigela') guarnicoes = ['salsa'];
+  // sem guarnição no livro, sem guarnição no prato
   // corte miúdo no prato: os legumes que acompanham vão no mesmo corte, em feixe ao lado (julienne de cenoura, não cenoura inteira)
   if (feixeFeito && miudoCorte && tipo !== 'tigela' && tipo !== 'taca') {
     // só o que a receita leva de verdade, nunca a guarnição padrão
@@ -576,7 +676,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     });
   } else {
     // sopa: as guarnições da técnica boiando num grupinho no centro
-    if (tipo === 'tigela') {
+    if (tipo === 'tigela' && !decoSopa) {
       lugares.slice(0, 3).forEach((gid, i) => {
         const a = i * 2.1;
         const fr = miudo(gid, familiaDe(gid) === 'erva' ? 0.02 : 0.022, new THREE.Vector3(Math.cos(a) * 0.016, 0.031, Math.sin(a) * 0.016), a);
@@ -584,24 +684,12 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       });
     }
     // sopa e taça: um detalhe de erva no centro
-    const id = doce ? 'hortela' : 'cerefolio';
-    const f = miudo(id, 0.025, new THREE.Vector3(0.006, (tipo === 'taca' ? 0.12 : 0.031) + 0.001, -0.004), 0.7);
+    const id = guarnicoes.find((g) => familiaDe(g) === 'erva');
+    const f = decoSopa || !id ? null : miudo(id, 0.025, new THREE.Vector3(0.006, (tipo === 'taca' ? 0.12 : 0.031) + 0.001, -0.004), 0.7);
     if (f) grupo.add(f);
     if (doce && lugares[0]) {
       const fr = miudo(lugares[0], 0.02, new THREE.Vector3(-0.012, 0.122, 0.008), 0.2);
       if (fr) grupo.add(fr);
-    }
-  }
-
-  // acabamento: flor de sal nos salgados, açúcar de confeiteiro nos doces
-  if (tipo === 'prato' || tipo === 'travessa') {
-    const pv = doce ? polvilho(140, poco * 0.5, '#fbfbf6', 0.0009, new THREE.Vector2(poco * 0.35, -poco * 0.3)) : polvilho(18, poco * 0.35, '#f7f7f2', 0.0011, new THREE.Vector2(-poco * 0.1, poco * 0.1));
-    pv.position.y = piso;
-    grupo.add(pv);
-    if (!doce) {
-      const pimenta = polvilho(10, poco * 0.3, '#2a2420', 0.0008, new THREE.Vector2(poco * 0.05, poco * 0.2));
-      pimenta.position.y = piso;
-      grupo.add(pimenta);
     }
   }
 
@@ -618,4 +706,93 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     for (const o of grupo.children) if (o instanceof Peca) o.atualizar(dt);
   };
   return { grupo, centro: centro.clone().add(new THREE.Vector3(0, 0.02, 0)), raio: R, limpar, atualizar };
+}
+
+/**
+ * Louça pequena (tigelinha, ramequim, xícara, molheira, pote, cumbuca, copo): o líquido, a
+ * pasta ou o miúdo que a técnica produziu, sem guarnição de prato.
+ */
+function servirPequena(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnica: Tecnica, tipo: LoucaPequena, preparo?: string): Prato {
+  const ficha = tecnica.prato ?? {};
+  const doce = DOCE.has(tecnica.bancada);
+  const estacao = doce ? cozinha.estacoes.confeitaria : cozinha.estacoes.corte;
+  const centro = estacao.superficie.clone();
+  const grupo = new THREE.Group();
+  grupo.position.copy(centro);
+  const frente = cozinha.inicio.posicao.clone().sub(centro).setY(0).normalize();
+  grupo.rotation.y = Math.atan2(frente.x, frente.z);
+  cena.add(grupo);
+  const louca = criarLoucaPequena(tipo);
+  grupo.add(louca.g);
+  const corLiquido = ficha.liquido ?? (mesa.conteudo ? '#' + mesa.conteudo.estado.cor.getHexString() : preparo ? '#' + new THREE.Color(estadoInicial(preparo.replace(/[-_]/g, ' ')).cor).getHexString() : null);
+  const peca = mesa.peca;
+  mesa.soltarFerramenta();
+  mesa.limparExtras();
+  mesa.removerRecipiente(true);
+  if (corLiquido) {
+    const sup = superficie(louca.raioLiquido, corLiquido, !!ficha.claro || louca.vidro && !!ficha.claro, ficha.granulado ? 'granulado' : 'liso');
+    sup.position.y = louca.nivel;
+    grupo.add(sup);
+    if (louca.vidro) {
+      // no vidro, o líquido aparece de lado também
+      const corpo = new THREE.Mesh(new THREE.CylinderGeometry(louca.raioLiquido, louca.raioLiquido * 0.98, louca.nivel - louca.piso, 32, 1, true), new THREE.MeshStandardMaterial({ color: corLiquido, roughness: 0.2, transparent: true, opacity: ficha.claro ? 0.6 : 0.92, side: THREE.DoubleSide }));
+      corpo.position.y = (louca.nivel + louca.piso) / 2;
+      grupo.add(corpo);
+    }
+  }
+  if (peca) {
+    mesa.peca = null;
+    mesa.pecaChave = '';
+    mesa.capa = null;
+    peca.removeFromParent();
+    const forma = ficha.forma;
+    if (forma === 'ralado' || forma === 'lascas' || forma === 'desfiado') {
+      const m = montinho(peca, forma, louca.raioLiquido * 0.8);
+      m.position.y = corLiquido ? louca.nivel : louca.piso;
+      grupo.add(m);
+      peca.descartar();
+    } else if (!corLiquido || (louca.vidro && !ficha.liquido)) {
+      // a peça (ou as unidades) dentro da louça, no tamanho que cabe
+      const qtd = Math.min(8, ficha.quantidade ?? 1);
+      const cabe = (louca.raioLiquido * 1.5) / Math.max(1, Math.sqrt(qtd));
+      const escala = Math.min(1, cabe / Math.max(peca.comprimento, peca.largura, 1e-3));
+      for (let i = 0; i < qtd; i++) {
+        const u: Peca | null = i === 0 ? peca : pecaDe(principalDe(tecnica) ?? '');
+        if (!u) break;
+        if (u !== peca) u.definirCozimento(peca.cozimento);
+        u.scale.setScalar(escala);
+        const a = i * 2.4;
+        const r = i === 0 ? 0 : louca.raioLiquido * 0.45;
+        u.position.set(Math.cos(a) * r, (corLiquido ? louca.nivel : louca.piso) + i * 0.002, Math.sin(a) * r);
+        u.rotation.y = a;
+        u.atualizar(0);
+        grupo.add(u);
+      }
+    } else {
+      peca.descartar();
+    }
+  }
+  // erva do próprio livro por cima, se houver
+  const erva = (ficha.acompanhamentos ?? []).find((id) => familiaDe(id) === 'erva');
+  if (erva) {
+    const f = miudo(erva, 0.018, new THREE.Vector3(0.004, louca.nivel + 0.002, -0.003), 0.6);
+    if (f) grupo.add(f);
+  }
+  grupo.traverse((o) => {
+    if (o instanceof THREE.Mesh) o.castShadow = true;
+  });
+  const limpar = () => {
+    cena.remove(grupo);
+    grupo.traverse((o) => {
+      if (o instanceof Peca) o.descartar();
+    });
+  };
+  const atualizar = (dt: number) => {
+    for (const o of grupo.children) if (o instanceof Peca) o.atualizar(dt);
+  };
+  return { grupo, centro: centro.clone().add(new THREE.Vector3(0, 0.02, 0)), raio: 0.09, limpar, atualizar };
+}
+
+function principalDe(tecnica: Tecnica): string | undefined {
+  return tecnica.prato?.principal ?? tecnica.passos.find((p) => p.alimento)?.alimento;
 }

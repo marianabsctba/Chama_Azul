@@ -239,6 +239,7 @@ export class Mesa {
       } catch {
         return;
       }
+      item.userData.alimento = id;
       if (p) {
         const tamPeca = Math.min(p.comprimento, p.largura) * p.scale.x;
         const alvo = THREE.MathUtils.clamp(tamPeca * 0.45, 0.012, 0.05);

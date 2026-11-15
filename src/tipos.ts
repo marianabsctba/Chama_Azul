@@ -47,10 +47,27 @@ export interface Passo {
   cheirar?: boolean;
 }
 
+export type LoucaServir = 'prato' | 'tigela' | 'travessa' | 'taca' | 'tabua' | 'tigelinha' | 'ramequim' | 'xicara' | 'molheira' | 'pote' | 'cumbuca' | 'copo';
+export type FormaServida = 'inteiro' | 'fatias' | 'medalhoes' | 'tiras' | 'cubos' | 'pedacos' | 'ralado' | 'lascas' | 'desfiado';
+export type EstadoServido = 'cru' | 'cozido' | 'dourado' | 'tostado';
+
+/** Ficha do que a técnica produz e de como vai à mesa, tirada do livro. */
 export interface PratoFinal {
   principal?: string;
   acompanhamentos?: string[];
-  servir?: 'prato' | 'tigela' | 'travessa' | 'taca' | 'tabua';
+  servir?: LoucaServir;
+  /** Como o principal aparece: inteiro, em fatias, ralado, em lascas... */
+  forma?: FormaServida;
+  /** Ponto do principal: cru, cozido, dourado (frito, grelhado, assado) ou tostado. */
+  estado?: EstadoServido;
+  /** Quantas unidades do principal vão à louça (3 crepes, 6 bolinhos). */
+  quantidade?: number;
+  /** Cor do líquido, molho ou pasta que enche a louça (hex). */
+  liquido?: string;
+  /** Líquido translúcido (caldo claro, consomê, calda). */
+  claro?: boolean;
+  /** Pasta com grão aparente (pesto no pilão, tapenade). */
+  granulado?: boolean;
 }
 
 export interface Tecnica {
