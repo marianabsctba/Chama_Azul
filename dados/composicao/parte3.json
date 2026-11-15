@@ -43,6 +43,21 @@
         "recipiente": "panela"
       },
       {
+        "alimento": "alcachofra",
+        "pergunta": "A alcachofra está cozida?",
+        "opcoes": [
+          "Uma folha puxada de leve se solta com facilidade.",
+          "As folhas continuam presas e duras.",
+          "A alcachofra boia e está verde-clara."
+        ],
+        "correta": 0,
+        "explicacao": "Quando a folha sai sem esforço, a base está tenra."
+      },
+      {
+        "alimento": "alcachofra",
+        "recipiente": "escorredor"
+      },
+      {
         "alimento": "alcachofra"
       },
       {
@@ -104,6 +119,24 @@
         "recipiente": "panela"
       },
       {
+        "alimento": "alcachofra",
+        "pergunta": "O fundo de alcachofra está pronto?",
+        "opcoes": [
+          "A faca sem ponta entra sem resistência.",
+          "A faca encontra o fundo duro.",
+          "O fundo se desfaz em pedaços."
+        ],
+        "correta": 0,
+        "explicacao": "O fundo cozido fica tenro e a faca entra fácil.",
+        "objetos": [
+          "faca"
+        ]
+      },
+      {
+        "alimento": "alcachofra",
+        "recipiente": "escorredor"
+      },
+      {
         "alimento": "alcachofra"
       }
     ],
@@ -146,6 +179,53 @@
       "servir": "prato",
       "forma": "pedacos",
       "estado": "cozido"
+    }
+  },
+  "alcachofra.brotos_crus_fritos_refogados": {
+    "passos": [
+      {
+        "alimento": "broto_alcachofra",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "broto_alcachofra",
+        "adicionar": [
+          "azeitona",
+          "tomate-cereja"
+        ],
+        "meio": "azeite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "broto_alcachofra",
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "broto_alcachofra",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "broto_alcachofra",
+        "adicionar": [
+          "tomate",
+          "alho",
+          "manjericao"
+        ],
+        "meio": "azeite",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "broto_alcachofra",
+      "acompanhamentos": [
+        "azeitona",
+        "tomate-cereja",
+        "manjericao"
+      ],
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "dourado"
     }
   },
   "legumes.julienne": {
@@ -372,6 +452,46 @@
       "servir": "prato",
       "forma": "tiras",
       "estado": "cru"
+    }
+  },
+  "legumes.nodosos_usos": {
+    "passos": [
+      {
+        "alimento": "aipo_rabano",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "aipo_rabano",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "aipo_rabano",
+        "adicionar": [
+          "salsa"
+        ],
+        "meio": "manteiga"
+      },
+      {
+        "alimento": "aipo_rabano",
+        "meio": "azeite",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "aipo_rabano",
+        "adicionar": [
+          "alho"
+        ],
+        "meio": "manteiga",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "aipo_rabano",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cozido"
     }
   },
   "batata.lavar": {
@@ -983,6 +1103,30 @@
       "estado": "cru"
     }
   },
+  "cebolas.sem_lagrimas": {
+    "passos": [
+      {
+        "alimento": "cebola",
+        "meio": "água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "cebola",
+        "meio": "água"
+      },
+      {
+        "alimento": "cebola",
+        "corte": "cubos"
+      }
+    ],
+    "prato": {
+      "principal": "cebola",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
+    }
+  },
   "cebolas.perola_descascar": {
     "passos": [
       {
@@ -1161,6 +1305,37 @@
       "estado": "cozido"
     }
   },
+  "incomuns.berinjela_thai": {
+    "passos": [
+      {
+        "alimento": "berinjela_thai",
+        "pergunta": "Como se prepara a berinjela thai?",
+        "opcoes": [
+          "Do mesmo modo que a berinjela branca ou a roxa.",
+          "Só crua, ralada em salada.",
+          "Sempre inteira, sem cortar a polpa."
+        ],
+        "correta": 0,
+        "explicacao": "Todas as variedades de berinjela são preparadas da mesma maneira."
+      },
+      {
+        "alimento": "berinjela_thai",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "berinjela_thai",
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      }
+    ],
+    "prato": {
+      "principal": "berinjela_thai",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "dourado"
+    }
+  },
   "incomuns.melao_amargo": {
     "passos": [
       {
@@ -1181,6 +1356,163 @@
       "servir": "prato",
       "forma": "fatias",
       "estado": "dourado"
+    }
+  },
+  "incomuns.mooli": {
+    "passos": [
+      {
+        "alimento": "mooli",
+        "pergunta": "O que é o mooli?",
+        "opcoes": [
+          "Um rabanete branco, também chamado de daikon.",
+          "Uma cabaça que precisa ser descascada.",
+          "Uma alga seca para tostar."
+        ],
+        "correta": 0,
+        "explicacao": "O mooli é o rabanete branco muito usado na cozinha asiática."
+      },
+      {
+        "alimento": "mooli",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "mooli",
+        "meio": "água",
+        "recipiente": "cesta de bambu"
+      }
+    ],
+    "prato": {
+      "principal": "mooli",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cozido"
+    }
+  },
+  "incomuns.loofah": {
+    "passos": [
+      {
+        "alimento": "loofah",
+        "pergunta": "O que fazer com a loofah antes de cozinhar?",
+        "opcoes": [
+          "Descascar.",
+          "Salgar para tirar o amargor.",
+          "Deixar de molho uma noite."
+        ],
+        "correta": 0,
+        "explicacao": "A loofah precisa ser descascada antes de ir ao vapor ou ao refogado."
+      },
+      {
+        "alimento": "loofah"
+      },
+      {
+        "alimento": "loofah",
+        "meio": "água",
+        "recipiente": "cesta de bambu"
+      }
+    ],
+    "prato": {
+      "principal": "loofah",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cozido"
+    }
+  },
+  "incomuns.araruta": {
+    "passos": [
+      {
+        "alimento": "araruta_india",
+        "pergunta": "Como é a araruta do leste da Índia?",
+        "opcoes": [
+          "Raiz dura de casca grossa.",
+          "Fruto macio de casca fina.",
+          "Folha tenra para salada."
+        ],
+        "correta": 0,
+        "explicacao": "É uma raiz dura de casca grossa, usada em refogados no Sudeste da Ásia."
+      },
+      {
+        "alimento": "araruta_india"
+      },
+      {
+        "alimento": "araruta_india",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "araruta_india",
+        "meio": "óleo",
+        "recipiente": "wok"
+      }
+    ],
+    "prato": {
+      "principal": "araruta_india",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "cubos",
+      "estado": "dourado"
+    }
+  },
+  "incomuns.rabanete_pingente": {
+    "passos": [
+      {
+        "alimento": "rabanete_pingente",
+        "pergunta": "Qual é o sabor do rabanete pingente?",
+        "opcoes": [
+          "Bem amargo.",
+          "Doce como a cenoura.",
+          "Neutro como a batata."
+        ],
+        "correta": 0,
+        "explicacao": "O rabanete verde é bem amargo e por isso vai em picles ou refogados."
+      },
+      {
+        "alimento": "rabanete_pingente",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "rabanete_pingente",
+        "meio": "óleo",
+        "recipiente": "wok"
+      }
+    ],
+    "prato": {
+      "principal": "rabanete_pingente",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "dourado"
+    }
+  },
+  "incomuns.feijao_grande_jardim": {
+    "passos": [
+      {
+        "alimento": "feijao_jardim",
+        "pergunta": "Como se corta o feijão grande de jardim?",
+        "opcoes": [
+          "Inteiro ou fatiado na diagonal.",
+          "Ralado fino.",
+          "Em cubos pequenos."
+        ],
+        "correta": 0,
+        "explicacao": "Ele é cozido inteiro ou em fatias diagonais, como os feijões-trepadeiras."
+      },
+      {
+        "alimento": "feijao_jardim",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "feijao_jardim",
+        "meio": "água",
+        "recipiente": "panela"
+      }
+    ],
+    "prato": {
+      "principal": "feijao_jardim",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cozido"
     }
   },
   "incomuns.algas_tostar": {
@@ -1555,6 +1887,18 @@
   },
   "chili.rellenos_rechear": {
     "passos": [
+      {
+        "alimento": "jalapeno",
+        "adicionar": [
+          "poblano"
+        ],
+        "meio": "óleo",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "jalapeno",
+        "recipiente": "papel-toalha"
+      },
       {
         "alimento": "jalapeno",
         "adicionar": [
@@ -2154,14 +2498,14 @@
   "assar.legumes_azeite": {
     "passos": [
       {
+        "alimento": "alho",
+        "recipiente": "assadeira"
+      },
+      {
         "alimento": "batata",
         "meio": "azeite",
         "recipiente": "assadeira",
         "adicionar": [
-          "abobrinha",
-          "pimentao",
-          "berinjela",
-          "cebola",
           "alecrim"
         ]
       },
@@ -2171,10 +2515,20 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": "batata",
+        "alimento": "abobrinha",
+        "meio": "azeite",
+        "recipiente": "assadeira",
         "adicionar": [
-          "alho"
+          "pimentao",
+          "berinjela",
+          "cebola",
+          "bouquet-garni"
         ]
+      },
+      {
+        "alimento": "abobrinha",
+        "meio": "azeite",
+        "recipiente": "assadeira"
       }
     ],
     "prato": {
@@ -3000,18 +3354,58 @@
         "recipiente": "panela"
       },
       {
+        "alimento": "lula",
+        "adicionar": [
+          "vieira"
+        ],
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "caldo",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "molho de creme",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "lagostim",
+        "adicionar": [
+          "lula",
+          "vieira",
+          "camarao"
+        ],
+        "meio": "molho de creme",
+        "recipiente": "panela"
+      },
+      {
         "alimento": null,
         "meio": "crème fraîche",
         "recipiente": "panela"
       },
       {
-        "alimento": null,
+        "alimento": "arroz_arborio",
         "recipiente": "fôrma"
+      },
+      {
+        "alimento": "arroz_arborio",
+        "adicionar": [
+          "lagostim",
+          "vieira",
+          "espiral-parmesao"
+        ]
       }
     ],
     "prato": {
       "principal": "arroz_arborio",
-      "acompanhamentos": [],
+      "acompanhamentos": [
+        "lagostim",
+        "vieira",
+        "espiral-parmesao"
+      ],
       "servir": "prato",
       "forma": "inteiro",
       "estado": "cozido"
@@ -3933,6 +4327,11 @@
       },
       {
         "alimento": "canelone",
+        "meio": "manteiga",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "canelone",
         "meio": "molho de tomate",
         "recipiente": "assadeira"
       },
@@ -4190,23 +4589,100 @@
       "estado": "dourado"
     }
   },
+  "massa.recheio_escargot": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "chalota",
+        "meio": "azeite",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "chalota",
+        "meio": "pastis",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "escargot",
+        "adicionar": [
+          "chalota"
+        ],
+        "meio": "pastis",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "escargot",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "escargot",
+      "acompanhamentos": [],
+      "servir": "tigelinha",
+      "forma": "inteiro",
+      "estado": "cozido",
+      "quantidade": 6
+    }
+  },
   "massa.ravioli_cortador": {
     "passos": [
       {
         "alimento": "massa_fresca"
       },
       {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca",
+        "adicionar": [
+          "escargot"
+        ]
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
+        "alimento": "massa_fresca"
+      },
+      {
         "alimento": "massa_fresca",
         "corte": "contorno"
+      },
+      {
+        "alimento": "raviolo-redondo",
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "raviolo-redondo",
+        "recipiente": "escumadeira"
+      },
+      {
+        "alimento": "raviolo-redondo",
+        "adicionar": [
+          "cenoura",
+          "abobrinha"
+        ],
+        "meio": "molho de manteiga"
       }
     ],
     "prato": {
       "principal": "raviolo-redondo",
-      "acompanhamentos": [],
-      "servir": "tabua",
+      "acompanhamentos": [
+        "cenoura",
+        "abobrinha"
+      ],
+      "servir": "prato",
       "forma": "inteiro",
-      "estado": "cru",
-      "quantidade": 8
+      "estado": "cozido",
+      "quantidade": 3
     }
   },
   "massa.molho_manteiga_ervas": {
@@ -4311,6 +4787,14 @@
         "alimento": "massa-de-pao"
       },
       {
+        "alimento": "camarao",
+        "adicionar": [
+          "cebolinha",
+          "gengibre"
+        ],
+        "recipiente": "tigela"
+      },
+      {
         "alimento": "massa-de-pao"
       },
       {
@@ -4384,7 +4868,8 @@
   "massa.rolinho_primavera": {
     "passos": [
       {
-        "alimento": "cenoura"
+        "alimento": "cenoura",
+        "corte": "tiras"
       },
       {
         "alimento": "cenoura",
@@ -4396,12 +4881,34 @@
         ]
       },
       {
+        "alimento": "cenoura",
+        "adicionar": [
+          "pimentao",
+          "cebolinha"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "tofu",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "tofu",
+        "adicionar": [
+          "coentro"
+        ],
+        "recipiente": "tigela"
+      },
+      {
         "alimento": "folha_rolinho",
         "adicionar": [
           "cenoura",
           "pimentao",
           "tofu"
         ]
+      },
+      {
+        "alimento": "folha_rolinho"
       },
       {
         "alimento": "folha_rolinho"
@@ -5840,18 +6347,27 @@
         "recipiente": "tigela"
       },
       {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      },
+      {
         "alimento": "pizza"
+      },
+      {
+        "alimento": "pizza",
+        "recipiente": "fôrma"
       },
       {
         "alimento": "pizza",
         "adicionar": [
           "tomate",
           "manjericao"
-        ]
+        ],
+        "recipiente": "fôrma"
       },
       {
         "alimento": "pizza",
-        "recipiente": "assadeira"
+        "recipiente": "fôrma"
       }
     ],
     "prato": {
@@ -5895,7 +6411,27 @@
   "paes.focaccia": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": null,
+        "meio": "fermento com água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "fermento, água e azeite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "meio": "óleo",
+        "recipiente": "tigela"
       },
       {
         "alimento": "massa-de-pao",
@@ -6168,7 +6704,25 @@
       },
       {
         "alimento": null,
+        "meio": "leite com manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "fermento com leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
         "meio": "ovos, fermento e leite",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
         "recipiente": "tigela"
       },
       {
@@ -6187,6 +6741,10 @@
       {
         "alimento": "noz",
         "recipiente": "fôrma de kugelhopf"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
       },
       {
         "alimento": "massa-de-pao",
@@ -6216,8 +6774,17 @@
     "passos": [
       {
         "alimento": null,
-        "meio": "ovos com fermento",
+        "meio": "fermento com leite",
         "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "recipiente": "bancada"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos com fermento",
+        "recipiente": "bancada"
       },
       {
         "alimento": "massa-de-pao"
@@ -6225,6 +6792,13 @@
       {
         "alimento": "massa-de-pao",
         "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "massa-de-pao"
       },
       {
         "alimento": "massa-de-pao",
@@ -6236,6 +6810,18 @@
         "alimento": "massa-de-pao"
       },
       {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "fôrma de brioche"
+      },
+      {
+        "alimento": "massa-de-pao"
+      },
+      {
+        "alimento": "massa-de-pao",
+        "recipiente": "fôrma de brioche"
+      },
+      {
         "alimento": "massa-de-pao",
         "recipiente": "fôrma de brioche"
       },
@@ -6254,6 +6840,9 @@
       {
         "alimento": "brioche",
         "recipiente": "fôrma de brioche"
+      },
+      {
+        "alimento": "brioche"
       }
     ],
     "prato": {

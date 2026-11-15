@@ -1723,16 +1723,16 @@
    ],
    "passos": [
     {
-     "acao": "limpar",
-     "alvo": "folhas descoloridas e ponta do talo",
-     "utensilio": "Faca de legumes",
-     "parametro": ""
-    },
-    {
      "acao": "cortar",
      "alvo": "cruz na base dos brotos grandes",
      "utensilio": "Faca de legumes",
      "parametro": "profundidade de um quarto da espessura"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "ponta do talo e folhas descoloridas",
+     "utensilio": "Faca de legumes",
+     "parametro": ""
     }
    ],
    "ponto_critico": "Corte só até 1/4 da espessura",
@@ -2169,6 +2169,18 @@
      "parametro": "20 a 35 min"
     },
     {
+     "acao": "testar",
+     "alvo": "puxar de leve uma folha",
+     "utensilio": "",
+     "parametro": "deve soltar com facilidade"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "alcachofras",
+     "utensilio": "Escorredor",
+     "parametro": ""
+    },
+    {
      "acao": "separar",
      "alvo": "cone central de folhas",
      "utensilio": "",
@@ -2273,6 +2285,18 @@
      "parametro": "15 a 20 min"
     },
     {
+     "acao": "testar",
+     "alvo": "espetar um fundo",
+     "utensilio": "Faca sem ponta",
+     "parametro": "deve entrar sem resistência"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "fundos",
+     "utensilio": "Escorredor",
+     "parametro": "bem escorridos"
+    },
+    {
      "acao": "limpar",
      "alvo": "parte fibrosa quando morno",
      "utensilio": "Boleador",
@@ -2326,6 +2350,60 @@
    ],
    "ponto_critico": "Brotos são comidos inteiros com talo e folhas",
    "erro_comum": "Tentar retirar a fibra de brotos, que ainda não têm"
+  },
+  {
+   "id": "alcachofra.brotos_crus_fritos_refogados",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Brotos de alcachofra crus, fritos alla giudea e refogados",
+   "ingredientes": [
+    "broto_alcachofra",
+    "azeitona",
+    "tomate-cereja",
+    "azeite extravirgem",
+    "sal grosso",
+    "tomate",
+    "alho",
+    "manjericao"
+   ],
+   "utensilios": [
+    "Faca de legumes",
+    "Tigela",
+    "Frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "brotos crus em fatias finas",
+     "utensilio": "Faca de legumes",
+     "parametro": "comem-se inteiros, com talo e folhas"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "fatias cruas com azeitonas, tomates-cereja, azeite extravirgem e sal grosso moído",
+     "utensilio": "Tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "brotos inteiros em azeite, à moda dos carciofi alla giudea",
+     "utensilio": "Frigideira",
+     "parametro": "até dourar"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "brotos ao meio para refogar",
+     "utensilio": "Faca de legumes",
+     "parametro": ""
+    },
+    {
+     "acao": "saltear",
+     "alvo": "metades com tomate fresco, alho, azeite e manjericão",
+     "utensilio": "Frigideira",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "brotos novos não têm fibra formada e podem ir à mesa inteiros, crus ou cozidos",
+   "erro_comum": "tentar tirar a parte fibrosa dos brotos, que ainda não se desenvolveu"
   },
   {
    "id": "legumes.julienne",
@@ -2693,6 +2771,59 @@
    ],
    "ponto_critico": "Palitos de 5 mm",
    "erro_comum": "Esquecer a água acidulada depois do corte"
+  },
+  {
+   "id": "legumes.nodosos_usos",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Usos dos legumes nodosos",
+   "ingredientes": [
+    "aipo_rabano",
+    "tupinambo",
+    "couve_rabano",
+    "manteiga ou azeite",
+    "ervas frescas",
+    "alho"
+   ],
+   "utensilios": [
+    "Faca de legumes",
+    "Panela",
+    "Assadeira",
+    "Amassador"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "legume nodoso descascado em fatias ou pedaços",
+     "utensilio": "Faca de legumes",
+     "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "fatias em água ou no vapor",
+     "utensilio": "Panela",
+     "parametro": "até ficarem macias"
+    },
+    {
+     "acao": "regar",
+     "alvo": "fatias cozidas com manteiga ou azeite e salpicar ervas frescas",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "pedaços pré-cozidos com ervas e temperos, ou grelhar",
+     "utensilio": "Assadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "esmagar",
+     "alvo": "pedaços cozidos com manteiga ou azeite, alho amassado e temperos",
+     "utensilio": "Amassador",
+     "parametro": "crus, também podem ir em palitos finos ou ralados com vinagrete ou maionese"
+    }
+   ],
+   "ponto_critico": "tão versáteis quanto a batata: fervidos, assados, amassados ou crus",
+   "erro_comum": "deixar as fatias expostas ao ar antes de cozinhar e a polpa escurecer"
   },
   {
    "id": "batata.lavar",
@@ -3622,6 +3753,42 @@
    "erro_comum": "Cortar a raiz antes e a cebola se desmanchar"
   },
   {
+   "id": "cebolas.sem_lagrimas",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Cebolas sem lágrimas",
+   "ingredientes": [
+    "cebola"
+   ],
+   "utensilios": [
+    "Faca de legumes",
+    "Vasilha",
+    "Faca do chef",
+    "Tábua de corte"
+   ],
+   "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "cebola mergulhada numa vasilha de água",
+     "utensilio": "Faca de legumes",
+     "parametro": ""
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "cebola sob a água corrente da torneira",
+     "utensilio": "Faca do chef",
+     "parametro": ""
+    },
+    {
+     "acao": "picar",
+     "alvo": "cebola mantendo a base da raiz",
+     "utensilio": "Faca do chef",
+     "parametro": "a raiz inteira solta menos os óleos que irritam os olhos"
+    }
+   ],
+   "ponto_critico": "a água e a raiz intacta seguram os óleos voláteis que fazem lacrimejar",
+   "erro_comum": "cortar a base da raiz logo no começo e liberar todo o cheiro forte"
+  },
+  {
    "id": "cebolas.perola_descascar",
    "capitulo": "Legumes & Saladas",
    "nome": "Descascar cebolas-pérola",
@@ -3908,6 +4075,41 @@
    "erro_comum": "Cozinhar com a casca dura"
   },
   {
+   "id": "incomuns.berinjela_thai",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Preparar berinjela thai",
+   "ingredientes": [
+    "berinjela_thai",
+    "óleo"
+   ],
+   "utensilios": [
+    "Faca de legumes",
+    "Frigideira"
+   ],
+   "passos": [
+    {
+     "acao": "inspecionar",
+     "alvo": "berinjela thai",
+     "utensilio": "",
+     "parametro": "prepara-se como a berinjela branca ou a roxa"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "polpa",
+     "utensilio": "Faca de legumes",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "fatias, ou tostar",
+     "utensilio": "Frigideira",
+     "parametro": "também muito usada em conservas"
+    }
+   ],
+   "ponto_critico": "polpa fatiada antes de ir ao fogo",
+   "erro_comum": "tratar a berinjela thai como um legume diferente das outras berinjelas"
+  },
+  {
    "id": "incomuns.melao_amargo",
    "capitulo": "Legumes & Saladas",
    "nome": "Salgar melão amargo",
@@ -3941,6 +4143,187 @@
    ],
    "ponto_critico": "Salgar antes de cozinhar",
    "erro_comum": "Pular o sal e o prato ficar amargo"
+  },
+  {
+   "id": "incomuns.mooli",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Preparar mooli (daikon)",
+   "ingredientes": [
+    "mooli"
+   ],
+   "utensilios": [
+    "Faca do chef",
+    "Cesta de bambu para vapor",
+    "Wok"
+   ],
+   "passos": [
+    {
+     "acao": "inspecionar",
+     "alvo": "mooli",
+     "utensilio": "",
+     "parametro": "também chamado de rabanete branco ou daikon"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "mooli em tiras ou fatias finas",
+     "utensilio": "Faca do chef",
+     "parametro": "cru, já pode ser servido"
+    },
+    {
+     "acao": "vapor",
+     "alvo": "fatias finas, ou refogar",
+     "utensilio": "Cesta de bambu para vapor",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "fatias finas, que servem cruas ou cozinham depressa",
+   "erro_comum": "cortar pedaços grossos que ficam fibrosos no refogado"
+  },
+  {
+   "id": "incomuns.loofah",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Preparar loofah",
+   "ingredientes": [
+    "loofah"
+   ],
+   "utensilios": [
+    "Descascador de legumes",
+    "Faca do chef",
+    "Cesta de bambu para vapor"
+   ],
+   "passos": [
+    {
+     "acao": "inspecionar",
+     "alvo": "loofah",
+     "utensilio": "",
+     "parametro": "cabaça da cozinha asiática"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "casca",
+     "utensilio": "Descascador de legumes",
+     "parametro": "sempre antes de cozinhar"
+    },
+    {
+     "acao": "vapor",
+     "alvo": "loofah, ou refogar",
+     "utensilio": "Cesta de bambu para vapor",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "descascar antes do vapor ou do refogado",
+   "erro_comum": "cozinhar com a casca"
+  },
+  {
+   "id": "incomuns.araruta",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Preparar araruta do leste da Índia",
+   "ingredientes": [
+    "araruta_india",
+    "óleo"
+   ],
+   "utensilios": [
+    "Faca de legumes",
+    "Faca do chef",
+    "Wok"
+   ],
+   "passos": [
+    {
+     "acao": "inspecionar",
+     "alvo": "araruta do leste da Índia",
+     "utensilio": "",
+     "parametro": "raiz dura de casca grossa"
+    },
+    {
+     "acao": "descascar",
+     "alvo": "casca grossa",
+     "utensilio": "Faca de legumes",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "polpa em fatias ou cubos",
+     "utensilio": "Faca do chef",
+     "parametro": ""
+    },
+    {
+     "acao": "saltear",
+     "alvo": "pedaços num refogado",
+     "utensilio": "Wok",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "polpa picada em pedaços iguais para o refogado",
+   "erro_comum": "deixar pedaços da casca grossa na polpa"
+  },
+  {
+   "id": "incomuns.rabanete_pingente",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Preparar rabanete pingente",
+   "ingredientes": [
+    "rabanete_pingente",
+    "óleo"
+   ],
+   "utensilios": [
+    "Faca do chef",
+    "Wok"
+   ],
+   "passos": [
+    {
+     "acao": "inspecionar",
+     "alvo": "rabanete pingente",
+     "utensilio": "",
+     "parametro": "rabanete verde, bem amargo"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "rabanete",
+     "utensilio": "Faca do chef",
+     "parametro": "também vai em picles e conservas"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "fatias num refogado",
+     "utensilio": "Wok",
+     "parametro": ""
+    }
+   ],
+   "ponto_critico": "sabor amargo pede picles ou refogado",
+   "erro_comum": "servir em pedaços grandes e crus, quando o amargor domina"
+  },
+  {
+   "id": "incomuns.feijao_grande_jardim",
+   "capitulo": "Legumes & Saladas",
+   "nome": "Preparar feijão grande de jardim",
+   "ingredientes": [
+    "feijao_jardim"
+   ],
+   "utensilios": [
+    "Faca do chef",
+    "Panela"
+   ],
+   "passos": [
+    {
+     "acao": "inspecionar",
+     "alvo": "feijão grande de jardim",
+     "utensilio": "",
+     "parametro": "legume asiático em vagem longa"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "vagens na diagonal, ou deixar inteiras",
+     "utensilio": "Faca do chef",
+     "parametro": "como os feijões-trepadeiras"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "vagens",
+     "utensilio": "Panela",
+     "parametro": "até ficarem tenras"
+    }
+   ],
+   "ponto_critico": "cortes na diagonal iguais para cozinhar por igual",
+   "erro_comum": "misturar pedaços de tamanhos diferentes e cozinhar desigual"
   },
   {
    "id": "incomuns.algas_tostar",
@@ -4560,14 +4943,30 @@
     "poblano",
     "anaheim",
     "gorro_escoces",
+    "óleo vegetal",
+    "queijo Monterey Jack ou Cheddar ralado",
     "caranguejo",
     "coentro",
     "limao"
    ],
    "utensilios": [
+    "Frigideira",
+    "Papel-toalha",
     "Garfo"
    ],
    "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "chilis preparados, poucos por vez, virando sempre",
+     "utensilio": "Frigideira",
+     "parametro": "3 colheres de sopa de óleo, 3 a 5 min"
+    },
+    {
+     "acao": "secar",
+     "alvo": "chilis fritos",
+     "utensilio": "Papel-toalha",
+     "parametro": ""
+    },
     {
      "acao": "rechear",
      "alvo": "queijo ralado prensado nos jalapeños e poblanos",
@@ -5425,30 +5824,45 @@
     "berinjela",
     "cebola",
     "azeite",
-    "alecrim"
+    "alecrim",
+    "alho",
+    "bouquet-garni"
    ],
    "utensilios": [
+    "Faca do chef",
     "Assadeira",
     "Forno"
    ],
    "passos": [
     {
+     "acao": "esfregar",
+     "alvo": "dente de alho cortado ao meio na assadeira",
+     "utensilio": "Assadeira",
+     "parametro": "para um toque suave de alho"
+    },
+    {
      "acao": "temperar",
-     "alvo": "legumes na assadeira com azeite, ervas, sal e pimenta",
+     "alvo": "batatas na assadeira com azeite, ervas, sal e pimenta",
      "utensilio": "Assadeira",
      "parametro": "2 a 4 colheres de sopa"
     },
     {
      "acao": "assar",
-     "alvo": "virando uma ou duas vezes",
+     "alvo": "batatas virando uma ou duas vezes",
      "utensilio": "Forno",
-     "parametro": "batata 200 °C por 45 min; ratatouille 180 °C por 1 h; berinjela 30, cenoura 45 min"
+     "parametro": "200 °C por cerca de 45 min, até dourar"
     },
     {
      "acao": "temperar",
-     "alvo": "alho cortado esfregado na assadeira para leve sabor",
-     "utensilio": "",
-     "parametro": ""
+     "alvo": "abobrinha, pimentão, berinjela e cebola fatiados com buquê garni, alho amassado, azeite, sal e pimenta para o ratatouille",
+     "utensilio": "Assadeira",
+     "parametro": "3 a 4 colheres de sopa"
+    },
+    {
+     "acao": "assar",
+     "alvo": "ratatouille virando uma ou duas vezes",
+     "utensilio": "Forno",
+     "parametro": "180 °C por cerca de 1 h"
     }
    ],
    "ponto_critico": "Virar para dourar por igual",
@@ -6591,13 +7005,22 @@
     "cebola",
     "caldo",
     "azeite",
+    "vinho branco seco",
     "parmesao",
-    "creme_fraiche"
+    "creme_fraiche",
+    "lula",
+    "vieira",
+    "lagostim",
+    "camarao",
+    "creme batido",
+    "espirais de parmesão"
    ],
    "utensilios": [
     "Panela de fundo pesado",
     "Concha",
     "Colher de pau",
+    "Escumadeira",
+    "Panela",
     "Forminha de empada (ramequim)"
    ],
    "passos": [
@@ -6617,7 +7040,7 @@
      "acao": "mexer",
      "alvo": "caldo quente aos poucos, esperando absorver antes de mais",
      "utensilio": "Concha",
-     "parametro": "150 ml por vez"
+     "parametro": "150 ml por vez, 20 a 25 min no total"
     },
     {
      "acao": "mexer",
@@ -6626,16 +7049,46 @@
      "parametro": ""
     },
     {
-     "acao": "dobrar",
-     "alvo": "crème fraîche e parmesão no final",
+     "acao": "pochê",
+     "alvo": "lulas e vieiras no caldo reservado da segunda panela",
+     "utensilio": "Panela",
+     "parametro": "3 a 5 min, retirar com escumadeira"
+    },
+    {
+     "acao": "reduzir",
+     "alvo": "caldo da segunda panela",
+     "utensilio": "Panela",
+     "parametro": "até a metade"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "creme batido no caldo reduzido",
      "utensilio": "Colher de pau",
      "parametro": ""
     },
     {
+     "acao": "aquecer",
+     "alvo": "lagostins, lulas, vieiras e camarões no molho",
+     "utensilio": "Panela",
+     "parametro": "fogo baixo; provar o tempero"
+    },
+    {
+     "acao": "dobrar",
+     "alvo": "crème fraîche e parmesão no risoto",
+     "utensilio": "Colher de pau",
+     "parametro": "acertar o tempero"
+    },
+    {
      "acao": "moldar",
-     "alvo": "em fôrma untada e desenformar, opcional",
+     "alvo": "risoto arredondado no centro do prato ou em fôrma untada e desenformado",
      "utensilio": "Forminha de empada (ramequim)",
      "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "frutos do mar e caldo em volta do risoto, com espirais de parmesão",
+     "utensilio": "",
+     "parametro": "imediatamente"
     }
    ],
    "ponto_critico": "Grão al dente e cremoso em 20 a 25 min",
@@ -7982,6 +8435,9 @@
    "nome": "Canelone napolitano",
    "ingredientes": [
     "massa_fresca",
+    "recheio",
+    "manteiga",
+    "molho de tomate ou bechamel",
     "parmesao"
    ],
    "utensilios": [
@@ -8025,9 +8481,15 @@
     },
     {
      "acao": "montar",
-     "alvo": "lado fechado para baixo na assadeira untada com molho",
+     "alvo": "lado fechado para baixo na assadeira bem untada com manteiga",
      "utensilio": "Assadeira",
      "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "molho de tomate ou bechamel por cima",
+     "utensilio": "Assadeira",
+     "parametro": "cobrir os canelones"
     },
     {
      "acao": "gratinar",
@@ -8360,17 +8822,108 @@
    "erro_comum": "Saltear sem escorrer e empapar"
   },
   {
+   "id": "massa.recheio_escargot",
+   "capitulo": "Massas",
+   "nome": "Recheio de escargots com pastis",
+   "ingredientes": [
+    "azeite (4 colheres de sopa)",
+    "chalota bem picada (40 g)",
+    "pastis (50 ml)",
+    "escargot em conserva escorrido (12)"
+   ],
+   "utensilios": [
+    "Panela pequena",
+    "Colher de pau"
+   ],
+   "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "azeite",
+     "utensilio": "Panela pequena",
+     "parametro": ""
+    },
+    {
+     "acao": "saltear",
+     "alvo": "chalotas picadas no azeite",
+     "utensilio": "Panela pequena",
+     "parametro": "até amaciar"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "pastis junto com as chalotas",
+     "utensilio": "Panela pequena",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "escargots bem escorridos, fora do fogo",
+     "utensilio": "Colher de pau",
+     "parametro": ""
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "recheio",
+     "utensilio": "",
+     "parametro": "até esfriar antes de rechear"
+    }
+   ],
+   "ponto_critico": "escargots entram fora do fogo e o recheio esfria antes de ir à massa",
+   "erro_comum": "rechear com a mistura ainda quente e a massa amolecer e rasgar"
+  },
+  {
    "id": "massa.ravioli_cortador",
    "capitulo": "Massas",
    "nome": "Ravióli com cortador",
    "ingredientes": [
-    "massa_fresca"
+    "massa_fresca",
+    "recheio de escargots",
+    "água",
+    "sal",
+    "azeite",
+    "molho de manteiga com ervas",
+    "cenoura e abobrinha à julienne escaldadas"
    ],
    "utensilios": [
+    "Máquina de abrir massa",
+    "Faca do chef",
+    "Colher",
+    "Pincel",
     "Cortador de ravióli",
-    "Cortador de biscoito"
+    "Cortador de biscoito",
+    "Panela",
+    "Escumadeira"
    ],
    "passos": [
+    {
+     "acao": "abrir(rolo)",
+     "alvo": "massa em retângulos bem finos",
+     "utensilio": "Máquina de abrir massa",
+     "parametro": "15 x 50 cm"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "folha ao meio",
+     "utensilio": "Faca do chef",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "montinhos de recheio sobre uma das metades, ao menos um escargot em cada",
+     "utensilio": "Colher",
+     "parametro": "6 colheradas por folha"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "massa em volta do recheio com um pouco de água",
+     "utensilio": "Pincel",
+     "parametro": "só para umedecer"
+    },
+    {
+     "acao": "dobrar-folha",
+     "alvo": "outra metade por cima",
+     "utensilio": "",
+     "parametro": ""
+    },
     {
      "acao": "amaciar",
      "alvo": "dedos em volta de cada montinho para tirar o ar",
@@ -8382,6 +8935,24 @@
      "alvo": "estampar com o cortador mantendo o recheio no centro",
      "utensilio": "Cortador de ravióli",
      "parametro": ""
+    },
+    {
+     "acao": "ferver",
+     "alvo": "raviólis em água com sal e um pouco de azeite",
+     "utensilio": "Panela",
+     "parametro": "3 a 4 min, até al dente"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "raviólis",
+     "utensilio": "Escumadeira",
+     "parametro": ""
+    },
+    {
+     "acao": "servir",
+     "alvo": "três por prato fundo aquecido, com o molho de manteiga e ervas e a julienne",
+     "utensilio": "",
+     "parametro": "imediatamente"
     }
    ],
    "ponto_critico": "Recheio centralizado",
@@ -8518,13 +9089,18 @@
     "farinha",
     "camarao",
     "cebolinha",
+    "gengibre",
+    "farinha de milho",
+    "molho de soja",
+    "vinho de arroz ou xerez seco",
     "oleo"
    ],
    "utensilios": [
     "Rolo de massa",
     "Cutelo",
     "Pincel",
-    "Wok"
+    "Wok",
+    "Tigela"
    ],
    "passos": [
     {
@@ -8550,6 +9126,12 @@
      "alvo": "coberta com pano úmido",
      "utensilio": "",
      "parametro": "20 min"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "camarão picado, cebolinha, gengibre, farinha de milho, molho de soja e vinho de arroz",
+     "utensilio": "Tigela",
+     "parametro": "recheio"
     },
     {
      "acao": "enrolar",
@@ -8643,15 +9225,20 @@
    "nome": "Rolinho primavera",
    "ingredientes": [
     "folha_rolinho",
+    "chili",
     "cenoura",
     "pimentao",
     "cebolinha",
     "tofu",
+    "coentro",
+    "molho de soja",
+    "vinho de arroz",
     "ovo",
     "oleo"
    ],
    "utensilios": [
     "Wok",
+    "Vasilha",
     "Fritadeira ou panela funda",
     "Cesta de fritura",
     "Papel-toalha",
@@ -8661,7 +9248,7 @@
    "passos": [
     {
      "acao": "cortar",
-     "alvo": "legumes em julienne",
+     "alvo": "chili bem picado; cenoura, pimentão e cebolinha em julienne",
      "utensilio": "Faca do chef",
      "parametro": ""
     },
@@ -8670,6 +9257,24 @@
      "alvo": "legumes",
      "utensilio": "Wok",
      "parametro": "1 a 2 min"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "legumes numa vasilha",
+     "utensilio": "Vasilha",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "tofu em pedaços",
+     "utensilio": "Faca do chef",
+     "parametro": "2 cm"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "tofu com coentro, molho de soja e vinho de arroz",
+     "utensilio": "Vasilha",
+     "parametro": ""
     },
     {
      "acao": "rechear",
@@ -8693,6 +9298,12 @@
      "acao": "pincelar",
      "alvo": "borda com clara para selar",
      "utensilio": "Pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "descansar",
+     "alvo": "rolinhos com as dobras viradas para baixo",
+     "utensilio": "",
      "parametro": ""
     },
     {

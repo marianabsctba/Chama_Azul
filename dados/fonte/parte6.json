@@ -2784,12 +2784,19 @@
     "amêndoa fatiada e tostada"
    ],
    "utensilios": [
+    "assadeira",
     "panela pesada",
     "superfície untada (mármore)",
     "rolo de metal untado e aquecido",
     "faca untada e aquecida"
    ],
    "passos": [
+    {
+     "acao": "tostar",
+     "alvo": "amêndoas fatiadas",
+     "utensilio": "assadeira",
+     "parametro": "no forno até dourar"
+    },
     {
      "acao": "ferver",
      "alvo": "calda",
@@ -2810,7 +2817,7 @@
     },
     {
      "acao": "mexer",
-     "alvo": "amêndoas",
+     "alvo": "amêndoas fatiadas e tostadas",
      "utensilio": "panela pesada",
      "parametro": "500 g, girando a panela"
     },
@@ -3159,16 +3166,40 @@
    ],
    "passos": [
     {
+     "acao": "peneirar",
+     "alvo": "farinha e cacau",
+     "utensilio": "peneira",
+     "parametro": "85 g de farinha e 40 g de cacau"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras em neve com o açúcar aos poucos",
+     "utensilio": "batedor",
+     "parametro": "até ficar liso e firme"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "gemas e depois os secos",
+     "utensilio": "espátula",
+     "parametro": "aos poucos"
+    },
+    {
      "acao": "assar",
      "alvo": "pão-de-ló de cacau",
      "utensilio": "fôrma de rocambole",
-     "parametro": "220 °C, 8 a 10 min"
+     "parametro": "untada e forrada, 220 °C, 8 a 10 min"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "pão-de-ló com a crosta para cima",
+     "utensilio": "grade de metal",
+     "parametro": "deixar esfriar"
     },
     {
      "acao": "cortar",
      "alvo": "dois discos",
      "utensilio": "aro de 23 cm",
-     "parametro": ""
+     "parametro": "crosta para baixo sobre papel açucarado, sem o papel do fundo"
     },
     {
      "acao": "marinar",
@@ -3177,10 +3208,22 @@
      "parametro": ""
     },
     {
+     "acao": "ferver",
+     "alvo": "açúcar e água da musse",
+     "utensilio": "panela",
+     "parametro": "50 g de açúcar e 75 ml de água"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "gelatina e depois o chocolate",
+     "utensilio": "panela",
+     "parametro": "fora do fogo, até ficar liso"
+    },
+    {
      "acao": "dobrar(incorporar)",
-     "alvo": "musse de chocolate com gelatina e creme",
+     "alvo": "um terço do creme e depois o resto",
      "utensilio": "espátula",
-     "parametro": "250 g de couverture, 500 ml de creme"
+     "parametro": "500 ml levemente batido"
     },
     {
      "acao": "montar",
@@ -3189,15 +3232,33 @@
      "parametro": ""
     },
     {
-     "acao": "embeber",
-     "alvo": "pão-de-ló",
-     "utensilio": "pincel",
-     "parametro": "calda com o licor das framboesas"
+     "acao": "espalhar",
+     "alvo": "musse sobre o disco",
+     "utensilio": "colher",
+     "parametro": "alisar"
     },
     {
      "acao": "montar",
-     "alvo": "musse, disco, framboesas, musse",
+     "alvo": "segundo disco sobre a musse",
      "utensilio": "aro de metal",
+     "parametro": "pressionar"
+    },
+    {
+     "acao": "embeber",
+     "alvo": "segundo disco",
+     "utensilio": "pincel",
+     "parametro": "calda com o licor escorrido das framboesas"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "framboesas",
+     "utensilio": "",
+     "parametro": "sobre o disco embebido"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "restante da musse",
+     "utensilio": "espátula",
      "parametro": "alisar"
     },
     {
@@ -3769,9 +3830,16 @@
     "cacau em pó"
    ],
    "utensilios": [
+    "cortador de biscoito ou faca",
     "duas peneiras"
    ],
    "passos": [
+    {
+     "acao": "cortar",
+     "alvo": "formas de chocolate",
+     "utensilio": "cortador de biscoito ou faca",
+     "parametro": "chocolate espalhado e semifirme"
+    },
     {
      "acao": "polvilhar",
      "alvo": "açúcar",
@@ -3785,8 +3853,8 @@
      "parametro": "no chocolate branco, inverter a ordem"
     }
    ],
-   "ponto_critico": "camadas leves",
-   "erro_comum": ""
+   "ponto_critico": "camadas leves, uma de cada peneira",
+   "erro_comum": "polvilhar muito e esconder a forma do chocolate"
   },
   {
    "id": "sobremesas.espirais-chocolate",
@@ -4193,31 +4261,62 @@
    "capitulo": "Pastelaria",
    "nome": "Pâte sucrée",
    "ingredientes": [
-    "ingredientes da pâte brisée",
-    "açúcar refinado"
+    "farinha de trigo (200 g)",
+    "sal (1 colher de chá)",
+    "açúcar refinado (1 colher de sopa)",
+    "manteiga sem sal em cubos (100 g)",
+    "ovo",
+    "água"
    ],
    "utensilios": [
-    "tigela",
-    "peneira"
+    "tigela funda",
+    "peneira",
+    "garfo",
+    "misturador de massa",
+    "filme"
    ],
    "passos": [
     {
      "acao": "peneirar",
-     "alvo": "farinha, sal e açúcar",
+     "alvo": "farinha",
      "utensilio": "peneira",
-     "parametro": "1 colher (sopa) de açúcar"
+     "parametro": "200 g, numa tigela funda"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "sal e açúcar na farinha",
+     "utensilio": "",
+     "parametro": "1 colher (chá) de sal e 1 colher (sopa) de açúcar"
     },
     {
      "acao": "esfregar",
      "alvo": "manteiga na farinha",
      "utensilio": "dedos",
-     "parametro": "farofa"
+     "parametro": "100 g até virar farofa"
     },
     {
      "acao": "mexer",
-     "alvo": "ovo e água",
+     "alvo": "tigela",
      "utensilio": "",
-     "parametro": "até ligar"
+     "parametro": "sacudir para subir pedaços e abrir cavidade"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovo à parte",
+     "utensilio": "garfo",
+     "parametro": "despejar no centro"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "massa",
+     "utensilio": "misturador de massa",
+     "parametro": "água 1 colher por vez até ligar"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bola",
+     "utensilio": "mãos",
+     "parametro": "mínimo de manuseio"
     },
     {
      "acao": "descansar",
@@ -4226,8 +4325,8 @@
      "parametro": "30 min"
     }
    ],
-   "ponto_critico": "mesma técnica da brisée",
-   "erro_comum": ""
+   "ponto_critico": "mesma técnica da brisée: manusear pouco e frio",
+   "erro_comum": "trabalhar demais a massa e ela endurecer e encolher no forno"
   },
   {
    "id": "pastelaria.massa-podre-inglesa",
@@ -4859,6 +4958,18 @@
    ],
    "passos": [
     {
+     "acao": "pincelar",
+     "alvo": "assadeira",
+     "utensilio": "pincel",
+     "parametro": "manteiga, camada leve"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "assadeira untada",
+     "utensilio": "geladeira",
+     "parametro": "até gelar"
+    },
+    {
      "acao": "confeitar(saco)",
      "alvo": "montinhos",
      "utensilio": "bico liso de 1 cm",
@@ -4897,6 +5008,8 @@
     "fondant ou couverture"
    ],
    "utensilios": [
+    "assadeira untada e gelada",
+    "pincel",
     "saco de confeitar",
     "bico liso de 1 cm",
     "bico de 5 mm",
@@ -4905,6 +5018,18 @@
     "grade de metal"
    ],
    "passos": [
+    {
+     "acao": "pincelar",
+     "alvo": "assadeira",
+     "utensilio": "pincel",
+     "parametro": "manteiga, camada leve"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "assadeira untada",
+     "utensilio": "geladeira",
+     "parametro": "até gelar"
+    },
     {
      "acao": "confeitar(saco)",
      "alvo": "tiras de 8 cm",
@@ -4949,7 +5074,58 @@
     }
    ],
    "ponto_critico": "recheio aparecendo no furo oposto",
-   "erro_comum": ""
+   "erro_comum": "assadeira sem gelar e a massa escorregar ao confeitar"
+  },
+  {
+   "id": "pastelaria.bomba-chantilly-frutas",
+   "capitulo": "Pastelaria",
+   "nome": "Bomba de choux com chantilly, frutas e glacê de açúcar",
+   "ingredientes": [
+    "bombinhas de choux assadas e frias",
+    "creme chantilly",
+    "frutas frescas",
+    "glacê de açúcar"
+   ],
+   "utensilios": [
+    "faquinha",
+    "faca de serra",
+    "saco de confeitar",
+    "espátula"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "frutas frescas",
+     "utensilio": "faquinha",
+     "parametro": "fatias finas"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "bombinhas ao meio",
+     "utensilio": "faca de serra",
+     "parametro": "ou furar a base para rechear com o saco"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "creme chantilly",
+     "utensilio": "saco de confeitar",
+     "parametro": ""
+    },
+    {
+     "acao": "montar",
+     "alvo": "fatias de fruta sobre o creme",
+     "utensilio": "",
+     "parametro": "fechar com a tampa da bomba"
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "topo das bombas",
+     "utensilio": "espátula",
+     "parametro": "camada fina de glacê de açúcar"
+    }
+   ],
+   "ponto_critico": "bombas bem frias antes de receber o chantilly; glacê fino só no topo",
+   "erro_comum": "rechear as bombas ainda mornas e o chantilly derreter"
   },
   {
    "id": "pastelaria.bomba-caramelo-amendoa",
@@ -5305,7 +5481,7 @@
      "acao": "pincelar",
      "alvo": "tira de 8 cm",
      "utensilio": "pincel",
-     "parametro": ""
+     "parametro": "manteiga derretida"
     },
     {
      "acao": "rechear",
@@ -5326,14 +5502,20 @@
      "parametro": ""
     },
     {
+     "acao": "pincelar",
+     "alvo": "cigarros prontos",
+     "utensilio": "pincel",
+     "parametro": "manteiga derretida"
+    },
+    {
      "acao": "assar",
      "alvo": "cigarros",
      "utensilio": "forno",
      "parametro": "180 °C, 30 min"
     }
    ],
-   "ponto_critico": "",
-   "erro_comum": ""
+   "ponto_critico": "filo coberta com pano úmido enquanto trabalha; manteiga de novo depois de dar forma",
+   "erro_comum": "deixar a filo descoberta e ela secar e quebrar"
   },
   {
    "id": "pastelaria.filo-triangulo",
@@ -5352,7 +5534,7 @@
      "acao": "pincelar",
      "alvo": "tira de 8 cm",
      "utensilio": "pincel",
-     "parametro": ""
+     "parametro": "manteiga derretida"
     },
     {
      "acao": "rechear",
@@ -5367,14 +5549,20 @@
      "parametro": "diagonal até o fim da tira"
     },
     {
+     "acao": "pincelar",
+     "alvo": "triângulos prontos",
+     "utensilio": "pincel",
+     "parametro": "manteiga derretida"
+    },
+    {
      "acao": "assar",
      "alvo": "triângulos",
      "utensilio": "forno",
      "parametro": "180 °C, 30 min"
     }
    ],
-   "ponto_critico": "",
-   "erro_comum": ""
+   "ponto_critico": "filo coberta com pano úmido enquanto trabalha; manteiga de novo depois de dar forma",
+   "erro_comum": "deixar a filo descoberta e ela secar e quebrar"
   },
   {
    "id": "pastelaria.filo-bolsa",
@@ -5393,7 +5581,7 @@
      "acao": "pincelar",
      "alvo": "tira de 8 cm",
      "utensilio": "pincel",
-     "parametro": ""
+     "parametro": "manteiga derretida"
     },
     {
      "acao": "rechear",
@@ -5408,14 +5596,20 @@
      "parametro": "torcer acima do recheio sem rasgar"
     },
     {
+     "acao": "pincelar",
+     "alvo": "bolsinhas prontas",
+     "utensilio": "pincel",
+     "parametro": "manteiga derretida"
+    },
+    {
      "acao": "assar",
      "alvo": "bolsinhas",
      "utensilio": "forno",
      "parametro": "180 °C, 30 min"
     }
    ],
-   "ponto_critico": "",
-   "erro_comum": ""
+   "ponto_critico": "filo coberta com pano úmido enquanto trabalha; manteiga de novo depois de dar forma",
+   "erro_comum": "torcer com força e rasgar a massa sobre o recheio"
   },
   {
    "id": "pastelaria.strudel",
@@ -5435,19 +5629,27 @@
     "migalhas de bolo ou pão"
    ],
    "utensilios": [
+    "peneira",
     "superfície enfarinhada",
     "pano de prato grande",
     "tigela forrada com toalha úmida",
     "rolo",
     "pincel",
-    "assadeira untada"
+    "assadeira untada",
+    "faca"
    ],
    "passos": [
     {
+     "acao": "peneirar",
+     "alvo": "farinha e sal",
+     "utensilio": "peneira",
+     "parametro": "300 g de farinha e 1 colher (chá) de sal"
+    },
+    {
      "acao": "mexer",
-     "alvo": "óleo e água na farinha",
+     "alvo": "óleo e água na abertura da farinha",
      "utensilio": "",
-     "parametro": "300 g de farinha, 40 ml de óleo, 200 ml de água"
+     "parametro": "40 ml de óleo, 200 ml de água quente"
     },
     {
      "acao": "sovar",
@@ -5504,10 +5706,28 @@
      "parametro": "emenda para baixo"
     },
     {
+     "acao": "pincelar",
+     "alvo": "strudel moldado",
+     "utensilio": "pincel",
+     "parametro": "manteiga derretida antes de assar"
+    },
+    {
      "acao": "assar",
      "alvo": "strudel",
      "utensilio": "forno",
      "parametro": "190 °C, 30 a 40 min"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "açúcar refinado",
+     "utensilio": "",
+     "parametro": "sobre o strudel quente ou frio"
+    },
+    {
+     "acao": "servir",
+     "alvo": "strudel em fatias grossas",
+     "utensilio": "faca",
+     "parametro": "chantilly gelado ao lado, se quiser"
     }
    ],
    "ponto_critico": "massa tão fina que se vê a mão",
@@ -6257,6 +6477,61 @@
    "erro_comum": ""
   },
   {
+   "id": "bolos.sabores-sanduiche-victoria",
+   "capitulo": "Bolos & Biscoitos",
+   "nome": "Sabores para o sanduíche Victoria",
+   "ingredientes": [
+    "farinha de trigo com fermento",
+    "sal",
+    "manteiga amolecida",
+    "açúcar refinado",
+    "ovos",
+    "sabor seco: raspas cítricas, cacau em pó ou café instantâneo",
+    "sabor líquido: essência de baunilha, amêndoa ou flor de laranjeira, ou licor"
+   ],
+   "utensilios": [
+    "balança",
+    "peneira",
+    "tigela funda",
+    "colher de pau",
+    "colher de metal"
+   ],
+   "passos": [
+    {
+     "acao": "pesar",
+     "alvo": "farinha, tirando a parte que o sabor seco vai ocupar",
+     "utensilio": "balança",
+     "parametro": "raspas, cacau ou café substituem um pouco da farinha"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "farinha e sal com o sabor seco",
+     "utensilio": "peneira",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "manteiga e açúcar, depois os ovos aos poucos",
+     "utensilio": "colher de pau",
+     "parametro": "método cremoso"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "sabor líquido",
+     "utensilio": "",
+     "parametro": "gota a gota: baunilha, amêndoa, flor de laranjeira ou licor"
+    },
+    {
+     "acao": "dobrar(incorporar)",
+     "alvo": "farinha aromatizada",
+     "utensilio": "colher de metal",
+     "parametro": "aos poucos, em movimentos de oito"
+    }
+   ],
+   "ponto_critico": "sabor seco entra no lugar de parte da farinha; sabor líquido só gota a gota",
+   "erro_comum": "despejar o sabor líquido de uma vez e a massa talhar"
+  },
+  {
    "id": "bolos.massa-mais-leve",
    "capitulo": "Bolos & Biscoitos",
    "nome": "Deixar a massa mais leve",
@@ -6421,6 +6696,12 @@
    ],
    "passos": [
     {
+     "acao": "forrar",
+     "alvo": "fôrma de 20 cm untada e polvilhada",
+     "utensilio": "papel-manteiga",
+     "parametro": "untar, polvilhar e forrar o fundo"
+    },
+    {
      "acao": "bater",
      "alvo": "ovos e açúcar",
      "utensilio": "batedor",
@@ -6445,10 +6726,28 @@
      "parametro": "em porções, movimento em 8"
     },
     {
+     "acao": "despejar",
+     "alvo": "massa devagar na fôrma",
+     "utensilio": "espátula de borracha",
+     "parametro": "distribuir com delicadeza"
+    },
+    {
      "acao": "assar",
      "alvo": "pão-de-ló",
      "utensilio": "forno",
      "parametro": "170 °C, cerca de 25 min"
+    },
+    {
+     "acao": "testar",
+     "alvo": "pão-de-ló assado",
+     "utensilio": "",
+     "parametro": "dourado, crescido e firme mas flexível"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "pão-de-ló",
+     "utensilio": "grade de metal",
+     "parametro": "tirar o papel e esfriar"
     }
    ],
    "ponto_critico": "ponto de fita que sustenta um 8",
@@ -7004,10 +7303,22 @@
      "alvo": "centro",
      "utensilio": "palito",
      "parametro": "sai limpo e massa solta da parede"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "cheesecake na fôrma",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "aro",
+     "utensilio": "fôrma desmontável",
+     "parametro": ""
     }
    ],
-   "ponto_critico": "",
-   "erro_comum": ""
+   "ponto_critico": "fundo assado antes do recheio para não encharcar",
+   "erro_comum": "desenformar quente e o recheio rachar"
   },
   {
    "id": "bolos.estencil-toalhinha",
@@ -7350,6 +7661,7 @@
    "utensilios": [
     "panela",
     "termômetro de açúcar",
+    "tigela com água gelada",
     "batedeira com batedor balão"
    ],
    "passos": [
@@ -7360,8 +7672,20 @@
      "parametro": "160 g e 85 ml até bala mole"
     },
     {
+     "acao": "testar",
+     "alvo": "calda com os dedos molhados em água gelada",
+     "utensilio": "tigela com água gelada",
+     "parametro": "sem termômetro"
+    },
+    {
      "acao": "bater",
-     "alvo": "calda em fio sobre 2 gemas e 1 ovo",
+     "alvo": "2 gemas e 1 ovo, de leve",
+     "utensilio": "batedeira",
+     "parametro": "batedores ovais"
+    },
+    {
+     "acao": "bater",
+     "alvo": "calda em fio sobre as gemas e o ovo",
      "utensilio": "batedeira",
      "parametro": "pela lateral da tigela, velocidade média"
     },
@@ -7376,6 +7700,12 @@
      "alvo": "manteiga aos pedaços",
      "utensilio": "batedeira",
      "parametro": "250 g, velocidade alta, 3 a 4 min"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "sabor escolhido",
+     "utensilio": "batedeira",
+     "parametro": "depois de a manteiga incorporar"
     },
     {
      "acao": "resfriar",
@@ -7784,11 +8114,29 @@
      "acao": "forrar",
      "alvo": "forminhas",
      "utensilio": "",
-     "parametro": ""
+     "parametro": "meia receita de pâte sucrée, 6 por vez"
     },
     {
      "acao": "assar-as-cegas",
      "alvo": "fundos",
+     "utensilio": "forno",
+     "parametro": "180 °C, 7 a 10 min"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "fundos",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "forrar",
+     "alvo": "forminhas de novo",
+     "utensilio": "",
+     "parametro": "repetir com o resto da massa"
+    },
+    {
+     "acao": "assar-as-cegas",
+     "alvo": "nova fornada de fundos",
      "utensilio": "forno",
      "parametro": "180 °C, 7 a 10 min"
     },
@@ -7811,8 +8159,8 @@
      "parametro": "rende 30"
     }
    ],
-   "ponto_critico": "",
-   "erro_comum": ""
+   "ponto_critico": "fundos assados e desenformados antes de receber o creme",
+   "erro_comum": "rechear fundos crus e a massa encharcar"
   },
   {
    "id": "bolos.miroirs-maracuja",
@@ -8033,10 +8381,22 @@
      "parametro": "170 °C, 35 min"
     },
     {
+     "acao": "descansar",
+     "alvo": "shortbread na fôrma",
+     "utensilio": "",
+     "parametro": "cerca de 5 min"
+    },
+    {
      "acao": "polvilhar",
      "alvo": "açúcar",
      "utensilio": "",
-     "parametro": "ainda quente, cortar"
+     "parametro": "ainda morno"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "retângulos riscados",
+     "utensilio": "faca",
+     "parametro": ""
     },
     {
      "acao": "resfriar",
@@ -8045,25 +8405,51 @@
      "parametro": ""
     }
    ],
-   "ponto_critico": "",
-   "erro_comum": ""
+   "ponto_critico": "esfriar uns 5 min na fôrma antes de polvilhar e cortar",
+   "erro_comum": "cortar logo que sai do forno e o biscoito esfarelar"
   },
   {
    "id": "bolos.biscoitos-pingados",
    "capitulo": "Bolos & Biscoitos",
    "nome": "Biscoitos pingados (formas livres)",
    "ingredientes": [
-    "manteiga derretida",
-    "açúcar",
-    "claras",
-    "farinha",
-    "amêndoa moída"
+    "manteiga sem sal (125 g)",
+    "açúcar (150 g)",
+    "claras (2)",
+    "farinha de trigo (100 g)",
+    "amêndoa moída (125 g)"
    ],
    "utensilios": [
+    "panela",
+    "tigela",
     "colher",
     "assadeira"
    ],
    "passos": [
+    {
+     "acao": "aquecer",
+     "alvo": "manteiga sem sal",
+     "utensilio": "panela",
+     "parametro": "125 g, até derreter"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "açúcar na manteiga",
+     "utensilio": "colher",
+     "parametro": "150 g"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "mistura",
+     "utensilio": "",
+     "parametro": "até esfriar"
+    },
+    {
+     "acao": "mexer",
+     "alvo": "claras, farinha e amêndoa moída",
+     "utensilio": "colher",
+     "parametro": "2 claras, 100 g e 125 g"
+    },
     {
      "acao": "moldar",
      "alvo": "montinhos",
@@ -8077,7 +8463,7 @@
      "parametro": "180 °C, 15 min"
     }
    ],
-   "ponto_critico": "",
+   "ponto_critico": "massa mole que pinga da colher; montinhos iguais para assar por igual",
    "erro_comum": "pouco espaço gruda os biscoitos"
   },
   {
@@ -8174,9 +8560,11 @@
     "conhaque"
    ],
    "utensilios": [
+    "panela",
     "assadeira untada",
     "espátula",
-    "cabo de colher de pau untado"
+    "cabo de colher de pau untado",
+    "grade de metal"
    ],
    "passos": [
     {
@@ -8210,6 +8598,12 @@
      "parametro": "1 min"
     },
     {
+     "acao": "separar",
+     "alvo": "biscoitos da assadeira",
+     "utensilio": "espátula",
+     "parametro": ""
+    },
+    {
      "acao": "enrolar",
      "alvo": "no cabo da colher",
      "utensilio": "cabo de colher de pau",
@@ -8220,10 +8614,16 @@
      "alvo": "biscoito endurecido",
      "utensilio": "forno",
      "parametro": "30 s para amolecer"
+    },
+    {
+     "acao": "resfriar",
+     "alvo": "biscoitos enrolados",
+     "utensilio": "grade de metal",
+     "parametro": ""
     }
    ],
-   "ponto_critico": "moldar quente",
-   "erro_comum": ""
+   "ponto_critico": "moldar quente, um por vez",
+   "erro_comum": "esperar demais e o biscoito endurecer antes de enrolar"
   },
   {
    "id": "bolos.biscoito-champagne",

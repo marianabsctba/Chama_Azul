@@ -1829,10 +1829,22 @@
      "parametro": "1 a 1 h 30"
     },
     {
+     "acao": "sovar",
+     "alvo": "massa crescida",
+     "utensilio": "mãos",
+     "parametro": "mais 2 a 3 min"
+    },
+    {
      "acao": "abrir(mãos)",
      "alvo": "massa do centro para a borda, girando",
      "utensilio": "mãos enfarinhadas",
      "parametro": "25 cm de diâmetro, 1 cm de espessura"
+    },
+    {
+     "acao": "montar",
+     "alvo": "disco na fôrma redonda levemente enfarinhada",
+     "utensilio": "forma-pizza",
+     "parametro": ""
     },
     {
      "acao": "montar",
@@ -1912,16 +1924,41 @@
     "sal grosso"
    ],
    "utensilios": [
+    "peneira",
     "vasilha",
     "pano-umido",
     "assadeira"
    ],
    "passos": [
     {
+     "acao": "misturar",
+     "alvo": "fermento esfarelado com parte da água morna",
+     "utensilio": "vasilha",
+     "parametro": "preparar o fermento"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "farinha e sal",
+     "utensilio": "peneira",
+     "parametro": "buraco no meio"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "fermento, resto da água e azeite no buraco",
+     "utensilio": "mãos",
+     "parametro": "misturar bem"
+    },
+    {
      "acao": "sovar",
      "alvo": "massa",
      "utensilio": "bancada-enfarinhada",
      "parametro": "10 min"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "bola passada na vasilha untada com óleo",
+     "utensilio": "vasilha",
+     "parametro": ""
     },
     {
      "acao": "fermentar",
@@ -2352,6 +2389,8 @@
    ],
    "utensilios": [
     "forma-kugelhopf",
+    "panela",
+    "peneira",
     "vasilha",
     "pincel",
     "misturador-massa"
@@ -2364,6 +2403,24 @@
      "parametro": "separar 4 colheres para o fermento e mornar"
     },
     {
+     "acao": "mexer",
+     "alvo": "manteiga e açúcar no restante do leite",
+     "utensilio": "colher",
+     "parametro": "misturar bem"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "fermento esfarelado no leite morno reservado",
+     "utensilio": "vasilha",
+     "parametro": ""
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "farinha e sal numa vasilha maior",
+     "utensilio": "peneira",
+     "parametro": "buraco no meio"
+    },
+    {
      "acao": "misturar",
      "alvo": "ovos, fermento e leite frio no centro da farinha",
      "utensilio": "mãos",
@@ -2374,6 +2431,12 @@
      "alvo": "massa erguendo e jogando na vasilha",
      "utensilio": "mãos",
      "parametro": "5 a 7 min até elástica"
+    },
+    {
+     "acao": "sovar",
+     "alvo": "massa que já se solta da vasilha, para tirar todo o ar",
+     "utensilio": "mãos",
+     "parametro": "mais 5 a 20 min"
     },
     {
      "acao": "fermentar",
@@ -2394,8 +2457,14 @@
      "parametro": "uma em cada canelura"
     },
     {
+     "acao": "sovar",
+     "alvo": "massa crescida socada com o punho",
+     "utensilio": "punho",
+     "parametro": ""
+    },
+    {
      "acao": "moldar",
-     "alvo": "massa socada na fôrma em todas as pregas",
+     "alvo": "massa na fôrma em todas as pregas",
      "utensilio": "misturador-massa",
      "parametro": "sem tirar as nozes do lugar"
     },
@@ -2436,10 +2505,24 @@
    ],
    "utensilios": [
     "forma-brioche",
+    "peneira",
     "pincel",
-    "vasilha"
+    "vasilha",
+    "faca-de-cozinha"
    ],
    "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "fermento esfarelado com o leite morno",
+     "utensilio": "vasilha",
+     "parametro": "preparar o fermento"
+    },
+    {
+     "acao": "peneirar",
+     "alvo": "farinha, açúcar e sal sobre a bancada",
+     "utensilio": "peneira",
+     "parametro": "buraco no meio"
+    },
     {
      "acao": "misturar",
      "alvo": "5 ovos batidos com fermento no centro da farinha",
@@ -2460,15 +2543,45 @@
     },
     {
      "acao": "sovar",
+     "alvo": "massa crescida socada com o punho",
+     "utensilio": "punho",
+     "parametro": ""
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "5 min"
+    },
+    {
+     "acao": "sovar",
      "alvo": "massa com a manteiga amolecida",
      "utensilio": "mãos",
      "parametro": "3 a 5 min, apertando até homogênea"
     },
     {
+     "acao": "descansar",
+     "alvo": "massa coberta",
+     "utensilio": "pano-umido",
+     "parametro": "5 min"
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "duas fôrmas de brioche com manteiga derretida",
+     "utensilio": "pincel",
+     "parametro": "17,5 cm, generosamente"
+    },
+    {
      "acao": "cortar",
-     "alvo": "cada metade separando 1/4",
+     "alvo": "massa ao meio e separar 1/4 de cada metade",
      "utensilio": "faca-de-cozinha",
-     "parametro": "bola grande e gota pequena"
+     "parametro": ""
+    },
+    {
+     "acao": "moldar",
+     "alvo": "pedaços menores em gota e maiores em bola",
+     "utensilio": "mãos",
+     "parametro": "bolas nas fôrmas"
     },
     {
      "acao": "perfurar",
@@ -2499,6 +2612,12 @@
      "alvo": "brioche",
      "utensilio": "forno",
      "parametro": "200 °C, 25 a 30 min"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "brioches e deixar esfriar",
+     "utensilio": "",
+     "parametro": ""
     }
    ],
    "ponto_critico": "furo até o fundo para a cabeça não tombar",
@@ -4080,10 +4199,22 @@
      "parametro": "descartar"
     },
     {
+     "acao": "raspar",
+     "alvo": "camada de polpa da superfície",
+     "utensilio": "colher-pequena",
+     "parametro": "reservar para o sorbet"
+    },
+    {
      "acao": "moldar",
      "alvo": "bolinhas de polpa",
      "utensilio": "boleador",
      "parametro": "pressionar e girar"
+    },
+    {
+     "acao": "raspar",
+     "alvo": "resto da polpa",
+     "utensilio": "colher-pequena",
+     "parametro": "reservar para o sorbet"
     },
     {
      "acao": "resfriar",
@@ -4700,16 +4831,31 @@
    "capitulo": "Frutas",
    "nome": "Pera pochê no vinho tinto",
    "ingredientes": [
-    "peras descascadas e sem miolo com cabo",
+    "peras firmes com cabo",
     "vinho tinto",
     "açúcar",
     "especiarias"
    ],
    "utensilios": [
+    "descascador",
+    "descaroçador ou boleador",
     "panela",
-    "escumadeira"
+    "escumadeira",
+    "faca-de-cozinha"
    ],
    "passos": [
+    {
+     "acao": "descascar",
+     "alvo": "peras sem tirar o cabo",
+     "utensilio": "descascador",
+     "parametro": ""
+    },
+    {
+     "acao": "descaroçar",
+     "alvo": "miolo pela base",
+     "utensilio": "descaroçador ou boleador",
+     "parametro": "manter o cabo"
+    },
     {
      "acao": "aquecer",
      "alvo": "vinho, especiarias e açúcar",
@@ -4727,6 +4873,12 @@
      "alvo": "peras tampadas na calda",
      "utensilio": "panela",
      "parametro": "fora do fogo, pegam cor"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "peras retiradas da calda",
+     "utensilio": "escumadeira",
+     "parametro": ""
     },
     {
      "acao": "reduzir",

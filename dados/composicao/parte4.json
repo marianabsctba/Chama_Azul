@@ -812,6 +812,12 @@
       },
       {
         "alimento": "melao-cantalupo"
+      },
+      {
+        "alimento": "melao-cantalupo"
+      },
+      {
+        "alimento": "melao-cantalupo"
       }
     ],
     "prato": {
@@ -1227,6 +1233,13 @@
   "frutas.poche-vinho-pera": {
     "passos": [
       {
+        "alimento": "pera"
+      },
+      {
+        "alimento": "pera",
+        "corte": "contorno"
+      },
+      {
         "alimento": null,
         "meio": "vinho tinto",
         "recipiente": "panela"
@@ -1240,6 +1253,10 @@
         "alimento": "pera",
         "meio": "vinho tinto",
         "recipiente": "panela"
+      },
+      {
+        "alimento": "pera",
+        "recipiente": "escumadeira"
       },
       {
         "alimento": null,
@@ -3056,6 +3073,10 @@
   "sobremesas.nougatine": {
     "passos": [
       {
+        "alimento": "amendoa",
+        "recipiente": "assadeira"
+      },
+      {
         "alimento": null,
         "meio": "calda de açúcar",
         "recipiente": "panela"
@@ -3283,8 +3304,27 @@
   "sobremesas.gateau-deux-pierre": {
     "passos": [
       {
+        "alimento": null,
+        "meio": "farinha e cacau",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "claras em neve",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de cacau",
+        "recipiente": "tigela"
+      },
+      {
         "alimento": "pao-de-lo",
         "recipiente": "fôrma de rocambole"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "grade"
       },
       {
         "alimento": "pao-de-lo",
@@ -3293,6 +3333,16 @@
       {
         "alimento": "framboesa",
         "meio": "licor"
+      },
+      {
+        "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "chocolate com gelatina",
+        "recipiente": "panela"
       },
       {
         "alimento": null,
@@ -3305,7 +3355,28 @@
       },
       {
         "alimento": "pao-de-lo",
+        "adicionar": [
+          "musse-chocolate"
+        ],
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "musse-chocolate"
+        ],
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "pao-de-lo",
         "meio": "calda com licor",
+        "recipiente": "aro"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "adicionar": [
+          "framboesa"
+        ],
         "recipiente": "aro"
       },
       {
@@ -3687,6 +3758,10 @@
   "sobremesas.duplo-polvilhamento": {
     "passos": [
       {
+        "alimento": "formas-chocolate",
+        "corte": "contorno"
+      },
+      {
         "alimento": "formas-chocolate"
       },
       {
@@ -3967,14 +4042,32 @@
         "recipiente": "tigela"
       },
       {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
         "alimento": "manteiga",
         "meio": "farinha",
         "recipiente": "tigela"
       },
       {
         "alimento": null,
+        "meio": "farofa de massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovo batido",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
         "meio": "massa",
         "recipiente": "tigela"
+      },
+      {
+        "alimento": "pate-brisee"
       },
       {
         "alimento": "pate-brisee"
@@ -4362,6 +4455,15 @@
   "pastelaria.bombas-choux": {
     "passos": [
       {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "assadeira"
+      },
+      {
         "alimento": "bomba-choux",
         "recipiente": "assadeira"
       },
@@ -4385,6 +4487,15 @@
   },
   "pastelaria.eclair": {
     "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": null,
+        "recipiente": "assadeira"
+      },
       {
         "alimento": "eclair",
         "recipiente": "assadeira"
@@ -4420,6 +4531,46 @@
       "servir": "prato",
       "estado": "dourado",
       "quantidade": 2
+    }
+  },
+  "pastelaria.bomba-chantilly-frutas": {
+    "passos": [
+      {
+        "alimento": "morango",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "bomba-choux",
+        "corte": "deitado"
+      },
+      {
+        "alimento": "bomba-choux",
+        "adicionar": [
+          "chantilly"
+        ]
+      },
+      {
+        "alimento": "bomba-choux",
+        "adicionar": [
+          "chantilly",
+          "morango"
+        ]
+      },
+      {
+        "alimento": "bomba-choux",
+        "adicionar": [
+          "chantilly",
+          "morango"
+        ],
+        "meio": "glacê de açúcar"
+      }
+    ],
+    "prato": {
+      "principal": "bomba-choux",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "estado": "dourado",
+      "quantidade": 3
     }
   },
   "pastelaria.bomba-caramelo-amendoa": {
@@ -4665,6 +4816,10 @@
         "alimento": "filo-cigarro"
       },
       {
+        "alimento": "filo-cigarro",
+        "meio": "manteiga"
+      },
+      {
         "alimento": "filo-cigarro"
       }
     ],
@@ -4690,6 +4845,10 @@
       },
       {
         "alimento": "filo-triangulo"
+      },
+      {
+        "alimento": "filo-triangulo",
+        "meio": "manteiga"
       },
       {
         "alimento": "filo-triangulo"
@@ -4719,6 +4878,10 @@
         "alimento": "filo-bolsa"
       },
       {
+        "alimento": "filo-bolsa",
+        "meio": "manteiga"
+      },
+      {
         "alimento": "filo-bolsa"
       }
     ],
@@ -4732,6 +4895,11 @@
   },
   "pastelaria.strudel": {
     "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "peneira"
+      },
       {
         "alimento": null,
         "meio": "farinha com óleo e água",
@@ -4774,14 +4942,27 @@
         "recipiente": "assadeira"
       },
       {
+        "alimento": "strudel",
+        "meio": "manteiga",
+        "recipiente": "assadeira"
+      },
+      {
+        "alimento": "strudel"
+      },
+      {
+        "alimento": "strudel"
+      },
+      {
         "alimento": "strudel"
       }
     ],
     "prato": {
       "principal": "strudel",
-      "acompanhamentos": [],
+      "acompanhamentos": [
+        "chantilly"
+      ],
       "servir": "prato",
-      "forma": "inteiro",
+      "forma": "fatias",
       "estado": "dourado"
     }
   },
@@ -5263,6 +5444,40 @@
       "estado": "dourado"
     }
   },
+  "bolos.sabores-sanduiche-victoria": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "acompanhamentos": [],
+      "servir": "tigelinha",
+      "liquido": "#e9cf9a"
+    }
+  },
   "bolos.massa-mais-leve": {
     "passos": [
       {
@@ -5360,6 +5575,10 @@
   "bolos.pao-de-lo": {
     "passos": [
       {
+        "alimento": "forma-bolo-untada",
+        "recipiente": "fôrma"
+      },
+      {
         "alimento": null,
         "meio": "ovos e açúcar",
         "recipiente": "tigela"
@@ -5380,8 +5599,29 @@
         "recipiente": "tigela"
       },
       {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "fôrma"
+      },
+      {
         "alimento": "pao-de-lo",
         "recipiente": "fôrma"
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "fôrma",
+        "pergunta": "Como fica o pão-de-ló quando está assado?",
+        "opcoes": [
+          "Dourado, crescido e firme mas flexível ao toque",
+          "Pálido e afundando no centro",
+          "Escuro e duro como biscoito"
+        ],
+        "correta": 0,
+        "explicacao": "Assado no ponto, cresce, doura e volta ao ser tocado de leve."
+      },
+      {
+        "alimento": "pao-de-lo",
+        "recipiente": "grade"
       }
     ],
     "prato": {
@@ -5754,6 +5994,13 @@
         "objetos": [
           "palito"
         ]
+      },
+      {
+        "alimento": "cheesecake-assado",
+        "recipiente": "fôrma"
+      },
+      {
+        "alimento": "cheesecake-assado"
       }
     ],
     "prato": {
@@ -6004,12 +6251,38 @@
       },
       {
         "alimento": null,
+        "meio": "calda de açúcar",
+        "recipiente": "panela",
+        "pergunta": "Pega entre os dedos, a calda está no ponto de bala mole?",
+        "opcoes": [
+          "Mantém a forma e cede ao apertar",
+          "Escorre entre os dedos",
+          "Fica dura e quebradiça"
+        ],
+        "correta": 0,
+        "explicacao": "No ponto de bala mole a calda forma uma bolinha flexível entre os dedos.",
+        "objetos": [
+          "copo-agua"
+        ]
+      },
+      {
+        "alimento": null,
+        "meio": "gemas e ovo",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": null,
         "meio": "gemas com calda",
         "recipiente": "batedeira"
       },
       {
         "alimento": null,
         "meio": "zabaione",
+        "recipiente": "batedeira"
+      },
+      {
+        "alimento": null,
+        "meio": "glacê de manteiga",
         "recipiente": "batedeira"
       },
       {
@@ -6278,6 +6551,16 @@
         "alimento": "fundo-torta"
       },
       {
+        "alimento": "fundo-torta"
+      },
+      {
+        "alimento": "fundo-torta",
+        "recipiente": "forminhas"
+      },
+      {
+        "alimento": "fundo-torta"
+      },
+      {
         "alimento": "fundo-torta",
         "adicionar": [
           "creme-patissiere"
@@ -6429,7 +6712,15 @@
         "recipiente": "fôrma"
       },
       {
+        "alimento": "shortbread",
+        "recipiente": "fôrma"
+      },
+      {
         "alimento": "shortbread"
+      },
+      {
+        "alimento": "shortbread",
+        "corte": "fatiar"
       },
       {
         "alimento": "shortbread",
@@ -6446,6 +6737,26 @@
   },
   "bolos.biscoitos-pingados": {
     "passos": [
+      {
+        "alimento": null,
+        "meio": "manteiga",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "manteiga com açúcar",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa",
+        "recipiente": "tigela"
+      },
       {
         "alimento": "tuile",
         "recipiente": "assadeira"
@@ -6546,6 +6857,13 @@
       },
       {
         "alimento": "brandy-snap"
+      },
+      {
+        "alimento": "brandy-snap"
+      },
+      {
+        "alimento": "brandy-snap",
+        "recipiente": "grade"
       }
     ],
     "prato": {

@@ -912,6 +912,12 @@
      "parametro": "virar o peixe"
     },
     {
+     "acao": "cortar",
+     "alvo": "rabo em forma de V",
+     "utensilio": "tesoura de cozinha",
+     "parametro": "só se for servir o peixe inteiro"
+    },
+    {
      "acao": "escamar",
      "alvo": "corpo, do rabo para a cabeça",
      "utensilio": "dorso da faca ou escamador",
@@ -1571,6 +1577,12 @@
      "parametro": "peixe fora"
     },
     {
+     "acao": "regar",
+     "alvo": "peixe de volta na wok com o molho por cima",
+     "utensilio": "wok",
+     "parametro": ""
+    },
+    {
      "acao": "servir",
      "alvo": "peixe com molho",
      "utensilio": "",
@@ -1847,30 +1859,60 @@
    "capitulo": "Peixes & Frutos do mar",
    "nome": "Montar recheios para trouxinhas, almofadas e rolinhos",
    "ingredientes": [
-    "legumes à julienne",
+    "cenoura e alho-poró à julienne",
+    "molho vinagrete",
     "queijo fresco",
-    "ervas",
-    "brunoise de manga e pepino",
-    "duxelles",
-    "risoto leve"
+    "salsinha ou endro",
+    "manga, pepino e gengibre em brunoise",
+    "camarões novos",
+    "duxelles de cogumelos",
+    "risoto cremoso com limão"
    ],
-   "utensilios": [],
+   "utensilios": [
+    "faca",
+    "panela",
+    "tigela"
+   ],
    "passos": [
     {
-     "acao": "picar",
-     "alvo": "legumes ou ervas",
+     "acao": "cortar",
+     "alvo": "cenoura e alho-poró em julienne",
      "utensilio": "faca",
-     "parametro": "julienne ou brunoise"
+     "parametro": ""
     },
     {
-     "acao": "mexer",
-     "alvo": "base com temperos",
+     "acao": "escaldar",
+     "alvo": "julienne de cenoura e alho-poró",
+     "utensilio": "panela",
+     "parametro": "rápido, e escorrer"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "julienne no vinagrete",
      "utensilio": "tigela",
-     "parametro": ""
+     "parametro": "primeiro recheio"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "queijo fresco com salsinha ou endro picados",
+     "utensilio": "tigela",
+     "parametro": "segundo recheio"
+    },
+    {
+     "acao": "cortar",
+     "alvo": "manga, pepino e gengibre em brunoise",
+     "utensilio": "faca",
+     "parametro": "cubinhos de 3 mm"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "brunoise com camarões novos",
+     "utensilio": "tigela",
+     "parametro": "terceiro recheio; duxelles ou risoto leve com limão são as outras opções"
     }
    ],
-   "ponto_critico": "Recheio úmido mas firme",
-   "erro_comum": "Recheio cru e duro que não cozinha junto"
+   "ponto_critico": "recheio úmido mas firme, em pouca quantidade para não vazar no cozimento",
+   "erro_comum": "encher demais a trouxinha, a almofada ou o rolinho e o recheio sair ao cozinhar"
   },
   {
    "id": "peixes.taramasalata",
@@ -2853,7 +2895,7 @@
    "nome": "Borboletas de limão verde",
    "ingredientes": [
     "limão",
-    "estrela de pimentão escaldado"
+    "pimentão escaldado"
    ],
    "utensilios": [
     "faca"
@@ -2875,7 +2917,7 @@
      "acao": "montar",
      "alvo": "dois quartos de costas formando asas",
      "utensilio": "",
-     "parametro": "estrela no meio"
+     "parametro": "estrela de pimentão escaldado no meio"
     }
    ],
    "ponto_critico": "Rodelas finas e iguais",
@@ -3763,6 +3805,18 @@
    ],
    "passos": [
     {
+     "acao": "limpar",
+     "alvo": "barbatanas, escamas e vísceras",
+     "utensilio": "tesoura e faca",
+     "parametro": "antes de assar"
+    },
+    {
+     "acao": "secar",
+     "alvo": "peixe",
+     "utensilio": "papel-toalha",
+     "parametro": ""
+    },
+    {
      "acao": "abrir(rolo)",
      "alvo": "camada de 5 cm de sal no fundo",
      "utensilio": "panela pesada",
@@ -3874,6 +3928,18 @@
     "garfo"
    ],
    "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "filés",
+     "utensilio": "",
+     "parametro": "sal e pimenta"
+    },
+    {
+     "acao": "empanar",
+     "alvo": "filés na farinha temperada",
+     "utensilio": "prato",
+     "parametro": "cobertura leve"
+    },
     {
      "acao": "aquecer",
      "alvo": "partes iguais de manteiga e óleo",
@@ -4074,6 +4140,52 @@
    ],
    "ponto_critico": "Óleo entre 180 e 190 °C; pão doura em 30 s",
    "erro_comum": "Muito peixe de uma vez derruba a temperatura"
+  },
+  {
+   "id": "peixes.massa-empanar-variacoes",
+   "capitulo": "Peixes & Frutos do mar",
+   "nome": "Variações de massa para empanar peixe",
+   "ingredientes": [
+    "farinha de trigo",
+    "ovo",
+    "leite ou cerveja",
+    "caiena, chili ou curry em pó",
+    "óleo ou manteiga derretida",
+    "postas, filés ou camarões"
+   ],
+   "utensilios": [
+    "tigela",
+    "batedor-de-arame",
+    "peneira"
+   ],
+   "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "farinha de trigo",
+     "utensilio": "tigela",
+     "parametro": "com caiena, chili ou curry em pó"
+    },
+    {
+     "acao": "bater",
+     "alvo": "farinha com ovo e o líquido",
+     "utensilio": "batedor-de-arame",
+     "parametro": "massa fina; cerveja no lugar do leite deixa a cobertura mais leve e dourada"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "um pouco de óleo ou manteiga derretida na massa",
+     "utensilio": "batedor-de-arame",
+     "parametro": ""
+    },
+    {
+     "acao": "empanar",
+     "alvo": "peixe na massa",
+     "utensilio": "tigela",
+     "parametro": "para camarões e petiscos, massa de tempura e molho de soja ao servir"
+    }
+   ],
+   "ponto_critico": "massa fina, que cobre o peixe por igual sem pesar",
+   "erro_comum": "massa grossa demais e óleo velho, que alteram o sabor da cobertura"
   },
   {
    "id": "peixes.goujons",

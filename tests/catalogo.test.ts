@@ -6,8 +6,8 @@ const c = catalogo as unknown as Catalogo;
 const GESTOS = ['cortar', 'superficie', 'ritmo', 'calor', 'tempo', 'verter', 'montar', 'confeitar', 'medir', 'testar', 'separar'];
 
 describe('catálogo', () => {
-  it('tem as 974 técnicas do levantamento', () => {
-    expect(c.tecnicas.length).toBe(974);
+  it('tem as 998 técnicas do levantamento', () => {
+    expect(c.tecnicas.length).toBe(998);
   });
   it('toda técnica tem passos com gesto conhecido e bancada válida', () => {
     const bancadas = new Set(c.bancadas.map((b) => b.id));

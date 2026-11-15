@@ -983,14 +983,26 @@
      "parametro": "~10 min para tirar sangue"
     },
     {
+     "acao": "escorrer",
+     "alvo": "espinhas e aparas",
+     "utensilio": "escorredor",
+     "parametro": "e passar para a panela"
+    },
+    {
      "acao": "cortar",
      "alvo": "legumes",
      "utensilio": "faca-do-chef",
      "parametro": "pedaços uniformes"
     },
     {
-     "acao": "cozinhar-lento",
+     "acao": "ferver",
      "alvo": "todos os ingredientes",
+     "utensilio": "panela",
+     "parametro": "levar à fervura"
+    },
+    {
+     "acao": "cozinhar-lento",
+     "alvo": "caldo",
      "utensilio": "panela",
      "parametro": "20 min após ferver, no máximo"
     },
@@ -1079,6 +1091,12 @@
      "alvo": "bandeja",
      "utensilio": "",
      "parametro": "~4 h até endurecer"
+    },
+    {
+     "acao": "desenformar",
+     "alvo": "cubos da bandeja",
+     "utensilio": "forma-de-gelo",
+     "parametro": "só quando estiverem totalmente congelados"
     },
     {
      "acao": "armazenar",
@@ -2794,6 +2812,12 @@
      "alvo": "filé powder",
      "utensilio": "colher",
      "parametro": "fora do fogo até engrossar um pouco"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "gumbo",
+     "utensilio": "colher",
+     "parametro": "provar e acertar sal e pimenta"
     }
    ],
    "ponto_critico": "quiabo só nos últimos 10 min e filé powder sempre fora do fogo",
@@ -2896,13 +2920,19 @@
    ],
    "passos": [
     {
+     "acao": "inspecionar",
+     "alvo": "data de validade",
+     "utensilio": "caixa de ovos",
+     "parametro": "se não houver data, fazer o teste do copo"
+    },
+    {
      "acao": "testar",
      "alvo": "ovo em copo com água",
      "utensilio": "copo",
      "parametro": "observar a posição"
     }
    ],
-   "ponto_critico": "ovo fresco deita no fundo; um pouco velho fica em pé com a ponta para baixo; estragado boia",
+   "ponto_critico": "ovo fresco deita no fundo; não fresco boia com a ponta para baixo; estragado sobe até a superfície e deve ser descartado",
    "erro_comum": "usar ovo que boia"
   },
   {
@@ -3443,6 +3473,68 @@
    ],
    "ponto_critico": "fogo baixo e mexer contínuo; textura cremosa, sem grumos secos",
    "erro_comum": "fogo alto e pressa, deixando os ovos duros e borrachudos"
+  },
+  {
+   "id": "ovos.ovos-mexidos-com-ingredientes",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Ovos mexidos com outros ingredientes (pipérade)",
+   "ingredientes": [
+    "ovos (4)",
+    "leite ou creme de leite (2 colheres de sopa)",
+    "sal e pimenta",
+    "manteiga",
+    "cebola",
+    "pimentão",
+    "cogumelos",
+    "presunto ou pesto (opcional)"
+   ],
+   "utensilios": [
+    "tigelas",
+    "garfo",
+    "frigideira",
+    "colher-de-pau",
+    "faca"
+   ],
+   "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "cebola, pimentão e cogumelos",
+     "utensilio": "faca",
+     "parametro": "em tiras finas"
+    },
+    {
+     "acao": "fritar",
+     "alvo": "cebola, pimentão e cogumelos na manteiga",
+     "utensilio": "frigideira",
+     "parametro": "fogo médio até amaciar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovos + leite + temperos",
+     "utensilio": "garfo",
+     "parametro": "~1 min"
+    },
+    {
+     "acao": "despejar",
+     "alvo": "ovos sobre os legumes",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "mexer",
+     "alvo": "ovos com os legumes",
+     "utensilio": "colher-de-pau",
+     "parametro": "fogo baixo, sem parar, 5 a 8 min"
+    },
+    {
+     "acao": "servir",
+     "alvo": "ovos mexidos com legumes",
+     "utensilio": "",
+     "parametro": "imediatamente; presunto ou pesto como alternativa"
+    }
+   ],
+   "ponto_critico": "legumes já macios antes de entrarem os ovos; fogo baixo e mexer sem parar como nos ovos mexidos",
+   "erro_comum": "pôr os legumes crus junto com os ovos e eles soltarem água, deixando os ovos aguados"
   },
   {
    "id": "ovos.ovo-frito-regado",
@@ -4123,8 +4215,8 @@
    "capitulo": "Ovos, Queijos & Creme de leite",
    "nome": "Suflês de queijo sobre fondue",
    "ingredientes": [
-    "sabayon de gemas e vinho",
-    "claras em neve",
+    "ovos separados (4)",
+    "vinho branco seco (100 ml)",
     "sal e pimenta",
     "parmesão ralado (100 g)",
     "creme de leite integral (200 g)",
@@ -4132,16 +4224,44 @@
     "cebolinha"
    ],
    "utensilios": [
-    "panela",
     "travessa-de-gratinar",
+    "panela-dupla",
+    "batedor-de-arame",
+    "tigelas",
+    "espatula-de-borracha",
+    "panela",
     "colher"
    ],
    "passos": [
     {
+     "acao": "bater",
+     "alvo": "gemas + vinho em banho-maria",
+     "utensilio": "batedor-de-arame",
+     "parametro": "até clarear e cair em fita ao levantar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "mistura fora do banho-maria",
+     "utensilio": "batedor-de-arame",
+     "parametro": "até esfriar"
+    },
+    {
+     "acao": "bater",
+     "alvo": "claras em outra tigela",
+     "utensilio": "batedor-de-arame",
+     "parametro": "até neve firme"
+    },
+    {
      "acao": "dobrar(incorporar)",
-     "alvo": "claras no sabayon",
+     "alvo": "claras nas gemas",
      "utensilio": "espatula-de-borracha",
-     "parametro": "temperar"
+     "parametro": "suave mas por completo"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "mistura de ovos",
+     "utensilio": "",
+     "parametro": "sal e pimenta a gosto"
     },
     {
      "acao": "ferver",
@@ -4544,7 +4664,7 @@
      "acao": "misturar",
      "alvo": "massa grossa",
      "utensilio": "batedor-de-arame",
-     "parametro": ""
+     "parametro": "base da massa de crêpe com 225 g de farinha para 300 ml de leite, 1 a 2 colheres (sopa) de manteiga derretida e 1 a 2 colheres (chá) de fermento"
     },
     {
      "acao": "testar",
@@ -4585,6 +4705,56 @@
    ],
    "ponto_critico": "chapa no ponto do teste da água; virar quando surgirem bolhas no centro",
    "erro_comum": "chapa fria que deixa a panqueca pálida e pesada"
+  },
+  {
+   "id": "ovos.massa-pudim-yorkshire",
+   "capitulo": "Ovos, Queijos & Creme de leite",
+   "nome": "Massa para pudim Yorkshire",
+   "ingredientes": [
+    "farinha com glúten extra (125 g)",
+    "sal",
+    "ovos (2)",
+    "leite e água em partes iguais (300 ml)"
+   ],
+   "utensilios": [
+    "peneira",
+    "tigelas",
+    "batedor-de-arame"
+   ],
+   "passos": [
+    {
+     "acao": "peneirar",
+     "alvo": "farinha com glúten extra + sal",
+     "utensilio": "peneira",
+     "parametro": "no lugar da farinha de trigo comum"
+    },
+    {
+     "acao": "moldar",
+     "alvo": "cova no centro",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "bater",
+     "alvo": "ovos puxando a farinha das bordas",
+     "utensilio": "batedor-de-arame",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "leite e água misturados aos poucos",
+     "utensilio": "",
+     "parametro": "partes iguais, até massa fina"
+    },
+    {
+     "acao": "descansar",
+     "alvo": "massa coberta",
+     "utensilio": "tigelas",
+     "parametro": "mínimo 30 min antes de assar"
+    }
+   ],
+   "ponto_critico": "o glúten extra deixa a massa elástica para crescer alto; a água deixa a massa mais leve",
+   "erro_comum": "assar sem o descanso de 30 min, antes de a farinha absorver o líquido"
   },
   {
    "id": "queijos.avaliar-queijo-mole",
@@ -4861,10 +5031,15 @@
     "queijo fresco",
     "ervas picadas",
     "temperos",
-    "tomate-cereja sem miolo, abobrinhas escaldadas, ervilha-torta aberta"
+    "tomates-cereja",
+    "abóboras pequenas",
+    "ervilhas-tortas"
    ],
    "utensilios": [
     "tigelas",
+    "faca",
+    "colher",
+    "panela",
     "saco-de-confeitar"
    ],
    "passos": [
@@ -4875,15 +5050,33 @@
      "parametro": ""
     },
     {
-     "acao": "ferver",
-     "alvo": "abobrinhas e ervilhas-tortas",
-     "utensilio": "panela",
-     "parametro": "escaldar"
+     "acao": "cortar",
+     "alvo": "tomates-cereja ao meio",
+     "utensilio": "faca",
+     "parametro": ""
     },
     {
      "acao": "limpar",
-     "alvo": "miolo dos legumes",
-     "utensilio": "boleador",
+     "alvo": "miolo dos tomates",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "escaldar",
+     "alvo": "abóboras pequenas e ervilhas-tortas",
+     "utensilio": "panela",
+     "parametro": "rápido, e escorrer"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "polpa das abóboras",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
+     "acao": "abrir",
+     "alvo": "ervilhas-tortas ao meio",
+     "utensilio": "faca",
      "parametro": ""
     },
     {
@@ -5692,6 +5885,12 @@
    ],
    "passos": [
     {
+     "acao": "separar",
+     "alvo": "ervas conforme o prato",
+     "utensilio": "",
+     "parametro": "boi: raspas de laranja, alecrim, tomilho e salsa; peixes: estragão, endro e raspas de limão; carneiro: alecrim, tomilho, segurelha, hortelã e salsa; porco: sálvia, tomilho e manjerona; aves: salsão, salsa, tomilho, manjerona, estragão e louro; legumes e grãos: louro, sálvia, segurelha, manjerona, orégano e salsa"
+    },
+    {
      "acao": "montar",
      "alvo": "ervas dentro da folha de alho-poró",
      "utensilio": "",
@@ -6174,14 +6373,21 @@
     "papel-toalha úmido"
    ],
    "utensilios": [
+    "faca-do-chef",
     "saco-plastico"
    ],
    "passos": [
     {
-     "acao": "enrolar",
-     "alvo": "ervas delicadas em papel-toalha levemente úmido",
-     "utensilio": "",
+     "acao": "picar",
+     "alvo": "ervas frescas",
+     "utensilio": "faca-do-chef",
      "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "só as delicadas, como manjericão, em papel-toalha levemente úmido",
+     "utensilio": "",
+     "parametro": "antes de ensacar"
     },
     {
      "acao": "armazenar",
@@ -6190,7 +6396,7 @@
      "parametro": "geladeira, 1 a 2 dias"
     }
    ],
-   "ponto_critico": "papel só úmido, não encharcado; uso em 1 a 2 dias",
+   "ponto_critico": "papel só úmido, não encharcado, e só para as ervas delicadas; uso em 1 a 2 dias",
    "erro_comum": "ervas delicadas sem papel que escurecem"
   },
   {
@@ -6245,7 +6451,7 @@
      "acao": "separar",
      "alvo": "folhas dos talos",
      "utensilio": "",
-     "parametro": ""
+     "parametro": "ervas novas, colhidas de manhã antes de florescer"
     },
     {
      "acao": "picar",
@@ -6266,10 +6472,16 @@
      "parametro": ""
     },
     {
+     "acao": "desenformar",
+     "alvo": "cubos da fôrma",
+     "utensilio": "forma-de-gelo",
+     "parametro": "quando estiverem formados"
+    },
+    {
      "acao": "armazenar",
      "alvo": "cubos",
      "utensilio": "saco-plastico",
-     "parametro": "freezer; usar direto em líquidos"
+     "parametro": "freezer; usar direto em líquidos; raminhos inteiros vão em pote fechado"
     }
    ],
    "ponto_critico": "ervas colhidas antes da floração e congeladas cobertas de água",

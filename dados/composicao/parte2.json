@@ -521,10 +521,11 @@
     "alimento": "frango-inteiro"
    },
    {
-    "alimento": "miudos-de-ave"
+    "alimento": null
    },
    {
-    "alimento": null
+    "alimento": "frango-inteiro",
+    "recipiente": "travessa"
    }
   ],
   "prato": {
@@ -622,6 +623,9 @@
  },
  "aves.amarrar-agulha": {
   "passos": [
+   {
+    "alimento": "peru"
+   },
    {
     "alimento": "peru"
    },
@@ -1183,9 +1187,15 @@
     "recipiente": "frigideira"
    },
    {
+    "alimento": "cepe"
+   },
+   {
     "alimento": null,
     "meio": "vinho do Porto",
     "recipiente": "tigela"
+   },
+   {
+    "alimento": "codorna"
    },
    {
     "alimento": "codorna",
@@ -1200,11 +1210,29 @@
    {
     "alimento": "codorna",
     "meio": "gordura de ganso",
-    "recipiente": "frigideira"
+    "recipiente": "assadeira"
    },
    {
     "alimento": "codorna",
     "recipiente": "assadeira"
+   },
+   {
+    "alimento": null,
+    "meio": "molho de vinho do Porto",
+    "recipiente": "panela"
+   },
+   {
+    "alimento": "codorna",
+    "meio": "molho de vinho do Porto",
+    "recipiente": "prato"
+   },
+   {
+    "alimento": "codorna",
+    "adicionar": [
+     "salsa",
+     "alecrim",
+     "cepe"
+    ]
    },
    {
     "alimento": "codorna",
@@ -2113,6 +2141,9 @@
     "alimento": "frango-inteiro"
    },
    {
+    "alimento": "frango-inteiro"
+   },
+   {
     "alimento": null,
     "meio": "caldo",
     "recipiente": "panela"
@@ -2187,6 +2218,25 @@
     "recipiente": "panela"
    },
    {
+    "alimento": "peito-de-frango",
+    "meio": "água",
+    "recipiente": "panela",
+    "pergunta": "O espetinho de metal saiu do centro do rolo. Quando está cozido?",
+    "opcoes": [
+     "Quando ele sai quente",
+     "Quando ele sai frio",
+     "Quando ele sai molhado"
+    ],
+    "correta": 0,
+    "explicacao": "Espetinho quente ao sair do centro mostra que o rolo cozinhou por dentro.",
+    "objetos": [
+     "palito"
+    ]
+   },
+   {
+    "alimento": "peito-de-frango"
+   },
+   {
     "alimento": "peito-de-frango"
    }
   ],
@@ -2214,6 +2264,10 @@
     ]
    },
    {
+    "alimento": "peito-de-frango",
+    "meio": "molho de soja"
+   },
+   {
     "alimento": "folha-de-bananeira",
     "adicionar": [
      "peito-de-frango"
@@ -2223,6 +2277,12 @@
     "alimento": "folha-de-bananeira",
     "meio": "água",
     "recipiente": "cesta de vapor"
+   },
+   {
+    "alimento": "folha-de-bananeira",
+    "adicionar": [
+     "peito-de-frango"
+    ]
    }
   ],
   "prato": {
@@ -2263,6 +2323,41 @@
    "quantidade": 2
   }
  },
+ "aves.marinadas-grelhar": {
+  "passos": [
+   {
+    "alimento": "alecrim",
+    "corte": "picar"
+   },
+   {
+    "alimento": "chili"
+   },
+   {
+    "alimento": null,
+    "meio": "marinada",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "perna-de-frango",
+    "meio": "marinada",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "perna-de-frango",
+    "meio": "marinada",
+    "recipiente": "tigela"
+   }
+  ],
+  "prato": {
+   "principal": "perna-de-frango",
+   "acompanhamentos": [],
+   "servir": "pote",
+   "forma": "inteiro",
+   "estado": "cru",
+   "quantidade": 2,
+   "liquido": "#b0452a"
+  }
+ },
  "aves.sate": {
   "passos": [
    {
@@ -2273,6 +2368,18 @@
     "corte": "tiras"
    },
    {
+    "alimento": "cebola"
+   },
+   {
+    "alimento": "peito-de-frango",
+    "adicionar": [
+     "cebola",
+     "coentro"
+    ],
+    "meio": "marinada",
+    "recipiente": "tigela"
+   },
+   {
     "alimento": "peito-de-frango",
     "meio": "marinada",
     "recipiente": "tigela"
@@ -2281,6 +2388,10 @@
     "alimento": null,
     "meio": "água",
     "recipiente": "tigela"
+   },
+   {
+    "alimento": null,
+    "recipiente": "escorredor"
    },
    {
     "alimento": "peito-de-frango"
@@ -2440,6 +2551,11 @@
      "cenoura",
      "cebola"
     ],
+    "recipiente": "panela"
+   },
+   {
+    "alimento": "frango",
+    "meio": "vinho tinto",
     "recipiente": "panela"
    },
    {
@@ -3374,6 +3490,15 @@
     "alimento": "file-mignon"
    },
    {
+    "alimento": "file-mignon"
+   },
+   {
+    "alimento": "file-mignon"
+   },
+   {
+    "alimento": "file-mignon"
+   },
+   {
     "alimento": "file-mignon",
     "recipiente": "prato"
    },
@@ -3502,6 +3627,42 @@
    "quantidade": 2
   }
  },
+ "bovina.recheios-escalope": {
+  "passos": [
+   {
+    "alimento": "espinafre",
+    "corte": "picar"
+   },
+   {
+    "alimento": null,
+    "meio": "recheio",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "escalope-de-vitela",
+    "adicionar": [
+     "espinafre"
+    ]
+   },
+   {
+    "alimento": "escalope-de-vitela",
+    "adicionar": [
+     "amendoim"
+    ]
+   },
+   {
+    "alimento": "escalope-de-vitela"
+   }
+  ],
+  "prato": {
+   "principal": "escalope-de-vitela-enrolado",
+   "acompanhamentos": [],
+   "servir": "tabua",
+   "forma": "inteiro",
+   "estado": "cru",
+   "quantidade": 2
+  }
+ },
  "bovina.assar-costela": {
   "passos": [
    {
@@ -3536,6 +3697,21 @@
    {
     "alimento": "costela-bovina",
     "recipiente": "assadeira"
+   },
+   {
+    "alimento": "costela-bovina",
+    "recipiente": "assadeira",
+    "pergunta": "O termômetro na parte mais grossa marca 70 °C. Como está a carne?",
+    "opcoes": [
+     "No ponto",
+     "Malpassada",
+     "Bem-passada"
+    ],
+    "correta": 0,
+    "explicacao": "A 60 °C a carne está malpassada, a 70 °C no ponto e a 75 °C bem-passada.",
+    "objetos": [
+     "termometro"
+    ]
    }
   ],
   "prato": {
@@ -3553,14 +3729,14 @@
    },
    {
     "alimento": "contrafile",
-    "pergunta": "O espeto ficou 30 s no centro. O que a temperatura dele no pulso diz?",
+    "pergunta": "O espeto ficou 30 s no centro e saiu quente. Como está a carne?",
     "opcoes": [
-     "Frio é malpassado; quente é no ponto",
-     "Frio é bem-passado; quente é cru",
-     "Só indica se o forno está ligado"
+     "No ponto",
+     "Malpassada",
+     "Ainda crua por dentro"
     ],
     "correta": 0,
-    "explicacao": "O espeto leva o calor do centro: frio mostra centro cru, quente mostra carne no ponto.",
+    "explicacao": "O espeto traz o calor do centro: frio indica carne malpassada, quente indica carne no ponto.",
     "objetos": [
      "palito"
     ]
@@ -3664,19 +3840,29 @@
     "alimento": "file-mignon"
    },
    {
+    "alimento": "file-mignon",
+    "adicionar": [
+     "crepe-de-ervas"
+    ]
+   },
+   {
     "alimento": "massa-folhada",
     "adicionar": [
      "crepe-de-ervas",
      "file-mignon"
     ]
+   },
+   {
+    "alimento": "massa-folhada",
+    "recipiente": "assadeira"
    }
   ],
   "prato": {
-   "principal": "file-mignon-recheado-fatiado",
+   "principal": "file-wellington-fatiado",
    "acompanhamentos": [],
-   "servir": "tabua",
-   "forma": "inteiro",
-   "estado": null
+   "servir": "travessa",
+   "forma": "fatias",
+   "estado": "dourado"
   }
  },
  "bovina.wellington": {
@@ -3859,6 +4045,13 @@
    {
     "alimento": null,
     "recipiente": "grelha"
+   },
+   {
+    "alimento": "file-mignon"
+   },
+   {
+    "alimento": "file-mignon",
+    "corte": "pontos"
    },
    {
     "alimento": "file-mignon",
@@ -4770,6 +4963,33 @@
    "quantidade": 3
   }
  },
+ "cordeiro.marinadas": {
+  "passos": [
+   {
+    "alimento": "tomilho",
+    "corte": "picar"
+   },
+   {
+    "alimento": null,
+    "meio": "marinada",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "costeleta-de-cordeiro",
+    "meio": "marinada",
+    "recipiente": "tigela"
+   }
+  ],
+  "prato": {
+   "principal": "costeleta-de-cordeiro",
+   "acompanhamentos": [],
+   "servir": "pote",
+   "forma": "inteiro",
+   "estado": "cru",
+   "quantidade": 3,
+   "liquido": "#e8dcc0"
+  }
+ },
  "cordeiro.espetinhos": {
   "passos": [
    {
@@ -5181,6 +5401,11 @@
  },
  "deco.feixes-vagem": {
   "passos": [
+   {
+    "alimento": "vagem",
+    "meio": "água",
+    "recipiente": "panela"
+   },
    {
     "alimento": "pimentao",
     "corte": "tiras"
@@ -5661,6 +5886,38 @@
    "estado": "cru"
   }
  },
+ "porco.recheios-lombo": {
+  "passos": [
+   {
+    "alimento": "frutas-secas",
+    "meio": "vinho branco",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "maca",
+    "corte": "cubos"
+   },
+   {
+    "alimento": null,
+    "meio": "recheio",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "file-de-porco",
+    "adicionar": [
+     "maca",
+     "salvia"
+    ]
+   }
+  ],
+  "prato": {
+   "principal": "file-de-porco",
+   "acompanhamentos": [],
+   "servir": "tabua",
+   "forma": "inteiro",
+   "estado": "cru"
+  }
+ },
  "porco.tunel-lombo": {
   "passos": [
    {
@@ -5691,6 +5948,35 @@
     "adicionar": [
      "espinafre",
      "rucula"
+    ]
+   }
+  ],
+  "prato": {
+   "principal": "costeleta-de-porco",
+   "acompanhamentos": [],
+   "servir": "tabua",
+   "forma": "inteiro",
+   "estado": "cru"
+  }
+ },
+ "porco.recheios-costeletas": {
+  "passos": [
+   {
+    "alimento": "espinafre",
+    "corte": "picar"
+   },
+   {
+    "alimento": "espinafre"
+   },
+   {
+    "alimento": null,
+    "meio": "recheio",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "costeleta-de-porco",
+    "adicionar": [
+     "espinafre"
     ]
    }
   ],
@@ -5810,12 +6096,30 @@
     ]
    },
    {
+    "alimento": "pernil"
+   },
+   {
     "alimento": "pernil",
     "recipiente": "assadeira"
    },
    {
     "alimento": "pernil",
     "recipiente": "assadeira"
+   },
+   {
+    "alimento": "pernil",
+    "recipiente": "assadeira",
+    "pergunta": "Que temperatura interna mostra que a peça de porco está pronta?",
+    "opcoes": [
+     "80 °C, com sucos claros",
+     "60 °C, ainda rosada no centro",
+     "70 °C, com sucos rosados"
+    ],
+    "correta": 0,
+    "explicacao": "A carne de porco deve ficar bem-passada, com 80 °C no centro e sucos sem cor rosada.",
+    "objetos": [
+     "termometro"
+    ]
    }
   ],
   "prato": {
@@ -5946,6 +6250,32 @@
    "quantidade": 6
   }
  },
+ "porco.cobertura-brilho": {
+  "passos": [
+   {
+    "alimento": null,
+    "meio": "cobertura de mel",
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "costelinha-de-porco",
+    "meio": "cobertura de mel",
+    "recipiente": "assadeira"
+   },
+   {
+    "alimento": "costelinha-de-porco",
+    "recipiente": "assadeira"
+   }
+  ],
+  "prato": {
+   "principal": "costelinha-de-porco",
+   "acompanhamentos": [],
+   "servir": "travessa",
+   "forma": "pedacos",
+   "estado": "cru",
+   "quantidade": 6
+  }
+ },
  "porco.assar-costeletas": {
   "passos": [
    {
@@ -6057,6 +6387,14 @@
  },
  "porco.wok-tiras": {
   "passos": [
+   {
+    "alimento": "file-de-porco",
+    "corte": "fatiar"
+   },
+   {
+    "alimento": "file-de-porco",
+    "corte": "tiras"
+   },
    {
     "alimento": "file-de-porco",
     "meio": "marinada",
@@ -6292,6 +6630,61 @@
    "forma": "inteiro"
   }
  },
+ "moida.acompanhamentos-hamburguer": {
+  "passos": [
+   {
+    "alimento": "cebola_roxa",
+    "meio": "óleo",
+    "recipiente": "frigideira"
+   },
+   {
+    "alimento": "cebola_roxa",
+    "adicionar": [
+     "cogumelo_paris"
+    ],
+    "meio": "óleo",
+    "recipiente": "frigideira"
+   },
+   {
+    "alimento": "cebola_roxa",
+    "adicionar": [
+     "cogumelo_paris"
+    ],
+    "recipiente": "frigideira"
+   },
+   {
+    "alimento": "carne-moida-hamburguer",
+    "adicionar": [
+     "queijo-azul"
+    ]
+   },
+   {
+    "alimento": "carne-moida-hamburguer",
+    "adicionar": [
+     "queijo-azul"
+    ],
+    "recipiente": "assadeira"
+   },
+   {
+    "alimento": "carne-moida-hamburguer",
+    "adicionar": [
+     "cebola_roxa",
+     "cogumelo_paris"
+    ]
+   }
+  ],
+  "prato": {
+   "principal": "carne-moida-hamburguer",
+   "acompanhamentos": [
+    "cebola_roxa",
+    "cogumelo_paris"
+   ],
+   "servir": "prato",
+   "forma": "inteiro",
+   "estado": "dourado",
+   "quantidade": 2
+  }
+ },
  "moida.brochettes": {
   "passos": [
    {
@@ -6510,6 +6903,35 @@
    "quantidade": null
   }
  },
+ "linguica.recheios": {
+  "passos": [
+   {
+    "alimento": "manjericao",
+    "corte": "picar"
+   },
+   {
+    "alimento": "carne_porco_moida",
+    "adicionar": [
+     "manjericao",
+     "alho"
+    ],
+    "recipiente": "tigela"
+   },
+   {
+    "alimento": "invólucro",
+    "adicionar": [
+     "carne_porco_moida"
+    ]
+   }
+  ],
+  "prato": {
+   "principal": "linguica",
+   "acompanhamentos": [],
+   "servir": "tabua",
+   "forma": "inteiro",
+   "estado": "cru"
+  }
+ },
  "miudos.figado": {
   "passos": [
    {
@@ -6689,6 +7111,45 @@
    "servir": "prato",
    "forma": "inteiro",
    "estado": null
+  }
+ },
+ "miudos.recheios-coracao": {
+  "passos": [
+   {
+    "alimento": "coracao"
+   },
+   {
+    "alimento": "cogumelo_paris",
+    "corte": "picar"
+   },
+   {
+    "alimento": "cogumelo_paris",
+    "adicionar": [
+     "cebola",
+     "toucinho"
+    ],
+    "recipiente": "frigideira"
+   },
+   {
+    "alimento": "coracao",
+    "adicionar": [
+     "cogumelo_paris",
+     "cebola"
+    ]
+   },
+   {
+    "alimento": "coracao",
+    "adicionar": [
+     "bacon"
+    ]
+   }
+  ],
+  "prato": {
+   "principal": "coracao-recheado",
+   "acompanhamentos": [],
+   "servir": "tabua",
+   "forma": "inteiro",
+   "estado": "cru"
   }
  },
  "miudos.lingua": {
@@ -7060,11 +7521,11 @@
  "cruciferas.couve_bruxelas_cruz": {
   "passos": [
    {
-    "alimento": "couve_de_bruxelas"
-   },
-   {
     "alimento": "couve_de_bruxelas",
     "corte": "pontos"
+   },
+   {
+    "alimento": "couve_de_bruxelas"
    }
   ],
   "prato": {

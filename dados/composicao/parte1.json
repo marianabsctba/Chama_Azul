@@ -177,8 +177,23 @@
         "recipiente": "tigela"
       },
       {
+        "alimento": "merluza",
+        "recipiente": "escorredor"
+      },
+      {
         "alimento": "cebola",
         "corte": "cubos"
+      },
+      {
+        "alimento": "merluza",
+        "adicionar": [
+          "cebola",
+          "cenoura",
+          "aipo",
+          "louro"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
       },
       {
         "alimento": "merluza",
@@ -256,6 +271,10 @@
       {
         "alimento": null,
         "meio": "caldo",
+        "recipiente": "forma de gelo"
+      },
+      {
+        "alimento": "cubos-de-caldo",
         "recipiente": "forma de gelo"
       },
       {
@@ -1566,6 +1585,11 @@
         "alimento": "quiabo",
         "meio": "caldo",
         "recipiente": "panela"
+      },
+      {
+        "alimento": "quiabo",
+        "meio": "caldo",
+        "recipiente": "panela"
       }
     ],
     "prato": {
@@ -1660,16 +1684,30 @@
     "passos": [
       {
         "alimento": "ovo",
+        "pergunta": "O que conferir antes do teste do copo?",
+        "opcoes": [
+          "A data de validade na caixa.",
+          "A cor da casca.",
+          "O tamanho do ovo."
+        ],
+        "correta": 0,
+        "explicacao": "A validade vem primeiro; o copo com água serve quando não há data.",
+        "objetos": [
+          "embalagem"
+        ]
+      },
+      {
+        "alimento": "ovo",
         "meio": "água",
         "recipiente": "copo",
         "pergunta": "Como fica um ovo fresco no copo com água?",
         "opcoes": [
           "Deita no fundo do copo.",
-          "Fica em pé com a ponta para baixo.",
-          "Boia na superfície."
+          "Boia com a ponta para baixo.",
+          "Sobe até a superfície."
         ],
         "correta": 0,
-        "explicacao": "Ovo fresco deita no fundo; em pé já está velho e, se boiar, está estragado.",
+        "explicacao": "Ovo fresco deita no fundo; com a ponta para baixo já não é fresco; se subir até a superfície, está estragado e vai para o lixo.",
         "objetos": [
           "copo-agua"
         ]
@@ -2054,6 +2092,53 @@
     "prato": {
       "principal": "ovos-mexidos",
       "acompanhamentos": [],
+      "servir": "prato"
+    }
+  },
+  "ovos.ovos-mexidos-com-ingredientes": {
+    "passos": [
+      {
+        "alimento": "pimentao",
+        "corte": "tiras"
+      },
+      {
+        "alimento": "pimentao",
+        "adicionar": [
+          "cebola",
+          "cogumelo_paris"
+        ],
+        "meio": "manteiga",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos batidos",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": null,
+        "meio": "ovos mexidos",
+        "recipiente": "frigideira"
+      },
+      {
+        "alimento": "ovos-mexidos",
+        "adicionar": [
+          "pimentao",
+          "cogumelo_paris"
+        ]
+      }
+    ],
+    "prato": {
+      "principal": "ovos-mexidos",
+      "acompanhamentos": [
+        "pimentao",
+        "cogumelo_paris"
+      ],
       "servir": "prato"
     }
   },
@@ -2556,6 +2641,26 @@
     "passos": [
       {
         "alimento": null,
+        "meio": "gemas e vinho",
+        "recipiente": "banho-maria"
+      },
+      {
+        "alimento": null,
+        "meio": "sabayon",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "claras em neve",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "sabayon com claras",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
         "meio": "sabayon com claras",
         "recipiente": "tigela"
       },
@@ -2902,6 +3007,40 @@
       "quantidade": 3
     }
   },
+  "ovos.massa-pudim-yorkshire": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "peneira"
+      },
+      {
+        "alimento": null,
+        "meio": "farinha",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite e água",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de crepe",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "acompanhamentos": [],
+      "servir": "copo",
+      "liquido": "#f2e2b0"
+    }
+  },
   "queijos.avaliar-queijo-mole": {
     "passos": [
       {
@@ -3194,6 +3333,13 @@
         "recipiente": "tigela"
       },
       {
+        "alimento": "tomate-cereja",
+        "corte": "fatiar"
+      },
+      {
+        "alimento": "tomate-cereja"
+      },
+      {
         "alimento": "abobrinha",
         "adicionar": [
           "ervilha_torta"
@@ -3202,7 +3348,11 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "tomate-cereja"
+        "alimento": "abobrinha"
+      },
+      {
+        "alimento": "ervilha_torta",
+        "corte": "contorno"
       },
       {
         "alimento": "tomate-cereja",
@@ -3749,6 +3899,13 @@
   "ervas.bouquet-garni": {
     "passos": [
       {
+        "alimento": "tomilho",
+        "adicionar": [
+          "louro",
+          "salsa"
+        ]
+      },
+      {
         "alimento": "alho_poro",
         "adicionar": [
           "tomilho",
@@ -4120,10 +4277,17 @@
   "ervas.guardar-ervas-frescas": {
     "passos": [
       {
-        "alimento": "salsa"
+        "alimento": "salsa",
+        "corte": "picar"
+      },
+      {
+        "alimento": "manjericao"
       },
       {
         "alimento": "salsa",
+        "adicionar": [
+          "manjericao"
+        ],
         "recipiente": "saco plástico"
       }
     ],
@@ -4172,6 +4336,10 @@
       {
         "alimento": "manjericao",
         "meio": "água gelada",
+        "recipiente": "forma de gelo"
+      },
+      {
+        "alimento": "cubos-gelo-ervas",
         "recipiente": "forma de gelo"
       },
       {
@@ -4473,6 +4641,10 @@
   },
   "peixes.escamar-rolico": {
     "passos": [
+      {
+        "alimento": "salmao",
+        "corte": "aparar"
+      },
       {
         "alimento": "salmao",
         "corte": "aparar"
@@ -4904,6 +5076,15 @@
         "alimento": "carpa",
         "adicionar": [
           "cebolinha",
+          "chili"
+        ],
+        "meio": "molho de pimenta",
+        "recipiente": "wok"
+      },
+      {
+        "alimento": "carpa",
+        "adicionar": [
+          "cebolinha",
           "chili",
           "coentro"
         ],
@@ -5102,20 +5283,52 @@
   "peixes.recheios": {
     "passos": [
       {
-        "alimento": "cenoura"
+        "alimento": "cenoura",
+        "corte": "tiras"
       },
       {
-        "alimento": "queijo-cabra",
+        "alimento": "cenoura",
         "adicionar": [
-          "cenoura",
-          "cebolinha_francesa"
+          "alho_poro"
+        ],
+        "meio": "água",
+        "recipiente": "panela"
+      },
+      {
+        "alimento": "cenoura",
+        "adicionar": [
+          "alho_poro"
+        ],
+        "meio": "vinagrete",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "queijo-fresco",
+        "adicionar": [
+          "salsa",
+          "endro"
+        ],
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "manga",
+        "corte": "cubos"
+      },
+      {
+        "alimento": "manga",
+        "adicionar": [
+          "pepino",
+          "camarao-descascado"
         ],
         "recipiente": "tigela"
       }
     ],
     "prato": {
-      "principal": "queijo-cabra",
-      "acompanhamentos": [],
+      "principal": "queijo-fresco",
+      "acompanhamentos": [
+        "cenoura",
+        "manga"
+      ],
       "servir": "tigelinha",
       "forma": "pedacos",
       "estado": "cru"
@@ -6467,6 +6680,13 @@
   "peixes.crosta-sal": {
     "passos": [
       {
+        "alimento": "carpa-do-mar"
+      },
+      {
+        "alimento": "carpa-do-mar",
+        "recipiente": "papel-toalha"
+      },
+      {
         "alimento": null,
         "meio": "sal grosso",
         "recipiente": "panela pesada"
@@ -6549,6 +6769,14 @@
   },
   "peixes.fritar-pouco-oleo": {
     "passos": [
+      {
+        "alimento": "file-de-merluza"
+      },
+      {
+        "alimento": "file-de-merluza",
+        "meio": "farinha temperada",
+        "recipiente": "prato"
+      },
       {
         "alimento": null,
         "meio": "manteiga e óleo",
@@ -6727,6 +6955,37 @@
       "servir": "prato",
       "forma": "inteiro",
       "estado": null
+    }
+  },
+  "peixes.massa-empanar-variacoes": {
+    "passos": [
+      {
+        "alimento": null,
+        "meio": "farinha temperada",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de fritura",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": null,
+        "meio": "massa de fritura",
+        "recipiente": "tigela"
+      },
+      {
+        "alimento": "file-de-hadoque",
+        "meio": "massa de fritura",
+        "recipiente": "tigela"
+      }
+    ],
+    "prato": {
+      "principal": "file-de-hadoque",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.goujons": {

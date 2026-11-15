@@ -1214,27 +1214,27 @@
     },
     {
      "acao": "resfriar",
-     "alvo": "ave sobre suporte",
+     "alvo": "ave coberta sobre suporte",
      "utensilio": "prato",
-     "parametro": "geladeira 1 a 5°C, longe de cozidos"
+     "parametro": "geladeira 1 a 5°C, longe de carnes cozidas"
     },
     {
      "acao": "descongelar",
      "alvo": "ave congelada",
      "utensilio": "prato",
-     "parametro": "na embalagem, na geladeira, 3 a 5 h por 450 g"
-    },
-    {
-     "acao": "separar",
-     "alvo": "miúdos",
-     "utensilio": "",
-     "parametro": "retirar assim que possível"
+     "parametro": "na embalagem, na geladeira, 3 a 5 h por 450 g; tirar logo os miúdos; cozinhar em até 12 h e não recongelar"
     },
     {
      "acao": "limpar",
      "alvo": "bancada e utensílios",
      "utensilio": "",
      "parametro": ""
+    },
+    {
+     "acao": "armazenar",
+     "alvo": "ave cozida esfriada depressa e coberta",
+     "utensilio": "geladeira",
+     "parametro": "2 a 3 dias"
     }
    ],
    "ponto_critico": "cozinhar até 12 h após descongelar; ave cozida dura 2 a 3 dias",
@@ -1421,6 +1421,12 @@
      "alvo": "ponta das pernas com ponta do rabo",
      "utensilio": "barbante",
      "parametro": "nó duplo, aparar"
+    },
+    {
+     "acao": "virar",
+     "alvo": "ave com o peito para cima",
+     "utensilio": "",
+     "parametro": "pronta para cozinhar"
     }
    ],
    "ponto_critico": "forma compacta que retém sucos; agulha atravessa a ave toda (cerca de 25 cm para peru pequeno)",
@@ -2242,22 +2248,27 @@
    "capitulo": "Aves domésticas e de caça",
    "nome": "Codornas recheadas Madame Brassart",
    "ingredientes": [
-    "codorna",
+    "codorna (4)",
     "arroz selvagem",
     "caldo de galinha",
     "foie gras",
     "cogumelos cèpes",
-    "cebola",
+    "cebola miúda",
     "ervas",
     "vinho do Porto",
     "quatro especiarias",
-    "gordura de ganso"
+    "gordura de ganso",
+    "sal e pimenta",
+    "molho de vinho do Porto",
+    "salsinha e alecrim",
+    "creme d'ail"
    ],
    "utensilios": [
     "faca pequena",
     "frigideira",
     "assadeira",
-    "agulha de amarrar"
+    "agulha de amarrar",
+    "panela"
    ],
    "passos": [
     {
@@ -2268,7 +2279,7 @@
     },
     {
      "acao": "saltear",
-     "alvo": "cubos de foie gras",
+     "alvo": "cubos de foie gras temperados com sal e pimenta",
      "utensilio": "frigideira",
      "parametro": "selar todos os lados"
     },
@@ -2279,10 +2290,22 @@
      "parametro": "até murchar"
     },
     {
+     "acao": "separar",
+     "alvo": "alguns cogumelos",
+     "utensilio": "",
+     "parametro": "reservar para guarnecer"
+    },
+    {
      "acao": "mexer",
      "alvo": "recheio com vinho e especiarias",
      "utensilio": "tigela",
-     "parametro": "esfriar"
+     "parametro": "provar e esfriar"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "codornas desossadas por dentro",
+     "utensilio": "",
+     "parametro": "sal e pimenta"
     },
     {
      "acao": "rechear",
@@ -2309,8 +2332,26 @@
      "parametro": "200°C, 15 a 20 min, regando"
     },
     {
+     "acao": "aquecer",
+     "alvo": "molho de vinho do Porto",
+     "utensilio": "panela",
+     "parametro": ""
+    },
+    {
+     "acao": "despejar",
+     "alvo": "molho em volta das codornas no prato",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "decorar",
+     "alvo": "salsinha, alecrim e cogumelos reservados",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
      "acao": "servir",
-     "alvo": "com molho do Porto e creme de alho",
+     "alvo": "com creme d'ail e o resto do molho à parte",
      "utensilio": "",
      "parametro": ""
     }
@@ -3635,6 +3676,12 @@
     },
     {
      "acao": "cortar",
+     "alvo": "barbante",
+     "utensilio": "tesoura",
+     "parametro": "retirar antes de cortar o frango"
+    },
+    {
+     "acao": "cortar",
      "alvo": "frango em pedaços",
      "utensilio": "faca",
      "parametro": ""
@@ -3643,7 +3690,7 @@
      "acao": "reduzir",
      "alvo": "caldo para molho",
      "utensilio": "",
-     "parametro": "opcional"
+     "parametro": "opcional, engrossar em molho"
     }
    ],
    "ponto_critico": "20 min por 450 g em fogo baixo; carne macia",
@@ -3756,6 +3803,18 @@
      "parametro": "fogo baixo, 15 min"
     },
     {
+     "acao": "testar",
+     "alvo": "espetinho de metal no centro",
+     "utensilio": "espetinho de metal",
+     "parametro": "deve sair quente"
+    },
+    {
+     "acao": "separar",
+     "alvo": "papel-alumínio e papel-manteiga",
+     "utensilio": "",
+     "parametro": "desembrulhar o rolo"
+    },
+    {
      "acao": "fatiar",
      "alvo": "rodelas diagonais",
      "utensilio": "faca",
@@ -3780,7 +3839,8 @@
    "utensilios": [
     "cesta de vapor",
     "barbante",
-    "pincel"
+    "pincel",
+    "colher"
    ],
    "passos": [
     {
@@ -3802,6 +3862,12 @@
      "parametro": ""
     },
     {
+     "acao": "regar",
+     "alvo": "mais molho de soja",
+     "utensilio": "colher",
+     "parametro": ""
+    },
+    {
      "acao": "enrolar",
      "alvo": "folha em pacote",
      "utensilio": "barbante",
@@ -3812,6 +3878,12 @@
      "alvo": "1 ou 2 pacotes por vez",
      "utensilio": "cesta de vapor",
      "parametro": "15 min sobre água fervente"
+    },
+    {
+     "acao": "servir",
+     "alvo": "pacotes nas folhas",
+     "utensilio": "",
+     "parametro": "desembrulhar à mesa"
     }
    ],
    "ponto_critico": "15 min no vapor",
@@ -3859,6 +3931,56 @@
    "erro_comum": "marinada sem óleo: gruda na grelha"
   },
   {
+   "id": "aves.marinadas-grelhar",
+   "capitulo": "Aves domésticas e de caça",
+   "nome": "Marinadas para grelhar aves",
+   "ingredientes": [
+    "chilis amassados, alecrim fresco, alho e azeite (picante)",
+    "iogurte natural, pasta de curry e coentro fresco (ou curry tailandês verde ou vermelho)",
+    "azeite, alho amassado e ervas frescas (mediterrânea)",
+    "coxas de frango"
+   ],
+   "utensilios": [
+    "faca",
+    "tigela",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "alecrim, coentro ou ervas frescas",
+     "utensilio": "faca",
+     "parametro": "conforme a marinada escolhida"
+    },
+    {
+     "acao": "esmagar",
+     "alvo": "chilis ou alho",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "marinada: chili com alecrim, alho e azeite; iogurte com curry e coentro; ou azeite com alho e ervas",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "pincelar",
+     "alvo": "coxas com a marinada",
+     "utensilio": "pincel",
+     "parametro": "marinada oleosa evita grudar na grelha"
+    },
+    {
+     "acao": "marinar",
+     "alvo": "coxas cobertas",
+     "utensilio": "geladeira",
+     "parametro": "1 h"
+    }
+   ],
+   "ponto_critico": "marinada com gordura (azeite ou iogurte) para a carne não grudar na grelha e ficar úmida",
+   "erro_comum": "grelhar logo depois de pincelar, sem dar tempo para a marinada pegar sabor"
+  },
+  {
    "id": "aves.sate",
    "capitulo": "Aves domésticas e de caça",
    "nome": "Fazer satés de frango",
@@ -3874,6 +3996,9 @@
     "molho de amendoim"
    ],
    "utensilios": [
+    "faca",
+    "ralador",
+    "tigela",
     "espeto de bambu",
     "grelha",
     "pincel"
@@ -3892,16 +4017,34 @@
      "parametro": ""
     },
     {
-     "acao": "marinar",
-     "alvo": "tiras",
+     "acao": "ralar",
+     "alvo": "cebola pequena",
+     "utensilio": "ralador",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "tiras com cebola ralada, alho amassado, soja, óleo, açúcar, coentro e açafrão",
      "utensilio": "tigela",
-     "parametro": "1 h ou de noite na geladeira"
+     "parametro": ""
     },
     {
      "acao": "marinar",
+     "alvo": "tiras cobertas",
+     "utensilio": "geladeira",
+     "parametro": "1 h ou, de preferência, a noite toda"
+    },
+    {
+     "acao": "deixar-de-molho",
      "alvo": "espetos de bambu na água",
-     "utensilio": "",
+     "utensilio": "tigela",
      "parametro": "30 min"
+    },
+    {
+     "acao": "escorrer",
+     "alvo": "espetos",
+     "utensilio": "",
+     "parametro": ""
     },
     {
      "acao": "perfurar",
@@ -3913,13 +4056,13 @@
      "acao": "grelhar",
      "alvo": "satés",
      "utensilio": "grelha",
-     "parametro": "a 6 cm do fogo, só 5 min, virando e pincelando"
+     "parametro": "a 6 cm do fogo, só 5 min, virando e pincelando com a marinada"
     },
     {
      "acao": "servir",
      "alvo": "com molho de amendoim",
      "utensilio": "",
-     "parametro": ""
+     "parametro": "quentes ou em temperatura ambiente"
     }
    ],
    "ponto_critico": "5 min no máximo",
@@ -4135,11 +4278,17 @@
      "acao": "temperar",
      "alvo": "polvilhar farinha e juntar legumes",
      "utensilio": "caçarola",
-     "parametro": ""
+     "parametro": "mexer em fogo moderado alguns minutos"
+    },
+    {
+     "acao": "ferver",
+     "alvo": "frango com a marinada",
+     "utensilio": "caçarola",
+     "parametro": "levar à fervura antes do forno"
     },
     {
      "acao": "cozinhar-lento",
-     "alvo": "com a marinada",
+     "alvo": "caçarola tampada",
      "utensilio": "forno",
      "parametro": "180°C cerca de 1 h"
     },
@@ -5422,7 +5571,8 @@
    "capitulo": "Carnes: bovina e vitela",
    "nome": "Carpaccio",
    "ingredientes": [
-    "filé mignon",
+    "filé mignon em peça inteira (600 g)",
+    "sal e pimenta",
     "azeite extravirgem",
     "limão",
     "manjericão",
@@ -5430,13 +5580,33 @@
     "parmesão"
    ],
    "utensilios": [
+    "faca",
+    "papel-alumínio",
     "faca de fatiar"
    ],
    "passos": [
     {
-     "acao": "fatiar",
-     "alvo": "fatias finíssimas congeladas",
+     "acao": "limpar",
+     "alvo": "excesso de gordura e membrana",
      "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "peça em papel-alumínio",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "congelar",
+     "alvo": "peça",
+     "utensilio": "congelador",
+     "parametro": "1 a 4 h conforme o tamanho"
+    },
+    {
+     "acao": "fatiar",
+     "alvo": "fatias finíssimas em vaivém",
+     "utensilio": "faca de fatiar",
      "parametro": ""
     },
     {
@@ -5627,6 +5797,59 @@
    "erro_comum": "recheio seco demais"
   },
   {
+   "id": "bovina.recheios-escalope",
+   "capitulo": "Carnes: bovina e vitela",
+   "nome": "Recheios para escalope de vitela",
+   "ingredientes": [
+    "escalope de vitela batido",
+    "presunto de Parma e sálvia (saltimbocca)",
+    "ricota, espinafre picado, um pouco de creme de leite e amendoim torrado",
+    "pimentão assado em tiras, migalhas de pão fresco e manjericão",
+    "vitela moída, passas, castanhas portuguesas e ervas frescas",
+    "cream cheese e creme de leite em partes iguais, alcaparras e raspas de limão"
+   ],
+   "utensilios": [
+    "faca",
+    "tigela",
+    "colher",
+    "palito"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "espinafre, manjericão, castanhas ou ervas",
+     "utensilio": "faca",
+     "parametro": "conforme o recheio escolhido"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "recheio úmido: ricota com espinafre e creme; pimentão, migalhas e manjericão; vitela moída com passas e castanhas; ou cream cheese, creme, alcaparras e raspas",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "recheio sobre o escalope batido",
+     "utensilio": "colher",
+     "parametro": "para saltimbocca, presunto de Parma e sálvia"
+    },
+    {
+     "acao": "polvilhar",
+     "alvo": "amendoim torrado",
+     "utensilio": "",
+     "parametro": "só no recheio de ricota"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "escalope em volta do recheio",
+     "utensilio": "palito",
+     "parametro": "prender com palito"
+    }
+   ],
+   "ponto_critico": "recheio úmido que contraste em sabor e textura com a carne magra da vitela",
+   "erro_comum": "recheio seco demais, que deixa o rolinho áspero depois de frito"
+  },
+  {
    "id": "bovina.assar-costela",
    "capitulo": "Carnes: bovina e vitela",
    "nome": "Assar costela bovina",
@@ -5694,6 +5917,12 @@
      "alvo": "peça",
      "utensilio": "colher de metal",
      "parametro": ""
+    },
+    {
+     "acao": "testar",
+     "alvo": "leitura do termômetro",
+     "utensilio": "termômetro de carne",
+     "parametro": "60 °C malpassada, 70 °C no ponto, 75 °C bem-passada"
     }
    ],
    "ponto_critico": "60°C malpassada, 70°C ao ponto, 75°C bem-passada",
@@ -5718,9 +5947,9 @@
     },
     {
      "acao": "inspecionar",
-     "alvo": "temperatura do espeto",
-     "utensilio": "",
-     "parametro": "encostar no pulso ou lábio"
+     "alvo": "temperatura do espeto ao sair",
+     "utensilio": "espetinho de metal",
+     "parametro": "frio: malpassada; quente: no ponto"
     }
    ],
    "ponto_critico": "frio = malpassado; quente = no ponto",
@@ -5850,10 +6079,15 @@
    "nome": "Rechear filé fatiado (truque do chef)",
    "ingredientes": [
     "filé tostado",
-    "duxelles"
+    "duxelles",
+    "crêpes finas de ervas",
+    "massa folhada",
+    "gema e água"
    ],
    "utensilios": [
-    "faca de cozinha"
+    "faca de cozinha",
+    "assadeira",
+    "pincel"
    ],
    "passos": [
     {
@@ -5882,9 +6116,21 @@
     },
     {
      "acao": "enrolar",
-     "alvo": "crêpes de ervas e massa",
+     "alvo": "filé em crêpes finas de ervas",
      "utensilio": "",
      "parametro": ""
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "massa folhada em volta",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "assar",
+     "alvo": "filé na massa",
+     "utensilio": "forno",
+     "parametro": "200 °C por 10 min, depois 180 °C por 20 min"
     }
    ],
    "ponto_critico": "fatias presas na base",
@@ -6144,7 +6390,8 @@
    ],
    "utensilios": [
     "grelha",
-    "pincel"
+    "pincel",
+    "faca"
    ],
    "passos": [
     {
@@ -6152,6 +6399,18 @@
      "alvo": "grelha",
      "utensilio": "",
      "parametro": "fogo alto"
+    },
+    {
+     "acao": "limpar",
+     "alvo": "excesso de gordura do bife",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "piques na gordura até a carne",
+     "utensilio": "faca",
+     "parametro": "espaços regulares"
     },
     {
      "acao": "pincelar",
@@ -7430,6 +7689,43 @@
    "erro_comum": "grelha não preaquecida"
   },
   {
+   "id": "cordeiro.marinadas",
+   "capitulo": "Carnes: cordeiro",
+   "nome": "Marinadas para cordeiro",
+   "ingredientes": [
+    "costeletas, postas ou cubos de cordeiro",
+    "ácida: óleo, vinagre de vinho, tomilho, orégano, estragão e mostarda Dijon",
+    "indiana: iogurte, alho, cúrcuma, sementes de cominho, cravo moído, cardamomo e canela",
+    "iogurte com páprica, um pouco de pimenta caiena e suco de limão verde"
+   ],
+   "utensilios": [
+    "faca",
+    "tigela"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "tomilho, orégano e estragão",
+     "utensilio": "faca",
+     "parametro": "para a marinada ácida"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "marinada: ácida com óleo, vinagre, ervas e Dijon; indiana com iogurte e especiarias; ou iogurte com páprica, caiena e limão",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "marinar",
+     "alvo": "carne de cordeiro coberta",
+     "utensilio": "geladeira",
+     "parametro": "mínimo 1 h, ideal a noite toda"
+    }
+   ],
+   "ponto_critico": "uma hora já dá sabor, mas a noite toda deixa a carne mais úmida e saborosa",
+   "erro_comum": "marinar poucos minutos e esperar que a carne fique úmida na grelha"
+  },
+  {
    "id": "cordeiro.espetinhos",
    "capitulo": "Carnes: cordeiro",
    "nome": "Espetinhos de cordeiro",
@@ -7990,9 +8286,16 @@
     "pimentão vermelho"
    ],
    "utensilios": [
-    "faca"
+    "faca",
+    "panela"
    ],
    "passos": [
+    {
+     "acao": "ferver",
+     "alvo": "vagens ou pontas de aspargo",
+     "utensilio": "panela",
+     "parametro": "até ficarem cozidas"
+    },
     {
      "acao": "cortar",
      "alvo": "tirinhas de pimentão",
@@ -8606,6 +8909,50 @@
    "erro_comum": "perfurar a peça"
   },
   {
+   "id": "porco.recheios-lombo",
+   "capitulo": "Carnes: porco",
+   "nome": "Recheios para lombo desossado",
+   "ingredientes": [
+    "lombo de porco desossado e aberto",
+    "sálvia fresca e damasco seco de molho no vinho branco",
+    "maçã e cebola em cubos com migalhas de pão fresco molhadas no vinagre de cidra",
+    "fatias de bacon, uvas-passas e arroz cozido temperado com pimenta-do-reino e salsinha picada"
+   ],
+   "utensilios": [
+    "tigela",
+    "faca",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "deixar-de-molho",
+     "alvo": "damascos secos no vinho branco ou migalhas no vinagre de cidra",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "maçã e cebola em cubos",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "recheio: sálvia com damasco; maçã, cebola e migalhas; ou bacon, passas, arroz, pimenta e salsinha",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "cortes longitudinais do lombo aberto",
+     "utensilio": "colher",
+     "parametro": "depois enrolar e amarrar"
+    }
+   ],
+   "ponto_critico": "recheio úmido distribuído nos cortes sem furar a carne",
+   "erro_comum": "pôr recheio demais, que escapa ao enrolar o lombo"
+  },
+  {
    "id": "porco.tunel-lombo",
    "capitulo": "Carnes: porco",
    "nome": "Cavar túnel no lombo para rechear (truque do chef)",
@@ -8662,6 +9009,52 @@
    ],
    "ponto_critico": "bolso único sem furar",
    "erro_comum": "furar a costeleta"
+  },
+  {
+   "id": "porco.recheios-costeletas",
+   "capitulo": "Carnes: porco",
+   "nome": "Recheios para costeletas",
+   "ingredientes": [
+    "costeletas de lombo com bolso",
+    "espinafre picado com noz-moscada moída na hora ou presunto de Parma picado",
+    "rúcula rasgada e tomates secos cortados",
+    "ameixas secas sem caroço, castanhas portuguesas e raspas de laranja",
+    "chutney de fruta",
+    "pimentões tostados e picados com alho amassado"
+   ],
+   "utensilios": [
+    "faca",
+    "tigela",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "espinafre, presunto, castanhas ou pimentões tostados",
+     "utensilio": "faca",
+     "parametro": "conforme o recheio escolhido"
+    },
+    {
+     "acao": "temperar",
+     "alvo": "espinafre",
+     "utensilio": "",
+     "parametro": "noz-moscada moída na hora"
+    },
+    {
+     "acao": "misturar",
+     "alvo": "recheio: espinafre; rúcula e tomate seco; ameixa, castanha e raspas de laranja; chutney; ou pimentão e alho",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "rechear",
+     "alvo": "bolso da costeleta",
+     "utensilio": "colher",
+     "parametro": "apertar juntando as beiradas"
+    }
+   ],
+   "ponto_critico": "bolso bem cheio e fechado para a carne ficar úmida no cozimento",
+   "erro_comum": "deixar as beiradas abertas e o recheio sair na frigideira"
   },
   {
    "id": "porco.file-limpar",
@@ -8812,7 +9205,8 @@
    ],
    "utensilios": [
     "faca de desossar",
-    "assadeira com grelha"
+    "assadeira com grelha",
+    "termômetro de carne"
    ],
    "passos": [
     {
@@ -8840,6 +9234,12 @@
      "parametro": "opcional"
     },
     {
+     "acao": "perfurar",
+     "alvo": "parte mais grossa",
+     "utensilio": "termômetro de carne",
+     "parametro": "sem tocar o osso"
+    },
+    {
      "acao": "assar",
      "alvo": "peça sobre grelha",
      "utensilio": "assadeira com grelha",
@@ -8850,6 +9250,12 @@
      "alvo": "só se estiver sem pele, a cada 30 min",
      "utensilio": "colher",
      "parametro": ""
+    },
+    {
+     "acao": "testar",
+     "alvo": "temperatura interna",
+     "utensilio": "termômetro de carne",
+     "parametro": "80 °C, sucos claros sem nada rosado"
     }
    ],
    "ponto_critico": "80°C interno; pele com torresmo não deve ser regada",
@@ -9052,6 +9458,44 @@
    "erro_comum": "empilhar costelas que não douram"
   },
   {
+   "id": "porco.cobertura-brilho",
+   "capitulo": "Carnes: porco",
+   "nome": "Cobertura para dar brilho às costelas",
+   "ingredientes": [
+    "costelinhas de porco",
+    "mel claro, suco de abacaxi, óleo e um pouco de vinagre de vinho (molho de pimenta opcional)",
+    "molho de soja, óleo, saquê e pó de cinco especiarias",
+    "mostarda em grão com mel, afinada com óleo"
+   ],
+   "utensilios": [
+    "tigela",
+    "assadeira",
+    "pincel"
+   ],
+   "passos": [
+    {
+     "acao": "misturar",
+     "alvo": "cobertura: mel, abacaxi, óleo e vinagre; soja, óleo, saquê e cinco especiarias; ou mostarda em grão, mel e óleo",
+     "utensilio": "tigela",
+     "parametro": ""
+    },
+    {
+     "acao": "glaçar",
+     "alvo": "costelas em uma camada",
+     "utensilio": "pincel",
+     "parametro": ""
+    },
+    {
+     "acao": "marinar",
+     "alvo": "costelas pinceladas",
+     "utensilio": "",
+     "parametro": "mínimo 1 h"
+    }
+   ],
+   "ponto_critico": "cobertura espalhada por igual para dar sabor e brilho ao assado",
+   "erro_comum": "assar sem deixar a cobertura agir pelo menos uma hora"
+  },
+  {
    "id": "porco.assar-costeletas",
    "capitulo": "Carnes: porco",
    "nome": "Assar costeletas carnudas",
@@ -9208,10 +9652,23 @@
     "óleo vegetal"
    ],
    "utensilios": [
+    "faca",
     "wok",
     "pauzinhos"
    ],
    "passos": [
+    {
+     "acao": "fatiar",
+     "alvo": "filé em fatias diagonais",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "cortar",
+     "alvo": "fatias em tiras",
+     "utensilio": "faca",
+     "parametro": ""
+    },
     {
      "acao": "marinar",
      "alvo": "tiras",
@@ -9543,6 +10000,65 @@
    "erro_comum": "sovar a carne e ficar borrachuda"
   },
   {
+   "id": "moida.acompanhamentos-hamburguer",
+   "capitulo": "Carnes: carne moída",
+   "nome": "Acompanhamentos para hambúrguer",
+   "ingredientes": [
+    "hambúrgueres fritos",
+    "mussarela em fatia ou blue cheese esfarelado",
+    "pimentão picado e tostado misturado à salsa picante",
+    "cebola roxa em rodelas",
+    "cogumelos fatiados",
+    "molho inglês",
+    "mostarda em grão"
+   ],
+   "utensilios": [
+    "frigideira",
+    "dourador",
+    "colher"
+   ],
+   "passos": [
+    {
+     "acao": "fritar",
+     "alvo": "rodelas de cebola roxa",
+     "utensilio": "frigideira",
+     "parametro": "até dourar"
+    },
+    {
+     "acao": "saltear",
+     "alvo": "cogumelos fatiados com a cebola",
+     "utensilio": "frigideira",
+     "parametro": ""
+    },
+    {
+     "acao": "temperar",
+     "alvo": "cebola e cogumelos",
+     "utensilio": "",
+     "parametro": "molho inglês e mostarda em grão"
+    },
+    {
+     "acao": "montar",
+     "alvo": "fatia de mussarela ou blue cheese sobre o hambúrguer frito",
+     "utensilio": "",
+     "parametro": ""
+    },
+    {
+     "acao": "gratinar",
+     "alvo": "hambúrguer com queijo",
+     "utensilio": "dourador",
+     "parametro": "até derreter"
+    },
+    {
+     "acao": "espalhar",
+     "alvo": "cebola com cogumelos ou pimentão tostado na salsa",
+     "utensilio": "colher",
+     "parametro": "sobre o hambúrguer"
+    }
+   ],
+   "ponto_critico": "queijo derretido no dourador antes de pôr a cobertura por cima",
+   "erro_comum": "pôr a cebola crua e sem tempero, sem dourar"
+  },
+  {
    "id": "moida.brochettes",
    "capitulo": "Carnes: carne moída",
    "nome": "Espetinhos de carne moída (brochettes)",
@@ -9848,6 +10364,45 @@
    "erro_comum": "encher demais e estourar"
   },
   {
+   "id": "linguica.recheios",
+   "capitulo": "Carnes: linguiça, toucinho e presunto",
+   "nome": "Recheios para linguiça",
+   "ingredientes": [
+    "carne moída",
+    "tripa (natural ou pronta)",
+    "italiana: tomate seco, alho e manjericão",
+    "indiana: curry em pó, coentro fresco e chutney de manga",
+    "tradicionais: hortelã e cebola com cordeiro, sálvia e maçã com porco, raiz-forte ou mostarda com carne bovina"
+   ],
+   "utensilios": [
+    "faca",
+    "tigela",
+    "saco de confeitar"
+   ],
+   "passos": [
+    {
+     "acao": "picar",
+     "alvo": "tomate seco, alho e manjericão, ou ervas do recheio escolhido",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "misturar",
+     "alvo": "carne moída com os temperos: italiana, indiana ou tradicional",
+     "utensilio": "tigela",
+     "parametro": "o chutney dá umidade e liga"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "tripa com o recheio pelo saco de confeitar",
+     "utensilio": "saco de confeitar",
+     "parametro": "como na linguiça caseira"
+    }
+   ],
+   "ponto_critico": "tempero combinado com a carne: hortelã com cordeiro, sálvia e maçã com porco, raiz-forte com boi",
+   "erro_comum": "recheio seco e sem liga, que esfarela ao cortar"
+  },
+  {
    "id": "miudos.figado",
    "capitulo": "Carnes: miúdos",
    "nome": "Preparar fígado em bifes",
@@ -10128,6 +10683,60 @@
    ],
    "ponto_critico": "cozimento longo e úmido",
    "erro_comum": "assar seco"
+  },
+  {
+   "id": "miudos.recheios-coracao",
+   "capitulo": "Carnes: miúdos",
+   "nome": "Recheios para o coração",
+   "ingredientes": [
+    "coração preparado",
+    "sal e pimenta-do-reino",
+    "cogumelos, cebola e toucinho picados com ervas frescas; fatias de bacon",
+    "arroz cozido à oriental com frutas secas e condimentos",
+    "azeitonas, tomates, manjericão, um pouco de vinho e alho",
+    "pão de molho no leite amassado com cebola e sálvia",
+    "porco moído ou carne de linguiça com gengibre, erva-cidreira, limão verde e chili"
+   ],
+   "utensilios": [
+    "faca",
+    "frigideira",
+    "colher",
+    "palito"
+   ],
+   "passos": [
+    {
+     "acao": "temperar",
+     "alvo": "coração por dentro e por fora",
+     "utensilio": "",
+     "parametro": "sal e pimenta-do-reino"
+    },
+    {
+     "acao": "picar",
+     "alvo": "cogumelos, cebola e toucinho",
+     "utensilio": "faca",
+     "parametro": ""
+    },
+    {
+     "acao": "fritar",
+     "alvo": "cogumelos, cebola e toucinho",
+     "utensilio": "frigideira",
+     "parametro": "dourar e juntar ervas frescas"
+    },
+    {
+     "acao": "rechear",
+     "alvo": "cavidade do coração",
+     "utensilio": "colher",
+     "parametro": "apertar bem"
+    },
+    {
+     "acao": "enrolar",
+     "alvo": "coração em fatias de bacon",
+     "utensilio": "palito",
+     "parametro": "prender com palitos ou espetinhos"
+    }
+   ],
+   "ponto_critico": "recheio úmido e bem temperado, porque o coração passa por cozimento longo",
+   "erro_comum": "recheio seco, que resseca durante o refogado"
   },
   {
    "id": "miudos.lingua",
