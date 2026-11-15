@@ -33,4 +33,12 @@ Campos de cada passo (todos opcionais):
 
 Campos da técnica:
 
-- `prato.principal`: id do que vai ao prato no fim. `prato.acompanhamentos`: até 3 ids. `prato.servir`: `"prato"`, `"tigela"`, `"travessa"`, `"taca"` ou `"tabua"`.
+- `prato.principal`: id do que vai ao prato no fim. Omitido quando o resultado é só líquido, molho ou pasta.
+- `prato.acompanhamentos`: até 3 ids, só o que o livro serve junto. Nada de guarnição que o livro não pede.
+- `prato.servir`: a louça. `"prato"`, `"travessa"` (peça grande inteira), `"tigela"` (sopa e caldo encorpado), `"taca"`, `"tabua"` (técnica que não é prato: avaliar, escolher, guardar, conservar, e pães e queijos), `"tigelinha"` (pasta, molho frio, tempero, creme), `"ramequim"` (creme assado, suflê, manteiga), `"xicara"` (caldo claro e consomê), `"molheira"` (molho quente), `"pote"` (conserva, marinada, guardar em vidro), `"cumbuca"` (gratinado individual, sopa de cebola) ou `"copo"` (massa líquida, bebida, infusão).
+- `prato.forma`: como o principal aparece. `"inteiro"`, `"fatias"` (em leque), `"medalhoes"`, `"tiras"`, `"cubos"`, `"pedacos"`, `"ralado"`, `"lascas"` ou `"desfiado"`.
+- `prato.estado`: o ponto do principal. `"cru"`, `"cozido"` (pochê, cozido, vapor), `"dourado"` (frito, grelhado, assado, salteado) ou `"tostado"`.
+- `prato.quantidade`: quantas unidades do principal vão à louça (de 2 a 12), quando o livro faz várias (crêpes, bolinhos, quenelles).
+- `prato.liquido`: cor `"#rrggbb"` do líquido, molho ou pasta que enche a louça.
+- `prato.claro`: `true` para líquido translúcido (caldo claro, consomê, calda).
+- `prato.granulado`: `true` para pasta com grão aparente (pesto no pilão, tapenade).

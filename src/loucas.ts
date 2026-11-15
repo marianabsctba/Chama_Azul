@@ -120,7 +120,7 @@ export function superficie(raio: number, cor: string | THREE.Color, claro: boole
     geo.computeVertexNormals();
   }
   const m = new THREE.Mesh(geo, claro
-    ? new THREE.MeshStandardMaterial({ color: new THREE.Color(cor).multiplyScalar(0.85), roughness: 0.02, metalness: 0.1, transparent: true, opacity: 0.93, emissive: new THREE.Color(cor).multiplyScalar(0.12) })
+    ? new THREE.MeshStandardMaterial({ color: new THREE.Color(cor).multiplyScalar(0.72), roughness: 0.04, metalness: 0.25, emissive: new THREE.Color(cor).multiplyScalar(0.08) })
     : new THREE.MeshStandardMaterial({ color: cor, roughness: textura === 'granulado' ? 0.8 : 0.35 }));
   m.rotation.x = -Math.PI / 2;
   return m;

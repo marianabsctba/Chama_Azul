@@ -3,6 +3,7 @@
 // a e l são altura e largura relativas a t). Cores em hexadecimal na ordem
 // "casca segunda interna cozida [terceira]"; '-' deixa a cor sem uso.
 import type { Familia, Visual } from './pecas';
+import { NOVOS } from './novos';
 
 type Extra = Partial<Pick<Visual, 'a' | 'l' | 'n' | 'd' | 'ac'>>;
 
@@ -342,6 +343,11 @@ export const VISUAIS: Record<string, Visual> = {
   farinha: d('monte', 'po', 0.15, 'f6f4ee ecebe4 f6f4ee e8d0a0', { a: 0.35 }),
   semolina: d('monte', 'po', 0.12, 'f0dc90 e0c878 f0dc90 d8b860', { a: 0.35, d: 'farelo' }),
   ovo: d('esferoide', 'ovo', 0.058, 'd2a47a b8845a f6c030 f0e0c8', { l: 0.76 }),
+  'ovo-frito': d('esferoide', 'ovo-frito', 0.11, 'f8f6ee c8873a f4f0e4 c89048 f6b020'),
+  'ovo-poche': d('esferoide', 'ovo-poche', 0.07, 'f7f3ea e8dcc0 f4eedd eadcc0 f2b830'),
+  'ovos-mexidos': d('esferoide', 'ovos-mexidos', 0.12, 'f2c640 d8a530 f2c640 d8a840'),
+  'ovo-cozido-metade': d('esferoide', 'ovo-metade', 0.058, 'f8f6f0 e8e4d8 f2b62a f0e0c8 f2b62a'),
+  'ovo-quente': d('esferoide', 'ovo-quente', 0.058, 'd2a47a f6f2e6 f6c030 f0e0c8 f6a820'),
   massa_fresca: d('placa', 'folha', 0.3, 'eed088 e0c070 eed088 e0c070', { a: 0.004, l: 0.6, d: 'sal' }),
   tagliatelle: d('massa', 'ninho', 0.09, 'f0d880 e0c060 f0d880 e8c870', { a: 0.5, l: 0.11, n: 8, d: 'fita' }),
   lasanha: d('placa', 'ondulada', 0.2, 'f2e0a0 e8d080 f2e0a0 e0c070', { a: 0.005, l: 0.45, n: 3 }),
@@ -612,3 +618,6 @@ export const VISUAIS: Record<string, Visual> = {
   'foie-gras': d('miudo', 'foie', 0.18, 'e2b892 c47a66 ecd2b6 c8905a e8cc8a', { a: 0.3, l: 0.6 }),
   'pudim-yorkshire': d('choux', 'yorkshire', 0.08, 'c8862c 8a4e16 f0d890 a86420 e8c070', { a: 0.8 }),
 };
+
+// alimentos novos, cada um com o próprio gerador
+for (const [id, n] of Object.entries(NOVOS)) VISUAIS[id] = n.visual;

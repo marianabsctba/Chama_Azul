@@ -18,7 +18,9 @@
     "prato": {
       "principal": "carcaca-de-ave",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "caldos.caldo-de-galinha": {
@@ -61,7 +63,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#e8c878",
+      "claro": true
     }
   },
   "caldos.desengordurar-a-frio": {
@@ -80,7 +84,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#e8c878",
+      "claro": true
     }
   },
   "caldos.coar-caldo-pressionando": {
@@ -99,7 +105,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#e8c878",
+      "claro": true
     }
   },
   "caldos.caldo-de-carne": {
@@ -149,7 +157,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#7a4a1e",
+      "claro": true
     }
   },
   "caldos.caldo-de-peixe": {
@@ -195,7 +205,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#efe2a6",
+      "claro": true
     }
   },
   "caldos.desengordurar-papel-toalha": {
@@ -214,7 +226,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#e8c878",
+      "claro": true
     }
   },
   "caldos.cubos-de-caldo": {
@@ -253,7 +267,10 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tabua",
+      "forma": "cubos",
+      "estado": "cru",
+      "liquido": "#b07a3a"
     }
   },
   "caldos.caldo-de-legumes": {
@@ -290,7 +307,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#ecdc9a",
+      "claro": true
     }
   },
   "caldos.dashi": {
@@ -370,7 +389,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#a8702e",
+      "claro": true
     }
   },
   "caldos.clarificar-consome": {
@@ -425,7 +446,9 @@
         "cerefolio",
         "trufa_preta"
       ],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#b87a34",
+      "claro": true
     }
   },
   "caldos.preparar-aspic": {
@@ -454,7 +477,10 @@
     "prato": {
       "principal": "aspic",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tigelinha",
+      "estado": "cru",
+      "liquido": "#c89a4a",
+      "claro": true
     }
   },
   "sopas.pasta-in-brodo": {
@@ -478,7 +504,12 @@
     "prato": {
       "principal": "tortellini",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "inteiro",
+      "estado": "cozido",
+      "quantidade": 6,
+      "liquido": "#e8c878",
+      "claro": true
     }
   },
   "sopas.stracciatella": {
@@ -502,7 +533,8 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#e6cf86"
     }
   },
   "sopas.sopa-de-cebola-francesa": {
@@ -534,7 +566,10 @@
     "prato": {
       "principal": "cebola",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "cumbuca",
+      "forma": "tiras",
+      "estado": "dourado",
+      "liquido": "#8a5a2a"
     }
   },
   "sopas.gratinar-sopa-em-cumbuca": {
@@ -564,7 +599,10 @@
     "prato": {
       "principal": "gruyere",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "cumbuca",
+      "forma": "ralado",
+      "estado": "dourado",
+      "liquido": "#8a5a2a"
     }
   },
   "sopas.sopa-chinesa": {
@@ -600,7 +638,10 @@
       "acompanhamentos": [
         "shiitake"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "tiras",
+      "estado": "cozido",
+      "liquido": "#e6d08a"
     }
   },
   "sopas.sopa-japonesa-flores-de-cenoura": {
@@ -632,7 +673,11 @@
       "acompanhamentos": [
         "coentro"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "fatias",
+      "estado": "cozido",
+      "liquido": "#e2c27a",
+      "claro": true
     }
   },
   "sopas.sopa-japonesa-camarao": {
@@ -667,7 +712,12 @@
       "acompanhamentos": [
         "coentro"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "inteiro",
+      "estado": "cozido",
+      "quantidade": 4,
+      "liquido": "#e2c27a",
+      "claro": true
     }
   },
   "sopas.bouillabaisse-crioula": {
@@ -744,9 +794,13 @@
       "principal": "vermelho",
       "acompanhamentos": [
         "camarao",
-        "ostra"
+        "ostra",
+        "tomilho"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "pedacos",
+      "estado": "cozido",
+      "liquido": "#c0602a"
     }
   },
   "sopas.molho-rouille": {
@@ -771,9 +825,9 @@
       }
     ],
     "prato": {
-      "principal": "pimentao",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#c4502e"
     }
   },
   "sopas.sopa-de-frutas": {
@@ -797,12 +851,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "morango",
-        "hortela"
-      ],
-      "servir": "tigela"
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "liquido": "#c8404e"
     }
   },
   "sopas.sopa-cremosa-de-legumes": {
@@ -832,9 +883,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#e08a3a"
     }
   },
   "sopas.pure-no-processador": {
@@ -855,9 +906,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#dca552"
     }
   },
   "sopas.pure-com-mixer": {
@@ -869,9 +920,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#dca552"
     }
   },
   "sopas.pure-no-passe-vite": {
@@ -891,9 +942,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#dca552"
     }
   },
   "sopas.pure-na-peneira": {
@@ -908,9 +959,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#c8452e"
     }
   },
   "sopas.bisque-de-caranguejo": {
@@ -966,11 +1017,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "caranguejo"
-      ],
-      "servir": "tigela"
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "liquido": "#d0703e"
     }
   },
   "sopas.enriquecer-com-creme": {
@@ -982,9 +1031,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#e8d6a8"
     }
   },
   "sopas.enriquecer-com-iogurte": {
@@ -996,9 +1045,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#e6d8b0"
     }
   },
   "sopas.liaison-gema-creme": {
@@ -1020,9 +1069,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#ecd28c"
     }
   },
   "decoracao.guarnicao-simples": {
@@ -1042,11 +1091,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "espinafre"
-      ],
-      "servir": "tigela"
+      "principal": "espinafre",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "tiras",
+      "estado": "cru",
+      "liquido": "#dca552"
     }
   },
   "decoracao.anel-de-ervas": {
@@ -1061,11 +1111,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "endro"
-      ],
-      "servir": "tigela"
+      "principal": "endro",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "inteiro",
+      "estado": "cru",
+      "liquido": "#e2c070"
     }
   },
   "decoracao.tomate-e-ervas": {
@@ -1088,12 +1139,14 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "tomate",
       "acompanhamentos": [
-        "tomate",
         "manjericao"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "cubos",
+      "estado": "cru",
+      "liquido": "#e4cf9a"
     }
   },
   "decoracao.trelica-de-cebolinha": {
@@ -1111,11 +1164,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "cebolinha"
-      ],
-      "servir": "tigela"
+      "principal": "cebolinha",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "tiras",
+      "estado": "cru",
+      "liquido": "#dca552"
     }
   },
   "decoracao.amendoas-tostadas": {
@@ -1134,11 +1188,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "amendoa"
-      ],
-      "servir": "tigela"
+      "principal": "amendoa",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "lascas",
+      "estado": "tostado",
+      "liquido": "#e8d3a0"
     }
   },
   "decoracao.petalas-de-azeitona": {
@@ -1157,12 +1212,14 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "azeitona",
       "acompanhamentos": [
-        "azeitona",
         "salsa"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "fatias",
+      "estado": "cru",
+      "liquido": "#dca552"
     }
   },
   "decoracao.julienne-decorativa": {
@@ -1181,12 +1238,14 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "cenoura",
       "acompanhamentos": [
-        "cenoura",
         "aipo"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "tiras",
+      "estado": "cru",
+      "liquido": "#dca552"
     }
   },
   "decoracao.fitas-enroladas": {
@@ -1206,12 +1265,14 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "cenoura",
       "acompanhamentos": [
-        "cenoura",
         "abobrinha"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "tiras",
+      "estado": "cru",
+      "liquido": "#dca552"
     }
   },
   "decoracao.miscelanea-de-legumes": {
@@ -1231,13 +1292,16 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "cenoura",
       "acompanhamentos": [
-        "cenoura",
         "abobrinha",
         "aipo"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "cubos",
+      "estado": "cru",
+      "liquido": "#e8c878",
+      "claro": true
     }
   },
   "decoracao.quenelles-de-queijo-e-caviar": {
@@ -1257,7 +1321,10 @@
       "acompanhamentos": [
         "ova-bacalhau"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 3
     }
   },
   "decoracao.figuras-de-pimentao": {
@@ -1280,11 +1347,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "pimentao"
-      ],
-      "servir": "tigela"
+      "principal": "pimentao",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "pedacos",
+      "estado": "cozido",
+      "liquido": "#dca552"
     }
   },
   "decoracao.figuras-de-aspic": {
@@ -1306,9 +1374,13 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "aspic",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "forma": "pedacos",
+      "estado": "cru",
+      "liquido": "#b87a34",
+      "claro": true
     }
   },
   "decoracao.flores-de-cenoura": {
@@ -1324,7 +1396,9 @@
     "prato": {
       "principal": "cenoura",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "decoracao.minicogumelos": {
@@ -1347,11 +1421,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "cogumelo_paris"
-      ],
-      "servir": "tigela"
+      "principal": "cogumelo_paris",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "fatias",
+      "estado": "dourado",
+      "liquido": "#a88a64"
     }
   },
   "decoracao.croutons": {
@@ -1374,11 +1449,12 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
-      "acompanhamentos": [
-        "pao-de-forma"
-      ],
-      "servir": "tigela"
+      "principal": "pao-de-forma",
+      "acompanhamentos": [],
+      "servir": "tigela",
+      "forma": "cubos",
+      "estado": "dourado",
+      "liquido": "#dca552"
     }
   },
   "decoracao.creme-de-leite-em-sopa": {
@@ -1395,9 +1471,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#c84a32"
     }
   },
   "decoracao.borda-romantica": {
@@ -1414,9 +1490,9 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "liquido": "#d07a30"
     }
   },
   "decoracao.roda-da-catarina": {
@@ -1441,9 +1517,11 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
+      "principal": "pesto",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "estado": "cru",
+      "liquido": "#e0c890"
     }
   },
   "sopas.roux-escuro": {
@@ -1460,9 +1538,9 @@
       }
     ],
     "prato": {
-      "principal": "farinha",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#8b5a2b"
     }
   },
   "sopas.gumbo": {
@@ -1496,7 +1574,10 @@
     "prato": {
       "principal": "quiabo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "pedacos",
+      "estado": "cozido",
+      "liquido": "#7a4a22"
     }
   },
   "sopas.chowder-manhattan": {
@@ -1532,7 +1613,10 @@
       "acompanhamentos": [
         "ameijoa"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "cubos",
+      "estado": "cozido",
+      "liquido": "#c0502e"
     }
   },
   "sopas.chowder-new-england": {
@@ -1569,7 +1653,10 @@
       "acompanhamentos": [
         "ameijoa"
       ],
-      "servir": "tigela"
+      "servir": "tigela",
+      "forma": "cubos",
+      "estado": "cozido",
+      "liquido": "#efe6d0"
     }
   },
   "ovos.teste-de-frescor": {
@@ -1594,7 +1681,9 @@
     "prato": {
       "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ovos.separar-com-as-maos": {
@@ -1609,9 +1698,9 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f2b631"
     }
   },
   "ovos.separar-com-a-casca": {
@@ -1626,9 +1715,9 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f2b631"
     }
   },
   "ovos.separar-com-separador": {
@@ -1643,9 +1732,9 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f2b631"
     }
   },
   "ovos.desfazer-albumina-peneira": {
@@ -1657,9 +1746,10 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f4f1e2",
+      "claro": true
     }
   },
   "ovos.desfazer-albumina-hashi": {
@@ -1671,9 +1761,10 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f4f1e2",
+      "claro": true
     }
   },
   "ovos.guardar-ovos": {
@@ -1690,7 +1781,10 @@
     "prato": {
       "principal": "ovo",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "ovos.claras-em-neve-a-mao": {
@@ -1713,7 +1807,9 @@
     "prato": {
       "principal": "merengue-frances",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "estado": "cru",
+      "liquido": "#f8f6ee"
     }
   },
   "ovos.claras-em-neve-batedeira": {
@@ -1737,7 +1833,9 @@
     "prato": {
       "principal": "merengue-frances",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "estado": "cru",
+      "liquido": "#f8f6ee"
     }
   },
   "ovos.pincelar-gema-e-agua": {
@@ -1756,7 +1854,9 @@
     "prato": {
       "principal": "pao-redondo",
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "ovos.ovo-quente": {
@@ -1780,7 +1880,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-quente",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -1802,9 +1902,10 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-cozido-metade",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 2
     }
   },
   "ovos.ovos-quentes-com-caviar": {
@@ -1820,11 +1921,12 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-quente",
       "acompanhamentos": [
         "ova-bacalhau"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 2
     }
   },
   "ovos.ovo-poche": {
@@ -1849,11 +1951,10 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
-      "acompanhamentos": [
-        "estragao"
-      ],
-      "servir": "prato"
+      "principal": "ovo-poche",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "quantidade": 2
     }
   },
   "ovos.oeufs-en-cocotte": {
@@ -1879,9 +1980,10 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-poche",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "ramequim",
+      "liquido": "#f0e4c4"
     }
   },
   "ovos.huevos-rancheros": {
@@ -1913,7 +2015,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-frito",
       "acompanhamentos": [
         "pimentao",
         "cebola",
@@ -1951,7 +2053,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovos-mexidos",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -1980,7 +2082,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-frito",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2004,7 +2106,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-frito",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2033,7 +2135,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-frito",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2071,7 +2173,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-poche",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -2114,7 +2216,7 @@
       }
     ],
     "prato": {
-      "principal": "ovo",
+      "principal": "ovo-frito",
       "acompanhamentos": [
         "tomate"
       ],
@@ -2163,7 +2265,8 @@
     "prato": {
       "principal": "omelete",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro"
     }
   },
   "ovos.omelete-japonesa": {
@@ -2209,7 +2312,8 @@
     "prato": {
       "principal": "omelete",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias"
     }
   },
   "ovos.tiras-de-omelete": {
@@ -2243,7 +2347,8 @@
     "prato": {
       "principal": "omelete",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras"
     }
   },
   "ovos.omelete-sufle": {
@@ -2280,7 +2385,8 @@
     "prato": {
       "principal": "omelete",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro"
     }
   },
   "ovos.eggah": {
@@ -2312,7 +2418,9 @@
     "prato": {
       "principal": "frittata",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "dourado"
     }
   },
   "ovos.frittata": {
@@ -2349,7 +2457,9 @@
     "prato": {
       "principal": "frittata",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "ovos.tortilla-espanhola": {
@@ -2385,7 +2495,9 @@
     "prato": {
       "principal": "frittata",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "ovos.sabayon-salgado": {
@@ -2418,9 +2530,9 @@
       }
     ],
     "prato": {
-      "principal": "zabaione",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f0d68a"
     }
   },
   "ovos.incorporar-claras": {
@@ -2432,9 +2544,9 @@
       }
     ],
     "prato": {
-      "principal": "merengue-frances",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f3e6b8"
     }
   },
   "ovos.sufle-de-queijo": {
@@ -2489,9 +2601,13 @@
     "prato": {
       "principal": "sufle-baunilha",
       "acompanhamentos": [
-        "cebolinha"
+        "cebolinha",
+        "parmesao"
       ],
-      "servir": "prato"
+      "servir": "cumbuca",
+      "forma": "inteiro",
+      "estado": "dourado",
+      "liquido": "#f0d890"
     }
   },
   "ovos.massa-de-crepe": {
@@ -2547,9 +2663,9 @@
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "copo",
+      "liquido": "#f2e2b0"
     }
   },
   "ovos.curar-frigideira": {
@@ -2579,9 +2695,8 @@
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua"
     }
   },
   "ovos.fritar-crepe": {
@@ -2621,11 +2736,12 @@
       }
     ],
     "prato": {
-      "principal": "crepe-leque",
+      "principal": "crepe",
       "acompanhamentos": [],
       "servir": "prato",
-      "quantidade": 2,
-      "estado": "dourado"
+      "forma": "inteiro",
+      "estado": "dourado",
+      "quantidade": 2
     }
   },
   "ovos.crepe-enrolada": {
@@ -2647,8 +2763,8 @@
       "principal": "crepe-enrolada",
       "acompanhamentos": [],
       "servir": "prato",
-      "quantidade": 2,
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 2
     }
   },
   "ovos.crepe-quadrada": {
@@ -2670,8 +2786,8 @@
       "principal": "crepe-quadrada",
       "acompanhamentos": [],
       "servir": "prato",
-      "quantidade": 2,
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 2
     }
   },
   "ovos.crepe-leque": {
@@ -2693,8 +2809,8 @@
       "principal": "crepe-leque",
       "acompanhamentos": [],
       "servir": "prato",
-      "quantidade": 2,
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 2
     }
   },
   "ovos.pudim-yorkshire": {
@@ -2722,7 +2838,10 @@
     "prato": {
       "principal": "pudim-yorkshire",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado",
+      "quantidade": 4
     }
   },
   "ovos.panqueca-na-chapa": {
@@ -2775,8 +2894,8 @@
       "principal": "panqueca-americana",
       "acompanhamentos": [],
       "servir": "prato",
-      "quantidade": 3,
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 3
     }
   },
   "queijos.avaliar-queijo-mole": {
@@ -2819,7 +2938,9 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "queijos.avaliar-queijo-duro": {
@@ -2864,7 +2985,9 @@
     "prato": {
       "principal": "parmesao",
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "queijos.avaliar-fresco-azul-cabra": {
@@ -2909,7 +3032,9 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "queijos.testar-maturacao-brie": {
@@ -2935,7 +3060,9 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "queijos.queijo-fresco-caseiro": {
@@ -2984,7 +3111,9 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "queijos.cobrir-bolas-de-queijo": {
@@ -3005,7 +3134,10 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "queijos.marinar-queijo-fresco": {
@@ -3038,7 +3170,11 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "pote",
+      "forma": "medalhoes",
+      "estado": "cru",
+      "liquido": "#c8b040",
+      "claro": true
     }
   },
   "queijos.rechear-legumes-com-queijo": {
@@ -3074,7 +3210,10 @@
         "abobrinha",
         "ervilha_torta"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "queijos.ralar-fino-rotatorio": {
@@ -3086,7 +3225,9 @@
     "prato": {
       "principal": "gruyere",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "ralado",
+      "estado": "cru"
     }
   },
   "queijos.ralar-grosso": {
@@ -3112,7 +3253,9 @@
     "prato": {
       "principal": "parmesao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "ralado",
+      "estado": "cru"
     }
   },
   "queijos.derreter-queijo": {
@@ -3128,9 +3271,9 @@
       }
     ],
     "prato": {
-      "principal": "gruyere",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "molheira",
+      "liquido": "#f2cf6e"
     }
   },
   "queijos.cobertura-gratinada": {
@@ -3153,7 +3296,9 @@
     "prato": {
       "principal": "gruyere",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "cumbuca",
+      "forma": "ralado",
+      "estado": "dourado"
     }
   },
   "queijos.fondue-suica": {
@@ -3194,11 +3339,11 @@
       }
     ],
     "prato": {
-      "principal": "gruyere",
       "acompanhamentos": [
         "pao-de-forma"
       ],
-      "servir": "tigela"
+      "servir": "cumbuca",
+      "liquido": "#f0d27a"
     }
   },
   "queijos.queijo-grelhado": {
@@ -3228,7 +3373,9 @@
         "bruschetta",
         "rucula"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "medalhoes",
+      "estado": "dourado"
     }
   },
   "queijos.queijo-frito": {
@@ -3261,7 +3408,10 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "dourado",
+      "quantidade": 3
     }
   },
   "cremes.creme-fraiche": {
@@ -3293,9 +3443,9 @@
       }
     ],
     "prato": {
-      "principal": "creme_fraiche",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f6eed6"
     }
   },
   "cremes.creme-coalhado": {
@@ -3317,9 +3467,9 @@
       }
     ],
     "prato": {
-      "principal": "creme_de_leite",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f5e2a8"
     }
   },
   "cremes.creme-azedo": {
@@ -3341,9 +3491,9 @@
       }
     ],
     "prato": {
-      "principal": "creme_fraiche",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f4efe0"
     }
   },
   "cremes.creme-para-bater": {
@@ -3360,9 +3510,9 @@
       }
     ],
     "prato": {
-      "principal": "creme_de_leite",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#faf5e8"
     }
   },
   "ervas.descascar-gengibre": {
@@ -3374,7 +3524,9 @@
     "prato": {
       "principal": "gengibre",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.ralar-gengibre": {
@@ -3386,7 +3538,9 @@
     "prato": {
       "principal": "gengibre",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "ralado",
+      "estado": "cru"
     }
   },
   "ervas.preparar-erva-cidreira": {
@@ -3398,7 +3552,9 @@
     "prato": {
       "principal": "cebolinha",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "ervas.preparar-coentro": {
@@ -3413,7 +3569,9 @@
     "prato": {
       "principal": "coentro",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "ervas.preparar-galanga": {
@@ -3428,7 +3586,9 @@
     "prato": {
       "principal": "galanga",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "ervas.suco-de-tamarindo": {
@@ -3448,9 +3608,9 @@
       }
     ],
     "prato": {
-      "principal": "tamara",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "copo",
+      "liquido": "#7a4a26"
     }
   },
   "ervas.garam-masala": {
@@ -3479,9 +3639,10 @@
       }
     ],
     "prato": {
-      "principal": "louro",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "pote",
+      "liquido": "#6e4a2c",
+      "granulado": true
     }
   },
   "ervas.tostar-gergelim": {
@@ -3499,7 +3660,9 @@
     "prato": {
       "principal": "gergelim",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "forma": "inteiro",
+      "estado": "tostado"
     }
   },
   "ervas.tostar-nori": {
@@ -3512,7 +3675,9 @@
     "prato": {
       "principal": "alga-nori",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "tostado"
     }
   },
   "ervas.hidratar-wakame": {
@@ -3530,7 +3695,9 @@
     "prato": {
       "principal": "wakame",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "ervas.embeber-acafrao": {
@@ -3547,9 +3714,10 @@
       }
     ],
     "prato": {
-      "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "copo",
+      "liquido": "#e8700a",
+      "claro": true
     }
   },
   "ervas.preparar-wasabi": {
@@ -3564,9 +3732,9 @@
       }
     ],
     "prato": {
-      "principal": "wasabi",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tigelinha",
+      "liquido": "#8fb04a"
     }
   },
   "ervas.bouquet-garni": {
@@ -3590,7 +3758,9 @@
     "prato": {
       "principal": "alho_poro",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.bouquet-em-saquinho": {
@@ -3616,7 +3786,9 @@
         "louro",
         "tomilho"
       ],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.picar-casca-mezzaluna": {
@@ -3628,7 +3800,9 @@
     "prato": {
       "principal": "limao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "ralado",
+      "estado": "cru"
     }
   },
   "ervas.gremolata": {
@@ -3656,7 +3830,9 @@
       "acompanhamentos": [
         "salsa"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "ervas.herbes-de-provence": {
@@ -3679,11 +3855,15 @@
       }
     ],
     "prato": {
-      "principal": "perna-de-cordeiro",
+      "principal": "tomilho",
       "acompanhamentos": [
-        "alecrim"
+        "alecrim",
+        "louro",
+        "manjericao"
       ],
-      "servir": "travessa"
+      "servir": "tigelinha",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.persillade": {
@@ -3700,11 +3880,13 @@
       }
     ],
     "prato": {
-      "principal": "carre-de-cordeiro",
+      "principal": "salsa",
       "acompanhamentos": [
-        "salsa"
+        "alho"
       ],
-      "servir": "travessa"
+      "servir": "tigelinha",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "ervas.pesto-no-pilao": {
@@ -3755,7 +3937,8 @@
     "prato": {
       "principal": "pesto",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#5a8f2f"
     }
   },
   "ervas.molho-de-tomate-rapido": {
@@ -3789,9 +3972,9 @@
       }
     ],
     "prato": {
-      "principal": "couli",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "molheira",
+      "liquido": "#b8321e"
     }
   },
   "ervas.especiarias-mistas": {
@@ -3808,9 +3991,10 @@
       }
     ],
     "prato": {
-      "principal": "noz",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tigelinha",
+      "liquido": "#8a5a34",
+      "granulado": true
     }
   },
   "ervas.pickling-spice": {
@@ -3833,7 +4017,11 @@
       "acompanhamentos": [
         "chili_seco"
       ],
-      "servir": "prato"
+      "servir": "tigelinha",
+      "forma": "pedacos",
+      "estado": "cru",
+      "liquido": "#8a6a3a",
+      "granulado": true
     }
   },
   "ervas.quatre-epices": {
@@ -3855,9 +4043,10 @@
       }
     ],
     "prato": {
-      "principal": "noz",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tigelinha",
+      "liquido": "#5a4030",
+      "granulado": true
     }
   },
   "ervas.moer-especiarias": {
@@ -3869,9 +4058,10 @@
       }
     ],
     "prato": {
-      "principal": "noz",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tigelinha",
+      "liquido": "#7a5232",
+      "granulado": true
     }
   },
   "ervas.infusao-de-baunilha": {
@@ -3891,9 +4081,12 @@
       }
     ],
     "prato": {
-      "principal": "leite",
+      "principal": "fava-baunilha",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "copo",
+      "forma": "inteiro",
+      "estado": "cru",
+      "liquido": "#f4ecd8"
     }
   },
   "ervas.raspar-sementes-baunilha": {
@@ -3909,7 +4102,9 @@
     "prato": {
       "principal": "fava-baunilha",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.guardar-ervas-frescas": {
@@ -3925,7 +4120,9 @@
     "prato": {
       "principal": "salsa",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.secar-ervas": {
@@ -3944,7 +4141,9 @@
     "prato": {
       "principal": "tomilho",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "pote",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "ervas.congelar-ervas-em-cubos": {
@@ -3973,7 +4172,9 @@
     "prato": {
       "principal": "manjericao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "peixes.avaliar-frescor-inteiro": {
@@ -4038,7 +4239,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.avaliar-file-posta": {
@@ -4073,7 +4276,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.conservar": {
@@ -4092,7 +4297,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "frutos.avaliar-frescor": {
@@ -4175,7 +4382,9 @@
         "mexilhao",
         "ostra"
       ],
-      "servir": "travessa"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.escolher-metodo": {
@@ -4195,7 +4404,9 @@
       "acompanhamentos": [
         "truta"
       ],
-      "servir": "travessa"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "frutos.manter-vivos": {
@@ -4217,7 +4428,10 @@
     "prato": {
       "principal": "mexilhao",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "peixes.tirar-limo": {
@@ -4242,7 +4456,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "tabua",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.escamar-rolico": {
@@ -4265,7 +4481,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.vandyking": {
@@ -4278,7 +4496,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.eviscerar-guelras": {
@@ -4304,7 +4524,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.sulcos-ervas": {
@@ -4330,7 +4552,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.eviscerar-barriga": {
@@ -4356,7 +4580,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.desossar-pequeno-dedos": {
@@ -4380,7 +4606,9 @@
     "prato": {
       "principal": "sardinha",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.desossar-barriga": {
@@ -4405,7 +4633,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.tirar-espinhas-finas": {
@@ -4428,7 +4658,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.desossar-costas": {
@@ -4450,7 +4682,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.desossar-peixe-anjo": {
@@ -4465,7 +4699,10 @@
     "prato": {
       "principal": "peixe-anjo",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "peixes.files-rolico": {
@@ -4493,7 +4730,10 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "peixes.escamar-chato": {
@@ -4508,7 +4748,9 @@
     "prato": {
       "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.pelar-chato-inteiro": {
@@ -4530,7 +4772,9 @@
     "prato": {
       "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.files-chato": {
@@ -4556,7 +4800,10 @@
     "prato": {
       "principal": "rodovalho",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 4
     }
   },
   "peixes.pelar-file": {
@@ -4574,7 +4821,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.file-paupiette-corte": {
@@ -4586,7 +4835,10 @@
     "prato": {
       "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "peixes.sichuan-wok": {
@@ -4653,7 +4905,10 @@
       "acompanhamentos": [
         "coentro"
       ],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "dourado",
+      "liquido": "#9a3a22"
     }
   },
   "peixes.pasta-chili": {
@@ -4669,9 +4924,10 @@
       }
     ],
     "prato": {
-      "principal": "chili_seco",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#a8281c",
+      "granulado": true
     }
   },
   "peixes.escalopes": {
@@ -4689,7 +4945,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.postas": {
@@ -4707,7 +4965,10 @@
     "prato": {
       "principal": "perca",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "medalhoes",
+      "estado": "cru",
+      "quantidade": 3
     }
   },
   "peixes.trouxinhas": {
@@ -4736,7 +4997,10 @@
       "acompanhamentos": [
         "cebolinha"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "peixes.almofadas": {
@@ -4765,7 +5029,10 @@
       "acompanhamentos": [
         "cebolinha"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "peixes.paupiettes": {
@@ -4791,7 +5058,10 @@
     "prato": {
       "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido",
+      "quantidade": 4
     }
   },
   "peixes.trancas": {
@@ -4817,8 +5087,13 @@
     ],
     "prato": {
       "principal": "cavala",
-      "acompanhamentos": [],
-      "servir": "prato"
+      "acompanhamentos": [
+        "vermelho",
+        "linguado"
+      ],
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cozido"
     }
   },
   "peixes.recheios": {
@@ -4837,10 +5112,10 @@
     ],
     "prato": {
       "principal": "queijo-cabra",
-      "acompanhamentos": [
-        "cenoura"
-      ],
-      "servir": "tigela"
+      "acompanhamentos": [],
+      "servir": "tigelinha",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "peixes.taramasalata": {
@@ -4874,9 +5149,9 @@
       }
     ],
     "prato": {
-      "principal": "ova-bacalhau",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#e8b0a8"
     }
   },
   "peixes.preparar-ova-defumada": {
@@ -4900,7 +5175,9 @@
     "prato": {
       "principal": "ova-bacalhau",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cozido"
     }
   },
   "peixes.dessalgar-anchova": {
@@ -4921,7 +5198,10 @@
     "prato": {
       "principal": "anchova",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "peixes.dessalgar-bacalhau": {
@@ -4976,7 +5256,10 @@
     "prato": {
       "principal": "salmao-defumado",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 4
     }
   },
   "peixes.fatiar-salmao-defumado": {
@@ -4997,7 +5280,9 @@
     "prato": {
       "principal": "salmao-defumado",
       "acompanhamentos": [],
-      "servir": "tabua"
+      "servir": "tabua",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.gravadlax": {
@@ -5043,7 +5328,9 @@
         "limao",
         "endro"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.tostar-nori": {
@@ -5055,7 +5342,9 @@
     "prato": {
       "principal": "alga-nori",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "tostado"
     }
   },
   "peixes.sushi-rolo": {
@@ -5110,7 +5399,10 @@
         "gengibre-conserva",
         "pepino"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "peixes.sashimi": {
@@ -5150,7 +5442,9 @@
         "cavala",
         "pepino"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.court-bouillon": {
@@ -5182,7 +5476,9 @@
     "prato": {
       "principal": "court-bouillon",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#e6d8a0",
+      "claro": true
     }
   },
   "peixes.poche-peixeira": {
@@ -5217,7 +5513,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.poche-improvisado": {
@@ -5244,7 +5542,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.poche-pouca-agua": {
@@ -5263,7 +5563,9 @@
     "prato": {
       "principal": "merluza",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.microondas": {
@@ -5292,7 +5594,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.poche-defumado-leite": {
@@ -5325,7 +5629,9 @@
     "prato": {
       "principal": "hadoque-defumado",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "lascas",
+      "estado": "cozido"
     }
   },
   "peixes.preparar-cozido-servir": {
@@ -5361,7 +5667,9 @@
     "prato": {
       "principal": "salmao",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.decorar-escamas": {
@@ -5391,7 +5699,9 @@
       "acompanhamentos": [
         "pepino"
       ],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.limao-musselina": {
@@ -5407,7 +5717,9 @@
     "prato": {
       "principal": "limao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cru"
     }
   },
   "peixes.nozinhos-citricos": {
@@ -5427,7 +5739,9 @@
     "prato": {
       "principal": "laranja",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cozido"
     }
   },
   "peixes.lacos-anchova": {
@@ -5450,7 +5764,9 @@
       "acompanhamentos": [
         "pimentao"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cru"
     }
   },
   "peixes.tacinhas-kumquat": {
@@ -5474,7 +5790,10 @@
       "acompanhamentos": [
         "endro"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "cru",
+      "quantidade": 4
     }
   },
   "peixes.borboletas-limao": {
@@ -5497,7 +5816,9 @@
       "acompanhamentos": [
         "pimentao"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.enfeites-massa": {
@@ -5518,7 +5839,10 @@
     "prato": {
       "principal": "massa-folhada",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "dourado",
+      "quantidade": 6
     }
   },
   "peixes.limao-trancado": {
@@ -5537,7 +5861,9 @@
     "prato": {
       "principal": "limao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.espirais-citricas": {
@@ -5552,7 +5878,9 @@
     "prato": {
       "principal": "laranja",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cru"
     }
   },
   "peixes.limao-alado": {
@@ -5572,7 +5900,9 @@
     "prato": {
       "principal": "limao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.gengibre-frito": {
@@ -5599,7 +5929,9 @@
     "prato": {
       "principal": "gengibre",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "dourado"
     }
   },
   "peixes.tirinhas-mooli": {
@@ -5623,7 +5955,9 @@
     "prato": {
       "principal": "mooli",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cru"
     }
   },
   "peixes.rosa-gengibre": {
@@ -5638,7 +5972,9 @@
     "prato": {
       "principal": "gengibre-conserva",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.cebolinha-enrolada": {
@@ -5655,7 +5991,9 @@
     "prato": {
       "principal": "cebolinha",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cru"
     }
   },
   "peixes.ervas-fritas": {
@@ -5678,7 +6016,8 @@
       "acompanhamentos": [
         "salsa"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro"
     }
   },
   "peixes.enfeite-pepino": {
@@ -5700,7 +6039,9 @@
     "prato": {
       "principal": "pepino",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cru"
     }
   },
   "peixes.buque-ervas": {
@@ -5719,9 +6060,12 @@
       "principal": "truta",
       "acompanhamentos": [
         "endro",
-        "salsa"
+        "salsa",
+        "tomilho"
       ],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.rosa-citrica": {
@@ -5736,7 +6080,9 @@
     "prato": {
       "principal": "limao",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "cru"
     }
   },
   "peixes.escamas-abobrinha": {
@@ -5764,7 +6110,9 @@
       "acompanhamentos": [
         "abobrinha"
       ],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.vapor-panela": {
@@ -5810,7 +6158,9 @@
     "prato": {
       "principal": "vermelho",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.vapor-bambu": {
@@ -5846,10 +6196,10 @@
     ],
     "prato": {
       "principal": "vermelho",
-      "acompanhamentos": [
-        "cebolinha"
-      ],
-      "servir": "travessa"
+      "acompanhamentos": [],
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.vapor-marinar": {
@@ -5872,9 +6222,13 @@
     "prato": {
       "principal": "vermelho",
       "acompanhamentos": [
+        "cebolinha",
+        "gengibre",
         "limao"
       ],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.grelhar-pequeno": {
@@ -5904,10 +6258,11 @@
     ],
     "prato": {
       "principal": "sardinha",
-      "acompanhamentos": [
-        "salsa"
-      ],
-      "servir": "prato"
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado",
+      "quantidade": 4
     }
   },
   "peixes.churrasco-suporte": {
@@ -5937,7 +6292,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.assar-descoberto": {
@@ -5971,10 +6328,10 @@
     ],
     "prato": {
       "principal": "vermelho",
-      "acompanhamentos": [
-        "tomilho"
-      ],
-      "servir": "travessa"
+      "acompanhamentos": [],
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.rechear-assar-aluminio": {
@@ -6004,7 +6361,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.rechear-dorso": {
@@ -6027,7 +6386,9 @@
     "prato": {
       "principal": "truta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.papillote": {
@@ -6070,7 +6431,9 @@
         "cenoura",
         "coentro"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.assar-folhas": {
@@ -6098,7 +6461,9 @@
     "prato": {
       "principal": "folha-uva",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "peixes.crosta-sal": {
@@ -6134,7 +6499,9 @@
     "prato": {
       "principal": "carpa-do-mar",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.peixe-anjo-bacon": {
@@ -6153,8 +6520,12 @@
     ],
     "prato": {
       "principal": "peixe-anjo",
-      "acompanhamentos": [],
-      "servir": "prato"
+      "acompanhamentos": [
+        "bacon"
+      ],
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.empanar": {
@@ -6173,7 +6544,9 @@
     "prato": {
       "principal": "merluza",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "peixes.fritar-pouco-oleo": {
@@ -6212,10 +6585,10 @@
     ],
     "prato": {
       "principal": "merluza",
-      "acompanhamentos": [
-        "limao"
-      ],
-      "servir": "prato"
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.manteiga-escura-arraia": {
@@ -6242,7 +6615,9 @@
     "prato": {
       "principal": "arraia",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "pedacos",
+      "estado": "dourado"
     }
   },
   "peixes.cajun": {
@@ -6266,7 +6641,9 @@
     "prato": {
       "principal": "vermelho",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "tostado"
     }
   },
   "peixes.crosta-ervas": {
@@ -6300,7 +6677,9 @@
     "prato": {
       "principal": "peixe-anjo",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.fritar-imerso": {
@@ -6346,10 +6725,10 @@
     ],
     "prato": {
       "principal": "hadoque",
-      "acompanhamentos": [
-        "limao"
-      ],
-      "servir": "prato"
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "peixes.goujons": {
@@ -6379,10 +6758,10 @@
     ],
     "prato": {
       "principal": "linguado",
-      "acompanhamentos": [
-        "limao"
-      ],
-      "servir": "prato"
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "tiras",
+      "estado": "dourado"
     }
   },
   "peixes.musse": {
@@ -6421,9 +6800,9 @@
       }
     ],
     "prato": {
-      "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "tigelinha",
+      "liquido": "#f2e6dc"
     }
   },
   "peixes.timbales": {
@@ -6452,7 +6831,10 @@
     "prato": {
       "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido",
+      "quantidade": 2
     }
   },
   "peixes.quenelles": {
@@ -6475,7 +6857,10 @@
     "prato": {
       "principal": "linguado",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido",
+      "quantidade": 3
     }
   },
   "peixes.bolinhos": {
@@ -6510,11 +6895,12 @@
       }
     ],
     "prato": {
-      "principal": "batata",
-      "acompanhamentos": [
-        "salsa"
-      ],
-      "servir": "prato"
+      "principal": "falafel",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "dourado",
+      "quantidade": 4
     }
   },
   "peixes.terrina-camadas": {
@@ -6573,12 +6959,11 @@
       }
     ],
     "prato": {
-      "principal": "camarao",
-      "acompanhamentos": [
-        "espinafre",
-        "cerefolio"
-      ],
-      "servir": "prato"
+      "principal": "pate",
+      "acompanhamentos": [],
+      "servir": "prato",
+      "forma": "fatias",
+      "estado": "cozido"
     }
   },
   "frutos.matar-lagosta": {
@@ -6599,7 +6984,9 @@
     "prato": {
       "principal": "lagosta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "frutos.cozinhar-lagosta": {
@@ -6622,7 +7009,9 @@
     "prato": {
       "principal": "lagosta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "frutos.carne-cauda-lagosta": {
@@ -6651,7 +7040,9 @@
     "prato": {
       "principal": "lagosta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "medalhoes",
+      "estado": "cozido"
     }
   },
   "frutos.lagosta-meia-casca": {
@@ -6682,7 +7073,9 @@
     "prato": {
       "principal": "lagosta",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "pedacos",
+      "estado": "cozido"
     }
   },
   "frutos.ferver-caranguejo": {
@@ -6712,7 +7105,9 @@
     "prato": {
       "principal": "caranguejo",
       "acompanhamentos": [],
-      "servir": "travessa"
+      "servir": "travessa",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "frutos.carne-caranguejo": {
@@ -6746,7 +7141,9 @@
     "prato": {
       "principal": "caranguejo",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "lascas",
+      "estado": "cozido"
     }
   },
   "frutos.enfeitar-caranguejo": {
@@ -6782,7 +7179,9 @@
         "salsa",
         "ovo"
       ],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   }
 }

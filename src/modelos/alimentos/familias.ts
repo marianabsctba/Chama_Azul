@@ -5,12 +5,13 @@ import type { FormaAlimento } from '../../tipos';
 import { finalizar, semente } from './nucleo';
 import { criarCtx, type Familia, type Gerador, type Visual } from './pecas';
 import type { Acabamento } from './material';
+import { NOVOS } from './novos';
 import { gEsferoide, gAbobora, gCone, gFuso, gFolhoso, gBulbo, gTalo, gCacho, gErva, gVagem, gEspiga, gCogumelo, gPimenta, gAlga } from './fam_vegetais';
 import { gCitrico, gCaroco, gBaga, gTropical } from './fam_frutas';
 import { gPeixe, gPeixeChato, gFilePeixe, gCrustaceo, gBivalve, gConchaEspiral, gCefalopode } from './fam_mar';
 import { gAve, gPecaAve, gCarne, gCarneOsso, gCarneMoida, gMiudo, gLinguica } from './fam_carnes';
 import { gMassaBola, gPao, gPaoChato, gQueijo, gBarra, gPlaca, gMonte, gCastanha, gMassa } from './fam_padaria';
-import { gRizoma, gBacon, gFoieGras, gTerrina, gPolenta, gOmelete, gFrittata, gFalafel, gYorkshire, gCranberry, gBaunilha, gGergelim, gSalvia, gCrepe, gCrepeEnrolada, gCrepeQuadrada, gCrepeLeque, gPanqueca, comVariantes } from './fam_extras';
+import { gRizoma, gBacon, gFoieGras, gTerrina, gPolenta, gOmelete, gFrittata, gFalafel, gYorkshire, gCranberry, gBaunilha, gGergelim, gSalvia, gCrepe, gCrepeEnrolada, gCrepeQuadrada, gCrepeLeque, gPanqueca, gOvoFrito, gOvoPoche, gOvosMexidos, gOvoMetade, gOvoQuente, comVariantes } from './fam_extras';
 import { gRecipiente, gPasta, gBolo, gTorta, gConfeito, gChoux, gFolhado, gMerengue } from './fam_doces';
 
 export type { Familia, Visual } from './pecas';
@@ -25,7 +26,7 @@ interface Registro {
 }
 
 export const FAMILIAS: Record<Familia, Registro> = {
-  esferoide: { g: gEsferoide, a: 0.9, l: 1, ac: 'acetinado' },
+  esferoide: { g: comVariantes(gEsferoide, { 'ovo-frito': gOvoFrito, 'ovo-poche': gOvoPoche, 'ovos-mexidos': gOvosMexidos, 'ovo-metade': gOvoMetade, 'ovo-quente': gOvoQuente }), a: 0.9, l: 1, ac: 'acetinado' },
   citrico: { g: gCitrico, a: 0.95, l: 1, ac: 'acetinado' },
   caroco: { g: gCaroco, a: 0.95, l: 1, ac: 'acetinado' },
   baga: { g: comVariantes(gBaga, { cranberry: gCranberry }), a: 1, l: 1, ac: 'brilhante' },
@@ -81,7 +82,7 @@ export const FAMILIAS: Record<Familia, Registro> = {
 export function gerarForma(id: string, v: Visual): FormaAlimento {
   const reg = FAMILIAS[v.f];
   const k = criarCtx(id, v, semente(id), reg.a, reg.l, reg.ac);
-  const partes = reg.g(k);
+  const partes = (NOVOS[id]?.gerar ?? reg.g)(k);
   if (!partes.length) throw new Error(`família ${v.f}/${v.v} não gerou partes para ${id}`);
   return finalizar(partes, { corInterna: v.ci, corCozida: v.cc });
 }

@@ -18,5 +18,10 @@
   { "id": "crepe-enrolada", "nome": "Crêpe enrolada", "forma": "crêpe recheada com os dois lados opostos dobrados para dentro e enrolada de uma ponta à outra, um rolinho fechado e gordinho" },
   { "id": "crepe-quadrada", "nome": "Crêpe quadrada", "forma": "crêpe recheada com os quatro lados dobrados formando um pacotinho quadrado (pannequet)" },
   { "id": "crepe-leque", "nome": "Crêpe em leque", "forma": "crêpe dobrada ao meio e de novo, em quarto de círculo como um leque" },
-  { "id": "panqueca-americana", "nome": "Panqueca americana", "forma": "disco grosso e fofo de massa, dourado por cima e por baixo, com furinhos" }
+  { "id": "panqueca-americana", "nome": "Panqueca americana", "forma": "disco grosso e fofo de massa, dourado por cima e por baixo, com furinhos" },
+  { "id": "ovo-frito", "nome": "Ovo frito", "forma": "clara espalhada de borda irregular, dourada e rendada na borda, com a gema em domo no meio" },
+  { "id": "ovo-poche", "nome": "Ovo pochê", "forma": "oval macio de clara cozida envolvendo a gema mole" },
+  { "id": "ovos-mexidos", "nome": "Ovos mexidos", "forma": "montinho de coalhos de ovo macios e cremosos, amarelo-claros" },
+  { "id": "ovo-cozido-metade", "nome": "Ovo cozido em metade", "forma": "metade de ovo cozido descascado, clara firme e gema amarela firme, com o corte para cima" },
+  { "id": "ovo-quente", "nome": "Ovo quente no oveiro", "forma": "ovo no oveiro de porcelana com a tampa cortada e a gema mole aparecendo" }
 ]

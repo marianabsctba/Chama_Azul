@@ -43,6 +43,8 @@ export interface ContextoGesto {
   hud: Hud;
   mesa: Mesa;
   relogio: Relogio;
+  /** Onde o passo acontece (frigideira, panela, aro...), quando o livro diz. */
+  vaso?: string;
 }
 
 export interface Execucao {

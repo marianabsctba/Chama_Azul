@@ -24,7 +24,35 @@ export const FABRICAS: Record<Passo['gesto'], FabricaGesto> = {
 
 const DOCE = new Set(['pastelaria', 'bolos', 'sobremesas', 'paes']);
 
-export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | null): CenaEstacao {
+const VASOS = 'frigideira|wok|panela|caçarola|chapa|aro|banho-maria|assadeira|travessa|ramequim|fôrma|forma|tigela|pilão';
+/** Vasos que ficam no fogo: o passo feito neles acontece no fogão. */
+export const VASO_FOGO = /frigideira|wok|panela|caçarola|chapa|^aro|banho-maria/i;
+/** Ações que, logo depois de um passo no fogo, continuam no mesmo vaso (mexer o ovo na frigideira, virar a crêpe). */
+const CONTINUA_NO_FOGO = /mexer|virar|enrolar|dobrar|despejar|regar|quebrar|inclinar|moldar|espalhar|rechear|misturar|adicionar|incorporar|soltar|separar|amassar|pressionar|testar/i;
+
+/**
+ * Onde o passo acontece, como o livro diz: o recipiente revisado, o que o texto nomeia
+ * ("na frigideira", "no aro") ou, para mexer, virar e despejar logo depois do fogo, o mesmo vaso.
+ */
+export function vasoDoPasso(t: Tecnica, i: number, fundo = 0): string | undefined {
+  const p = t.passos[i];
+  if (!p || fundo > 6) return undefined;
+  if (p.recipiente) return p.recipiente;
+  const texto = `${p.acao} ${p.alvo} ${p.parametro}`;
+  const nomeado = texto.match(new RegExp(`\\b(?:na|no|numa|num|em|dentro d[ao]|sobre a|sobre o)\\s+(${VASOS})`, 'i')) ?? (p.utensilio ?? '').match(new RegExp(`(${VASOS})`, 'i'));
+  if (nomeado) return nomeado[1].toLowerCase();
+  if (/t[aá]bua|prato|travessa|papel|grelha|tigela/i.test(texto)) return undefined;
+  if (i > 0 && p.gesto !== 'calor' && p.gesto !== 'cortar' && p.gesto !== 'tempo' && p.gesto !== 'medir' && CONTINUA_NO_FOGO.test(p.acao) && !/escorr|coar|peneir/i.test(p.acao)) {
+    const ant = t.passos[i - 1];
+    const vasoAnt = ant.gesto === 'calor' && ant.variante !== 'forno' ? vasoDoPasso(t, i - 1, fundo + 1) ?? (ant.variante === 'frigideira' ? 'frigideira' : 'panela') : vasoDoPasso(t, i - 1, fundo + 1);
+    if (vasoAnt && VASO_FOGO.test(vasoAnt)) return vasoAnt;
+  }
+  return undefined;
+}
+
+export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | null, vaso?: string): CenaEstacao {
+  // mexer, virar, despejar dentro de um vaso no fogo: no fogão
+  if (vaso && VASO_FOGO.test(vaso) && ['ritmo', 'montar', 'verter', 'separar', 'superficie', 'testar'].includes(p.gesto) && p.variante !== 'escumar') return 'fogao';
   switch (p.gesto) {
     case 'calor':
       return p.variante === 'forno' ? 'forno' : 'fogao';

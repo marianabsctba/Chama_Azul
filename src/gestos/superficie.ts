@@ -65,7 +65,7 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   const chave = passo.alimento ?? passo.alvo;
   const peca = mesa.garantirPeca(chave, estacao.superficie.clone());
   peca.rotation.y = anguloDaEstacao(estacao);
-  peca.position.copy(estacao.superficie);
+  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone())) peca.position.copy(estacao.superficie);
   const v = passo.variante; // remover | cobrir | limpar
   const texto = `${passo.acao} ${passo.alvo} ${passo.utensilio} ${passo.parametro}`;
   const corCobrir = corDaCobertura(texto);

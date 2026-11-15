@@ -160,6 +160,18 @@ export class Mesa {
     return g;
   }
 
+  /**
+   * Põe a peça dentro do vaso do passo (frigideira, panela, aro), no centro do fundo.
+   * Devolve false quando o passo não tem vaso e a peça fica na bancada.
+   */
+  colocarNoVaso(peca: Peca, vaso: string | undefined, onde: THREE.Vector3): boolean {
+    // só os vasos de fogo levam a peça para dentro; na bancada, cada gesto monta a cena dele
+    if (!vaso || !/frigideira|wok|panela|caçarola|chapa|^aro$/i.test(vaso)) return false;
+    this.garantirRecipiente(vaso, onde, 'frigideira');
+    peca.position.set(this.centro.x, this.fundoY, this.centro.z);
+    return true;
+  }
+
   /** Coloca ou mantém o conteúdo dentro do recipiente atual. */
   garantirConteudo(texto: string, nivelRel = 0.45): Conteudo {
     if (!this.recipiente) throw new Error('sem recipiente');

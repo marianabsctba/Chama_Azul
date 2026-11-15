@@ -803,3 +803,95 @@ export const gPanqueca: Gerador = (k) => {
     mod: (t, a) => 1 + 0.02 * fbm(Math.cos(a) * 2, Math.sin(a) * 2, 0, s),
   }), k.ac, true)];
 };
+
+/* ------------------------------------------------------------------ */
+/* ovos prontos: frito, pochê, mexido, cozido em metades e quente       */
+/* ------------------------------------------------------------------ */
+
+export const gOvoFrito: Gerador = (k) => {
+  // clara espalhada de borda irregular (rendada e dourada na borda), gema em domo no meio
+  const { c1, c2, c3, s } = k;
+  const R = k.T / 2, H = 0.004;
+  const borda = (a: number) => R * (0.82 + 0.18 * fbm(Math.cos(a) * 1.6, Math.sin(a) * 1.6, 0, s));
+  const corClara: CorFn = (x, y, z) => {
+    const a = Math.atan2(z, x);
+    const r = Math.hypot(x, z) / borda(a);
+    const c = mul(c1, 0.97 + 0.05 * fbm(x * 90, 0, z * 90, s + 1));
+    return mix(c, c2, suave(0.78, 1, r) * 0.85 * (0.6 + 0.4 * fbm(x * 60, 0, z * 60, s + 2)));
+  };
+  const out: Parte[] = [parte(laje(24, 40, (u, v, lado) => {
+    const a = v * Math.PI;
+    const r = u * borda(a);
+    const y = lado ? H * (1 - 0.6 * u ** 2) + 0.0012 * fbm(Math.cos(a) * r * 80, 0, Math.sin(a) * r * 80, s + 3) : 0;
+    return [Math.cos(a) * r - R * 0.08, y, Math.sin(a) * r];
+  }, corClara), 'acetinado', true)];
+  const gema = c3 ?? rgb('#f6b020');
+  const corGema: CorFn = (x, y, z) => mul(gema, 0.95 + 0.08 * fbm(x * 120, y * 120, z * 120, s + 4));
+  out.push(parte(tf(elipsoide(R * 0.32, R * 0.2, R * 0.32, corGema, 12, 18), [R * 0.05, H * 0.8, R * 0.04]), 'brilhante'));
+  return out;
+};
+
+export const gOvoPoche: Gerador = (k) => {
+  // oval macio: a clara envolve a gema, que só se insinua amarela por baixo do véu
+  const { c1, c2, c3, s } = k;
+  const R = k.T / 2;
+  const cor: CorFn = (x, y, z) => {
+    const c = mul(c1, 0.96 + 0.06 * fbm(x * 70, y * 70, z * 70, s));
+    const topo = 1 - suave(0, R * 0.55, Math.hypot(x, z));
+    return mix(c, c3 ?? c2, topo * suave(R * 0.3, R * 0.6, y) * 0.35);
+  };
+  return [parte(tf(elipsoide(R, R * 0.48, R * 0.78, cor, 18, 24, (t, a) => 1 + 0.06 * fbm(t * 4, Math.cos(a) * 2, Math.sin(a) * 2, s + 1)), [0, R * 0.44, 0]), 'acetinado', true)];
+};
+
+export const gOvosMexidos: Gerador = (k) => {
+  // montinho de coalhos macios e cremosos
+  const { c1, c2, s } = k;
+  const R = k.T / 2;
+  const out: Parte[] = [];
+  const n = 22;
+  for (let i = 0; i < n; i++) {
+    const a = i * 2.399;
+    const rr = R * 0.8 * Math.sqrt((i + 0.5) / n);
+    const tam = R * k.r.f(0.22, 0.34);
+    const alto = (1 - rr / R) * R * 0.45;
+    const cor: CorFn = (x, y, z) => mix(mul(c1, 0.95 + 0.08 * fbm(x * 200, y * 200, z * 200, s + i)), c2, 0.25 * fbm(x * 90, y * 90, z * 90, s + i + 9));
+    const g = elipsoide(tam, tam * 0.55, tam * 0.75, cor, 6, 10);
+    g.rotateY(k.r.f(0, TAU));
+    g.translate(Math.cos(a) * rr, tam * 0.4 + alto, Math.sin(a) * rr);
+    out.push(parte(g, 'brilhante', i === 0));
+  }
+  return out;
+};
+
+export const gOvoMetade: Gerador = (k) => {
+  // ovo cozido cortado ao meio no comprido, deitado com o corte para cima: clara e gema firmes
+  const { c1, c3, s } = k;
+  const L = k.T, R = L * 0.38;
+  const clara: CorFn = (x, y, z) => mul(c1, 0.97 + 0.04 * fbm(x * 100, y * 100, z * 100, s));
+  const metade = corpo({
+    x0: -L / 2, x1: L / 2, n: 20, m: 24, cor: clara,
+    perfil: (t) => { const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)) * (1 - 0.12 * (t - 0.5)); return { ry: R * e, rz: R * e, cy: 0 }; },
+    desloc: (p) => { if (p.y > 0) p.y = 0; },
+  });
+  metade.translate(0, R, 0);
+  const gema: CorFn = (x, y, z) => mul(c3 ?? rgb('#f2b62a'), 0.92 + 0.1 * fbm(x * 150, 0, z * 150, s + 2));
+  return [parte(metade, 'acetinado', true), parte(tf(elipsoide(R * 0.62, R * 0.12, R * 0.55, gema, 10, 16), [-L * 0.03, R + 0.0005, 0]), 'fosco')];
+};
+
+export const gOvoQuente: Gerador = (k) => {
+  // ovo quente no oveiro, com a tampa cortada e a gema mole aparecendo
+  const { c1, c2, c3, s } = k;
+  const L = k.T, R = L * 0.38;
+  const porcelana: CorFn = () => rgb('#f6f4ee');
+  const out: Parte[] = [parte(torno({ caminho: [[0, 0], [R * 0.9, 0], [R * 0.95, 0.004], [R * 0.45, 0.012], [R * 0.42, 0.02], [R * 1.05, 0.03], [R * 1.12, 0.045], [R * 1.05, 0.046], [R * 0.9, 0.034], [0, 0.03]], n: 12, m: 40, cor: porcelana }), 'brilhante', true)];
+  const casca: CorFn = (x, y, z) => mul(c1, 0.95 + 0.07 * fbm(x * 90, y * 90, z * 90, s));
+  const corte = 0.03 + L * 0.62;
+  out.push(parte(torno({
+    caminho: (u) => { const y = 0.028 + u * (corte - 0.028); const t = (y - 0.028) / L; const r = R * Math.sqrt(Math.max(0, 1 - ((t - 0.42) / 0.58) ** 2)); return [Math.max(0.002, r), y]; },
+    n: 18, m: 32, cor: casca,
+  }), 'acetinado'));
+  const rc = R * Math.sqrt(Math.max(0, 1 - ((0.62 - 0.42) / 0.58) ** 2)) * 0.97;
+  out.push(parte(tf(torno({ caminho: [[0, 0], [rc, 0], [rc * 0.9, 0.0008], [0, 0.001]], n: 3, m: 28, cor: () => c2 }), [0, corte - 0.001, 0]), 'acetinado'));
+  out.push(parte(tf(elipsoide(rc * 0.62, rc * 0.25, rc * 0.62, () => c3 ?? rgb('#f6a820'), 8, 14), [0, corte, 0]), 'brilhante'));
+  return out;
+};

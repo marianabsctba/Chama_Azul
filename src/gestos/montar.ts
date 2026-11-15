@@ -10,6 +10,7 @@ import { criarUtensilio } from '../modelos/utensilios';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
 
+const VASO_NO_FOGO = /frigideira|wok|panela|caçarola|chapa|^aro$/i;
 const matFio = new THREE.MeshStandardMaterial({ color: '#efe6d2', roughness: 0.9 });
 const matFantasma = new THREE.MeshBasicMaterial({ color: '#8fdcff', transparent: true, opacity: 0.45, depthWrite: false });
 const geoMarca = new THREE.SphereGeometry(1, 14, 10);
@@ -17,10 +18,11 @@ const geoMarca = new THREE.SphereGeometry(1, 14, 10);
 function prepararPeca(ctx: ContextoGesto) {
   const { passo, mesa, estacao } = ctx;
   const chave = passo.alimento ?? passo.alvo;
-  mesa.removerRecipiente(true);
+  if (!ctx.vaso || !VASO_NO_FOGO.test(ctx.vaso)) mesa.removerRecipiente(true);
   const peca = mesa.garantirPeca(chave, estacao.superficie.clone());
   peca.rotation.y = anguloDaEstacao(estacao);
-  peca.position.copy(estacao.superficie);
+  // no vaso que o livro manda (virar a crêpe na frigideira, moldar o ovo no aro); senão na bancada
+  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone())) peca.position.copy(estacao.superficie);
   peca.updateMatrixWorld(true);
   return peca;
 }

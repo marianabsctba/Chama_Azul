@@ -31,7 +31,7 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud } = ctx;
   const texto = `${passo.acao} ${passo.alvo} ${passo.parametro}`;
   const v = passo.variante;
-  const recipienteTexto = /tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande';
+  const recipienteTexto = (ctx.vaso && /frigideira|wok|panela|caçarola|chapa|tigela|vasilha/i.test(ctx.vaso) ? ctx.vaso : undefined) ?? (/tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande');
   mesa.removerPeca();
   mesa.garantirRecipiente(recipienteTexto, estacao.superficie.clone(), 'tigela grande');
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.4);
@@ -149,10 +149,10 @@ function ritmoNaPeca(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud } = ctx;
   const v = passo.variante;
   const chave = passo.alimento ?? passo.alvo;
-  mesa.removerRecipiente(true);
+  if (!ctx.vaso || !/frigideira|wok|panela|caçarola|chapa|^aro$/i.test(ctx.vaso)) mesa.removerRecipiente(true);
   const peca = mesa.garantirPeca(chave, estacao.superficie.clone());
   peca.rotation.y = anguloDaEstacao(estacao);
-  peca.position.copy(estacao.superficie);
+  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone())) peca.position.copy(estacao.superficie);
   const ferramenta = mesa.pegarFerramenta(passo.utensilio, v);
   const escala0 = peca.scale.clone();
   // abrir com rolo: espessura pedida

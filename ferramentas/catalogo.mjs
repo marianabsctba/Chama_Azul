@@ -153,6 +153,9 @@ function main() {
   // alimentos que o levantamento não trouxe como peça, mas que as técnicas pedem (gengibre, sálvia, bacon...)
   const extras = path.join(raiz, 'dados', 'alimentos_extras.json');
   if (fs.existsSync(extras)) for (const a of JSON.parse(fs.readFileSync(extras, 'utf8'))) if (!alimentos.has(a.id)) alimentos.set(a.id, { id: a.id, nome: a.nome, forma: a.forma });
+  // lotes de alimentos novos (um arquivo por grupo)
+  const dirNovos = path.join(raiz, 'dados', 'alimentos_novos');
+  if (fs.existsSync(dirNovos)) for (const f of fs.readdirSync(dirNovos).filter((x) => x.endsWith('.json')).sort()) for (const a of JSON.parse(fs.readFileSync(path.join(dirNovos, f), 'utf8'))) if (!alimentos.has(a.id)) alimentos.set(a.id, { id: a.id, nome: a.nome, forma: a.forma });
 
   // palavras soltas que não identificam um alimento sozinhas
   const GENERICAS_FORTES = new Set(['barriga', 'perna', 'peito', 'lombo', 'costela', 'paleta', 'asa', 'coxa', 'file', 'carne', 'peixe', 'osso', 'pele', 'cabeca', 'pe', 'furcula', 'carcaca', 'miolo']);

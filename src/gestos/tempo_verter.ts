@@ -93,7 +93,7 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
   const origem = mesa.garantirRecipiente(origemTexto.includes('panela') ? 'panela' : 'tigela', aoLado(estacao, -0.17), 'panela');
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.6);
   const destinoPos = aoLado(estacao, 0.17);
-  const destino = criarUtensilio('tigela grande') ?? new THREE.Group();
+  const destino = criarUtensilio(ctx.vaso && !/escorr|coar|peneir/i.test(passo.acao) ? ctx.vaso : 'tigela grande') ?? criarUtensilio('tigela grande') ?? new THREE.Group();
   destino.position.copy(destinoPos);
   mesa.adicionarExtra(destino);
   const coar = /coar|escorrer/.test(passo.acao) || /peneira|chinois|coador|escorredor|musselina/i.test(passo.utensilio);

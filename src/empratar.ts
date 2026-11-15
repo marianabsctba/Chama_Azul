@@ -382,11 +382,14 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     mesa.garantirPeca(principalRev, new THREE.Vector3());
   }
   // se a técnica levou o alimento ao fogo, ele chega ao prato cozido (mesmo que a peça tenha sido trocada)
-  const foiAoFogo = tecnica.passos.some((p) => p.gesto === 'calor' && (!p.alimento || p.alimento === mesa.pecaChave || p.adicionar?.includes(mesa.pecaChave)));
+  // modelos que já são o preparo pronto (ovo frito, crêpe, omelete) não levam tinta de cozimento por cima
+  const jaPronto = /^(ovo-|ovos-mexidos|omelete|frittata|crepe|panqueca-americana|pudim-yorkshire)/.test(mesa.pecaChave);
+  const foiAoFogo = !jaPronto && tecnica.passos.some((p) => p.gesto === 'calor' && (!p.alimento || p.alimento === mesa.pecaChave || p.adicionar?.includes(mesa.pecaChave)));
   if (foiAoFogo && mesa.peca && mesa.peca.cozimento < 1) mesa.peca.definirCozimento(1);
   const ficha = tecnica.prato ?? {};
   // o ponto que o livro dá ao resultado manda sobre o que o jogo calculou
-  if (ficha.estado && mesa.peca) mesa.peca.definirCozimento(COZIMENTO[ficha.estado]);
+  if (ficha.estado && mesa.peca && !jaPronto) mesa.peca.definirCozimento(COZIMENTO[ficha.estado]);
+  else if (jaPronto && mesa.peca) mesa.peca.definirCozimento(0);
   const preparoPrincipal = principalRev && ehPreparo(principalRev) ? principalRev : undefined;
   if (ficha.servir && (LOUCAS_PEQUENAS as string[]).includes(ficha.servir)) return servirPequena(cena, cozinha, mesa, tecnica, ficha.servir as LoucaPequena, preparoPrincipal);
   const real = mesa.peca ? Math.max(mesa.peca.comprimento, mesa.peca.largura) : 0.1;
@@ -411,7 +414,12 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // técnica de decorar sopa: a decoração dela por cima de uma sopa que a valorize
   const decoSopa = tipo === 'tigela' ? decorarSopa(tecnica.id, poco) : null;
   const corDeco = decoSopa ? SOPA_DA_DECORACAO[tecnica.id.replace(/^decoracao\./, '')] : undefined;
-  const molho = (tipo === 'tigela' && !doce ? (corDeco ? { cor: new THREE.Color(corDeco[0]), brilho: corDeco[1] } : corDaSopa(tecnica)) : null) ?? corMolho(tecnica, mesa, preparoPrincipal);
+  // o molho é o que a ficha do livro serve; a água do pochê ou o óleo da fritura nunca viram molho
+  const molho = ficha.liquido
+    ? { cor: new THREE.Color(ficha.liquido), brilho: ficha.claro ? 0.95 : 0.75 }
+    : tipo === 'tigela' && !doce
+      ? (corDeco ? { cor: new THREE.Color(corDeco[0]), brilho: corDeco[1] } : corDaSopa(tecnica)) ?? corMolho(tecnica, mesa, preparoPrincipal)
+      : null;
   // sopa clara em louça branca some: vai para a cerâmica azul-escura da casa
   if (tipo === 'tigela' && molho) {
     const hsl = { h: 0, s: 0, l: 0 };
@@ -487,7 +495,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // a decoração da sopa já mostra o que a técnica produz
   if (decoSopa && mesa.peca) mesa.removerPeca();
   // sopa: peça inteira grande (um tomate, um bloco de queijo) não vai por cima do caldo
-  if (peca && tipo === 'tigela' && Math.max(peca.comprimento, peca.largura) > 0.06 && peca.fragmentos.length < 3) {
+  if (peca && tipo === 'tigela' && !ficha.principal && Math.max(peca.comprimento, peca.largura) > 0.06 && peca.fragmentos.length < 3) {
     mesa.removerPeca();
   }
   // a peça principal: tamanho real, um pouco fora do centro, fatias em leque
@@ -526,7 +534,8 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // fica o que o livro serve junto
   if (peca) {
     const servidos = new Set(tecnica.prato?.acompanhamentos ?? []);
-    for (const c of [...peca.children]) if (c instanceof Peca && c.userData.alimento && !servidos.has(c.userData.alimento)) { peca.remove(c); c.descartar(); }
+    const temperou = /^(alho|cebola|cebola-roxa|chalota|louro|cravo|anis|canela|pimenta|zimbro|cardamomo|noz-moscada|gengibre|galanga|limao-kaffir|capim|tomilho|alecrim|sal|azeite|oleo|manteiga)/;
+    for (const c of [...peca.children]) if (c instanceof Peca && c.userData.alimento && temperou.test(c.userData.alimento) && !servidos.has(c.userData.alimento)) { peca.remove(c); c.descartar(); }
   }
   if (peca && mesa.peca) {
     mesa.peca = null;
@@ -585,7 +594,8 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     const qtd = Math.min(12, ficha.quantidade ?? 1);
     if (qtd > 1 && principalRev) {
       let larg = Math.max(c2.max.x - c2.min.x, c2.max.z - c2.min.z) * 1.08;
-      const empilhar = peca.altura / Math.max(peca.comprimento, peca.largura, 1e-3) < 0.16;
+      const temCobertura = peca.children.some((c) => c instanceof Peca);
+      const empilhar = !temCobertura && peca.altura / Math.max(peca.comprimento, peca.largura, 1e-3) < 0.16;
       const comprida = !empilhar && peca.comprimento > peca.largura * 2.2;
       const base = peca.position.clone();
       if (comprida) {
@@ -607,6 +617,18 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
         copia.scale.copy(peca.scale);
         copia.rotation.copy(peca.rotation);
         copia.definirCozimento(peca.cozimento);
+        // a cobertura vai junto em cada unidade (bruschetta com tomate, canapé com camarão)
+        for (const c of peca.children) {
+          if (!(c instanceof Peca) || !c.userData.alimento) continue;
+          const igual = pecaDe(c.userData.alimento);
+          if (!igual) continue;
+          igual.userData.alimento = c.userData.alimento;
+          igual.position.copy(c.position);
+          igual.rotation.copy(c.rotation);
+          igual.scale.copy(c.scale);
+          igual.definirCozimento(c.cozimento);
+          copia.add(igual);
+        }
         if (comprida) {
           // rolinhos, palitos e filés compridos: lado a lado, encostados, pela largura
           const passo = peca.largura * peca.scale.x * 1.12;
@@ -776,7 +798,7 @@ function servirPequena(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnica:
       m.position.y = corLiquido ? louca.nivel : louca.piso;
       grupo.add(m);
       peca.descartar();
-    } else if (!corLiquido || (louca.vidro && !ficha.liquido)) {
+    } else if (!corLiquido || (louca.vidro && !ficha.liquido) || ficha.principal) {
       // a peça (ou as unidades) dentro da louça, no tamanho que cabe
       const qtd = Math.min(8, ficha.quantidade ?? 1);
       const cabe = (louca.raioLiquido * 1.5) / Math.max(1, Math.sqrt(qtd));

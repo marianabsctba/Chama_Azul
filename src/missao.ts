@@ -2,7 +2,7 @@
 import * as THREE from 'three';
 import type { CenaEstacao, Cozinha, Tecnica } from './tipos';
 import type { ContextoGesto, Execucao, Hud, Modo, Relogio } from './gestos/base';
-import { FABRICAS, estacaoDoPasso } from './gestos';
+import { FABRICAS, estacaoDoPasso, vasoDoPasso } from './gestos';
 import { Mesa } from './gestos/mesa';
 import type { Jogador } from './motor/jogador';
 import type { Entrada } from './motor/entrada';
@@ -28,6 +28,8 @@ export class Missao {
   private estacaoAtual: CenaEstacao | null = null;
   private esperando = false;
   private pausaEntrePassos = 0;
+  /** Gesto que acabou: a cena dele (peneira, ferramenta, extras) fica à vista durante a pausa. */
+  private terminado: Execucao | null = null;
   readonly mesa: Mesa;
   readonly relogio: Relogio = { escala: 1, decorrido: 0 };
   encerrada = false;
@@ -53,6 +55,8 @@ export class Missao {
   private proximo() {
     this.exec?.descartar();
     this.exec = null;
+    this.terminado?.descartar();
+    this.terminado = null;
     this.indice++;
     if (this.indice >= this.tecnica.passos.length) {
       this.cozinha.abrirPorta('forno', false);
@@ -62,7 +66,8 @@ export class Missao {
       return;
     }
     const passo = this.tecnica.passos[this.indice];
-    const est = estacaoDoPasso(passo, this.tecnica, this.estacaoAtual);
+    const vaso = vasoDoPasso(this.tecnica, this.indice);
+    const est = estacaoDoPasso(passo, this.tecnica, this.estacaoAtual, vaso);
     this.eventos.aoPasso(this.indice, this.tecnica.passos.length);
     const comecar = () => {
       const estacao = this.cozinha.estacoes[est];
@@ -89,6 +94,7 @@ export class Missao {
         hud: this.hud,
         mesa: this.mesa,
         relogio: this.relogio,
+        vaso,
       };
       try {
         this.exec = FABRICAS[passo.gesto](ctx);
@@ -157,7 +163,7 @@ export class Missao {
       audio.acerto(r.nota >= 0.85 ? 1 : 0.5);
       audio.calar();
       this.eventos.aoResultadoPasso(this.indice, r);
-      this.exec.descartar();
+      this.terminado = this.exec;
       this.exec = null;
       this.pausaEntrePassos = 1.1;
     }
@@ -168,6 +174,8 @@ export class Missao {
     this.cozinha.abrirPorta('geladeira', false);
     this.exec?.descartar();
     this.exec = null;
+    this.terminado?.descartar();
+    this.terminado = null;
     this.mesa.limparTudo();
     audio.calar();
     this.encerrada = true;
