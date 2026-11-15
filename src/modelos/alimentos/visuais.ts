@@ -483,7 +483,7 @@ export const VISUAIS: Record<string, Visual> = {
   'merengue-frances': d('pasta', 'swirl', 0.08, 'f8f8f6 ecece8 f8f8f6 e8c890', { a: 0.9, d: 'estrias', ac: 'brilhante' }),
   'merengue-italiano': d('pasta', 'swirl', 0.08, 'f6f4ee eae8e0 f6f4ee e8c890', { a: 0.8 }),
   'merengue-suico': d('pasta', 'swirl', 0.08, 'fafaf8 eeeeea fafaf8 e8c890', { a: 1.0, d: 'estrias', ac: 'fosco' }),
-  pavlova: d('merengue', 'pavlova', 0.2, 'f8f4ec e8d8b8 f8f6f0 e8c890 c81e3a', { a: 0.3 }),
+  pavlova: d('merengue', 'pavlova', 0.2, 'faf6ee efe4cf f8f6f0 ecd8b0 c81e3a', { a: 0.3 }),
   'concha-merengue': d('merengue', 'concha', 0.07, 'f8f6f0 e8e0d0 f8f6f0 e8c890', { a: 0.5, ac: 'fosco' }),
   'ninho-merengue': d('merengue', 'ninho', 0.05, 'f8f6f0 e8e0d0 f8f6f0 e8c890', { a: 0.55, ac: 'fosco' }),
   'disco-merengue': d('merengue', 'disco', 0.2, 'f8f6f0 e8e0d0 f8f6f0 e8c890', { a: 0.1, ac: 'fosco' }),

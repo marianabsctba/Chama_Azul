@@ -300,13 +300,15 @@ async function iniciar() {
     return dist < 2.8 && d.normalize().dot(jogador.direcao()) > 0.93;
   }
 
+  let fovPadrao = 62;
   const ajustarTamanho = () => {
     const w = canvas.clientWidth || window.innerWidth;
     const h = canvas.clientHeight || window.innerHeight;
     camera.aspect = w / h;
     // tela em pé: abre a lente para manter a largura de visão de uma tela deitada
     const graus = Math.PI / 180;
-    camera.fov = camera.aspect < 1 ? Math.min(92, (2 * Math.atan(Math.tan(31 * graus) * (1.3 / Math.max(camera.aspect, 0.35)) * 0.62)) / graus) : 62;
+    fovPadrao = camera.aspect < 1 ? Math.min(92, (2 * Math.atan(Math.tan(31 * graus) * (1.3 / Math.max(camera.aspect, 0.35)) * 0.62)) / graus) : 62;
+    camera.fov = fovPadrao;
     camera.updateProjectionMatrix();
     renderer.setSize(w, h, false);
   };
@@ -383,12 +385,18 @@ async function iniciar() {
           ? '<b>WASD</b> para andar · vá até o caderno no púlpito ou aperte <b>C</b>'
           : 'Clique para olhar em volta · <b>C</b> abre o caderno de técnicas';
     }
+    // no prato, lente fechada de fotógrafo de comida; no resto, a lente normal
+    const alvoFov = estado === 'resultado' && prato ? (camera.aspect < 1 ? 46 : 30) : fovPadrao;
+    if (Math.abs(camera.fov - alvoFov) > 0.05) {
+      camera.fov += (alvoFov - camera.fov) * Math.min(1, dt * 3);
+      camera.updateProjectionMatrix();
+    }
     if (estado === 'resultado' && prato) {
       // volta lenta em torno do prato, de cima e de lado, como foto de cardápio
       prato.atualizar(dt);
       anguloPrato += dt * 0.22;
       // foto de cardápio: perto, de cima e de lado, balançando devagar
-      const r = prato.raio * 2.05;
+      const r = prato.raio * 2.7;
       const base = prato.centro;
       const frente = cozinha.inicio.posicao.clone().sub(base).setY(0).normalize();
       const a0 = Math.atan2(frente.z, frente.x);

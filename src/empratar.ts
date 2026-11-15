@@ -224,13 +224,18 @@ function emMonte(peca: Peca): number {
  * Apresentação de chef para cortes miúdos: feixe de palitinhos (julienne, tiras), montinho de
  * cubinhos (cubos, brunoise) ou de picadinho, na cor da polpa com alguns pedaços de casca.
  */
-function corteApresentado(peca: Peca, tipo: 'tiras' | 'cubos' | 'picar'): THREE.Group {
+function corteApresentado(peca: Peca, tipo: 'tiras' | 'cubos' | 'picar', medida?: number, folha = false): THREE.Group {
   const g = new THREE.Group();
+  // a medida do livro (palitos de 3 mm, cubos de 2 mm); sem medida, o clássico de cada corte
+  const lado = THREE.MathUtils.clamp(medida ?? (tipo === 'tiras' ? 0.003 : tipo === 'cubos' ? 0.009 : 0.0032), 0.0018, 0.035);
   const polpa = peca.corInterna.clone();
   const geoCasca = peca.forma.malhas[0]?.geometry.getAttribute('color');
   const casca = geoCasca ? new THREE.Color(geoCasca.getX(0), geoCasca.getY(0), geoCasca.getZ(0)) : polpa.clone().multiplyScalar(0.8);
-  const n = tipo === 'tiras' ? 34 : tipo === 'cubos' ? 26 : 70;
-  const geo = tipo === 'tiras' ? new THREE.BoxGeometry(0.055, 0.0032, 0.0032) : tipo === 'cubos' ? new THREE.BoxGeometry(0.009, 0.009, 0.009) : new THREE.BoxGeometry(0.0032, 0.0032, 0.0032);
+  // o volume servido fica parecido; cortes menores pedem mais pedaços
+  const n = Math.round(tipo === 'tiras' ? THREE.MathUtils.clamp(34 * (0.003 / lado) ** 2, 10, 140) : tipo === 'cubos' ? THREE.MathUtils.clamp(26 * (0.009 / lado) ** 2.2, 6, 520) : 70);
+  const tamPeca = tipo === 'picar' ? 0.0032 : lado;
+  // folha em tiras (chiffonade) são fitas finas e soltas, não palitos
+  const geo = tipo === 'tiras' && folha ? new THREE.BoxGeometry(0.04, 0.0006, Math.max(lado, 0.0022)) : tipo === 'tiras' ? new THREE.BoxGeometry(0.055, lado, lado) : new THREE.BoxGeometry(tamPeca, tamPeca, tamPeca);
   const mat = new THREE.MeshStandardMaterial({ roughness: 0.55 });
   const inst = new THREE.InstancedMesh(geo, mat, n);
   const o = new THREE.Object3D();
@@ -238,17 +243,25 @@ function corteApresentado(peca: Peca, tipo: 'tiras' | 'cubos' | 'picar'): THREE.
   const rnd = () => ((s = (s * 9301 + 49297) % 233280) / 233280);
   const cor = new THREE.Color();
   for (let i = 0; i < n; i++) {
-    if (tipo === 'tiras') {
+    if (tipo === 'tiras' && folha) {
+      // ninho de fitas soltas
+      const a = rnd() * Math.PI * 2;
+      const r = Math.sqrt(rnd()) * 0.016;
+      o.position.set(Math.cos(a) * r, 0.001 + rnd() * 0.009 * (1 - r / 0.018), Math.sin(a) * r);
+      o.rotation.set((rnd() - 0.5) * 0.9, rnd() * Math.PI * 2, (rnd() - 0.5) * 0.9);
+    } else if (tipo === 'tiras') {
       // feixe: palitos quase paralelos, empilhados em pirâmide
+      const larg = Math.sqrt(n) * lado * 1.6;
       const camada = Math.floor(Math.sqrt(i * 0.9));
-      o.position.set((rnd() - 0.5) * 0.006, 0.0016 + camada * 0.0029, (rnd() - 0.5) * (0.026 - camada * 0.004));
+      o.position.set((rnd() - 0.5) * 0.006, lado / 2 + camada * lado * 0.92, (rnd() - 0.5) * Math.max(lado, larg - camada * lado * 1.3));
       o.rotation.set(0, (rnd() - 0.5) * 0.25, (rnd() - 0.5) * 0.1);
     } else {
       // montinho: mais alto no meio
       const a = rnd() * Math.PI * 2;
-      const r = Math.sqrt(rnd()) * (tipo === 'cubos' ? 0.024 : 0.018);
-      const tam = tipo === 'cubos' ? 0.009 : 0.0032;
-      o.position.set(Math.cos(a) * r, tam / 2 + (1 - r / 0.026) * tam * (tipo === 'cubos' ? 1.6 : 3), Math.sin(a) * r);
+      const raio = tipo === 'cubos' ? THREE.MathUtils.clamp(lado * 2.7, 0.016, 0.034) : 0.018;
+      const r = Math.sqrt(rnd()) * raio;
+      const tam = tamPeca;
+      o.position.set(Math.cos(a) * r, tam / 2 + (1 - r / (raio * 1.08)) * Math.max(tam * 1.6, raio * 0.35) * rnd(), Math.sin(a) * r);
       o.rotation.set(rnd() * 0.4, rnd() * 3, rnd() * 0.4);
     }
     o.updateMatrix();
@@ -271,6 +284,28 @@ function caixaVisivel(peca: Peca): THREE.Box3 {
     caixa.union(local.applyMatrix4(f.grupo.matrixWorld));
   }
   return caixa;
+}
+
+/** Cor da sopa pelo que ela é (o nome da técnica diz mais do que o caldo genérico da panela). */
+const CORES_SOPA: [RegExp, string, number][] = [
+  [/escuro|demi|carne|boi|rabada|consom/, '#7a4a22', 0.85],
+  [/cebola/, '#a8692e', 0.8],
+  [/bisque|crust|lagost|camar|caranguejo|lagostim/, '#e08a5a', 0.6],
+  [/tomate|gazpacho|pimentao|piment/, '#c8432b', 0.6],
+  [/ab[oó]bora|cenoura|batata.doce/, '#e8913a', 0.55],
+  [/ervilha|espinafre|agri[aã]o|verde|pesto|ervas|alho.por|aspargo|br[oó]colis/, '#6f9a3a', 0.55],
+  [/beterraba|borscht/, '#8a1f3d', 0.6],
+  [/feij[aã]o|lentilha|gr[aã]o/, '#7a5a3a', 0.4],
+  [/cogumelo/, '#8a7660', 0.5],
+  [/frutas|fruta|cereja|morango|framboesa/, '#d8607a', 0.8],
+  [/creme|cremosa|veloute|velout|vichyssoise|leite|iogurte|liaison/, '#f2e6c4', 0.5],
+  [/peixe|fumet|galinha|ave|frango|legumes|caldo|dashi|brodo/, '#e3c47a', 0.9],
+];
+
+function corDaSopa(tecnica: Tecnica): { cor: THREE.Color; brilho: number } | null {
+  const t = `${tecnica.nome} ${tecnica.prato?.principal ?? ''}`.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  for (const [re, cor, brilho] of CORES_SOPA) if (re.test(t)) return { cor: new THREE.Color(cor), brilho };
+  return null;
 }
 
 /** Cor do molho do prato: o que ficou na panela, ou o clássico da bancada. */
@@ -335,7 +370,16 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   const { g: louca, poco, piso } = criarLouca(tipo, R);
   grupo.add(louca);
 
-  const molho = corMolho(tecnica, mesa, preparoPrincipal);
+  const molho = (tipo === 'tigela' && !doce ? corDaSopa(tecnica) : null) ?? corMolho(tecnica, mesa, preparoPrincipal);
+  const cremosa = /creme|cremosa|velout|vichyssoise|bisque|batida|bater|mixer|processador|mouli|pur[eê]/i.test(tecnica.nome);
+  // doce que não é de fatiar (pavlova, suspiro, torta inteira) vai ao prato inteiro, sem as marcas do jogo
+  if (doce && mesa.peca && mesa.peca.fragmentos.length > 1 && !tecnica.passos.some((p) => p.gesto === 'cortar') && tecnica.prato?.principal) {
+    const inteira = pecaDe(tecnica.prato.principal);
+    if (inteira) {
+      mesa.removerPeca();
+      mesa.peca = inteira;
+    }
+  }
   const peca = mesa.peca;
   mesa.soltarFerramenta();
   mesa.limparExtras();
@@ -349,10 +393,15 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       caldo.rotation.x = -Math.PI / 2;
       caldo.position.y = nivel;
       grupo.add(caldo);
-      if (tipo === 'tigela' && !doce) {
+      if (tipo === 'tigela' && !doce && cremosa) {
         const creme = espiralCreme(poco * 0.75);
         creme.position.y = nivel + 0.0008;
         grupo.add(creme);
+      } else if (tipo === 'tigela' && !doce) {
+        // caldo claro: gotinhas de azeite de ervas na superfície
+        const gotas = pontos(poco * 0.45, 0.4, 5, 0.0035, new THREE.Color('#6f9a3a'));
+        gotas.position.y = nivel + 0.0004;
+        grupo.add(gotas);
       }
     }
   } else if (molho && tipo !== 'tabua') {
@@ -381,8 +430,18 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     alturaBase = 0.012;
   }
 
+  const ultimoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar')?.variante;
+  const miudoCorte = ultimoCorte === 'tiras' || ultimoCorte === 'cubos' || ultimoCorte === 'picar' ? ultimoCorte : null;
+  let feixeFeito = false;
+  const passoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar' && p.variante === miudoCorte);
+  const metaCorte = passoCorte?.meta;
+  const medidaCorte = metaCorte && (metaCorte.unidade === 'mm' || metaCorte.unidade === 'cm') ? metaCorte.valor * (metaCorte.unidade === 'mm' ? 0.001 : 0.01) : undefined;
+  // sopa: peça inteira grande (um tomate, um bloco de queijo) não vai por cima do caldo
+  if (peca && tipo === 'tigela' && Math.max(peca.comprimento, peca.largura) > 0.06 && peca.fragmentos.length < 3) {
+    mesa.removerPeca();
+  }
   // a peça principal: tamanho real, um pouco fora do centro, fatias em leque
-  if (peca) {
+  if (peca && mesa.peca) {
     mesa.peca = null;
     mesa.pecaChave = '';
     mesa.capa = null;
@@ -400,11 +459,10 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     peca.position.set(0, nivelPrincipal + alturaBase, 0);
     const telhas = emTelhas(peca);
     if (telhas) peca.scale.setScalar(Math.min(peca.scale.x, (poco * 1.5) / telhas));
-    const ultimoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar')?.variante;
-    const miudoCorte = ultimoCorte === 'tiras' || ultimoCorte === 'cubos' || ultimoCorte === 'picar' ? ultimoCorte : null;
-    if (miudoCorte && peca.fragmentos.length >= 3 && !telhas) {
+    if (miudoCorte && !telhas) {
       for (const f of peca.fragmentos) f.grupo.visible = false;
-      const apresentado = corteApresentado(peca, miudoCorte);
+      const apresentado = corteApresentado(peca, miudoCorte, medidaCorte, familiaDe(principalRev ?? tecnica.passos.find((p) => p.alimento)?.alimento ?? '') === 'erva');
+      feixeFeito = true;
       apresentado.position.set(-poco * 0.05, nivelPrincipal, poco * 0.02);
       apresentado.rotation.y = -0.5;
       grupo.add(apresentado);
@@ -425,6 +483,16 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     const cTopo = grupo.worldToLocal(topo.getCenter(new THREE.Vector3()));
     const y = grupo.worldToLocal(topo.max.clone()).y;
     const erva = doce ? 'hortela' : 'cerefolio';
+    // doce: as frutas da receita por cima, num montinho, antes da hortelã
+    const fruta = doce ? (tecnica.prato?.acompanhamentos ?? []).find((id) => familiaDe(id) && familiaDe(id) !== 'erva') : undefined;
+    if (fruta) {
+      for (let i = 0; i < 7; i++) {
+        const a = i * 2.4;
+        const r = i === 0 ? 0 : 0.011 + (i % 2) * 0.006;
+        const f = miudo(fruta, 0.018, new THREE.Vector3(cTopo.x + Math.cos(a) * r, y + (i === 0 ? 0.008 : 0.001), cTopo.z + Math.sin(a) * r), a);
+        if (f) grupo.add(f);
+      }
+    }
     for (let i = 0; i < (doce ? 2 : 5); i++) {
       const a = i * 1.26;
       const f = miudo(erva, doce ? 0.022 : 0.014, new THREE.Vector3(cTopo.x + Math.cos(a) * 0.008, y - 0.002, cTopo.z + Math.sin(a) * 0.008), a * 1.7);
@@ -437,27 +505,54 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // temperos e aromáticos inteiros não vão ao prato como guarnição
   const AROMATICOS = /^(alho|cebola|cebola-roxa|chalota|louro|cravo|anis|canela|pimenta|zimbro|cardamomo|noz-moscada|gengibre|galanga|limao-kaffir|capim)/;
   let guarnicoes = (tecnica.prato?.acompanhamentos ?? tecnica.alimentos).filter((id) => id !== principal && familiaDe(id) && !['recipiente', 'monte', 'pasta', 'bulbo'].includes(familiaDe(id)!) && !AROMATICOS.test(id)).slice(0, 3);
-  if (!guarnicoes.length) guarnicoes = doce ? ['framboesa'] : ['tomate-cereja'].filter((id) => familiaDe(id));
-  if (!guarnicoes.length && !doce) guarnicoes = ['salsa'];
-  const lugares: string[] = guarnicoes.length === 1 ? [guarnicoes[0], guarnicoes[0], guarnicoes[0]] : guarnicoes.length === 2 ? [guarnicoes[0], guarnicoes[1], guarnicoes[0]] : guarnicoes;
+  const tamReal = (id: string) => {
+    const t = pecaDe(id);
+    if (!t) return 0.04;
+    const v = Math.max(t.comprimento, t.largura);
+    t.descartar();
+    return v;
+  };
+  // na sopa só boia o que é miúdo de verdade (ervas, pedacinhos); nada de tomate inteiro no caldo
+  if (tipo === 'tigela') guarnicoes = guarnicoes.filter((id) => familiaDe(id) === 'erva' || tamReal(id) < 0.03);
+  else if (!guarnicoes.length) guarnicoes = doce ? ['framboesa'] : ['tomate-cereja'].filter((id) => familiaDe(id));
+  if (!guarnicoes.length && !doce && tipo !== 'tigela') guarnicoes = ['salsa'];
+  // corte miúdo no prato: os legumes que acompanham vão no mesmo corte, em feixe ao lado (julienne de cenoura, não cenoura inteira)
+  if (feixeFeito && miudoCorte && tipo !== 'tigela' && tipo !== 'taca') {
+    // só o que a receita leva de verdade, nunca a guarnição padrão
+    const legumes = (tecnica.prato?.acompanhamentos ?? []).filter((id) => familiaDe(id) && !['erva', 'recipiente', 'pasta'].includes(familiaDe(id)!));
+    legumes.slice(0, 3).forEach((id, i) => {
+      const t = pecaDe(id);
+      if (!t) return;
+      const f = corteApresentado(t, miudoCorte, medidaCorte);
+      t.descartar();
+      const a = 0.55 + i * 0.75;
+      f.position.set(Math.cos(a) * poco * 0.42, piso, Math.sin(a) * poco * 0.42);
+      f.rotation.y = -0.5 + (i + 1) * 0.35;
+      grupo.add(f);
+    });
+    guarnicoes = guarnicoes.filter((id) => familiaDe(id) === 'erva');
+  }
+  const lugares: string[] = guarnicoes.length === 0 ? [] : guarnicoes.length === 1 ? [guarnicoes[0], guarnicoes[0], guarnicoes[0]] : guarnicoes.length === 2 ? [guarnicoes[0], guarnicoes[1], guarnicoes[0]] : guarnicoes;
   if (tipo !== 'tigela' && tipo !== 'taca') {
     lugares.forEach((id, i) => {
       const a = 0.35 + i * 0.36;
       const r = poco * 0.78;
       // guarnição no tamanho real, só limitada a uns 7 cm (cenoura baby, não minicenoura)
-      const real = (() => {
-        const t = pecaDe(id);
-        if (!t) return 0.04;
-        const v = Math.max(t.comprimento, t.largura);
-        t.descartar();
-        return v;
-      })();
+      const real = tamReal(id);
       const tam = familiaDe(id) === 'erva' ? 0.035 : THREE.MathUtils.clamp(real, 0.025, 0.07);
       const f = miudo(id, tam, new THREE.Vector3(Math.cos(a) * r, piso, Math.sin(a) * r), a * 2.1);
       if (f) grupo.add(f);
     });
   } else {
-    // sopa e taça: um único detalhe no centro
+    // sopa: as guarnições da técnica boiando num grupinho no centro
+    if (tipo === 'tigela') {
+      lugares.slice(0, 3).forEach((gid, i) => {
+        const a = i * 2.1;
+        const fr = miudo(gid, familiaDe(gid) === 'erva' ? 0.02 : 0.022, new THREE.Vector3(Math.cos(a) * 0.016, 0.031, Math.sin(a) * 0.016), a);
+        if (fr) grupo.add(fr);
+      });
+    }
+    // sopa e taça: um detalhe de erva no centro
     const id = doce ? 'hortela' : 'cerefolio';
     const f = miudo(id, 0.025, new THREE.Vector3(0.006, (tipo === 'taca' ? 0.12 : 0.031) + 0.001, -0.004), 0.7);
     if (f) grupo.add(f);
