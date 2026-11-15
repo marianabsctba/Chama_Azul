@@ -589,4 +589,21 @@ export const VISUAIS: Record<string, Visual> = {
   'biscoito-champagne': d('confeito', 'palito', 0.1, 'e8c070 d8a850 f4e0b0 b87a30', { a: 0.15, l: 0.28, d: 'acucar', ac: 'fosco' }),
   tuile: d('confeito', 'telha', 0.08, 'e0b060 c08a3a f0d8a0 a86a20', { a: 0.015, l: 1, d: 'borda' }),
   tulipa: d('confeito', 'cesta', 0.1, 'e0b060 c08a3a f0d8a0 a86a20', { a: 0.45, ac: 'fosco' }),
+
+  /* ---------------- alimentos que as técnicas pediam e faltavam ---------------- */
+  gengibre: d('rizoma', 'gengibre', 0.1, 'b48c5c 5a3a20 f0dc98 c89040 d8a088', { a: 0.25 }),
+  galanga: d('rizoma', 'galanga', 0.12, 'dcb49a 5a2a1c f4ead2 c8904a e0907e', { a: 0.22 }),
+  'wasabi-raiz': d('rizoma', 'wasabi', 0.14, '6e8e40 3e5226 d8e8a8 a8b860 8aac50', { l: 0.21, ac: 'acetinado' }),
+  salvia: d('erva', 'salvia', 0.12, '4a5e4c 9aa898 7a8c6c 4a5a3a 7a8a6a', { l: 0.4, n: 4, d: 'oval rugosa', ac: 'fosco' }),
+  bacon: d('carne', 'bacon', 0.22, 'b23c3c f2e2d0 d87a70 a85a2a 8a4a2a', { a: 0.014, l: 0.16, n: 3 }),
+  cranberry: d('baga', 'cranberry', 0.015, '7a0814 d0505e c82a30 6a1014 3a2418', { a: 0.82 }),
+  'fava-baunilha': d('vagem', 'baunilha', 0.17, '2a1810 5a3a22 1a100c 2a1810 6a4a30', { a: 0.022, l: 0.05 }),
+  falafel: d('massa_bola', 'falafel', 0.042, '8a5424 4a2810 7a9440 6a4018 e0cc98', { a: 0.82, ac: 'fosco' }),
+  'polenta-firme': d('barra', 'polenta', 0.12, 'd8a632 a87418 eec040 c88a30', { a: 0.125, l: 0.65 }),
+  pate: d('barra', 'terrina', 0.16, '865444 e0b438 a86e5a 7a4a34 4a6a32', { a: 0.4, l: 0.5 }),
+  omelete: d('pao_chato', 'omelete', 0.2, 'e8b018 b87018 f6dc70 c8903a', { a: 0.025, ac: 'acetinado' }),
+  frittata: d('pao_chato', 'frittata', 0.2, 'f0c848 b87a2a f4d870 a86a20 4a7a2a', { a: 0.15, ac: 'acetinado' }),
+  gergelim: d('monte', 'gergelim', 0.05, 'dcc290 a08050 f2e8cc c89a58', { a: 0.34, n: 220 }),
+  'foie-gras': d('miudo', 'foie', 0.18, 'e2b892 c47a66 ecd2b6 c8905a e8cc8a', { a: 0.3, l: 0.6 }),
+  'pudim-yorkshire': d('choux', 'yorkshire', 0.08, 'c8862c 8a4e16 f0d890 a86420 e8c070', { a: 0.8 }),
 };

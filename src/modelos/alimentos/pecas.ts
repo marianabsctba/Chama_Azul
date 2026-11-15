@@ -14,7 +14,7 @@ export type Familia =
   | 'cefalopode' | 'ave' | 'peca_ave' | 'carne' | 'carne_osso' | 'carne_moida' | 'miudo'
   | 'linguica' | 'massa_bola' | 'pao' | 'pao_chato' | 'queijo' | 'barra' | 'placa' | 'monte'
   | 'castanha' | 'massa' | 'recipiente' | 'pasta' | 'bolo' | 'torta' | 'confeito' | 'choux'
-  | 'folhado' | 'merengue';
+  | 'folhado' | 'merengue' | 'rizoma';
 
 /** Linha da tabela visual de um alimento. */
 export interface Visual {

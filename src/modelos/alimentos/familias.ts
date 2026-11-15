@@ -10,6 +10,7 @@ import { gCitrico, gCaroco, gBaga, gTropical } from './fam_frutas';
 import { gPeixe, gPeixeChato, gFilePeixe, gCrustaceo, gBivalve, gConchaEspiral, gCefalopode } from './fam_mar';
 import { gAve, gPecaAve, gCarne, gCarneOsso, gCarneMoida, gMiudo, gLinguica } from './fam_carnes';
 import { gMassaBola, gPao, gPaoChato, gQueijo, gBarra, gPlaca, gMonte, gCastanha, gMassa } from './fam_padaria';
+import { gRizoma, gBacon, gFoieGras, gTerrina, gPolenta, gOmelete, gFrittata, gFalafel, gYorkshire, gCranberry, gBaunilha, gGergelim, gSalvia, comVariantes } from './fam_extras';
 import { gRecipiente, gPasta, gBolo, gTorta, gConfeito, gChoux, gFolhado, gMerengue } from './fam_doces';
 
 export type { Familia, Visual } from './pecas';
@@ -27,7 +28,7 @@ export const FAMILIAS: Record<Familia, Registro> = {
   esferoide: { g: gEsferoide, a: 0.9, l: 1, ac: 'acetinado' },
   citrico: { g: gCitrico, a: 0.95, l: 1, ac: 'acetinado' },
   caroco: { g: gCaroco, a: 0.95, l: 1, ac: 'acetinado' },
-  baga: { g: gBaga, a: 1, l: 1, ac: 'brilhante' },
+  baga: { g: comVariantes(gBaga, { cranberry: gCranberry }), a: 1, l: 1, ac: 'brilhante' },
   tropical: { g: gTropical, a: 1, l: 1, ac: 'acetinado' },
   abobora: { g: gAbobora, a: 0.6, l: 0.4, ac: 'acetinado' },
   cone: { g: gCone, a: 1, l: 0.16, ac: 'acetinado' },
@@ -36,8 +37,8 @@ export const FAMILIAS: Record<Familia, Registro> = {
   bulbo: { g: gBulbo, a: 0.85, l: 1, ac: 'fosco' },
   talo: { g: gTalo, a: 1, l: 0.04, ac: 'acetinado' },
   cacho: { g: gCacho, a: 1, l: 0.1, ac: 'acetinado' },
-  erva: { g: gErva, a: 1, l: 0.5, ac: 'acetinado' },
-  vagem: { g: gVagem, a: 0.7, l: 0.08, ac: 'acetinado' },
+  erva: { g: comVariantes(gErva, { salvia: gSalvia }), a: 1, l: 0.5, ac: 'acetinado' },
+  vagem: { g: comVariantes(gVagem, { baunilha: gBaunilha }), a: 0.7, l: 0.08, ac: 'acetinado' },
   espiga: { g: gEspiga, a: 1, l: 0.25, ac: 'brilhante' },
   cogumelo: { g: gCogumelo, a: 0.8, l: 1, ac: 'fosco' },
   pimenta: { g: gPimenta, a: 1, l: 0.2, ac: 'brilhante' },
@@ -51,18 +52,18 @@ export const FAMILIAS: Record<Familia, Registro> = {
   cefalopode: { g: gCefalopode, a: 0.2, l: 0.18, ac: 'umido' },
   ave: { g: gAve, a: 0.55, l: 0.62, ac: 'acetinado' },
   peca_ave: { g: gPecaAve, a: 0.3, l: 0.5, ac: 'brilhante' },
-  carne: { g: gCarne, a: 0.35, l: 0.55, ac: 'brilhante' },
+  carne: { g: comVariantes(gCarne, { bacon: gBacon }), a: 0.35, l: 0.55, ac: 'brilhante' },
   carne_osso: { g: gCarneOsso, a: 0.4, l: 0.6, ac: 'brilhante' },
   carne_moida: { g: gCarneMoida, a: 0.4, l: 1, ac: 'acetinado' },
-  miudo: { g: gMiudo, a: 0.25, l: 0.6, ac: 'umido' },
+  miudo: { g: comVariantes(gMiudo, { foie: gFoieGras }), a: 0.25, l: 0.6, ac: 'umido' },
   linguica: { g: gLinguica, a: 1, l: 0.15, ac: 'brilhante' },
-  massa_bola: { g: gMassaBola, a: 0.6, l: 1, ac: 'acetinado' },
+  massa_bola: { g: comVariantes(gMassaBola, { falafel: gFalafel }), a: 0.6, l: 1, ac: 'acetinado' },
   pao: { g: gPao, a: 0.4, l: 0.45, ac: 'fosco' },
-  pao_chato: { g: gPaoChato, a: 0.03, l: 1, ac: 'fosco' },
+  pao_chato: { g: comVariantes(gPaoChato, { omelete: gOmelete, frittata: gFrittata }), a: 0.03, l: 1, ac: 'fosco' },
   queijo: { g: gQueijo, a: 0.5, l: 0.6, ac: 'acetinado' },
-  barra: { g: gBarra, a: 0.25, l: 0.5, ac: 'acetinado' },
+  barra: { g: comVariantes(gBarra, { terrina: gTerrina, polenta: gPolenta }), a: 0.25, l: 0.5, ac: 'acetinado' },
   placa: { g: gPlaca, a: 0.01, l: 0.8, ac: 'acetinado' },
-  monte: { g: gMonte, a: 0.4, l: 1, ac: 'fosco' },
+  monte: { g: comVariantes(gMonte, { gergelim: gGergelim }), a: 0.4, l: 1, ac: 'fosco' },
   castanha: { g: gCastanha, a: 0.5, l: 0.6, ac: 'acetinado' },
   massa: { g: gMassa, a: 0.3, l: 0.5, ac: 'fosco' },
   recipiente: { g: gRecipiente, a: 0.5, l: 1, ac: 'brilhante' },
@@ -70,9 +71,10 @@ export const FAMILIAS: Record<Familia, Registro> = {
   bolo: { g: gBolo, a: 0.4, l: 1, ac: 'acetinado' },
   torta: { g: gTorta, a: 0.15, l: 1, ac: 'acetinado' },
   confeito: { g: gConfeito, a: 0.1, l: 1, ac: 'acetinado' },
-  choux: { g: gChoux, a: 0.7, l: 0.3, ac: 'fosco' },
+  choux: { g: comVariantes(gChoux, { yorkshire: gYorkshire }), a: 0.7, l: 0.3, ac: 'fosco' },
   folhado: { g: gFolhado, a: 0.3, l: 0.6, ac: 'fosco' },
   merengue: { g: gMerengue, a: 0.6, l: 1, ac: 'acetinado' },
+  rizoma: { g: gRizoma, a: 0.25, l: 0.5, ac: 'fosco' },
 };
 
 /** Gera a forma a partir de uma linha da tabela visual. */

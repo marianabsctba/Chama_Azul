@@ -1,0 +1,17 @@
+[
+  { "id": "gengibre", "nome": "Gengibre fresco", "forma": "rizoma nodoso e ramificado, casca bege-dourada fina com anéis, polpa amarelo-clara fibrosa" },
+  { "id": "galanga", "nome": "Galanga", "forma": "rizoma parecido com gengibre, mais liso e rosado, com anéis escuros marcados, polpa creme" },
+  { "id": "salvia", "nome": "Sálvia", "forma": "ramo com folhas ovais aveludadas verde-acinzentadas, nervuras marcadas e textura rugosa" },
+  { "id": "bacon", "nome": "Bacon", "forma": "fatias finas e compridas de barriga de porco defumada, faixas rosadas de carne alternadas com gordura branca, bordas onduladas" },
+  { "id": "cranberry", "nome": "Cranberry", "forma": "frutinhas redondas de 1,5 cm, vermelho intenso e brilhante, levemente ovais" },
+  { "id": "fava-baunilha", "nome": "Fava de baunilha", "forma": "vagem fina e comprida de 15 a 20 cm, marrom-escura quase preta, enrugada e brilhante, achatada" },
+  { "id": "falafel", "nome": "Falafel", "forma": "bolinhos de grão-de-bico de 4 cm, casca frita marrom-dourada e crocante, miolo verde de ervas" },
+  { "id": "polenta-firme", "nome": "Polenta firme", "forma": "placa ou fatias retangulares de polenta firme, amarelo-ouro, superfície lisa, 1,5 cm de espessura" },
+  { "id": "pate", "nome": "Patê em terrina", "forma": "bloco retangular de patê liso rosado-amarronzado, coberto por uma camada fina de manteiga clarificada amarela" },
+  { "id": "omelete", "nome": "Omelete fina", "forma": "disco fino de ovo batido cozido, amarelo com leves manchas douradas, que pode ser enrolado ou cortado em tiras" },
+  { "id": "frittata", "nome": "Frittata", "forma": "omelete grossa e redonda de 3 cm, como uma torta baixa, dourada por cima com legumes visíveis" },
+  { "id": "gergelim", "nome": "Gergelim", "forma": "sementes miúdas, achatadas e ovais, bege-claro (ou pretas), em montinho" },
+  { "id": "wasabi-raiz", "nome": "Raiz de wasabi", "forma": "rizoma verde em forma de bastão com a superfície coberta de nós e cicatrizes de folhas, talos cortados no topo" },
+  { "id": "foie-gras", "nome": "Foie gras", "forma": "fígado gordo de pato ou ganso em dois lobos lisos, bege-rosado, macio e brilhante" },
+  { "id": "pudim-yorkshire", "nome": "Pudim Yorkshire", "forma": "massa assada estufada em forminha, bordas altas douradas e crocantes, centro afundado" }
+]
