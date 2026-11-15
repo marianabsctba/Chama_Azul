@@ -88,7 +88,7 @@ const FRANGO_ASSADO = { c1: '#c8823a', c2: '#a8602a', ci: '#f0dcc4', cc: '#b06a2
 const PATO_CRU = { c1: '#e6ceae', c2: '#d4b494', ci: '#b8584a', cc: '#a85a28' };
 const COELHO_CRU = { c1: '#e8b8b0', c2: '#ecc8bc', ci: '#e8b8b0', cc: '#c0864a' };
 
-const vis = (v: string, t: number, c: { c1: string; c2?: string; ci: string; cc: string }): Visual => ({ f: 'peca_ave', v, t, a: 0.3, l: 0.9, c1: c.c1, c2: c.c2, ci: c.ci, cc: c.cc });
+const vis = (v: string, t: number, c: { c1: string; c2?: string; ci: string; cc: string }): Visual => ({ f: 'ave', v, t, a: 0.3, l: 0.9, c1: c.c1, c2: c.c2, ci: c.ci, cc: c.cc });
 
 export const LOTE: Lote = {
   'frango-em-oito-pedacos': { visual: vis('oito', 0.26, FRANGO_CRU), gerar: conjunto(OITO, FRANGO_CRU) },
