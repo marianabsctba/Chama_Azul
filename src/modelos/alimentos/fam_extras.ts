@@ -690,3 +690,116 @@ export const gSalvia: Gerador = (k) => {
   }
   return out;
 };
+
+/* ------------------------------------------------------------------ */
+/* crêpes nas dobras do livro e panqueca americana (família pão chato)   */
+/* ------------------------------------------------------------------ */
+
+/** Cor de crêpe: massa clara com a renda dourada da frigideira. */
+function corCrepe(k: Parameters<Gerador>[0], escala: number): CorFn {
+  const { c1, c2, s } = k;
+  return (x, y, z) => {
+    let c = mul(c1, 0.95 + 0.08 * fbm(x * 70, y * 70, z * 70, s));
+    // renda: anéis dourados das bolhas que estouram na frigideira, mais escuros no centro de cada uma
+    const cel = celula(x * escala * 0.45, y * escala * 0.45, z * escala * 0.45, s + 1);
+    const renda = 1 - suave(0.1, 0.4, cel);
+    const manchas = suave(-0.05, 0.45, fbm(x * 22, y * 22, z * 22, s + 2));
+    c = mix(c, c2, clamp(renda * 0.95 + manchas * 0.55));
+    c = mix(c, mul(c2, 0.7), renda * manchas * 0.6);
+    return c;
+  };
+}
+
+export const gCrepe: Gerador = (k) => {
+  const L = k.T, R = L / 2, H = 0.0018;
+  // disco fino com a borda levemente ondulada
+  return [parte(laje(30, 44, (u, v, lado) => {
+    const a = v * Math.PI;
+    const r = u * R * (1 + 0.02 * Math.sin(a * 7));
+    return [Math.cos(a) * r, lado * H + 0.0006 * Math.sin(r * 300) * (r / R), Math.sin(a) * r];
+  }, corCrepe(k, 220)), k.ac, true)];
+};
+
+export const gCrepeEnrolada: Gerador = (k) => {
+  // como o livro manda: recheio no centro, dois lados opostos dobrados para dentro e enrolada de
+  // uma ponta à outra. Um rolinho fechado e gordinho (tipo burrito), pontas arredondadas e dobradas,
+  // a emenda da última volta por baixo, o recheio escondido.
+  const L = k.T, R = L * 0.16;
+  const base = corCrepe(k, 200);
+  const cor: CorFn = (x, y, z, t, a) => {
+    let c = base(x, y, z, t, a);
+    // emenda da última volta, quase embaixo, e vincos das abas dobradas nas pontas
+    const emenda = 1 - suave(0.0, 0.08, Math.abs(Math.sin((a - 0.55 * Math.PI) / 2)));
+    const ponta = suave(0.86, 0.97, Math.abs(t * 2 - 1));
+    c = mul(c, 1 - emenda * 0.22 - ponta * 0.15 * (0.5 + 0.5 * Math.sin(a * 3)));
+    return c;
+  };
+  const out: Parte[] = [parte(corpo({
+    x0: -L / 2, x1: L / 2, n: 40, m: 36,
+    perfil: (t) => {
+      const e = Math.abs(t * 2 - 1);
+      const f = e < 0.8 ? 1 : Math.sqrt(Math.max(0.02, 1 - ((e - 0.8) / 0.2) ** 2)) * 0.75 + 0.25 * (1 - (e - 0.8) / 0.2);
+      return { ry: R * 0.82 * f, rz: R * f, cy: R * 0.82 };
+    },
+    mod: (t, a) => 1 + 0.025 * Math.sin(a * 2 + t * 9) + 0.015 * fbm(t * 6, Math.cos(a), Math.sin(a), k.s),
+    cor,
+  }), k.ac, true)];
+  // a aba da última volta, colada na lateral: dá para ver que é massa enrolada
+  out.push(parte(laje(24, 6, (u, v, lado) => {
+    const x = (u - 0.5) * L * 0.84;
+    const a = -0.35 + (v + 1) * 0.32;
+    const rr = R * (1.02 + 0.03 * lado) * (1 - 0.08 * (v + 1));
+    return [x, R * 0.82 + Math.sin(a) * rr * 0.82, Math.cos(a) * rr];
+  }, base), k.ac, true));
+  return out;
+};
+
+export const gCrepeQuadrada: Gerador = (k) => {
+  // pannequet: os quatro lados dobrados para dentro, um pacotinho quadrado e estufado
+  const S = k.T, H = S * 0.13;
+  const base = corCrepe(k, 200);
+  const cor: CorFn = (x, y, z, t, a) => {
+    let c = base(x, y, z, t, a);
+    // vincos das dobras: cruz no meio e borda mais dourada
+    const vinco = Math.max(1 - suave(0.0, S * 0.03, Math.abs(x)), 1 - suave(0.0, S * 0.03, Math.abs(z)));
+    c = mul(c, 1 - vinco * 0.18 * (y > H * 0.5 ? 1 : 0));
+    return c;
+  };
+  return [parte(laje(32, 32, (u, v, lado) => {
+    const x = (u - 0.5) * S, z = v * S * 0.5;
+    const e = Math.max(Math.abs(x) / (S / 2), Math.abs(z) / (S / 2));
+    const topo = H * (1 - e ** 6) * (0.9 + 0.1 * Math.cos(x * 60) * Math.cos(z * 60));
+    return [x * (1 - 0.06 * lado * e ** 4), lado ? Math.max(0.0016, topo) : 0, z * (1 - 0.06 * lado * e ** 4)];
+  }, cor), k.ac, true)];
+};
+
+export const gCrepeLeque: Gerador = (k) => {
+  // leque: dobrada ao meio e de novo, um quarto de círculo em camadas, a ponta no centro
+  const R = k.T, H = 0.0075;
+  return [parte(laje(30, 30, (u, v, lado) => {
+    const phi = ((v + 1) / 2) * (Math.PI / 2);
+    const r = u * R;
+    const onda = r > R * 0.9 ? 0.0015 * Math.sin(phi * 14) : 0;
+    const y = lado ? H * (1 - 0.45 * u) + onda : 0.0004;
+    return [Math.cos(phi) * r - R * 0.38, y, Math.sin(phi) * r - R * 0.38];
+  }, corCrepe(k, 200)), k.ac, true)];
+};
+
+export const gPanqueca: Gerador = (k) => {
+  // panqueca americana: disco grosso e fofo, topo dourado com furinhos, lateral clara
+  const { c1, c2, s } = k;
+  const L = k.T, R = L / 2, H = L * k.A;
+  const cor: CorFn = (x, y, z) => {
+    const r = Math.hypot(x, z) / R;
+    let c = mul(c1, 0.96 + 0.06 * fbm(x * 60, y * 60, z * 60, s));
+    const face = y > H * 0.85 || y < H * 0.12 ? 1 : 0;
+    c = mix(c, c2, face * (0.75 + 0.2 * fbm(x * 30, 0, z * 30, s + 1)) * (1 - suave(0.85, 1, r) * 0.5));
+    c = mul(c, 1 - face * 0.25 * (1 - suave(0.05, 0.12, celula(x * 160, 0, z * 160, s + 3))));
+    return c;
+  };
+  return [parte(torno({
+    caminho: [[0, 0], [R * 0.9, 0], [R * 0.98, H * 0.2], [R, H * 0.55], [R * 0.97, H * 0.9], [R * 0.85, H], [0, H * 1.04]],
+    n: 30, m: 56, cor,
+    mod: (t, a) => 1 + 0.02 * fbm(Math.cos(a) * 2, Math.sin(a) * 2, 0, s),
+  }), k.ac, true)];
+};

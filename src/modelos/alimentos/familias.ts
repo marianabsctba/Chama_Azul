@@ -10,7 +10,7 @@ import { gCitrico, gCaroco, gBaga, gTropical } from './fam_frutas';
 import { gPeixe, gPeixeChato, gFilePeixe, gCrustaceo, gBivalve, gConchaEspiral, gCefalopode } from './fam_mar';
 import { gAve, gPecaAve, gCarne, gCarneOsso, gCarneMoida, gMiudo, gLinguica } from './fam_carnes';
 import { gMassaBola, gPao, gPaoChato, gQueijo, gBarra, gPlaca, gMonte, gCastanha, gMassa } from './fam_padaria';
-import { gRizoma, gBacon, gFoieGras, gTerrina, gPolenta, gOmelete, gFrittata, gFalafel, gYorkshire, gCranberry, gBaunilha, gGergelim, gSalvia, comVariantes } from './fam_extras';
+import { gRizoma, gBacon, gFoieGras, gTerrina, gPolenta, gOmelete, gFrittata, gFalafel, gYorkshire, gCranberry, gBaunilha, gGergelim, gSalvia, gCrepe, gCrepeEnrolada, gCrepeQuadrada, gCrepeLeque, gPanqueca, comVariantes } from './fam_extras';
 import { gRecipiente, gPasta, gBolo, gTorta, gConfeito, gChoux, gFolhado, gMerengue } from './fam_doces';
 
 export type { Familia, Visual } from './pecas';
@@ -59,7 +59,7 @@ export const FAMILIAS: Record<Familia, Registro> = {
   linguica: { g: gLinguica, a: 1, l: 0.15, ac: 'brilhante' },
   massa_bola: { g: comVariantes(gMassaBola, { falafel: gFalafel }), a: 0.6, l: 1, ac: 'acetinado' },
   pao: { g: gPao, a: 0.4, l: 0.45, ac: 'fosco' },
-  pao_chato: { g: comVariantes(gPaoChato, { omelete: gOmelete, frittata: gFrittata }), a: 0.03, l: 1, ac: 'fosco' },
+  pao_chato: { g: comVariantes(gPaoChato, { omelete: gOmelete, frittata: gFrittata, crepe: gCrepe, 'crepe-enrolada': gCrepeEnrolada, 'crepe-quadrada': gCrepeQuadrada, 'crepe-leque': gCrepeLeque, panqueca: gPanqueca }), a: 0.03, l: 1, ac: 'fosco' },
   queijo: { g: gQueijo, a: 0.5, l: 0.6, ac: 'acetinado' },
   barra: { g: comVariantes(gBarra, { terrina: gTerrina, polenta: gPolenta }), a: 0.25, l: 0.5, ac: 'acetinado' },
   placa: { g: gPlaca, a: 0.01, l: 0.8, ac: 'acetinado' },

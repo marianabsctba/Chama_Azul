@@ -585,10 +585,17 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     const qtd = Math.min(12, ficha.quantidade ?? 1);
     if (qtd > 1 && principalRev) {
       let larg = Math.max(c2.max.x - c2.min.x, c2.max.z - c2.min.z) * 1.08;
+      const empilhar = peca.altura / Math.max(peca.comprimento, peca.largura, 1e-3) < 0.16;
+      const comprida = !empilhar && peca.comprimento > peca.largura * 2.2;
+      const base = peca.position.clone();
+      if (comprida) {
+        const eixoZ = new THREE.Vector3(Math.sin(peca.rotation.y), 0, Math.cos(peca.rotation.y));
+        peca.position.addScaledVector(eixoZ, (-(qtd - 1) / 2) * peca.largura * peca.scale.x * 1.12);
+      }
       const porLinha = qtd <= 3 ? qtd : Math.ceil(Math.sqrt(qtd));
       // todas as unidades cabem no prato: encolhe se precisar
       const cabe = (poco * 1.9) / porLinha;
-      if (larg > cabe) {
+      if (larg > cabe && !empilhar && !comprida) {
         peca.scale.multiplyScalar(cabe / larg);
         larg = cabe;
         peca.position.x = 0;
@@ -600,13 +607,31 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
         copia.scale.copy(peca.scale);
         copia.rotation.copy(peca.rotation);
         copia.definirCozimento(peca.cozimento);
+        if (comprida) {
+          // rolinhos, palitos e filés compridos: lado a lado, encostados, pela largura
+          const passo = peca.largura * peca.scale.x * 1.12;
+          const k = i - (qtd - 1) / 2;
+          const eixoZ = new THREE.Vector3(Math.sin(peca.rotation.y), 0, Math.cos(peca.rotation.y));
+          copia.position.copy(base).addScaledVector(eixoZ, k * passo);
+          copia.atualizar(0);
+          grupo.add(copia);
+          continue;
+        }
+        if (empilhar) {
+          // peças chatas (panquecas, crêpes em leque) vão empilhadas, cada uma um pouco girada
+          copia.position.set(peca.position.x + i * 0.004, peca.position.y + i * peca.altura * peca.scale.x * 0.95, peca.position.z - i * 0.003);
+          copia.rotation.y = peca.rotation.y + i * 0.35;
+          copia.atualizar(0);
+          grupo.add(copia);
+          continue;
+        }
         const col = i % porLinha;
         const lin = Math.floor(i / porLinha);
         copia.position.set(peca.position.x + col * larg - ((porLinha - 1) * larg) / 2 + (lin % 2) * larg * 0.3, peca.position.y + lin * 0.004, peca.position.z + lin * larg * 0.9);
         copia.atualizar(0);
         grupo.add(copia);
       }
-      if (porLinha > 1) peca.position.x -= ((porLinha - 1) * larg) / 2;
+      if (porLinha > 1 && !empilhar && !comprida) peca.position.x -= ((porLinha - 1) * larg) / 2;
     }
     // microverdes por cima da peça, em cinco folhinhas
     for (let k = 0; k < 4; k++) peca.atualizar(1 / 30);

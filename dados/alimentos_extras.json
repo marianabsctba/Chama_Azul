@@ -13,5 +13,10 @@
   { "id": "gergelim", "nome": "Gergelim", "forma": "sementes miúdas, achatadas e ovais, bege-claro (ou pretas), em montinho" },
   { "id": "wasabi-raiz", "nome": "Raiz de wasabi", "forma": "rizoma verde em forma de bastão com a superfície coberta de nós e cicatrizes de folhas, talos cortados no topo" },
   { "id": "foie-gras", "nome": "Foie gras", "forma": "fígado gordo de pato ou ganso em dois lobos lisos, bege-rosado, macio e brilhante" },
-  { "id": "pudim-yorkshire", "nome": "Pudim Yorkshire", "forma": "massa assada estufada em forminha, bordas altas douradas e crocantes, centro afundado" }
+  { "id": "pudim-yorkshire", "nome": "Pudim Yorkshire", "forma": "massa assada estufada em forminha, bordas altas douradas e crocantes, centro afundado" },
+  { "id": "crepe", "nome": "Crêpe", "forma": "disco muito fino de massa de crêpe, claro com renda dourada da frigideira" },
+  { "id": "crepe-enrolada", "nome": "Crêpe enrolada", "forma": "crêpe recheada com os dois lados opostos dobrados para dentro e enrolada de uma ponta à outra, um rolinho fechado e gordinho" },
+  { "id": "crepe-quadrada", "nome": "Crêpe quadrada", "forma": "crêpe recheada com os quatro lados dobrados formando um pacotinho quadrado (pannequet)" },
+  { "id": "crepe-leque", "nome": "Crêpe em leque", "forma": "crêpe dobrada ao meio e de novo, em quarto de círculo como um leque" },
+  { "id": "panqueca-americana", "nome": "Panqueca americana", "forma": "disco grosso e fofo de massa, dourado por cima e por baixo, com furinhos" }
 ]

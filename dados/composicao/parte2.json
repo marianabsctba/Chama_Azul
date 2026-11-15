@@ -2031,7 +2031,9 @@
   "prato": {
    "principal": "frango",
    "acompanhamentos": [],
-   "servir": "prato"
+   "servir": "prato",
+   "forma": "desfiado",
+   "estado": "cozido"
   }
  },
  "aves.rodelas-roulade": {

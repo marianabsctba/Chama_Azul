@@ -336,7 +336,7 @@ export class Peca extends THREE.Group {
       const arr = attr.array as Float32Array;
       for (let i = 0; i < arr.length; i += 3) {
         const lum = cru[i] * 0.3 + cru[i + 1] * 0.59 + cru[i + 2] * 0.11;
-        const f = Math.min(1.35, Math.max(0.65, lum / lumCoz));
+        const f = Math.min(1.6, Math.max(0.45, lum / lumCoz));
         for (let j = 0; j < 3; j++) {
           const alvo = [coz.r, coz.g, coz.b][j] * f;
           const v = cru[i + j] + (alvo - cru[i + j]) * k;

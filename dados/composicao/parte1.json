@@ -324,7 +324,9 @@
     "prato": {
       "principal": "caldo",
       "acompanhamentos": [],
-      "servir": "tigela"
+      "servir": "xicara",
+      "liquido": "#e2c27a",
+      "claro": true
     }
   },
   "caldos.caldo-de-aves-de-caca": {
@@ -2526,9 +2528,9 @@
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "copo",
+      "liquido": "#f2e2b0"
     }
   },
   "ovos.massa-lisa-peneirada": {
@@ -2600,91 +2602,99 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "meio": "manteiga",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "meio": "manteiga",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "recipiente": "prato"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "crepe-leque",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 2,
+      "estado": "dourado"
     }
   },
   "ovos.crepe-enrolada": {
     "passos": [
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "adicionar": [
           "cogumelo_paris"
         ]
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "crepe"
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "crepe-enrolada"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "crepe-enrolada",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 2,
+      "estado": "dourado"
     }
   },
   "ovos.crepe-quadrada": {
     "passos": [
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "adicionar": [
           "cogumelo_paris"
         ]
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "crepe"
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "crepe-quadrada"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "crepe-quadrada",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 2,
+      "estado": "dourado"
     }
   },
   "ovos.crepe-leque": {
     "passos": [
       {
-        "alimento": "crepe-de-ervas",
+        "alimento": "crepe",
         "adicionar": [
           "cogumelo_paris"
         ]
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "crepe"
       },
       {
-        "alimento": "crepe-de-ervas"
+        "alimento": "crepe-leque"
       }
     ],
     "prato": {
-      "principal": "crepe-de-ervas",
+      "principal": "crepe-leque",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 2,
+      "estado": "dourado"
     }
   },
   "ovos.pudim-yorkshire": {
@@ -2748,23 +2758,25 @@
         "recipiente": "chapa"
       },
       {
-        "alimento": "panqueca-chinesa",
+        "alimento": "panqueca-americana",
         "meio": "manteiga",
         "recipiente": "chapa"
       },
       {
-        "alimento": "panqueca-chinesa",
+        "alimento": "panqueca-americana",
         "recipiente": "chapa"
       },
       {
-        "alimento": "panqueca-chinesa",
+        "alimento": "panqueca-americana",
         "recipiente": "chapa"
       }
     ],
     "prato": {
-      "principal": "panqueca-chinesa",
+      "principal": "panqueca-americana",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "quantidade": 3,
+      "estado": "dourado"
     }
   },
   "queijos.avaliar-queijo-mole": {
@@ -3086,7 +3098,9 @@
     "prato": {
       "principal": "gruyere",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "ralado",
+      "estado": "cru"
     }
   },
   "queijos.ralar-parmesao": {
@@ -3712,8 +3726,12 @@
     ],
     "prato": {
       "principal": "pesto",
-      "acompanhamentos": [],
-      "servir": "tigela"
+      "acompanhamentos": [
+        "manjericao"
+      ],
+      "servir": "tigelinha",
+      "liquido": "#4f7a2a",
+      "granulado": true
     }
   },
   "ervas.pesto-no-liquidificador": {
@@ -4933,7 +4951,9 @@
     "prato": {
       "principal": "bacalhau-seco",
       "acompanhamentos": [],
-      "servir": "prato"
+      "servir": "prato",
+      "forma": "lascas",
+      "estado": "cozido"
     }
   },
   "peixes.forminhas-salmao": {
