@@ -389,7 +389,8 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   if (foiAoFogo && mesa.peca && mesa.peca.cozimento < 1) mesa.peca.definirCozimento(1);
   const ficha = tecnica.prato ?? {};
   // o ponto que o livro dá ao resultado manda sobre o que o jogo calculou
-  if (ficha.estado && mesa.peca && !jaPronto) mesa.peca.definirCozimento(COZIMENTO[ficha.estado]);
+  // vale também para os modelos dos lotes novos: um filé cru do lote, frito na técnica, chega dourado
+  if (ficha.estado && mesa.peca) mesa.peca.definirCozimento(COZIMENTO[ficha.estado]);
   else if (jaPronto && mesa.peca) mesa.peca.definirCozimento(0);
   const preparoPrincipal = principalRev && ehPreparo(principalRev) ? principalRev : undefined;
   if (ficha.servir && (LOUCAS_PEQUENAS as string[]).includes(ficha.servir)) return servirPequena(cena, cozinha, mesa, tecnica, ficha.servir as LoucaPequena, preparoPrincipal);
@@ -570,6 +571,24 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
         const cx = (f.x0 + f.x1) / 2;
         const cz = (f.z0 + f.z1) / 2;
         peca.moverFragmento(f, new THREE.Vector3(cx * 0.45, 0, cz * 0.9 + Math.sign(cz) * W * 0.12));
+      }
+    } else if (ficha.forma === 'fatias' && peca.fragmentos.length >= 3) {
+      // fatias que já vieram cortadas dos passos: abrem em leque, cada uma um pouco deslocada
+      const L = peca.comprimento;
+      const W = peca.largura;
+      const ord = [...peca.fragmentos].sort((a, b) => a.x0 - b.x0);
+      ord.forEach((f, i) => {
+        const cx = (f.x0 + f.x1) / 2;
+        peca.moverFragmento(f, new THREE.Vector3(cx * 0.6 + Math.sign(cx) * L * 0.03, 0, (i - (ord.length - 1) / 2) * W * 0.12));
+      });
+    } else if (ficha.forma === 'pedacos' && peca.fragmentos.length >= 3) {
+      // já veio cortada dos passos: os pedaços se separam no prato, em vez de ficar a peça inteira riscada
+      const L = peca.comprimento;
+      const W = peca.largura;
+      for (const f of peca.fragmentos) {
+        const cx = (f.x0 + f.x1) / 2;
+        const cz = (f.z0 + f.z1) / 2;
+        peca.moverFragmento(f, new THREE.Vector3(cx * 0.5 + Math.sign(cx) * L * 0.04, 0, cz * 0.7 + Math.sign(cz) * W * 0.1));
       }
     }
     const natural = porcionar ? peca.comprimento * 0.55 : Math.max(peca.comprimento, peca.largura);

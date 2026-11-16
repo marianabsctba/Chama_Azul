@@ -150,7 +150,7 @@
   "frutas.aneis-maca": {
     "passos": [
       {
-        "alimento": "maca"
+        "alimento": "c4-maca-sem-miolo"
       }
     ],
     "prato": {
@@ -170,7 +170,8 @@
       },
       {
         "alimento": "pera",
-        "corte": "fatiar"
+        "corte": "fatiar",
+        "estado": "descascado"
       },
       {
         "alimento": "pera",
@@ -292,7 +293,7 @@
         "corte": "aparar"
       },
       {
-        "alimento": "abacaxi",
+        "alimento": "c4-abacaxi-cilindro",
         "utensilio": "garfo"
       },
       {
@@ -415,23 +416,22 @@
   "frutas.abacaxi-sautee": {
     "passos": [
       {
-        "alimento": "c4-abacaxi-descascado",
-        "estado": "fatias",
+        "alimento": "anel-abacaxi",
         "utensilio": "mãos"
       },
       {
-        "alimento": "c4-abacaxi-descascado",
+        "alimento": "anel-abacaxi",
         "meio": "manteiga",
-        "recipiente": "frigideira",
-        "estado": "fatias"
+        "recipiente": "frigideira"
       }
     ],
     "prato": {
-      "principal": "c4-abacaxi-caramelado",
+      "principal": "anel-abacaxi",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 3
     }
   },
   "frutas.cereja-descarocar": {
@@ -467,11 +467,11 @@
         "estado": "metades"
       },
       {
-        "alimento": "manga",
+        "alimento": "manga-ourico",
         "utensilio": "mãos"
       },
       {
-        "alimento": "manga"
+        "alimento": "manga-ourico"
       }
     ],
     "prato": {
@@ -488,10 +488,12 @@
         "alimento": "manga"
       },
       {
-        "alimento": "manga"
+        "alimento": "manga",
+        "estado": "descascado"
       },
       {
-        "alimento": "manga"
+        "alimento": "manga",
+        "estado": "descascado"
       }
     ],
     "prato": {
@@ -512,7 +514,7 @@
         "alimento": "laranja"
       },
       {
-        "alimento": "laranja"
+        "alimento": "c4-laranja-a-vif"
       }
     ],
     "prato": {
@@ -555,7 +557,7 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "laranja",
+        "alimento": "supremes-laranja",
         "recipiente": "tigela"
       }
     ],
@@ -586,10 +588,10 @@
       }
     ],
     "prato": {
-      "principal": "limao",
+      "principal": "casca-limao-picada",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "ralado",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -763,7 +765,8 @@
       {
         "alimento": "framboesa",
         "recipiente": "mouli",
-        "utensilio": "mouli"
+        "utensilio": "mouli",
+        "meio": "purê de framboesa"
       }
     ],
     "prato": {
@@ -792,17 +795,17 @@
     "passos": [
       {
         "alimento": null,
-        "meio": "couli",
+        "meio": "couli de framboesa",
         "recipiente": "prato"
       },
       {
         "alimento": "couli-penas",
-        "meio": "couli",
+        "meio": "couli de framboesa",
         "recipiente": "prato"
       },
       {
         "alimento": "couli-penas",
-        "meio": "couli",
+        "meio": "couli de framboesa",
         "recipiente": "prato"
       }
     ],
@@ -846,13 +849,16 @@
         "corte": "contorno"
       },
       {
-        "alimento": "melao-taca"
+        "alimento": "melao-cantalupo",
+        "estado": "metades"
       },
       {
-        "alimento": "melao-taca"
+        "alimento": "melao-cantalupo",
+        "estado": "metades"
       },
       {
-        "alimento": "melao-taca"
+        "alimento": "melao-cantalupo",
+        "estado": "metades"
       },
       {
         "alimento": "melao-taca"
@@ -867,16 +873,18 @@
     "prato": {
       "principal": "melao-taca",
       "acompanhamentos": [],
-      "servir": "prato",
+      "servir": "travessa",
       "forma": "inteiro",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "frutas.sorbet-melao": {
     "passos": [
       {
         "alimento": "melao-cantalupo",
-        "recipiente": "liquidificador"
+        "recipiente": "liquidificador",
+        "meio": "purê de melão"
       },
       {
         "alimento": null,
@@ -905,9 +913,9 @@
   "frutas.cantalupo-surpresa": {
     "passos": [
       {
-        "alimento": "manga",
+        "alimento": "c4-manga-fatias",
         "adicionar": [
-          "abacaxi"
+          "anel-abacaxi"
         ]
       },
       {
@@ -998,7 +1006,8 @@
         "alimento": "sapotilha"
       },
       {
-        "alimento": "sapotilha"
+        "alimento": "sapotilha",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1261,7 +1270,10 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "ameixa"
+        "alimento": "ameixa",
+        "utensilio": "escumadeira",
+        "recipiente": "panela",
+        "meio": "calda de açúcar"
       },
       {
         "alimento": null,
@@ -1316,12 +1328,12 @@
       },
       {
         "alimento": null,
-        "meio": "calda de vinho",
+        "meio": "vinho tinto reduzido",
         "recipiente": "panela"
       },
       {
         "alimento": "pera-vinho",
-        "meio": "calda de vinho",
+        "meio": "vinho tinto reduzido",
         "estado": "fatias",
         "ponto": "cozido"
       }
@@ -1330,8 +1342,8 @@
       "principal": "pera-vinho",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": null,
+      "forma": "fatias",
+      "estado": "cozido",
       "liquido": "#5a1a2a",
       "claro": true
     }
@@ -1339,49 +1351,52 @@
   "frutas.compota-secas": {
     "passos": [
       {
-        "alimento": "ameixa",
-        "meio": "chá",
+        "alimento": "frutas-secas",
+        "meio": "chá âmbar",
         "recipiente": "panela",
         "adicionar": [
-          "frutas-secas"
+          "ameixa"
         ]
       },
       {
-        "alimento": "ameixa",
-        "meio": "água",
+        "alimento": "frutas-secas",
+        "meio": "líquido âmbar de chá",
         "recipiente": "panela",
         "adicionar": [
-          "frutas-secas"
+          "ameixa"
         ]
       },
       {
-        "alimento": "ameixa",
-        "meio": "água",
+        "alimento": "frutas-secas",
+        "meio": "líquido âmbar de chá",
         "recipiente": "panela",
         "adicionar": [
-          "frutas-secas"
+          "ameixa"
         ]
       },
       {
-        "alimento": "ameixa"
+        "alimento": "frutas-secas"
       },
       {
         "alimento": null,
-        "meio": "calda",
+        "meio": "calda âmbar",
         "recipiente": "panela"
       },
       {
-        "alimento": "c4-frutas-secas-cozidas",
-        "meio": "calda",
-        "recipiente": "tigela"
+        "alimento": "frutas-secas",
+        "meio": "calda âmbar",
+        "recipiente": "tigela",
+        "ponto": "cozido"
       }
     ],
     "prato": {
-      "principal": "c4-frutas-secas-cozidas",
+      "principal": "frutas-secas",
       "acompanhamentos": [],
       "servir": "tigelinha",
       "liquido": "#8a4a20",
-      "claro": true
+      "claro": true,
+      "estado": "cozido",
+      "forma": "pedacos"
     }
   },
   "frutas.conserva-alcool": {
@@ -1394,7 +1409,11 @@
       {
         "alimento": "pera",
         "recipiente": "pote",
-        "utensilio": "mãos"
+        "utensilio": "mãos",
+        "estado": "descascado",
+        "adicionar": [
+          "c4-laranja-a-vif"
+        ]
       },
       {
         "alimento": null,
@@ -1477,7 +1496,8 @@
       {
         "alimento": "espeto-frutas",
         "meio": "suco de limão",
-        "utensilio": "pincel"
+        "utensilio": "pincel",
+        "recipiente": "grelha"
       },
       {
         "alimento": "espeto-frutas",
@@ -1526,7 +1546,9 @@
         "alimento": "morango",
         "adicionar": [
           "zabaione"
-        ]
+        ],
+        "recipiente": "travessa de vidro",
+        "meio": "zabaione"
       },
       {
         "alimento": "morango",
@@ -1684,7 +1706,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": null
+      "estado": "dourado",
+      "quantidade": 6
     }
   },
   "frutas.maca-assada": {
@@ -1734,7 +1757,8 @@
       },
       {
         "alimento": "pessego",
-        "meio": "suco de limão"
+        "meio": "suco de limão",
+        "estado": "metades"
       },
       {
         "alimento": "pessego",
@@ -1768,7 +1792,7 @@
   "frutas.papillote-assar": {
     "passos": [
       {
-        "alimento": "c4-abacaxi-descascado",
+        "alimento": "anel-abacaxi",
         "adicionar": [
           "banana",
           "morango"
@@ -1777,7 +1801,7 @@
         "estado": "cubos"
       },
       {
-        "alimento": "c4-abacaxi-descascado",
+        "alimento": "anel-abacaxi",
         "adicionar": [
           "manteiga"
         ],
@@ -1785,17 +1809,14 @@
         "estado": "cubos"
       },
       {
-        "alimento": "c4-abacaxi-descascado",
-        "estado": "cubos"
+        "alimento": "papillote-frutas"
       },
       {
-        "alimento": "c4-abacaxi-descascado",
-        "estado": "cubos"
+        "alimento": "papillote-frutas"
       },
       {
-        "alimento": "c4-abacaxi-descascado",
-        "recipiente": "assadeira",
-        "estado": "cubos"
+        "alimento": "papillote-frutas",
+        "recipiente": "assadeira"
       }
     ],
     "prato": {
@@ -2038,7 +2059,7 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "disco-merengue",
+        "alimento": "bolo-merengue",
         "adicionar": [
           "musse-chocolate",
           "framboesa",
@@ -2125,17 +2146,17 @@
       },
       {
         "alimento": null,
-        "meio": "purê com creme",
+        "meio": "purê de groselha com creme",
         "recipiente": "tigela"
       },
       {
         "alimento": null,
-        "meio": "musse",
+        "meio": "musse de groselha",
         "recipiente": "tigela"
       },
       {
         "alimento": "musse-fruta",
-        "meio": "musse",
+        "meio": "musse de groselha",
         "recipiente": "taça"
       }
     ],
@@ -2178,7 +2199,7 @@
       },
       {
         "alimento": "musse-chocolate",
-        "meio": "musse",
+        "meio": "musse de chocolate",
         "recipiente": "taça"
       }
     ],
@@ -2193,7 +2214,7 @@
   "sobremesas.sufle-frio-frutas": {
     "passos": [
       {
-        "alimento": null,
+        "alimento": "forma-sufle-forrada",
         "recipiente": "ramequim"
       },
       {
@@ -2202,18 +2223,18 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "sufle-frio",
+        "alimento": null,
         "meio": "musse de framboesa",
         "recipiente": "ramequim"
       },
       {
-        "alimento": "sufle-frio",
+        "alimento": null,
         "meio": "musse de framboesa",
         "recipiente": "ramequim",
         "utensilio": "espátula"
       },
       {
-        "alimento": "sufle-frio",
+        "alimento": null,
         "meio": "musse de framboesa",
         "recipiente": "ramequim"
       },
@@ -2301,7 +2322,7 @@
   "sobremesas.creme-anglaise": {
     "passos": [
       {
-        "alimento": null,
+        "alimento": "fava-baunilha",
         "meio": "leite",
         "recipiente": "panela"
       },
@@ -2496,13 +2517,14 @@
         "recipiente": "forma de charlotte"
       },
       {
-        "alimento": "bavaroise",
-        "meio": "creme",
+        "alimento": null,
+        "meio": "creme bavaroise",
         "recipiente": "forma de charlotte"
       },
       {
-        "alimento": "bavaroise",
-        "recipiente": "forma de charlotte"
+        "alimento": null,
+        "recipiente": "forma de charlotte",
+        "meio": "creme bavaroise"
       },
       {
         "alimento": "bavaroise",
@@ -2519,13 +2541,15 @@
   "sobremesas.cobertura-brulee": {
     "passos": [
       {
-        "alimento": "custard",
+        "alimento": null,
         "recipiente": "ramequim",
-        "utensilio": "colher"
+        "utensilio": "colher",
+        "meio": "creme assado"
       },
       {
-        "alimento": "custard",
-        "recipiente": "ramequim"
+        "alimento": null,
+        "recipiente": "ramequim",
+        "meio": "creme assado"
       },
       {
         "alimento": "c4-crosta-brulee",
@@ -2567,12 +2591,12 @@
         "recipiente": "forminhas"
       },
       {
-        "alimento": "creme-caramelo",
+        "alimento": "custard",
         "meio": "água quente",
         "recipiente": "assadeira"
       },
       {
-        "alimento": "creme-caramelo",
+        "alimento": "custard",
         "recipiente": "forminhas"
       },
       {
@@ -2600,16 +2624,22 @@
       {
         "alimento": "arroz_pudding",
         "meio": "leite",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "adicionar": [
+          "fava-baunilha"
+        ]
       },
       {
         "alimento": "arroz_pudding",
         "meio": "leite",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "adicionar": [
+          "fava-baunilha"
+        ]
       }
     ],
     "prato": {
-      "principal": "pudim-arroz",
+      "principal": "arroz_pudding",
       "acompanhamentos": [],
       "servir": "tigelinha",
       "estado": "cozido",
@@ -2631,12 +2661,9 @@
       },
       {
         "alimento": "pudim-arroz",
-        "meio": "leite",
+        "meio": "leite com manteiga",
         "recipiente": "travessa de vidro",
-        "utensilio": "mãos",
-        "adicionar": [
-          "manteiga"
-        ]
+        "utensilio": "mãos"
       },
       {
         "alimento": "pudim-arroz",
@@ -2743,14 +2770,16 @@
       {
         "alimento": "maca",
         "meio": "manteiga",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "cubos"
       },
       {
         "alimento": "maca",
         "adicionar": [
           "noz"
         ],
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "cubos"
       },
       {
         "alimento": "pao-de-forma",
@@ -3140,7 +3169,7 @@
       },
       {
         "alimento": null,
-        "meio": "calda de açúcar",
+        "meio": "caramelo âmbar",
         "recipiente": "panela"
       },
       {
@@ -3177,7 +3206,8 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": "praline"
+        "alimento": "praline",
+        "utensilio": "rolo"
       }
     ],
     "prato": {
@@ -3369,7 +3399,8 @@
       {
         "alimento": null,
         "meio": "chocolate derretido",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "utensilio": "espátula angulada"
       },
       {
         "alimento": null,
@@ -3755,10 +3786,7 @@
         "alimento": "limao"
       },
       {
-        "alimento": "limao",
-        "adicionar": [
-          "sorbet"
-        ]
+        "alimento": "c4-limao-givre"
       },
       {
         "alimento": "c4-limao-givre"
@@ -3774,16 +3802,16 @@
   "sobremesas.sorbet-saco-confeitar": {
     "passos": [
       {
-        "alimento": "sorbet",
+        "alimento": "sorbet-roseta",
         "recipiente": "taça",
         "utensilio": "saco de confeitar"
       },
       {
-        "alimento": "sorbet",
+        "alimento": "sorbet-roseta",
         "recipiente": "taça"
       },
       {
-        "alimento": "sorbet",
+        "alimento": "sorbet-roseta",
         "adicionar": [
           "raspas-carameladas"
         ],
@@ -3838,7 +3866,8 @@
     "prato": {
       "principal": "granita",
       "acompanhamentos": [],
-      "servir": "taca"
+      "servir": "taca",
+      "granulado": true
     }
   },
   "sobremesas.folhas-chocolate": {
@@ -3857,7 +3886,7 @@
         "utensilio": "pincel"
       },
       {
-        "alimento": "louro"
+        "alimento": "folha-chocolate"
       },
       {
         "alimento": "folha-chocolate"
@@ -4148,7 +4177,8 @@
         "alimento": "manteiga",
         "meio": "farinha",
         "recipiente": "tigela",
-        "utensilio": "mãos"
+        "utensilio": "mãos",
+        "estado": "cubos"
       },
       {
         "alimento": null,
@@ -4196,7 +4226,8 @@
         "alimento": "manteiga",
         "meio": "farinha",
         "recipiente": "tigela",
-        "utensilio": "mãos"
+        "utensilio": "mãos",
+        "estado": "cubos"
       },
       {
         "alimento": null,
@@ -4344,11 +4375,7 @@
         "alimento": "barquinha"
       },
       {
-        "alimento": "barquinha",
-        "adicionar": [
-          "creme-patissiere",
-          "morango"
-        ]
+        "alimento": "c4-barquinha-recheada"
       },
       {
         "alimento": "c4-barquinha-recheada",
@@ -4386,15 +4413,15 @@
         "corte": "aparar"
       },
       {
-        "alimento": "torta-tampa",
+        "alimento": "torta-crua-funil",
         "utensilio": "faca"
       },
       {
-        "alimento": "torta-tampa",
+        "alimento": "torta-crua-funil",
         "utensilio": "faca"
       },
       {
-        "alimento": "torta-tampa"
+        "alimento": "torta-crua-funil"
       }
     ],
     "prato": {
@@ -4418,14 +4445,15 @@
       {
         "alimento": "fundo-torta",
         "adicionar": [
-          "ruibarbo"
+          "c4-ruibarbo-pedacos"
         ]
       },
       {
         "alimento": "fundo-torta"
       },
       {
-        "alimento": "torta-tampa"
+        "alimento": "torta-tampa",
+        "utensilio": "rolo"
       },
       {
         "alimento": "torta-tampa",
@@ -4449,7 +4477,8 @@
   "pastelaria.borda-pregas": {
     "passos": [
       {
-        "alimento": "fundo-torta"
+        "alimento": "fundo-torta",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -4516,7 +4545,8 @@
         "alimento": "torta-trelica"
       },
       {
-        "alimento": "torta-trelica"
+        "alimento": "torta-trelica",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -4557,16 +4587,18 @@
         "alimento": "pate-brisee"
       },
       {
-        "alimento": "tarte-tatin",
+        "alimento": "torta-tampa",
         "recipiente": "forma de torta"
       },
       {
-        "alimento": "tarte-tatin",
-        "recipiente": "forma de torta"
+        "alimento": "torta-tampa",
+        "recipiente": "forma de torta",
+        "ponto": "dourado"
       },
       {
-        "alimento": "tarte-tatin",
-        "recipiente": "forma de torta"
+        "alimento": "torta-tampa",
+        "recipiente": "forma de torta",
+        "ponto": "dourado"
       },
       {
         "alimento": "tarte-tatin",
@@ -4722,14 +4754,14 @@
         "alimento": "bomba-choux",
         "adicionar": [
           "chantilly",
-          "morango"
+          "c4-morango-metade"
         ]
       },
       {
         "alimento": "bomba-choux",
         "adicionar": [
           "chantilly",
-          "morango"
+          "c4-morango-metade"
         ],
         "meio": "glacê de açúcar"
       }
@@ -4830,7 +4862,8 @@
       },
       {
         "alimento": "choux-frito",
-        "utensilio": "escumadeira"
+        "utensilio": "escumadeira",
+        "recipiente": "prato"
       },
       {
         "alimento": "choux-frito"
@@ -4841,7 +4874,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "estado": "dourado",
-      "forma": "inteiro"
+      "forma": "inteiro",
+      "quantidade": 5
     }
   },
   "pastelaria.creme-mousseline": {
@@ -5092,21 +5126,22 @@
       {
         "alimento": "maca",
         "meio": "manteiga",
-        "recipiente": "frigideira"
+        "recipiente": "frigideira",
+        "estado": "cubos"
       },
       {
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "filo",
+        "alimento": "c4-massa-aberta",
         "utensilio": "mãos"
       },
       {
-        "alimento": "filo",
+        "alimento": "c4-massa-aberta",
         "meio": "manteiga"
       },
       {
-        "alimento": "filo",
+        "alimento": "c4-massa-aberta",
         "adicionar": [
           "maca",
           "noz"
@@ -5296,19 +5331,19 @@
   "pastelaria.tranche": {
     "passos": [
       {
-        "alimento": "c4-massa-aberta"
+        "alimento": "massa-folhada"
       },
       {
-        "alimento": "c4-massa-aberta"
+        "alimento": "massa-folhada"
       },
       {
-        "alimento": "c4-massa-aberta"
+        "alimento": "massa-folhada"
       },
       {
-        "alimento": "c4-massa-aberta"
+        "alimento": "massa-folhada"
       },
       {
-        "alimento": "c4-massa-aberta"
+        "alimento": "massa-folhada-marcada"
       },
       {
         "alimento": "tranche"
@@ -5325,7 +5360,7 @@
   "pastelaria.feuilletes": {
     "passos": [
       {
-        "alimento": "c4-massa-aberta"
+        "alimento": "massa-folhada"
       },
       {
         "alimento": "c4-massa-aberta"
@@ -5465,7 +5500,7 @@
   "bolos.encher-forma": {
     "passos": [
       {
-        "alimento": "forma-bolo-massa-crua",
+        "alimento": null,
         "meio": "massa leve",
         "recipiente": "forma de bolo",
         "utensilio": "colher"
@@ -5482,7 +5517,7 @@
         "recipiente": "forma de bolo"
       },
       {
-        "alimento": "forma-bolo-massa-crua",
+        "alimento": null,
         "meio": "massa de pão-de-ló",
         "recipiente": "forma de bolo"
       }
@@ -5741,8 +5776,9 @@
     "prato": {
       "principal": "frutas-secas",
       "acompanhamentos": [],
-      "servir": "tigelinha",
-      "estado": "cru"
+      "servir": "prato",
+      "estado": "cru",
+      "forma": "pedacos"
     }
   },
   "bolos.metodo-dissolver": {
@@ -6126,7 +6162,7 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "base-biscoito",
+        "alimento": "cheesecake-gelado",
         "meio": "creme de queijo",
         "recipiente": "forma desmontável"
       },
@@ -6616,7 +6652,7 @@
     "passos": [
       {
         "alimento": null,
-        "meio": "geleia vermelha",
+        "meio": "geleia de framboesa",
         "recipiente": "prato",
         "utensilio": "espátula"
       }
@@ -6643,7 +6679,8 @@
         "alimento": "lace-tuile"
       },
       {
-        "alimento": "lace-tuile"
+        "alimento": "lace-tuile",
+        "utensilio": "rolo"
       }
     ],
     "prato": {
@@ -6720,7 +6757,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "estado": "dourado",
-      "forma": "inteiro"
+      "forma": "inteiro",
+      "quantidade": 5
     }
   },
   "bolos.physalis-carameladas": {
@@ -6734,7 +6772,8 @@
       },
       {
         "alimento": "physalis-caramelada",
-        "utensilio": "papel-vegetal em temperatura ambiente"
+        "utensilio": "mãos",
+        "recipiente": "papel-manteiga"
       }
     ],
     "prato": {
@@ -6750,7 +6789,8 @@
         "alimento": "sorvete-bola"
       },
       {
-        "alimento": "sorvete-bola"
+        "alimento": "sorvete-bola",
+        "utensilio": "palito"
       },
       {
         "alimento": "sorvete-bola",
@@ -6787,10 +6827,7 @@
         "alimento": "fundo-torta"
       },
       {
-        "alimento": "fundo-torta",
-        "adicionar": [
-          "creme-patissiere"
-        ]
+        "alimento": "tortinha-limao"
       },
       {
         "alimento": "tortinha-limao"
@@ -6811,12 +6848,12 @@
   "bolos.miroirs-maracuja": {
     "passos": [
       {
-        "alimento": "miroir",
+        "alimento": null,
         "meio": "musse de maracujá",
         "recipiente": "forma quadrada"
       },
       {
-        "alimento": "miroir",
+        "alimento": null,
         "meio": "geleia de maracujá",
         "recipiente": "forma quadrada"
       },
@@ -6891,7 +6928,8 @@
       "principal": "c4-biscoito-passas",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro"
+      "forma": "inteiro",
+      "quantidade": 5
     }
   },
   "bolos.enrolar-fatiar": {
@@ -7001,7 +7039,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "estado": null,
-      "forma": "inteiro"
+      "forma": "inteiro",
+      "quantidade": 6
     }
   },
   "bolos.biscoitos-saco": {
@@ -7027,7 +7066,7 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": "biscoito-cortado",
+        "alimento": "biscoito-demerara",
         "utensilio": "mãos",
         "recipiente": "assadeira"
       }
@@ -7043,16 +7082,13 @@
   "bolos.biscoito-cobertura-chocolate": {
     "passos": [
       {
-        "alimento": "biscoito-cortado",
-        "adicionar": [
-          "glace-chocolate"
-        ]
+        "alimento": "biscoito-meio-chocolate"
       },
       {
-        "alimento": "biscoito-cortado"
+        "alimento": "biscoito-meio-chocolate"
       },
       {
-        "alimento": "biscoito-cortado",
+        "alimento": "biscoito-meio-chocolate",
         "recipiente": "grade"
       }
     ],
@@ -7077,17 +7113,17 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "brandy-snap",
+        "alimento": "lace-tuile",
         "recipiente": "assadeira"
       },
       {
-        "alimento": "brandy-snap"
+        "alimento": "lace-tuile"
       },
       {
-        "alimento": "brandy-snap"
+        "alimento": "lace-tuile"
       },
       {
-        "alimento": "brandy-snap"
+        "alimento": "lace-tuile"
       },
       {
         "alimento": "brandy-snap",

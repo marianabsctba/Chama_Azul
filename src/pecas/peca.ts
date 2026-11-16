@@ -4,6 +4,8 @@ import * as THREE from 'three';
 import type { FormaAlimento } from '../tipos';
 
 const BRANCO = new THREE.Color(1, 1, 1);
+/** Crosta dourada de fritura, grelha e forno (sRGB). */
+const CROSTA = new THREE.Color('#b8701c');
 const LONGE = new THREE.Plane(new THREE.Vector3(0, 1, 0), 1e5);
 
 /** Material das tampas de corte (cor por vértice), compartilhado por quantidade de planos. */
@@ -343,8 +345,12 @@ export class Peca extends THREE.Group {
     const c = Math.max(0, this.cozimento);
     const t = Math.min(1, c);
     const queimado = Math.max(0, Math.min(1, (c - 1.15) * 2));
-    const coz = this.corCozida;
-    const lumCoz = Math.max(0.05, coz.r * 0.3 + coz.g * 0.59 + coz.b * 0.11);
+    // dourado (frito, grelhado, assado) passa do cozido para a crosta dourada; tostado escurece mais
+    const dourar = Math.max(0, Math.min(1, (c - 1) / 0.12));
+    const coz = this.corCozida.clone().lerp(CROSTA, dourar * 0.85);
+    // o relevo de luz vem da cor cozida sem a crosta, para a crosta de fato escurecer a superfície
+    const base = this.corCozida;
+    const lumCoz = Math.max(0.05, base.r * 0.3 + base.g * 0.59 + base.b * 0.11);
     // a superfície vai de fato para a cor cozida (selada, dourada), guardando o relevo de luz e sombra da cor crua
     const k = t * 0.82;
     // cru de novo (ou ainda cru): o próximo cozimento parte das cores atuais, com o que foi pincelado ou empanado

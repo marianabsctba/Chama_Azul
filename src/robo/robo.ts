@@ -193,6 +193,16 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
   if (h.pergunta) h.responder = 1;
   if (h.botaoTexto && /Pronto|Tirar|Flambar/.test(h.botaoTexto)) h.clicar = true;
 
+  // um gesto pode virar outro (separar em água fria vira deixar de molho): o timer na tela manda
+  if (passo.gesto !== 'tempo' && h.med('Timer')) {
+    const timer = h.med('Timer')!;
+    if (h.botaoTexto === 'Iniciar') {
+      if (timer.valor < 0.5) e.roda = -1;
+      else h.clicar = true;
+    }
+    e.teclas.add(' ');
+    return;
+  }
   switch (passo.gesto) {
     case 'cortar': {
       if (!peca) return;

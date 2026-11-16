@@ -9,6 +9,7 @@ import { estadoInicial } from '../pecas/conteudo';
 import { criarUtensilio } from '../modelos/utensilios';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
+import { gestoTempo } from './tempo_verter';
 
 const VASO_NO_FOGO = /frigideira|wok|panela|caçarola|chapa|^aro$/i;
 const matFio = new THREE.MeshStandardMaterial({ color: '#efe6d2', roughness: 0.9 });
@@ -244,9 +245,12 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
     mesa.adicionarExtra(recheio);
   }
   if (v === 'forrar') {
-    folha = new THREE.Mesh(new THREE.PlaneGeometry(L * s * 1.5, peca.largura * s * 1.6, 8, 8), new THREE.MeshStandardMaterial({ color: /massa/.test(passo.alvo) ? '#efd9a8' : '#f4efe4', roughness: 0.8, side: THREE.DoubleSide }));
+    // pouco maior que a fôrma; papel-manteiga e vegetal são translúcidos e deixam ver a massa embaixo
+    const deMassa = /massa/.test(passo.alvo) && !/papel|alum[ií]nio|filme/i.test(passo.utensilio);
+    folha = new THREE.Mesh(new THREE.PlaneGeometry(L * s * 1.18, peca.largura * s * 1.18, 8, 8), new THREE.MeshStandardMaterial({ color: deMassa ? '#efd9a8' : /alum/i.test(passo.utensilio) ? '#d8dde2' : '#f4efe4', roughness: 0.8, metalness: /alum/i.test(passo.utensilio) ? 0.6 : 0, transparent: !deMassa, opacity: deMassa ? 1 : 0.72, side: THREE.DoubleSide }));
     folha.rotation.x = -Math.PI / 2;
-    folha.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.25, 0));
+    // a folha começa ao lado, logo acima da bancada: no alto ela ficaria colada na câmera
+    folha.position.copy(peca.getWorldPosition(new THREE.Vector3())).add(new THREE.Vector3(L * s * 1.1, peca.altura * s + 0.02, 0));
     mesa.adicionarExtra(folha);
   }
   if (v === 'trancar') {
@@ -338,11 +342,12 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
         progresso = virando >= 1 ? 1 : 0;
         hud.medidores([{ rotulo: 'Virada', valor: virando }]);
       } else if (v === 'forrar') {
-        const yFolha = estacao.superficie.y + peca.altura * s + 0.004;
+        const centroPeca = peca.getWorldPosition(new THREE.Vector3());
+        const yFolha = centroPeca.y + peca.altura * s + 0.004;
         const ponto = entrada.noPlano(camera, yFolha);
         if (entrada.pressionado && ponto && folha) folha.position.lerp(ponto.clone().setY(yFolha), Math.min(1, dt * 12));
         if (folha) {
-          const d = folha.position.clone().setY(0).distanceTo(estacao.superficie.clone().setY(0));
+          const d = folha.position.clone().setY(0).distanceTo(centroPeca.clone().setY(0));
           if (!entrada.pressionado && d < 0.05) {
             progresso = 1;
             nota = clamp(1 - d * 15);
@@ -733,6 +738,8 @@ function objetoRetirado(alvo: string, peca: Peca): THREE.Object3D {
 }
 
 export function gestoSeparar(ctx: ContextoGesto): Execucao {
+  // "palitos em água fria", "pedaços em água com limão": é deixar de molho no recipiente, não puxar uma parte
+  if (ctx.vaso && ctx.passo.meio && ctx.passo.alimento && /[aá]gua|lim[aã]o|vinagre|leite|salmoura/i.test(ctx.passo.meio)) return gestoTempo(ctx);
   const { passo, estacao, entrada, camera, hud } = ctx;
   const peca = prepararPeca(ctx);
   const modo = modoSeparar(passo.alvo);

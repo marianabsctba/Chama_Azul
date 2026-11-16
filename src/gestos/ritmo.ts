@@ -16,6 +16,18 @@ function alvoDoConteudo(texto: string) {
   return { picos: 0.05, espessura: 0.4, brilho: 0.6, cresce: 1 };
 }
 
+/**
+ * Bater ou dobrar clareia a base neutra (claras, creme, manteiga com açúcar). Quando o conteúdo já tem
+ * a cor do sabor (musse de chocolate, ganache, purê de frutas), ele só clareia um pouco e não vira branco.
+ */
+function respeitarSabor(alvo: { cor?: THREE.Color }, inicial: THREE.Color, texto: string) {
+  // gemas com açúcar batidas "até esbranquiçar" clareiam de verdade
+  if (!alvo.cor || /esbranqui|clarear/i.test(texto)) return;
+  const hsl = { h: 0, s: 0, l: 0 };
+  inicial.getHSL(hsl);
+  if (hsl.s > 0.35 || hsl.l < 0.55) alvo.cor = inicial.clone().lerp(alvo.cor, 0.18);
+}
+
 const ELETRO = /batedeira|processador|liquidificador|mixer|multiprocessador/i;
 
 export function gestoRitmo(ctx: ContextoGesto): Execucao {
@@ -37,6 +49,7 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.4);
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
+  respeitarSabor(alvo, inicial.cor, texto);
   const nivel0 = conteudo.estado.nivel;
   const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|amassador|martel|socador|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
   const centro = mesa.centro.clone();
@@ -277,6 +290,7 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   conteudo.estado.nivel = liquidificador ? 0.05 : 0.03;
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
+  respeitarSabor(alvo, inicial.cor, texto);
   const nivel0 = conteudo.estado.nivel;
   const base = aparelho.position.clone();
   // velocidades de 0 a 10; bater claras e emulsões pede velocidade alta, misturar pede baixa

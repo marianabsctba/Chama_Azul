@@ -38,11 +38,14 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
     // no recipiente da ficha (de molho na tigela, na fôrma, no pote); senão sobre a bancada
     peca.rotation.y = anguloDaEstacao(estacao);
     if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone(), true)) peca.position.copy(estacao.superficie);
+    // de molho: o líquido da ficha cobre a peça dentro do recipiente
+    else if (passo.meio) mesa.garantirConteudo(passo.meio, 0.6);
   } else {
     // o líquido no recipiente da ficha: forma de gelo, pote, fôrma, travessa; senão a tigela
     mesa.garantirRecipiente(ctx.vaso ?? 'tigela', estacao.superficie.clone(), 'tigela');
     mesa.garantirConteudo(passo.meio ?? textoConteudo(passo), 0.45);
   }
+  cobrirComPano(ctx, peca);
   const escala0 = peca?.scale.clone();
   const fermenta = passo.variante === 'fermentar' || /dobr|cres/.test(passo.parametro);
   const frio = passo.variante === 'frio';
@@ -106,6 +109,67 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
  * Mergulhar: a peça (ou a ponta dela) desce no conteúdo da tigela e volta coberta. Segurar o botão
  * desce, soltar sobe; vale quando afunda até a marca e sai sem pressa.
  */
+/**
+ * "Coberta com pano úmido", "tampada", "coberta com filme": o pano xadrez cai sobre a tigela ou a
+ * massa, puxado de lado para ainda se ver o que descansa embaixo; a panela ganha a tampa.
+ */
+function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa']['garantirPeca']> | null) {
+  const { passo, mesa } = ctx;
+  const texto = `${passo.acao} ${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
+  const pano = /pano|toalha|guardanapo/.test(texto);
+  const filme = /filme|pl[aá]stico/.test(texto);
+  const tampa = /tampad|tampa|com a tampa/.test(texto) && !pano && !filme;
+  if (!pano && !filme && !tampa) return;
+  const alvo = mesa.recipiente ?? peca;
+  if (!alvo) return;
+  alvo.updateMatrixWorld(true);
+  const caixa = new THREE.Box3().setFromObject(alvo);
+  const tam = caixa.getSize(new THREE.Vector3());
+  const centro = caixa.getCenter(new THREE.Vector3());
+  const r = Math.max(tam.x, tam.z) * 0.5;
+  if (tampa) {
+    const t = criarUtensilio('tampa');
+    if (t) {
+      t.position.set(centro.x, caixa.max.y, centro.z);
+      mesa.adicionarExtra(t);
+      return;
+    }
+  }
+  const cor = tampa ? '#c3ccd4' : filme ? '#e8f2f8' : '#f4efe6';
+  const mat = new THREE.MeshStandardMaterial({ color: cor, roughness: tampa ? 0.3 : filme ? 0.15 : 0.95, metalness: tampa ? 0.7 : 0, transparent: filme, opacity: filme ? 0.45 : 1, side: THREE.DoubleSide });
+  if (pano) {
+    // xadrez azul de pano de prato, pintado por vértice
+    const geo = new THREE.PlaneGeometry(r * 2.3, r * 2.3, 24, 24);
+    const cores: number[] = [];
+    const p = geo.getAttribute('position');
+    const azul = new THREE.Color('#3f6fa8');
+    const claro = new THREE.Color('#f4efe6');
+    for (let i = 0; i < p.count; i++) {
+      const x = Math.floor((p.getX(i) / (r * 2.3) + 0.5) * 8);
+      const y = Math.floor((p.getY(i) / (r * 2.3) + 0.5) * 8);
+      const c = (x + y) % 2 === 0 ? azul : claro;
+      // a ponta pendurada cai pela borda
+      const borda = Math.max(Math.abs(p.getX(i)), Math.abs(p.getY(i))) / (r * 1.15);
+      p.setZ(i, borda > 0.85 ? -(borda - 0.85) * r * 1.4 : 0);
+      cores.push(c.r, c.g, c.b);
+    }
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(cores, 3));
+    geo.computeVertexNormals();
+    mat.vertexColors = true;
+    mat.color.set('#ffffff');
+    const m = new THREE.Mesh(geo, mat);
+    m.rotation.x = -Math.PI / 2;
+    // puxado para um lado: metade coberta, metade à vista
+    m.position.set(centro.x + r * 0.55, caixa.max.y + 0.003, centro.z);
+    mesa.adicionarExtra(m);
+  } else {
+    const m = new THREE.Mesh(new THREE.CircleGeometry(r * 1.05, 40), mat);
+    m.rotation.x = -Math.PI / 2;
+    m.position.set(centro.x, caixa.max.y + 0.002, centro.z);
+    mesa.adicionarExtra(m);
+  }
+}
+
 function gestoMergulhar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, hud } = ctx;
   mesa.garantirRecipiente(/panela|caçarola/i.test(passo.utensilio + passo.alvo) ? 'panela' : 'tigela', estacao.superficie.clone(), 'tigela');
