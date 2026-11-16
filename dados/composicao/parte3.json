@@ -6,24 +6,23 @@
         "corte": "aparar"
       },
       {
-        "alimento": "erva_doce"
+        "alimento": "c3-erva-doce-aparada"
       },
       {
-        "alimento": "erva_doce",
+        "alimento": "c3-erva-doce-aparada",
         "estado": "metades"
       },
       {
-        "alimento": "erva_doce",
+        "alimento": "c3-erva-doce-aparada",
         "meio": "água gelada",
         "recipiente": "tigela"
       }
     ],
     "prato": {
-      "principal": "erva_doce",
+      "principal": "c3-erva-doce-aparada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cru",
       "quantidade": 6
     }
   },
@@ -66,16 +65,15 @@
         "alimento": "alcachofra"
       },
       {
-        "alimento": "alcachofra",
+        "alimento": "c3-alcachofra-recheada",
         "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "alcachofra",
+      "principal": "c3-alcachofra-recheada",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "alcachofra.talos": {
@@ -225,15 +223,15 @@
       }
     ],
     "prato": {
-      "principal": "broto_alcachofra",
+      "principal": "c3-alcachofra-giudea",
       "acompanhamentos": [
-        "azeitona",
+        "broto_alcachofra",
         "tomate-cereja",
         "manjericao"
       ],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "dourado"
+      "forma": "inteiro",
+      "quantidade": 3
     }
   },
   "legumes.julienne": {
@@ -260,22 +258,22 @@
   "legumes.corte_girado": {
     "passos": [
       {
-        "alimento": "cenoura"
+        "alimento": "c3-cenoura-aparada"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "c3-cenoura-aparada",
+        "estado": "descascado"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "c3-cenoura-aparada",
+        "estado": "descascado"
       }
     ],
     "prato": {
-      "principal": "cenoura",
+      "principal": "c3-cenoura-girada",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "cru",
-      "quantidade": 8
+      "forma": "inteiro"
     }
   },
   "legumes.cubos": {
@@ -364,31 +362,28 @@
         "alimento": "cenoura"
       },
       {
-        "alimento": "cenoura",
+        "alimento": "c3-cenoura-fitas",
         "meio": "água gelada",
-        "recipiente": "tigela",
-        "estado": "tiras"
+        "recipiente": "tigela"
       }
     ],
     "prato": {
-      "principal": "cenoura",
+      "principal": "c3-cenoura-fitas",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "tiras",
-      "estado": "cru",
-      "quantidade": 8
+      "forma": "inteiro"
     }
   },
   "legumes.tornear": {
     "passos": [
       {
-        "alimento": "cenoura"
+        "alimento": "c3-cenoura-aparada"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "c3-cenoura-toco"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "c3-cenoura-toco"
       }
     ],
     "prato": {
@@ -447,19 +442,18 @@
   "legumes.couve_rabano_fatiar": {
     "passos": [
       {
-        "alimento": "couve_rabano"
+        "alimento": "c3-couve-rabano-aparada"
       },
       {
-        "alimento": "couve_rabano",
+        "alimento": "c3-couve-rabano-aparada",
         "estado": "metades"
       }
     ],
     "prato": {
-      "principal": "couve_rabano",
+      "principal": "c3-couve-rabano-aparada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cru",
       "quantidade": 8
     }
   },
@@ -574,7 +568,7 @@
       },
       {
         "alimento": "batata",
-        "estado": "metades"
+        "estado": "quartos"
       }
     ],
     "prato": {
@@ -844,26 +838,25 @@
   "cogumelos.secos_reconstituir": {
     "passos": [
       {
-        "alimento": "shiitake",
+        "alimento": "c3-shiitake-seco",
         "meio": "água morna",
         "recipiente": "tigela"
       },
       {
-        "alimento": "shiitake",
+        "alimento": "c3-shiitake-hidratado",
         "recipiente": "peneira"
       },
       {
-        "alimento": "shiitake",
+        "alimento": "c3-shiitake-hidratado",
         "utensilio": "mãos",
         "recipiente": "tigela"
       }
     ],
     "prato": {
-      "principal": "shiitake",
+      "principal": "c3-shiitake-hidratado",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "cogumelos.trufa_limpar_fatiar": {
@@ -938,11 +931,10 @@
       }
     ],
     "prato": {
-      "principal": "ervilha",
+      "principal": "c3-ervilhas-debulhadas",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "vagens.feijao_verde": {
@@ -969,27 +961,24 @@
         "utensilio": "mãos"
       },
       {
-        "alimento": "fava",
+        "alimento": "c3-favas-graos",
         "meio": "água",
         "recipiente": "panela"
       },
       {
-        "alimento": "fava",
-        "corte": "pontos",
-        "ponto": "cozido"
+        "alimento": "c3-favas-graos",
+        "corte": "pontos"
       },
       {
-        "alimento": "fava",
-        "utensilio": "mãos",
-        "ponto": "cozido"
+        "alimento": "c3-favas-graos",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "fava",
+      "principal": "c3-favas-peladas",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "vagens.quiabo": {
@@ -1026,11 +1015,10 @@
       }
     ],
     "prato": {
-      "principal": "milho-grao",
+      "principal": "c3-milho-debulhado",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "vagens.palha_milho_secar": {
@@ -1124,11 +1112,10 @@
       }
     ],
     "prato": {
-      "principal": "cebola",
+      "principal": "c3-cebola-aneis",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "cebolas.cubos": {
@@ -1137,17 +1124,14 @@
         "alimento": "cebola"
       },
       {
-        "alimento": "cebola",
-        "corte": "deitado",
-        "estado": "metades"
+        "alimento": "c3-cebola-metade",
+        "corte": "deitado"
       },
       {
-        "alimento": "cebola",
-        "estado": "metades"
+        "alimento": "c3-cebola-metade"
       },
       {
-        "alimento": "cebola",
-        "estado": "metades"
+        "alimento": "c3-cebola-metade"
       }
     ],
     "prato": {
@@ -1176,11 +1160,10 @@
       }
     ],
     "prato": {
-      "principal": "cebola",
+      "principal": "c3-cebola-rodelas",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "cebolas.perola_descascar": {
@@ -1246,19 +1229,18 @@
         "alimento": "alho_poro"
       },
       {
-        "alimento": "alho_poro"
+        "alimento": "c3-alho-poro-aparado"
       },
       {
-        "alimento": "alho_poro",
+        "alimento": "c3-alho-poro-aparado",
         "estado": "metades"
       }
     ],
     "prato": {
-      "principal": "alho_poro",
+      "principal": "c3-alho-poro-aparado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cru",
       "quantidade": 10
     }
   },
@@ -1311,17 +1293,16 @@
         "alimento": "raiz_lotus"
       },
       {
-        "alimento": "raiz_lotus",
+        "alimento": "c3-lotus-rodelas",
         "meio": "água",
         "recipiente": "panela"
       }
     ],
     "prato": {
-      "principal": "raiz_lotus",
+      "principal": "c3-lotus-rodelas",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "incomuns.cercefi": {
@@ -1407,20 +1388,19 @@
         "alimento": "melao_amargo"
       },
       {
-        "alimento": "melao_amargo"
+        "alimento": "c3-melao-amargo-fatias"
       },
       {
-        "alimento": "melao_amargo",
+        "alimento": "c3-melao-amargo-fatias",
         "meio": "óleo",
         "recipiente": "wok"
       }
     ],
     "prato": {
-      "principal": "melao_amargo",
+      "principal": "c3-melao-amargo-fatias",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "incomuns.mooli": {
@@ -1473,17 +1453,16 @@
         "alimento": "loofah"
       },
       {
-        "alimento": "loofah",
+        "alimento": "c3-loofah-pedacos",
         "meio": "água",
         "recipiente": "cesta de bambu"
       }
     ],
     "prato": {
-      "principal": "loofah",
+      "principal": "c3-loofah-pedacos",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "incomuns.araruta": {
@@ -1820,22 +1799,18 @@
         "alimento": "abacate"
       },
       {
-        "alimento": "abacate",
-        "estado": "metades",
+        "alimento": "c3-abacate-caroco",
         "utensilio": "mãos"
       },
       {
-        "alimento": "abacate",
-        "estado": "metades"
+        "alimento": "c3-abacate-caroco"
       }
     ],
     "prato": {
-      "principal": "abacate",
+      "principal": "c3-abacate-caroco",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "pedacos",
-      "estado": "cru",
-      "quantidade": 2
+      "forma": "inteiro"
     }
   },
   "frutos_legume.abacate_fatiar": {
@@ -1905,18 +1880,17 @@
         "alimento": "pimentao"
       },
       {
-        "alimento": "pimentao",
+        "alimento": "c3-pimentao-recheado",
         "adicionar": [
           "carne-moida"
         ]
       }
     ],
     "prato": {
-      "principal": "pimentao",
+      "principal": "c3-pimentao-recheado",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "chili.frescos_preparar": {
@@ -2046,16 +2020,13 @@
       }
     ],
     "prato": {
-      "principal": "jalapeno",
+      "principal": "c3-poblano-recheado-queijo",
       "acompanhamentos": [
-        "poblano",
-        "anaheim",
-        "gorro_escoces"
+        "c3-anaheim-recheado-caranguejo"
       ],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "dourado",
-      "quantidade": 3
+      "quantidade": 2
     }
   },
   "chili.rellenos_massa_fritar": {
@@ -2081,20 +2052,19 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "poblano",
+        "alimento": "c3-poblano-empanado",
         "meio": "óleo",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "poblano"
+        "alimento": "c3-poblano-empanado"
       }
     ],
     "prato": {
-      "principal": "poblano",
+      "principal": "c3-poblano-empanado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
       "quantidade": 3
     }
   },
@@ -2109,11 +2079,10 @@
       }
     ],
     "prato": {
-      "principal": "poblano",
+      "principal": "c3-poblano-gratinado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
       "quantidade": 2
     }
   },
@@ -2538,11 +2507,10 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "c3-batata-assada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
       "quantidade": 4
     }
   },
@@ -2561,11 +2529,10 @@
       }
     ],
     "prato": {
-      "principal": "alho",
+      "principal": "c3-alho-assado",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "assar.beterraba": {
@@ -2595,11 +2562,10 @@
       }
     ],
     "prato": {
-      "principal": "beterraba",
+      "principal": "c3-beterraba-assada",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "assar.pimentao_forno": {
@@ -2731,11 +2697,10 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "c3-batata-gratinada",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "fatias",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "fritar.cartouche": {
@@ -2926,11 +2891,10 @@
       }
     ],
     "prato": {
-      "principal": "batata",
+      "principal": "c3-batata-frita",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "tiras",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "fritar.ninho_batata": {
@@ -2988,11 +2952,10 @@
       }
     ],
     "prato": {
-      "principal": "repolho",
+      "principal": "c3-alga-crespa",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "desfiado",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "fritar.grelhar_listrado": {
@@ -3110,11 +3073,10 @@
       }
     ],
     "prato": {
-      "principal": "espinafre",
+      "principal": "c3-espinafre-cozido",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "pure.timbale": {
@@ -3194,11 +3156,10 @@
       }
     ],
     "prato": {
-      "principal": "feijao_seco",
+      "principal": "c3-feijoes-cozidos",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "graos.molho_rapido": {
@@ -3215,11 +3176,10 @@
       }
     ],
     "prato": {
-      "principal": "feijao_seco",
+      "principal": "c3-feijoes-demolhados",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "graos.feijao_refrito": {
@@ -3380,11 +3340,10 @@
       }
     ],
     "prato": {
-      "principal": "arroz_longo",
+      "principal": "c3-arroz-solto",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "arroz.absorcao": {
@@ -3419,11 +3378,10 @@
       }
     ],
     "prato": {
-      "principal": "arroz_basmati",
+      "principal": "c3-arroz-solto",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "arroz.pilaf": {
@@ -3512,11 +3470,10 @@
       }
     ],
     "prato": {
-      "principal": "arroz_japones",
+      "principal": "c3-arroz-sushi",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "arroz.risoto": {
@@ -3575,31 +3532,28 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "arroz_arborio",
-        "recipiente": "ramequim",
-        "ponto": "cozido"
+        "alimento": "c3-risoto-moldado",
+        "recipiente": "ramequim"
       },
       {
-        "alimento": "arroz_arborio",
+        "alimento": "c3-risoto-moldado",
         "adicionar": [
           "lagostim",
           "vieira",
           "espiral-parmesao"
         ],
-        "recipiente": "prato",
-        "ponto": "cozido"
+        "recipiente": "prato"
       }
     ],
     "prato": {
-      "principal": "arroz_arborio",
+      "principal": "c3-risoto-moldado",
       "acompanhamentos": [
         "lagostim",
         "vieira",
         "espiral-parmesao"
       ],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "arroz.caldo_crustaceos": {
@@ -3701,21 +3655,20 @@
         "recipiente": "tábua"
       },
       {
-        "alimento": "polenta-firme",
+        "alimento": "c3-polenta-triangulo",
         "meio": "azeite",
         "recipiente": "tábua"
       },
       {
-        "alimento": "polenta-firme",
+        "alimento": "c3-polenta-triangulo",
         "recipiente": "grelha"
       }
     ],
     "prato": {
-      "principal": "polenta-firme",
+      "principal": "c3-polenta-triangulo-grelhada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
       "quantidade": 4
     }
   },
@@ -3743,11 +3696,10 @@
       }
     ],
     "prato": {
-      "principal": "cuscuz",
+      "principal": "c3-cuscuz-solto",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "graos.cuscuzeiro": {
@@ -3764,11 +3716,10 @@
       }
     ],
     "prato": {
-      "principal": "cuscuz",
+      "principal": "c3-cuscuz-solto",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "graos.bulgur": {
@@ -3783,17 +3734,16 @@
         "recipiente": "peneira"
       },
       {
-        "alimento": "bulgur",
+        "alimento": "c3-bulgur-hidratado",
         "recipiente": "tigela",
         "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "bulgur",
+      "principal": "c3-bulgur-hidratado",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "graos.pipoca": {
@@ -3857,11 +3807,10 @@
       }
     ],
     "prato": {
-      "principal": "amendoa",
+      "principal": "c3-amendoa-pelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cozido",
       "quantidade": 8
     }
   },
@@ -3884,11 +3833,10 @@
       }
     ],
     "prato": {
-      "principal": "avela",
+      "principal": "c3-avela-pelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "tostado",
       "quantidade": 8
     }
   },
@@ -3980,11 +3928,10 @@
       }
     ],
     "prato": {
-      "principal": "castanha_portuguesa",
+      "principal": "c3-castanha-pelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru",
       "quantidade": 5
     }
   },
@@ -4004,11 +3951,10 @@
       }
     ],
     "prato": {
-      "principal": "castanha_portuguesa",
+      "principal": "c3-castanha-pelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "tostado",
       "quantidade": 5
     }
   },
@@ -4029,11 +3975,10 @@
       }
     ],
     "prato": {
-      "principal": "castanha_portuguesa",
+      "principal": "c3-castanha-pelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cozido",
       "quantidade": 5
     }
   },
@@ -4142,20 +4087,19 @@
         "recipiente": "bancada"
       },
       {
-        "alimento": "massa_fresca",
+        "alimento": "c3-massa-bola",
         "recipiente": "bancada",
         "utensilio": "mãos"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-bola"
       }
     ],
     "prato": {
-      "principal": "massa_fresca",
+      "principal": "c3-massa-bola",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "massa.fresca_processador": {
@@ -4171,20 +4115,19 @@
         "recipiente": "processador"
       },
       {
-        "alimento": "massa_fresca",
+        "alimento": "c3-massa-bola",
         "recipiente": "bancada",
         "utensilio": "mãos"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-bola"
       }
     ],
     "prato": {
-      "principal": "massa_fresca",
+      "principal": "c3-massa-bola",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "massa.aromatizar": {
@@ -4250,30 +4193,29 @@
   "massa.abrir_mao": {
     "passos": [
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-bola"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-disco"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-disco"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-disco"
       }
     ],
     "prato": {
-      "principal": "massa_fresca",
+      "principal": "c3-massa-disco",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "massa.abrir_maquina": {
     "passos": [
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-bola"
       },
       {
         "alimento": "massa_fresca"
@@ -4282,18 +4224,17 @@
         "alimento": "massa_fresca"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-folha"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-folha"
       }
     ],
     "prato": {
-      "principal": "massa_fresca",
+      "principal": "c3-massa-folha",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "massa.cortar_mao": {
@@ -4309,18 +4250,17 @@
         "estado": "tiras"
       },
       {
-        "alimento": "tagliatelle"
+        "alimento": "c3-ninho-tagliatelle"
       },
       {
-        "alimento": "tagliatelle"
+        "alimento": "c3-ninho-tagliatelle"
       }
     ],
     "prato": {
-      "principal": "tagliatelle",
+      "principal": "c3-ninho-tagliatelle",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru",
       "quantidade": 3
     }
   },
@@ -4559,12 +4499,10 @@
       }
     ],
     "prato": {
-      "principal": "canelone",
+      "principal": "c3-canelone-gratinado",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "dourado",
-      "quantidade": 3
+      "forma": "inteiro"
     }
   },
   "massa.gnocchi_semolina": {
@@ -4640,7 +4578,7 @@
         "recipiente": "bancada"
       },
       {
-        "alimento": "batata"
+        "alimento": "c3-nhoque-cilindro"
       },
       {
         "alimento": "gnocchi"
@@ -4707,11 +4645,10 @@
       }
     ],
     "prato": {
-      "principal": "espaguete",
+      "principal": "c3-espaguete-cozido",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "massa.comprida": {
@@ -4737,11 +4674,10 @@
       }
     ],
     "prato": {
-      "principal": "espaguete",
+      "principal": "c3-espaguete-cozido",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "massa.testar_al_dente": {
@@ -4768,11 +4704,10 @@
       }
     ],
     "prato": {
-      "principal": "espaguete",
+      "principal": "c3-espaguete-cozido",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "massa.asiatica_cozinhar": {
@@ -4824,7 +4759,7 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "escargot",
+        "alimento": "c3-escargot-sem-concha",
         "adicionar": [
           "chalota"
         ],
@@ -4832,26 +4767,25 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "escargot",
+        "alimento": "c3-escargot-sem-concha",
         "recipiente": "tigela"
       }
     ],
     "prato": {
-      "principal": "escargot",
+      "principal": "c3-escargot-sem-concha",
       "acompanhamentos": [],
       "servir": "tigelinha",
       "forma": "inteiro",
-      "estado": "cozido",
       "quantidade": 6
     }
   },
   "massa.ravioli_cortador": {
     "passos": [
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-folha"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "c3-massa-folha"
       },
       {
         "alimento": "massa_fresca",
@@ -5020,17 +4954,17 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "folha_wonton"
+        "alimento": "c3-massa-chinesa-disco"
       },
       {
-        "alimento": "folha_wonton",
+        "alimento": "c3-massa-chinesa-disco",
         "adicionar": [
           "camarao",
           "cebolinha"
         ]
       },
       {
-        "alimento": "folha_wonton"
+        "alimento": "c3-massa-chinesa-disco"
       },
       {
         "alimento": "pastelzinho-chines",
@@ -5124,7 +5058,7 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "folha_rolinho",
+        "alimento": "c3-folha-rolinho-quadrada",
         "adicionar": [
           "cenoura",
           "pimentao",
@@ -5132,13 +5066,13 @@
         ]
       },
       {
-        "alimento": "folha_rolinho"
+        "alimento": "c3-folha-rolinho-quadrada"
       },
       {
-        "alimento": "folha_rolinho"
+        "alimento": "c3-folha-rolinho-quadrada"
       },
       {
-        "alimento": "folha_rolinho"
+        "alimento": "c3-folha-rolinho-quadrada"
       },
       {
         "alimento": "rolinho-primavera"
@@ -5454,12 +5388,12 @@
   "molhos.escuro_tutano": {
     "passos": [
       {
-        "alimento": "tutano",
+        "alimento": "c3-osso-tutano",
         "meio": "água",
         "recipiente": "panela"
       },
       {
-        "alimento": "tutano"
+        "alimento": "c3-osso-tutano"
       },
       {
         "alimento": "tutano",
@@ -6222,23 +6156,21 @@
   "paes.pao-redondo": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": "c3-massa-pao-franzida"
       },
       {
-        "alimento": "massa-de-pao"
+        "alimento": "c3-massa-pao-franzida"
       },
       {
-        "alimento": "pao-redondo",
-        "ponto": "cru",
+        "alimento": "c3-pao-redondo-cru",
         "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "pao-redondo",
+      "principal": "c3-pao-redondo-cru",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "paes.corte-em-cruz": {
@@ -6326,7 +6258,7 @@
   "paes.rosca-tourelle": {
     "passos": [
       {
-        "alimento": "massa-de-pao",
+        "alimento": "c3-massa-pao-discos",
         "corte": "contorno"
       },
       {
@@ -6433,11 +6365,10 @@
       }
     ],
     "prato": {
-      "principal": "massa-de-pao",
+      "principal": "c3-massa-pao-bolinha",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru",
       "quantidade": 4
     }
   },
@@ -6733,11 +6664,10 @@
       }
     ],
     "prato": {
-      "principal": "focaccia",
+      "principal": "c3-focaccia-covinhas",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "paes.coroa-recheada": {

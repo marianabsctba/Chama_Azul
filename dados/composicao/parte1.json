@@ -2,25 +2,24 @@
   "caldos.escaldar-ossos": {
     "passos": [
       {
-        "alimento": "carcaca-de-ave",
+        "alimento": "c1-carcaca-frango",
         "meio": "água",
         "recipiente": "panela"
       },
       {
-        "alimento": "carcaca-de-ave",
+        "alimento": "c1-carcaca-frango",
         "recipiente": "escorredor"
       },
       {
-        "alimento": "carcaca-de-ave",
+        "alimento": "c1-carcaca-frango",
         "meio": "água"
       }
     ],
     "prato": {
-      "principal": "carcaca-de-ave",
+      "principal": "c1-carcaca-frango",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "caldos.caldo-de-galinha": {
@@ -178,22 +177,20 @@
   "caldos.caldo-de-peixe": {
     "passos": [
       {
-        "alimento": "merluza",
+        "alimento": "c1-aparas-peixe",
         "corte": "picar"
       },
       {
-        "alimento": "merluza"
+        "alimento": "c1-cabeca-peixe"
       },
       {
-        "alimento": "merluza",
+        "alimento": "c1-aparas-peixe",
         "meio": "água com sal",
-        "recipiente": "tigela",
-        "estado": "picado"
+        "recipiente": "tigela"
       },
       {
-        "alimento": "merluza",
-        "recipiente": "escorredor",
-        "estado": "picado"
+        "alimento": "c1-aparas-peixe",
+        "recipiente": "escorredor"
       },
       {
         "alimento": "cebola",
@@ -204,7 +201,7 @@
         ]
       },
       {
-        "alimento": "merluza",
+        "alimento": "c1-aparas-peixe",
         "adicionar": [
           "cebola",
           "cenoura",
@@ -212,11 +209,10 @@
           "louro"
         ],
         "meio": "água",
-        "recipiente": "panela",
-        "estado": "picado"
+        "recipiente": "panela"
       },
       {
-        "alimento": "merluza",
+        "alimento": "c1-aparas-peixe",
         "adicionar": [
           "cebola",
           "cenoura",
@@ -224,8 +220,7 @@
           "louro"
         ],
         "meio": "água",
-        "recipiente": "panela",
-        "estado": "picado"
+        "recipiente": "panela"
       },
       {
         "alimento": null,
@@ -364,10 +359,13 @@
       {
         "alimento": "kombu",
         "meio": "água",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "adicionar": [
+          "c1-bonito-seco"
+        ]
       },
       {
-        "alimento": "kombu",
+        "alimento": "c1-bonito-seco",
         "meio": "água",
         "recipiente": "panela"
       },
@@ -385,7 +383,10 @@
       {
         "alimento": "kombu",
         "meio": "caldo",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "adicionar": [
+          "c1-bonito-seco"
+        ]
       }
     ],
     "prato": {
@@ -1842,7 +1843,7 @@
       "acompanhamentos": [],
       "servir": "tigelinha",
       "liquido": null,
-      "principal": "ovo-gema",
+      "principal": "c1-gema-limpa",
       "forma": "inteiro"
     }
   },
@@ -1862,7 +1863,7 @@
       "acompanhamentos": [],
       "servir": "tigelinha",
       "liquido": null,
-      "principal": "ovo-gema",
+      "principal": "c1-gema-limpa",
       "forma": "inteiro"
     }
   },
@@ -1883,7 +1884,7 @@
       "acompanhamentos": [],
       "servir": "tigelinha",
       "liquido": null,
-      "principal": "ovo-gema",
+      "principal": "c1-gema-limpa",
       "forma": "inteiro"
     }
   },
@@ -2568,13 +2569,13 @@
         "recipiente": "wok"
       },
       {
-        "alimento": "omelete"
+        "alimento": "c1-omelete-rolo"
       },
       {
-        "alimento": "omelete"
+        "alimento": "c1-omelete-rolo"
       },
       {
-        "alimento": "omelete",
+        "alimento": "c1-omelete-rolo",
         "corte": "tiras"
       }
     ],
@@ -2995,11 +2996,10 @@
       }
     ],
     "prato": {
-      "principal": "crepe",
+      "principal": "crepe-leque",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "dourado",
       "quantidade": 2
     }
   },
@@ -3287,7 +3287,7 @@
   "queijos.avaliar-fresco-azul-cabra": {
     "passos": [
       {
-        "alimento": "queijo-fresco",
+        "alimento": "c1-queijo-fresco",
         "pergunta": "Como saber se o queijo fresco serve?",
         "opcoes": [
           "Está dentro da validade da embalagem.",
@@ -3312,7 +3312,7 @@
         "explicacao": "Azul bom tem veios distribuídos e casca firme, sem cheiro de amoníaco."
       },
       {
-        "alimento": "queijo-cabra",
+        "alimento": "c1-crottin",
         "pergunta": "Como deve estar o queijo de cabra?",
         "opcoes": [
           "Úmido e levemente ardido.",
@@ -3326,8 +3326,8 @@
     "prato": {
       "principal": "queijo-azul",
       "acompanhamentos": [
-        "queijo-fresco",
-        "queijo-cabra"
+        "c1-queijo-fresco",
+        "c1-crottin"
       ],
       "servir": "tabua",
       "forma": "inteiro",
@@ -3526,14 +3526,13 @@
       }
     ],
     "prato": {
-      "principal": "tomate-cereja",
+      "principal": "c1-tomate-recheado",
       "acompanhamentos": [
-        "abobrinha",
-        "ervilha_torta"
+        "c1-abobrinha-recheada",
+        "c1-ervilha-recheada"
       ],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": "cru",
       "quantidade": 6
     }
   },
@@ -3794,7 +3793,7 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": null,
+        "alimento": "c1-crosta-creme",
         "meio": "creme coalhado",
         "recipiente": "tigela"
       }
@@ -4037,7 +4036,7 @@
   "ervas.embeber-acafrao": {
     "passos": [
       {
-        "alimento": null,
+        "alimento": "c1-fios-acafrao",
         "meio": "água com açafrão",
         "recipiente": "tigela"
       },
@@ -4114,7 +4113,8 @@
           "salsa",
           "tomilho",
           "estragao",
-          "louro"
+          "louro",
+          "c1-zimbro"
         ],
         "recipiente": "musselina",
         "utensilio": "musselina"
@@ -4140,11 +4140,10 @@
       }
     ],
     "prato": {
-      "principal": "casca-limao-picada",
+      "principal": "c1-casca-limao-picada",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "ervas.gremolata": {
@@ -4156,30 +4155,28 @@
         "alimento": "salsa",
         "adicionar": [
           "alho",
-          "casca-limao-picada"
+          "c1-casca-limao-picada"
         ],
         "recipiente": "tigela",
         "estado": "picado"
       },
       {
-        "alimento": "ossobuco",
+        "alimento": "c1-ossobuco-osso",
         "adicionar": [
           "salsa",
           "alho",
-          "casca-limao-picada"
+          "c1-casca-limao-picada"
         ],
-        "ponto": "cozido",
         "recipiente": "prato"
       }
     ],
     "prato": {
-      "principal": "ossobuco",
+      "principal": "c1-ossobuco-osso",
       "acompanhamentos": [
         "salsa"
       ],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "ervas.herbes-de-provence": {
@@ -4647,7 +4644,7 @@
         "utensilio": "pano"
       },
       {
-        "alimento": "truta",
+        "alimento": "c1-peixe-no-pano",
         "recipiente": "geladeira"
       }
     ],
@@ -4977,11 +4974,10 @@
       }
     ],
     "prato": {
-      "principal": "sardinha",
+      "principal": "c1-sardinha-borboleta",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.desossar-barriga": {
@@ -5005,11 +5001,10 @@
       }
     ],
     "prato": {
-      "principal": "salmao",
+      "principal": "c1-salmao-borboleta",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.tirar-espinhas-finas": {
@@ -5057,11 +5052,10 @@
       }
     ],
     "prato": {
-      "principal": "truta",
+      "principal": "c1-truta-borboleta",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.desossar-peixe-anjo": {
@@ -5101,7 +5095,7 @@
         "alimento": "file-de-salmao"
       },
       {
-        "alimento": "file-de-salmao"
+        "alimento": "c1-carcaca-salmao"
       }
     ],
     "prato": {
@@ -5149,21 +5143,20 @@
       }
     ],
     "prato": {
-      "principal": "linguado",
+      "principal": "c1-linguado-pelado",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.files-chato": {
     "passos": [
       {
-        "alimento": "rodovalho",
+        "alimento": "c1-rodovalho",
         "corte": "contorno"
       },
       {
-        "alimento": "rodovalho",
+        "alimento": "c1-rodovalho",
         "corte": "contorno"
       },
       {
@@ -5722,22 +5715,19 @@
         "recipiente": "travessa"
       },
       {
-        "alimento": "file-de-salmao",
-        "adicionar": [
-          "endro"
-        ],
+        "alimento": "c1-file-salmao-endro",
         "recipiente": "travessa"
       },
       {
-        "alimento": "file-de-salmao",
+        "alimento": "c1-files-salmao-empilhados",
         "recipiente": "travessa"
       },
       {
-        "alimento": "file-de-salmao",
+        "alimento": "c1-files-salmao-empilhados",
         "recipiente": "travessa"
       },
       {
-        "alimento": "file-de-salmao",
+        "alimento": "c1-files-salmao-empilhados",
         "recipiente": "geladeira"
       },
       {
@@ -5843,14 +5833,14 @@
   "peixes.sashimi": {
     "passos": [
       {
-        "alimento": "tainha"
+        "alimento": "c1-file-tainha"
       },
       {
-        "alimento": "tainha",
+        "alimento": "c1-file-tainha",
         "recipiente": "geladeira"
       },
       {
-        "alimento": "tainha"
+        "alimento": "c1-file-tainha"
       },
       {
         "alimento": "file-de-cavala",
@@ -5944,11 +5934,10 @@
       }
     ],
     "prato": {
-      "principal": "salmao",
+      "principal": "c1-salmao-pelado",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "peixes.poche-improvisado": {
@@ -6106,17 +6095,15 @@
         "ponto": "cozido"
       },
       {
-        "alimento": "file-de-salmao",
-        "ponto": "cozido",
+        "alimento": "c1-salmao-pelado",
         "recipiente": "travessa"
       }
     ],
     "prato": {
-      "principal": "salmao",
+      "principal": "c1-salmao-pelado",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "peixes.decorar-escamas": {
@@ -6215,13 +6202,11 @@
       }
     ],
     "prato": {
-      "principal": "anchova",
-      "acompanhamentos": [
-        "pimentao"
-      ],
+      "principal": "c1-laco-anchova",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "tiras",
-      "estado": "cru"
+      "forma": "inteiro",
+      "quantidade": 4
     }
   },
   "peixes.tacinhas-kumquat": {
@@ -6266,13 +6251,11 @@
       }
     ],
     "prato": {
-      "principal": "lima",
-      "acompanhamentos": [
-        "pimentao"
-      ],
+      "principal": "c1-borboleta-lima",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro",
+      "quantidade": 3
     }
   },
   "peixes.enfeites-massa": {
@@ -6313,11 +6296,10 @@
       }
     ],
     "prato": {
-      "principal": "limao",
+      "principal": "c1-limao-trancado",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.espirais-citricas": {
@@ -6355,11 +6337,11 @@
       }
     ],
     "prato": {
-      "principal": "limao",
+      "principal": "c1-limao-alado",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro",
+      "quantidade": 3
     }
   },
   "peixes.gengibre-frito": {
@@ -6422,18 +6404,17 @@
   "peixes.rosa-gengibre": {
     "passos": [
       {
-        "alimento": "gengibre-conserva"
+        "alimento": "c1-fatia-gengibre"
       },
       {
-        "alimento": "gengibre-conserva"
+        "alimento": "c1-fatia-gengibre"
       }
     ],
     "prato": {
-      "principal": "gengibre-conserva",
+      "principal": "c1-rosa-gengibre",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.cebolinha-enrolada": {
@@ -6448,11 +6429,10 @@
       }
     ],
     "prato": {
-      "principal": "cebolinha",
+      "principal": "c1-cebolinha-cachos",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "tiras",
-      "estado": "cru"
+      "forma": "inteiro"
     }
   },
   "peixes.ervas-fritas": {
@@ -6498,11 +6478,11 @@
       }
     ],
     "prato": {
-      "principal": "pepino",
+      "principal": "c1-pepino-torcido",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "cru"
+      "forma": "inteiro",
+      "quantidade": 4
     }
   },
   "peixes.buque-ervas": {
@@ -6817,15 +6797,15 @@
         "alimento": "truta"
       },
       {
-        "alimento": "truta",
+        "alimento": "c1-truta-aluminio",
         "recipiente": "papel-alumínio"
       },
       {
-        "alimento": "papillote",
+        "alimento": "c1-truta-aluminio",
         "recipiente": "assadeira"
       },
       {
-        "alimento": "truta",
+        "alimento": "c1-pacote-aberto",
         "recipiente": "travessa"
       }
     ],
@@ -6846,31 +6826,30 @@
         ]
       },
       {
-        "alimento": "truta",
+        "alimento": "c1-truta-aluminio",
         "recipiente": "papel-alumínio"
       },
       {
-        "alimento": "truta",
+        "alimento": "c1-truta-aluminio",
         "recipiente": "papel-alumínio"
       }
     ],
     "prato": {
-      "principal": "truta",
+      "principal": "c1-truta-recheada-dorso",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "peixes.papillote": {
     "passos": [
       {
-        "alimento": null,
+        "alimento": "c1-papel-coracao",
         "recipiente": "papel-manteiga",
         "corte": "contorno"
       },
       {
-        "alimento": null,
+        "alimento": "c1-papel-coracao",
         "meio": "manteiga",
         "recipiente": "papel-manteiga"
       },
@@ -6992,18 +6971,15 @@
         ]
       },
       {
-        "alimento": "file-de-peixe-anjo",
+        "alimento": "c1-peixe-anjo-bacon",
         "recipiente": "assadeira"
       }
     ],
     "prato": {
-      "principal": "file-de-peixe-anjo",
-      "acompanhamentos": [
-        "bacon"
-      ],
+      "principal": "c1-peixe-anjo-bacon",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "peixes.empanar": {
@@ -7099,11 +7075,10 @@
       }
     ],
     "prato": {
-      "principal": "arraia",
+      "principal": "c1-arraia-empanada",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "peixes.cajun": {
@@ -7472,7 +7447,7 @@
         "recipiente": "banho-maria"
       },
       {
-        "alimento": null,
+        "alimento": "c1-terrina-peixe",
         "meio": "terrina de peixe",
         "recipiente": "travessa"
       },
@@ -7550,18 +7525,18 @@
         "alimento": "lagosta-inteira-cozida"
       },
       {
-        "alimento": "lagosta-inteira-cozida",
+        "alimento": "c1-cauda-lagosta",
         "corte": "contorno"
       },
       {
-        "alimento": "lagosta-inteira-cozida"
+        "alimento": "c1-cauda-lagosta"
       },
       {
-        "alimento": "medalhoes-lagosta"
+        "alimento": "c1-medalhoes-lagosta"
       }
     ],
     "prato": {
-      "principal": "medalhoes-lagosta",
+      "principal": "c1-medalhoes-lagosta",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -7640,37 +7615,37 @@
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-garras-caranguejo",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-caranguejo-sem-pernas",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-caranguejo-sem-pernas",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-carapaca-caranguejo",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-corpo-caranguejo",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-corpo-caranguejo",
         "corte": "contorno",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-corpo-caranguejo",
         "ponto": "cozido"
       }
     ],
     "prato": {
-      "principal": "carne-caranguejo",
+      "principal": "c1-carne-caranguejo",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -7685,12 +7660,15 @@
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "c1-carapaca-caranguejo",
         "ponto": "cozido"
       },
       {
-        "alimento": "caranguejo",
-        "ponto": "cozido"
+        "alimento": "c1-carapaca-caranguejo",
+        "ponto": "cozido",
+        "adicionar": [
+          "carne-caranguejo"
+        ]
       },
       {
         "alimento": "caranguejo",
@@ -7701,23 +7679,15 @@
         "recipiente": "peneira"
       },
       {
-        "alimento": "caranguejo",
-        "adicionar": [
-          "salsa",
-          "ovo"
-        ],
+        "alimento": "c1-caranguejo-recheado",
         "ponto": "cozido"
       }
     ],
     "prato": {
-      "principal": "caranguejo",
-      "acompanhamentos": [
-        "salsa",
-        "ovo"
-      ],
+      "principal": "c1-caranguejo-recheado",
+      "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   }
 }

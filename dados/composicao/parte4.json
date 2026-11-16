@@ -69,12 +69,12 @@
         "utensilio": "descaroçador"
       },
       {
-        "alimento": "maca",
+        "alimento": "c4-maca-sem-miolo",
         "utensilio": "descascador"
       }
     ],
     "prato": {
-      "principal": "maca",
+      "principal": "c4-maca-descascada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -89,7 +89,7 @@
       }
     ],
     "prato": {
-      "principal": "maca-espiral",
+      "principal": "c4-maca-espiral-casca",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -106,7 +106,7 @@
       }
     ],
     "prato": {
-      "principal": "maca",
+      "principal": "c4-maca-sem-miolo",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -177,34 +177,34 @@
         "estado": "metades"
       },
       {
-        "alimento": "pera",
+        "alimento": "c4-pera-leque",
         "estado": "fatias",
         "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "pera",
+      "principal": "c4-pera-leque",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
   "frutas.meia-lua-maca": {
     "passos": [
       {
-        "alimento": "maca"
+        "alimento": "c4-maca-descascada"
       },
       {
-        "alimento": "maca",
+        "alimento": "c4-maca-descascada",
         "estado": "metades"
       }
     ],
     "prato": {
-      "principal": "maca",
+      "principal": "c4-meias-luas-maca",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -270,10 +270,10 @@
       }
     ],
     "prato": {
-      "principal": "ruibarbo",
+      "principal": "c4-ruibarbo-pedacos",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -296,7 +296,7 @@
         "utensilio": "garfo"
       },
       {
-        "alimento": "abacaxi",
+        "alimento": "c4-abacaxi-cilindro",
         "corte": "cubos"
       }
     ],
@@ -351,10 +351,10 @@
         "alimento": "abacaxi"
       },
       {
-        "alimento": "abacaxi"
+        "alimento": "c4-abacaxi-descascado"
       },
       {
-        "alimento": "abacaxi"
+        "alimento": "c4-abacaxi-descascado"
       }
     ],
     "prato": {
@@ -389,12 +389,12 @@
         "corte": "fatiar"
       },
       {
-        "alimento": "abacaxi",
+        "alimento": "c4-abacaxi-quarto",
         "corte": "contorno",
         "estado": "metades"
       },
       {
-        "alimento": "abacaxi",
+        "alimento": "c4-abacaxi-quarto",
         "estado": "metades"
       },
       {
@@ -445,7 +445,7 @@
       }
     ],
     "prato": {
-      "principal": "cereja",
+      "principal": "c4-cereja-sem-cabo",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -492,10 +492,10 @@
       }
     ],
     "prato": {
-      "principal": "manga",
+      "principal": "c4-manga-fatias",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -541,12 +541,12 @@
   "frutas.citrico-gomos": {
     "passos": [
       {
-        "alimento": "laranja",
+        "alimento": "c4-laranja-a-vif",
         "corte": "contorno",
         "recipiente": "tigela"
       },
       {
-        "alimento": "laranja",
+        "alimento": "c4-laranja-a-vif",
         "recipiente": "tigela"
       },
       {
@@ -595,24 +595,23 @@
         "utensilio": "descascador"
       },
       {
-        "alimento": "lima"
+        "alimento": "c4-lima-julienne"
       },
       {
-        "alimento": "lima",
+        "alimento": "c4-lima-julienne",
         "meio": "água",
         "recipiente": "panela"
       },
       {
-        "alimento": "lima",
+        "alimento": "c4-lima-julienne",
         "meio": "água fria"
       }
     ],
     "prato": {
-      "principal": "lima",
+      "principal": "c4-lima-julienne",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "tiras",
-      "estado": "cozido"
+      "forma": "inteiro"
     }
   },
   "frutas.suco-citrico": {
@@ -649,7 +648,7 @@
       }
     ],
     "prato": {
-      "principal": "morango",
+      "principal": "c4-morango-sem-calice",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -664,10 +663,10 @@
       }
     ],
     "prato": {
-      "principal": "morango",
+      "principal": "c4-morango-metade",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru",
       "quantidade": 4
     }
@@ -698,7 +697,7 @@
         "utensilio": "clipe"
       },
       {
-        "alimento": "uva",
+        "alimento": "c4-uva-metades",
         "estado": "metades",
         "utensilio": "faquinha"
       }
@@ -719,7 +718,7 @@
       }
     ],
     "prato": {
-      "principal": "groselha",
+      "principal": "c4-groselhas-soltas",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -977,14 +976,14 @@
         "alimento": "maracuja"
       },
       {
-        "alimento": "maracuja"
+        "alimento": "c4-maracuja-metade"
       }
     ],
     "prato": {
-      "principal": "maracuja",
+      "principal": "c4-maracuja-metade",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru",
       "quantidade": 2
     }
@@ -999,10 +998,10 @@
       }
     ],
     "prato": {
-      "principal": "sapotilha",
+      "principal": "c4-sapotilha-pedacos",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -1012,11 +1011,11 @@
         "alimento": "nespera"
       },
       {
-        "alimento": "nespera"
+        "alimento": "c4-nespera-descascada"
       }
     ],
     "prato": {
-      "principal": "nespera",
+      "principal": "c4-nespera-descascada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -1096,14 +1095,14 @@
         "alimento": "papaia"
       },
       {
-        "alimento": "papaia"
+        "alimento": "c4-papaia-metade-sementes"
       }
     ],
     "prato": {
-      "principal": "papaia",
+      "principal": "c4-papaia-metade",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru",
       "quantidade": 2
     }
@@ -1115,14 +1114,14 @@
         "corte": "contorno"
       },
       {
-        "alimento": "mangostao"
+        "alimento": "c4-mangostao-aberto"
       }
     ],
     "prato": {
-      "principal": "mangostao",
+      "principal": "c4-mangostao-aberto",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -1156,12 +1155,12 @@
         "alimento": "figo-da-india"
       },
       {
-        "alimento": "figo-da-india",
+        "alimento": "c4-figo-da-india-descascado",
         "meio": "suco de limão"
       }
     ],
     "prato": {
-      "principal": "figo-da-india",
+      "principal": "c4-figo-da-india-descascado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -1202,11 +1201,11 @@
         "alimento": "lichia"
       },
       {
-        "alimento": "lichia"
+        "alimento": "c4-lichia-descascada"
       }
     ],
     "prato": {
-      "principal": "lichia",
+      "principal": "c4-lichia-descascada",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -1221,14 +1220,14 @@
         "corte": "fatiar"
       },
       {
-        "alimento": "kiwano"
+        "alimento": "c4-kiwano-metade"
       }
     ],
     "prato": {
-      "principal": "kiwano",
+      "principal": "c4-kiwano-metade",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru",
       "quantidade": 2
     }
@@ -1239,15 +1238,16 @@
         "alimento": "pitaia"
       },
       {
-        "alimento": "pitaia"
+        "alimento": "c4-pitaia-metade"
       }
     ],
     "prato": {
-      "principal": "pitaia",
+      "principal": "c4-pitaia-metade",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "cru"
+      "forma": "inteiro",
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "frutas.poche-calda": {
@@ -1373,10 +1373,9 @@
       }
     ],
     "prato": {
-      "principal": "frutas-secas",
+      "principal": "c4-frutas-secas-cozidas",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "estado": "cozido",
       "liquido": "#8a4a20",
       "claro": true
     }
@@ -1576,7 +1575,7 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "abacaxi",
+        "alimento": "c4-abacaxi-caramelado",
         "meio": "caramelo",
         "recipiente": "frigideira",
         "estado": "cubos",
@@ -1587,13 +1586,13 @@
       }
     ],
     "prato": {
-      "principal": "abacaxi",
+      "principal": "c4-abacaxi-caramelado",
       "acompanhamentos": [
         "uva",
         "cereja"
       ],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "dourado",
       "liquido": "#c98a2e",
       "claro": true
@@ -1637,10 +1636,10 @@
   "frutas.tempura": {
     "passos": [
       {
-        "alimento": "maca"
+        "alimento": "c4-maca-descascada"
       },
       {
-        "alimento": "maca",
+        "alimento": "c4-maca-descascada",
         "estado": "fatias"
       },
       {
@@ -2028,7 +2027,7 @@
       }
     ],
     "prato": {
-      "principal": "conchas-merengue-ganache",
+      "principal": "c4-conchas-merengue-ganache",
       "acompanhamentos": [
         "ninho-merengue",
         "disco-merengue"
@@ -2196,16 +2195,15 @@
         "recipiente": "ramequim"
       },
       {
-        "alimento": "sufle-frio",
+        "alimento": "c4-sufle-frio-frutas",
         "recipiente": "ramequim",
         "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "sufle-frio",
+      "principal": "c4-sufle-frio-frutas",
       "acompanhamentos": [],
-      "servir": "ramequim",
-      "estado": "cru"
+      "servir": "ramequim"
     }
   },
   "sobremesas.gelatina-frutas-camadas": {
@@ -2239,12 +2237,12 @@
         "recipiente": "forma de bolo"
       },
       {
-        "alimento": "gelatina-frutas",
+        "alimento": "c4-gelatina-camadas",
         "recipiente": "forma de bolo"
       }
     ],
     "prato": {
-      "principal": "gelatina-frutas",
+      "principal": "c4-gelatina-camadas",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -2266,12 +2264,12 @@
         "recipiente": "forma de bolo"
       },
       {
-        "alimento": "gelatina-frutas",
+        "alimento": "c4-gelatina-frutas-soltas",
         "recipiente": "forma de bolo"
       }
     ],
     "prato": {
-      "principal": "gelatina-frutas",
+      "principal": "c4-gelatina-frutas-soltas",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -2415,10 +2413,9 @@
       }
     ],
     "prato": {
-      "principal": "custard",
+      "principal": "c4-pele-custard",
       "acompanhamentos": [],
       "servir": "cumbuca",
-      "estado": "cozido",
       "liquido": "#f0d58a"
     }
   },
@@ -2507,15 +2504,15 @@
         "recipiente": "ramequim"
       },
       {
-        "alimento": "creme-brulee",
+        "alimento": "c4-crosta-brulee",
         "recipiente": "ramequim"
       }
     ],
     "prato": {
-      "principal": "creme-brulee",
+      "principal": "c4-crosta-brulee",
       "acompanhamentos": [],
       "servir": "ramequim",
-      "estado": "dourado"
+      "liquido": "#f2dfa8"
     }
   },
   "sobremesas.creme-caramelo": {
@@ -2704,16 +2701,15 @@
         "recipiente": "ramequim"
       },
       {
-        "alimento": "sufle-baunilha",
+        "alimento": "c4-sufle-baunilha",
         "recipiente": "ramequim",
         "utensilio": "peneira"
       }
     ],
     "prato": {
-      "principal": "sufle-baunilha",
+      "principal": "c4-sufle-baunilha",
       "acompanhamentos": [],
-      "servir": "ramequim",
-      "estado": "dourado"
+      "servir": "ramequim"
     }
   },
   "sobremesas.charlotte-quente": {
@@ -2757,25 +2753,24 @@
         "recipiente": "forma de charlotte"
       },
       {
-        "alimento": "charlotte-maca",
+        "alimento": "c4-charlotte-maca",
         "recipiente": "forma de charlotte"
       },
       {
-        "alimento": "charlotte-maca",
+        "alimento": "c4-charlotte-maca",
         "recipiente": "travessa"
       },
       {
-        "alimento": "charlotte-maca",
+        "alimento": "c4-charlotte-maca",
         "recipiente": "travessa",
         "utensilio": "pincel"
       }
     ],
     "prato": {
-      "principal": "charlotte-maca",
+      "principal": "c4-charlotte-maca",
       "acompanhamentos": [],
       "servir": "travessa",
-      "forma": "inteiro",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "sobremesas.pudim-vapor": {
@@ -3221,10 +3216,10 @@
       }
     ],
     "prato": {
-      "principal": "chocolate-barra",
+      "principal": "c4-chocolate-picado",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "pedacos",
+      "forma": "inteiro",
       "estado": "cru"
     }
   },
@@ -3599,10 +3594,10 @@
       }
     ],
     "prato": {
-      "principal": "semifreddo",
+      "principal": "c4-semifreddo-fatias",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "fatias"
+      "forma": "inteiro"
     }
   },
   "sobremesas.parfait": {
@@ -3738,11 +3733,11 @@
         ]
       },
       {
-        "alimento": "fruit-givre"
+        "alimento": "c4-limao-givre"
       }
     ],
     "prato": {
-      "principal": "fruit-givre",
+      "principal": "c4-limao-givre",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -3855,14 +3850,14 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "fio-caramelo"
+        "alimento": "c4-ninho-fios-caramelo"
       },
       {
-        "alimento": "fio-caramelo"
+        "alimento": "c4-ninho-fios-caramelo"
       }
     ],
     "prato": {
-      "principal": "fio-caramelo",
+      "principal": "c4-ninho-fios-caramelo",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -3958,28 +3953,28 @@
   "sobremesas.raspas-lima-carameladas": {
     "passos": [
       {
-        "alimento": "raspas-carameladas",
+        "alimento": "c4-lima-julienne",
         "meio": "calda fina",
         "recipiente": "panela"
       },
       {
-        "alimento": "raspas-carameladas",
+        "alimento": "c4-lima-julienne",
         "meio": "calda de açúcar",
         "recipiente": "panela"
       },
       {
-        "alimento": "raspas-carameladas",
+        "alimento": "c4-lima-julienne",
         "recipiente": "peneira",
         "utensilio": "peneira"
       },
       {
-        "alimento": "raspas-carameladas",
+        "alimento": "c4-raspas-lima-carameladas",
         "recipiente": "prato",
         "utensilio": "mãos"
       }
     ],
     "prato": {
-      "principal": "raspas-carameladas",
+      "principal": "c4-raspas-lima-carameladas",
       "acompanhamentos": [],
       "servir": "prato"
     }
@@ -4191,14 +4186,14 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-pate-sucree"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-pate-sucree"
       }
     ],
     "prato": {
-      "principal": "pate-brisee",
+      "principal": "c4-pate-sucree",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -4327,19 +4322,14 @@
         ]
       },
       {
-        "alimento": "barquinha",
-        "adicionar": [
-          "creme-patissiere",
-          "morango"
-        ],
+        "alimento": "c4-barquinha-recheada",
         "utensilio": "pincel"
       }
     ],
     "prato": {
-      "principal": "barquinha",
+      "principal": "c4-barquinha-recheada",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
       "quantidade": 3
     }
   },
@@ -4444,11 +4434,11 @@
   "pastelaria.borda-folhas": {
     "passos": [
       {
-        "alimento": "pate-brisee",
+        "alimento": "c4-massa-aberta",
         "corte": "contorno"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-folhas-massa"
       },
       {
         "alimento": "torta-tampa"
@@ -4468,10 +4458,10 @@
   "pastelaria.borda-tranca": {
     "passos": [
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-massa-aberta"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-tranca-massa"
       },
       {
         "alimento": "torta-tampa"
@@ -4491,7 +4481,7 @@
   "pastelaria.trelica": {
     "passos": [
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-massa-aberta"
       },
       {
         "alimento": "torta-trelica"
@@ -4511,14 +4501,14 @@
   "pastelaria.rosinha-massa": {
     "passos": [
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-cone-massa"
       },
       {
-        "alimento": "pate-brisee",
+        "alimento": "c4-cone-petalas-massa",
         "corte": "contorno"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-cone-petalas-massa"
       },
       {
         "alimento": "rosinha-massa"
@@ -4738,7 +4728,7 @@
       }
     ],
     "prato": {
-      "principal": "bomba-caramelo-amendoa",
+      "principal": "c4-bomba-redonda-caramelo",
       "acompanhamentos": [],
       "servir": "prato",
       "estado": null,
@@ -4944,11 +4934,10 @@
       }
     ],
     "prato": {
-      "principal": "baklava",
+      "principal": "c4-baklava-losangos",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "pastelaria.filo-cigarro": {
@@ -5108,23 +5097,21 @@
         "alimento": "strudel"
       },
       {
-        "alimento": "strudel",
+        "alimento": "c4-strudel-fatias",
         "recipiente": "prato",
         "estado": "fatias",
-        "ponto": "dourado",
         "adicionar": [
           "chantilly"
         ]
       }
     ],
     "prato": {
-      "principal": "strudel",
+      "principal": "c4-strudel-fatias",
       "acompanhamentos": [
         "chantilly"
       ],
       "servir": "prato",
-      "forma": "fatias",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "pastelaria.detrempe": {
@@ -5266,10 +5253,9 @@
       }
     ],
     "prato": {
-      "principal": "bouchee",
+      "principal": "c4-bouchee-aberta",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
       "quantidade": 4
     }
   },
@@ -5843,38 +5829,37 @@
   "bolos.rocambole": {
     "passos": [
       {
-        "alimento": "pao-de-lo",
+        "alimento": "c4-pao-de-lo-fino",
         "recipiente": "fôrma de rocambole"
       },
       {
-        "alimento": "pao-de-lo",
+        "alimento": "c4-pao-de-lo-fino",
         "recipiente": "grade"
       },
       {
-        "alimento": "pao-de-lo"
+        "alimento": "c4-pao-de-lo-fino"
       },
       {
-        "alimento": "pao-de-lo",
+        "alimento": "c4-pao-de-lo-fino",
         "adicionar": [
           "chantilly"
         ]
       },
       {
-        "alimento": "pao-de-lo"
+        "alimento": "c4-pao-de-lo-fino"
       },
       {
-        "alimento": "rocambole"
+        "alimento": "c4-rocambole-espiral"
       },
       {
-        "alimento": "rocambole"
+        "alimento": "c4-rocambole-espiral"
       }
     ],
     "prato": {
-      "principal": "rocambole",
+      "principal": "c4-rocambole-espiral",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro",
-      "estado": "dourado"
+      "forma": "inteiro"
     }
   },
   "bolos.apertar-rocambole": {
@@ -6435,7 +6420,7 @@
       }
     ],
     "prato": {
-      "principal": "sachertorte",
+      "principal": "c4-sachertorte-escrita",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -6636,10 +6621,10 @@
   "bolos.operettas": {
     "passos": [
       {
-        "alimento": "pao-de-lo"
+        "alimento": "c4-pao-de-lo-fino"
       },
       {
-        "alimento": "pao-de-lo",
+        "alimento": "c4-pao-de-lo-fino",
         "adicionar": [
           "ganache",
           "glace-manteiga"
@@ -6656,11 +6641,11 @@
         "corte": "cubos"
       },
       {
-        "alimento": "operetta"
+        "alimento": "c4-operetta"
       }
     ],
     "prato": {
-      "principal": "operetta",
+      "principal": "c4-operetta",
       "acompanhamentos": [],
       "servir": "prato",
       "quantidade": 3
@@ -6823,15 +6808,15 @@
         "meio": "ganache"
       },
       {
-        "alimento": "trufa-amendoa",
+        "alimento": "c4-trufa-ganache",
         "recipiente": "grade"
       },
       {
-        "alimento": "trufa-amendoa"
+        "alimento": "c4-trufa-ganache"
       }
     ],
     "prato": {
-      "principal": "trufa-amendoa",
+      "principal": "c4-trufa-ganache",
       "acompanhamentos": [],
       "servir": "prato",
       "quantidade": 5
@@ -6860,28 +6845,27 @@
         "utensilio": "cortador"
       },
       {
-        "alimento": "biscoito-cortado",
+        "alimento": "c4-biscoito-passas",
         "recipiente": "assadeira"
       }
     ],
     "prato": {
-      "principal": "biscoito-cortado",
+      "principal": "c4-biscoito-passas",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
       "quantidade": 5
     }
   },
   "bolos.enrolar-fatiar": {
     "passos": [
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-rolo-massa-biscoito"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-rolo-massa-biscoito"
       },
       {
-        "alimento": "pate-brisee"
+        "alimento": "c4-rolo-massa-biscoito"
       }
     ],
     "prato": {
@@ -7165,15 +7149,14 @@
         "alimento": "tuile"
       },
       {
-        "alimento": "tuile",
+        "alimento": "c4-tuile-curva",
         "utensilio": "rolo"
       }
     ],
     "prato": {
-      "principal": "tuile",
+      "principal": "c4-tuile-curva",
       "acompanhamentos": [],
       "servir": "prato",
-      "estado": "dourado",
       "quantidade": 5
     }
   },
