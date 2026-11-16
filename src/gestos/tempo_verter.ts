@@ -39,8 +39,9 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
     peca.rotation.y = anguloDaEstacao(estacao);
     if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone(), true)) peca.position.copy(estacao.superficie);
   } else {
-    mesa.garantirRecipiente('tigela', estacao.superficie.clone(), 'tigela');
-    mesa.garantirConteudo(textoConteudo(passo), 0.45);
+    // o líquido no recipiente da ficha: forma de gelo, pote, fôrma, travessa; senão a tigela
+    mesa.garantirRecipiente(ctx.vaso ?? 'tigela', estacao.superficie.clone(), 'tigela');
+    mesa.garantirConteudo(passo.meio ?? textoConteudo(passo), 0.45);
   }
   const escala0 = peca?.scale.clone();
   const fermenta = passo.variante === 'fermentar' || /dobr|cres/.test(passo.parametro);
@@ -281,7 +282,7 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
 function gestoEscumar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud, cena } = ctx;
   mesa.removerPeca();
-  const rec = mesa.garantirRecipiente(/panela|caçarola/i.test(passo.utensilio) ? passo.utensilio : 'panela', estacao.superficie.clone(), 'panela');
+  const rec = mesa.garantirRecipiente(ctx.vaso && /panela|caçarola|assadeira|frigideira|wok/i.test(ctx.vaso) ? ctx.vaso : /panela|caçarola/i.test(passo.utensilio) ? passo.utensilio : 'panela', estacao.superficie.clone(), 'panela');
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.6);
   conteudo.estado.ondas = 0.25;
   const espuma = new THREE.InstancedMesh(new THREE.IcosahedronGeometry(1, 1), new THREE.MeshStandardMaterial({ color: /gordura|desengord/.test(passo.acao + passo.alvo) ? '#f2d46a' : '#efe4c8', roughness: 0.8 }), 26);

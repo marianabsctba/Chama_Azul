@@ -311,6 +311,28 @@ export class Peca extends THREE.Group {
     }
   }
 
+  /** Tira a casca de uma vez: a superfície inteira fica com a cor de dentro (batata, cenoura, maçã descascadas). */
+  descascar() {
+    const ci = this.corInterna;
+    for (const m of this.forma.malhas) {
+      const g = m.geometry as THREE.BufferGeometry;
+      const attr = g.getAttribute('color') as THREE.BufferAttribute;
+      const arr = attr.array as Float32Array;
+      const orig = this.coresOriginais.get(g);
+      const pos = g.getAttribute('position');
+      for (let i = 0; i < pos.count; i++) {
+        // leve variação das marcas do descascador
+        const v = 0.94 + 0.06 * Math.sin(pos.getX(i) * 220 + pos.getZ(i) * 170);
+        arr[i * 3] = ci.r * v;
+        arr[i * 3 + 1] = ci.g * v;
+        arr[i * 3 + 2] = ci.b * v;
+        if (orig) orig.set([arr[i * 3], arr[i * 3 + 1], arr[i * 3 + 2]], i * 3);
+      }
+      attr.needsUpdate = true;
+    }
+    this.coresCruas.clear();
+  }
+
   /** Aplica o tom de cozimento (0 cru, 1 no ponto, 1,5 passou). */
   definirCozimento(c: number) {
     this.cozimento = c;

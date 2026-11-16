@@ -59,6 +59,8 @@ export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | nul
   if (vaso && VASO_FOGO.test(vaso) && !aroDeBancada && ['ritmo', 'montar', 'verter', 'separar', 'superficie', 'testar'].includes(p.gesto) && p.variante !== 'escumar') return 'fogao';
   switch (p.gesto) {
     case 'calor':
+      // micro-ondas e churrasqueira ficam na bancada, com o aparelho em cena
+      if (vaso && /micro|churrasqueira|brasa/i.test(vaso)) return 'corte';
       return p.variante === 'forno' ? 'forno' : 'fogao';
     case 'tempo': {
       // frio fora da geladeira: água gelada, água corrente, grade, no próprio líquido, temperatura ambiente
@@ -75,7 +77,8 @@ export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | nul
     case 'superficie':
       return p.variante === 'limpar' && /lavar|água/.test(p.acao + p.parametro) ? 'pia' : DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
     case 'verter':
-      return p.variante === 'escumar' ? 'fogao' : /escorrer/.test(p.acao) ? 'pia' : DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
+      // escorrer vai à pia quando é no escorredor; com escumadeira ou papel-toalha fica na bancada
+      return p.variante === 'escumar' ? 'fogao' : /escorrer/.test(p.acao) && !/escumadeira|papel|grade|peneira/i.test(`${p.utensilio} ${p.alvo} ${p.parametro} ${vaso ?? ''}`) ? 'pia' : DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
     case 'testar':
       // testa onde a coisa está; o que estava no forno ou na geladeira sai para a bancada, à vista
       if (!anterior || anterior === 'forno' || anterior === 'geladeira' || anterior === 'balanca') return DOCE.has(t.bancada) ? 'confeitaria' : 'corte';

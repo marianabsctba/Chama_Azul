@@ -456,16 +456,9 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
         decoSopa.position.y = nivel + 0.0004;
         decoSopa.scale.setScalar(1.35);
         grupo.add(decoSopa);
-      } else if (tipo === 'tigela' && !doce && cremosa) {
-        const creme = espiralCreme(poco * 0.75);
-        creme.position.y = nivel + 0.0008;
-        grupo.add(creme);
-      } else if (tipo === 'tigela' && !doce) {
-        // caldo claro: gotinhas de azeite de ervas na superfície
-        const gotas = pontos(poco * 0.45, 0.4, 5, 0.0035, new THREE.Color('#6f9a3a'));
-        gotas.position.y = nivel + 0.0004;
-        grupo.add(gotas);
       }
+      // sem enfeite inventado: espiral de creme ou gotas de azeite só quando a técnica é de decorar (decoSopa)
+      void cremosa;
     }
   } else if (molho && tipo !== 'tabua') {
     const p = pincelada(poco * 0.62, 2.3, 4.4, poco * 0.16, molho.cor, molho.brilho);
@@ -537,6 +530,12 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     const servidos = new Set(tecnica.prato?.acompanhamentos ?? []);
     const temperou = /^(alho|cebola|cebola-roxa|chalota|louro|cravo|anis|canela|pimenta|zimbro|cardamomo|noz-moscada|gengibre|galanga|limao-kaffir|capim|tomilho|alecrim|sal|azeite|oleo|manteiga)/;
     for (const c of [...peca.children]) if (c instanceof Peca && c.userData.alimento && temperou.test(c.userData.alimento) && !servidos.has(c.userData.alimento)) { peca.remove(c); c.descartar(); }
+  }
+  // embrulho de papel ou alumínio sai antes de servir (o papillote, que vai à mesa no papel, tem modelo próprio)
+  if (peca && mesa.capa?.userData.naoComestivel && !/papillote|trouxa|pacote/i.test(tecnica.nome)) {
+    mesa.capa.removeFromParent();
+    mesa.capa.descartar();
+    mesa.capa = null;
   }
   if (peca && mesa.peca) {
     mesa.peca = null;
@@ -706,7 +705,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
     return v;
   };
   // na sopa só boia o que é miúdo de verdade (ervas, pedacinhos); nada de tomate inteiro no caldo
-  if (tipo === 'tigela') guarnicoes = guarnicoes.filter((id) => familiaDe(id) === 'erva' || tamReal(id) < 0.03);
+  // na sopa, a guarnição do livro boia pequena (fios de ovo, cogumelos, camarões), seja ela qual for
   // sem guarnição no livro, sem guarnição no prato
   // corte miúdo no prato: os legumes que acompanham vão no mesmo corte, em feixe ao lado (julienne de cenoura, não cenoura inteira)
   if (feixeFeito && miudoCorte && tipo !== 'tigela' && tipo !== 'taca') {

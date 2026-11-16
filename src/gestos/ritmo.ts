@@ -31,14 +31,14 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud } = ctx;
   const texto = `${passo.acao} ${passo.alvo} ${passo.parametro}`;
   const v = passo.variante;
-  const recipienteTexto = (ctx.vaso && /frigideira|wok|panela|caçarola|chapa|tigela|vasilha/i.test(ctx.vaso) ? ctx.vaso : undefined) ?? (/tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande');
+  const recipienteTexto = (ctx.vaso && /frigideira|wok|panela|caçarola|chapa|tigela|vasilha|assadeira|travessa|f[oô]rma|pil[aã]o|processador|liquidificador|banho/i.test(ctx.vaso) ? ctx.vaso : undefined) ?? (/tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande');
   mesa.removerPeca();
   mesa.garantirRecipiente(recipienteTexto, estacao.superficie.clone(), 'tigela grande');
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.4);
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   const nivel0 = conteudo.estado.nivel;
-  const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet/i.test(passo.utensilio) ? passo.utensilio : '', v === 'dobrar' ? 'dobrar' : v);
+  const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
   const centro = mesa.centro.clone();
   const faixa: [number, number] = v === 'circular-rapido' ? [7, 22] : v === 'circular' ? [2.5, 9] : [0, 0];
   const duracao = v === 'circular-rapido' ? 7 : v === 'circular' ? 5 : 0;

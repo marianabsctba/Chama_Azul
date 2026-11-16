@@ -15,11 +15,20 @@ import type { EstadoPeca } from './tipos';
  * estiver inteira: o passo de deixar de molho os palitos já começa com os palitos.
  */
 export function prepararEstado(peca: Peca, estado: EstadoPeca) {
+  if (estado === 'descascado') {
+    peca.descascar();
+    return;
+  }
   if (estado === 'inteiro' || peca.fragmentos.length >= 2) return;
+  if (estado === 'quartos') {
+    peca.cortar('x', 0);
+    peca.cortar('z', 0);
+    return;
+  }
   const L = peca.comprimento;
   const W = peca.largura;
   const H = peca.altura;
-  const nx = { metades: 1, fatias: 6, tiras: 5, cubos: 4, picado: 7 }[estado];
+  const nx = { metades: 1, fatias: 6, tiras: 5, cubos: 4, picado: 7 }[estado as 'metades' | 'fatias' | 'tiras' | 'cubos' | 'picado'];
   const ini = estado === 'metades' ? 0 : -L * 0.42;
   const fim = estado === 'metades' ? 0 : L * 0.42;
   for (let i = 0; i <= nx; i++) {

@@ -65,7 +65,13 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
     for (let i = 1; i <= nz; i++) criarGuia('z', -W / 2 + (W * i) / (nz + 1));
   }
   const maxX = v === 'picar' ? 8 : 6;
-  const nx = v === 'aparar' ? 0 : Math.max(2, Math.min(maxX, Math.floor((L * 0.8) / passoVisual)));
+  // ao meio (ou em quatro): um corte só no meio, como o livro manda
+  const textoCorte = `${passo.alvo} ${passo.parametro}`.toLowerCase();
+  const aoMeio = /ao meio|metades|em dois|em duas|pela metade/.test(textoCorte) && v !== 'tiras' && v !== 'cubos' && v !== 'picar';
+  const emQuatro = /em quatro|em quartos|quartos/.test(textoCorte) && v !== 'tiras' && v !== 'cubos' && v !== 'picar';
+  const nx = v === 'aparar' || aoMeio || emQuatro ? 0 : Math.max(2, Math.min(maxX, Math.floor((L * 0.8) / passoVisual)));
+  if (aoMeio || emQuatro) criarGuia('x', 0);
+  if (emQuatro) criarGuia('z', 0);
   // começa pela ponta direita, como quem fatia de verdade
   for (let i = 1; i <= nx; i++) criarGuia('x', L / 2 - L * 0.08 - passoVisual * i + passoVisual * 0.5);
 

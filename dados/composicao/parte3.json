@@ -9,7 +9,8 @@
         "alimento": "erva_doce"
       },
       {
-        "alimento": "erva_doce"
+        "alimento": "erva_doce",
+        "estado": "metades"
       },
       {
         "alimento": "erva_doce",
@@ -22,7 +23,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "alcachofra.inteira_cozinhar": {
@@ -64,7 +66,8 @@
         "alimento": "alcachofra"
       },
       {
-        "alimento": "alcachofra"
+        "alimento": "alcachofra",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -78,15 +81,16 @@
   "alcachofra.talos": {
     "passos": [
       {
-        "alimento": "alcachofra"
+        "alimento": "talos-alcachofra"
       },
       {
-        "alimento": "alcachofra"
+        "alimento": "talos-alcachofra"
       },
       {
-        "alimento": "alcachofra",
+        "alimento": "talos-alcachofra",
         "meio": "água salgada com limão",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "tiras"
       }
     ],
     "prato": {
@@ -109,17 +113,17 @@
         "alimento": "alcachofra"
       },
       {
-        "alimento": "alcachofra",
+        "alimento": "fundo-alcachofra",
         "meio": "água com limão",
         "recipiente": "tigela"
       },
       {
-        "alimento": "alcachofra",
+        "alimento": "fundo-alcachofra",
         "meio": "água",
         "recipiente": "panela"
       },
       {
-        "alimento": "alcachofra",
+        "alimento": "fundo-alcachofra",
         "pergunta": "O fundo de alcachofra está pronto?",
         "opcoes": [
           "A faca sem ponta entra sem resistência.",
@@ -133,11 +137,12 @@
         ]
       },
       {
-        "alimento": "alcachofra",
+        "alimento": "fundo-alcachofra",
         "recipiente": "escorredor"
       },
       {
-        "alimento": "alcachofra"
+        "alimento": "fundo-alcachofra",
+        "utensilio": "boleador"
       }
     ],
     "prato": {
@@ -157,7 +162,8 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "broto_alcachofra"
+        "alimento": "broto_alcachofra",
+        "ponto": "cozido"
       },
       {
         "alimento": "broto_alcachofra",
@@ -170,7 +176,8 @@
       },
       {
         "alimento": "broto_alcachofra",
-        "meio": "líquido aromático"
+        "meio": "líquido aromático",
+        "recipiente": "panela"
       }
     ],
     "prato": {
@@ -178,7 +185,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 4
     }
   },
   "alcachofra.brotos_crus_fritos_refogados": {
@@ -237,7 +245,8 @@
         "alimento": "nabo"
       },
       {
-        "alimento": "nabo"
+        "alimento": "nabo",
+        "estado": "fatias"
       }
     ],
     "prato": {
@@ -265,7 +274,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "legumes.cubos": {
@@ -277,10 +287,12 @@
         "alimento": "batata_doce"
       },
       {
-        "alimento": "batata_doce"
+        "alimento": "batata_doce",
+        "estado": "fatias"
       },
       {
-        "alimento": "batata_doce"
+        "alimento": "batata_doce",
+        "estado": "tiras"
       }
     ],
     "prato": {
@@ -303,7 +315,13 @@
       },
       {
         "alimento": "cenoura",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "estado": "cubos",
+        "adicionar": [
+          "cebola",
+          "aipo",
+          "alho_poro"
+        ]
       }
     ],
     "prato": {
@@ -324,7 +342,8 @@
         "alimento": "cenoura"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "cenoura",
+        "estado": "tiras"
       }
     ],
     "prato": {
@@ -332,7 +351,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "cubos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 12
     }
   },
   "legumes.tiras_descascador": {
@@ -346,7 +366,8 @@
       {
         "alimento": "cenoura",
         "meio": "água gelada",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "estado": "tiras"
       }
     ],
     "prato": {
@@ -354,7 +375,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "tiras",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "legumes.tornear": {
@@ -409,7 +431,8 @@
       {
         "alimento": "aipo_rabano",
         "meio": "água com limão",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "estado": "fatias"
       }
     ],
     "prato": {
@@ -417,7 +440,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "legumes.couve_rabano_fatiar": {
@@ -426,7 +450,8 @@
         "alimento": "couve_rabano"
       },
       {
-        "alimento": "couve_rabano"
+        "alimento": "couve_rabano",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -434,7 +459,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "legumes.aipo_rabano_palitos": {
@@ -470,12 +496,20 @@
         "adicionar": [
           "salsa"
         ],
-        "meio": "manteiga"
+        "meio": "manteiga",
+        "estado": "fatias",
+        "ponto": "cozido",
+        "recipiente": "travessa"
       },
       {
         "alimento": "aipo_rabano",
         "meio": "azeite",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "estado": "fatias",
+        "ponto": "cozido",
+        "adicionar": [
+          "salsa"
+        ]
       },
       {
         "alimento": "aipo_rabano",
@@ -483,7 +517,10 @@
           "alho"
         ],
         "meio": "manteiga",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "estado": "fatias",
+        "ponto": "cozido",
+        "utensilio": "amassador"
       }
     ],
     "prato": {
@@ -491,7 +528,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "batata.lavar": {
@@ -535,7 +573,8 @@
         "alimento": "batata"
       },
       {
-        "alimento": "batata"
+        "alimento": "batata",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -574,7 +613,8 @@
   "batata.parisiennes": {
     "passos": [
       {
-        "alimento": "batata"
+        "alimento": "batata",
+        "utensilio": "boleador"
       },
       {
         "alimento": "batata",
@@ -619,7 +659,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "tiras",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "batata.allumettes": {
@@ -748,7 +789,6 @@
       }
     ],
     "prato": {
-      "principal": "duxelles",
       "acompanhamentos": [],
       "servir": "tigelinha",
       "liquido": "#4a3424",
@@ -809,10 +849,13 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "shiitake"
+        "alimento": "shiitake",
+        "recipiente": "peneira"
       },
       {
-        "alimento": "shiitake"
+        "alimento": "shiitake",
+        "utensilio": "mãos",
+        "recipiente": "tigela"
       }
     ],
     "prato": {
@@ -885,10 +928,13 @@
   "vagens.debulhar": {
     "passos": [
       {
-        "alimento": "ervilha"
+        "alimento": "ervilha",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "ervilha"
+        "alimento": "ervilha",
+        "utensilio": "mãos",
+        "recipiente": "tigela"
       }
     ],
     "prato": {
@@ -919,7 +965,8 @@
   "vagens.feijoes_grandes": {
     "passos": [
       {
-        "alimento": "fava"
+        "alimento": "fava",
+        "utensilio": "mãos"
       },
       {
         "alimento": "fava",
@@ -928,10 +975,13 @@
       },
       {
         "alimento": "fava",
-        "corte": "pontos"
+        "corte": "pontos",
+        "ponto": "cozido"
       },
       {
-        "alimento": "fava"
+        "alimento": "fava",
+        "utensilio": "mãos",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -963,10 +1013,12 @@
   "vagens.milho_espiga": {
     "passos": [
       {
-        "alimento": "milho"
+        "alimento": "milho",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "milho"
+        "alimento": "milho",
+        "utensilio": "mãos"
       },
       {
         "alimento": "milho",
@@ -1086,13 +1138,16 @@
       },
       {
         "alimento": "cebola",
-        "corte": "deitado"
+        "corte": "deitado",
+        "estado": "metades"
       },
       {
-        "alimento": "cebola"
+        "alimento": "cebola",
+        "estado": "metades"
       },
       {
-        "alimento": "cebola"
+        "alimento": "cebola",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1100,7 +1155,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "cubos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 12
     }
   },
   "cebolas.sem_lagrimas": {
@@ -1153,13 +1209,15 @@
   "cebolas.alho_esmagar_picar": {
     "passos": [
       {
-        "alimento": "alho"
+        "alimento": "alho",
+        "utensilio": "mãos"
       },
       {
         "alimento": "alho"
       },
       {
-        "alimento": "alho"
+        "alimento": "alho",
+        "utensilio": "mãos"
       },
       {
         "alimento": "alho",
@@ -1174,7 +1232,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "cubos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 12
     }
   },
   "cebolas.alho_poro": {
@@ -1190,7 +1249,8 @@
         "alimento": "alho_poro"
       },
       {
-        "alimento": "alho_poro"
+        "alimento": "alho_poro",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1198,7 +1258,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 10
     }
   },
   "cebolas.cebolinha_tiras": {
@@ -1228,7 +1289,9 @@
         "alimento": "cebolinha"
       },
       {
-        "alimento": "cebolinha"
+        "alimento": "cebolinha",
+        "estado": "fatias",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -1280,7 +1343,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "incomuns.raizes_tropicais": {
@@ -1302,7 +1366,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "incomuns.berinjela_thai": {
@@ -1378,7 +1443,8 @@
       {
         "alimento": "mooli",
         "meio": "água",
-        "recipiente": "cesta de bambu"
+        "recipiente": "cesta de bambu",
+        "estado": "fatias"
       }
     ],
     "prato": {
@@ -1386,7 +1452,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 8
     }
   },
   "incomuns.loofah": {
@@ -1442,7 +1509,8 @@
       {
         "alimento": "araruta_india",
         "meio": "óleo",
-        "recipiente": "wok"
+        "recipiente": "wok",
+        "estado": "cubos"
       }
     ],
     "prato": {
@@ -1450,7 +1518,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "cubos",
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 12
     }
   },
   "incomuns.rabanete_pingente": {
@@ -1504,7 +1573,8 @@
       {
         "alimento": "feijao_jardim",
         "meio": "água",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "fatias"
       }
     ],
     "prato": {
@@ -1512,7 +1582,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "fatias",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "incomuns.algas_tostar": {
@@ -1522,17 +1593,22 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "wakame"
+        "alimento": "wakame",
+        "utensilio": "mãos",
+        "recipiente": "tigela",
+        "adicionar": [
+          "arroz_japones"
+        ]
       }
     ],
     "prato": {
-      "principal": "wakame",
+      "principal": "arroz_japones",
       "acompanhamentos": [
-        "arroz_japones"
+        "wakame"
       ],
       "servir": "prato",
-      "forma": "lascas",
-      "estado": "tostado"
+      "forma": "inteiro",
+      "estado": "cozido"
     }
   },
   "frutos_legume.tomate_concasse": {
@@ -1558,7 +1634,8 @@
         "alimento": "tomate"
       },
       {
-        "alimento": "tomate"
+        "alimento": "tomate",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1575,16 +1652,22 @@
         "alimento": "berinjela"
       },
       {
-        "alimento": "berinjela"
+        "alimento": "berinjela",
+        "estado": "fatias",
+        "recipiente": "peneira"
       },
       {
-        "alimento": "berinjela"
+        "alimento": "berinjela",
+        "estado": "fatias",
+        "recipiente": "peneira"
       },
       {
-        "alimento": "berinjela"
+        "alimento": "berinjela",
+        "estado": "fatias"
       },
       {
-        "alimento": "berinjela"
+        "alimento": "berinjela",
+        "estado": "fatias"
       }
     ],
     "prato": {
@@ -1606,16 +1689,21 @@
       },
       {
         "alimento": "berinjela",
-        "corte": "pontos"
+        "corte": "pontos",
+        "estado": "metades"
       },
       {
         "alimento": "berinjela",
         "adicionar": [
           "alho"
-        ]
+        ],
+        "estado": "metades",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "berinjela"
+        "alimento": "berinjela",
+        "estado": "metades",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -1632,10 +1720,12 @@
         "alimento": "abobora_bolota"
       },
       {
-        "alimento": "abobora_bolota"
+        "alimento": "abobora_bolota",
+        "estado": "metades"
       },
       {
-        "alimento": "abobora_bolota"
+        "alimento": "abobora_bolota",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1643,7 +1733,8 @@
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "pedacos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "frutos_legume.abobora_noz": {
@@ -1652,11 +1743,13 @@
         "alimento": "abobora_noz"
       },
       {
-        "alimento": "abobora_noz"
+        "alimento": "abobora_noz",
+        "estado": "metades"
       },
       {
         "alimento": "abobora_noz",
-        "corte": "cubos"
+        "corte": "cubos",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1664,7 +1757,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 8
     }
   },
   "frutos_legume.spaghetti_squash": {
@@ -1674,14 +1768,19 @@
         "corte": "fatiar"
       },
       {
-        "alimento": "spaghetti_squash"
+        "alimento": "spaghetti_squash",
+        "estado": "metades"
       },
       {
         "alimento": "spaghetti_squash",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "estado": "metades"
       },
       {
-        "alimento": "spaghetti_squash"
+        "alimento": "spaghetti_squash",
+        "estado": "metades",
+        "ponto": "dourado",
+        "utensilio": "garfo"
       }
     ],
     "prato": {
@@ -1695,13 +1794,16 @@
   "frutos_legume.pepino": {
     "passos": [
       {
-        "alimento": "pepino"
+        "alimento": "pepino",
+        "utensilio": "faca canelle"
       },
       {
         "alimento": "pepino"
       },
       {
-        "alimento": "pepino"
+        "alimento": "pepino",
+        "estado": "fatias",
+        "recipiente": "peneira"
       }
     ],
     "prato": {
@@ -1718,10 +1820,13 @@
         "alimento": "abacate"
       },
       {
-        "alimento": "abacate"
+        "alimento": "abacate",
+        "estado": "metades",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "abacate"
+        "alimento": "abacate",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1729,7 +1834,8 @@
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "pedacos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 2
     }
   },
   "frutos_legume.abacate_fatiar": {
@@ -1739,7 +1845,8 @@
         "corte": "contorno"
       },
       {
-        "alimento": "abacate"
+        "alimento": "abacate",
+        "utensilio": "mãos"
       },
       {
         "alimento": "abacate"
@@ -1767,14 +1874,18 @@
         "corte": "fatiar"
       },
       {
-        "alimento": "pimentao"
+        "alimento": "pimentao",
+        "estado": "metades",
+        "utensilio": "mãos"
       },
       {
         "alimento": "pimentao",
-        "corte": "tiras"
+        "corte": "tiras",
+        "estado": "metades"
       },
       {
-        "alimento": "pimentao"
+        "alimento": "pimentao",
+        "estado": "tiras"
       }
     ],
     "prato": {
@@ -1814,13 +1925,17 @@
         "alimento": "chili"
       },
       {
-        "alimento": "chili"
+        "alimento": "chili",
+        "estado": "metades"
       },
       {
-        "alimento": "chili"
+        "alimento": "chili",
+        "estado": "metades",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "chili"
+        "alimento": "chili",
+        "estado": "metades"
       }
     ],
     "prato": {
@@ -1846,7 +1961,9 @@
         "alimento": "chili_seco"
       },
       {
-        "alimento": "chili_seco"
+        "alimento": "chili_seco",
+        "recipiente": "pilão",
+        "utensilio": "pilão"
       },
       {
         "alimento": null,
@@ -1867,10 +1984,12 @@
         "corte": "contorno"
       },
       {
-        "alimento": "jalapeno"
+        "alimento": "jalapeno",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "jalapeno"
+        "alimento": "jalapeno",
+        "utensilio": "mãos"
       },
       {
         "alimento": "poblano",
@@ -1897,27 +2016,32 @@
       },
       {
         "alimento": "jalapeno",
-        "recipiente": "papel-toalha"
+        "recipiente": "papel-toalha",
+        "ponto": "dourado"
       },
       {
         "alimento": "jalapeno",
         "adicionar": [
           "gruyere"
-        ]
+        ],
+        "ponto": "dourado"
       },
       {
-        "alimento": "caranguejo"
+        "alimento": "carne-caranguejo",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "caranguejo",
+        "alimento": "carne-caranguejo",
         "adicionar": [
           "coentro"
-        ]
+        ],
+        "utensilio": "garfo",
+        "recipiente": "tigela"
       },
       {
         "alimento": "anaheim",
         "adicionar": [
-          "caranguejo"
+          "carne-caranguejo"
         ]
       }
     ],
@@ -1930,7 +2054,7 @@
       ],
       "servir": "tabua",
       "forma": "inteiro",
-      "estado": "cru",
+      "estado": "dourado",
       "quantidade": 3
     }
   },
@@ -2036,8 +2160,9 @@
       "principal": "alface",
       "acompanhamentos": [],
       "servir": "tabua",
-      "forma": "inteiro",
-      "estado": "cru"
+      "forma": "pedacos",
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "saladas.salada_verde": {
@@ -2058,7 +2183,8 @@
       {
         "alimento": "alface",
         "meio": "vinagrete",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "utensilio": "mãos"
       },
       {
         "alimento": "alface",
@@ -2153,7 +2279,11 @@
     ],
     "prato": {
       "principal": "cerefolio",
-      "acompanhamentos": [],
+      "acompanhamentos": [
+        "cebolinha_francesa",
+        "estragao",
+        "salsa"
+      ],
       "servir": "tigelinha",
       "forma": "ralado",
       "estado": "cru"
@@ -2195,7 +2325,8 @@
       {
         "alimento": "cenoura",
         "meio": "água salgada",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "cubos"
       },
       {
         "alimento": "cenoura",
@@ -2211,7 +2342,8 @@
           "Só a casca está macia"
         ],
         "correta": 0,
-        "explicacao": "Pronta quando a ponta da faca atravessa o centro sem esforço."
+        "explicacao": "Pronta quando a ponta da faca atravessa o centro sem esforço.",
+        "estado": "cubos"
       }
     ],
     "prato": {
@@ -2219,7 +2351,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "cozinhar.verdes_fervura": {
@@ -2246,7 +2379,9 @@
         "alimento": "vagem",
         "adicionar": [
           "manteiga"
-        ]
+        ],
+        "ponto": "cozido",
+        "recipiente": "prato"
       }
     ],
     "prato": {
@@ -2260,7 +2395,7 @@
   "cozinhar.aspargo_em_pe": {
     "passos": [
       {
-        "alimento": "aspargo"
+        "alimento": "feixe-aspargos"
       },
       {
         "alimento": null,
@@ -2268,19 +2403,20 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "aspargo",
+        "alimento": "feixe-aspargos",
         "meio": "água salgada",
         "recipiente": "panela"
       },
       {
-        "alimento": "aspargo",
+        "alimento": "feixe-aspargos",
         "adicionar": [
           "manteiga"
-        ]
+        ],
+        "recipiente": "prato"
       }
     ],
     "prato": {
-      "principal": "aspargo",
+      "principal": "feixe-aspargos",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -2298,7 +2434,8 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "brocolis"
+        "alimento": "brocolis",
+        "recipiente": "tigela"
       }
     ],
     "prato": {
@@ -2306,7 +2443,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "cozinhar.vapor_cesta": {
@@ -2318,14 +2456,19 @@
       },
       {
         "alimento": "cenoura",
-        "recipiente": "cesta de vapor"
+        "recipiente": "cesta de vapor",
+        "estado": "cubos"
       },
       {
         "alimento": "cenoura",
-        "meio": "água corrente"
+        "meio": "água corrente",
+        "estado": "cubos",
+        "ponto": "cozido"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "cenoura",
+        "estado": "cubos",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -2333,7 +2476,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "cozinhar.vapor_bambu": {
@@ -2359,7 +2503,8 @@
       ],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "assar.batata_assada": {
@@ -2437,13 +2582,16 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": "beterraba"
+        "alimento": "beterraba",
+        "ponto": "dourado",
+        "utensilio": "mãos"
       },
       {
         "alimento": "beterraba",
         "adicionar": [
           "manteiga"
-        ]
+        ],
+        "ponto": "dourado"
       }
     ],
     "prato": {
@@ -2461,7 +2609,9 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": "pimentao"
+        "alimento": "pimentao",
+        "recipiente": "saco plástico",
+        "ponto": "tostado"
       },
       {
         "alimento": "pimentao"
@@ -2567,7 +2717,9 @@
       },
       {
         "alimento": "batata",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "estado": "fatias",
+        "ponto": "cozido"
       },
       {
         "alimento": "batata",
@@ -2650,7 +2802,9 @@
       {
         "alimento": "cenoura",
         "meio": "manteiga com açúcar",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "cubos",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -2658,7 +2812,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "pedacos",
-      "estado": "cozido"
+      "estado": "cozido",
+      "quantidade": 6
     }
   },
   "fritar.rosti": {
@@ -2677,12 +2832,12 @@
         "recipiente": "frigideira"
       },
       {
-        "alimento": "batata",
+        "alimento": "rosti-legumes",
         "meio": "óleo",
         "recipiente": "frigideira"
       },
       {
-        "alimento": "batata"
+        "alimento": "rosti-legumes"
       }
     ],
     "prato": {
@@ -2702,7 +2857,8 @@
       {
         "alimento": "cenoura",
         "meio": "óleo",
-        "recipiente": "wok"
+        "recipiente": "wok",
+        "estado": "tiras"
       },
       {
         "alimento": "cenoura",
@@ -2710,10 +2866,17 @@
         "recipiente": "wok",
         "adicionar": [
           "ervilha_torta"
-        ]
+        ],
+        "estado": "tiras"
       },
       {
-        "alimento": "cenoura"
+        "alimento": "cenoura",
+        "estado": "tiras",
+        "ponto": "dourado",
+        "recipiente": "prato",
+        "adicionar": [
+          "ervilha_torta"
+        ]
       }
     ],
     "prato": {
@@ -2736,10 +2899,13 @@
       {
         "alimento": "batata",
         "meio": "óleo",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "tiras"
       },
       {
-        "alimento": "batata"
+        "alimento": "batata",
+        "estado": "tiras",
+        "ponto": "cozido"
       },
       {
         "alimento": null,
@@ -2749,10 +2915,14 @@
       {
         "alimento": "batata",
         "meio": "óleo",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "tiras",
+        "ponto": "cozido"
       },
       {
-        "alimento": "batata"
+        "alimento": "batata",
+        "estado": "tiras",
+        "ponto": "dourado"
       }
     ],
     "prato": {
@@ -2767,7 +2937,8 @@
     "passos": [
       {
         "alimento": "batata",
-        "recipiente": "fôrma ninho"
+        "recipiente": "fôrma ninho",
+        "estado": "tiras"
       },
       {
         "alimento": "batata",
@@ -2775,7 +2946,7 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "batata"
+        "alimento": "ninho-batata"
       }
     ],
     "prato": {
@@ -2802,13 +2973,18 @@
       {
         "alimento": "repolho",
         "meio": "óleo",
-        "recipiente": "wok"
+        "recipiente": "wok",
+        "estado": "tiras"
       },
       {
-        "alimento": "repolho"
+        "alimento": "repolho",
+        "estado": "tiras",
+        "ponto": "dourado"
       },
       {
-        "alimento": "repolho"
+        "alimento": "repolho",
+        "estado": "tiras",
+        "ponto": "dourado"
       }
     ],
     "prato": {
@@ -2867,11 +3043,13 @@
     "passos": [
       {
         "alimento": "batata",
-        "recipiente": "moedor"
+        "recipiente": "mouli",
+        "ponto": "cozido"
       },
       {
         "alimento": "batata",
-        "recipiente": "moedor"
+        "recipiente": "mouli",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -2905,7 +3083,9 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "batata"
+        "alimento": null,
+        "meio": "purê de batata",
+        "recipiente": "panela"
       }
     ],
     "prato": {
@@ -2944,8 +3124,9 @@
         "recipiente": "processador"
       },
       {
-        "alimento": "espinafre",
-        "recipiente": "forminha"
+        "alimento": null,
+        "recipiente": "forminha",
+        "meio": "purê de espinafre"
       },
       {
         "alimento": "espinafre",
@@ -2967,7 +3148,8 @@
         "explicacao": "Palito limpo indica que o ovo firmou e dá para desenformar."
       },
       {
-        "alimento": "espinafre"
+        "alimento": "timbale-espinafre",
+        "utensilio": "faca de legumes"
       }
     ],
     "prato": {
@@ -3132,7 +3314,7 @@
     "prato": {
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#d8c08e"
+      "liquido": "#cfa970"
     }
   },
   "graos.dhal": {
@@ -3162,7 +3344,9 @@
       }
     ],
     "prato": {
-      "acompanhamentos": [],
+      "acompanhamentos": [
+        "alho"
+      ],
       "servir": "tigelinha",
       "liquido": "#d9a23a",
       "granulado": true
@@ -3250,7 +3434,7 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": null,
+        "alimento": "arroz_basmati",
         "meio": "água corrente",
         "recipiente": "peneira"
       },
@@ -3260,9 +3444,12 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "cebola",
+        "alimento": "arroz_basmati",
         "meio": "óleo",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "adicionar": [
+          "cebola"
+        ]
       },
       {
         "alimento": null,
@@ -3270,7 +3457,7 @@
         "recipiente": "panela"
       },
       {
-        "alimento": null,
+        "alimento": "arroz_basmati",
         "meio": "caldo",
         "recipiente": "panela"
       }
@@ -3310,17 +3497,18 @@
         "recipiente": "panela"
       },
       {
-        "alimento": null,
+        "alimento": "arroz_japones",
         "meio": "vinagre de arroz com açúcar",
         "recipiente": "tigela de madeira"
       },
       {
-        "alimento": null,
+        "alimento": "arroz_japones",
         "recipiente": "tigela de madeira"
       },
       {
-        "alimento": null,
-        "recipiente": "tigela de madeira"
+        "alimento": "arroz_japones",
+        "recipiente": "tigela de madeira",
+        "utensilio": "pano"
       }
     ],
     "prato": {
@@ -3388,7 +3576,8 @@
       },
       {
         "alimento": "arroz_arborio",
-        "recipiente": "fôrma"
+        "recipiente": "ramequim",
+        "ponto": "cozido"
       },
       {
         "alimento": "arroz_arborio",
@@ -3396,7 +3585,9 @@
           "lagostim",
           "vieira",
           "espiral-parmesao"
-        ]
+        ],
+        "recipiente": "prato",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -3419,7 +3610,9 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "lagostim"
+        "alimento": "lagostim",
+        "utensilio": "mãos",
+        "ponto": "cozido"
       },
       {
         "alimento": "lagostim",
@@ -3562,12 +3755,12 @@
       {
         "alimento": null,
         "meio": "ensopado",
-        "recipiente": "cuscuzeiro"
+        "recipiente": "cuscuzeira"
       },
       {
         "alimento": null,
         "meio": "vapor",
-        "recipiente": "cuscuzeiro"
+        "recipiente": "cuscuzeira"
       }
     ],
     "prato": {
@@ -3590,8 +3783,9 @@
         "recipiente": "peneira"
       },
       {
-        "alimento": null,
-        "recipiente": "tigela"
+        "alimento": "bulgur",
+        "recipiente": "tigela",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -3619,7 +3813,7 @@
         "recipiente": "panela"
       },
       {
-        "alimento": null,
+        "alimento": "pipoca",
         "recipiente": "tigela"
       }
     ],
@@ -3633,7 +3827,8 @@
   "castanhas.pistache_descascar": {
     "passos": [
       {
-        "alimento": "pistache"
+        "alimento": "pistache",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -3656,7 +3851,9 @@
         "alimento": "amendoa"
       },
       {
-        "alimento": "amendoa"
+        "alimento": "amendoa",
+        "utensilio": "mãos",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -3676,11 +3873,14 @@
       },
       {
         "alimento": "avela",
-        "recipiente": "pano"
+        "recipiente": "pano",
+        "ponto": "tostado"
       },
       {
         "alimento": "avela",
-        "recipiente": "pano"
+        "recipiente": "pano",
+        "ponto": "tostado",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -3798,7 +3998,9 @@
         "recipiente": "grelha"
       },
       {
-        "alimento": "castanha_portuguesa"
+        "alimento": "castanha_portuguesa",
+        "utensilio": "mãos",
+        "ponto": "tostado"
       }
     ],
     "prato": {
@@ -3821,7 +4023,9 @@
         "alimento": "castanha_portuguesa"
       },
       {
-        "alimento": "castanha_portuguesa"
+        "alimento": "castanha_portuguesa",
+        "utensilio": "mãos",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -3866,10 +4070,12 @@
         "alimento": "coco"
       },
       {
-        "alimento": "coco"
+        "alimento": "coco",
+        "recipiente": "tigela"
       },
       {
-        "alimento": "coco"
+        "alimento": "coco",
+        "utensilio": "martelo"
       },
       {
         "alimento": "coco"
@@ -3883,7 +4089,8 @@
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "pedacos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 6
     }
   },
   "coco.leite": {
@@ -3894,7 +4101,8 @@
       {
         "alimento": "coco",
         "meio": "água fervente",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "estado": "picado"
       },
       {
         "alimento": "coco",
@@ -3935,7 +4143,8 @@
       },
       {
         "alimento": "massa_fresca",
-        "recipiente": "bancada"
+        "recipiente": "bancada",
+        "utensilio": "mãos"
       },
       {
         "alimento": "massa_fresca"
@@ -3963,7 +4172,8 @@
       },
       {
         "alimento": "massa_fresca",
-        "recipiente": "bancada"
+        "recipiente": "bancada",
+        "utensilio": "mãos"
       },
       {
         "alimento": "massa_fresca"
@@ -4095,7 +4305,8 @@
         "alimento": "massa_fresca"
       },
       {
-        "alimento": "tagliatelle"
+        "alimento": "massa_fresca",
+        "estado": "tiras"
       },
       {
         "alimento": "tagliatelle"
@@ -4161,7 +4372,7 @@
       },
       {
         "alimento": "tagliatelle",
-        "recipiente": "pote fechado"
+        "recipiente": "pote"
       }
     ],
     "prato": {
@@ -4190,10 +4401,12 @@
         "alimento": "massa_fresca"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "massa_fresca",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "massa_fresca"
+        "alimento": "massa_fresca",
+        "utensilio": "carretilha"
       },
       {
         "alimento": "raviolo"
@@ -4212,18 +4425,18 @@
     "passos": [
       {
         "alimento": "massa_fresca",
-        "recipiente": "fôrma de ravióli"
+        "recipiente": "forma de ravióli"
       },
       {
         "alimento": "massa_fresca",
-        "recipiente": "fôrma de ravióli",
+        "recipiente": "forma de ravióli",
         "adicionar": [
           "espinafre"
         ]
       },
       {
         "alimento": "massa_fresca",
-        "recipiente": "fôrma de ravióli"
+        "recipiente": "forma de ravióli"
       }
     ],
     "prato": {
@@ -4254,13 +4467,15 @@
         "alimento": "massa_fresca"
       },
       {
-        "alimento": "tortellini"
+        "alimento": "tortellino",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "tortellini"
+        "alimento": "tortellino",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "tortellini"
+        "alimento": "tortellino"
       }
     ],
     "prato": {
@@ -4402,8 +4617,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "estado": null,
-      "quantidade": null
+      "estado": "dourado",
+      "quantidade": 6
     }
   },
   "massa.gnocchi_batata": {
@@ -4451,7 +4666,8 @@
   "massa.gnocchi_vincar": {
     "passos": [
       {
-        "alimento": "gnocchi"
+        "alimento": "gnocchi",
+        "utensilio": "garfo"
       }
     ],
     "prato": {
@@ -4533,7 +4749,8 @@
       {
         "alimento": "espaguete",
         "meio": "água",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "utensilio": "pinça"
       },
       {
         "alimento": "espaguete",
@@ -4729,7 +4946,7 @@
     "prato": {
       "principal": "macarrao_arroz",
       "acompanhamentos": [],
-      "servir": "tabua",
+      "servir": "tigela",
       "forma": "inteiro",
       "estado": "cru"
     }
@@ -4746,7 +4963,8 @@
         "alimento": "folha_wonton"
       },
       {
-        "alimento": "folha_wonton"
+        "alimento": "wonton",
+        "utensilio": "mãos"
       },
       {
         "alimento": "repolho",
@@ -4781,7 +4999,8 @@
       },
       {
         "alimento": "massa-de-pao",
-        "recipiente": "bancada"
+        "recipiente": "bancada",
+        "utensilio": "mãos"
       },
       {
         "alimento": "massa-de-pao"
@@ -4814,14 +5033,14 @@
         "alimento": "folha_wonton"
       },
       {
-        "alimento": "folha_wonton",
+        "alimento": "pastelzinho-chines",
         "meio": "óleo",
-        "recipiente": "frigideira"
+        "recipiente": "wok"
       },
       {
-        "alimento": "folha_wonton",
+        "alimento": "pastelzinho-chines",
         "meio": "água",
-        "recipiente": "frigideira"
+        "recipiente": "wok"
       }
     ],
     "prato": {
@@ -4838,22 +5057,22 @@
       {
         "alimento": null,
         "meio": "óleo",
-        "recipiente": "fôrma de pastel"
+        "recipiente": "forma de pastel"
       },
       {
         "alimento": "folha_wonton",
-        "recipiente": "fôrma de pastel"
+        "recipiente": "forma de pastel"
       },
       {
         "alimento": "folha_wonton",
-        "recipiente": "fôrma de pastel",
+        "recipiente": "forma de pastel",
         "adicionar": [
           "carne_porco_moida"
         ]
       },
       {
         "alimento": "folha_wonton",
-        "recipiente": "fôrma de pastel"
+        "recipiente": "forma de pastel"
       }
     ],
     "prato": {
@@ -4869,7 +5088,12 @@
     "passos": [
       {
         "alimento": "cenoura",
-        "corte": "tiras"
+        "corte": "tiras",
+        "adicionar": [
+          "chili",
+          "pimentao",
+          "cebolinha"
+        ]
       },
       {
         "alimento": "cenoura",
@@ -4917,15 +5141,15 @@
         "alimento": "folha_rolinho"
       },
       {
-        "alimento": "folha_rolinho"
+        "alimento": "rolinho-primavera"
       },
       {
-        "alimento": "folha_rolinho",
+        "alimento": "rolinho-primavera",
         "meio": "óleo",
         "recipiente": "cesta de fritura"
       },
       {
-        "alimento": "folha_rolinho"
+        "alimento": "rolinho-primavera"
       }
     ],
     "prato": {
@@ -4949,7 +5173,7 @@
         ]
       },
       {
-        "alimento": "folha_rolinho",
+        "alimento": "minirolinho",
         "meio": "óleo",
         "recipiente": "panela"
       }
@@ -4993,7 +5217,7 @@
     "prato": {
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#d9b26a"
+      "liquido": "#c99a4e"
     }
   },
   "molhos.roux_escuro": {
@@ -5082,7 +5306,8 @@
       {
         "alimento": null,
         "meio": "molho com manteiga",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -5261,8 +5486,8 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "cogumelo_paris",
-        "meio": "molho escuro com tomate",
+        "alimento": null,
+        "meio": "molho escuro com purê de tomate",
         "recipiente": "panela"
       },
       {
@@ -5321,11 +5546,15 @@
       {
         "alimento": "peito-de-frango",
         "meio": "chaudfroid",
-        "recipiente": "grelha"
+        "recipiente": "grade",
+        "estado": "fatias",
+        "ponto": "cozido"
       },
       {
         "alimento": "peito-de-frango",
-        "recipiente": "grelha"
+        "recipiente": "grade",
+        "estado": "fatias",
+        "ponto": "cozido"
       }
     ],
     "prato": {
@@ -5408,12 +5637,18 @@
       {
         "alimento": null,
         "meio": "hollandaise com crème fraîche",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "adicionar": [
+          "creme_fraiche"
+        ]
       },
       {
         "alimento": null,
         "meio": "hollandaise com mostarda",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "adicionar": [
+          "mostarda_dijon"
+        ]
       },
       {
         "alimento": null,
@@ -5423,7 +5658,10 @@
       {
         "alimento": null,
         "meio": "manteiga noisette",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "adicionar": [
+          "manteiga"
+        ]
       }
     ],
     "prato": {
@@ -5517,9 +5755,12 @@
   "molhos.montar_manteiga": {
     "passos": [
       {
-        "alimento": "manteiga",
-        "meio": "molho quente",
-        "recipiente": "panela"
+        "alimento": null,
+        "meio": "molho escuro quente",
+        "recipiente": "panela",
+        "adicionar": [
+          "manteiga"
+        ]
       }
     ],
     "prato": {
@@ -5651,7 +5892,7 @@
       {
         "alimento": null,
         "meio": "vinagrete",
-        "recipiente": "garrafa"
+        "recipiente": "pote"
       }
     ],
     "prato": {
@@ -5724,7 +5965,8 @@
       {
         "alimento": null,
         "meio": "água com fermento seco",
-        "recipiente": "tigela"
+        "recipiente": "tigela",
+        "utensilio": "mãos"
       },
       {
         "alimento": null,
@@ -5780,7 +6022,8 @@
       },
       {
         "alimento": "massa-de-pao",
-        "recipiente": "bancada"
+        "recipiente": "bancada",
+        "utensilio": "mãos"
       },
       {
         "alimento": "massa-de-pao"
@@ -5843,7 +6086,8 @@
           "A massa murcha inteira e solta ar"
         ],
         "correta": 0,
-        "explicacao": "Massa no ponto dobrou de volume e guarda a marca do dedo."
+        "explicacao": "Massa no ponto dobrou de volume e guarda a marca do dedo.",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -5880,7 +6124,8 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "utensilio": "mãos"
       },
       {
         "alimento": "massa-de-pao",
@@ -5888,7 +6133,7 @@
       },
       {
         "alimento": "massa-de-pao",
-        "recipiente": "fôrma de pão"
+        "recipiente": "forma de pão"
       },
       {
         "alimento": "pao-de-forma",
@@ -5896,7 +6141,7 @@
       },
       {
         "alimento": "pao-de-forma",
-        "recipiente": "grelha"
+        "recipiente": "grade"
       }
     ],
     "prato": {
@@ -5939,7 +6184,8 @@
         "alimento": "pao-redondo",
         "adicionar": [
           "aveia"
-        ]
+        ],
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -5955,7 +6201,8 @@
   "paes.tranca": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "estado": "tiras"
       },
       {
         "alimento": "pao-trancado"
@@ -5981,7 +6228,9 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "pao-redondo"
+        "alimento": "pao-redondo",
+        "ponto": "cru",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -5996,7 +6245,9 @@
     "passos": [
       {
         "alimento": "pao-redondo",
-        "corte": "pontos"
+        "corte": "pontos",
+        "ponto": "cru",
+        "utensilio": "tesoura"
       }
     ],
     "prato": {
@@ -6011,7 +6262,8 @@
     "passos": [
       {
         "alimento": "baguete",
-        "corte": "pontos"
+        "corte": "pontos",
+        "ponto": "cru"
       }
     ],
     "prato": {
@@ -6033,7 +6285,8 @@
           "Nenhum som, a casca afunda"
         ],
         "correta": 0,
-        "explicacao": "Pão assado soa oco; abafado volta mais 5 minutos ao forno."
+        "explicacao": "Pão assado soa oco; abafado volta mais 5 minutos ao forno.",
+        "utensilio": "mãos"
       },
       {
         "alimento": "pao-redondo",
@@ -6041,7 +6294,7 @@
       },
       {
         "alimento": "pao-redondo",
-        "recipiente": "grelha"
+        "recipiente": "grade"
       }
     ],
     "prato": {
@@ -6055,7 +6308,8 @@
   "paes.rosca-palmier": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "estado": "tiras"
       },
       {
         "alimento": "rosquinhas"
@@ -6090,7 +6344,8 @@
   "paes.rosca-caracol": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "estado": "tiras"
       },
       {
         "alimento": "rosquinhas"
@@ -6110,10 +6365,12 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "utensilio": "colher de pau"
       },
       {
-        "alimento": "rosquinhas"
+        "alimento": "rosca-parker-house",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -6127,10 +6384,11 @@
   "paes.rosca-colheita": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "estado": "tiras"
       },
       {
-        "alimento": "rosquinhas",
+        "alimento": "rosca-colheita",
         "corte": "pontos"
       }
     ],
@@ -6145,10 +6403,11 @@
   "paes.rosca-no": {
     "passos": [
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "estado": "tiras"
       },
       {
-        "alimento": "rosquinhas"
+        "alimento": "rosca-no"
       }
     ],
     "prato": {
@@ -6165,7 +6424,8 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "massa-de-pao"
+        "alimento": "massa-de-pao",
+        "estado": "tiras"
       },
       {
         "alimento": "massa-de-pao",
@@ -6278,11 +6538,15 @@
     "passos": [
       {
         "alimento": "pimentao",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "adicionar": [
+          "cebola_roxa"
+        ]
       },
       {
         "alimento": "pimentao",
-        "corte": "tiras"
+        "corte": "tiras",
+        "ponto": "tostado"
       },
       {
         "alimento": "bruschetta",
@@ -6316,7 +6580,8 @@
         "alimento": "parmesao"
       },
       {
-        "alimento": "parmesao"
+        "alimento": "parmesao",
+        "utensilio": "descascador"
       }
     ],
     "prato": {
@@ -6351,11 +6616,12 @@
         "recipiente": "bancada"
       },
       {
-        "alimento": "pizza"
+        "alimento": "massa-de-pao",
+        "utensilio": "mãos"
       },
       {
         "alimento": "pizza",
-        "recipiente": "fôrma"
+        "recipiente": "forma de torta"
       },
       {
         "alimento": "pizza",
@@ -6363,11 +6629,11 @@
           "tomate",
           "manjericao"
         ],
-        "recipiente": "fôrma"
+        "recipiente": "forma de torta"
       },
       {
         "alimento": "pizza",
-        "recipiente": "fôrma"
+        "recipiente": "forma de torta"
       }
     ],
     "prato": {
@@ -6381,19 +6647,21 @@
   "paes.calzone": {
     "passos": [
       {
-        "alimento": "pizza",
+        "alimento": "massa-de-pao",
         "adicionar": [
           "presunto-parma"
         ]
       },
       {
-        "alimento": "pizza"
+        "alimento": "massa-de-pao"
       },
       {
-        "alimento": "calzone"
+        "alimento": "calzone",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "calzone"
+        "alimento": "calzone",
+        "utensilio": "mãos"
       },
       {
         "alimento": "calzone",
@@ -6441,23 +6709,27 @@
         "alimento": "massa-de-pao",
         "adicionar": [
           "alecrim"
-        ]
+        ],
+        "utensilio": "mãos"
       },
       {
         "alimento": "focaccia",
-        "recipiente": "fôrma"
+        "recipiente": "assadeira",
+        "utensilio": "mãos"
       },
       {
         "alimento": "focaccia",
-        "recipiente": "fôrma"
+        "recipiente": "assadeira",
+        "utensilio": "mãos"
       },
       {
         "alimento": "focaccia",
-        "recipiente": "fôrma"
+        "recipiente": "assadeira",
+        "utensilio": "mãos"
       },
       {
         "alimento": "focaccia",
-        "recipiente": "fôrma"
+        "recipiente": "assadeira"
       }
     ],
     "prato": {
@@ -6607,7 +6879,8 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "chapati"
+        "alimento": "chapati",
+        "utensilio": "mãos"
       },
       {
         "alimento": null,
@@ -6673,7 +6946,8 @@
         "alimento": "paratha"
       },
       {
-        "alimento": "paratha"
+        "alimento": "paratha",
+        "utensilio": "mãos"
       },
       {
         "alimento": "paratha"
@@ -6684,7 +6958,8 @@
         "recipiente": "chapa"
       },
       {
-        "alimento": "paratha"
+        "alimento": "paratha",
+        "ponto": "dourado"
       }
     ],
     "prato": {
@@ -6692,7 +6967,8 @@
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "pedacos",
-      "estado": "dourado"
+      "estado": "dourado",
+      "quantidade": 4
     }
   },
   "paes.kugelhopf": {
@@ -6759,7 +7035,8 @@
         "recipiente": "fôrma de kugelhopf"
       },
       {
-        "alimento": "kugelhopf"
+        "alimento": "kugelhopf",
+        "recipiente": "fôrma de kugelhopf"
       }
     ],
     "prato": {
@@ -6913,11 +7190,13 @@
         "alimento": "massa-de-pao"
       },
       {
-        "alimento": "pao-bicarbonato"
+        "alimento": "pao-bicarbonato",
+        "ponto": "cru"
       },
       {
         "alimento": "pao-bicarbonato",
-        "corte": "pontos"
+        "corte": "pontos",
+        "ponto": "cru"
       },
       {
         "alimento": "pao-bicarbonato",
@@ -6999,19 +7278,20 @@
       {
         "alimento": null,
         "meio": "massa",
-        "recipiente": "fôrma"
+        "recipiente": "forma de pão"
       },
       {
         "alimento": null,
         "meio": "massa",
-        "recipiente": "fôrma"
+        "recipiente": "forma de pão"
       },
       {
         "alimento": "pao-abobrinha",
-        "recipiente": "fôrma"
+        "recipiente": "forma de pão"
       },
       {
-        "alimento": "pao-abobrinha"
+        "alimento": "pao-abobrinha",
+        "recipiente": "grade"
       }
     ],
     "prato": {

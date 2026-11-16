@@ -51,7 +51,7 @@ export interface Passo {
   ponto?: 'cru' | 'cozido' | 'dourado' | 'tostado';
 }
 
-export type EstadoPeca = 'inteiro' | 'metades' | 'fatias' | 'tiras' | 'cubos' | 'picado';
+export type EstadoPeca = 'inteiro' | 'descascado' | 'metades' | 'quartos' | 'fatias' | 'tiras' | 'cubos' | 'picado';
 
 export type LoucaServir = 'prato' | 'tigela' | 'travessa' | 'taca' | 'tabua' | 'tigelinha' | 'ramequim' | 'xicara' | 'molheira' | 'pote' | 'cumbuca' | 'copo';
 export type FormaServida = 'inteiro' | 'fatias' | 'medalhoes' | 'tiras' | 'cubos' | 'pedacos' | 'ralado' | 'lascas' | 'desfiado';

@@ -110,6 +110,8 @@ export class Mesa {
     // "folha" sozinha: o tipo de folha costuma estar nos ingredientes (uva, bananeira, repolho)
     if (/folha/.test(texto.toLowerCase()) && !/uva|bananeira|repolho|couve|alface/.test(texto.toLowerCase())) info = capaDoTexto(pistas) ?? info;
     const c = new Capa(this.peca, info.cor, info.cor2, info.metal);
+    // papel e alumínio embrulham para cozinhar ou guardar; não vão à mesa
+    c.userData.naoComestivel = /alum[ií]nio|papel|papillote|filme|musselina/i.test(texto);
     this.peca.add(c);
     this.capa = c;
     return c;
@@ -172,7 +174,7 @@ export class Mesa {
     if (!vaso) return false;
     const fogo = /frigideira|wok|panela|caçarola|chapa|^aro$/i.test(vaso);
     // na bancada: fôrma, aro, forminhas, terrina, ramequim, travessa, assadeira, refratário, prato
-    const deBancada = bancada && /f[oô]rma|aros?|forminha|terrina|ramequi|travessa|assadeira|refrat[aá]ri|prato|tigela|vidro|pote|cesta|esteira|grade/i.test(vaso);
+    const deBancada = bancada && /f[oô]rma|aros?|forminha|terrina|ramequi|travessa|assadeira|refrat[aá]ri|prato|tigela|vidro|pote|cesta|esteira|grade|peneira|mouli|pil[aã]o|saco|escorredor|chinois|centr[ií]fuga|banho|cuscuzeira|tagine|sorveteira|micro|churrasqueira|vasilha|bandeja/i.test(vaso);
     if (!fogo && !deBancada) return false;
     this.garantirRecipiente(vaso, onde, fogo ? 'frigideira' : 'assadeira');
     // a peça cabe no vaso

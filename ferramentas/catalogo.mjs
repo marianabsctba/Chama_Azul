@@ -322,7 +322,7 @@ function main() {
       for (const k of ['meio', 'recipiente', 'pergunta', 'explicacao']) if (typeof cp[k] === 'string' && cp[k]) p[k] = cp[k];
       // ficha de cena do passo: estado e ponto da peça, utensílio na mão
       if (cp.estado) {
-        if (['inteiro', 'metades', 'fatias', 'tiras', 'cubos', 'picado'].includes(cp.estado)) p.estadoPeca = cp.estado;
+        if (['inteiro', 'descascado', 'metades', 'quartos', 'fatias', 'tiras', 'cubos', 'picado'].includes(cp.estado)) p.estadoPeca = cp.estado;
         else problemas.push(`estado de peça desconhecido "${cp.estado}" em ${t.id} passo ${i + 1}`);
       }
       if (cp.ponto) {
