@@ -51,6 +51,10 @@ const PARTE = /^(costa|dorso|lateral|ponta|cabo|pe|pes|lamina deitada|fundo|bord
 type Regra = [RegExp, string | null];
 
 const REGRAS: Regra[] = [
+  // aparelhos com modelo próprio vêm antes de forno, micro-ondas e grelha sem modelo
+  // o normalizar põe no singular: "micro-ondas" vira "micro onda"
+  [/^(micro.?ondas?|forno de micro)/, 'microondas'],
+  [/^(churrasqueira|brasa|carv[aã]o|grelha de carv)/, 'churrasqueira'],
   // sem modelo: corpo, aparelhos fixos e ingredientes (o jogo trata à parte)
   [/^(mao|dedo|polegar|palma|punho|olho|boca)\b/, null],
   [/^(forno|fogao|fogo|chama|geladeira|congelador|freezer|micro ?onda|microonda|pia|torneira|bancada|superficie|gratinador|dourador)\b/, null],
@@ -245,8 +249,6 @@ const REGRAS: Regra[] = [
   [/^liquidificador/, 'liquidificador'],
   [/^maquina (de )?(abrir massa|macarrao|massa)/, 'maquina_massa'],
   [/^(sorveteira|maquina de sorvete)/, 'sorveteira'],
-  [/^(micro.?ondas|forno de micro)/, 'microondas'],
-  [/^(churrasqueira|brasa|carv[aã]o|grelha de carv)/, 'churrasqueira'],
   [/^mixer/, 'mixer'],
   [/^macarico/, 'macarico'],
 ];

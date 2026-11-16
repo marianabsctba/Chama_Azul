@@ -74,7 +74,9 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
   const rec = mesa.garantirRecipiente(recipienteTexto, onde, noForno ? 'assadeira' : 'panela');
   void rec;
   let conteudo = null as ReturnType<typeof mesa.garantirConteudo> | null;
-  if (!noForno && (p.meio !== 'seco' || liquido || passo.meio)) {
+  // no micro-ondas e na churrasqueira a peça vai sozinha, sem banho de água ou óleo
+  const aparelho = /micro|churrasqueira|brasa/i.test(recipienteTexto);
+  if (!noForno && !(aparelho && solido && !passo.meio) && (p.meio !== 'seco' || liquido || passo.meio)) {
     // o meio revisado (azeite, água, caldo) entra como líquido no recipiente, nunca como garrafa
     const meioTexto = passo.meio ?? (p.meio === 'oleo' ? 'óleo' : p.meio === 'acucar' ? 'calda de açúcar' : p.meio === 'chocolate' ? 'chocolate' : liquido ? textoConteudo(passo) : 'água');
     conteudo = mesa.garantirConteudo(meioTexto, gordura && solido ? 0.12 : p.meio === 'oleo' && !liquido ? 0.35 : 0.55);

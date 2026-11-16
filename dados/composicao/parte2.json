@@ -2474,7 +2474,7 @@
    },
    {
     "alimento": "frango-inteiro",
-    "recipiente": "assadeira"
+    "recipiente": "churrasqueira"
    },
    {
     "alimento": "frango-inteiro",
@@ -2492,7 +2492,8 @@
  "aves.churrasco-brasa": {
   "passos": [
    {
-    "alimento": null
+    "alimento": null,
+    "recipiente": "churrasqueira"
    },
    {
     "alimento": null,
@@ -2510,7 +2511,7 @@
    },
    {
     "alimento": "perna-de-frango",
-    "recipiente": "grelha"
+    "recipiente": "churrasqueira"
    }
   ],
   "prato": {
@@ -4195,7 +4196,7 @@
    },
    {
     "alimento": "file-mignon",
-    "recipiente": "grelha"
+    "recipiente": "churrasqueira"
    },
    {
     "alimento": "file-mignon",
