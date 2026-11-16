@@ -38,7 +38,7 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   const nivel0 = conteudo.estado.nivel;
-  const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
+  const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|amassador|martel|socador|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
   const centro = mesa.centro.clone();
   const faixa: [number, number] = v === 'circular-rapido' ? [7, 22] : v === 'circular' ? [2.5, 9] : [0, 0];
   const duracao = v === 'circular-rapido' ? 7 : v === 'circular' ? 5 : 0;

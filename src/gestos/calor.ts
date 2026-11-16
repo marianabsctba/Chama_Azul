@@ -53,7 +53,7 @@ function perfil(ctx: ContextoGesto): Perfil {
 }
 
 // cores em sRGB (setRGB trabalharia no espaço linear e a calda sairia pálida)
-const CALDA_CLARA = new THREE.Color('#f3e6b8');
+const CALDA_CLARA = new THREE.Color('#ecd283');
 const CALDA_AMBAR = new THREE.Color('#a4560f');
 const MAX_MEIO = { agua: 100, oleo: 240, acucar: 200, chocolate: 70, seco: 260, forno: 260 };
 const TAU = { agua: 45, oleo: 30, acucar: 35, chocolate: 25, seco: 15, forno: 90 };
@@ -186,7 +186,7 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
           // calda clara e translúcida até uns 150 °C; depois doura até o âmbar do caramelo (170 a 180 °C)
           const c = clamp((T - 145) / 35);
           e.cor.copy(CALDA_CLARA).lerp(CALDA_AMBAR, c);
-          e.espessura = 0.06 + c * 0.3;
+          e.espessura = 0.01 + c * 0.3;
           e.ondas = clamp((T - 105) / 40) * 0.4;
         } else e.ondas = clamp((T - 40) / 30) * 0.1;
         if (p.reduzir) e.nivel = nivel0 * (1 - 0.5 * clamp(noPonto / tempoAlvo));
