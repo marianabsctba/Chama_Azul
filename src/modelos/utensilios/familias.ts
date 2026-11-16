@@ -2211,6 +2211,52 @@ const maquinaMassa: Gerador = () => {
   return m.finalizar('maquina_massa', [w / 2 + 0.06, yh + 0.092, -0.039], [0, h + 0.022, 0]);
 };
 
+const microondas: Gerador = () => {
+  // caixa com a porta aberta para o lado, janela escura, prato giratório de vidro no meio e painel de botões
+  const m = new Montador();
+  const w = 0.46, h = 0.27, d = 0.34;
+  m.add('inoxEscuro', caixaR(w, 0.012, d, 0.004), { p: [0, h, 0] });
+  m.add('inoxEscuro', caixaR(w, 0.012, d, 0.004), { p: [0, 0.006, 0] });
+  m.add('inoxEscuro', caixaR(0.012, h, d, 0.004), { p: [-w / 2, h / 2, 0] });
+  m.add('inoxEscuro', caixaR(0.012, h, d, 0.004), { p: [w * 0.22, h / 2, 0] });
+  m.add('inoxEscuro', caixaR(w * 0.22, h, d, 0.006), { p: [w * 0.39, h / 2, 0], cor: COR.marinho });
+  m.add('inoxEscuro', caixaR(w * 0.72, h, 0.01, 0.004), { p: [-w * 0.14, h / 2, -d / 2] });
+  // interior claro
+  m.add('ceramica', caixa(w * 0.68, 0.002, d * 0.9), { p: [-w * 0.14, 0.014, 0] });
+  // prato giratório
+  m.add('vidro', cilindro(0.12, 0.006, 28), { p: [-w * 0.14, 0.02, 0] });
+  // botões e visor
+  m.add('vidro', caixa(w * 0.14, 0.03, 0.004), { p: [w * 0.39, h * 0.8, d / 2 + 0.002], cor: 0x0e1a2b });
+  for (let i = 0; i < 6; i++) m.add('ceramica', caixa(0.022, 0.016, 0.006), { p: [w * 0.36 + (i % 2) * 0.034, h * 0.62 - Math.floor(i / 2) * 0.03, d / 2 + 0.003] });
+  // porta aberta: quadro com a janela escura, girada sobre a dobradiça da esquerda
+  const porta = new THREE.Group();
+  const quadro = caixaR(w * 0.74, h * 0.96, 0.03, 0.006);
+  m.add('inoxEscuro', quadro, { p: [-w / 2 - 0.02, h / 2, d / 2 + w * 0.37], r: [0, Math.PI / 2 - 0.15, 0] });
+  m.add('vidro', caixa(w * 0.5, h * 0.62, 0.004), { p: [-w / 2 - 0.04, h / 2, d / 2 + w * 0.37], r: [0, Math.PI / 2 - 0.15, 0], cor: 0x101820 });
+  void porta;
+  return m.finalizar('microondas', [w * 0.39, h * 0.4, d / 2], [-w * 0.14, 0.024, 0]);
+};
+
+const churrasqueira: Gerador = () => {
+  // churrasqueira de bola: bacia escura sobre pés, brasas acesas no fundo e a grelha por cima
+  const m = new Montador();
+  const R = 0.26, y0 = 0.42;
+  m.add('inoxEscuro', torno([[0, y0], [R * 0.5, y0 + 0.01], [R * 0.85, y0 + 0.06], [R, y0 + 0.15], [R * 1.01, y0 + 0.17], [R * 0.97, y0 + 0.17], [R * 0.82, y0 + 0.07], [0, y0 + 0.02]], 48), { cor: COR.ferro });
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * Math.PI * 2;
+    m.add('inox', cilindro(0.012, y0, 10), { p: [Math.cos(a) * R * 0.6, y0 / 2, Math.sin(a) * R * 0.6], r: [Math.sin(a) * 0.12, 0, -Math.cos(a) * 0.12] });
+  }
+  // brasas
+  for (let i = 0; i < 26; i++) {
+    const a = i * 2.39, r = R * 0.6 * Math.sqrt((i + 0.5) / 26);
+    m.add('ceramica', esfera(0.022 + (i % 3) * 0.004, 8, 6), { p: [Math.cos(a) * r, y0 + 0.05 + (i % 2) * 0.008, Math.sin(a) * r], cor: i % 4 === 0 ? 0xff7a1a : i % 3 === 0 ? 0xc0391b : 0x2a2420 });
+  }
+  // grelha
+  m.add('inox', anel(R * 0.94, 0.004, 48, 5), { p: [0, y0 + 0.13, 0], r: [Math.PI / 2, 0, 0] });
+  for (let i = -6; i <= 6; i++) m.add('inox', cilX(0.0025, 2 * Math.sqrt(Math.max(0, (R * 0.94) ** 2 - (i * 0.036) ** 2)), 6), { p: [0, y0 + 0.13, i * 0.036] });
+  return m.finalizar('churrasqueira', [R, y0 + 0.13, 0], [0, y0 + 0.135, 0]);
+};
+
 const sorveteira: Gerador = () => {
   const m = new Montador();
   m.add('cobalto', torno([[0, 0], [0.11, 0], [0.115, 0.01], [0.115, 0.18], [0.105, 0.19]], 40));
@@ -2502,6 +2548,8 @@ export const GERADORES: Record<string, Gerador> = {
   batedeira,
   maquina_massa: maquinaMassa,
   sorveteira,
+  microondas,
+  churrasqueira,
   mixer,
   moedor,
   moedor_carne: moedorCarne,

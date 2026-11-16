@@ -111,6 +111,59 @@ export function criarLoucaPequena(tipo: LoucaPequena): LoucaMontada {
   }
 }
 
+/**
+ * Montinho dentro da louça: pó seco de especiarias (grãos finos com pontinhos mais escuros) ou picos firmes de
+ * claras em neve, merengue e chantilly (ondas que sobem e dobram na ponta).
+ */
+export function montinhoTextura(raio: number, cor: string | THREE.Color, textura: 'po' | 'picos'): THREE.Group {
+  const g = new THREE.Group();
+  const base = new THREE.Color(cor);
+  if (textura === 'po') {
+    const perfil = [[0, 0], [raio * 0.95, 0], [raio * 0.7, raio * 0.18], [raio * 0.35, raio * 0.32], [0, raio * 0.38]].map(([x, y]) => new THREE.Vector2(x, y));
+    const geo = new THREE.LatheGeometry(perfil, 40);
+    const cores: number[] = [];
+    const pos = geo.getAttribute('position');
+    const c = new THREE.Color();
+    for (let i = 0; i < pos.count; i++) {
+      const n = Math.sin(pos.getX(i) * 900) * Math.cos(pos.getZ(i) * 850) * Math.sin(pos.getY(i) * 700);
+      c.copy(base).multiplyScalar(0.85 + 0.25 * n);
+      cores.push(c.r, c.g, c.b);
+    }
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(cores, 3));
+    g.add(new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.95 })));
+    // grãos soltos em volta
+    const grao = new THREE.InstancedMesh(new THREE.SphereGeometry(0.0012, 5, 4), new THREE.MeshStandardMaterial({ color: base.clone().multiplyScalar(0.7), roughness: 0.9 }), 40);
+    const o = new THREE.Object3D();
+    for (let i = 0; i < 40; i++) {
+      const a = i * 2.39;
+      const r = raio * (0.6 + 0.35 * ((i * 37) % 10) / 10);
+      o.position.set(Math.cos(a) * r, 0.0012, Math.sin(a) * r);
+      o.updateMatrix();
+      grao.setMatrixAt(i, o.matrix);
+    }
+    g.add(grao);
+    return g;
+  }
+  // picos: várias colheradas que sobem em ponta e dobram, brilho acetinado
+  const mat = new THREE.MeshStandardMaterial({ color: base, roughness: 0.35 });
+  for (let i = 0; i < 9; i++) {
+    const a = i * 2.39;
+    const r = i === 0 ? 0 : raio * (0.35 + 0.15 * (i % 3));
+    const h = raio * (i === 0 ? 0.9 : 0.55 + 0.1 * (i % 2));
+    const pico = new THREE.Mesh(new THREE.ConeGeometry(raio * 0.32, h, 12, 4), mat);
+    const p = pico.geometry.getAttribute('position');
+    for (let k = 0; k < p.count; k++) {
+      const y = p.getY(k) / h + 0.5;
+      p.setX(k, p.getX(k) + Math.sin(y * Math.PI) * 0.15 * raio * y * y);
+    }
+    pico.geometry.computeVertexNormals();
+    pico.position.set(Math.cos(a) * r, h / 2, Math.sin(a) * r);
+    pico.rotation.y = a;
+    g.add(pico);
+  }
+  return g;
+}
+
 /** Superfície de líquido ou pasta dentro da louça pequena. */
 export function superficie(raio: number, cor: string | THREE.Color, claro: boolean, textura: 'liso' | 'granulado' = 'liso'): THREE.Mesh {
   const geo = new THREE.CircleGeometry(raio, 48, 0, Math.PI * 2);

@@ -7,6 +7,32 @@ import { Mesa } from './gestos/mesa';
 import type { Jogador } from './motor/jogador';
 import type { Entrada } from './motor/entrada';
 import { audio } from './motor/audio';
+import type { Peca } from './pecas/peca';
+import type { EstadoPeca } from './tipos';
+
+/**
+ * Corta a peça no estado em que ela entra no passo (metades, fatias, tiras, cubos, picada), se ainda
+ * estiver inteira: o passo de deixar de molho os palitos já começa com os palitos.
+ */
+export function prepararEstado(peca: Peca, estado: EstadoPeca) {
+  if (estado === 'inteiro' || peca.fragmentos.length >= 2) return;
+  const L = peca.comprimento;
+  const W = peca.largura;
+  const H = peca.altura;
+  const nx = { metades: 1, fatias: 6, tiras: 5, cubos: 4, picado: 7 }[estado];
+  const ini = estado === 'metades' ? 0 : -L * 0.42;
+  const fim = estado === 'metades' ? 0 : L * 0.42;
+  for (let i = 0; i <= nx; i++) {
+    const x = estado === 'metades' ? 0 : ini + ((fim - ini) * i) / nx;
+    peca.cortar('x', x);
+    if (estado === 'metades') break;
+  }
+  if (estado === 'tiras' || estado === 'cubos' || estado === 'picado') {
+    const nz = estado === 'picado' ? 4 : 3;
+    for (let j = 1; j < nz; j++) peca.cortar('z', -W / 2 + (W * j) / nz);
+  }
+  if (estado === 'cubos' || estado === 'picado') peca.cortar('y', H * 0.5);
+}
 
 export interface ResultadoPasso {
   nota: number;
@@ -98,6 +124,12 @@ export class Missao {
         relogio: this.relogio,
         vaso,
       };
+      // ficha de cena: a peça entra no passo no estado e no ponto que o livro descreve
+      if (passo.alimento && (passo.estadoPeca || passo.ponto)) {
+        const peca = this.mesa.garantirPeca(passo.alimento, estacao.superficie.clone());
+        if (passo.estadoPeca) prepararEstado(peca, passo.estadoPeca);
+        if (passo.ponto) peca.definirCozimento({ cru: 0, cozido: 1, dourado: 1.08, tostado: 1.2 }[passo.ponto]);
+      }
       try {
         this.exec = FABRICAS[passo.gesto](ctx);
         const proprio = passo.gesto === 'montar' && (passo.variante === 'decorar' || passo.variante === 'rechear');

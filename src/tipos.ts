@@ -45,7 +45,13 @@ export interface Passo {
   explicacao?: string;
   objetos?: string[];
   cheirar?: boolean;
+  /** Como a peça entra no passo: inteira, em metades, fatias, tiras, cubos ou picada. */
+  estadoPeca?: EstadoPeca;
+  /** Ponto da peça no passo: crua, cozida, dourada (frita, grelhada, assada) ou tostada. */
+  ponto?: 'cru' | 'cozido' | 'dourado' | 'tostado';
 }
+
+export type EstadoPeca = 'inteiro' | 'metades' | 'fatias' | 'tiras' | 'cubos' | 'picado';
 
 export type LoucaServir = 'prato' | 'tigela' | 'travessa' | 'taca' | 'tabua' | 'tigelinha' | 'ramequim' | 'xicara' | 'molheira' | 'pote' | 'cumbuca' | 'copo';
 export type FormaServida = 'inteiro' | 'fatias' | 'medalhoes' | 'tiras' | 'cubos' | 'pedacos' | 'ralado' | 'lascas' | 'desfiado';
@@ -68,6 +74,8 @@ export interface PratoFinal {
   claro?: boolean;
   /** Pasta com grão aparente (pesto no pilão, tapenade). */
   granulado?: boolean;
+  /** Textura do conteúdo: pó seco em montinho (especiarias) ou picos firmes (claras em neve, merengue, chantilly). */
+  textura?: 'po' | 'picos';
 }
 
 export interface Tecnica {

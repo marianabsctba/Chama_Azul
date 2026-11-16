@@ -317,6 +317,16 @@ function main() {
       }
       if (cp.adicionar?.length) p.adicionar = cp.adicionar.filter(valido);
       for (const k of ['meio', 'recipiente', 'pergunta', 'explicacao']) if (typeof cp[k] === 'string' && cp[k]) p[k] = cp[k];
+      // ficha de cena do passo: estado e ponto da peça, utensílio na mão
+      if (cp.estado) {
+        if (['inteiro', 'metades', 'fatias', 'tiras', 'cubos', 'picado'].includes(cp.estado)) p.estadoPeca = cp.estado;
+        else problemas.push(`estado de peça desconhecido "${cp.estado}" em ${t.id} passo ${i + 1}`);
+      }
+      if (cp.ponto) {
+        if (['cru', 'cozido', 'dourado', 'tostado'].includes(cp.ponto)) p.ponto = cp.ponto;
+        else problemas.push(`ponto desconhecido "${cp.ponto}" em ${t.id} passo ${i + 1}`);
+      }
+      if (typeof cp.utensilio === 'string' && cp.utensilio) p.utensilio = cp.utensilio;
       if (Array.isArray(cp.opcoes) && cp.opcoes.length >= 2) {
         p.opcoes = cp.opcoes;
         p.correta = Math.max(0, Math.min(cp.opcoes.length - 1, cp.correta ?? 0));
@@ -340,6 +350,8 @@ function main() {
       else if (c.prato.liquido) problemas.push(`cor de líquido inválida "${c.prato.liquido}" em ${t.id}`);
       if (c.prato.claro) pr.claro = true;
       if (c.prato.granulado) pr.granulado = true;
+      if (c.prato.textura === 'po' || c.prato.textura === 'picos') pr.textura = c.prato.textura;
+      else if (c.prato.textura) problemas.push(`textura desconhecida "${c.prato.textura}" em ${t.id}`);
       t.prato = pr;
     }
   }

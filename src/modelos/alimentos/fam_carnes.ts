@@ -430,7 +430,8 @@ export const gCarneOsso: Gerador = (k) => {
       out.push(parte(blocoCarne(-L / 2, L / 2, H * 0.48, W * 0.46, H * 0.5, 0, 4), k.ac, true));
       for (let i = 0; i < n; i++) {
         const x = lerp(-L / 2 + L * 0.08, L / 2 - L * 0.08, i / Math.max(1, n - 1));
-        const pts = [V(x, yb * 3, -W * 0.47), V(x + L * 0.01, yb * 2.6, -W * 0.2), V(x + L * 0.015, yb * 2.55, W * 0.2), V(x + L * 0.02, yb * 2.95, W * 0.47)];
+        // as costelas atravessam a peça e saem limpas por um lado, curvando de leve para cima
+        const pts = [V(x, yb * 3, -W * 0.47), V(x + L * 0.01, yb * 2.6, -W * 0.1), V(x + L * 0.015, yb * 2.7, W * 0.4), V(x + L * 0.02, yb * 3.6, W * 0.72), V(x + L * 0.02, yb * 4.6, W * 0.86)];
         out.push(parte(tubo(pts, {
           raio: (t) => yb * (0.85 + 0.2 * (suave(0.1, 0, t) + suave(0.9, 1, t))), achata: 1.6, cima: V(0, 1, 0), m: 10, n: 16, pontaRedonda: false,
           cor: (px, py, pz) => mix(mul(OSSO, 1 + 0.07 * ruido(px * 200, py * 200, pz * 200)), mul(k.ci, 0.8), 0.25 * suave(0.3, 0.8, fbm(px * 80, py * 80, pz * 80, s))),
@@ -457,7 +458,7 @@ export const gCarneOsso: Gerador = (k) => {
       out.push(parte(blocoCarne(-L / 2, L / 2, H * 0.4, W * 0.48, H * 0.55), k.ac, true));
       for (let i = 0; i < n; i++) {
         const x = lerp(-L * 0.42, L * 0.42, i / Math.max(1, n - 1));
-        out.push(parte(osso([V(x, H * 0.12, -W * 0.45), V(x + L * 0.01, H * 0.1, 0), V(x + L * 0.02, H * 0.12, W * 0.42)], H * 0.08, corOsso, 1.1), 'acetinado'));
+        out.push(parte(osso([V(x, H * 0.18, -W * 0.6), V(x + L * 0.01, H * 0.14, 0), V(x + L * 0.02, H * 0.18, W * 0.58)], H * 0.1, corOsso, 1.1), 'acetinado'));
       }
       out.push(parte(osso([V(-L * 0.46, H * 0.1, -W * 0.42), V(L * 0.46, H * 0.1, -W * 0.42)], H * 0.1, [0.92, 0.9, 0.84], 1.1), 'acetinado'));
       return out;
@@ -477,8 +478,8 @@ export const gCarneOsso: Gerador = (k) => {
         }));
         for (let i = 0; i < n; i++) {
           const x = lerp(-L / 2 + L * 0.07, L / 2 - L * 0.07, i / Math.max(1, n - 1));
-          gs.push(tubo([V(x, Rl * 1.1, sx * Rl * 0.3), V(x, Rl * 1.75, sx * W * 0.3), V(x, H * 0.92, sx * W * 0.58)], {
-            raio: (t) => H * 0.05 * (1 + 0.35 * suave(0.85, 1, t)), achata: 1.5, cima: V(0, 0, 1), m: 8, n: 10,
+          gs.push(tubo([V(x, Rl * 1.1, sx * Rl * 0.3), V(x, Rl * 1.85, sx * W * 0.4), V(x, H * 1.08, sx * W * 0.8), V(x, H * 1.18, sx * W * 1.02)], {
+            raio: (t) => H * 0.06 * (1 + 0.35 * suave(0.85, 1, t)), achata: 1.5, cima: V(0, 0, 1), m: 8, n: 12,
             cor: (px, py, pz) => mul(corOsso, 1 + 0.07 * ruido(px * 300, py * 300, pz * 300)),
           }));
         }
@@ -522,6 +523,7 @@ export const gCarneOsso: Gerador = (k) => {
       g.translate(cab ? -L / 2 + Lc / 2 : 0, 0, 0);
       out.push(parte(g, k.ac, true));
       if (cab) out.push(parte(osso([V(-L / 2 + Lc * 0.8, H * 0.5, 0), V(L * 0.1, H * 0.55, W * 0.05), V(L / 2, H * 0.5, W * 0.04)], H * 0.18, corOsso, 1.3), 'acetinado'));
+      else out.push(parte(osso([V(-L * 0.26, H * 0.55, W * 0.34), V(0, H * 0.6, W * 0.37), V(L * 0.26, H * 0.55, W * 0.33)], H * 0.32, corOsso, 1.6), 'acetinado'));
       return out;
     }
     case 'rodela': {

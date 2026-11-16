@@ -9,7 +9,7 @@ import { NOVOS } from './modelos/alimentos/novos';
 import { Peca } from './pecas/peca';
 import { estadoInicial } from './pecas/conteudo';
 import { decorarSopa, SOPA_DA_DECORACAO } from './decoracao_sopa';
-import { criarLoucaPequena, superficie, LOUCAS_PEQUENAS, type LoucaPequena } from './loucas';
+import { criarLoucaPequena, superficie, montinhoTextura, LOUCAS_PEQUENAS, type LoucaPequena } from './loucas';
 
 const DOCE = new Set(['sobremesas', 'pastelaria', 'bolos']);
 const SOPA = new Set(['caldos']);
@@ -790,7 +790,12 @@ function servirPequena(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnica:
   mesa.soltarFerramenta();
   mesa.limparExtras();
   mesa.removerRecipiente(true);
-  if (corLiquido) {
+  if (corLiquido && ficha.textura) {
+    // pó seco de especiarias ou picos firmes de merengue: montinho, não superfície lisa
+    const m = montinhoTextura(louca.raioLiquido * 0.85, corLiquido, ficha.textura);
+    m.position.y = ficha.textura === 'po' ? louca.piso : louca.nivel - louca.raioLiquido * 0.2;
+    grupo.add(m);
+  } else if (corLiquido) {
     const sup = superficie(louca.raioLiquido, corLiquido, !!ficha.claro || louca.vidro && !!ficha.claro, ficha.granulado ? 'granulado' : 'liso');
     sup.position.y = louca.nivel;
     grupo.add(sup);

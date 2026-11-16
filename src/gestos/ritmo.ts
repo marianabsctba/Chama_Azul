@@ -149,10 +149,13 @@ function ritmoNaPeca(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud } = ctx;
   const v = passo.variante;
   const chave = passo.alimento ?? passo.alvo;
-  if (!ctx.vaso || !/frigideira|wok|panela|caçarola|chapa|^aro$/i.test(ctx.vaso)) mesa.removerRecipiente(true);
+  if (!ctx.vaso) mesa.removerRecipiente(true);
   const peca = mesa.garantirPeca(chave, estacao.superficie.clone());
   peca.rotation.y = anguloDaEstacao(estacao);
-  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone())) peca.position.copy(estacao.superficie);
+  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone(), true)) {
+    mesa.removerRecipiente(true);
+    peca.position.copy(estacao.superficie);
+  }
   const ferramenta = mesa.pegarFerramenta(passo.utensilio, v);
   const escala0 = peca.scale.clone();
   // abrir com rolo: espessura pedida

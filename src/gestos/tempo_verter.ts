@@ -35,8 +35,9 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
       mesa.adicionarExtra(cubo);
     }
   } else if (peca) {
-    peca.position.copy(estacao.superficie);
+    // no recipiente da ficha (de molho na tigela, na fôrma, no pote); senão sobre a bancada
     peca.rotation.y = anguloDaEstacao(estacao);
+    if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone(), true)) peca.position.copy(estacao.superficie);
   } else {
     mesa.garantirRecipiente('tigela', estacao.superficie.clone(), 'tigela');
     mesa.garantirConteudo(textoConteudo(passo), 0.45);

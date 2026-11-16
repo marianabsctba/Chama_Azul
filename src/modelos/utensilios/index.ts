@@ -245,6 +245,8 @@ const REGRAS: Regra[] = [
   [/^liquidificador/, 'liquidificador'],
   [/^maquina (de )?(abrir massa|macarrao|massa)/, 'maquina_massa'],
   [/^(sorveteira|maquina de sorvete)/, 'sorveteira'],
+  [/^(micro.?ondas|forno de micro)/, 'microondas'],
+  [/^(churrasqueira|brasa|carv[aã]o|grelha de carv)/, 'churrasqueira'],
   [/^mixer/, 'mixer'],
   [/^macarico/, 'macarico'],
 ];

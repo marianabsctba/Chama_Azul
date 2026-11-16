@@ -213,6 +213,11 @@ export class Mesa {
 
   /** Utensílio que acompanha o mouse. */
   pegarFerramenta(texto: string, padrao: string): THREE.Group | null {
+    // a ficha do passo diz que é com as mãos
+    if (/^(m[aã]os?|dedos?)$/i.test((texto ?? '').trim())) {
+      this.soltarFerramenta();
+      return null;
+    }
     // o livro faz com as mãos (sovar, socar, quebrar o talo, esfarelar, espremer, rasgar): sem utensílio
     // utensílio que não é ferramenta de mão (bancada enfarinhada, tábua, vasilha) também conta como mãos
     const semUtensilio = !texto || /^(m[aã]os?|dedos?|palmas?|punho|polegares?)/i.test(texto.trim()) || /m[aã]os|dedos|palma|punho|polegar|bancada|superf[ií]cie|t[aá]bua|vasilha|tigela/i.test(texto) || !criarUtensilio(texto);

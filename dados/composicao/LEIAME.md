@@ -29,6 +29,9 @@ Campos de cada passo (todos opcionais):
 - `adicionar`: ids que entram neste passo e ficam sobre ou dentro da peça (recheio, cobertura, guarnição, tiras arrumadas). Aparecem pequenos sobre a peça e seguem com ela até o prato.
 - `meio`: o líquido ou gordura do recipiente, em texto curto (`"azeite"`, `"óleo"`, `"manteiga"`, `"água"`, `"caldo"`, `"leite"`, `"calda de açúcar"`, `"vinho"`). Nunca vira peça.
 - `recipiente`: texto do recipiente quando importa (`"frigideira"`, `"wok"`, `"panela"`, `"assadeira"`, `"tigela"`, `"esteira de bambu"`).
+- `estado`: como a peça entra no passo: `"inteiro"`, `"metades"`, `"fatias"`, `"tiras"`, `"cubos"` ou `"picado"` (o jogo corta a peça nesse estado antes do gesto).
+- `ponto`: `"cru"`, `"cozido"`, `"dourado"` ou `"tostado"`, quando a peça já chega cozida ou assada ao passo.
+- `utensilio`: o que vai na mão no passo (substitui o texto do levantamento); `"mãos"` quando é com as mãos.
 - Só em passos de inspecionar ou testar: `pergunta`, `opcoes` (3 frases curtas), `correta` (índice 0 a 2), `explicacao` (uma frase) e `objetos` (lista entre `"embalagem"`, `"termometro"`, `"palito"`, `"copo-agua"`, `"faca"`, `"garfo"`, `"colher"`), e `cheirar: true` quando o teste é pelo cheiro.
 
 Campos da técnica:
@@ -42,3 +45,4 @@ Campos da técnica:
 - `prato.liquido`: cor `"#rrggbb"` do líquido, molho ou pasta que enche a louça.
 - `prato.claro`: `true` para líquido translúcido (caldo claro, consomê, calda).
 - `prato.granulado`: `true` para pasta com grão aparente (pesto no pilão, tapenade).
+- `prato.textura`: `"po"` para mistura seca em montinho (especiarias moídas, ervas secas) ou `"picos"` para claras em neve, merengue e chantilly com picos firmes.
