@@ -766,7 +766,8 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   const atualizar = (dt: number) => {
     for (const o of grupo.children) if (o instanceof Peca) o.atualizar(dt);
   };
-  return { grupo, centro: centro.clone().add(new THREE.Vector3(0, 0.02, 0)), raio: R, limpar, atualizar };
+  // taça é alta: a câmera mira o meio dela e recua para mostrar o conteúdo inteiro
+  return { grupo, centro: centro.clone().add(new THREE.Vector3(0, tipo === 'taca' ? 0.09 : 0.02, 0)), raio: tipo === 'taca' ? 0.14 : R, limpar, atualizar };
 }
 
 /**

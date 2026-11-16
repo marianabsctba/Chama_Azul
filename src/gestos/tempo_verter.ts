@@ -344,10 +344,11 @@ function gestoPeneirar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud, cena } = ctx;
   mesa.removerPeca();
   mesa.garantirRecipiente('tigela grande', estacao.superficie.clone(), 'tigela');
-  const conteudo = mesa.garantirConteudo('farinha', 0.05);
+  // o que passa pela peneira: farinha, açúcar, purê, claras, o que o passo disser
+  const conteudo = mesa.garantirConteudo(/farinha|a[cç][uú]car|cacau|fermento|sal/i.test(passo.alvo) ? passo.alvo : textoConteudo(passo), 0.05);
   conteudo.estado.nivel = 0.004;
   const peneira = mesa.pegarFerramenta(/peneira|tamis|coador/i.test(passo.utensilio) ? passo.utensilio : 'peneira', 'peneirar');
-  const po = new Particulas('#fbf7ee', 300, 'esfera', 1);
+  const po = new Particulas(conteudo.estado.cor.clone(), 300, 'esfera', 1);
   cena.add(po);
   let direcao = 0;
   let acum = 0;
@@ -360,7 +361,11 @@ function gestoPeneirar(ctx: ContextoGesto): Execucao {
     atualizar(dt) {
       hud.dica('Segure e sacuda o mouse de um lado para o outro sobre a tigela.');
       const y = estacao.superficie.y + 0.2;
-      const ponto = entrada.noPlano(camera, y) ?? estacao.superficie.clone().setY(y);
+      const mouse = entrada.noPlano(camera, y) ?? estacao.superficie.clone().setY(y);
+      // a peneira fica sobre a tigela: o mouse só a balança dentro da boca
+      const desvio = mouse.clone().sub(mesa.centro).setY(0);
+      if (desvio.length() > mesa.bocaRaio * 0.5) desvio.setLength(mesa.bocaRaio * 0.5);
+      const ponto = mesa.centro.clone().add(desvio).setY(y);
       if (peneira) mesa.ferramentaEm(ponto, 0, 0, 0);
       if (entrada.pressionado) {
         const dx = entrada.deltaPx.x;

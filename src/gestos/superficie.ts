@@ -92,7 +92,7 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
     lamina: `Passe a faca rente à peça, em faixas, tirando ${passo.alvo}.`,
     agua: 'Passe a peça sob a água, por todos os lados, até ficar limpa.',
     escova: 'Esfregue com a escova, por todos os lados, até sair a sujeira.',
-    mao: `Com os dedos, tire ${passo.alvo}, por toda a peça.`,
+    mao: /aquecer|amolecer/.test(passo.acao) ? `Esfregue a palma da mão sobre ${passo.alvo} até amolecer por igual.` : `Com os dedos, tire ${passo.alvo}, por toda a peça.`,
     pano: /secar/.test(passo.acao) ? 'Passe o pano por toda a peça até secar.' : 'Passe por toda a peça até ficar limpa.',
     utensilio: `Passe o utensílio por toda a peça, tirando ${passo.alvo}.`,
   };

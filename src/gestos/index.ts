@@ -54,7 +54,9 @@ export function vasoDoPasso(t: Tecnica, i: number, fundo = 0): string | undefine
 
 export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | null, vaso?: string): CenaEstacao {
   // mexer, virar, despejar dentro de um vaso no fogo: no fogão
-  if (vaso && VASO_FOGO.test(vaso) && ['ritmo', 'montar', 'verter', 'separar', 'superficie', 'testar'].includes(p.gesto) && p.variante !== 'escumar') return 'fogao';
+  // o aro só vai ao fogo nos ovos modelados; na confeitaria é montagem de bancada
+  const aroDeBancada = !!vaso && /^aros?$/i.test(vaso.trim()) && t.bancada !== 'ovos';
+  if (vaso && VASO_FOGO.test(vaso) && !aroDeBancada && ['ritmo', 'montar', 'verter', 'separar', 'superficie', 'testar'].includes(p.gesto) && p.variante !== 'escumar') return 'fogao';
   switch (p.gesto) {
     case 'calor':
       return p.variante === 'forno' ? 'forno' : 'fogao';
