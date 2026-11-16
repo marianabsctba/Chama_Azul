@@ -42,9 +42,9 @@ export const gMassaBola: Gerador = (k) => {
     caminho: (u) => {
       const th = u * PI;
       const sn = Math.sin(th);
-      let h = H * (1 - Math.cos(th)) / 2;
-      if (u < 0.5) h *= 0.35; // base achatada
-      return [R * sn ** 0.8, h];
+      // base baixa e arredondada, depois uma cúpula: bola de massa assentada, sem parede reta de queijo
+      if (u < 0.5) return [R * sn ** 0.5, H * 0.15 * (1 - Math.cos(th))];
+      return [R * sn ** 0.9, H * 0.15 + H * 0.85 * -Math.cos(th)];
     },
     n: 26, m: 32, cor,
     desloc: k.tem('x') ? (p) => { const d = Math.min(Math.abs(p.x - p.z), Math.abs(p.x + p.z)); p.y -= (1 - suave(0, R * 0.08, d)) * H * 0.08 * suave(H * 0.5, H, p.y); } : undefined,

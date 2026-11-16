@@ -52,6 +52,9 @@ function perfil(ctx: ContextoGesto): Perfil {
   return base({ meio: 'agua', alvos: [100], tolerancia: 1.5, rotulo: 'Água' }, a === 'branquear' || a === 'escaldar' ? 1.5 : a === 'vapor' ? 8 : 6);
 }
 
+// cores em sRGB (setRGB trabalharia no espaço linear e a calda sairia pálida)
+const CALDA_CLARA = new THREE.Color('#f3e6b8');
+const CALDA_AMBAR = new THREE.Color('#a4560f');
 const MAX_MEIO = { agua: 100, oleo: 240, acucar: 200, chocolate: 70, seco: 260, forno: 260 };
 const TAU = { agua: 45, oleo: 30, acucar: 35, chocolate: 25, seco: 15, forno: 90 };
 
@@ -180,8 +183,10 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
         if (p.meio === 'agua') e.ondas = clamp((T - 80) / 20) * (0.3 + chama * 0.9);
         else if (p.meio === 'oleo') e.ondas = clamp((T - 140) / 60) * 0.35;
         else if (p.meio === 'acucar') {
-          const c = clamp((T - 150) / 45);
-          e.cor.setRGB(0.95 - c * 0.45, 0.88 - c * 0.55, 0.62 - c * 0.5);
+          // calda clara e translúcida até uns 150 °C; depois doura até o âmbar do caramelo (170 a 180 °C)
+          const c = clamp((T - 145) / 35);
+          e.cor.copy(CALDA_CLARA).lerp(CALDA_AMBAR, c);
+          e.espessura = 0.06 + c * 0.3;
           e.ondas = clamp((T - 105) / 40) * 0.4;
         } else e.ondas = clamp((T - 40) / 30) * 0.1;
         if (p.reduzir) e.nivel = nivel0 * (1 - 0.5 * clamp(noPonto / tempoAlvo));

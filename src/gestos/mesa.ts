@@ -185,12 +185,29 @@ export class Mesa {
     return true;
   }
 
+  /** Texto que deu a cor ao conteúdo atual. */
+  conteudoTexto = '';
+
+  /**
+   * O meio da ficha mudou (a base branca virou musse de chocolate, a calda virou ganache): o conteúdo
+   * que continua no recipiente passa a ter a cor e a textura do meio novo.
+   */
+  trocarMeio(texto: string) {
+    if (!this.conteudo || !texto || texto === this.conteudoTexto) return;
+    this.conteudoTexto = texto;
+    const e = estadoInicial(texto, this.contexto);
+    this.conteudo.estado.cor.set(e.cor);
+    this.conteudo.estado.espessura = e.espessura;
+    this.conteudo.estado.brilho = e.brilho;
+  }
+
   /** Coloca ou mantém o conteúdo dentro do recipiente atual. */
   garantirConteudo(texto: string, nivelRel = 0.45): Conteudo {
     if (!this.recipiente) throw new Error('sem recipiente');
     const caixa = new THREE.Box3().setFromObject(this.recipiente);
     const alturaUtil = Math.max(0.02, (caixa.max.y - this.fundoY) * 0.85);
     if (!this.conteudo) {
+      this.conteudoTexto = texto;
       const e = estadoInicial(texto, this.contexto);
       const c = new Conteudo(this.bocaRaio * 0.95, e.cor, alturaUtil * nivelRel);
       c.estado.espessura = e.espessura;

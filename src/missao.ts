@@ -20,9 +20,12 @@ export function prepararEstado(peca: Peca, estado: EstadoPeca) {
     return;
   }
   if (estado === 'inteiro' || peca.fragmentos.length >= 2) return;
+  // as partes já cortadas ficam afastadas, para ver que entram separadas no passo
+  const abrir = (k: number) => peca.espalhar(Math.max(peca.comprimento, peca.largura) * k);
   if (estado === 'quartos') {
     peca.cortar('x', 0);
     peca.cortar('z', 0);
+    abrir(0.12);
     return;
   }
   const L = peca.comprimento;
@@ -41,6 +44,7 @@ export function prepararEstado(peca: Peca, estado: EstadoPeca) {
     for (let j = 1; j < nz; j++) peca.cortar('z', -W / 2 + (W * j) / nz);
   }
   if (estado === 'cubos' || estado === 'picado') peca.cortar('y', H * 0.5);
+  abrir(estado === 'metades' ? 0.15 : 0.04);
 }
 
 export interface ResultadoPasso {
@@ -134,6 +138,7 @@ export class Missao {
         vaso,
       };
       // ficha de cena: a peça entra no passo no estado e no ponto que o livro descreve
+      if (passo.meio) this.mesa.trocarMeio(passo.meio);
       if (passo.alimento && (passo.estadoPeca || passo.ponto)) {
         const peca = this.mesa.garantirPeca(passo.alimento, estacao.superficie.clone());
         if (passo.estadoPeca) prepararEstado(peca, passo.estadoPeca);

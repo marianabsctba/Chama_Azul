@@ -157,6 +157,8 @@ function ritmoNaPeca(ctx: ContextoGesto): Execucao {
     peca.position.copy(estacao.superficie);
   }
   const ferramenta = mesa.pegarFerramenta(passo.utensilio, v);
+  // o rolo fica deitado atravessado na frente de quem abre a massa, não apontado para a câmera
+  const giroFerr = ferramenta?.name === 'rolo' ? 0 : Math.PI / 2;
   const escala0 = peca.scale.clone();
   // abrir com rolo: espessura pedida
   const alvoEspessura = passo.meta?.unidade === 'mm' ? passo.meta.valor / 1000 : passo.meta?.unidade === 'cm' ? passo.meta.valor / 100 : null;
@@ -198,7 +200,7 @@ function ritmoNaPeca(ctx: ContextoGesto): Execucao {
         const ach = 1 - (1 - achatarAte) * progresso;
         const sova = /sovar/.test(passo.acao) ? 1 + Math.sin(t * 6) * 0.04 * (entrada.pressionado ? 1 : 0) : 1;
         peca.scale.set(escala0.x / Math.sqrt(ach) * sova, escala0.y * ach, escala0.z / Math.sqrt(ach));
-        if (ferramenta) mesa.ferramentaEm(ponto.clone().setY(topo + 0.012), peca.rotation.y + Math.PI / 2, 0, 0);
+        if (ferramenta) mesa.ferramentaEm(ponto.clone().setY(topo + 0.012), peca.rotation.y + giroFerr, 0, 0);
         hud.medidores([{ rotulo: /sovar/.test(passo.acao) ? 'Elasticidade' : 'Espessura', valor: progresso, texto: alvoEspessura ? `${Math.max(alvoEspessura * 1000, Math.round(peca.altura * peca.scale.y * 1000))} mm` : `${Math.round(progresso * 100)}%` }]);
         if (progresso >= 1) {
           exec.nota = 0.95;
@@ -208,7 +210,7 @@ function ritmoNaPeca(ctx: ContextoGesto): Execucao {
       } else if (v === 'golpes') {
         hud.dica('Clique para golpear, num ritmo regular, como um metrônomo.');
         descida = Math.max(0, descida - dt * 6);
-        if (ferramenta) mesa.ferramentaEm(ponto.clone().setY(topo + 0.05 - descida * 0.045), peca.rotation.y + Math.PI / 2, -0.2 - descida * 0.4, 0);
+        if (ferramenta) mesa.ferramentaEm(ponto.clone().setY(topo + 0.05 - descida * 0.045), peca.rotation.y + giroFerr, ferramenta?.name === 'rolo' ? 0 : -0.2 - descida * 0.4, 0);
         if (entrada.cliqueNovo) {
           if (ultimoGolpe >= 0) intervalos.push(t - ultimoGolpe);
           ultimoGolpe = t;
@@ -237,7 +239,7 @@ function ritmoNaPeca(ctx: ContextoGesto): Execucao {
         progresso = clamp(tempoNaFaixa / 2.5);
         const ach = 1 - 0.35 * progresso;
         peca.scale.set(escala0.x / Math.sqrt(ach), escala0.y * ach, escala0.z / Math.sqrt(ach));
-        if (ferramenta) mesa.ferramentaEm(ponto.clone().setY(topo + 0.03 - pressao * 0.025), peca.rotation.y + Math.PI / 2, -0.4, 0);
+        if (ferramenta) mesa.ferramentaEm(ponto.clone().setY(topo + 0.03 - pressao * 0.025), peca.rotation.y + giroFerr, ferramenta?.name === 'rolo' ? 0 : -0.4, 0);
         audio.despejo(dentro ? 0.3 : 0);
         hud.medidores([
           { rotulo: 'Força', valor: pressao, faixa: [0.45, 0.8] },

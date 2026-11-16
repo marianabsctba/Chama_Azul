@@ -907,7 +907,8 @@ function formaRedonda(nome: string, fora: [number, number][], esp: number, cor: 
   return m.finalizar(nome, [rB, hB, 0], [0, esp + 0.001, 0]);
 }
 
-const formaBolo: Gerador = () => formaRedonda('forma_bolo', perfilReto(0.11, 0.06, 0.006), 0.002);
+// fôrmas de bolo em alumínio, para não se confundirem com a tigela azul
+const formaBolo: Gerador = () => formaRedonda('forma_bolo', perfilReto(0.11, 0.06, 0.006), 0.002, COR.inox, 'inox');
 const timbale: Gerador = () => formaRedonda('timbale', [[0, 0], [0.024, 0], [0.026, 0.003], [0.032, 0.07]], 0.0012, COR.inox, 'inox');
 const charlotte: Gerador = () => {
   const g = formaRedonda('charlotte', [[0, 0], [0.07, 0], [0.073, 0.004], [0.087, 0.1]], 0.0015);
@@ -946,7 +947,7 @@ const formaDesmontavel: Gerador = () => {
   const r = 0.12;
   const h = 0.07;
   m.add('inox', cilindro(r + 0.008, 0.003, 56));
-  m.add('cobalto', cilindro(r, h, 56, r, true), { p: [0, 0.002, 0] });
+  m.add('inox', cilindro(r, h, 56, r, true), { p: [0, 0.002, 0], cor: COR.inox });
   m.add('inox', cilindro(r - 0.0015, h - 0.001, 56, r - 0.0015, true), { p: [0, 0.003, 0], cor: COR.inoxClaro });
   m.add('inox', anel(r - 0.0007, 0.0025, 56, 5), { p: [0, h + 0.002, 0] });
   m.add('inox', anel(r + 0.0015, 0.002, 56, 4), { p: [0, 0.008, 0] });

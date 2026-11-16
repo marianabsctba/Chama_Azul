@@ -166,6 +166,7 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
   if (ctx.passo.variante === 'mergulhar') return gestoMergulhar(ctx);
   if (ctx.passo.variante === 'escumar') return gestoEscumar(ctx);
   if (ctx.passo.variante === 'peneirar') return gestoPeneirar(ctx);
+  if (ehRetirar(ctx)) return gestoRetirar(ctx);
   const { passo, mesa, estacao, entrada, hud, cena } = ctx;
   // origem: o recipiente atual ou uma panela; destino: tigela ao lado (com peneira se coar)
   const origemTexto = /panela|tigela|jarra|frigideira|caçarola|liquidificador|vasilha/i.test(passo.alvo + passo.utensilio) ? passo.alvo + ' ' + passo.utensilio : 'panela';
@@ -274,6 +275,95 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
       conteudo.estado.nivel = nivel0 * 0.6 + 0.004;
       mesa.limparExtras();
       audio.despejo(0);
+    },
+  };
+  return exec;
+}
+
+/**
+ * Escorrer ou tirar com escumadeira, pinça ou garfo, ou sobre papel-toalha ou grade: a peça sai do
+ * líquido na ferramenta e vai para o prato forrado ou a grade, sem despejar a panela numa peneira.
+ */
+function ehRetirar(ctx: ContextoGesto): boolean {
+  const p = ctx.passo;
+  if (!p.alimento) return false;
+  if (!/escorr|retir|tirar|coar|transferir|remover|levantar|pescar/i.test(p.acao)) return false;
+  const texto = `${p.utensilio} ${p.alvo} ${p.parametro} ${ctx.vaso ?? ''}`;
+  return /escumadeira|colher com furo|pin[cç]a|pegador|garfo|esp[aá]tula|papel|grade|cesta/i.test(texto) && !/peneira|chinois|escorredor|coador|musselina/i.test(p.utensilio);
+}
+
+function gestoRetirar(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud } = ctx;
+  const texto = `${passo.utensilio} ${passo.alvo} ${passo.parametro} ${ctx.vaso ?? ''}`;
+  // origem: a panela com o óleo ou a água em que a peça cozinhou
+  mesa.garantirRecipiente(/frigideira|wok/i.test(texto) ? 'frigideira' : 'panela', aoLado(estacao, -0.14), 'panela');
+  const oleo = /fri|[oó]leo|empan|crocante|tempura|batata/i.test(`${passo.acao} ${passo.alvo} ${passo.parametro} ${mesa.contexto}`);
+  // o líquido de onde a peça sai: o da ficha, o da técnica (vinho tinto, calda, caldo) ou óleo e água
+  const ctxTexto = `${passo.alvo} ${passo.parametro} ${mesa.contexto}`.toLowerCase();
+  const liquidoTecnica = /vinho tinto/.test(ctxTexto) ? 'vinho tinto' : /vinho/.test(ctxTexto) ? 'vinho' : /calda|xarope/.test(ctxTexto) ? 'calda' : /caldo|fumet/.test(ctxTexto) ? 'caldo' : /leite/.test(ctxTexto) ? 'leite' : null;
+  const conteudo = mesa.garantirConteudo(passo.meio ?? liquidoTecnica ?? (oleo ? 'óleo' : 'água'), 0.5);
+  const origem = new THREE.Vector3(mesa.centro.x, conteudo.position.y + conteudo.estado.nivel, mesa.centro.z);
+  // destino: prato forrado com papel-toalha, ou a grade
+  const naGrade = /grade/i.test(texto);
+  const destPos = aoLado(estacao, 0.14);
+  const base = criarUtensilio(naGrade ? 'grade' : 'prato') ?? new THREE.Group();
+  base.position.copy(destPos);
+  mesa.adicionarExtra(base);
+  base.updateMatrixWorld(true);
+  const pontaBase = base.userData.ponta as THREE.Vector3 | undefined;
+  // a ponta da louça é o centro do fundo por dentro; a grade apoia por cima
+  let topo = !naGrade && pontaBase ? pontaBase.clone().applyMatrix4(base.matrixWorld).y : new THREE.Box3().setFromObject(base).max.y;
+  if (!naGrade) {
+    // folhas de papel-toalha dobradas sobre o prato (o modelo do rolo ficaria em pé)
+    const papel = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.003, 0.13), new THREE.MeshStandardMaterial({ color: '#fbfbf7', roughness: 0.95 }));
+    papel.rotation.y = 0.3;
+    const grupo = new THREE.Group();
+    grupo.add(papel);
+    grupo.position.set(destPos.x, topo + 0.0015, destPos.z);
+    mesa.adicionarExtra(grupo);
+    topo = topo + 0.003;
+  }
+  const destino = new THREE.Vector3(destPos.x, topo + 0.002, destPos.z);
+  const peca = mesa.garantirPeca(passo.alimento!, origem.clone());
+  const maior = Math.max(peca.comprimento, peca.largura);
+  if (maior * peca.scale.x > mesa.bocaRaio * 1.3) peca.scale.setScalar((mesa.bocaRaio * 1.3) / maior);
+  peca.rotation.set(0, anguloDaEstacao(estacao), 0);
+  const alto = peca.altura * peca.scale.y;
+  const ferramenta = mesa.pegarFerramenta(/escumadeira|colher com furo|pin[cç]a|pegador|garfo|esp[aá]tula|cesta/i.test(passo.utensilio) ? passo.utensilio : 'escumadeira', 'escumar');
+  const gotas = new Particulas(conteudo.estado.cor, 60, 'esfera', 0.9);
+  ctx.cena.add(gotas);
+  let prog = 0;
+  let pressa = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica('Segure para levantar a peça do líquido, deixar escorrer e levar até o papel-toalha.');
+      const antes = prog;
+      prog = clamp(prog + (entrada.pressionado ? dt * 0.45 : 0));
+      if ((prog - antes) / Math.max(dt, 1e-3) > 0.6) pressa += dt;
+      // sobe, para um instante escorrendo sobre a panela e desce no destino
+      const subir = suave(clamp(prog / 0.3));
+      const levar = suave(clamp((prog - 0.45) / 0.45));
+      const p = origem.clone().lerp(destino, levar);
+      p.y = origem.y - alto * 0.5 * (1 - subir) + 0.08 * subir * (1 - levar) + (destino.y - origem.y) * levar;
+      if (levar >= 1) p.y = destino.y;
+      peca.position.copy(p);
+      if (ferramenta) mesa.ferramentaEm(p.clone().setY(p.y - 0.003), anguloDaEstacao(estacao), 0, 0);
+      if (prog > 0.3 && prog < 0.5 && Math.random() < dt * 25) gotas.emitir(p.clone(), new THREE.Vector3(0, -0.2, 0), { vida: 0.5, tam: 0.0025, gravidade: -5, espalhar: 0.2 });
+      gotas.atualizar(dt);
+      hud.medidores([{ rotulo: 'Escorrer', valor: prog }]);
+      if (prog >= 1) {
+        exec.nota = clamp(1 - pressa * 0.3);
+        exec.comentario = comentar(exec.nota, 'Escorreu bem e pousou com cuidado.', 'Bom, com um pouco de pressa.', 'Rápido demais: levou óleo junto.');
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      ctx.cena.remove(gotas);
+      gotas.descartar();
+      hud.medidores([]);
     },
   };
   return exec;

@@ -117,7 +117,7 @@ const SABORES: [RegExp, string, number, number][] = [
 ];
 
 /** Bases neutras que ganham a cor do sabor da técnica. */
-const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#e9d9a8', '#efdcb2', '#f0dfa4', '#e8d7b0', '#c99a52']);
+const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#f3e6b8', '#efdcb2', '#f0dfa4', '#e8d7b0', '#c99a52']);
 
 /**
  * Cor, espessura e brilho do que está no recipiente. O texto do passo decide a base; quando a base
@@ -133,7 +133,8 @@ export function estadoInicial(texto: string, contexto = ''): { cor: string; espe
     [/chocolate|ganache/, '#4a2a18', 0.5, 0.8],
     [/caramelo|butterscotch|toffee/, '#b8681e', 0.35, 0.95],
     [/caf[eé]/, '#3b2416', 0.1, 0.85],
-    [/calda|açúcar|xarope/, '#e9d9a8', 0.25, 0.9],
+    // calda de açúcar é transparente, só levemente dourada; o caramelo é âmbar
+    [/calda|açúcar|xarope/, '#f3e6b8', 0.06, 0.95],
     [/maionese|aïoli|aioli/, '#f4e6a6', 0.6, 0.6],
     [/hollandaise|holandês|béarnaise|bearnaise/, '#f1d27a', 0.5, 0.6],
     [/manteiga/, '#f7e08c', 0.5, 0.6],

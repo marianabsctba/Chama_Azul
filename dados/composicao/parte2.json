@@ -105,7 +105,8 @@
      "alho"
     ],
     "meio": "manteiga",
-    "recipiente": "panela"
+    "recipiente": "panela",
+    "estado": "picado"
    },
    {
     "alimento": "cebola",
@@ -113,7 +114,8 @@
      "salsa"
     ],
     "meio": "vinho branco",
-    "recipiente": "panela"
+    "recipiente": "panela",
+    "estado": "picado"
    },
    {
     "alimento": "mexilhao",
@@ -136,9 +138,12 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "mexilhao",
+    "alimento": "mexilhao-aberto",
     "meio": "caldo",
-    "recipiente": "tigela"
+    "recipiente": "tigela",
+    "adicionar": [
+     "salsa"
+    ]
    }
   ],
   "prato": {
@@ -170,7 +175,10 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "mexilhao"
+    "alimento": "mexilhao-aberto",
+    "utensilio": "escumadeira",
+    "recipiente": "panela",
+    "meio": "vinho branco"
    },
    {
     "alimento": null,
@@ -236,16 +244,20 @@
     "meio": "sal grosso"
    },
    {
-    "alimento": "mexilhao",
+    "alimento": "mexilhao-gratinado",
     "adicionar": [
      "tomate-concassee",
      "louro"
-    ]
+    ],
+    "recipiente": "travessa"
    }
   ],
   "prato": {
    "principal": "mexilhao-gratinado",
-   "acompanhamentos": [],
+   "acompanhamentos": [
+    "tomate-concassee",
+    "louro"
+   ],
    "servir": "travessa",
    "forma": "inteiro",
    "estado": null,
@@ -261,10 +273,11 @@
     "alimento": "ameijoa"
    },
    {
-    "alimento": "ameijoa"
+    "alimento": "ameijoa-meia-concha",
+    "utensilio": "colher"
    },
    {
-    "alimento": "ameijoa",
+    "alimento": "ameijoa-meia-concha",
     "meio": "caldo"
    }
   ],
@@ -369,11 +382,11 @@
    }
   ],
   "prato": {
-   "principal": "buzio-cozido",
+   "principal": "buzio",
    "acompanhamentos": [],
    "servir": "prato",
    "forma": "inteiro",
-   "estado": null,
+   "estado": "cozido",
    "quantidade": 6
   }
  },
@@ -699,13 +712,13 @@
     "corte": "contorno"
    },
    {
-    "alimento": "frango-de-leite"
+    "alimento": "frango-borboleta"
    },
    {
-    "alimento": "frango-de-leite"
+    "alimento": "frango-borboleta"
    },
    {
-    "alimento": "frango-de-leite"
+    "alimento": "frango-borboleta"
    }
   ],
   "prato": {
@@ -729,10 +742,12 @@
    },
    {
     "alimento": "pato",
-    "corte": "contorno"
+    "corte": "contorno",
+    "estado": "metades"
    },
    {
-    "alimento": "pato"
+    "alimento": "pato",
+    "estado": "metades"
    }
   ],
   "prato": {
@@ -905,7 +920,8 @@
    "acompanhamentos": [],
    "servir": "tabua",
    "forma": "tiras",
-   "estado": "cru"
+   "estado": "cru",
+   "quantidade": 12
   }
  },
  "aves.coxa-espetinho": {
@@ -1021,7 +1037,7 @@
   "prato": {
    "acompanhamentos": [],
    "servir": "tigelinha",
-   "liquido": "#e6c8b4",
+   "liquido": "#d49c8c",
    "granulado": true
   }
  },
@@ -1131,7 +1147,10 @@
    },
    {
     "alimento": "fatias-de-ballotine",
-    "recipiente": "travessa"
+    "recipiente": "travessa",
+    "adicionar": [
+     "salsa"
+    ]
    }
   ],
   "prato": {
@@ -1232,14 +1251,16 @@
     "recipiente": "tigela"
    },
    {
-    "alimento": "codorna"
+    "alimento": "codorna",
+    "recipiente": "prato"
    },
    {
     "alimento": "codorna",
     "adicionar": [
      "foie-gras",
      "cepe"
-    ]
+    ],
+    "recipiente": "prato"
    },
    {
     "alimento": "codorna"
@@ -1268,8 +1289,7 @@
     "alimento": "codorna",
     "adicionar": [
      "salsa",
-     "alecrim",
-     "cepe"
+     "alecrim"
     ],
     "ponto": "dourado",
     "recipiente": "prato"
@@ -1282,7 +1302,9 @@
   ],
   "prato": {
    "principal": "codorna",
-   "acompanhamentos": [],
+   "acompanhamentos": [
+    "cepe"
+   ],
    "servir": "prato",
    "forma": "inteiro",
    "estado": "dourado",
@@ -1537,7 +1559,10 @@
    },
    {
     "alimento": "frango-assado-em-pedacos",
-    "recipiente": "travessa"
+    "recipiente": "travessa",
+    "adicionar": [
+     "salsa"
+    ]
    }
   ],
   "prato": {
@@ -1569,7 +1594,10 @@
    },
    {
     "alimento": "peru-fatiado",
-    "recipiente": "travessa"
+    "recipiente": "travessa",
+    "adicionar": [
+     "salsa"
+    ]
    }
   ],
   "prato": {
@@ -1593,22 +1621,22 @@
    },
    {
     "alimento": null,
-    "meio": "gordura da assadeira",
+    "meio": "roux escuro",
     "recipiente": "assadeira"
    },
    {
     "alimento": null,
-    "meio": "caldo",
+    "meio": "molho escuro",
     "recipiente": "assadeira"
    },
    {
     "alimento": null,
-    "meio": "molho",
+    "meio": "molho escuro",
     "recipiente": "assadeira"
    },
    {
     "alimento": null,
-    "meio": "molho",
+    "meio": "molho escuro",
     "recipiente": "assadeira"
    },
    {
@@ -1637,7 +1665,6 @@
    {
     "alimento": "ganso",
     "adicionar": [
-     "louro",
      "laranja"
     ]
    },
@@ -1685,7 +1712,10 @@
    },
    {
     "alimento": "pato-trinchado",
-    "recipiente": "travessa"
+    "recipiente": "travessa",
+    "adicionar": [
+     "salsa"
+    ]
    }
   ],
   "prato": {
@@ -1762,7 +1792,10 @@
    },
    {
     "alimento": "faisao-em-porcoes",
-    "recipiente": "prato"
+    "recipiente": "travessa",
+    "adicionar": [
+     "salsa"
+    ]
    }
   ],
   "prato": {
@@ -1836,10 +1869,17 @@
    }
   ],
   "prato": {
-   "acompanhamentos": [],
+   "acompanhamentos": [
+    "chili",
+    "cebolinha",
+    "coentro"
+   ],
    "servir": "tigelinha",
    "liquido": "#6e3c1c",
-   "granulado": true
+   "granulado": true,
+   "principal": "alho",
+   "forma": "lascas",
+   "estado": "dourado"
   }
  },
  "aves.pato-oriental-assar": {
@@ -2082,7 +2122,9 @@
    ],
    "servir": "prato",
    "forma": "inteiro",
-   "quantidade": 2
+   "quantidade": 2,
+   "estado": "dourado",
+   "liquido": "#3b1f17"
   }
  },
  "aves.saltear": {
@@ -2150,7 +2192,8 @@
    ],
    "servir": "prato",
    "forma": "tiras",
-   "estado": "dourado"
+   "estado": "dourado",
+   "quantidade": 10
   }
  },
  "aves.poche-inteira": {
@@ -2364,11 +2407,10 @@
    }
   ],
   "prato": {
-   "principal": "perna-de-frango",
+   "principal": "coxa-frango-grelhada",
    "acompanhamentos": [],
    "servir": "prato",
    "forma": "inteiro",
-   "estado": "dourado",
    "quantidade": 2
   }
  },
@@ -2504,10 +2546,12 @@
      "Em brasa, sem chama, coberto de cinza clara"
     ],
     "correta": 2,
-    "explicacao": "Só se assa sobre brasa sem chama; chama alta queima por fora e deixa cru por dentro."
+    "explicacao": "Só se assa sobre brasa sem chama; chama alta queima por fora e deixa cru por dentro.",
+    "recipiente": "churrasqueira"
    },
    {
-    "alimento": "alecrim"
+    "alimento": "alecrim",
+    "recipiente": "churrasqueira"
    },
    {
     "alimento": "perna-de-frango",
@@ -2570,18 +2614,20 @@
     "recipiente": "tigela"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "meio": "vinho tinto",
     "recipiente": "tigela"
    },
    {
-    "alimento": "frango"
+    "alimento": "frango-em-oito-pedacos"
    },
    {
-    "alimento": "frango"
+    "alimento": "frango-em-oito-pedacos",
+    "recipiente": "prato",
+    "utensilio": "papel-toalha"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "meio": "óleo",
     "recipiente": "panela"
    },
@@ -2596,7 +2642,7 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "adicionar": [
      "cenoura",
      "cebola"
@@ -2604,17 +2650,17 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "meio": "vinho tinto",
     "recipiente": "panela"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "meio": "vinho tinto",
     "recipiente": "panela"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "adicionar": [
      "cogumelo_paris"
     ],
@@ -2622,20 +2668,20 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "frango",
+    "alimento": "frango-em-oito-pedacos",
     "recipiente": "panela",
     "meio": "vinho tinto",
     "ponto": "cozido"
    }
   ],
   "prato": {
-   "principal": "frango",
+   "principal": "frango-em-oito-pedacos",
    "acompanhamentos": [
     "cogumelo_paris",
     "cenoura"
    ],
    "servir": "tigela",
-   "forma": "pedacos",
+   "forma": "inteiro",
    "estado": "cozido",
    "liquido": "#4a1c22"
   }
@@ -2664,8 +2710,9 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "cenoura",
+    "alimento": "codorna",
     "adicionar": [
+     "cenoura",
      "cebola"
     ],
     "meio": "óleo",
@@ -2697,16 +2744,16 @@
     "recipiente": "tigela"
    },
    {
-    "alimento": "galinha-para-cozer",
+    "alimento": "frango-em-oito-pedacos",
     "meio": "suco de abacaxi",
     "recipiente": "tigela"
    }
   ],
   "prato": {
-   "principal": "galinha-para-cozer",
+   "principal": "frango-em-oito-pedacos",
    "acompanhamentos": [],
    "servir": "travessa",
-   "forma": "pedacos",
+   "forma": "inteiro",
    "estado": "cru",
    "liquido": "#7a2a30"
   }
@@ -2805,7 +2852,7 @@
   "prato": {
    "principal": "fatia-de-terrina-de-coelho",
    "acompanhamentos": [],
-   "servir": "tabua",
+   "servir": "prato",
    "forma": "inteiro",
    "estado": null
   }
@@ -2864,7 +2911,7 @@
     "alimento": "pepino"
    },
    {
-    "alimento": "pepino"
+    "alimento": "pepino-em-conserva-leque"
    }
   ],
   "prato": {
@@ -2902,7 +2949,7 @@
     "alimento": "tomate"
    },
    {
-    "alimento": "tomate"
+    "alimento": "rosa-tomate"
    }
   ],
   "prato": {
@@ -2972,10 +3019,7 @@
     "recipiente": "panela"
    },
    {
-    "alimento": "feixe-aspargos",
-    "adicionar": [
-     "alho_poro"
-    ]
+    "alimento": "feixe-aspargos"
    }
   ],
   "prato": {
@@ -3025,7 +3069,8 @@
    "principal": "maca-gomos-glaceados",
    "acompanhamentos": [],
    "servir": "prato",
-   "forma": "inteiro"
+   "forma": "inteiro",
+   "estado": "dourado"
   }
  },
  "aves.guarn-barquinho-endivia": {
@@ -3062,7 +3107,8 @@
    "acompanhamentos": [],
    "servir": "prato",
    "forma": "tiras",
-   "estado": "cru"
+   "estado": "cru",
+   "quantidade": 12
   }
  },
  "aves.guarn-flores-fritas": {
@@ -3179,7 +3225,7 @@
     "alimento": "laranja"
    },
    {
-    "alimento": "laranja",
+    "alimento": "espiral-casca-laranja",
     "meio": "água",
     "recipiente": "panela"
    },
@@ -3412,7 +3458,10 @@
     "corte": "contorno"
    },
    {
-    "alimento": "lagarto"
+    "alimento": "lagarto",
+    "adicionar": [
+     "toucinho"
+    ]
    }
   ],
   "prato": {
@@ -3456,13 +3505,13 @@
     "alimento": "manta-carne-recheada"
    },
    {
-    "alimento": "lagarto"
+    "alimento": "manta-carne-recheada"
    },
    {
-    "alimento": "lagarto"
+    "alimento": "manta-carne-recheada"
    },
    {
-    "alimento": "lagarto"
+    "alimento": "manta-carne-recheada"
    }
   ],
   "prato": {
@@ -3476,10 +3525,10 @@
  "bovina.amarrar-simples": {
   "passos": [
    {
-    "alimento": "file-mignon-cru"
+    "alimento": "file-mignon"
    },
    {
-    "alimento": "file-mignon-cru"
+    "alimento": "file-mignon"
    },
    {
     "alimento": "file-mignon-amarrado"
@@ -3607,8 +3656,7 @@
  "bovina.bater-bife": {
   "passos": [
    {
-    "alimento": "contrafile",
-    "estado": "fatias"
+    "alimento": "bife-batido"
    }
   ],
   "prato": {
@@ -3639,7 +3687,8 @@
    "acompanhamentos": [],
    "servir": "tabua",
    "forma": "cubos",
-   "estado": "cru"
+   "estado": "cru",
+   "quantidade": 12
   }
  },
  "bovina.moer-maquina": {
@@ -3675,7 +3724,8 @@
    "principal": "carne-moida",
    "acompanhamentos": [],
    "servir": "tabua",
-   "estado": "cru"
+   "estado": "cru",
+   "quantidade": 3
   }
  },
  "bovina.paupiette": {
@@ -3728,13 +3778,15 @@
     "alimento": "escalope-de-vitela",
     "adicionar": [
      "espinafre"
-    ]
+    ],
+    "recipiente": "prato"
    },
    {
     "alimento": "escalope-de-vitela",
     "adicionar": [
      "amendoim"
-    ]
+    ],
+    "recipiente": "prato"
    },
    {
     "alimento": "escalope-de-vitela-enrolado",
@@ -3805,7 +3857,8 @@
    "principal": "costela-bovina-assada",
    "acompanhamentos": [],
    "servir": "travessa",
-   "forma": "inteiro"
+   "forma": "inteiro",
+   "estado": "dourado"
   }
  },
  "bovina.testar-espeto": {
@@ -3874,7 +3927,7 @@
    }
   ],
   "prato": {
-   "principal": "lagarto",
+   "principal": "lagarto-recheado-amarrado",
    "acompanhamentos": [],
    "servir": "travessa",
    "forma": "fatias",
@@ -4060,7 +4113,8 @@
    "acompanhamentos": [],
    "servir": "prato",
    "forma": "inteiro",
-   "quantidade": 2
+   "quantidade": 2,
+   "liquido": "#c9a46e"
   }
  },
  "bovina.steak-au-poivre": {
@@ -4074,8 +4128,8 @@
     "recipiente": "prato"
    },
    {
-    "alimento": "file-mignon",
-    "estado": "fatias"
+    "alimento": "file-mignon-com-pimenta",
+    "recipiente": "prato"
    }
   ],
   "prato": {
@@ -4133,35 +4187,35 @@
     "recipiente": "grelha"
    },
    {
-    "alimento": "file-mignon"
+    "alimento": "contrafile"
    },
    {
-    "alimento": "file-mignon",
+    "alimento": "contrafile",
     "corte": "pontos"
    },
    {
-    "alimento": "file-mignon",
+    "alimento": "contrafile",
     "adicionar": [
      "alho"
     ]
    },
    {
-    "alimento": "file-mignon",
+    "alimento": "contrafile",
     "recipiente": "grelha"
    },
    {
-    "alimento": "file-mignon"
+    "alimento": "contrafile"
    },
    {
-    "alimento": "file-mignon",
+    "alimento": "contrafile",
     "recipiente": "grelha"
    }
   ],
   "prato": {
-   "principal": "file-mignon",
+   "principal": "contrafile",
    "acompanhamentos": [],
    "servir": "prato",
-   "forma": "medalhoes",
+   "forma": "inteiro",
    "estado": "dourado"
   }
  },
@@ -4192,7 +4246,8 @@
    {
     "alimento": "file-mignon",
     "meio": "marinada",
-    "recipiente": "tigela"
+    "recipiente": "tigela",
+    "estado": "fatias"
    },
    {
     "alimento": "file-mignon",
@@ -4234,7 +4289,7 @@
     "alimento": "manteiga-cilindro-papel"
    },
    {
-    "alimento": "manteiga"
+    "alimento": "manteiga-cilindro-papel"
    },
    {
     "alimento": "manteiga"
@@ -4608,7 +4663,7 @@
     "recipiente": "panela"
    },
    {
-    "alimento": null,
+    "alimento": "capim-limao",
     "meio": "leite de coco",
     "recipiente": "panela"
    },
@@ -4831,18 +4886,18 @@
     "alimento": "perna-de-cordeiro-desossada"
    },
    {
-    "alimento": "perna-de-cordeiro"
+    "alimento": "perna-de-cordeiro-desossada"
    },
    {
-    "alimento": "perna-de-cordeiro"
+    "alimento": "perna-de-cordeiro-desossada"
    },
    {
-    "alimento": "perna-de-cordeiro",
+    "alimento": "perna-de-cordeiro-desossada",
     "recipiente": "assadeira"
    }
   ],
   "prato": {
-   "principal": "perna-de-cordeiro",
+   "principal": "perna-de-cordeiro-desossada",
    "acompanhamentos": [],
    "servir": "travessa",
    "forma": "inteiro",
@@ -4865,21 +4920,17 @@
     "utensilio": "mãos"
    },
    {
-    "alimento": "massa-folhada",
-    "adicionar": [
-     "perna-de-cordeiro"
-    ],
-    "ponto": "dourado"
+    "alimento": "perna-de-cordeiro-em-massa"
    },
    {
-    "alimento": "massa-folhada"
+    "alimento": "perna-de-cordeiro-em-massa"
    },
    {
-    "alimento": "massa-folhada",
+    "alimento": "perna-de-cordeiro-em-massa",
     "recipiente": "assadeira"
    },
    {
-    "alimento": "massa-folhada"
+    "alimento": "perna-de-cordeiro-em-massa"
    }
   ],
   "prato": {
@@ -4900,13 +4951,15 @@
     "alimento": "lombo-de-cordeiro",
     "adicionar": [
      "mostarda_dijon"
-    ]
+    ],
+    "ponto": "dourado"
    },
    {
     "alimento": "lombo-de-cordeiro",
     "adicionar": [
      "salsa"
-    ]
+    ],
+    "ponto": "dourado"
    }
   ],
   "prato": {
@@ -4923,7 +4976,7 @@
     "alimento": "perna-de-cordeiro"
    },
    {
-    "alimento": "perna-de-cordeiro-com-alho",
+    "alimento": "perna-de-cordeiro",
     "adicionar": [
      "alho",
      "alecrim"
@@ -5186,11 +5239,7 @@
  "cordeiro.peritonio-fritar": {
   "passos": [
    {
-    "alimento": "perna-de-cordeiro",
-    "adicionar": [
-     "peritonio"
-    ],
-    "estado": "cubos",
+    "alimento": "cordeiro-no-peritonio",
     "utensilio": "mãos"
    },
    {
@@ -5386,11 +5435,13 @@
    {
     "alimento": "cebola",
     "meio": "azeite",
-    "recipiente": "frigideira"
+    "recipiente": "frigideira",
+    "estado": "picado"
    },
    {
     "alimento": "cebola",
-    "recipiente": "aro"
+    "recipiente": "aro",
+    "estado": "picado"
    },
    {
     "alimento": "abobrinha",
@@ -5401,12 +5452,12 @@
     "alimento": "tomate-cereja"
    },
    {
-    "alimento": "cebola",
+    "alimento": "abobrinha",
     "adicionar": [
-     "abobrinha",
      "tomate-cereja"
     ],
-    "recipiente": "aro"
+    "recipiente": "aro",
+    "estado": "fatias"
    },
    {
     "alimento": "abobrinha-petit-tian",
@@ -5626,7 +5677,8 @@
    "acompanhamentos": [],
    "servir": "prato",
    "forma": "tiras",
-   "estado": "dourado"
+   "estado": "dourado",
+   "quantidade": 12
   }
  },
  "deco.bourguignonne": {
@@ -5665,7 +5717,7 @@
     "cebola_perola"
    ],
    "servir": "prato",
-   "forma": "pedacos",
+   "forma": "inteiro",
    "estado": "dourado",
    "quantidade": 6
   }
@@ -5875,7 +5927,7 @@
    {
     "alimento": "guarda-de-honra-assada",
     "meio": "caldo",
-    "recipiente": "assadeira"
+    "recipiente": "travessa"
    }
   ],
   "prato": {
@@ -6028,7 +6080,7 @@
    }
   ],
   "prato": {
-   "principal": "file-de-porco",
+   "principal": "lombo-de-porco-enrolado",
    "acompanhamentos": [],
    "servir": "tabua",
    "forma": "inteiro",
@@ -6316,13 +6368,10 @@
    }
   ],
   "prato": {
-   "principal": "cranberry",
    "acompanhamentos": [],
    "servir": "tigelinha",
-   "forma": "inteiro",
-   "estado": "cozido",
-   "liquido": "#9a1b2e",
-   "quantidade": 8
+   "liquido": "#6e0f1e",
+   "granulado": true
   }
  },
  "porco.costelinhas-glaceadas": {
@@ -6537,7 +6586,8 @@
    ],
    "servir": "prato",
    "forma": "tiras",
-   "estado": "dourado"
+   "estado": "dourado",
+   "quantidade": 12
   }
  },
  "linguica.furar": {
@@ -6652,7 +6702,8 @@
    "acompanhamentos": [],
    "servir": "tabua",
    "forma": "cubos",
-   "estado": "cru"
+   "estado": "cru",
+   "quantidade": 12
   }
  },
  "presunto.glacear": {
@@ -6737,7 +6788,8 @@
    {
     "alimento": "cebola_roxa",
     "meio": "óleo",
-    "recipiente": "frigideira"
+    "recipiente": "frigideira",
+    "estado": "fatias"
    },
    {
     "alimento": "cebola_roxa",
@@ -6745,14 +6797,16 @@
      "cogumelo_paris"
     ],
     "meio": "óleo",
-    "recipiente": "frigideira"
+    "recipiente": "frigideira",
+    "estado": "fatias"
    },
    {
     "alimento": "cebola_roxa",
     "adicionar": [
      "cogumelo_paris"
     ],
-    "recipiente": "frigideira"
+    "recipiente": "frigideira",
+    "estado": "fatias"
    },
    {
     "alimento": "carne-moida-hamburguer",
@@ -6768,7 +6822,7 @@
    {
     "alimento": "hamburguer-queijo-derretido",
     "adicionar": [
-     "cebola_roxa",
+     "c3-cebola-rodelas",
      "cogumelo_paris"
     ]
    }
@@ -6776,7 +6830,7 @@
   "prato": {
    "principal": "hamburguer-queijo-derretido",
    "acompanhamentos": [
-    "cebola_roxa",
+    "c3-cebola-rodelas",
     "cogumelo_paris"
    ],
    "servir": "prato",
@@ -6943,7 +6997,8 @@
     "alimento": "carne-moida-tartare",
     "recipiente": "prato",
     "adicionar": [
-     "ovo-gema"
+     "cornichons",
+     "alcaparras"
     ]
    }
   ],
@@ -7302,12 +7357,14 @@
    },
    {
     "alimento": "lingua",
-    "ponto": "cozido"
+    "ponto": "cozido",
+    "recipiente": "prato"
    },
    {
     "alimento": "lingua",
     "ponto": "cozido",
-    "utensilio": "mãos"
+    "utensilio": "mãos",
+    "recipiente": "prato"
    },
    {
     "alimento": "lingua",
@@ -7428,9 +7485,7 @@
  "miudos.bucho": {
   "passos": [
    {
-    "alimento": "bucho",
-    "recipiente": "tigela",
-    "meio": "água"
+    "alimento": "bucho"
    },
    {
     "alimento": "bucho"
@@ -7729,7 +7784,8 @@
    "acompanhamentos": [],
    "servir": "tabua",
    "forma": "tiras",
-   "estado": "cru"
+   "estado": "cru",
+   "quantidade": 12
   }
  },
  "hortalicas.aparar_verduras": {

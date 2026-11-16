@@ -14,7 +14,7 @@ interface TecnicaJson {
 /** Grafias que de propósito não têm modelo: corpo, aparelhos fixos e ingredientes. */
 const SEM_MODELO = new Set<string>([
   '',
-  'Fogão', 'fogão', 'Forno', 'forno', 'forno desligado', 'forno micro-ondas 600 a 700 W', 'Micro-ondas', 'micro-ondas',
+  'Fogão', 'fogão', 'Forno', 'forno', 'forno desligado', 'forno micro-ondas 600 a 700 W', 'mãos e água gelada', 'temperatura ambiente',
   'chama direta ou forno', 'fogo', 'geladeira', 'geladeira ou congelador', 'congelador', 'freezer',
   'gratinador', 'dourador', 'torneira',
   'bancada-enfarinhada', 'superfície enfarinhada', 'superfície fria', 'superfície untada', 'superfície untada (mármore)',
