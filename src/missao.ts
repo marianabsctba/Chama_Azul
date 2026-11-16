@@ -189,7 +189,10 @@ export class Missao {
    * tamanho real: a codorna não some na tábua e o peru não cola na tela.
    */
   private enquadrar(est: CenaEstacao, estacao: { superficie: THREE.Vector3; camera: THREE.Vector3 }) {
-    if (est === 'forno' || est === 'geladeira' || est === 'balanca') return;
+    if (est === 'balanca') return;
+    // na geladeira e no forno, um pouco mais de folga: aparece a prateleira e a boca do forno
+    const folga = est === 'forno' || est === 'geladeira' ? 1.5 : 1.2;
+    const raioMin = est === 'forno' || est === 'geladeira' ? 0.12 : 0.05;
     const caixa = new THREE.Box3();
     // a peça e o recipiente; os extras (guias da faca, marcas) só entram quando são a outra vasilha do despejo
     const passo = this.tecnica.passos[this.indice];
@@ -207,9 +210,9 @@ export class Missao {
     }
     if (caixa.isEmpty()) return;
     const centro = caixa.getCenter(new THREE.Vector3());
-    const raio = THREE.MathUtils.clamp(caixa.getSize(new THREE.Vector3()).length() / 2, 0.05, 0.55);
+    const raio = THREE.MathUtils.clamp(caixa.getSize(new THREE.Vector3()).length() / 2, raioMin, 0.55);
     const fov = (this.jogador.camera.fov * Math.PI) / 180;
-    const d = THREE.MathUtils.clamp((raio / Math.sin(fov / 2)) * 1.2, 0.26, 1.5);
+    const d = THREE.MathUtils.clamp((raio / Math.sin(fov / 2)) * folga, 0.26, 1.5);
     const dir = estacao.camera.clone().sub(estacao.superficie).normalize();
     this.jogador.voar(centro.clone().addScaledVector(dir, d), centro, 0.45);
   }
