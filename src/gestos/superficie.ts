@@ -52,7 +52,8 @@ function corDaCobertura(texto: string): THREE.Color {
   if (/pimenta|tempero|especiaria|p[aá]prica|cominho/.test(t)) return new THREE.Color('#7a3b1c');
   if (/ervas|salsa|cebolinha|tomilho/.test(t)) return new THREE.Color('#4c7a2a');
   if (/manteiga|[oó]leo|azeite|gordura/.test(t)) return new THREE.Color('#f6df8a');
-  if (/geleia|calda|brilho|glacear|glaçar|nappar/.test(t)) return new THREE.Color('#e8a24a');
+  // geleia de frutas vermelhas é vermelha; o brilho clássico de abricó, âmbar
+  if (/geleia|calda|brilho|glacear|glaçar|nappar/.test(t)) return /framboesa|morango|groselha|cereja|frutas vermelhas|amora/.test(t) ? new THREE.Color('#a8202e') : new THREE.Color('#e8a24a');
   if (/chocolate/.test(t)) return new THREE.Color('#4a2a18');
   if (/farinha de rosca|empan|p[aã]o ralado|migalha/.test(t)) return new THREE.Color('#d9a35a');
   if (/mel/.test(t)) return new THREE.Color('#e0a020');

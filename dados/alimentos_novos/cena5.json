@@ -1,0 +1,22 @@
+[
+  { "id": "c5-nori-arroz", "nome": "Alga nori coberta de arroz de sushi", "forma": "meia folha de nori quase preta com uma camada uniforme de arroz branco espalhada, deixando livre uma faixa na ponta de longe" },
+  { "id": "c5-nori-arroz-atum", "nome": "Alga nori com arroz, wasabi e tira de atum", "forma": "meia folha de nori coberta de arroz, com uma linha fina de wasabi verde e uma tira vermelha de atum de 1 cm atravessando o meio" },
+  { "id": "c5-maki-rolo", "nome": "Sushi enrolado inteiro na alga", "forma": "cilindro de 2,5 cm de diâmetro envolto em nori quase preta, levemente prensado, com o arroz branco e o quadrado vermelho de atum à mostra nas pontas" },
+  { "id": "c5-maki-rodela", "nome": "Sushi enrolado em rodela com atum", "forma": "rodela de 2 cm de altura em pé com o corte para cima: anel fino de nori, arroz branco em grãos e o atum vermelho no centro" },
+  { "id": "c5-pao-de-lo-cacau", "nome": "Pão-de-ló de cacau", "forma": "bolo redondo baixo de massa aerada marrom-chocolate, topo levemente abaulado e um pouco mais escuro" },
+  { "id": "c5-pao-de-lo-cacau-disco", "nome": "Pão-de-ló de cacau em disco", "forma": "disco fino cortado do pão-de-ló de cacau, miolo marrom-chocolate aerado à mostra" },
+  { "id": "c5-torrada-grelhada", "nome": "Pão tostado na grelha com azeite", "forma": "fatia oval de pão rústico tostada, miolo dourado com alvéolos, casca escura em volta, riscas escuras da grelha em diagonal e manchas de azeite" },
+  { "id": "c5-bruschetta-tomate", "nome": "Bruschetta de tomate e manjericão", "forma": "torrada grelhada coberta de tomate em cubinhos vermelhos e brilhantes, tiras e folhas de manjericão" },
+  { "id": "c5-bruschetta-camarao", "nome": "Bruschetta pronta de camarão com tomate-cereja", "forma": "torrada grelhada com rodelas de tomate-cereja vermelhas e amarelas alternadas, um camarão rosado em C por cima e folhinhas de coentro" },
+  { "id": "c5-bruschetta-pera-cabra", "nome": "Bruschetta pronta de pera com queijo de cabra", "forma": "torrada grelhada com camada fina de queijo de cabra branco, rúcula, fatias finas de pera cortadas na vertical e meia noz" },
+  { "id": "c5-bruschetta-parma-figo", "nome": "Bruschetta pronta de presunto com figo", "forma": "torrada grelhada com uma fatia de presunto cru dobrada em ondas, fatias verticais de figo de miolo rosado, pedaços de cebolinha e pimenta" },
+  { "id": "c5-bruschetta-legumes", "nome": "Bruschetta pronta de legumes tostados", "forma": "torrada grelhada com tiras finas de pimentão tostado, camadas de cebola roxa, azeitonas pretas, pinoli, manjericão e lascas de parmesão" },
+  { "id": "c5-rosca-palmier-crua", "nome": "Rosquinha palmier crua", "forma": "tira de massa crua clara e fosca enrolada pelas duas pontas em duas espirais que se encontram no meio" },
+  { "id": "c5-rosca-caracol-crua", "nome": "Rosquinha caracol crua", "forma": "tira de massa crua clara enrolada em espiral, com a ponta final presa embaixo" },
+  { "id": "c5-rosca-tourelle-crua", "nome": "Rosquinha tourelle crua", "forma": "três discos de massa crua clara empilhados do maior para o menor" },
+  { "id": "c5-rosca-parker-house-crua", "nome": "Rosquinha Parker House crua", "forma": "disco de massa crua clara dobrado no vinco, a metade de cima menor apertada sobre a de baixo" },
+  { "id": "c5-rosca-colheita-crua", "nome": "Rosquinha de colheita crua", "forma": "fuso de massa crua clara, largo no meio e de pontas finas, com três talhos paralelos no topo" },
+  { "id": "c5-rosca-no-cru", "nome": "Nó de padeiro cru", "forma": "tira de massa crua clara amarrada num nó simples, pontas para fora, sem barbante" },
+  { "id": "c5-bagel-cru", "nome": "Bagel cru modelado", "forma": "anel de massa crua clara e fosca, com as pontas unidas, ainda sem brilho" },
+  { "id": "c5-bagel-escaldado", "nome": "Bagel escaldado antes do forno", "forma": "anel de massa inflado e liso, pálido e úmido de brilho depois de escaldado, ainda sem dourar" }
+]

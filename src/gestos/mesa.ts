@@ -290,6 +290,42 @@ export class Mesa {
    * Põe sobre a peça (ou no conteúdo) os ingredientes que entram no passo. Eles ficam presos à peça
    * e seguem com ela para a panela, o forno e o prato.
    */
+  /** Legumes que o passo corta junto com a peça (cebola e cenoura, mirepoix): inteiros, em tamanho real, ao lado. */
+  readonly aoLado: Peca[] = [];
+
+  limparAoLado() {
+    for (const p of this.aoLado) this.cena.remove(p);
+    this.aoLado.length = 0;
+  }
+
+  colocarAoLado(ids: string[], onde: THREE.Vector3, angulo: number) {
+    this.limparAoLado();
+    const p = this.peca;
+    const base = p ? p.getWorldPosition(new THREE.Vector3()) : onde.clone();
+    const larguraPeca = p ? Math.max(p.comprimento, p.largura) * p.scale.x : 0.1;
+    // atrás da peça principal (longe da câmera), lado a lado
+    const atras = new THREE.Vector3(0, 0, -1).applyAxisAngle(new THREE.Vector3(0, 1, 0), angulo);
+    const lado = new THREE.Vector3(1, 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), angulo);
+    const unicos = [...new Set(ids)];
+    unicos.forEach((id, i) => {
+      let item: Peca;
+      try {
+        item = new Peca(criarFormaAlimento(id));
+      } catch {
+        return;
+      }
+      item.userData.alimento = id;
+      const maior = Math.max(item.comprimento, item.largura);
+      if (maior > 0.22) item.scale.setScalar(0.22 / maior);
+      item.rotation.y = angulo;
+      const fx = unicos.length === 1 ? 0 : -0.5 + i / (unicos.length - 1);
+      item.position.copy(base).addScaledVector(atras, larguraPeca * 0.55 + 0.06).addScaledVector(lado, fx * Math.max(0.16, larguraPeca));
+      item.position.y = onde.y;
+      this.aoLado.push(item);
+      this.cena.add(item);
+    });
+  }
+
   adicionarSobre(ids: string[], modo: 'linha' | 'espalhado' | 'centro' = 'linha') {
     const p = this.peca;
     const n = ids.length;
@@ -345,6 +381,7 @@ export class Mesa {
 
   atualizar(dt: number) {
     this.peca?.atualizar(dt);
+    for (const p of this.aoLado) p.atualizar(dt);
     this.conteudo?.atualizar(dt);
     if (this.conteudo) for (const c of this.conteudo.children) if (c instanceof Peca) c.atualizar(dt);
     this.atualizarPunhado();
@@ -417,6 +454,7 @@ export class Mesa {
   }
 
   limparTudo() {
+    this.limparAoLado();
     this.removerPeca();
     this.removerRecipiente(true);
     this.soltarFerramenta();

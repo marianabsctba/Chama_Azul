@@ -625,7 +625,7 @@ export const LOTE: Lote = {
   'mexilhao-aberto': { visual: { f: 'bivalve', v: 'mexilhao-aberto', t: 0.07, a: 0.5, l: 0.8, c1: '#141824', c2: '#2c3a5c', c3: '#e8843a', ci: '#e8843a', cc: '#1e2434', ac: 'brilhante' }, gerar: gMexilhaoAberto },
   'mexilhao-gratinado': { visual: { f: 'bivalve', v: 'mexilhao-gratinado', t: 0.07, a: 0.3, l: 0.5, c1: '#141824', c2: '#2c3a5c', c3: '#4e6e22', ci: '#e8843a', cc: '#1e2434', ac: 'brilhante' }, gerar: gMexilhaoGratinado },
   'carne-mexilhao': { visual: { f: 'bivalve', v: 'carne-mexilhao', t: 0.035, a: 0.3, l: 0.6, c1: '#e8843a', c2: '#f2a660', ci: '#e8843a', cc: '#e8843a', ac: 'umido' }, gerar: gCarneMexilhao },
-  'ameijoa-meia-concha': { visual: { f: 'bivalve', v: 'ameijoa-meia', t: 0.05, a: 0.32, l: 0.9, c1: '#d8c4a0', c2: '#7a5a3a', ci: '#ecc8b0', cc: '#d8c4a0' }, gerar: gAmeijoaMeia },
+  'ameijoa-meia-concha': { visual: { f: 'bivalve', v: 'ameijoa-meia', t: 0.05, a: 0.32, l: 0.9, c1: '#c4ae8a', c2: '#7a5a3a', ci: '#e0a682', cc: '#d8c4a0' }, gerar: gAmeijoaMeia },
   'ostra-meia-concha': { visual: { f: 'bivalve', v: 'ostra-meia', t: 0.095, a: 0.3, l: 0.68, c1: '#8a8070', c2: '#6a7058', c3: '#c8c4b8', ci: '#d8ccb0', cc: '#9a9080', ac: 'fosco' }, gerar: gOstraMeia },
   'vieira-limpa': { visual: { f: 'bivalve', v: 'vieira-limpa', t: 0.07, a: 0.5, l: 1, c1: '#f4ecdc', c2: '#f06a2a', c3: '#f0e0c0', ci: '#f0d8d0', cc: '#f2e6d4', ac: 'umido' }, gerar: gVieiraLimpa },
   'buzio-cozido': { visual: { f: 'concha_espiral', v: 'buzio-cozido', t: 0.045, a: 1, l: 1, c1: '#d6c09a', c2: '#7a6a52', c3: '#5a5a32', ci: '#d8c8a8', cc: '#d0bf9c', ac: 'umido' }, gerar: gBuzioCozido },

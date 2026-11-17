@@ -336,6 +336,33 @@ export class Peca extends THREE.Group {
   }
 
   /** Aplica o tom de cozimento (0 cru, 1 no ponto, 1,5 passou). */
+  /**
+   * Volta a superfície para a massa crua (clara e fosca), guardando o relevo de luz e sombra: o modelo
+   * de rosca ou bagel já vem dourado, mas no passo de modelar ele ainda é massa crua.
+   */
+  deixarCru(cor = new THREE.Color('#ecd8ad'), k = 0.85) {
+    for (const m of this.forma.malhas) {
+      const g = m.geometry as THREE.BufferGeometry;
+      const attr = g.getAttribute('color') as THREE.BufferAttribute | undefined;
+      if (!attr) continue;
+      const arr = attr.array as Float32Array;
+      let soma = 0;
+      for (let i = 0; i < arr.length; i += 3) soma += arr[i] * 0.3 + arr[i + 1] * 0.59 + arr[i + 2] * 0.11;
+      const media = Math.max(0.05, soma / (arr.length / 3));
+      for (let i = 0; i < arr.length; i += 3) {
+        const lum = arr[i] * 0.3 + arr[i + 1] * 0.59 + arr[i + 2] * 0.11;
+        const f = Math.min(1.25, Math.max(0.8, lum / media));
+        const alvo = [cor.r, cor.g, cor.b];
+        for (let j = 0; j < 3; j++) arr[i + j] += (alvo[j] * f - arr[i + j]) * k;
+      }
+      attr.needsUpdate = true;
+      const orig = this.coresOriginais.get(g);
+      if (orig) orig.set(arr);
+    }
+    this.coresCruas.clear();
+    this.cozimento = 0;
+  }
+
   definirCozimento(c: number) {
     this.cozimento = c;
     this.aplicarCozimento();

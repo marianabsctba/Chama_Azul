@@ -61,7 +61,7 @@ export class Conteudo extends THREE.Group {
       let y = e.nivel;
       // ondas de fervura
       // no líquido ralo (água, caldo, calda) a fervura é um tremor fino: ondas grandes viravam calombos de mingau
-      y += e.ondas * amort * (e.espessura < 0.12 ? 0.0012 : 0.004) * Math.sin(this.t * 9 + x * 80) * Math.cos(this.t * 7 + z * 70) * borda;
+      y += e.ondas * amort * (e.espessura < 0.2 ? 0.0012 : 0.004) * Math.sin(this.t * 9 + x * 80) * Math.cos(this.t * 7 + z * 70) * borda;
       // picos (espuma firme): relevo pontudo
       const n = ruido(x * 40, z * 40);
       y += e.picos * 0.018 * Math.max(0, n) ** 2 * borda + e.picos * 0.01 * borda;
@@ -120,7 +120,7 @@ const SABORES: [RegExp, string, number, number][] = [
 ];
 
 /** Bases neutras que ganham a cor do sabor da técnica. */
-const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#d9a443', '#efdcb2', '#f0dfa4', '#e8d7b0', '#c99a52']);
+const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#d39a3c', '#efdcb2', '#f0dfa4', '#e8d7b0', '#c99a52']);
 
 /**
  * Cor, espessura e brilho do que está no recipiente. O texto do passo decide a base; quando a base
@@ -139,7 +139,8 @@ export function estadoInicial(texto: string, contexto = ''): { cor: string; espe
     [/caramelo|butterscotch|toffee/, '#b8681e', 0.35, 0.95],
     [/caf[eé]/, '#3b2416', 0.1, 0.85],
     // calda de açúcar é transparente, só levemente dourada; o caramelo é âmbar
-    [/calda|a[cç][uú]car|xarope/, '#d9a443', 0.0, 1],
+    // calda: dourada, lisa e espelhada como mel ralo (translúcida sobre a panela branca parecia leite)
+    [/calda|a[cç][uú]car|xarope/, '#d39a3c', 0.13, 1],
     [/maionese|aïoli|aioli/, '#f4e6a6', 0.6, 0.6],
     [/hollandaise|holandês|béarnaise|bearnaise/, '#f1d27a', 0.5, 0.6],
     [/manteiga/, '#f7e08c', 0.5, 0.6],

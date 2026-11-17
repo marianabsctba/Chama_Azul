@@ -28,6 +28,8 @@ function corPincelado(k: Ctx, H: number): CorFn {
   return (x, y, z) => {
     let c = mix(c2, c1, suave(H * 0.15, H * 0.85, y) * 0.9 + 0.2 * fbm(x * 40, y * 40, z * 40, s));
     c = mul(c, 1 + 0.07 * fbm(x * 120, y * 120, z * 120, s + 1));
+    // massa crua (antes do forno): clara e fosca, só com a farinha da bancada
+    if (k.tem('crua')) return farinha(c, x, y, z, s, 0.45);
     return mix(c, mul(c1, 0.75), suave(0.4, 0.9, fbm(x * 60, y * 60, z * 60, s + 2)) * 0.25);
   };
 }
@@ -398,7 +400,7 @@ function espiral(cx: number, cz: number, r0: number, b: number, voltas: number, 
 }
 
 /** As rosquinhas do livro, cada uma na sua forma, pinceladas com ovo e assadas. */
-const gRosca: Gerador = (k) => {
+export const gRosca: Gerador = (k) => {
   const { c1, c2, s } = k;
   const out: Parte[] = [];
   const v = k.v.v;
@@ -413,7 +415,7 @@ const gRosca: Gerador = (k) => {
       const esq = espiral(-cx, 0, r0, b, voltas, ang - voltas * TAU, 1, 40);
       const pts = [...esq.map(([x, z]) => V(x, rt, z)), ...esq.slice(0, -1).reverse().map(([x, z]) => V(-x, rt, z))];
       const H = rt * 2;
-      out.push(parte(tubo(pts, { raio: (t) => rt * (0.75 + 0.25 * Math.sin(PI * t) ** 0.2), achata: 1.12, cima: V(0, 1, 0), m: 12, n: 150, cor: corPincelado(k, H) }), 'brilhante', true));
+      out.push(parte(tubo(pts, { raio: (t) => rt * (0.75 + 0.25 * Math.sin(PI * t) ** 0.2), achata: 1.12, cima: V(0, 1, 0), m: 12, n: 150, cor: corPincelado(k, H) }), k.ac, true));
       return out;
     }
     case 'rosca-caracol': {
@@ -421,7 +423,7 @@ const gRosca: Gerador = (k) => {
       const esp = espiral(0, 0, r0, b, voltas, 0, 1, 60);
       const pts = esp.map(([x, z, t]) => V(x, rt * (1 + 0.55 * (1 - t)) - rt * 0.35 * suave(0.93, 1, t), z));
       const H = rt * 2.6;
-      out.push(parte(tubo(pts, { raio: (t) => rt * (0.7 + 0.3 * Math.sin(PI * Math.min(1, t * 1.05)) ** 0.25), achata: 1.1, cima: V(0, 1, 0), m: 12, n: 150, cor: corPincelado(k, H) }), 'brilhante', true));
+      out.push(parte(tubo(pts, { raio: (t) => rt * (0.7 + 0.3 * Math.sin(PI * Math.min(1, t * 1.05)) ** 0.25), achata: 1.1, cima: V(0, 1, 0), m: 12, n: 150, cor: corPincelado(k, H) }), k.ac, true));
       return out;
     }
     case 'rosca-tourelle': {
@@ -438,7 +440,7 @@ const gRosca: Gerador = (k) => {
           mod: (_t, a) => 1 + 0.025 * fbm(Math.cos(a) * 2, Math.sin(a) * 2, i, s),
         });
         g.translate(0, y, 0);
-        out.push(parte(g, 'brilhante', i === 0));
+        out.push(parte(g, k.ac, i === 0));
         y += h * 0.92;
       });
       return out;
@@ -452,7 +454,7 @@ const gRosca: Gerador = (k) => {
         n: 14, m: 40, l: 0.82, cor,
         mod: (_t, a) => 1 + 0.02 * fbm(Math.cos(a) * 2, Math.sin(a) * 2, 0, s),
       });
-      out.push(parte(baixo, 'brilhante', true));
+      out.push(parte(baixo, k.ac, true));
       const cima = torno({
         caminho: [[0, 0], [R * 0.85, 0], [R * 0.92, H * 0.25], [R * 0.85, H * 0.6], [R * 0.55, H * 0.8], [0, H * 0.85]],
         n: 14, m: 40, l: 0.6,
@@ -461,7 +463,7 @@ const gRosca: Gerador = (k) => {
         desloc: (p) => { if (p.z < 0) p.y *= 1 - 0.35 * suave(0, -R * 0.5, p.z); },
       });
       cima.translate(0, H * 0.45, R * 0.16);
-      out.push(parte(cima, 'brilhante', true));
+      out.push(parte(cima, k.ac, true));
       return out;
     }
     case 'rosca-colheita': {
@@ -478,7 +480,7 @@ const gRosca: Gerador = (k) => {
         cor: (x, y, z, t, a) => mix(cor(x, y, z, t, a), mul(k.ci, 0.95), talho(x, z) * suave(H * 0.6, H, y) * 0.85),
         perfil: (t) => { const e = Math.sin(PI * t) ** 0.85; return { ry: (H / 2) * e, rz: (W / 2) * e, cy: H / 2 }; },
         desloc: (p) => { if (p.y < H * 0.2) p.y = H * 0.2 - (H * 0.2 - p.y) * 0.3; p.y -= talho(p.x, p.z) * H * 0.22 * suave(H * 0.6, H, p.y); },
-      }), 'brilhante', true));
+      }), k.ac, true));
       return out;
     }
     default: {
@@ -489,7 +491,7 @@ const gRosca: Gerador = (k) => {
         pts.push(V((Math.sin(t) + 2 * Math.sin(2 * t)) * sc, rt * 1.05 - Math.sin(3 * t) * rt * 0.75, (Math.cos(t) - 2 * Math.cos(2 * t)) * sc));
       }
       const H = rt * 3.6;
-      out.push(parte(tubo(pts, { raio: (t) => rt * (0.65 + 0.35 * Math.sin(PI * t) ** 0.3), cima: V(0, 1, 0), achata: 1.1, m: 12, n: 160, cor: corPincelado(k, H) }), 'brilhante', true));
+      out.push(parte(tubo(pts, { raio: (t) => rt * (0.65 + 0.35 * Math.sin(PI * t) ** 0.3), cima: V(0, 1, 0), achata: 1.1, m: 12, n: 160, cor: corPincelado(k, H) }), k.ac, true));
       return out;
     }
   }

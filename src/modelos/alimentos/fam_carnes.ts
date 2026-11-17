@@ -2,7 +2,7 @@
 // cortes com osso, carne moída, miúdos e linguiças.
 import * as THREE from 'three';
 import {
-  corpo, torno, tubo, elipsoide, caixa, tf, parte, mix, mul, fbm, ruido, celula, suave, clamp, lerp, PI, TAU, V,
+  corpo, torno, rgb, tubo, elipsoide, caixa, tf, parte, mix, mul, fbm, ruido, celula, suave, clamp, lerp, PI, TAU, V,
   type CorFn, type Parte, type RGB,
 } from './nucleo';
 import { folha, caule, contornos, osso, disco, type Ctx, type Gerador } from './pecas';
@@ -833,20 +833,48 @@ export const gMiudo: Gerador = (k) => {
     desloc: (p) => { if (p.y < 0) p.y *= 0.2; },
   });
   switch (v) {
-    case 'figado': {
-      out.push(parte(lobo(-L / 2, L * 0.15, W * 0.28, H * 0.5, -W * 0.18, brilho), 'umido', true));
-      out.push(parte(lobo(-L * 0.25, L / 2, W * 0.3, H * 0.45, W * 0.18, brilho), 'umido', true));
-      if (k.tem('bile')) out.push(parte(tf(elipsoide(L * 0.06, H * 0.1, W * 0.05, () => c3, 4, 8), [-L * 0.05, H * 0.75, 0]), 'umido'));
-      return out;
-    }
-    case 'figado_grande': {
-      const cor: CorFn = (x, y, z) => mix(brilho(x, y, z, 0, 0), mul(c1, 0.75), (1 - suave(0, W * 0.02, Math.abs(z - x * 0.3 + W * 0.1))) * 0.7);
-      out.push(parte(corpo({
-        x0: -L / 2, x1: L / 2, n: 28, m: 28, exp: 2.2, cor,
-        perfil: (t) => { const e = Math.sqrt(Math.max(0, 1 - Math.abs(2 * t - 1) ** 2.2)); return { ry: (H / 2) * e * lerp(1, 0.5, t), rz: (W / 2) * e, cy: (H / 2) * e * lerp(1, 0.5, t) }; },
-        mod: (t, a) => 1 + 0.06 * fbm(t * 4, Math.cos(a), Math.sin(a), s),
-        desloc: (p) => { if (p.y < 0) p.y *= 0.2; },
-      }), 'umido', true));
+    case 'figado': case 'figado_grande': {
+      // lobos lisos e moles, achatados sobre a tábua: centro grosso e arredondado, borda fina,
+      // vermelho-amarronzados com reflexo úmido (não cúpulas vermelhas)
+      const grande = v === 'figado_grande';
+      const base = mix(c1, rgb('#3e1c16'), 0.6);
+      const corF: CorFn = (x, y, z) => {
+        let c = mix(base, mix(c2, rgb('#2e0e0e'), 0.3), suave(0.25, 0.85, fbm(x * 18 / L, y * 18 / L, z * 18 / L, s)) * 0.45);
+        c = mix(c, rgb('#62281e'), suave(0.3, 0.9, fbm(x * 55 / L, y * 55 / L, z * 55 / L, s + 3)) * 0.25);
+        // borda fina mais escura e arroxeada; fígado grande com a malha de lóbulos bem leve
+        c = mix(c, rgb('#3a1418'), (1 - suave(H * 0.03, H * 0.18, y)) * 0.35);
+        if (grande) c = mul(c, 1 - 0.07 * (1 - suave(0.04, 0.1, celula(x * 260, y * 260, z * 260, s))));
+        return mul(c, 1 + 0.04 * fbm(x * 400, y * 400, z * 400, s + 5));
+      };
+      /** Lobo em língua deitado ao longo de +X a partir da origem: seção em lente (bordas finas). */
+      const loboF = (len: number, larg: number, esp: number, pico: number, sd: number) => corpo({
+        x0: 0, x1: len, n: 24, m: 26, exp: 1.45, cor: corF,
+        perfil: (t) => {
+          // largo e redondo perto de `pico`, afinando até a ponta
+          const env = t < pico ? Math.sin((PI / 2) * (t / pico)) ** 0.55 : Math.cos((PI / 2) * ((t - pico) / (1 - pico))) ** 0.75;
+          const e = Math.max(0.02, env);
+          return { ry: esp * e ** 0.8, rz: (larg / 2) * e, cy: esp * e ** 0.8 * 0.85 };
+        },
+        mod: (t, a) => 1 + 0.05 * fbm(t * 3, Math.cos(a) * 1.5, Math.sin(a) * 1.5, s + sd),
+        desloc: (p) => { if (p.y < 0) p.y *= 0.12; },
+      });
+      if (!grande) {
+        // fígado de ave: dois lobos unidos por uma ponte, abertos em V
+        const A = loboF(L * 0.64, W * 0.78, H * 0.4, 0.36, 0);
+        tf(A, [-L * 0.32, 0, W * 0.04], [0, 0.32, 0]);
+        const B = loboF(L * 0.52, W * 0.62, H * 0.34, 0.4, 2);
+        tf(B, [-L * 0.3, 0, -W * 0.04], [0, -0.42, 0]);
+        out.push(parte(A, 'umido', true), parte(B, 'umido', true));
+        out.push(parte(tf(elipsoide(L * 0.08, H * 0.22, W * 0.1, corF, 6, 10), [-L * 0.28, H * 0.12, 0]), 'umido'));
+        if (k.tem('bile')) out.push(parte(tf(elipsoide(L * 0.035, H * 0.06, W * 0.03, () => c3, 4, 8), [-L * 0.12, H * 0.42, W * 0.12]), 'umido'));
+      } else {
+        // fígado inteiro de boi, vitela, cordeiro ou porco: lobo grande em cunha e um menor ao lado
+        const A = loboF(L * 0.95, W * 0.8, H * 0.5, 0.4, 0);
+        tf(A, [-L * 0.47, 0, W * 0.08], [0, 0.1, 0]);
+        const B = loboF(L * 0.6, W * 0.6, H * 0.36, 0.45, 2);
+        tf(B, [-L * 0.42, 0, -W * 0.12], [0, -0.55, 0]);
+        out.push(parte(A, 'umido', true), parte(B, 'umido', true));
+      }
       return out;
     }
     case 'rim': {

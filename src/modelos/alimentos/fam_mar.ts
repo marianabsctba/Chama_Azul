@@ -1514,6 +1514,7 @@ export const gCrustaceo: Gerador = (k) => {
 /* ------------------------------------------------------------------ */
 
 export const gBivalve: Gerador = (k) => {
+  if (k.v.v === 'ostra' || k.v.v === 'ameijoa' || k.v.v === 'vieira') return gConchaFechada(k);
   const { c1, c2, c3, ci, s } = k;
   const out: Parte[] = [];
   const v = k.v.v;
@@ -1624,6 +1625,131 @@ export const gBivalve: Gerador = (k) => {
     }
   }
   void ci;
+  return out;
+};
+
+/**
+ * Bivalve fechado, deitado sobre a valva de baixo, com a charneira (umbo) em -X:
+ * ostra em gota irregular, com lâminas escamosas e borda franzida; amêijoa estufada, com
+ * estrias concêntricas finas e o bico do umbo saliente; vieira em leque, com costelas radiais
+ * fortes, borda ondulada pelas costelas e as duas orelhas retas na charneira.
+ */
+const gConchaFechada: Gerador = (k) => {
+  const { c1, c2, c3, s } = k;
+  const v = k.v.v;
+  const ost = v === 'ostra', vie = v === 'vieira', ame = !ost && !vie;
+  const out: Parte[] = [];
+  const L = k.T, W = L * k.L, H = L * k.A * (v === 'ameijoa' ? 1.3 : 1), R = L / 2;
+  // valva de baixo funda; a de cima rasa na ostra e na vieira, igual na amêijoa
+  const hB = H * (ost ? 0.64 : vie ? 0.6 : 0.5), hT = H - hB;
+  const eB = ost ? 0.7 : vie ? 0.75 : 1, eT = ost ? 1.15 : vie ? 0.95 : 1;
+  const xU = -R * (ost ? 0.97 : vie ? 0.9 : 0.78);
+  const fCost = 38; // frequência das costelas da vieira (cerca de 16 no leque)
+  const dU = (x: number, z: number) => Math.hypot(x - xU, z) / L;
+  const phU = (x: number, z: number) => Math.atan2(z, x - xU);
+  const frac = (q: number) => q - Math.floor(q);
+  const lamelas = (x: number, z: number) => frac(dU(x, z) * 7.5 + 0.9 * fbm(x * 30 / L, 0, z * 30 / L, s));
+  const g = torno({
+    n: 40, m: 64,
+    caminho: (t) => {
+      if (t < 0.5) { const q = t / 0.5; return [R * Math.sin((q * PI) / 2), -hB * Math.cos((q * PI) / 2) ** eB]; }
+      const q = (t - 0.5) / 0.5;
+      return [R * Math.cos((q * PI) / 2), hT * Math.sin((q * PI) / 2) ** eT];
+    },
+    desloc: (p, t) => {
+      const lado = t > 0.5 ? 1 : -1;
+      const rr = Math.min(1, Math.hypot(p.x, p.z) / R);
+      const th = Math.atan2(p.z, p.x);
+      // contorno visto de cima
+      let fr = 1;
+      if (ost) fr = 1 + 0.09 * ruido(Math.cos(th) * 2.2, Math.sin(th) * 2.2, 0.4, s) + 0.035 * ruido(Math.cos(th) * 7, Math.sin(th) * 7, 1.3, s + 1);
+      else if (ame) fr = 1 + 0.05 * Math.cos(th) - 0.17 * Math.max(0, -Math.cos(th)) ** 1.5;
+      else fr = 1 - 0.12 * Math.max(0, -Math.cos(th)) ** 5;
+      p.x *= fr;
+      p.z *= fr;
+      const u = clamp((p.x / R + 1) / 2);
+      let lz = W / L;
+      if (ost) lz *= (0.3 + 0.75 * Math.sin(PI * clamp(0.06 + 0.72 * u)) ** 0.65) * (1 + 0.1 * ruido(u * 4, 0.7, 0.2, s + 2));
+      p.z *= lz;
+      const d = dU(p.x, p.z), ph = phU(p.x, p.z);
+      if (ost) {
+        // lâminas de crescimento em degraus, mais altas na valva funda; caroços e caneluras radiais
+        const f = lamelas(p.x, p.z);
+        p.y += lado * H * (lado < 0 ? 0.13 : 0.07) * f * f * suave(0.08, 0.35, d);
+        p.y += lado * H * 0.07 * fbm(p.x * 22 / L, p.y * 22 / L, p.z * 22 / L, s + 4);
+        if (lado < 0) p.y -= H * 0.08 * Math.abs(Math.sin(ph * 6 + 1.5 * fbm(p.x * 10 / L, 0, p.z * 10 / L, s + 5))) ** 2 * suave(0.3, 0.8, d);
+        // borda franzida: sobe e desce igual nas duas valvas, que continuam encaixadas
+        p.y += H * 0.16 * ruido(th * 2.5, 0.3, 0.9, s + 6) * suave(0.7, 1, rr);
+      } else if (ame) {
+        // bico do umbo saliente (as estrias concêntricas finas vão na cor: em relevo a malha não as resolve)
+        p.y += lado * H * 0.16 * (1 - suave(0, 0.22, d));
+      } else {
+        // costelas radiais e a borda ondulada que elas formam
+        const cost = 0.5 + 0.5 * Math.cos(ph * fCost);
+        p.y += lado * H * (lado > 0 ? 0.07 : 0.09) * cost ** 1.4 * suave(0.06, 0.35, d);
+        p.y += lado * H * 0.012 * Math.abs(Math.sin(d * PI * 30)) * suave(0.2, 0.5, d);
+        p.y += H * 0.07 * Math.cos(ph * fCost) * suave(0.78, 1, rr);
+        p.y += lado * H * 0.1 * (1 - suave(0, 0.18, d));
+      }
+    },
+    cor: (x, y, z, t) => {
+      const cima = t > 0.5;
+      const d = dU(x, z), ph = phU(x, z);
+      const n1 = fbm(x * 40 / L, y * 40 / L, z * 40 / L, s);
+      let c: RGB;
+      if (ost) {
+        const f = lamelas(x, z);
+        c = mix(mix(c1, c2, suave(-0.3, 0.5, n1)), rgb('#5e5646'), 0.6);
+        c = mix(c, rgb('#56604a'), suave(0.2, 0.7, fbm(x * 14 / L, y * 14 / L, z * 14 / L, s + 3)) * 0.35);
+        // riscas arroxeadas que partem do umbo
+        c = mix(c, rgb('#5a4658'), Math.abs(Math.sin(ph * 5 + n1 * 2)) ** 6 * 0.5 * suave(0.1, 0.4, d));
+        // beirada calcária branca de cada lâmina, sombra no degrau
+        c = mix(c, mul(c3, 0.92), suave(0.86, 0.98, f) * 0.45);
+        c = mix(c, mul(c, 0.6), (1 - suave(0.0, 0.12, f)) * 0.5);
+      } else if (ame) {
+        const base = mix(c1, rgb('#a09684'), 0.45);
+        c = mix(base, mul(base, 0.45), Math.abs(Math.sin(d * PI * 12)) ** 2 * 0.8);
+        c = mix(c, mul(base, 0.8), suave(0.3, 0.8, Math.sin(d * PI * 4) * 0.5 + 0.5) * 0.25);
+        // desenho em ziguezague marrom e o umbo mais escuro
+        const zig = Math.abs(Math.sin(ph * 9 + Math.abs(Math.sin(d * 22)) * 1.4)) ** 5;
+        c = mix(c, mul(c2, 0.8), zig * suave(0.2, 0.5, d) * 0.3);
+        c = mix(c, mul(c2, 0.75), (1 - suave(0.04, 0.16, d)) * 0.6);
+        c = mix(c, rgb('#7a6a7a'), suave(0.9, 1.05, d * 1.05) * 0.3);
+      } else {
+        const cost = 0.5 + 0.5 * Math.cos(ph * fCost);
+        const verm = mix(c1, rgb('#c0502e'), 0.55);
+        if (cima) {
+          // valva de cima rosada a vermelho-alaranjada, faixas de crescimento mais claras, crista clara
+          c = mix(verm, mul(verm, 0.7), (1 - cost) * 0.5);
+          c = mix(c, mix(c1, rgb('#f4e4cc'), 0.5), suave(0.55, 0.9, Math.sin(d * PI * 6 + n1) * 0.5 + 0.5) * 0.45);
+        } else {
+          c = mix(rgb('#f2e2cc'), mix(c1, rgb('#f4e4cc'), 0.4), 0.5 + 0.3 * n1);
+          c = mix(c, mul(c, 0.78), (1 - cost) * 0.45);
+        }
+        c = mix(c, mul(c2, 0.85), (1 - suave(0.03, 0.12, d)) * 0.4);
+      }
+      // junção das valvas: risco escuro
+      c = mix(c, mul(c, 0.35), 1 - suave(H * 0.008, H * 0.04, Math.abs(y)));
+      return mul(c, 1 + 0.05 * cintila(x, y, z, 1 / (L * 0.012), s));
+    },
+  });
+  g.translate(0, hB, 0);
+  out.push(parte(g, ost ? 'fosco' : k.ac, true));
+  if (vie) {
+    // orelhas (aurículas) retas dos dois lados da charneira, na altura da junção
+    const corOrelha: RGB = mix(c1, rgb('#c0502e'), 0.4);
+    for (const sg of [-1, 1]) {
+      out.push(parte(lamina({
+        ns: 6, nr: 5,
+        P: (sR, r) => V(xU - L * 0.015 + sR * L * 0.17 * (1 - 0.45 * r), hB + H * 0.04, sg * (W * 0.03 + W * 0.27 * r) * (1 - 0.3 * sR)),
+        N: () => V(0, 1, 0),
+        esp: (_s, r) => H * 0.16 * (1 - r * 0.5),
+        cor: (sR, r) => mul(corOrelha, 0.85 + 0.15 * Math.abs(Math.sin(sR * 14 + r * 3)) + 0.05 * ruido(sR * 9, r * 9, sg, s)),
+        fecharRaiz: true,
+      }), k.ac));
+    }
+  }
+  void c3;
   return out;
 };
 

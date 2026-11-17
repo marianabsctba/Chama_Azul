@@ -500,27 +500,60 @@ function manteigaTemperada(k: Ctx): Parte[] {
 }
 
 function gremolada(k: Ctx): Parte[] {
+  // gremolada solta, como polvilhada: alguns tufinhos baixos e irregulares de salsa picada miúda,
+  // flocos espalhados em volta, raspas finas de limão e alho picado (nada de disco ou montinho liso)
   const { s } = k;
   const out: Parte[] = [];
-  const R = k.T / 2, H = R * 0.45;
+  const R = k.T / 2, H = R * 0.14;
+  const salsa = rgb('#1e4214'), salsaClara = rgb('#386a22'), limao = rgb('#f0c818'), alho = rgb('#eee6cc');
   const cor: CorFn = (x, y, z) => {
-    let c = mix(rgb('#2e6a1e'), rgb('#6aa83a'), suave(0.2, 0.7, celula(x * 350, y * 350, z * 350, s)));
-    c = mix(c, rgb('#f2eedc'), 1 - suave(0.1, 0.18, celula(x * 260, y * 260, z * 260, s + 1)));
-    return mix(c, rgb('#f0c820'), 1 - suave(0.08, 0.15, celula(x * 240, y * 240, z * 240, s + 2)));
+    let c = mix(salsa, salsaClara, suave(0.25, 0.75, celula(x * 900, y * 900, z * 900, s)) * 0.7);
+    c = mul(c, 0.8 + 0.3 * ruido(x * 1500, y * 1500, z * 1500, s + 2));
+    c = mix(c, alho, (1 - suave(0.06, 0.12, celula(x * 700, y * 700, z * 700, s + 3))) * 0.9);
+    return mix(c, limao, (1 - suave(0.05, 0.1, celula(x * 600, y * 600, z * 600, s + 4))) * 0.9);
   };
-  out.push(parte(torno({
-    caminho: (u) => (u < 0.2 ? [R * (u / 0.2), 0] : [R * Math.cos(((u - 0.2) / 0.8) * PI / 2) ** 0.7, H * Math.sin(((u - 0.2) / 0.8) * PI / 2)]),
-    n: 20, m: 36, cor, mod: (t, a) => 1 + 0.12 * fbm(Math.cos(a) * 3, Math.sin(a) * 3, t * 3, s) + 0.06 * ruido(Math.cos(a) * 12, Math.sin(a) * 12, t * 12, s),
-  }), 'fosco', true));
-  // pedacinhos soltos por cima
-  for (let i = 0; i < 40; i++) {
-    const ang = k.r.f(0, TAU), rr = Math.sqrt(k.r.f(0, 1)) * R * 0.85;
-    const tipo = i % 5;
-    const c = tipo === 0 ? rgb('#f2eedc') : tipo === 1 ? rgb('#f0c020') : rgb('#3a7a24');
-    const tam = R * k.r.f(0.06, 0.11);
-    const g = elipsoide(tam, tam * 0.3, tam * 0.7, () => c, 3, 5);
-    tf(g, [Math.cos(ang) * rr, H * (1 - (rr / R) ** 2) * 0.95 + tam * 0.2, Math.sin(ang) * rr], [k.r.f(-0.4, 0.4), k.r.f(0, TAU), k.r.f(-0.4, 0.4)]);
-    out.push(parte(g, tipo === 1 ? 'brilhante' : 'acetinado'));
+  const tufos: [number, number, number][] = [];
+  for (let i = 0; i < 6; i++) {
+    const a = i * 2.4 + k.r.f(-0.4, 0.4), rr = i === 0 ? 0 : R * k.r.f(0.3, 0.6);
+    const r = R * k.r.f(0.14, 0.24);
+    tufos.push([Math.cos(a) * rr, Math.sin(a) * rr, r]);
+    const g = elipsoide(r, H, r * k.r.f(0.6, 0.9), cor, 7, 12, (t, aa) => 1 + 0.3 * ruido(Math.cos(aa) * 2, t * 4, i, s) + 0.12 * ruido(Math.cos(aa) * 7, t * 9, i + 0.5, s + 1));
+    out.push(parte(tf(g, [Math.cos(a) * rr, H, Math.sin(a) * rr], [0, k.r.f(0, TAU), 0]), 'fosco', true));
+  }
+  // altura aproximada no ponto (x, z): em cima de um tufo ou rente ao prato
+  const alto = (x: number, z: number) => {
+    let y = 0;
+    for (const [tx, tz, r] of tufos) { const d = Math.hypot(x - tx, z - tz) / r; if (d < 1) y = Math.max(y, H + H * Math.sqrt(1 - d * d) * 0.9); }
+    return y;
+  };
+  // flocos de salsa picada
+  for (let i = 0; i < 110; i++) {
+    const ang = k.r.f(0, TAU), rr = Math.sqrt(k.r.f(0, 1)) * R * 1.05;
+    const x = Math.cos(ang) * rr, z = Math.sin(ang) * rr;
+    const tam = R * k.r.f(0.05, 0.1);
+    const c = mix(salsa, salsaClara, k.r.f(0, 1));
+    const g = elipsoide(tam, tam * 0.18, tam * k.r.f(0.45, 0.8), (xx, yy, zz) => mul(c, 0.9 + 0.2 * ruido(xx * 3000, yy * 3000, zz * 3000, s)), 3, 5);
+    tf(g, [x, alto(x, z) + tam * 0.1, z], [k.r.f(-0.6, 0.6), k.r.f(0, TAU), k.r.f(-0.6, 0.6)]);
+    out.push(parte(g, 'acetinado'));
+  }
+  // raspas de limão: fios finos e curtos, amarelos
+  for (let i = 0; i < 18; i++) {
+    const ang = k.r.f(0, TAU), rr = Math.sqrt(k.r.f(0, 1)) * R * 0.95;
+    const x = Math.cos(ang) * rr, z = Math.sin(ang) * rr, y = alto(x, z) + R * 0.03;
+    const dir = k.r.f(0, TAU), len = R * k.r.f(0.15, 0.3);
+    const p0 = V(x, y, z), d = V(Math.cos(dir), 0, Math.sin(dir)).multiplyScalar(len);
+    out.push(parte(tubo([p0.clone().addScaledVector(d, -0.5), p0.clone().add(V(0, R * 0.04, 0)).addScaledVector(V(-d.z, 0, d.x), 0.15), p0.clone().addScaledVector(d, 0.5)], {
+      raio: R * 0.014, achata: 0.5, m: 4, n: 5, cor: (xx, yy, zz) => mul(limao, 0.92 + 0.12 * ruido(xx * 2000, yy * 2000, zz * 2000, s + i)),
+    }), 'brilhante'));
+  }
+  // alho picado: cubinhos claros
+  for (let i = 0; i < 24; i++) {
+    const ang = k.r.f(0, TAU), rr = Math.sqrt(k.r.f(0, 1)) * R * 0.9;
+    const x = Math.cos(ang) * rr, z = Math.sin(ang) * rr;
+    const tam = R * k.r.f(0.05, 0.08);
+    const g = caixa(tam, tam * 0.8, tam, (xx, yy, zz) => mul(alho, 0.93 + 0.1 * ruido(xx * 3000, yy * 3000, zz * 3000, s)), { n: 1, m: 8, aneisTampa: 1 });
+    tf(g, [x, alto(x, z) + tam * 0.3, z], [k.r.f(0, TAU), k.r.f(0, TAU), k.r.f(0, TAU)]);
+    out.push(parte(g, 'acetinado'));
   }
   return out;
 }

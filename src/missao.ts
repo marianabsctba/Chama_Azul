@@ -7,6 +7,7 @@ import { Mesa } from './gestos/mesa';
 import type { Jogador } from './motor/jogador';
 import type { Entrada } from './motor/entrada';
 import { audio } from './motor/audio';
+import { familiaDe } from './modelos/alimentos';
 import type { Peca } from './pecas/peca';
 import type { EstadoPeca } from './tipos';
 
@@ -116,6 +117,7 @@ export class Missao {
       if (this.estacaoAtual !== est) {
         this.mesa.soltarFerramenta();
         this.mesa.limparExtras();
+        this.mesa.limparAoLado();
         if (this.mesa.peca) this.mesa.peca.position.copy(estacao.superficie);
         if (this.mesa.recipiente && passo.gesto !== 'calor' && passo.gesto !== 'testar') this.mesa.removerRecipiente(true);
       }
@@ -142,12 +144,16 @@ export class Missao {
       if (passo.alimento && (passo.estadoPeca || passo.ponto)) {
         const peca = this.mesa.garantirPeca(passo.alimento, estacao.superficie.clone());
         if (passo.estadoPeca) prepararEstado(peca, passo.estadoPeca);
-        if (passo.ponto) peca.definirCozimento({ cru: 0, cozido: 1, dourado: 1.08, tostado: 1.2 }[passo.ponto]);
+        // massa de pão, rosca, bagel ou torta crua: o modelo pronto é dourado, mas aqui ainda é massa clara
+        if (passo.ponto === 'cru' && /pao|massa_bola|bolo|torta|biscoito|massa/.test(familiaDe(passo.alimento) ?? '')) peca.deixarCru();
+        else if (passo.ponto) peca.definirCozimento({ cru: 0, cozido: 1, dourado: 1.08, tostado: 1.2 }[passo.ponto]);
       }
       try {
         this.exec = FABRICAS[passo.gesto](ctx);
         const proprio = passo.gesto === 'montar' && (passo.variante === 'decorar' || passo.variante === 'rechear');
-        if (passo.adicionar?.length && !proprio) this.mesa.adicionarSobre(passo.adicionar, passo.gesto === 'calor' || passo.gesto === 'superficie' ? 'espalhado' : 'linha');
+        // no corte, os outros legumes do passo ficam inteiros ao lado da tábua e são cortados junto
+        if (passo.gesto === 'cortar' && passo.adicionar?.length) this.mesa.colocarAoLado(passo.adicionar, estacao.superficie.clone(), this.mesa.peca?.rotation.y ?? 0);
+        else if (passo.adicionar?.length && !proprio) this.mesa.adicionarSobre(passo.adicionar, passo.gesto === 'calor' || passo.gesto === 'superficie' ? 'espalhado' : 'linha');
         // técnica que começa com a peça já assada ou cozida (trinchar, fatiar o assado): ela entra no ponto
         const est0 = this.tecnica.prato?.estado;
         const semFogo = !this.tecnica.passos.some((p) => p.gesto === 'calor') && /trinch|fatiar|desfiar|testar|cortar costelas|cozid|assad|servir|enfeitar|decorar|glacear|desenformar|apertar|al dente/i.test(this.tecnica.nome);
@@ -204,6 +210,8 @@ export class Missao {
     const passo = this.tecnica.passos[this.indice];
     const extras = passo?.gesto === 'verter' ? this.mesa.extras.filter((o) => o instanceof THREE.Group) : [];
     for (const o of [this.mesa.recipiente, ...extras]) if (o) caixa.expandByObject(o);
+    // os legumes que vão ser cortados junto também entram no quadro
+    for (const o of this.mesa.aoLado) caixa.expandByObject(o);
     // a peça pelo próprio tamanho (as guias da faca e as marcas presas a ela não contam)
     const pc = this.mesa.peca;
     if (pc) {
@@ -248,6 +256,18 @@ export class Missao {
       this.exec.comentario = '';
     }
     if (this.exec.concluido) {
+      // os legumes ao lado saem cortados do mesmo jeito que a peça principal
+      const passoAtual = this.tecnica.passos[this.indice];
+      if (passoAtual?.gesto === 'cortar' && this.mesa.aoLado.length) {
+        const v = passoAtual.variante;
+        const estado: EstadoPeca = v === 'tiras' ? 'tiras' : v === 'cubos' ? 'cubos' : v === 'picar' ? 'picado' : v === 'fatiar' || v === 'rodelas' ? 'fatias' : 'metades';
+        for (const p of this.mesa.aoLado) {
+          prepararEstado(p, estado);
+          // pedaços bem separados, para ver de longe que a cenoura também foi cortada
+          p.espalhar(Math.max(p.comprimento, p.largura) * 0.07);
+          for (let k = 0; k < 30; k++) p.atualizar(1 / 30);
+        }
+      }
       const r = { nota: this.exec.nota, comentario: this.exec.comentario, pulado: false };
       this.resultados.push(r);
       audio.acerto(r.nota >= 0.85 ? 1 : 0.5);
