@@ -60,7 +60,8 @@ export class Conteudo extends THREE.Group {
       const borda = 1 - r * r;
       let y = e.nivel;
       // ondas de fervura
-      y += e.ondas * amort * 0.004 * Math.sin(this.t * 9 + x * 80) * Math.cos(this.t * 7 + z * 70) * borda;
+      // no líquido ralo (água, caldo, calda) a fervura é um tremor fino: ondas grandes viravam calombos de mingau
+      y += e.ondas * amort * (e.espessura < 0.12 ? 0.0012 : 0.004) * Math.sin(this.t * 9 + x * 80) * Math.cos(this.t * 7 + z * 70) * borda;
       // picos (espuma firme): relevo pontudo
       const n = ruido(x * 40, z * 40);
       y += e.picos * 0.018 * Math.max(0, n) ** 2 * borda + e.picos * 0.01 * borda;

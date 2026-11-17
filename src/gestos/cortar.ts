@@ -25,6 +25,11 @@ function espacamento(ctx: ContextoGesto, padrao: number) {
   return padrao;
 }
 
+/** No gesto de faca, rolo, pilão, colher ou batedor não cortam: vai a faca (o rolo em pé virava lâmina). */
+function lamina(u: string): string {
+  return /rolo|pil[aã]o|colher|batedor|esp[aá]tula|pano|panela|tigela/i.test(u ?? '') && !/faca|cutelo|tesoura|cortador|carretilha|mandolina|boleador|descascador/i.test(u ?? '') ? 'faca' : u;
+}
+
 export function gestoCortar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud } = ctx;
   const chave = passo.alimento ?? passo.alvo;
@@ -75,7 +80,7 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
   // começa pela ponta direita, como quem fatia de verdade
   for (let i = 1; i <= nx; i++) criarGuia('x', L / 2 - L * 0.08 - passoVisual * i + passoVisual * 0.5);
 
-  const faca = mesa.pegarFerramenta(passo.utensilio, 'cortar');
+  const faca = mesa.pegarFerramenta(lamina(passo.utensilio), 'cortar');
   const notas: number[] = [];
   let descida = 0;
   const alturaPlano = estacao.superficie.y + H * escala * 0.6;
@@ -237,7 +242,7 @@ function gestoTracar(ctx: ContextoGesto): Execucao {
     mesa.adicionarExtra(m);
     return m;
   });
-  const faca = mesa.pegarFerramenta(passo.utensilio, 'cortar');
+  const faca = mesa.pegarFerramenta(lamina(passo.utensilio), 'cortar');
   let indice = 0;
   let desvios: number[] = [];
   const tol = Math.max(0.015, L * escala * 0.06);
@@ -306,7 +311,7 @@ function cortarDeitado(ctx: ContextoGesto): Execucao {
     peca.add(m);
     guias.push({ eixo: 'x', pos: y, feito: false, malha: m });
   }
-  const faca = mesa.pegarFerramenta(passo.utensilio, 'cortar');
+  const faca = mesa.pegarFerramenta(lamina(passo.utensilio), 'cortar');
   const notas: number[] = [];
   let golpe: { h: number; t: number } | null = null;
   const proxima = () => guias.find((g) => !g.feito);
