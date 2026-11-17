@@ -50,6 +50,8 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   respeitarSabor(alvo, inicial.cor, texto);
+  // mexer calda, caldo ou água não engrossa: o líquido continua translúcido
+  if (inicial.espessura < 0.12 && !/engross|emuls|neve|picos|chantilly|maionese|creme/i.test(texto)) alvo.espessura = inicial.espessura;
   const nivel0 = conteudo.estado.nivel;
   const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|amassador|martel|socador|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
   const centro = mesa.centro.clone();
@@ -291,6 +293,8 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   const alvo = alvoDoConteudo(texto);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   respeitarSabor(alvo, inicial.cor, texto);
+  // mexer calda, caldo ou água não engrossa: o líquido continua translúcido
+  if (inicial.espessura < 0.12 && !/engross|emuls|neve|picos|chantilly|maionese|creme/i.test(texto)) alvo.espessura = inicial.espessura;
   const nivel0 = conteudo.estado.nivel;
   const base = aparelho.position.clone();
   // velocidades de 0 a 10; bater claras e emulsões pede velocidade alta, misturar pede baixa

@@ -251,7 +251,7 @@ export class Mesa {
     if (!g) return null;
     // folhas (papel-manteiga, alumínio, filme, papel-toalha) não são ferramenta de mão: na mão elas
     // cobririam a câmera; o gesto usa a folha como capa ou forro
-    if (/^folha_|^papel_toalha$|^filme/.test(g.name)) return null;
+    if (/^folha_(manteiga|aluminio|bananeira)$|^papel_toalha$|^filme/.test(g.name)) return null;
     g.traverse((o) => {
       if (o instanceof THREE.Mesh) o.castShadow = true;
     });

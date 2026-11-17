@@ -74,7 +74,9 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
       ? passo.utensilio
       : p.meio === 'seco' || p.meio === 'oleo' && !liquido ? 'frigideira' : 'panela';
   const onde = estacao.superficie.clone();
-  const rec = mesa.garantirRecipiente(recipienteTexto, onde, noForno ? 'assadeira' : 'panela');
+  // chapa sulcada, bifeteira, grelha canelada: é a chapa de ferro, não a grade de arame
+  const naChapa = !noForno && /chapa|bifeteira|canelad|sulcad|riscad/i.test(`${passo.utensilio} ${passo.alvo} ${passo.parametro} ${passo.recipiente ?? ''}`);
+  const rec = mesa.garantirRecipiente(naChapa ? 'chapa' : recipienteTexto, onde, noForno ? 'assadeira' : 'panela');
   void rec;
   let conteudo = null as ReturnType<typeof mesa.garantirConteudo> | null;
   // no micro-ondas e na churrasqueira a peça vai sozinha, sem banho de água ou óleo

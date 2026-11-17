@@ -81,7 +81,8 @@ export class Conteudo extends THREE.Group {
       this.material.depthWrite = !ralo;
       this.material.needsUpdate = true;
     }
-    this.material.opacity = ralo ? 0.5 + e.espessura * 2.5 : 1;
+    // caldo, dashi e consomê translúcidos de verdade: dá para ver o fundo e o que boia
+    this.material.opacity = ralo ? 0.38 + e.espessura * 2.5 : 1;
   }
 
   /** Interpola o estado para outro (t de 0 a 1). */

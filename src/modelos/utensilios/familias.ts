@@ -1983,6 +1983,14 @@ const papelToalha: Gerador = () => {
   return m.finalizar('papel_toalha', [0, 0.295, 0], [0.09, 0.03, 0.03]);
 };
 
+/** Folha de papel-toalha dobrada, para secar com a mão. */
+const folhaPapelToalha: Gerador = () => {
+  const m = new Montador();
+  m.add('madeira', caixa(0.09, 0.005, 0.07), { p: [0, 0.0025, 0], cor: 0xfafaf6 });
+  m.add('madeira', caixa(0.088, 0.0012, 0.068), { p: [0, 0.0058, 0.001], r: [0, 0.04, 0], cor: 0xf3f2ec });
+  return m.finalizar('folha_papel_toalha', [0, 0.006, 0], [0, 0, 0]);
+};
+
 const pano: Gerador = () => {
   const m = new Montador();
   const w = 0.24;
@@ -2525,6 +2533,7 @@ export const GERADORES: Record<string, Gerador> = {
   folha_aluminio: folhaAluminio,
   filme,
   papel_toalha: papelToalha,
+  folha_papel_toalha: folhaPapelToalha,
   pano,
   folha_bananeira: folhaBananeira,
   saco_plastico: sacoPlastico,

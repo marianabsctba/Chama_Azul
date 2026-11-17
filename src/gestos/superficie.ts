@@ -76,7 +76,7 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   if (sujeira) peca.salpicar(sujeira, 0.12, ctx.tecnica.id.length);
   const padrao = v === 'remover' ? 'remover' : v === 'limpar' ? 'limpar' : 'cobrir';
   // na água e com os dedos não há utensílio na mão; sem utensílio no livro e com faca no texto, a faca
-  const ferramenta = modo === 'agua' || modo === 'mao' ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(modo === 'lamina' && !/faca|faquinha|cutelo|descascador|tesoura/i.test(passo.utensilio) ? 'faca' : modo === 'pano' ? 'pano' : passo.utensilio, padrao);
+  const ferramenta = modo === 'agua' || modo === 'mao' ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(modo === 'lamina' && !/faca|faquinha|cutelo|descascador|tesoura/i.test(passo.utensilio) ? 'faca' : modo === 'pano' ? (/papel/i.test(passo.utensilio) ? 'folha de papel-toalha' : 'pano') : passo.utensilio, padrao);
   const cor = v === 'remover' ? peca.corInterna : corCobrir;
   const corParticula = modo === 'agua' ? '#bfe4ff' : modo && sujeira ? sujeira : v === 'remover' ? '#c9b48a' : corCobrir;
   const lascas = new Particulas(corParticula, modo === 'agua' ? 200 : 120, v === 'remover' || modo === 'lamina' ? 'lasca' : 'esfera');
@@ -93,7 +93,7 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
     agua: 'Passe a peça sob a água, por todos os lados, até ficar limpa.',
     escova: 'Esfregue com a escova, por todos os lados, até sair a sujeira.',
     mao: /aquecer|amolecer/.test(passo.acao) ? `Esfregue a palma da mão sobre ${passo.alvo} até amolecer por igual.` : `Com os dedos, tire ${passo.alvo}, por toda a peça.`,
-    pano: /secar/.test(passo.acao) ? 'Passe o pano por toda a peça até secar.' : 'Passe por toda a peça até ficar limpa.',
+    pano: /secar/.test(passo.acao) ? (/papel/i.test(passo.utensilio) ? 'Passe o papel-toalha por toda a peça até secar.' : 'Passe o pano por toda a peça até secar.') : 'Passe por toda a peça até ficar limpa.',
     utensilio: `Passe o utensílio por toda a peça, tirando ${passo.alvo}.`,
   };
   const verbo = modo ? verboLimpar[modo] : { remover: 'Passe o utensílio sobre a peça, em faixas, até tirar tudo.', cobrir: 'Passe por toda a superfície de forma uniforme.' }[v as 'remover'] ?? 'Passe por toda a superfície.';

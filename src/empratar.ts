@@ -386,7 +386,12 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // modelos que já são o preparo pronto (ovo frito, crêpe, omelete) não levam tinta de cozimento por cima
   const jaPronto = mesa.pecaChave in NOVOS || /^(ovo-|ovos-mexidos|omelete|frittata|crepe|panqueca-americana|pudim-yorkshire)/.test(mesa.pecaChave);
   const foiAoFogo = !jaPronto && tecnica.passos.some((p) => p.gesto === 'calor' && (!p.alimento || p.alimento === mesa.pecaChave || p.adicionar?.includes(mesa.pecaChave)));
-  if (foiAoFogo && mesa.peca && mesa.peca.cozimento < 1) mesa.peca.definirCozimento(1);
+  if (foiAoFogo && mesa.peca) {
+    // assado, frito, grelhado ou dourado chega com crosta; cozido em água ou vapor só cozido
+    const crosta = tecnica.passos.some((p) => p.gesto === 'calor' && (p.variante === 'forno' || /assar|fritar|grelhar|dourar|selar|saltear|tostar|gratinar/.test(p.acao)) && (!p.alimento || p.alimento === mesa.pecaChave));
+    const alvo = crosta ? 1.08 : 1;
+    if (mesa.peca.cozimento < alvo) mesa.peca.definirCozimento(alvo);
+  }
   const ficha = tecnica.prato ?? {};
   // o ponto que o livro dá ao resultado manda sobre o que o jogo calculou
   // vale também para os modelos dos lotes novos: um filé cru do lote, frito na técnica, chega dourado

@@ -225,6 +225,7 @@ const REGRAS: Regra[] = [
 
   // folhas, panos e miudezas
   [/^papel aluminio/, 'folha_aluminio'],
+  [/^folha de papel toalha/, 'folha_papel_toalha'],
   [/^papel toalha/, 'papel_toalha'],
   [/^papel/, 'folha_manteiga'],
   [/^filme/, 'filme'],

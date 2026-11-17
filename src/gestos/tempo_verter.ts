@@ -45,7 +45,7 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
     mesa.garantirRecipiente(ctx.vaso ?? 'tigela', estacao.superficie.clone(), 'tigela');
     mesa.garantirConteudo(passo.meio ?? textoConteudo(passo), 0.45);
   }
-  cobrirComPano(ctx, peca);
+  const cobertura = cobrirComPano(ctx, peca);
   const escala0 = peca?.scale.clone();
   const fermenta = passo.variante === 'fermentar' || /dobr|cres/.test(passo.parametro);
   const frio = passo.variante === 'frio';
@@ -100,6 +100,12 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
     descartar() {
       relogio.escala = 1;
       hud.botao(null);
+      // o pano e a tampa saem quando o descanso acaba: o passo seguinte trabalha a massa descoberta
+      if (cobertura) {
+        cobertura.removeFromParent();
+        const i = mesa.extras.indexOf(cobertura);
+        if (i >= 0) mesa.extras.splice(i, 1);
+      }
     },
   };
   return exec;
@@ -113,16 +119,17 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
  * "Coberta com pano úmido", "tampada", "coberta com filme": o pano xadrez cai sobre a tigela ou a
  * massa, puxado de lado para ainda se ver o que descansa embaixo; a panela ganha a tampa.
  */
-function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa']['garantirPeca']> | null) {
+function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa']['garantirPeca']> | null): THREE.Object3D | null {
   const { passo, mesa } = ctx;
   const texto = `${passo.acao} ${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
   // papel-toalha é papel, não pano
   const pano = /\bpano|toalha|guardanapo/.test(texto.replace(/papel[- ]toalha/g, ''));
   const filme = /filme|pl[aá]stico/.test(texto);
+  const aluminio = /alum[ií]nio/.test(texto) && !/assadeira|f[oô]rma/.test(passo.utensilio ?? '');
   const tampa = /tampad|tampa\b|com a tampa/.test(texto) && !pano && !filme;
-  if (!pano && !filme && !tampa) return;
+  if (!pano && !filme && !tampa && !aluminio) return null;
   const alvo = mesa.recipiente ?? peca;
-  if (!alvo) return;
+  if (!alvo) return null;
   alvo.updateMatrixWorld(true);
   const caixa = new THREE.Box3().setFromObject(alvo);
   const tam = caixa.getSize(new THREE.Vector3());
@@ -133,8 +140,21 @@ function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa'
     if (t) {
       t.position.set(centro.x, caixa.max.y, centro.z);
       mesa.adicionarExtra(t);
-      return;
+      return t;
     }
+  }
+  if (aluminio && !pano) {
+    // papel-alumínio em tenda sobre a peça que descansa: amassado, prateado
+    const geo = new THREE.SphereGeometry(r * 1.1, 24, 10, 0, Math.PI * 2, 0, Math.PI / 2);
+    const p = geo.getAttribute('position');
+    for (let i = 0; i < p.count; i++) p.setY(i, p.getY(i) * 0.45 + Math.sin(p.getX(i) * 300) * 0.0015);
+    geo.computeVertexNormals();
+    const folha = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: '#d5dbe0', roughness: 0.35, metalness: 0.75, side: THREE.DoubleSide }));
+    // meio puxada de lado, para ainda se ver a peça embaixo
+    folha.position.set(centro.x + r * 0.5, caixa.min.y, centro.z);
+    folha.scale.set(1, Math.max(1, (caixa.max.y - caixa.min.y) / (r * 1.1 * 0.45)) * 1.1, 1);
+    mesa.adicionarExtra(folha);
+    return folha;
   }
   const cor = tampa ? '#c3ccd4' : filme ? '#e8f2f8' : '#f4efe6';
   const mat = new THREE.MeshStandardMaterial({ color: cor, roughness: tampa ? 0.3 : filme ? 0.15 : 0.95, metalness: tampa ? 0.7 : 0, transparent: filme, opacity: filme ? 0.45 : 1, side: THREE.DoubleSide });
@@ -163,11 +183,13 @@ function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa'
     // puxado para um lado: metade coberta, metade à vista
     m.position.set(centro.x + r * 0.55, caixa.max.y + 0.003, centro.z);
     mesa.adicionarExtra(m);
+    return m;
   } else {
     const m = new THREE.Mesh(new THREE.CircleGeometry(r * 1.05, 40), mat);
     m.rotation.x = -Math.PI / 2;
     m.position.set(centro.x, caixa.max.y + 0.002, centro.z);
     mesa.adicionarExtra(m);
+    return m;
   }
 }
 
