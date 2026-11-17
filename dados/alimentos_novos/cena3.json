@@ -45,7 +45,7 @@
   { "id": "c3-massa-disco", "nome": "Massa fresca aberta em disco", "forma": "folha redonda e fina de massa de ovos aberta no rolo, borda irregular mais clara e farinha por cima" },
   { "id": "c3-massa-folha", "nome": "Massa fresca laminada em folha", "forma": "folha longa e lisa de massa de ovos de 15 x 50 cm saída da máquina, levemente ondulada" },
   { "id": "c3-ninho-tagliatelle", "nome": "Tagliatelle em ninho", "forma": "fitas de tagliatelle enroladas em ninho frouxo, oco no meio, enfarinhadas" },
-  { "id": "c3-nhoque-cilindro", "nome": "Massa de nhoque em cilindro", "forma": "dois rolos compridos de massa de nhoque de 2 cm de diâmetro, creme e enfarinhados" },
+  { "id": "c3-nhoque-cilindro", "nome": "Massa enrolada em cilindro", "forma": "uma tira única de massa crua, roliça e lisa, de espessura uniforme e pontas arredondadas, com leve pó de farinha" },
   { "id": "c3-espaguete-cozido", "nome": "Espaguete cozido", "forma": "monte de fios de espaguete cozidos e emaranhados, brilhantes de manteiga" },
   { "id": "c3-massa-chinesa-disco", "nome": "Massa chinesa aberta em disco", "forma": "disco branco de 10 cm de massa de farinha e água, mais grosso no meio e de bordas finas" },
   { "id": "c3-folha-rolinho-quadrada", "nome": "Folha de rolinho quadrada", "forma": "folha quadrada, fina e clara de massa de rolinho primavera, posta em losango" },

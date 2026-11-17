@@ -55,6 +55,8 @@ const REGRAS: Regra[] = [
   // o normalizar põe no singular: "micro-ondas" vira "micro onda"
   [/^(micro.?ondas?|forno de micro)/, 'microondas'],
   [/^(churrasqueira|brasa|carv[aã]o|grelha de carv)/, 'churrasqueira'],
+  // "lado chato do cutelo", "lâmina deitada do cutelo": é o cutelo
+  [/(^| )cutelo( |$)/, 'cutelo'],
   // sem modelo: corpo, aparelhos fixos e ingredientes (o jogo trata à parte)
   [/^(mao|dedo|polegar|palma|punho|olho|boca)\b/, null],
   [/^(forno|fogao|fogo|chama|geladeira|congelador|freezer|micro ?onda|microonda|pia|torneira|bancada|superficie|gratinador|dourador)\b/, null],

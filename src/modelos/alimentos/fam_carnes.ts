@@ -405,6 +405,122 @@ export const gCarne: Gerador = (k) => {
 };
 
 /* ------------------------------------------------------------------ */
+/* peças com costelas: olho de carne deitado e as costelas em arco      */
+/* ------------------------------------------------------------------ */
+
+export interface OpcCostelas {
+  /** Comprimento (X), altura e largura do olho de carne. */
+  L: number; H: number; W: number;
+  /** Número de costelas. */
+  n: number;
+  /** Quanto as costelas avançam à frente do olho (Z) e quanto a ponta sobe acima do topo dele. */
+  aba: number; sobe: number;
+  /** Fração final do osso limpa, sem carne (carré limpo ~0.5; costela de açougue ~0.15). */
+  limpo: number;
+  /** Meia largura do osso (em X) e espessura da aba de carne entre os ossos. */
+  rOsso: number; esp: number;
+  fora: CorFn; corte: CorFn; aba2: CorFn; osso: CorFn;
+  s: number;
+}
+
+/**
+ * Peça com costelas (costela bovina, lombo de porco, carré e lombo de cordeiro): o olho de carne
+ * deitado na frente e, saindo dele por trás, a parede de costelas que sobe e se curva para trás:
+ * arcos curtos e paralelos com a carne entre eles e a ponta do osso aparente. Só o olho toca a tábua.
+ */
+export function pecaCostelas(o: OpcCostelas): { carne: THREE.BufferGeometry[]; ossos: THREE.BufferGeometry[] } {
+  const { L, H, W, n } = o;
+  const zc = o.aba * 0.4;
+  const carne: THREE.BufferGeometry[] = [];
+  const ponta = (t: number) => 1 - 0.07 * (1 - suave(0, 0.06, Math.min(t, 1 - t)));
+  carne.push(corpo({
+    x0: -L / 2, x1: L / 2, n: 16, m: 26, exp: 2.5, tampa: true, aneisTampa: 5, cor: o.fora, corTampa: o.corte,
+    perfil: (t) => ({ ry: (H / 2) * ponta(t), rz: (W / 2) * ponta(t), cy: H / 2, cz: zc }),
+    mod: (t, a) => 1 + 0.035 * fbm(t * 5, Math.cos(a) * 1.4, Math.sin(a) * 1.4, o.s),
+    desloc: (p) => { const lim = H * 0.22; if (p.y < lim) p.y = lim - (lim - p.y) * 0.3; },
+  }));
+  // arco das costelas no plano YZ (Bézier quadrática): sai de dentro do olho pelo lado de trás,
+  // sobe rente a ele e se curva para trás; de frente se vê a parede de ossos paralelos
+  const P0: [number, number] = [H * 0.35, zc - W * 0.18];
+  const P1: [number, number] = [H * 0.95 + o.sobe * 0.75, zc - W * 0.36];
+  const P2: [number, number] = [H + o.sobe, zc - W * 0.36 - o.aba];
+  const B = (s: number): [number, number] => {
+    const u = 1 - s;
+    return [u * u * P0[0] + 2 * u * s * P1[0] + s * s * P2[0], u * u * P0[1] + 2 * u * s * P1[1] + s * s * P2[1]];
+  };
+  const T = (s: number): [number, number] => {
+    const ty = 2 * (1 - s) * (P1[0] - P0[0]) + 2 * s * (P2[0] - P1[0]);
+    const tz = 2 * (1 - s) * (P1[1] - P0[1]) + 2 * s * (P2[1] - P1[1]);
+    const l = Math.hypot(ty, tz) || 1;
+    return [ty / l, tz / l];
+  };
+  const xs = Array.from({ length: n }, (_, i) => lerp(-L / 2, L / 2, (i + 0.5) / n));
+  const vale = (x: number) => {
+    const q = ((x + L / 2) / L) * n - 0.5;
+    return Math.abs(q - Math.round(q));
+  };
+  // aba de carne entre os ossos: placa fina que segue o arco, mais fina entre um osso e outro
+  const sMax = 1 - o.limpo;
+  carne.push(corpo({
+    x0: -L / 2 + o.rOsso * 0.2, x1: L / 2 - o.rOsso * 0.2, n: Math.max(14, n * 5), m: 18, exp: 2.4, tampa: true, linear: true, cor: o.aba2, corTampa: o.aba2,
+    perfil: () => ({ ry: o.esp / 2, rz: 0.5, cy: 0, cz: 0 }),
+    desloc: (p) => {
+      const s = clamp(p.z + 0.5, 0, 1) * sMax;
+      const [by, bz] = B(s);
+      const [ty, tz] = T(s);
+      const off = p.y * (1 - 0.35 * suave(0.12, 0.5, vale(p.x))) * lerp(1.15, 0.7, s / Math.max(0.01, sMax));
+      p.y = by + tz * off;
+      p.z = bz - ty * off;
+    },
+  }));
+  const ossos: THREE.BufferGeometry[] = [];
+  for (const x of xs) {
+    const pts: THREE.Vector3[] = [];
+    for (let j = 0; j <= 6; j++) {
+      const [by, bz] = B(lerp(0.06, 1, j / 6));
+      pts.push(V(x, by, bz));
+    }
+    ossos.push(tubo(pts, {
+      raio: (t) => o.rOsso * (1 + 0.2 * suave(0.88, 1, t)), achata: clamp((o.esp * 0.62) / o.rOsso, 0.45, 1.6), cima: V(1, 0, 0), m: 10, n: 16, cor: o.osso,
+    }));
+  }
+  return { carne, ossos };
+}
+
+/**
+ * Placa de costelinhas (costela de porco em ripa): carne chata com os ossos paralelos atravessando
+ * a largura, marcados em relevo no topo e com as pontas aparecendo nas duas bordas.
+ */
+export function placaCostelas(L: number, W: number, esp: number, n: number, carne: CorFn, osso: CorFn, s: number): THREE.BufferGeometry[] {
+  const xs = Array.from({ length: n }, (_, i) => lerp(-L / 2, L / 2, (i + 0.5) / n));
+  const vale = (x: number) => {
+    const q = ((x + L / 2) / L) * n - 0.5;
+    return Math.abs(q - Math.round(q));
+  };
+  const out: THREE.BufferGeometry[] = [];
+  // no lado dos ossos a película é fina: os ossos aparecem como listras claras sob ela
+  const listrada: CorFn = (x, y, z, t, a) => mix(carne(x, y, z, t, a), mix(osso(x, y, z, t, a), carne(x, y, z, t, a), 0.35), (1 - suave(0.1, 0.2, vale(x))) * suave(esp * 0.6, esp * 0.9, y) * suave(W * 0.5, W * 0.3, Math.abs(z)));
+  out.push(corpo({
+    x0: -L / 2, x1: L / 2, n: Math.max(16, n * 5), m: 22, exp: 3.2, tampa: true, linear: true, cor: listrada, corTampa: carne,
+    // a ripa afina numa das bordas (a ponta da costela) e engrossa na outra (o lombo)
+    perfil: () => ({ ry: esp / 2, rz: W / 2, cy: esp / 2 }),
+    mod: (t, a) => 1 + 0.05 * fbm(t * 8, Math.cos(a), Math.sin(a), s),
+    desloc: (p) => {
+      const zz = p.z / (W / 2);
+      const fino = lerp(1.15, 0.75, (zz + 1) / 2);
+      if (p.y > esp / 2) p.y = esp / 2 + (p.y - esp / 2) * fino * (1 - 0.4 * suave(0.12, 0.5, vale(p.x)));
+      else p.y = esp / 2 - (esp / 2 - p.y) * 0.6;
+    },
+  }));
+  for (const x of xs) {
+    // osso chato e largo, quase todo dentro da carne: só o dorso aparece em relevo e a ponta sai na borda fina
+    const pts = [V(x, esp * 0.5, -W / 2 + esp * 0.4), V(x + esp * 0.1, esp * 0.82, -W * 0.2), V(x + esp * 0.15, esp * 0.8, W * 0.2), V(x + esp * 0.2, esp * 0.5, W / 2 + esp * 0.45)];
+    out.push(tubo(pts, { raio: (t) => esp * 0.5 * lerp(1.1, 0.8, t), achata: 0.5, cima: V(1, 0, 0), m: 8, n: 12, cor: osso }));
+  }
+  return out;
+}
+
+/* ------------------------------------------------------------------ */
 /* cortes com osso                                                      */
 /* ------------------------------------------------------------------ */
 
@@ -416,31 +532,37 @@ export const gCarneOsso: Gerador = (k) => {
   const cor = corCarne(k, { topo: H, L });
   const n = k.v.n ?? 6;
   const corOsso: RGB = OSSO;
-  const blocoCarne = (x0: number, x1: number, ry: number, rz: number, cy: number, cz = 0, ex = 3.5) => corpo({
-    x0, x1, n: 32, m: 44, tampa: true, cor, corTampa: corCarne({ ...k, tem: (w: string) => k.tem(w) && w !== 'pele' } as Ctx, { topo: H, L }),
+  const blocoCarne = (x0: number, x1: number, ry: number, rz: number, cy: number, cz = 0, ex = 3.5, corF: CorFn = cor) => corpo({
+    x0, x1, n: 32, m: 44, tampa: true, cor: corF, corTampa: corCarne({ ...k, tem: (w: string) => k.tem(w) && w !== 'pele' } as Ctx, { topo: H, L }),
     perfil: (t) => { const ch = 1 - 0.08 * (1 - suave(0, 0.06, Math.min(t, 1 - t))); return { ry: ry * ch, rz: rz * ch, cy, cz }; },
     mod: (t, a) => 1 + 0.04 * fbm(t * 5, Math.cos(a), Math.sin(a), s),
     desloc: (p, t, a) => { const ch = 1 - 0.08 * (1 - suave(0, 0.06, Math.min(t, 1 - t))); quadrar(p, a, cy, ry * ch, rz * ch, cz, ex); },
   });
   switch (v) {
     case 'costela': {
-      // bloco de carne sobre uma fileira de ossos achatados e curvos que atravessam a peça
-      // e aparecem nas duas bordas; a capa de gordura fica em cima
-      const yb = H * 0.13;
-      out.push(parte(blocoCarne(-L / 2, L / 2, H * 0.48, W * 0.46, H * 0.5, 0, 4), k.ac, true));
-      for (let i = 0; i < n; i++) {
-        const x = lerp(-L / 2 + L * 0.08, L / 2 - L * 0.08, i / Math.max(1, n - 1));
-        // as costelas atravessam a peça e saem limpas por um lado, curvando de leve para cima
-        const pts = [V(x, yb * 3, -W * 0.47), V(x + L * 0.01, yb * 2.6, -W * 0.1), V(x + L * 0.015, yb * 2.7, W * 0.4), V(x + L * 0.02, yb * 3.6, W * 0.72), V(x + L * 0.02, yb * 4.6, W * 0.86)];
-        out.push(parte(tubo(pts, {
-          raio: (t) => yb * (0.85 + 0.2 * (suave(0.1, 0, t) + suave(0.9, 1, t))), achata: 1.6, cima: V(0, 1, 0), m: 10, n: 16, pontaRedonda: false,
-          cor: (px, py, pz) => mix(mul(OSSO, 1 + 0.07 * ruido(px * 200, py * 200, pz * 200)), mul(k.ci, 0.8), 0.25 * suave(0.3, 0.8, fbm(px * 80, py * 80, pz * 80, s))),
-        }), 'acetinado'));
-      }
+      // costela bovina e lombo de porco já desossados: peça deitada, capa de gordura em cima,
+      // o olho de carne aparece nas pontas cortadas (os ossos ficam nas peças "com ossos")
+      // a capa é aparada: gordura fina e creme, com a carne aparecendo por baixo em manchas
+      const semCapa = corCarne({ ...k, tem: (w: string) => k.tem(w) && w !== 'capa' } as Ctx, { topo: H, L });
+      const corC: CorFn = (x, y, z, t, a) => {
+        const c = semCapa(x, y, z, t, a);
+        const capa = suave(H * 0.8, H * 0.9, y + H * 0.06 * fbm(x * 18 / L, 0, z * 18 / L, s));
+        const fina = 0.3 + 0.4 * suave(-0.3, 0.4, fbm(x * 30 / L, y * 30 / L, z * 30 / L, s + 3));
+        return mix(c, mul(c2, 0.92 + 0.08 * fbm(x * 90, y * 90, z * 90, s)), capa * fina);
+      };
+      out.push(parte(blocoCarne(-L / 2, L / 2, H * 0.48, W * 0.46, H * 0.5, 0, 3.2, corC), k.ac, true));
       return out;
     }
-    case 'costelinha': case 'lombo_osso': {
-      const fino = v === 'costelinha';
+    case 'costelinha': {
+      // ripa de costelinha: placa chata com os ossos paralelos aparentes
+      const crua = corCarne(k, { topo: H, L });
+      const corO: CorFn = (x, y, z) => mul(corOsso, 0.9 + 0.1 * fbm(x * 300, y * 300, z * 300, s));
+      const corP: CorFn = (x, y, z, t, a) => mix(crua(x, y, z, t, a), c2, (1 - suave(0.1, 0.24, celula(x * 90, y * 90, z * 90, s))) * 0.25);
+      placaCostelas(L, W, Math.max(0.014, H * 0.5), n, corP, corO, s).forEach((g, i) => out.push(parte(g, i ? 'acetinado' : k.ac, i === 0)));
+      return out;
+    }
+    case 'lombo_osso': {
+      const fino = false as boolean;
       out.push(parte(blocoCarne(-L / 2, L / 2, H * (fino ? 0.35 : 0.48), W * 0.42, H * (fino ? 0.35 : 0.5), -W * 0.05), k.ac, true));
       for (let i = 0; i < n; i++) {
         const x = lerp(-L / 2 + L * 0.06, L / 2 - L * 0.06, i / Math.max(1, n - 1));
@@ -486,7 +608,22 @@ export const gCarneOsso: Gerador = (k) => {
         return gs;
       };
       if (v === 'carre') {
-        for (const g of rack(1)) out.push(parte(g, g === undefined ? 'acetinado' : k.ac, true));
+        // carré limpo: olho rosado com capa de gordura e as costelas em arco, com metade do osso raspada
+        const Hc = Math.min(H * 0.55, 0.058), Wc = Math.min(W * 0.62, 0.062), abaC = W * 0.45, zC = abaC * 0.4;
+        const capa: CorFn = (x, y, z) => mul(c2, 0.95 + 0.08 * fbm(x * 120, y * 120, z * 120, s));
+        const crua: CorFn = (x, y, z, t, a) => mix(cor(x, y, z, t, a), capa(x, y, z, t, a), 0.85 * suave(Hc * 0.72, Hc * 0.92, y + Hc * 0.08 * fbm(x * 50, 0, z * 50, s)));
+        const corte: CorFn = (x, y, z) => {
+          const olho = Math.hypot((y - Hc * 0.42) / (Hc * 0.32), (z - zC - Wc * 0.1) / (Wc * 0.34));
+          const c = mul(ci, 0.9 + 0.12 * fbm(y * 300, z * 300, x, s));
+          return mix(c, capa(x, y, z, 0, 0), Math.max(suave(1, 1.15, olho) * 0.85, suave(Hc * 0.72, Hc * 0.86, y)));
+        };
+        const corO: CorFn = (x, y, z) => mul(corOsso, 0.92 + 0.1 * fbm(x * 300, y * 300, z * 300, s));
+        const { carne, ossos } = pecaCostelas({
+          L, H: Hc, W: Wc, n, aba: abaC, sobe: Hc * 0.55, limpo: 0.55, rOsso: Math.min(0.0055, L / n * 0.22), esp: 0.011,
+          fora: crua, corte, aba2: (x, y, z, t, a) => mix(cor(x, y, z, t, a), capa(x, y, z, t, a), 0.45 * suave(-0.2, 0.5, fbm(x * 80, y * 80, z * 80, s))), osso: corO, s,
+        });
+        carne.forEach((g, i) => out.push(parte(g, k.ac, i === 0)));
+        for (const g of ossos) out.push(parte(g, 'acetinado'));
       } else if (v === 'guarda') {
         for (const sx of [-1, 1]) for (const g of rack(-sx)) out.push(parte(g.translate(0, 0, sx * W * 0.45).rotateX(sx * 0.15), k.ac, true));
       } else {
@@ -504,9 +641,41 @@ export const gCarneOsso: Gerador = (k) => {
       }
       return out;
     }
-    case 'bife': case 'costeleta': {
+    case 'costeleta': {
+      // costeleta de cordeiro deitada: a noz de carne (olho) rosada, uma faixa fina de gordura só no
+      // lado de fora, a aba de carne que afina ao longo do osso e o osso limpo curto saindo uns 4 cm
+      const e = Math.max(0.014, H), Wn = Math.min(W * 1.05, 0.06);
+      const Ln = L * 0.42, xFimCarne = -L / 2 + L * 0.62, xFim = -L / 2 + L * 0.88;
+      const xOsso = -L / 2 + Ln * 0.7, zOsso = Wn * 0.26;
+      const capa: CorFn = (x, y, z) => mul(c2, 0.92 + 0.08 * fbm(x * 150, y * 150, z * 150, s));
+      const olho = (x: number, z: number) => Math.hypot((x + L / 2 - Ln * 0.5) / (Ln * 0.4), (z + Wn * 0.04) / (Wn * 0.36));
+      const face: CorFn = (x, y, z) => {
+        const c = mul(ci, 0.88 + 0.14 * fbm(x * 260, z * 260, y * 10, s));
+        const veio = (1 - suave(0, 0.06, Math.abs(fbm(x * 120, z * 120, 0, s + 3)))) * 0.2;
+        // fora do olho: carne da aba um pouco mais escura; gordura só na borda de fora (z negativo)
+        const fora = suave(1, 1.1, olho(x, z));
+        let cc = mix(mix(c, capa(x, y, z, 0, 0), veio), mul(ci, 0.78), fora * 0.6);
+        cc = mix(cc, capa(x, y, z, 0, 0), fora * suave(-Wn * 0.1, -Wn * 0.3, z) * 0.9);
+        return cc;
+      };
+      const contorno = (t: number) => (t < 0.45 ? Math.sqrt(Math.max(0.0004, 1 - ((0.45 - t) / 0.45) ** 2)) : lerp(1, 0.42, suave(0.45, 1, t)));
+      out.push(parte(corpo({
+        x0: -L / 2, x1: xFimCarne, n: 20, m: 30, exp: 3.4,
+        cor: (x, y, z, t, a) => (y > e * 0.8 ? face(x, y, z, t, a) : mix(mul(face(x, y, z, t, a), 0.85), capa(x, y, z, t, a), suave(-Wn * 0.1, -Wn * 0.3, z) * 0.7)),
+        perfil: (t) => ({ ry: (e / 2) * lerp(1, 0.75, suave(0.5, 1, t)), rz: (Wn / 2) * contorno(t), cy: e / 2, cz: lerp(-Wn * 0.02, zOsso * 0.9, suave(0.35, 1, t)) }),
+        mod: (t, a) => 1 + 0.05 * fbm(t * 5, Math.cos(a), Math.sin(a), s),
+        desloc: (p) => { if (p.y < e * 0.15) p.y = e * 0.15 - (e * 0.15 - p.y) * 0.3; if (p.y > e * 0.85) p.y = e * 0.85 + (p.y - e * 0.85) * 0.4; },
+      }), k.ac, true));
+      // osso da costela: começa dentro da noz e sai limpo pela ponta da aba
+      out.push(parte(tubo([V(xOsso, e * 0.5, zOsso * 0.6), V(lerp(xOsso, xFim, 0.45), e * 0.52, zOsso * 0.9), V(xFim - 0.004, e * 0.5, zOsso), V(xFim, e * 0.5, zOsso * 1.02)], {
+        raio: (t) => 0.006 * (1 + 0.22 * suave(0.85, 1, t)), achata: 0.75, cima: V(0, 1, 0), m: 10, n: 14,
+        cor: (x, y, z) => mul(corOsso, 0.92 + 0.1 * fbm(x * 300, y * 300, z * 300, s)),
+      }), 'acetinado'));
+      return out;
+    }
+    case 'bife': {
       // bife deitado com osso de costela numa borda
-      const cab = v === 'costeleta';
+      const cab = false as boolean;
       const Lc = cab ? L * 0.45 : L;
       const corB: CorFn = (x, y, z) => {
         const r = Math.hypot(x / (Lc / 2), z / (W / 2)); // cor calculada antes de mover o disco
@@ -681,12 +850,30 @@ export const gMiudo: Gerador = (k) => {
       return out;
     }
     case 'rim': {
-      const cor: CorFn = (x, y, z) => mix(brilho(x, y, z, 0, 0), c3, (1 - suave(W * 0.08, W * 0.2, Math.hypot(x, z + W * 0.35))) * (k.tem('gordura') ? 1 : 0.6));
+      // rim de boi/porco em forma de feijão, deitado: liso, marrom-avermelhado e brilhante, com o
+      // recôncavo (hilo) do lado de +Z, onde fica a gordura branca e a saída dos vasos
+      const curva = W * 0.24;
+      const cor: CorFn = (x, y, z) => {
+        const lob = k.tem('lobulado') ? 0.06 * (1 - suave(0.04, 0.12, celula(x * 70, y * 70, z * 70, s))) : 0;
+        return mul(mix(mul(c1, 1.08), c2, 0.25 + 0.25 * fbm(x * 40, y * 40, z * 40, s)), 1 - lob + 0.04 * fbm(x * 160, y * 160, z * 160, s));
+      };
       out.push(parte(corpo({
-        x0: -L / 2, x1: L / 2, n: 24, m: 24, cor,
-        perfil: (t) => { const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)); return { ry: (H / 2) * e, rz: (W / 2) * e, cy: (H / 2) * e * 0.98 + H * 0.02, cz: W * 0.18 * Math.sin(PI * t) }; },
-        mod: (t, a) => 1 - 0.3 * Math.exp(-((a - (3 * PI) / 2) ** 2) / 0.25) * Math.sin(PI * t) ** 3 + (k.tem('lobulado') ? 0.05 * Math.abs(Math.sin(t * 30 + a * 3)) : 0),
+        x0: -L / 2, x1: L / 2, n: 26, m: 26, cor,
+        perfil: (t) => {
+          const e = Math.sqrt(Math.max(0, 1 - (2 * t - 1) ** 2)) ** 0.8;
+          return { ry: (H / 2) * e, rz: (W / 2) * e, cy: (H / 2) * e * 0.96 + H * 0.04, cz: curva * (0.5 - Math.sin(PI * t)) };
+        },
+        // o recôncavo: afunda o lado de +Z no meio do comprimento
+        mod: (t, a) => 1 - 0.42 * Math.exp(-((a - PI / 2) ** 2) / 0.35) * Math.exp(-(((t - 0.5) / 0.2) ** 2)),
+        desloc: (p) => { if (p.y < H * 0.1) p.y = H * 0.1 - (H * 0.1 - p.y) * 0.3; },
       }), 'umido', true));
+      // gordura branca e vasos no recôncavo
+      const zH = -curva * 0.5 + W * 0.5 * 0.55;
+      const gord: CorFn = (x, y, z) => mul(c3, 0.93 + 0.1 * fbm(x * 200, y * 200, z * 200, s));
+      out.push(parte(tf(elipsoide(L * 0.22, H * 0.34, W * 0.2, gord, 8, 12, (t, a) => 1 + 0.12 * fbm(t * 4, Math.cos(a) * 2, Math.sin(a) * 2, s + 2)), [0, H * 0.48, zH]), 'acetinado'));
+      if (k.tem('gordura')) {
+        out.push(parte(tubo([V(-L * 0.04, H * 0.5, zH), V(-L * 0.06, H * 0.55, zH + W * 0.14), V(-L * 0.1, H * 0.5, zH + W * 0.22)], { raio: H * 0.07, m: 8, n: 8, cor: (x, y, z) => mix(c3, [0.75, 0.45, 0.42], 0.4) }), 'umido'));
+      }
       return out;
     }
     case 'coracao': {
@@ -736,10 +923,39 @@ export const gMiudo: Gerador = (k) => {
       return out;
     }
     case 'pe': {
-      const cor: CorFn = (x, y, z) => mix(mul(c1, 1 + 0.06 * fbm(x * 60, y * 60, z * 60, s)), c2, suave(0.3, 0.9, fbm(x * 20, y * 20, z * 20, s)) * 0.3);
-      out.push(parte(corpo({ x0: -L / 2, x1: L * 0.25, n: 24, m: 22, cor, tampa: true, corTampa: () => k.ci, perfil: (t) => ({ ry: (H / 2) * lerp(1, 0.75, t), rz: (W / 2) * lerp(1, 0.85, t), cy: H / 2 }) }), k.ac, true));
+      // pé de porco deitado: canela de pele rosada-acinzentada com dobras no tornozelo, que
+      // afina e termina nos dois dedos com cascos (unhas) córneos e os dois esporões atrás
+      const pele: CorFn = (x, y, z) => {
+        const dobra = Math.abs(Math.sin((x + L * 0.08) * 160 + 2 * fbm(y * 40, z * 40, 0, s))) ** 8 * suave(-L * 0.2, 0, x) * suave(L * 0.18, L * 0.02, x);
+        const c = mix(mul(c1, 0.97 + 0.08 * fbm(x * 60, y * 60, z * 60, s)), c2, suave(0.3, 0.9, fbm(x * 20, y * 20, z * 20, s)) * 0.35);
+        return mul(c, 1 - 0.18 * dobra);
+      };
+      const xDedo = L * 0.2;
+      out.push(parte(corpo({
+        x0: -L / 2, x1: xDedo + L * 0.04, n: 26, m: 22, cor: pele, tampa: true, aneisTampa: 3,
+        corTampa: (x, y, z) => {
+          const r = Math.hypot((y - H / 2) / (H / 2), z / (W / 2));
+          return r < 0.42 ? mix(OSSO, TUTANO, 0.3) : mix(k.ci, c1, suave(0.8, 0.95, r));
+        },
+        perfil: (t) => {
+          const tornozelo = 1 + 0.12 * Math.exp(-(((t - 0.55) / 0.1) ** 2));
+          return { ry: (H / 2) * lerp(1, 0.68, t) * tornozelo, rz: (W / 2) * lerp(1, 0.82, t) * tornozelo, cy: (H / 2) * lerp(1, 0.68, t) * tornozelo + H * 0.02 };
+        },
+        mod: (t, a) => 1 + 0.03 * fbm(t * 6, Math.cos(a), Math.sin(a), s),
+      }), k.ac, true));
+      const casco: CorFn = (x, y, z) => mul(mix(c3, [0.45, 0.38, 0.3], suave(xDedo + L * 0.12, L / 2, x) * 0.6), 0.9 + 0.12 * fbm(x * 300, y * 300, z * 300, s));
       for (const sg of [-1, 1]) {
-        out.push(parte(corpo({ x0: L * 0.22, x1: L / 2, n: 10, m: 14, cor: () => mul(c3, 1), perfil: (t) => { const e = (1 - t) ** 0.6; return { ry: H * 0.32 * e + H * 0.03, rz: W * 0.2 * e + W * 0.02, cy: H * 0.3, cz: sg * W * 0.2 }; } }), 'acetinado'));
+        // dedo com casco: unha arredondada em cima, chata embaixo, separada da outra por uma fenda
+        out.push(parte(corpo({
+          x0: xDedo, x1: L / 2, n: 12, m: 16, cor: casco,
+          perfil: (t) => {
+            const e = Math.sqrt(Math.max(0, 1 - t ** 2.2)) * 0.85 + 0.15 * (1 - t);
+            return { ry: H * 0.3 * e + H * 0.02, rz: W * 0.22 * e + W * 0.02, cy: H * 0.3 * e * 0.9 + H * 0.04, cz: sg * W * (0.2 + 0.04 * t) };
+          },
+          desloc: (p) => { if (p.y < H * 0.04) p.y = H * 0.04; },
+        }), 'acetinado'));
+        // esporão atrás, perto do chão
+        out.push(parte(tf(elipsoide(L * 0.035, H * 0.11, W * 0.08, casco, 5, 8), [L * 0.02, H * 0.36, sg * W * 0.3], [0, 0, -0.5]), 'acetinado'));
       }
       return out;
     }

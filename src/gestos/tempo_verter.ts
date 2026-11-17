@@ -185,6 +185,19 @@ function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa'
     mesa.adicionarExtra(m);
     return m;
   } else {
+    if (tampa) {
+      // tampa de panela: disco levemente abaulado com o pegador no meio, assentada na borda
+      const g = new THREE.Group();
+      const disco = new THREE.Mesh(new THREE.SphereGeometry(r * 1.6, 32, 6, 0, Math.PI * 2, 0, 0.7), mat);
+      disco.scale.set(1, 0.35, 1);
+      disco.position.y = -r * 1.6 * Math.cos(0.7) * 0.35;
+      const pegador = new THREE.Mesh(new THREE.SphereGeometry(r * 0.12, 12, 8), new THREE.MeshStandardMaterial({ color: '#1f3b63', roughness: 0.4 }));
+      pegador.position.y = r * 1.6 * (1 - Math.cos(0.7)) * 0.35 + r * 0.05;
+      g.add(disco, pegador);
+      g.position.set(centro.x, caixa.max.y, centro.z);
+      mesa.adicionarExtra(g);
+      return g;
+    }
     const m = new THREE.Mesh(new THREE.CircleGeometry(r * 1.05, 40), mat);
     m.rotation.x = -Math.PI / 2;
     m.position.set(centro.x, caixa.max.y + 0.002, centro.z);

@@ -86,14 +86,21 @@ export const gEsferoide: Gerador = (k) => {
   const out: Parte[] = [];
   const v = k.v.v;
   if (v === 'maca') {
+    // maçã vermelha: casca lisa e brilhante, vermelho dominante com estrias finas e um rubor
+    // amarelo-esverdeado só num lado e no fundo, pintinhas claras (lenticelas), cova funda no topo
+    // com o cabinho fino e a covinha embaixo; ombro mais largo que a base, sem gomos
     const cor: CorFn = (x, y, z) => {
-      const listra = 0.5 + 0.5 * ruido(Math.atan2(z, x) * 6, y * 30, 0, s);
-      const lent = 1 - suave(0.08, 0.16, celula(x * 260, y * 260, z * 260, s));
-      const c = mix(c1, c2, listra * 0.7 * suave(0, H, y + H * 0.2));
-      return mix(mul(c, 1 + 0.05 * fbm(x * 40, y * 40, z * 40, s)), mul(c, 1.35), lent * 0.5);
+      const ang = Math.atan2(z, x);
+      const estria = 0.5 + 0.5 * ruido(ang * 9, y * 18, 0, s);
+      const lado = suave(-0.2, -0.9, Math.cos(ang - 0.6)) * 0.6 + suave(H * 0.35, 0, y) * 0.5;
+      const lent = 1 - suave(0.05, 0.1, celula(x * 320, y * 320, z * 320, s));
+      let c = mul(c1, 0.86 + 0.22 * estria);
+      c = mix(c, mix(c2, [0.62, 0.7, 0.25], 0.3), clamp(lado * (0.5 + 0.5 * estria)) * 0.55);
+      c = mix(c, mul(c1, 0.6), suave(H * 0.8, H * 0.95, y) * 0.35 * Math.exp(-((Math.hypot(x, z) / (R * 0.35)) ** 2)));
+      return mix(mul(c, 1 + 0.04 * fbm(x * 40, y * 40, z * 40, s)), mix(c, [0.95, 0.88, 0.62], 0.5), lent * 0.45);
     };
-    out.push(parte(fruto({ R, H, covaTopo: 0.16, covaBase: 0.1, largCova: 0.28, lobos: 5, ampLobo: 0.025, cor, s, l: k.L }), k.ac, true));
-    out.push(parte(cabinho(0, H * 0.86, 0, H * 0.3, R * 0.05, rgb3(k.c3, '#5b4024')), 'fosco'));
+    out.push(parte(fruto({ R, H, covaTopo: 0.2, covaBase: 0.09, largCova: 0.3, pontaBase: 0.05, lobos: 5, ampLobo: 0.008, cor, s, l: k.L }), k.ac, true));
+    out.push(parte(cabinho(0, H * 0.8, 0, H * 0.24, R * 0.032, rgb3(k.c3, '#5b4024'), 0.25), 'fosco'));
     if (k.tem('folha')) out.push(parte(tf(folha(R * 0.8, R * 0.38, rgb3(k.c3, '#4f7d2b'), mul(rgb3(k.c3, '#4f7d2b'), 1.3)), [0, H * 1.05, 0], [0.2, 0.6, 0.35]), 'acetinado'));
   } else if (v === 'pera') {
     const cor: CorFn = (x, y, z) => mix(mul(c1, 1 + 0.06 * fbm(x * 50, y * 50, z * 50, s)), c2, (1 - suave(0.06, 0.14, celula(x * 300, y * 300, z * 300, s))) * 0.6 + suave(0.6, 1, ruido(x * 20, y * 20, z * 20, s)) * 0.4);

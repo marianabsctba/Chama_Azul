@@ -11,7 +11,7 @@ import {
   type CorFn, type Parte, type RGB,
 } from '../nucleo';
 import { folha, contornos, osso, type Ctx, type Familia, type Visual } from '../pecas';
-import { gAve } from '../fam_carnes';
+import { gAve, pecaCostelas, placaCostelas } from '../fam_carnes';
 import { OSSO, BARBANTE, MADEIRA, fr, chapa, placa, noDisco, fio, laco, no, corAssada, corFibra, rodela, ctxCom, espetoMadeira } from './aves';
 import { grade, orientar, bloco, prisma, chapa as chapaL } from './frutas_enfeites';
 import type { Lote } from './tipos';
@@ -621,9 +621,17 @@ function gFileMignon(k: Ctx): Parte[] {
   const L = k.T, H = L * k.A, W = L * k.L;
   const dour = k.tem('dourado');
   const prof = (t: number) => Math.sin(PI * (0.03 + 0.94 * t)) ** 0.5 * lerp(0.62, 1, suave(0, 0.75, t)) * lerp(1, 0.85, suave(0.85, 1, t));
-  const crua = carneCrua(k.c1, k.s, 0.35, 0.0035);
+  const crua = carneCrua(k.c1, k.s, 0.12, 0.0035);
   const tost = corAssada(C('#7a4022'), C('#3e1e0e'), k.s, 45, 0.7);
-  const cor: CorFn = dour ? (x, y, z, t, a) => mix(tost(x, y, z, t, a), mul(k.c1, 0.8), 0.08) : crua;
+  // a membrana prateada (nervo) corre por cima do filé cru, numa faixa irregular e brilhante
+  const prata: CorFn = (x, y, z, t, a) => {
+    const c = crua(x, y, z, t, a);
+    if (k.tem('amarrado')) return c;
+    const faixa = suave(0.55, 0.25, Math.abs(Math.sin(a) + 0.15 * fbm(t * 9, 0, 0, k.s + 3))) * suave(0.05, 0.35, Math.cos(a)) * suave(0.08, 0.25, t) * suave(0.95, 0.75, t);
+    const fio = 0.75 + 0.25 * Math.abs(Math.sin(x * 700 + 3 * fbm(x * 40, z * 90, 0, k.s)));
+    return mix(c, mul(C('#d4d6da'), fio), faixa * 0.85);
+  };
+  const cor: CorFn = dour ? (x, y, z, t, a) => mix(tost(x, y, z, t, a), mul(k.c1, 0.8), 0.08) : prata;
   const sec = (t: number) => ({ ry: (H / 2) * prof(t), rz: (W / 2) * prof(t) });
   out.push(parte(corpo({
     x0: -L / 2, x1: L / 2, n: 24, m: 22, exp: 2.2, cor,
@@ -697,6 +705,7 @@ function gMoidaFios(k: Ctx): Parte[] {
 
 /** Peça com costelas aparentes (costela bovina, lombo de porco com espinha, peito de vitela). */
 function gPecaCostela(k: Ctx): Parte[] {
+  if (!k.tem('chata')) return gCostelasEmArco(k);
   const out: Parte[] = [];
   const L = k.T, n = k.v.n ?? 3;
   const assado = k.tem('assado'), vitela = k.tem('chata');
@@ -745,6 +754,48 @@ function gPecaCostela(k: Ctx): Parte[] {
     // cartilagem do osso do peito numa das bordas
     out.push(parte(tubo([V(-L * 0.46, ry * 1.6, -rz * 0.86), V(0, ry * 1.7, -rz * 0.9), V(L * 0.46, ry * 1.6, -rz * 0.86)], { raio: 0.007, achata: 0.6, cima: V(0, 1, 0), m: 8, n: 14, cor: tn(C('#ece6dc'), 0.06, 200, k.s) }), 'brilhante'));
   }
+  return out;
+}
+
+/**
+ * Costela bovina e lombo de porco com os ossos: o olho de carne deitado na tábua, a capa de gordura
+ * (no porco, a pele) por cima, e a parede de costelas saindo por trás em arcos curtos e paralelos,
+ * com a carne entre eles e a ponta do osso aparente. Assada: crosta dourada e ossos tostados.
+ */
+function gCostelasEmArco(k: Ctx): Parte[] {
+  const out: Parte[] = [];
+  const L = k.T, n = k.v.n ?? 3;
+  const assado = k.tem('assado'), porco = k.tem('espinha');
+  const H = L * k.A, W = L * k.L * 0.62;
+  const crua = carneCrua(k.c1, k.s, 0.15);
+  const gord = gordura(k.s, porco ? '#f4ece2' : '#f0e2c8');
+  const tost = corAssada(C('#8a4a24'), C('#40200e'), k.s, 40, 0.7);
+  const doura = (c: RGB, x: number, y: number, z: number, t: number, a: number) => (assado ? mix(c, tost(x, y, z, t, a), 0.85) : c);
+  const capa = (x: number, y: number, z: number) => suave(H * 0.8, H * 0.95, y + H * 0.06 * fbm(x * 25, 0, z * 25, k.s));
+  const fora: CorFn = (x, y, z, t, a) => {
+    let c = mix(crua(x, y, z, t, a), gord(x, y, z, t, a), capa(x, y, z) * 0.9);
+    // no porco, a pele fina e lisa por cima da gordura
+    if (porco) c = mix(c, mul(k.c3 ?? C('#ecd6c0'), 0.96 + 0.06 * fbm(x * 120, y * 120, z * 120, k.s)), suave(H * 0.9, H * 0.98, y) * 0.8);
+    return doura(c, x, y, z, t, a);
+  };
+  const zc = W * (porco ? 0.6 : 0.5) * 0.4;
+  const corte: CorFn = (x, y, z, t, a) => {
+    // o olho com marmoreio fino, a capa de gordura em cima e a película entre os músculos
+    const veio = 1 - suave(0, 0.07, Math.abs(fbm(y * 90, z * 90, x, k.s + 4)));
+    let c = mix(mul(k.ci, 0.9 + 0.12 * fbm(y * 200, z * 200, 0, k.s)), C('#f0e2d0'), veio * (porco ? 0.15 : 0.35));
+    c = mix(c, gord(x, y, z, t, a), suave(H * 0.7, H * 0.8, y));
+    if (assado) c = mix(mix(c, C('#c8606a'), 0.3), C('#8a5a44'), suave(0.78, 1, Math.hypot((y - H / 2) / (H / 2), (z - zc) / (W / 2))));
+    return c;
+  };
+  const aba: CorFn = (x, y, z, t, a) => doura(mix(mul(crua(x, y, z, t, a), 0.92), gord(x, y, z, t, a), 0.1 + 0.25 * suave(0.1, 0.6, fbm(x * 60, y * 60, z * 60, k.s + 2))), x, y, z, t, a);
+  const osso: CorFn = (x, y, z) => mul(assado ? mix(OSSO, C('#a87a4a'), 0.5) : OSSO, 0.88 + 0.12 * fbm(x * 200, y * 200, z * 200, k.s));
+  const { carne, ossos } = pecaCostelas({
+    L, H, W, n, aba: W * (porco ? 0.6 : 0.5), sobe: H * (porco ? 0.3 : 0.45), limpo: porco ? 0.16 : 0.2,
+    rOsso: Math.min((L / n) * 0.18, porco ? 0.009 : 0.015), esp: porco ? 0.018 : 0.026,
+    fora, corte, aba2: aba, osso, s: k.s,
+  });
+  carne.forEach((g, i) => out.push(parte(g, assado ? 'brilhante' : 'umido', i === 0)));
+  for (const g of ossos) out.push(parte(g, 'acetinado'));
   return out;
 }
 
@@ -1065,29 +1116,27 @@ function gCarre(k: Ctx): Parte[] {
   return out;
 }
 
-/** Lombo (sela) de cordeiro com a espinha dorsal, os dois filés rosados e as abas, gordura para baixo. */
+/**
+ * Lombo de cordeiro com osso: o olho rosado comprido com a capa de gordura creme por cima e,
+ * de um lado, a fileira de costelas curtas saindo em arco, com as pontas dos ossos aparentes.
+ */
 function gSelaCordeiro(k: Ctx): Parte[] {
   const out: Parte[] = [];
-  const L = k.T, W = L * k.L;
-  const crua = carneCrua(k.c1, k.s, 0.25, 0.003);
-  const gord = gordura(k.s);
-  // camada de baixo: gordura fina que segura tudo, e as abas finas dos lados
-  out.push(parte(fatia(L, W, 0.008, (xd, zd, r, x, y, z) => mix(gord(x, y, z, 0, 0), crua(x, y, z, 0, 0), suave(0.4, 0.8, Math.abs(zd)) * 0.55 * suave(0.5, 0.9, fbm(x * 40, z * 40, 0, k.s) + 0.6)), { exp: 4, irreg: 0.08, s: k.s, nx: 14, nz: 12 }), 'acetinado', true));
-  for (const sg of [-1, 1]) {
-    out.push(parte(corpo({
-      x0: -L / 2 * 0.98, x1: L / 2 * 0.98, n: 16, m: 18, exp: 2.6, tampa: true, cor: crua,
-      corTampa: (x, y, z) => mix(mul(k.ci, 0.95 + 0.08 * fbm(y * 300, z * 300, 0, k.s)), C('#f0e4d0'), suave(0.85, 1, Math.hypot((y - 0.03) / 0.022, (z - sg * W * 0.17) / (W * 0.13))) * 0.7),
-      perfil: () => ({ ry: 0.021, rz: W * 0.13, cy: 0.028, cz: sg * W * 0.17 }),
-      mod: (t, a) => 1 + 0.04 * fbm(t * 6, Math.cos(a), Math.sin(a), k.s + sg),
-    }), 'umido'));
-  }
-  const corOsso: CorFn = (x, y, z) => mul(mix(OSSO, C('#e8c8b8'), 0.25), 0.9 + 0.1 * fbm(x * 300, y * 300, z * 300, k.s));
-  const nv = Math.round(L / 0.028);
-  for (let i = 0; i < nv; i++) {
-    const x = lerp(-L / 2 + 0.014, L / 2 - 0.014, i / (nv - 1));
-    out.push(parte(tf(elipsoide(0.011, 0.012, 0.014, corOsso, 5, 8), [x, 0.022, 0]), 'acetinado'));
-    out.push(parte(tf(elipsoide(0.006, 0.016, 0.003, corOsso, 4, 6), [x, 0.038, 0], [0, 0, 0.2]), 'acetinado'));
-  }
+  const L = k.T, H = Math.min(0.056, L * 0.2), W = Math.min(0.07, L * 0.25), n = Math.max(5, Math.round(L / 0.03));
+  const crua = carneCrua(k.c1, k.s, 0.15, 0.003);
+  const gord = gordura(k.s, '#f2e6d0');
+  const zc = 0.042 * 0.4;
+  const fora: CorFn = (x, y, z, t, a) => mix(crua(x, y, z, t, a), gord(x, y, z, t, a), 0.8 * suave(H * 0.76, H * 0.93, y + H * 0.08 * fbm(x * 40, 0, z * 40, k.s)));
+  const corte: CorFn = (x, y, z, t, a) => {
+    const olho = Math.hypot((y - H * 0.42) / (H * 0.34), (z - zc - W * 0.06) / (W * 0.36));
+    const c = mul(k.ci, 0.9 + 0.12 * fbm(y * 300, z * 300, x, k.s));
+    return mix(c, gord(x, y, z, t, a), Math.max(suave(1, 1.15, olho) * 0.8, suave(H * 0.7, H * 0.86, y)));
+  };
+  const aba: CorFn = (x, y, z, t, a) => mix(crua(x, y, z, t, a), gord(x, y, z, t, a), 0.35 + 0.3 * suave(-0.2, 0.5, fbm(x * 70, y * 70, z * 70, k.s + 2)));
+  const osso: CorFn = (x, y, z) => mul(mix(OSSO, C('#e8c8b8'), 0.2), 0.9 + 0.1 * fbm(x * 300, y * 300, z * 300, k.s));
+  const { carne, ossos } = pecaCostelas({ L, H, W, n, aba: 0.042, sobe: H * 0.4, limpo: 0.38, rOsso: 0.0055, esp: 0.012, fora, corte, aba2: aba, osso, s: k.s });
+  carne.forEach((g, i) => out.push(parte(g, 'umido', i === 0)));
+  for (const g of ossos) out.push(parte(g, 'acetinado'));
   return out;
 }
 
@@ -1259,30 +1308,28 @@ function gPernilLosangos(k: Ctx): Parte[] {
   return out;
 }
 
-/** Costelinhas de porco separadas: laqueadas marrom-avermelhadas ou cruas pinceladas de cobertura brilhante. */
+/**
+ * Costelinhas de porco: duas ripas de costela (placas chatas com os ossos paralelos aparentes e as
+ * pontas saindo na borda), uma meio por cima da outra; laqueadas marrom-avermelhadas e brilhantes,
+ * ou cruas pinceladas de glaçagem âmbar.
+ */
 function gCostelinhas(k: Ctx): Parte[] {
   const out: Parte[] = [];
   const L = k.T, laq = k.tem('laqueada');
-  const comp = L * 0.42, n = 6;
+  const comp = L * 0.62, larg = Math.min(0.1, L * k.L * 0.5), esp = 0.017;
   const crua = carneCrua(k.c1, k.s, 0.1, 0.003);
   const laca = corAssada(C('#8a2e12'), C('#3e1006'), k.s, 70, 0.75);
-  const cor: CorFn = laq ? laca : (x, y, z, t, a) => mix(crua(x, y, z, t, a), C('#d89040'), 0.35 + 0.1 * fbm(x * 80, y * 80, z * 80, k.s));
-  const corOsso: CorFn = (x, y, z) => mul(laq ? mix(OSSO, C('#8a5a30'), 0.55) : OSSO, 0.88 + 0.12 * fbm(x * 300, y * 300, z * 300, k.s));
-  for (let i = 0; i < n; i++) {
-    const fila = i < 3 ? -1 : 1, j = i % 3;
-    const x = fila * comp * 0.55 + (j - 1) * 0.004, z = (j - 1) * 0.045 + fila * 0.01;
-    const rot = 0.15 * Math.sin(i * 2.1);
-    const g = corpo({
-      x0: -comp / 2, x1: comp / 2, n: 12, m: 16, exp: 2.6, cor,
-      perfil: (t) => ({ ry: 0.012 * Math.sin(PI * (0.06 + 0.88 * t)) ** 0.3, rz: 0.017 * Math.sin(PI * (0.06 + 0.88 * t)) ** 0.3, cy: 0.012 }),
-      mod: (t, a) => 1 + 0.1 * fbm(t * 6, Math.cos(a) * 1.5, Math.sin(a) * 1.5, k.s + i),
-    });
-    tf(g, [x, 0, z], [0, rot, 0]);
-    out.push(parte(g, 'brilhante', i === 0));
-    const o = tubo([V(-comp / 2 - 0.008, 0.012, 0), V(0, 0.013, 0.002), V(comp / 2 + 0.008, 0.012, 0)], { raio: 0.0048, achata: 0.7, cima: V(0, 1, 0), m: 8, n: 12, cor: corOsso });
-    tf(o, [x, 0, z], [0, rot, 0]);
-    out.push(parte(o, 'acetinado'));
-  }
+  const cor: CorFn = laq
+    ? (x, y, z, t, a) => mix(laca(x, y, z, t, a), C('#b0501e'), 0.25 * suave(0.2, 0.8, fbm(x * 90, y * 90, z * 90, k.s)))
+    : (x, y, z, t, a) => mix(crua(x, y, z, t, a), C('#d89a48'), 0.3 + 0.12 * fbm(x * 80, y * 80, z * 80, k.s));
+  const corOsso: CorFn = (x, y, z) => mul(laq ? mix(OSSO, C('#7a4a26'), 0.65) : mix(OSSO, C('#e0b070'), 0.2), 0.88 + 0.12 * fbm(x * 300, y * 300, z * 300, k.s));
+  const ripas: [number, number, number, number][] = [[-L * 0.08, 0, -larg * 0.42, 0.12], [L * 0.1, esp * 0.75, larg * 0.5, -0.18]];
+  ripas.forEach(([x, y, z, rot], j) => {
+    for (const [i, g] of placaCostelas(comp, larg, esp, 5, cor, corOsso, k.s + j).entries()) {
+      tf(g, [x, y, z], [j ? 0.06 : 0, rot + (j ? PI : 0), 0]);
+      out.push(parte(g, i ? 'acetinado' : 'brilhante', j === 0 && i === 0));
+    }
+  });
   return out;
 }
 
@@ -1346,31 +1393,52 @@ function gPeritonio(k: Ctx): Parte[] {
 /* miúdos: pé de porco, rabada, bucho                                   */
 /* ------------------------------------------------------------------ */
 
-/** Pé de porco cortado ao meio no comprimento: face do corte com os ossos e o casco na ponta. */
+/**
+ * Pé de porco cortado ao meio no comprimento, as duas metades deitadas com o corte para cima:
+ * borda de pele rosada-acinzentada, miolo de tendão e gelatina com a fileira de ossinhos claros
+ * e, na ponta, metade do casco (um dedo com a unha córnea). Cozido fica creme, gelatinoso e brilhante.
+ */
 function gPeMetades(k: Ctx): Parte[] {
   const out: Parte[] = [];
-  const L = k.T, R = L * 0.12;
+  const L = k.T, R = L * 0.13;
   const coz = k.tem('cozido');
-  const pele: CorFn = (x, y, z) => mul(mix(k.c1, k.c2, 0.3 * fbm(x * 60, y * 60, z * 60, k.s)), 0.95 + 0.06 * ruido(x * 500, y * 500, z * 500, k.s));
-  const corte: CorFn = (x, y, z) => {
-    const ossos = Math.abs(Math.sin(x * 70)) ** 2 * (1 - suave(R * 0.25, R * 0.5, Math.abs(z)));
-    const c = mix(coz ? C('#e8d0b0') : C('#f0c8b8'), coz ? C('#d8b890') : C('#e8a898'), fbm(x * 150, z * 150, 0, k.s) * 0.5 + 0.3);
-    return mix(c, mul(OSSO, 0.95), suave(0.4, 0.7, ossos));
+  const xCasco = L * 0.26;
+  // canela larga no tornozelo, afinando até os dedos
+  const larg = (t: number) => lerp(1.05, 0.72, t) * (1 + 0.14 * Math.exp(-(((t - 0.62) / 0.1) ** 2))) * Math.sin(PI * (0.04 + 0.92 * t)) ** 0.22;
+  const pele: CorFn = (x, y, z) => {
+    const dobra = Math.abs(Math.sin(x * 170 + 2 * fbm(y * 40, z * 40, 0, k.s))) ** 8 * suave(-L * 0.1, L * 0.05, x) * suave(L * 0.2, L * 0.08, x);
+    const c = coz ? mix(C('#c8a074'), C('#b08454'), 0.3 + 0.3 * fbm(x * 60, y * 60, z * 60, k.s)) : mix(C('#cc9a8c'), C('#a88a84'), 0.25 + 0.3 * fbm(x * 60, y * 60, z * 60, k.s));
+    return mul(c, (1 - 0.16 * dobra) * (0.96 + 0.06 * ruido(x * 500, y * 500, z * 500, k.s)));
+  };
+  const corte = (_sg: number): CorFn => (x, y, z) => {
+    const zz = Math.abs(z) / (R * 0.95 * (1 + 0.14 * Math.exp(-((((x + L / 2) / (xCasco + L / 2) - 0.62) / 0.1) ** 2))));
+    const borda = suave(0.72, 0.88, zz);
+    // ossinhos em fila (metatarsos e falanges), cortados no comprimento
+    const fase = fr((x + L / 2) / (L * 0.12) + 0.1 * fbm(z * 80, 0, 0, k.s));
+    const osso = suave(0.08, 0.16, fase) * suave(0.95, 0.85, fase) * (1 - suave(0.26, 0.38, zz));
+    const gel = coz ? mix(C('#c89a62'), C('#dcb47c'), 0.4 + 0.4 * fbm(x * 150, z * 150, 0, k.s)) : mix(C('#e2a898'), C('#cc8a7c'), 0.3 + 0.4 * fbm(x * 150, z * 150, 0, k.s));
+    let c = mix(gel, mul(coz ? C('#f4ecdc') : OSSO, 0.95 + 0.08 * fbm(x * 300, z * 300, 0, k.s)), osso);
+    c = mix(c, mix(C('#c87a5a'), C('#a86048'), 0.5), (1 - suave(0.05, 0.12, Math.abs(zz - 0.5))) * (1 - osso) * 0.25);
+    return mix(c, pele(x, y, z, 0, 0), borda);
   };
   for (const sg of [-1, 1]) {
     const g = corpo({
-      x0: -L / 2, x1: L * 0.4, n: 20, m: 18, cor: (x, y, z, t, a) => (y > R * 0.98 ? corte(x, y, z, t, a) : pele(x, y, z, t, a)),
-      perfil: (t) => ({ ry: R * lerp(1.15, 0.75, t) * Math.sin(PI * (0.06 + 0.88 * t)) ** 0.25, rz: R * lerp(1.1, 0.8, t) * Math.sin(PI * (0.06 + 0.88 * t)) ** 0.25, cy: R }),
-      desloc: (p) => { if (p.y > R) p.y = R; },
+      x0: -L / 2, x1: xCasco + L * 0.03, n: 24, m: 20, cor: (x, y, z, t, a) => (y > R * 0.97 ? corte(sg)(x, y, z, t, a) : pele(x, y, z, t, a)),
+      perfil: (t) => ({ ry: R * larg(t), rz: R * 0.95 * larg(t), cy: R * 0.98 }),
+      mod: (t, a) => 1 + 0.03 * fbm(t * 6, Math.cos(a), Math.sin(a), k.s + sg),
+      desloc: (p) => { if (p.y > R) p.y = R; if (p.y < R * 0.25) p.y = R * 0.25 - (R * 0.25 - p.y) * 0.3; },
     });
-    tf(g, [0, 0, sg * R * 1.25], [0, sg * 0.08, 0]);
+    tf(g, [0, 0, sg * R * 1.25], [0, sg * 0.06, 0]);
     out.push(parte(g, coz ? 'brilhante' : 'acetinado', sg < 0));
-    // casco: duas unhas na ponta
-    for (const d of [-1, 1]) {
-      const c = elipsoide(L * 0.07, R * 0.55, R * 0.42, (x, y, z) => mul(C('#c8b098'), 0.85 + 0.2 * fbm(x * 200, y * 200, z * 200, k.s)), 6, 8);
-      tf(c, [L * 0.44, R * 0.6, sg * R * 1.25 + d * R * 0.42], [0, 0, -0.15]);
-      if ((d > 0) === (sg > 0)) out.push(parte(c, 'acetinado'));
-    }
+    // metade do casco: um dedo com a unha córnea, curva, mais escura na ponta
+    const casco = corpo({
+      x0: xCasco, x1: L / 2, n: 12, m: 14,
+      cor: (x, y, z) => mul(mix(C(coz ? '#9a8064' : '#8a7660'), C('#4a3c30'), suave(xCasco + L * 0.08, L / 2, x) * 0.55), 0.9 + 0.12 * fbm(x * 300, y * 300, z * 300, k.s)),
+      perfil: (t) => { const e = Math.sqrt(Math.max(0, 1 - t ** 2.4)) * 0.85 + 0.12 * (1 - t); return { ry: R * 0.7 * e + R * 0.04, rz: R * 0.62 * e + R * 0.04, cy: R * 0.62 * e + R * 0.12 }; },
+      desloc: (p) => { if (p.y < R * 0.08) p.y = R * 0.08; },
+    });
+    tf(casco, [0, 0, sg * R * 1.25], [0, sg * 0.06, 0]);
+    out.push(parte(casco, 'acetinado'));
   }
   return out;
 }

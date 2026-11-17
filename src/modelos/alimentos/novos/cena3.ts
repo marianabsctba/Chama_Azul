@@ -1306,19 +1306,22 @@ const gNinhoTagliatelle: Gerador = (k) => {
 };
 
 const gNhoqueCilindro: Gerador = (k) => {
-  // dois rolos de massa de nhoque de 2 cm de diâmetro, enfarinhados
+  // uma tira única de massa crua rolada na bancada: roliça, lisa, de espessura uniforme, pontas
+  // arredondadas e um leve pó de farinha (serve à massa de pão das roscas e à de nhoque)
   const { c1, s } = k;
-  const L = k.T, R = 0.01;
-  const out: Parte[] = [];
-  for (let i = 0; i < 2; i++) {
-    const g = corpo({
-      x0: -L / 2, x1: L / 2, n: 28, m: 14, tampa: true,
-      perfil: (t) => ({ ry: R * (1 + 0.04 * Math.sin(t * 17 + i)), rz: R, cy: R, cz: (i ? 1 : -1) * R * 1.4 + 0.003 * Math.sin(t * 5 + i * 2) }),
-      cor: farinha(c1, s + i, 0.4),
-    });
-    out.push(parte(g, 'fosco', i === 0));
-  }
-  return out;
+  const L = k.T, R = 0.014;
+  const g = corpo({
+    x0: -L / 2, x1: L / 2, n: 30, m: 16,
+    perfil: (t) => {
+      const d = Math.abs(2 * t - 1);
+      const ponta = d < 0.9 ? 1 : Math.sqrt(Math.max(0, 1 - ((d - 0.9) / 0.1) ** 2));
+      const r = R * (1 + 0.025 * Math.sin(t * 13 + s)) * Math.max(0.15, ponta);
+      return { ry: r * 0.94, rz: r, cy: R * 0.94, cz: 0.006 * Math.sin(t * PI * 1.3 + 0.4) };
+    },
+    cor: farinha(c1, s, 0.1),
+    desloc: (p) => { if (p.y < R * 0.12) p.y = R * 0.12 - (R * 0.12 - p.y) * 0.3; },
+  });
+  return [parte(g, 'acetinado', true)];
 };
 
 const gEspagueteCozido: Gerador = (k) => {

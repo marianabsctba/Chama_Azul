@@ -73,7 +73,8 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   peca.definirElegiveis(ctx.camera);
   const modo: ModoLimpar | null = v === 'limpar' ? modoLimpar(passo.acao, passo.alvo, passo.utensilio, passo.parametro) : null;
   const sujeira = modo ? corDaSujeira(modo, texto) : null;
-  if (sujeira) peca.salpicar(sujeira, 0.12, ctx.tecnica.id.length);
+  // sujeira só onde o livro limpa terra, escamas ou sangue: miúdos e carnes lavadas não ganham pintas
+  if (sujeira && !/rim|f[ií]gado|cora[cç][aã]o|mi[uú]do|carne|fil[eé]|lombo/i.test(`${passo.alimento ?? ''} ${passo.alvo}`)) peca.salpicar(sujeira, 0.12, ctx.tecnica.id.length);
   const padrao = v === 'remover' ? 'remover' : v === 'limpar' ? 'limpar' : 'cobrir';
   // na água e com os dedos não há utensílio na mão; sem utensílio no livro e com faca no texto, a faca
   const ferramenta = modo === 'agua' || modo === 'mao' ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(modo === 'lamina' && !/faca|faquinha|cutelo|descascador|tesoura/i.test(passo.utensilio) ? 'faca' : modo === 'pano' ? (/papel/i.test(passo.utensilio) ? 'folha de papel-toalha' : 'pano') : passo.utensilio, padrao);
@@ -119,7 +120,9 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
         const mov = ultimo ? hit.point.distanceTo(ultimo) : 0;
         ultimo = hit.point.clone();
         if (mov > 0.0004 || v === 'cobrir') {
-          const ganho = peca.pintar(hit.point, raio, v === 'limpar' ? 'restaurar' : v === 'remover' ? 'remover' : 'cobrir', cor, 0.22 + mov * 20);
+          // óleo, azeite, manteiga e sal só dão brilho e pontinhos: não tingem a carne de amarelo ou branco
+          const leve = v === 'cobrir' && /[oó]leo|azeite|manteiga|gordura|\bsal\b|sal grosso|pimenta-do-reino/i.test(texto) && !/farinha|a[cç][uú]car|polvilh/i.test(texto);
+          const ganho = peca.pintar(hit.point, raio, v === 'limpar' ? 'restaurar' : v === 'remover' ? 'remover' : 'cobrir', cor, leve ? 0.05 + mov * 3 : 0.22 + mov * 20);
           if (ganho < 0.05) excesso += dt; // insistindo onde já está pronto
           if (modo === 'agua') {
             // fio de água caindo de cima sobre o ponto

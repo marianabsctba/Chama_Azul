@@ -456,9 +456,11 @@ const pote: Gerador = () => {
   recipiente(m, { fora: perfilReto(0.05, 0.13, 0.01), esp: 0.003, matFora: 'vidro', corFora: COR.vidro, borda: null });
   m.add('vidro', anel(0.05, 0.003, 28, 5), { p: [0, 0.122, 0] });
   m.add('silicone', anel(0.049, 0.002, 28, 4), { p: [0, 0.131, 0], cor: COR.marinho });
-  m.add('cobalto', torno([[0.053, 0.131], [0.053, 0.145], [0.048, 0.149], [0, 0.15]], 32));
-  m.add('inox', tubo([[0.05, 0.12, -0.012], [0.058, 0.135, -0.012], [0.054, 0.15, 0], [0.058, 0.135, 0.012], [0.05, 0.12, 0.012]], 0.0012, 20, 4));
-  return m.finalizar('pote', [0.05, 0.07, 0], [0, 0.15, 0]);
+  // tampa hermética aberta para trás, presa pela dobradiça: vê-se o que está dentro do pote
+  m.add('cobalto', torno([[0.053, -0.019], [0.053, -0.005], [0.048, -0.001], [0, 0]], 32), { p: [0, 0.131 + 0.019 * 0.3, -0.053], r: [-1.9, 0, 0] });
+  m.add('inox', tubo([[-0.012, 0.128, -0.052], [-0.012, 0.136, -0.058], [0.012, 0.136, -0.058], [0.012, 0.128, -0.052]], 0.0012, 16, 4));
+  // a ponta é o centro do fundo por dentro, onde vão as frutas e o líquido
+  return m.finalizar('pote', [0.05, 0.07, 0], [0, 0.012, 0]);
 };
 
 const copo: Gerador = () => {
@@ -911,7 +913,7 @@ function formaRedonda(nome: string, fora: [number, number][], esp: number, cor: 
 const formaBolo: Gerador = () => formaRedonda('forma_bolo', perfilReto(0.11, 0.06, 0.006), 0.002, COR.inox, 'inox');
 const timbale: Gerador = () => formaRedonda('timbale', [[0, 0], [0.024, 0], [0.026, 0.003], [0.032, 0.07]], 0.0012, COR.inox, 'inox');
 const charlotte: Gerador = () => {
-  const g = formaRedonda('charlotte', [[0, 0], [0.07, 0], [0.073, 0.004], [0.087, 0.1]], 0.0015);
+  const g = formaRedonda('charlotte', [[0, 0], [0.07, 0], [0.073, 0.004], [0.087, 0.1]], 0.0015, COR.inox, 'inox');
   return g;
 };
 const forminha: Gerador = () => formaRedonda('forminha', [[0, 0], [0.024, 0], [0.026, 0.002], [0.036, 0.02]], 0.0008, COR.inox, 'inox', 18, 0.05);

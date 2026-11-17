@@ -51,10 +51,14 @@ function variante(acao, gesto, texto) {
       if (['amaciar', 'quebrar'].includes(acao)) return 'golpes';
       return 'pressionar';
     case 'calor':
-      if (['assar', 'gratinar', 'assar-as-cegas', 'tostar'].includes(acao) && !/frigideira|panela|wok/.test(t)) return 'forno';
+      // assar a 180-250 °C é forno, mesmo na frigideira de ferro (pão de milho); na chapa ou comal é fogão
+      if (acao === 'assar' && /(1[5-9]\d|2\d\d)\s*°\s*c/.test(t)) return 'forno';
+      if (['assar', 'gratinar', 'assar-as-cegas', 'tostar'].includes(acao) && !/frigideira|panela|wok|chapa|tawa|comal|primeiro lado|segundo lado|por lado/.test(t)) return 'forno';
       if (/\bforno\b/.test(t) && !/frigideira|wok|boca|fogo (alto|médio|baixo)/.test(t)) return 'forno';
       if (acao === 'grelhar' && /forno|salamandra/.test(t)) return 'forno';
       if (['fritar', 'saltear', 'caramelizar', 'flambar', 'tostar', 'grelhar'].includes(acao)) return 'frigideira';
+      // assar na chapa (tortilla, chapati, paratha): chapa seca no fogão
+      if (acao === 'assar') return 'frigideira';
       return 'panela';
     case 'tempo':
       if (['resfriar', 'congelar', 'descongelar', 'armazenar'].includes(acao) || /geladeira|congelador|gelo/.test(t)) return 'frio';

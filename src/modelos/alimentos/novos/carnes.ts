@@ -86,7 +86,7 @@ function rolo(k: Ctx, o: OpcRolo): { out: Parte[]; ry: number; rz: number; L: nu
     mod: (t, a) => aperto(t) * (1 + 0.035 * fbm(t * 6, Math.cos(a) * 1.2, Math.sin(a) * 1.2, k.s)),
     desloc: (p) => { const lim = ry * (o.apoio ?? 0.25); if (p.y < lim) p.y = lim - (lim - p.y) * 0.4; },
   }), o.ac ?? k.ac, true));
-  const r = 0.0013;
+  const r = 0.0017;
   for (const t of ts) {
     const b = borda(t) * 0.95;
     for (const g of laco(lerp(-L / 2, L / 2, t), ry, ry * b, rz * b, r, { no: true, cor: o.cordao, n: 20 })) out.push(parte(g, 'fosco'));
@@ -215,7 +215,13 @@ function rolos(tipo: 'boi' | 'lombo' | 'file' | 'dois' | 'paleta') {
       const recheio = (x: number, y: number, z: number) => mix(mix(rgb('#e8d49a'), rgb('#c89a5a'), suave(0, 0.8, fbm(x * 260, y * 260, z * 260, s)) * 0.6), rgb('#5a7a3a'), 1 - suave(0.08, 0.16, celula(x * 350, y * 350, z * 350, s)));
       return rolo(k, {
         laços: 7,
-        fora: (x, y, z) => mul(mix(c2, rgb('#ecd4c4'), suave(0.2, 0.9, fbm(x * 30, y * 60, z * 60, s)) * 0.4), 0.95 + 0.06 * fbm(x * 250, y * 250, z * 250, s)),
+        // lombo rosado com a capa de gordura só por cima (a peça foi enrolada com a gordura para fora no alto)
+        fora: (x, y, z, t, a) => {
+          const H = k.T * k.A;
+          const carne = foraCrua(k, c1, 0.1)(x, y, z, t, a);
+          const gord = mul(mix(c2, rgb('#ecd4c4'), suave(0.2, 0.9, fbm(x * 30, y * 60, z * 60, s)) * 0.4), 0.95 + 0.06 * fbm(x * 250, y * 250, z * 250, s));
+          return mix(carne, gord, suave(H * 0.86, H * 0.97, y + H * 0.06 * fbm(x * 30, 0, z * 30, s + 5)) * 0.65);
+        },
         corte: (rho, ang, x, y, z) => {
           if (rho > 0.88) return mul(c2, 0.98);
           const q = espiral(rho, ang, 1.6);
@@ -227,13 +233,14 @@ function rolos(tipo: 'boi' | 'lombo' | 'file' | 'dois' | 'paleta') {
     }
     if (tipo === 'file') {
       return rolo(k, {
-        laços: 6, fora: foraCrua(k, c1, 0.35),
-        corte: (rho, ang, x, y, z) => (rho < 0.42 + 0.06 * Math.sin(ang * 3) ? espinafre(x, y, z) : corteCru(c1, s)(rho, ang, x, y, z)),
+        laços: 6, fora: foraCrua(k, c1, 0.1),
+        // o filé aberto em livro e enrolado sobre o recheio: espiral de espinafre no corte
+        corte: (rho, ang, x, y, z) => (rho < 0.18 || (espiral(rho, ang, 1.5) > 0.72 && rho < 0.9) ? espinafre(x, y, z) : corteCru(c1, s)(rho, ang, x, y, z)),
       }).out;
     }
     if (tipo === 'dois') {
       const cogumelo = (x: number, y: number, z: number) => mix(rgb('#7a6450'), rgb('#a8947a'), suave(-0.2, 0.7, fbm(x * 400, y * 400, z * 400, s)) * 0.7);
-      const fora0 = foraCrua(k, c1, 0.3);
+      const fora0 = foraCrua(k, c1, 0.1);
       return rolo(k, {
         laços: 6,
         fora: (x, y, z, t, a) => {

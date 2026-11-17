@@ -177,7 +177,8 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
         const anel = new THREE.Mesh(new THREE.TorusGeometry(1, fibra === '#efe6d2' ? 0.04 : 0.09, 6, 32), matAmarra);
         anel.rotation.y = Math.PI / 2;
         // o toro nasce no plano XY; girado em Y, o X local vira o Z do mundo
-        anel.scale.set(sec.raioZ * folga, sec.raioY * folga, 1);
+        // a espessura do fio acompanha o tamanho da peça (com 1 no eixo do fio, cada volta virava uma faixa larga)
+        anel.scale.set(sec.raioZ * folga, sec.raioY * folga, Math.min(sec.raioZ, sec.raioY) * folga);
         anel.position.set(x, mesa.capa ? Math.max(sec.centroY, sec.raioY * folga) : sec.centroY, 0);
         anel.castShadow = true;
         // aperto leve da carne
