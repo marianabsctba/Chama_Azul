@@ -48,20 +48,22 @@ function criarLouca(tipo: Louca, R: number): { g: THREE.Group; poco: number; pis
     return { g, poco: 0.06, piso: 0.12 };
   }
   const sopa = tipo === 'tigela';
-  const w = sopa ? R * 0.55 : R * 0.64; // raio do poço
+  const w = sopa ? R * 0.74 : R * 0.64; // raio do poço
+  // tigela de verdade: paredes altas e borda estreita (antes era um prato fundo de aba larga)
   const perfil = sopa
-    ? [[0, 0], [w * 0.8, 0], [w, 0.006], [w * 1.08, 0.03], [w * 1.2, 0.042], [R * 0.97, 0.046], [R, 0.05], [R * 0.985, 0.053], [w * 1.18, 0.046], [w * 1.04, 0.032], [w * 0.95, 0.01], [0, 0.008]]
+    ? [[0, 0], [w * 0.62, 0], [w * 0.7, 0.003], [w * 0.92, 0.022], [w * 1.12, 0.05], [w * 1.28, 0.072], [w * 1.31, 0.075], [w * 1.28, 0.076], [w * 1.24, 0.072], [w * 1.08, 0.05], [w * 0.88, 0.024], [w * 0.68, 0.01], [0, 0.009]]
     : [[0, 0], [w * 0.9, 0], [w, 0.004], [w * 1.06, 0.012], [w * 1.16, 0.016], [R * 0.97, 0.02], [R, 0.022], [R * 0.985, 0.025], [w * 1.14, 0.0195], [w * 1.03, 0.012], [w * 0.97, 0.0075], [0, 0.0075]];
   const geo = new THREE.LatheGeometry(perfil.map(([x, y]) => new THREE.Vector2(x, y)), 96);
   const m = new THREE.Mesh(geo, porcelana());
   m.castShadow = true;
   m.receiveShadow = true;
   g.add(m);
-  const linha = new THREE.Mesh(new THREE.TorusGeometry(R * 0.955, 0.0011, 5, 160), filete());
+  const linha = new THREE.Mesh(new THREE.TorusGeometry(sopa ? w * 1.3 : R * 0.955, 0.0011, 5, 160), filete());
   linha.rotation.x = Math.PI / 2;
-  linha.position.y = sopa ? 0.0478 : 0.0207;
+  linha.position.y = sopa ? 0.0745 : 0.0207;
   g.add(linha);
-  if (tipo === 'travessa') g.scale.z = 0.7;
+  // travessa comprida e oval, bem diferente do prato; tigela funda, não prato de sopa raso
+  if (tipo === 'travessa') g.scale.set(1.18, 1, 0.62);
   return { g, poco: w, piso: sopa ? 0.009 : 0.0078 };
 }
 
@@ -453,8 +455,10 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   // camada de baixo: molho
   if (tipo === 'tigela' || tipo === 'taca') {
     if (molho) {
-      const nivel = tipo === 'taca' ? 0.118 : 0.03;
-      const caldo = new THREE.Mesh(new THREE.CircleGeometry(tipo === 'taca' ? 0.058 : poco * 1.12, 64), new THREE.MeshStandardMaterial({ color: molho.cor, roughness: 1 - molho.brilho * 0.8, emissive: molho.cor.clone().multiplyScalar(0.1) }));
+      const nivel = tipo === 'taca' ? 0.118 : 0.05;
+      // caldo claro (consomê, dashi) é translúcido: vê-se o fundo da tigela
+      const claro = !!ficha.claro;
+      const caldo = new THREE.Mesh(new THREE.CircleGeometry(tipo === 'taca' ? 0.058 : poco * 1.1, 64), new THREE.MeshStandardMaterial({ color: molho.cor, roughness: claro ? 0.05 : 1 - molho.brilho * 0.8, emissive: molho.cor.clone().multiplyScalar(claro ? 0.02 : 0.1), transparent: claro, opacity: claro ? 0.62 : 1, depthWrite: !claro }));
       caldo.rotation.x = -Math.PI / 2;
       caldo.position.y = nivel;
       grupo.add(caldo);
@@ -476,7 +480,7 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   }
 
   // altura de onde a peça principal assenta
-  const nivelPrincipal = tipo === 'tigela' ? 0.032 : tipo === 'taca' ? 0.12 : piso;
+  const nivelPrincipal = tipo === 'tigela' ? 0.052 : tipo === 'taca' ? 0.12 : piso;
   let alturaBase = 0;
   if (!peca && doce && tipo === 'prato') {
     // doce sem peça: quenelle do creme no centro
@@ -487,7 +491,10 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
   }
 
   const ultimoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar')?.variante;
-  const miudoCorte = ficha.forma === 'tiras' || ficha.forma === 'cubos' ? ficha.forma : ficha.forma ? null : ultimoCorte === 'tiras' || ultimoCorte === 'cubos' || ultimoCorte === 'picar' ? ultimoCorte : null;
+  // "pedaços" de uma peça cortada em palitos ou cubos nos passos: vai o montinho de palitos ou cubos soltos,
+  // não a silhueta do legume inteiro em placas
+  const corteMiudo = ultimoCorte === 'tiras' || ultimoCorte === 'cubos' || ultimoCorte === 'picar' ? ultimoCorte : null;
+  const miudoCorte = ficha.forma === 'tiras' || ficha.forma === 'cubos' ? ficha.forma : ficha.forma === 'pedacos' ? corteMiudo : ficha.forma ? null : corteMiudo;
   let feixeFeito = false;
   const passoCorte = [...tecnica.passos].reverse().find((p) => p.gesto === 'cortar' && p.variante === miudoCorte);
   const metaCorte = passoCorte?.meta;
