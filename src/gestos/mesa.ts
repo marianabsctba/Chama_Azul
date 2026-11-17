@@ -27,8 +27,10 @@ export function temPeca(passo: { alimento?: string; alvo: string; meio?: string 
 }
 
 /** Texto do conteúdo do recipiente: o meio revisado ou o alvo do passo. */
-export function textoConteudo(passo: { alvo: string; meio?: string }) {
-  return passo.meio ?? passo.alvo;
+export function textoConteudo(passo: { alvo: string; meio?: string; alimento?: string }) {
+  // carne moída, linguiça e tartare são massa de carne, não líquido: o id do alimento entra no texto
+  const carne = passo.alimento && /mo[ií]da|lingui|hamburg|tartar|farsa|almond|kofta|kafta/i.test(passo.alimento) ? ` carne moída` : '';
+  return passo.meio ?? `${passo.alvo}${carne}`;
 }
 
 const UTENSILIO_PADRAO: Record<string, string> = {
@@ -212,6 +214,8 @@ export class Mesa {
       const c = new Conteudo(this.bocaRaio * 0.95, e.cor, alturaUtil * nivelRel);
       c.estado.espessura = e.espessura;
       c.estado.brilho = e.brilho;
+      // massa de carne tem relevo de grumos, não superfície lisa de líquido
+      if (/carne mo[ií]da|carne picada|lingui|tartar|hamb[uú]rguer|alm[oô]ndega|bolo de carne/i.test(texto)) c.estado.picos = 1;
       c.position.set(this.centro.x, this.fundoY, this.centro.z);
       this.cena.add(c);
       this.conteudo = c;

@@ -97,7 +97,7 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
     const y = conteudo ? mesa.fundoY + 0.002 : mesa.fundoY + 0.004;
     peca.position.set(mesa.centro.x, y, mesa.centro.z);
   }
-  const vapor = new Particulas('#ffffff', 90, 'esfera', 0.25);
+  const vapor = new Particulas('#ffffff', 90, 'esfera', 0.1);
   const respingo = new Particulas(p.meio === 'oleo' ? '#ffe9a0' : '#e8f4ff', 60, 'esfera', 0.9);
   const fogo = new Particulas('#ffb347', 80, 'esfera', 0.8);
   cena.add(vapor, respingo, fogo);
@@ -195,7 +195,7 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
         // o vapor nasce acima da superfície e é ralo: dentro do líquido ele parecia leite ou espuma
         if (T > 75 && Math.random() < dt * 14 * clamp((T - 75) / 25)) {
           const o = conteudo.position.clone().add(new THREE.Vector3((Math.random() - 0.5) * mesa.bocaRaio, e.nivel + 0.03, (Math.random() - 0.5) * mesa.bocaRaio));
-          vapor.emitir(o, new THREE.Vector3(0, 0.25, 0), { vida: 2.2, tam: 0.012, gravidade: 0.05, cresce: 2.5, espalhar: 0.5 });
+          vapor.emitir(o, new THREE.Vector3(0, 0.3, 0), { vida: 1.6, tam: 0.008, gravidade: 0.05, cresce: 2.5, espalhar: 0.5 });
         }
         if (p.meio === 'oleo' && T > 150 && peca && Math.random() < dt * 20) {
           respingo.emitir(peca.position.clone().add(new THREE.Vector3(0, 0.01, 0)), new THREE.Vector3(0, 0.8, 0), { vida: 0.5, tam: 0.0022, gravidade: -6, espalhar: 1.5 });

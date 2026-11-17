@@ -72,10 +72,11 @@ export class Conteudo extends THREE.Group {
     pos.needsUpdate = true;
     geo.computeVertexNormals();
     this.material.color.copy(e.cor);
-    this.material.emissive.copy(e.cor).multiplyScalar(0.22);
-    this.material.roughness = 1 - e.brilho * 0.9;
-    // líquido ralo (água, caldo, óleo, vinho) deixa ver o que está dentro: ossos, legumes, ovos
+    // líquido ralo (água, caldo, óleo, vinho, calda) deixa ver o que está dentro: ossos, legumes, ovos
     const ralo = e.espessura < 0.12;
+    // o brilho próprio clareava o líquido ralo até parecer leite: nele quase não há emissivo
+    this.material.emissive.copy(e.cor).multiplyScalar(ralo ? 0.04 : 0.22);
+    this.material.roughness = ralo ? 0.06 : 1 - e.brilho * 0.9;
     if (this.material.transparent !== ralo) {
       this.material.transparent = ralo;
       this.material.depthWrite = !ralo;
@@ -128,6 +129,8 @@ const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#d9a443', '#efdcb2', '#f0dfa4', 
 export function estadoInicial(texto: string, contexto = ''): { cor: string; espessura: number; brilho: number } {
   const t = texto.toLowerCase();
   const tabela: [RegExp, string, number, number][] = [
+    // massa de carne crua (moída, linguiça, tartare): rosada, firme, opaca e fosca
+    [/carne mo[ií]da|carne picada|massa de carne|lingui[cç]a|tartar|hamb[uú]rguer|alm[oô]ndega|bolo de carne/, '#a24a3e', 0.97, 0.12],
     [/clara/, '#f3eed2', 0.15, 0.7],
     [/gema|creme de ovos|zabaione|sabayon/, '#f2b632', 0.4, 0.6],
     [/ovo/, '#f0c24b', 0.2, 0.6],
@@ -147,7 +150,7 @@ export function estadoInicial(texto: string, contexto = ''): { cor: string; espe
     [/caldo|sopa|bouillon/, '#c99a52', 0.08, 0.85],
     [/roux/, '#e7c77d', 0.6, 0.4],
     [/óleo|azeite|gordura|fritura/, '#e8c45a', 0.02, 1],
-    [/vinho tinto/, '#5b1a24', 0.02, 0.9],
+    [/vinho tinto/, '#4a1220', 0.1, 0.9],
     [/vinho|vinagre/, '#e9dc9c', 0.02, 0.9],
     [/água|salmoura|gelo/, '#bcd8e6', 0.0, 1],
     [/massa de pão|massa|farinha|pão/, '#efdcb2', 0.95, 0.15],

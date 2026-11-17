@@ -197,7 +197,8 @@ export class Missao {
     if (est === 'balanca') return;
     // na geladeira e no forno, um pouco mais de folga: aparece a prateleira e a boca do forno
     const folga = est === 'forno' || est === 'geladeira' ? 1.5 : 1.2;
-    const raioMin = est === 'forno' || est === 'geladeira' ? 0.12 : 0.05;
+    // peça miúda (pistache, castanha, cereja) pede câmera bem perto
+    const raioMin = est === 'forno' || est === 'geladeira' ? 0.12 : 0.025;
     const caixa = new THREE.Box3();
     // a peça e o recipiente; os extras (guias da faca, marcas) só entram quando são a outra vasilha do despejo
     const passo = this.tecnica.passos[this.indice];
@@ -217,7 +218,7 @@ export class Missao {
     const centro = caixa.getCenter(new THREE.Vector3());
     const raio = THREE.MathUtils.clamp(caixa.getSize(new THREE.Vector3()).length() / 2, raioMin, 0.55);
     const fov = (this.jogador.camera.fov * Math.PI) / 180;
-    const d = THREE.MathUtils.clamp((raio / Math.sin(fov / 2)) * folga, 0.26, 1.5);
+    const d = THREE.MathUtils.clamp((raio / Math.sin(fov / 2)) * folga, est === 'forno' || est === 'geladeira' ? 0.26 : 0.11, 1.5);
     const dir = estacao.camera.clone().sub(estacao.superficie).normalize();
     this.jogador.voar(centro.clone().addScaledVector(dir, d), centro, 0.45);
   }
