@@ -116,9 +116,10 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
 function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa']['garantirPeca']> | null) {
   const { passo, mesa } = ctx;
   const texto = `${passo.acao} ${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
-  const pano = /pano|toalha|guardanapo/.test(texto);
+  // papel-toalha é papel, não pano
+  const pano = /\bpano|toalha|guardanapo/.test(texto.replace(/papel[- ]toalha/g, ''));
   const filme = /filme|pl[aá]stico/.test(texto);
-  const tampa = /tampad|tampa|com a tampa/.test(texto) && !pano && !filme;
+  const tampa = /tampad|tampa\b|com a tampa/.test(texto) && !pano && !filme;
   if (!pano && !filme && !tampa) return;
   const alvo = mesa.recipiente ?? peca;
   if (!alvo) return;

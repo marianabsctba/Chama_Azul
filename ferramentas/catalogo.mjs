@@ -249,7 +249,7 @@ function main() {
       }
       const texto = `${p.alvo} ${p.utensilio} ${p.parametro}`;
       // aquecer ou amolecer com a palma da mão (camada de chocolate, manteiga) é esfregar na bancada, não fogo
-      const naMao = gesto === 'calor' && /palma|m[aã]os?|dedos/i.test(p.utensilio + ' ' + p.parametro);
+      const naMao = gesto === 'calor' && /palma|m[aã]os?\b|dedos/i.test(p.utensilio + ' ' + p.parametro);
       if (naMao) gesto = 'superficie';
       const passo = {
         acao,

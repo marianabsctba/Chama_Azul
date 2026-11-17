@@ -190,8 +190,9 @@ export function gestoCalor(ctx: ContextoGesto): Execucao {
           e.ondas = clamp((T - 105) / 40) * 0.4;
         } else e.ondas = clamp((T - 40) / 30) * 0.1;
         if (p.reduzir) e.nivel = nivel0 * (1 - 0.5 * clamp(noPonto / tempoAlvo));
-        if (T > 75 && Math.random() < dt * 30 * clamp((T - 75) / 25)) {
-          const o = conteudo.position.clone().add(new THREE.Vector3((Math.random() - 0.5) * mesa.bocaRaio, e.nivel, (Math.random() - 0.5) * mesa.bocaRaio));
+        // o vapor nasce acima da superfície e é ralo: dentro do líquido ele parecia leite ou espuma
+        if (T > 75 && Math.random() < dt * 14 * clamp((T - 75) / 25)) {
+          const o = conteudo.position.clone().add(new THREE.Vector3((Math.random() - 0.5) * mesa.bocaRaio, e.nivel + 0.03, (Math.random() - 0.5) * mesa.bocaRaio));
           vapor.emitir(o, new THREE.Vector3(0, 0.25, 0), { vida: 2.2, tam: 0.012, gravidade: 0.05, cresce: 2.5, espalhar: 0.5 });
         }
         if (p.meio === 'oleo' && T > 150 && peca && Math.random() < dt * 20) {
