@@ -1,7 +1,7 @@
 // Tempo (descansar, fermentar, gelar, marinar), verter (coar, despejar, escumar, peneirar) e medir.
 import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
-import { clamp, comentar, formatarTempo, minutos, suave } from './base';
+import { clamp, comentar, formatarTempo, minutos, suave, temperaturas } from './base';
 import { anguloDaEstacao, aoLado, temPeca, textoConteudo } from './mesa';
 import { Particulas } from '../pecas/particulas';
 import { audio } from '../motor/audio';
@@ -557,6 +557,39 @@ function gestoPeneirar(ctx: ContextoGesto): Execucao {
  * Medir comprimento ou espessura (régua no peixe, lâmina da mandolina, marcas de 2,5 cm): a régua ao
  * lado da peça e um marcador que corre enquanto segura; soltar na medida do livro.
  */
+/** Termômetro na panela: o ponteiro sobe até a temperatura do livro e o jogador confirma. */
+function gestoMedirTemperatura(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, hud } = ctx;
+  const alvoT = temperaturas(`${passo.parametro} ${passo.alvo}`)[0] ?? 115;
+  mesa.removerPeca();
+  mesa.garantirRecipiente(ctx.vaso && /panela|caçarola|frigideira|banho/i.test(ctx.vaso) ? ctx.vaso : 'panela', estacao.superficie.clone(), 'panela');
+  const conteudo = mesa.garantirConteudo(passo.meio ?? textoConteudo(passo), 0.5);
+  const termo = mesa.pegarFerramenta(passo.utensilio || 'termômetro', 'medir');
+  // a haste mergulhada no centro da panela, levemente inclinada
+  if (termo) mesa.ferramentaEm(new THREE.Vector3(mesa.centro.x, (conteudo.position.y ?? mesa.fundoY) + 0.004, mesa.centro.z), 0, -1.15, 0);
+  let lido = 20;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica('Espere o termômetro chegar à temperatura do livro e confirme.');
+      lido += (alvoT - lido) * Math.min(1, dt * 1.5);
+      conteudo.estado.ondas = clamp((lido - 80) / 40) * 0.3;
+      hud.medidores([{ rotulo: 'Termômetro', valor: clamp(lido / (alvoT * 1.3)), texto: `${Math.round(lido)} °C`, faixa: [0.74, 0.8] }]);
+      if (Math.abs(lido - alvoT) < 1 && hud.botao('Pronto')) {
+        exec.nota = 1;
+        exec.comentario = comentar(1, `${Math.round(alvoT)} °C no termômetro.`, '', '');
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      hud.botao(null);
+    },
+  };
+  return exec;
+}
+
 function gestoMedirComprimento(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, hud } = ctx;
   const m = passo.meta;
@@ -587,6 +620,18 @@ function gestoMedirComprimento(ctx: ContextoGesto): Execucao {
   regua.rotation.y = ang;
   regua.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.002, 0.06).applyAxisAngle(new THREE.Vector3(0, 1, 0), ang));
   mesa.adicionarExtra(regua);
+  // regular a lâmina da mandolina: a mandolina fica em cena, ao lado da peça
+  if (/mandolina/i.test(`${passo.utensilio} ${passo.alvo}`)) {
+    const mand = criarUtensilio('mandolina');
+    if (mand) {
+      // atrás da peça, longe da câmera, para não tapar a vista
+      const atras = estacao.superficie.clone().sub(estacao.camera).setY(0).normalize();
+      mand.rotation.y = ang;
+      mand.scale.setScalar(0.75);
+      mand.position.copy(estacao.superficie).addScaledVector(atras, 0.16);
+      mesa.adicionarExtra(mand);
+    }
+  }
   let medidoCm = 0;
   const maxCm = compr * 100;
   const exec: Execucao = {
@@ -617,6 +662,7 @@ export function gestoMedir(ctx: ContextoGesto): Execucao {
   const m = passo.meta;
   const textoMedir = `${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
   if ((m && (m.unidade === 'cm' || m.unidade === 'mm')) || /r[eé]gua|espessura|l[aâ]mina|grade|marca|calibre|mandolina/.test(textoMedir)) return gestoMedirComprimento(ctx);
+  if (/term[oô]metro/.test(textoMedir)) return gestoMedirTemperatura(ctx);
   const balanca = passo.variante === 'balanca';
   let alvo = 100;
   let unidade = balanca ? 'g' : 'ml';

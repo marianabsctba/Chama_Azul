@@ -394,6 +394,12 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
       guias.sort((a, b) => a.position.distanceTo(atual) - b.position.distanceTo(atual));
       const alvo = guias[0].position.clone();
       const passo2 = alvo.clone().sub(atual);
+      // longe do próximo ponto (montinhos separados): solta o saco e vai até lá
+      if (passo2.length() > 0.03) {
+        e.pressionado = false;
+        e.apontar(atual.clone().addScaledVector(passo2.clone().normalize(), Math.min(0.03, passo2.length())), cam);
+        return;
+      }
       const p = passo2.length() > 0.008 ? atual.clone().addScaledVector(passo2.normalize(), 0.008) : alvo;
       segurar(p);
       return;

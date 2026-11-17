@@ -158,6 +158,8 @@ export function gestoCortar(ctx: ContextoGesto): Execucao {
           if (!proxima()) {
             exec.nota = notas.reduce((s2, n) => s2 + n, 0) / notas.length;
             exec.comentario = comentar(exec.nota, 'Peças do mesmo tamanho, como manda a técnica.', 'Quase todas iguais; a regularidade garante cozimento por igual.', 'Tamanhos variados cozinham em tempos diferentes. Vale treinar de novo.');
+            // terminado o corte, as partes se afastam: rodelas, quartos e cubos aparecem soltos, não só riscados
+            peca.espalhar(Math.max(0.006, Math.max(peca.comprimento, peca.largura) * (peca.fragmentos.length <= 4 ? 0.1 : 0.035)));
             exec.concluido = true;
           }
         }

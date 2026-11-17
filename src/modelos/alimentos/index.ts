@@ -98,6 +98,16 @@ const NEUTRO: Visual = { f: 'esferoide', v: 'liso', t: 0.06, a: 0.85, c1: '#d8c8
  * Forma para qualquer texto do catálogo que não seja um id: primeiro procura um id
  * contido no texto (o mais específico), depois aplica as regras de palavra-chave.
  */
+/** O texto aponta para algum alimento conhecido (e não para a bolinha neutra genérica)? */
+export function textoReconhecido(texto: string): boolean {
+  const n = normalizar(texto ?? '');
+  if (VISUAIS[texto]) return true;
+  const alvo = ' ' + n + ' ';
+  for (const e of indice()) if (alvo.includes(' ' + e.chave + ' ') || (e.chave.length >= 5 && alvo.includes(' ' + e.chave))) return true;
+  for (const [re] of REGRAS) if (re.test(n)) return true;
+  return false;
+}
+
 export function criarFormaGenerica(texto: string): FormaAlimento {
   const n = normalizar(texto ?? '');
   if (VISUAIS[texto]) return gerarForma(texto, VISUAIS[texto]);

@@ -3,8 +3,8 @@
 import * as THREE from 'three';
 import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar } from './base';
-import { anguloDaEstacao, ehLiquido } from './mesa';
-import { criarFormaAlimento, criarFormaGenerica, familiaDe } from '../modelos/alimentos';
+import { anguloDaEstacao, aoLado, ehLiquido } from './mesa';
+import { criarFormaAlimento, criarFormaGenerica, familiaDe, textoReconhecido } from '../modelos/alimentos';
 import { estadoInicial } from '../pecas/conteudo';
 import { criarUtensilio } from '../modelos/utensilios';
 import { Peca } from '../pecas/peca';
@@ -15,6 +15,16 @@ const VASO_NO_FOGO = /frigideira|wok|panela|caçarola|chapa|^aro$/i;
 const matFio = new THREE.MeshStandardMaterial({ color: '#efe6d2', roughness: 0.9 });
 const matFantasma = new THREE.MeshBasicMaterial({ color: '#8fdcff', transparent: true, opacity: 0.45, depthWrite: false });
 const geoMarca = new THREE.SphereGeometry(1, 14, 10);
+
+/**
+ * A guarnição do passo: a da ficha, ervas quando o texto fala de ervas, ou o alimento que o texto
+ * nomeia. Sem nada reconhecível, nada entra (antes entrava uma bolinha branca genérica).
+ */
+function guarnicao(lista: string[], i: number, alvo: string) {
+  if (lista.length) return criarFormaAlimento(lista[i % lista.length]);
+  if (/erva|salsa|folha|cerefólio|ciboulette|cebolinha|coentro|endro/.test(alvo)) return criarFormaGenerica('folha de salsa');
+  return alvo && textoReconhecido(alvo) ? criarFormaGenerica(alvo) : null;
+}
 
 function prepararPeca(ctx: ContextoGesto) {
   const { passo, mesa, estacao } = ctx;
@@ -112,7 +122,8 @@ function decorarServido(ctx: ContextoGesto): Execucao {
     pontos,
     'Clique nos pontos marcados para pôr a guarnição sobre o prato.',
     (i) => {
-      const forma = lista.length ? criarFormaAlimento(lista[i % lista.length]) : criarFormaGenerica(/erva|salsa|folha|cerefólio|cebolinha|coentro|endro/.test(passo.alvo) ? 'folha de salsa' : passo.alvo || 'guarnição');
+      const forma = guarnicao(lista, i, passo.alvo);
+      if (!forma) return;
       const g = new Peca(forma);
       g.scale.setScalar(Math.min(1, 0.028 / Math.max(g.comprimento, g.largura, 1e-3)));
       g.position.copy(pontos[i]);
@@ -187,7 +198,8 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
       (i) => {
         // a guarnição revisada (pepino, gengibre, ervas) ou um palpite pelo texto
         const lista = passo.adicionar?.length ? passo.adicionar : null;
-        const forma = lista ? criarFormaAlimento(lista[i % lista.length]) : criarFormaGenerica(/erva|salsa|folha|cerefólio|ciboulette|cebolinha/.test(passo.alvo) ? 'folha de salsa' : passo.alvo || 'guarnição');
+        const forma = guarnicao(lista ?? [], i, passo.alvo);
+        if (!forma) return;
         const g = new Peca(forma);
         const maior = Math.max(g.comprimento, g.largura);
         g.scale.setScalar(Math.min(1, 0.035 / maior) / peca.scale.x);
@@ -319,6 +331,8 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
           const i = mesa.extras.indexOf(recheio!);
           if (i >= 0) mesa.extras.splice(i, 1);
           peca.attach(recheio!);
+          // o que a ficha diz que vai no recheio aparece por cima dele (cogumelo, ervas, frutas)
+          if (passo.adicionar?.length) mesa.adicionarSobre(passo.adicionar, 'espalhado');
         }
       } else if (v === 'dobrar') {
         if (entrada.cliqueNovo) inicioArraste = entrada.px.clone();
@@ -440,7 +454,18 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
   const c = estacao.superficie.clone().setY(y);
   const ang = anguloDaEstacao(estacao);
   const rot = (x: number, z: number) => new THREE.Vector3(x * Math.cos(ang) + z * Math.sin(ang), 0, -x * Math.sin(ang) + z * Math.cos(ang)).add(c);
-  if (/[eé]clair|bomba|bast[aã]o|tira|linha|palito|dedo/.test(texto)) {
+  // montinhos (choux, suspiros, conchas, macarons, biscoitos pingados): o creme cresce parado no ponto
+  const montinhos = /bolinha|montinho|gota|choux|profiterol|suspiro|concha|macaron|pingad|pingar|pontinho|carolina/i.test(texto) && !/[eé]clair|bast[aã]o/i.test(texto);
+  if (montinhos) {
+    for (const cz of [-0.06, 0, 0.06]) for (const cx of [-0.09, -0.03, 0.03, 0.09]) caminho.push(rot(cx, cz));
+  } else if (/disco|espiral|base de merengue|fundo/i.test(texto)) {
+    // disco em espiral, do centro para fora
+    for (let i = 0; i <= 60; i++) {
+      const a = (i / 60) * Math.PI * 2 * 4.5;
+      const r = 0.012 + (i / 60) * 0.085;
+      caminho.push(rot(Math.cos(a) * r, Math.sin(a) * r));
+    }
+  } else if (/[eé]clair|bomba|bast[aã]o|tira|linha|palito|dedo/.test(texto)) {
     for (let l = 0; l < 3; l++) for (let i = 0; i <= 8; i++) caminho.push(rot(-0.08 + (0.16 * i) / 8, -0.06 + l * 0.06));
   } else if (/borda|coroa|anel|c[ií]rculo|ninho|savarin/.test(texto)) {
     for (let i = 0; i <= 28; i++) caminho.push(rot(Math.cos((i / 28) * Math.PI * 2) * 0.09, Math.sin((i / 28) * Math.PI * 2) * 0.09));
@@ -483,7 +508,22 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
       pressao = entrada.pressionado ? Math.min(1, pressao + dt * 4) : Math.max(0, pressao - dt * 6);
       if (ponto && pressao > 0.2 && creme.count < max) {
         const dist = ultimo ? ponto.distanceTo(ultimo) : 1;
-        if (dist > 0.0025) {
+        // o bico saiu de cima do montinho: o próximo aperto começa outro
+        if (montinhos && ultimo && ponto.distanceTo(ultimo) > 0.012) ultimo = null;
+        if (montinhos && ultimo && creme.count > 0) {
+          // apertando parado, o montinho cresce e sobe
+          creme.getMatrixAt(creme.count - 1, aux.matrix);
+          aux.matrix.decompose(aux.position, aux.quaternion, aux.scale);
+          const tam = Math.min(0.016, aux.scale.x + dt * 0.02 * pressao);
+          aux.scale.set(tam, tam * 0.8, tam);
+          aux.position.setY(y + tam * 0.6);
+          aux.updateMatrix();
+          creme.setMatrixAt(creme.count - 1, aux.matrix);
+          creme.instanceMatrix.needsUpdate = true;
+          // o ponto só conta quando o montinho já tem tamanho
+          if (tam >= 0.011) caminho.forEach((p, i) => { if (p.distanceTo(aux.position.clone().setY(p.y)) < 0.013) coberto[i] = true; });
+        } else if (dist > 0.0025 && !(montinhos && (ultimo || !caminho.some((p) => p.distanceTo(ponto) < 0.012)))) {
+          // nos montinhos, cada aperto nasce sobre um ponto marcado e não deixa rastro pelo caminho
           const tam = 0.0045 + 0.004 * pressao - Math.min(0.003, dist * 0.08);
           aux.position.copy(ponto).setY(y + tam * 0.6);
           aux.scale.set(tam, tam * 0.75, tam);
@@ -494,7 +534,7 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
           let perto = false;
           caminho.forEach((p, i) => {
             if (p.distanceTo(ponto) < 0.011) {
-              coberto[i] = true;
+              if (!montinhos) coberto[i] = true;
               perto = true;
             }
           });
@@ -524,6 +564,38 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
     },
   };
   return exec;
+}
+
+/** Tigela de água gelada ao lado da panela, com a gota de calda que virou fio ou bolinha. */
+function amostraNaAguaGelada(ctx: ContextoGesto, forma: 'fio' | 'bolinha') {
+  const { mesa, estacao } = ctx;
+  const pos = aoLado(estacao, 0.17);
+  const tigela = criarUtensilio('tigela pequena') ?? criarUtensilio('tigela') ?? new THREE.Group();
+  tigela.position.copy(pos);
+  tigela.scale.setScalar(0.7);
+  mesa.adicionarExtra(tigela);
+  tigela.updateMatrixWorld(true);
+  const caixa = new THREE.Box3().setFromObject(tigela);
+  const r = Math.min(caixa.max.x - caixa.min.x, caixa.max.z - caixa.min.z) * 0.4;
+  const yAgua = caixa.min.y + (caixa.max.y - caixa.min.y) * 0.6;
+  const agua = new THREE.Mesh(new THREE.CircleGeometry(r, 32), new THREE.MeshStandardMaterial({ color: '#bcd8e6', roughness: 0.05, transparent: true, opacity: 0.6 }));
+  agua.rotation.x = -Math.PI / 2;
+  agua.position.set(pos.x, yAgua, pos.z);
+  mesa.adicionarExtra(agua);
+  const gelo = new THREE.MeshStandardMaterial({ color: '#eef8ff', roughness: 0.08, transparent: true, opacity: 0.75 });
+  for (let i = 0; i < 4; i++) {
+    const cubo = new THREE.Mesh(new THREE.BoxGeometry(0.016, 0.014, 0.016), gelo);
+    cubo.position.set(pos.x + Math.cos(i * 1.6) * r * 0.6, yAgua, pos.z + Math.sin(i * 1.6) * r * 0.6);
+    cubo.rotation.set(i, i * 2, 0);
+    mesa.adicionarExtra(cubo);
+  }
+  const calda = new THREE.MeshStandardMaterial({ color: '#e9c46a', roughness: 0.1, transparent: true, opacity: 0.85 });
+  const amostra = forma === 'bolinha'
+    ? new THREE.Mesh(new THREE.SphereGeometry(0.011, 16, 12), calda)
+    : new THREE.Mesh(new THREE.TorusGeometry(0.02, 0.0025, 8, 32, Math.PI * 1.5), calda);
+  amostra.position.set(pos.x, yAgua + 0.004, pos.z);
+  if (forma === 'fio') amostra.rotation.x = -Math.PI / 2;
+  mesa.adicionarExtra(amostra);
 }
 
 /** Observar e decidir: o jogador vê a peça num estado e diz se está no ponto. */
@@ -557,6 +629,13 @@ export function gestoTestar(ctx: ContextoGesto): Execucao {
       mesa.adicionarExtra(poca);
     }
   } else {
+    // ponto de calda: a panela de calda e, ao lado, a tigela de água gelada com a amostra (fio ou bolinha)
+    const testeCalda = /[aá]gua gelada/i.test(`${passo.utensilio} ${passo.alvo}`) && /calda|fio|bolinha|bala|caramelo|glac/i.test(`${passo.alvo} ${tecnica.nome}`);
+    if (testeCalda) {
+      mesa.garantirRecipiente('panela', aoLado(estacao, -0.11), 'panela');
+      mesa.garantirConteudo('calda de açúcar', 0.4);
+      amostraNaAguaGelada(ctx, /fio/i.test(passo.alvo) ? 'fio' : 'bolinha');
+    }
     if (!mesa.recipiente) mesa.garantirRecipiente('tigela', estacao.superficie.clone(), 'tigela');
     const c = mesa.garantirConteudo(passo.meio ?? passo.alvo, 0.45);
     if (!revisada) {

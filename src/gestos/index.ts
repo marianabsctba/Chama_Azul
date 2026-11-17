@@ -70,8 +70,14 @@ export function estacaoDoPasso(p: Passo, t: Tecnica, anterior: CenaEstacao | nul
       if (p.variante === 'frio' && /[aá]gua corrente/.test(texto)) return 'pia';
       return DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
     }
-    case 'medir':
+    case 'medir': {
+      // só pesar e medir volume vão à balança; termômetro fica na panela do fogão; régua, mandolina,
+      // lápis e pesar na mão ficam na bancada
+      const texto = `${p.utensilio} ${p.alvo} ${p.parametro}`.toLowerCase();
+      if (/term[oô]metro/.test(texto)) return 'fogao';
+      if (/r[eé]gua|mandolina|l[aá]pis|faca|espessura|l[aâ]mina|^m[aã]os?\b/.test(texto)) return DOCE.has(t.bancada) ? 'confeitaria' : 'corte';
       return 'balanca';
+    }
     case 'confeitar':
       return 'confeitaria';
     case 'superficie':
