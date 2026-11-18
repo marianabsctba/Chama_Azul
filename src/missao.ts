@@ -230,6 +230,12 @@ export class Missao {
     const fov = (this.jogador.camera.fov * Math.PI) / 180;
     const d = THREE.MathUtils.clamp((raio / Math.sin(fov / 2)) * folga, est === 'forno' || est === 'geladeira' ? 0.26 : 0.11, 1.5);
     const dir = estacao.camera.clone().sub(estacao.superficie).normalize();
+    // com batedeira ou processador a câmera fica de frente, na altura da tigela
+    if (passo && /batedeira|processador|liquidificador|mixer/i.test(passo.utensilio ?? '')) {
+      // de frente e um pouco mais baixo que o normal: a tigela aparece por baixo da cabeça do aparelho
+      dir.y += 0.25;
+      dir.normalize();
+    }
     this.jogador.voar(centro.clone().addScaledVector(dir, d), centro, 0.45);
   }
 

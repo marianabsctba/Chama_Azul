@@ -40,7 +40,7 @@
         ],
         "correta": 1,
         "explicacao": "Umidade e mofo se espalham rápido; escolha caixas secas.",
-        "recipiente": "pote",
+        "recipiente": "tigela",
         "adicionar": [
           "morango",
           "blueberry",
@@ -607,7 +607,7 @@
         "limao"
       ],
       "servir": "tabua",
-      "forma": "inteiro",
+      "forma": "ralado",
       "estado": "cru"
     }
   },
@@ -627,7 +627,8 @@
       },
       {
         "alimento": "c4-lima-julienne",
-        "meio": "água fria"
+        "meio": "água fria",
+        "recipiente": "papel-manteiga"
       }
     ],
     "prato": {
@@ -660,7 +661,7 @@
     "prato": {
       "acompanhamentos": [],
       "servir": "copo",
-      "liquido": "#efe4a2",
+      "liquido": "#e8c832",
       "claro": true
     }
   },
@@ -1196,7 +1197,10 @@
       },
       {
         "alimento": "c4-figo-da-india-descascado",
-        "meio": "suco de limão"
+        "meio": "suco de limão",
+        "adicionar": [
+          "limao-gomo"
+        ]
       }
     ],
     "prato": {
@@ -1424,7 +1428,7 @@
       "principal": "c4-frutas-secas-cozidas",
       "acompanhamentos": [],
       "servir": "tigela",
-      "liquido": "#8a4a20",
+      "liquido": "#c07a28",
       "claro": true,
       "estado": "cozido",
       "forma": "inteiro"
@@ -2158,7 +2162,7 @@
     "prato": {
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "liquido": "#f3e9c8",
+      "liquido": "#e6c25a",
       "claro": true
     }
   },
@@ -2171,8 +2175,7 @@
       },
       {
         "alimento": "gelatina-folha",
-        "utensilio": "mãos",
-        "recipiente": "tigela"
+        "utensilio": "mãos"
       },
       {
         "alimento": "gelatina-folha",
@@ -2279,8 +2282,7 @@
   "sobremesas.sufle-frio-frutas": {
     "passos": [
       {
-        "alimento": "forma-sufle-forrada",
-        "recipiente": "ramequim"
+        "alimento": "forma-sufle-forrada"
       },
       {
         "alimento": null,
@@ -2289,21 +2291,17 @@
       },
       {
         "alimento": "sufle-frio",
-        "utensilio": "concha",
-        "recipiente": "ramequim"
+        "utensilio": "concha"
       },
       {
         "alimento": "sufle-frio",
-        "utensilio": "espátula",
-        "recipiente": "ramequim"
+        "utensilio": "espátula"
       },
       {
-        "alimento": "sufle-frio",
-        "recipiente": "ramequim"
+        "alimento": "sufle-frio"
       },
       {
         "alimento": "c4-sufle-frio-frutas",
-        "recipiente": "ramequim",
         "utensilio": "mãos"
       }
     ],
@@ -2469,7 +2467,7 @@
       },
       {
         "alimento": null,
-        "meio": "creme",
+        "meio": "creme de gemas espesso",
         "recipiente": "tigela"
       }
     ],
@@ -2523,14 +2521,14 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "custard",
-        "meio": "creme",
-        "recipiente": "travessa de vidro"
+        "alimento": "c4-pele-custard",
+        "ponto": "cru"
       },
       {
-        "alimento": "custard",
+        "alimento": "c4-pele-custard",
         "meio": "água quente",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "ponto": "cru"
       }
     ],
     "prato": {
@@ -2716,7 +2714,7 @@
       }
     ],
     "prato": {
-      "principal": "arroz_pudding",
+      "principal": "c6-arroz-doce-graos",
       "acompanhamentos": [],
       "servir": "tigelinha",
       "estado": "cozido",
@@ -2749,7 +2747,7 @@
       }
     ],
     "prato": {
-      "principal": "pudim-arroz",
+      "principal": "c6-pudim-arroz-assado",
       "acompanhamentos": [],
       "servir": "cumbuca",
       "estado": "dourado",
@@ -2821,16 +2819,14 @@
         "recipiente": "tigela"
       },
       {
-        "alimento": "sufle-cru-nivelado",
-        "recipiente": "ramequim"
+        "alimento": "sufle-cru-nivelado"
       },
       {
-        "alimento": "sufle-cru-nivelado",
-        "recipiente": "ramequim"
+        "alimento": "sufle-cru-nivelado"
       },
       {
         "alimento": "c4-sufle-baunilha",
-        "recipiente": "ramequim",
+        "recipiente": "prato",
         "utensilio": "peneira"
       }
     ],
@@ -2872,7 +2868,7 @@
       {
         "alimento": "pao-de-forma",
         "adicionar": [
-          "maca"
+          "c4-meias-luas-maca"
         ],
         "recipiente": "forma de charlotte"
       },
@@ -2917,13 +2913,13 @@
       {
         "alimento": null,
         "meio": "água",
-        "recipiente": "panela",
+        "recipiente": "panela funda",
         "utensilio": "trempe"
       },
       {
         "alimento": "pudim-vapor-embrulhado",
         "meio": "água",
-        "recipiente": "panela"
+        "recipiente": "panela funda"
       }
     ],
     "prato": {
@@ -3052,7 +3048,7 @@
       {
         "alimento": null,
         "meio": "calda de açúcar",
-        "recipiente": "panela",
+        "recipiente": "panela pesada",
         "utensilio": "mãos"
       },
       {
@@ -3074,7 +3070,7 @@
     "passos": [
       {
         "alimento": null,
-        "meio": "calda de açúcar",
+        "meio": "água fervente e doce",
         "recipiente": "panela"
       },
       {
@@ -3091,7 +3087,7 @@
           "copo-agua",
           "termometro"
         ],
-        "meio": "calda de açúcar"
+        "meio": "água fervente e doce"
       }
     ],
     "prato": {
@@ -3106,7 +3102,7 @@
     "passos": [
       {
         "alimento": null,
-        "meio": "calda de açúcar",
+        "meio": "água fervente e doce",
         "recipiente": "panela"
       },
       {
@@ -3123,7 +3119,7 @@
           "copo-agua",
           "termometro"
         ],
-        "meio": "calda de açúcar"
+        "meio": "água fervente e doce"
       }
     ],
     "prato": {
@@ -3138,7 +3134,7 @@
     "passos": [
       {
         "alimento": null,
-        "meio": "calda de açúcar",
+        "meio": "água fervente e doce",
         "recipiente": "panela"
       },
       {
@@ -3155,7 +3151,7 @@
           "copo-agua",
           "termometro"
         ],
-        "meio": "calda de açúcar"
+        "meio": "água fervente e doce"
       }
     ],
     "prato": {
@@ -3823,7 +3819,7 @@
       },
       {
         "alimento": null,
-        "meio": "sorbet de blueberry com merengue",
+        "meio": "sorbet de blueberry semicongelado",
         "recipiente": "sorveteira"
       },
       {
@@ -3940,13 +3936,13 @@
         "recipiente": "assadeira"
       },
       {
-        "alimento": "granita",
+        "alimento": "c6-granita-assadeira",
         "meio": "granita",
         "recipiente": "assadeira",
         "utensilio": "garfo"
       },
       {
-        "alimento": "granita",
+        "alimento": "c6-granita-assadeira",
         "meio": "granita",
         "recipiente": "assadeira",
         "utensilio": "colher"
@@ -4143,7 +4139,7 @@
         "alimento": "pennant-maracuja"
       },
       {
-        "alimento": "pennant-maracuja",
+        "alimento": "c6-pennants-assadeira",
         "utensilio": "rolo"
       }
     ],
@@ -4547,7 +4543,7 @@
       }
     ],
     "prato": {
-      "principal": "torta-crua-funil",
+      "principal": "c6-torta-funil-pincelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -4600,7 +4596,7 @@
       }
     ],
     "prato": {
-      "principal": "torta-dupla-crua",
+      "principal": "c6-torta-dupla-pincelada",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -4723,27 +4719,24 @@
         "alimento": "pate-brisee"
       },
       {
-        "alimento": "c4-massa-aberta",
+        "alimento": "maca-gomos-glaceados",
         "recipiente": "forma de torta",
+        "meio": "caramelo",
+        "adicionar": [
+          "c4-massa-aberta"
+        ]
+      },
+      {
+        "alimento": "torta-tampa",
+        "recipiente": "forma de torta",
+        "ponto": "cru",
         "meio": "caramelo"
       },
       {
-        "alimento": "maca-gomos-glaceados",
+        "alimento": "torta-tampa",
         "recipiente": "forma de torta",
         "ponto": "dourado",
-        "meio": "caramelo",
-        "adicionar": [
-          "c4-massa-aberta"
-        ]
-      },
-      {
-        "alimento": "maca-gomos-glaceados",
-        "recipiente": "forma de torta",
-        "ponto": "dourado",
-        "meio": "caramelo",
-        "adicionar": [
-          "c4-massa-aberta"
-        ]
+        "meio": "caramelo"
       },
       {
         "alimento": "tarte-tatin",
@@ -5104,7 +5097,7 @@
         "alimento": "croquembouche"
       },
       {
-        "alimento": "croquembouche",
+        "alimento": "c6-croquembouche-invertido",
         "adicionar": [
           "nougatine"
         ]
@@ -5308,7 +5301,7 @@
         "ponto": "cru"
       },
       {
-        "alimento": "strudel",
+        "alimento": "c6-strudel-reto",
         "recipiente": "assadeira",
         "ponto": "cru"
       },
@@ -5531,14 +5524,17 @@
       },
       {
         "alimento": "massa-folhada",
-        "utensilio": "mãos"
+        "utensilio": "mãos",
+        "estado": "inteiro"
       },
       {
         "alimento": "massa-folhada",
-        "corte": "contorno"
+        "corte": "contorno",
+        "estado": "inteiro"
       },
       {
-        "alimento": "massa-folhada"
+        "alimento": "massa-folhada",
+        "estado": "inteiro"
       },
       {
         "alimento": "feuillete"
@@ -5560,12 +5556,10 @@
     "passos": [
       {
         "alimento": "forma-bolo-untada",
-        "recipiente": "forma de bolo",
         "utensilio": "pincel"
       },
       {
-        "alimento": "forma-bolo-untada",
-        "recipiente": "forma de bolo"
+        "alimento": "forma-bolo-untada"
       }
     ],
     "prato": {
@@ -5590,12 +5584,10 @@
       {
         "alimento": "forma-bolo-untada",
         "meio": "manteiga",
-        "recipiente": "forma de bolo",
         "utensilio": "pincel"
       },
       {
-        "alimento": "forma-bolo-disco-papel",
-        "recipiente": "forma de bolo"
+        "alimento": "forma-bolo-disco-papel"
       }
     ],
     "prato": {
@@ -5617,16 +5609,13 @@
         "utensilio": "tesoura"
       },
       {
-        "alimento": "forma-bolo-dupla-forracao",
-        "recipiente": "forma de bolo"
+        "alimento": "forma-bolo-dupla-forracao"
       },
       {
-        "alimento": "forma-bolo-dupla-forracao",
-        "recipiente": "forma de bolo"
+        "alimento": "forma-bolo-dupla-forracao"
       },
       {
-        "alimento": "forma-bolo-dupla-forracao",
-        "recipiente": "forma de bolo"
+        "alimento": "forma-bolo-dupla-forracao"
       },
       {
         "alimento": "forma-bolo-dupla-forracao",
@@ -5653,8 +5642,7 @@
         "utensilio": "tesoura"
       },
       {
-        "alimento": "forma-pao-forrada",
-        "recipiente": "fôrma de pão"
+        "alimento": "forma-pao-forrada"
       }
     ],
     "prato": {
@@ -5669,24 +5657,20 @@
       {
         "alimento": "forma-bolo-massa-crua",
         "meio": "massa leve",
-        "utensilio": "colher",
-        "recipiente": "forma de bolo"
+        "utensilio": "colher"
       },
       {
         "alimento": "forma-bolo-massa-crua",
         "meio": "massa de frutas",
-        "utensilio": "colher",
-        "recipiente": "forma de bolo"
+        "utensilio": "colher"
       },
       {
         "alimento": "forma-bolo-massa-crua",
-        "meio": "massa de frutas",
-        "recipiente": "forma de bolo"
+        "meio": "massa de frutas"
       },
       {
         "alimento": "forma-bolo-massa-crua",
-        "meio": "massa de pão-de-ló",
-        "recipiente": "forma de bolo"
+        "meio": "massa de pão-de-ló"
       }
     ],
     "prato": {
@@ -5826,7 +5810,7 @@
       },
       {
         "alimento": "pao-de-lo",
-        "recipiente": "fôrma"
+        "recipiente": "forma de bolo"
       },
       {
         "alimento": "pao-de-lo",
@@ -5994,8 +5978,7 @@
   "bolos.pao-de-lo": {
     "passos": [
       {
-        "alimento": "forma-bolo-untada",
-        "recipiente": "forma de bolo"
+        "alimento": "forma-bolo-untada"
       },
       {
         "alimento": null,
@@ -6097,10 +6080,10 @@
         ]
       },
       {
-        "alimento": "c4-pao-de-lo-fino"
+        "alimento": "c6-pao-de-lo-recheado"
       },
       {
-        "alimento": "c4-rocambole-espiral"
+        "alimento": "c6-pao-de-lo-recheado"
       },
       {
         "alimento": "c4-rocambole-espiral",
@@ -6108,7 +6091,7 @@
       }
     ],
     "prato": {
-      "principal": "c4-rocambole-espiral",
+      "principal": "c6-rocambole-fatiado",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -6121,7 +6104,7 @@
       }
     ],
     "prato": {
-      "principal": "c4-rocambole-espiral",
+      "principal": "c6-rocambole-fatiado",
       "acompanhamentos": [],
       "servir": "tabua",
       "forma": "inteiro",
@@ -6260,7 +6243,7 @@
       }
     ],
     "prato": {
-      "principal": "bolo-camadas",
+      "principal": "c6-bolo-camadas-coberto",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -6358,7 +6341,7 @@
       }
     ],
     "prato": {
-      "principal": "cheesecake-gelado",
+      "principal": "c6-cheesecake-gelado-pronto",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -6436,7 +6419,7 @@
       }
     ],
     "prato": {
-      "principal": "cheesecake-assado",
+      "principal": "c6-cheesecake-assado-pronto",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
@@ -6807,7 +6790,7 @@
       }
     ],
     "prato": {
-      "principal": "bolo-chantilly-castanhas",
+      "principal": "c6-bolo-chantilly-pronto",
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
@@ -6877,7 +6860,7 @@
       }
     ],
     "prato": {
-      "principal": "lace-tuile",
+      "principal": "c6-lace-tuile-curva",
       "acompanhamentos": [],
       "servir": "prato",
       "estado": "dourado",
@@ -7447,10 +7430,10 @@
         "utensilio": "garfo"
       },
       {
-        "alimento": "tuile"
+        "alimento": "c6-tuile-rodelas"
       },
       {
-        "alimento": "c4-tuile-curva",
+        "alimento": "c6-tuile-rodelas",
         "utensilio": "rolo"
       }
     ],

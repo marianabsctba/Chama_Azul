@@ -551,7 +551,7 @@ export const VISUAIS: Record<string, Visual> = {
   eclair: d('choux', 'eclair', 0.08, 'c88a3a e8c080 f6eedc 9a5a20 4a2a1a', { a: 0.3, l: 0.28 }),
   profiterole: d('choux', 'profiterole', 0.05, 'c88a3a e8c080 f6eedc 9a5a20 4a2a1a', { a: 0.65 }),
   'choux-frito': d('choux', 'frito', 0.03, 'c88a3a e8c080 f6eedc 9a5a20', { a: 0.35, l: 0.35 }),
-  croquembouche: d('choux', 'croquembouche', 0.25, 'c88a3a e8c080 f6eedc 9a5a20 b8701e', { a: 2.0 }),
+  croquembouche: d('choux', 'croquembouche', 0.24, 'c88a3a e8c080 f6eedc 9a5a20 b8701e', { a: 1.45 }),
   filo: d('placa', 'folha', 0.3, 'f4ecd8 e8dcc0 f4ecd8 d8b070', { a: 0.0015, l: 0.65, n: 5 }),
   baklava: d('folhado', 'baklava', 0.2, 'd8a040 c8902a f0d8a0 a86a20 8a5a20', { a: 0.2, l: 0.7 }),
   'filo-cigarro': d('folhado', 'cigarro', 0.1, 'd8a040 f0d8a0 f0e0c0 a86a20', { a: 0.2 }),

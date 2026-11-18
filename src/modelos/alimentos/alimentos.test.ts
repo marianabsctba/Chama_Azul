@@ -52,7 +52,7 @@ describe('geração de todos os alimentos', () => {
         for (let i = 0; i < col.length; i++) if (!(col[i] >= 0 && col[i] <= 1)) throw new Error(`cor fora de faixa em ${id}`);
         tris += (g.getIndex()?.count ?? pos.count) / 3;
       }
-      const ave = ['ave', 'peixe', 'crustaceo'].includes(VISUAIS[id].f) || id === 'croquembouche';
+      const ave = ['ave', 'peixe', 'crustaceo'].includes(VISUAIS[id].f) || id.includes('croquembouche');
       expect(tris, 'triângulos').toBeLessThanOrEqual(ave ? 15000 : 7000);
 
       const b = caixaDe(f.malhas);

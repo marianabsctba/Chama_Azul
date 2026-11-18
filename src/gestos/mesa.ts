@@ -386,7 +386,9 @@ export class Mesa {
         const s = 0.035 / Math.max(item.comprimento, item.largura, 1e-3);
         item.scale.setScalar(s);
         const a = i * 2.4;
-        item.position.set(Math.cos(a) * this.bocaRaio * 0.4, this.conteudo.estado.nivel, Math.sin(a) * this.bocaRaio * 0.4);
+        // boia com metade para fora: no nível do líquido sumia dentro dele
+        item.userData.flutua = item.altura * s * 0.45;
+        item.position.set(Math.cos(a) * this.bocaRaio * 0.4, this.conteudo.estado.nivel + item.userData.flutua, Math.sin(a) * this.bocaRaio * 0.4);
         this.conteudo.add(item);
         this.extras.push(item);
       }
@@ -414,7 +416,11 @@ export class Mesa {
     this.peca?.atualizar(dt);
     for (const p of this.aoLado) p.atualizar(dt);
     this.conteudo?.atualizar(dt);
-    if (this.conteudo) for (const c of this.conteudo.children) if (c instanceof Peca) c.atualizar(dt);
+    if (this.conteudo) for (const c of this.conteudo.children) if (c instanceof Peca) {
+      c.atualizar(dt);
+      // acompanha o nível quando o líquido sobe ou reduz
+      if (typeof c.userData.flutua === 'number') c.position.y = this.conteudo.estado.nivel + c.userData.flutua;
+    }
     this.atualizarPunhado();
   }
 

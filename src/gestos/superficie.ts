@@ -144,6 +144,13 @@ export function gestoSuperficie(ctx: ContextoGesto): Execucao {
       if (progresso >= meta || (ctx.modo === 'zen' && progresso >= meta * 0.8 && hud.botao('Pronto'))) {
         exec.nota = clamp(1 - excesso * 0.04 + (progresso - meta) * 0.2);
         exec.comentario = comentar(exec.nota, 'Uniforme e sem desperdício.', 'Bem coberto, com algum vai e vem extra.', 'Passou muitas vezes no mesmo lugar; isso machuca a peça.');
+        // terminada a cobertura (gema, chantilly, glacê), ela fica por igual em toda a peça, não só onde o pincel passou
+        if (v === 'cobrir' && !/[oó]leo|azeite|manteiga|gordura|\bsal\b|polvilh|salpic|temperar/i.test(texto)) {
+          peca.updateMatrixWorld(true);
+          const caixa = new THREE.Box3().setFromObject(peca);
+          const passoGrade = Math.max(raio * 1.2, 0.01);
+          for (let x = caixa.min.x; x <= caixa.max.x; x += passoGrade) for (let z = caixa.min.z; z <= caixa.max.z; z += passoGrade) peca.pintar(new THREE.Vector3(x, caixa.max.y, z), raio * 1.6, 'cobrir', cor, 1);
+        }
         exec.concluido = true;
       }
     },

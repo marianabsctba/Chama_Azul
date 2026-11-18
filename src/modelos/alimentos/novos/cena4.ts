@@ -1470,61 +1470,100 @@ const gBombaRedonda: Gerador = (k) => {
 };
 
 const gBaklavaLosangos: Gerador = (k) => {
-  // losangos de baklava assados: camadas finas de filo douradas, recheio de nozes no meio e mel
+  // losangos de baklava assados e regados de mel, como saem da travessa: o losango é comprido (o
+  // dobro do comprimento na largura), baixo, com as folhas de filo em lâminas finas na lateral, a
+  // faixa de nozes moídas no meio, o topo dourado e vincado brilhando de calda e um pouco de calda
+  // escorrida em volta. Cinco peças com uma fresta entre elas: três de ponta a ponta atrás e duas
+  // encaixadas na frente, para cada contorno de losango aparecer inteiro.
   const { s } = k;
-  const a = 0.062, b = 0.036, hB = 0.03;
+  const a = 0.066, b = 0.033, hB = 0.022, g0 = 0.0035;
   const poly: P2[] = [[a / 2, 0], [0, b / 2], [-a / 2, 0], [0, -b / 2]];
+  // na lateral (antes de girar, x é a altura): lâminas de filo e a faixa de nozes no meio
   const lado: CorFn = (x, y, z) => {
-    if (x > 0.011 && x < 0.017) return mix(rgb('#6a5a2a'), rgb('#8a7a3a'), pinta(x, y, z, 900, 0.4, s));
-    const fol = Math.abs(Math.sin((x / 0.0018) * PI)) ** 3;
-    const c = mix(rgb('#f0d090'), rgb('#d8a048'), fol);
-    return mix(c, rgb('#b8782a'), suave(0.022, 0.03, x) * 0.7);
+    if (x > 0.008 && x < 0.0125) {
+      const noz = pinta(y, x, z, 1100, 0.45, s);
+      return mix(mix(rgb('#5a3a1e'), rgb('#7a5430'), fbm(y * 400, x * 400, z * 400, s) * 0.5 + 0.5), rgb('#a07848'), noz * 0.6);
+    }
+    const fol = Math.abs(Math.sin((x / 0.0011) * PI)) ** 4;
+    const c = mix(rgb('#f2d79a'), rgb('#c88a38'), fol * 0.8);
+    // filo mais tostada perto do topo e calda escurecendo a base
+    return mix(mix(c, rgb('#b06e24'), suave(0.016, hB, x) * 0.7), rgb('#9a5a18'), suave(0.003, 0, x) * 0.6);
   };
-  const tampa: CorFn = (x, y, z) => (x > hB / 2 ? mix(rgb('#c08030'), rgb('#e0a850'), suave(0.4, 0.8, fbm(y * 200, z * 200, 0, s)) * 0.6) : rgb('#a86a24'));
+  const tampa: CorFn = (x, y, z) => {
+    if (x < hB / 2) return rgb('#9a5a18');
+    // topo assado com as folhas amassadas e a calda acumulada nos vincos
+    const vinco = Math.abs(Math.sin(y * 420 + 3 * fbm(y * 60, z * 60, 0, s))) ** 6;
+    const c = mix(rgb('#d89a3c'), rgb('#efc070'), suave(0.3, 0.8, fbm(y * 220, z * 220, 0, s)) * 0.7);
+    return mix(c, rgb('#a8641c'), vinco * 0.55);
+  };
   const out: Parte[] = [];
-  const pos: P2[] = [[0, 0], [a / 2 + 0.001, b / 2 + 0.001], [-a / 2 - 0.001, b / 2 + 0.001], [a / 2 + 0.001, -b / 2 - 0.001], [-a / 2 - 0.001, -b / 2 - 0.001]];
-  pos.forEach(([x, z], i) => {
-    const g = extrusao(poly, 0, hB, lado, { tampa, nx: 16, nr: 3, sub: 3 });
+  const pos: P2[] = [[-a - g0, -b / 4], [0, -b / 4], [a + g0, -b / 4], [-a / 2 - g0 / 2, b / 4 + b / 2 + g0], [a / 2 + g0 / 2, b / 4 + b / 2 + g0]];
+  pos.forEach(([x, z]) => {
+    const g = extrusao(poly, 0, hB, lado, { tampa, nx: 20, nr: 3, sub: 3 });
     g.rotateZ(PI / 2);
-    g.translate(x, 0, z);
+    g.translate(x, 0.0012, z);
     out.push(parte(g, 'brilhante', true));
   });
-  for (let i = 0; i < 14; i++) {
-    const g = bloco(0.0022, 0.0016, 0.0019, () => rgb('#7aa040'));
-    g.rotateY(hash(i, 4) * TAU);
+  // calda de mel escorrida em volta de cada peça: losango âmbar um pouco maior, bem fino
+  const poca: P2[] = [[a / 2 + 0.004, 0], [0, b / 2 + 0.0025], [-a / 2 - 0.004, 0], [0, -b / 2 - 0.0025]];
+  pos.forEach(([x, z], i) => {
+    const g = extrusao(poca, 0, 0.0009, (xx, y, zz) => mix(rgb('#7a420e'), rgb('#a8661c'), suave(0.3, 0.8, fbm(y * 90, zz * 90, i, s + 3)) * 0.6), { nx: 1, nr: 1, sub: 2 });
+    g.rotateZ(PI / 2);
+    g.translate(x, 0, z);
+    out.push(parte(g, 'brilhante'));
+  });
+  // nozes picadas por cima, no centro de cada losango
+  for (let i = 0; i < 20; i++) {
     const [px, pz] = pos[i % 5];
-    g.translate(px + (hash(i, 5) - 0.5) * 0.03, hB + 0.0008, pz + (hash(i, 6) - 0.5) * 0.014);
+    const g = elipsoide(0.0021, 0.0012, 0.0016, (x, y, z) => mix(rgb('#6a4422'), rgb('#9a6a3a'), suave(0.3, 0.8, fbm(x * 900, y * 900, z * 900, s + i))), 4, 5);
+    g.rotateY(hash(i, 4) * TAU);
+    g.translate(px + (hash(i, 5) - 0.5) * 0.016, hB + 0.0018, pz + (hash(i, 6) - 0.5) * 0.007);
     out.push(parte(g, 'acetinado'));
   }
+  // as pontas compridas apontam para quem olha: de frente, cada peça é um losango nítido
+  for (const p of out) p.g.rotateY(PI / 2);
   return out;
 };
 
 const gStrudelFatias: Gerador = (k) => {
   // fatias grossas de strudel com a espiral de massa fina e o recheio de maçã, passas e nozes à mostra
+  // A fatia fica deitada com o corte para cima: a massa esticada é fina como papel, então o corte
+  // mostra uma espiral de linhas claras de massa (duas voltas e meia) separando o recheio âmbar de
+  // maçã cozida, com pedaços de maçã mais claros, passas escuras e migalhas de noz; por fora, a
+  // crosta dourada e lascada, polvilhada de açúcar.
   const { s } = k;
-  const Ws = 0.068, Hs = 0.046, e = 0.03;
+  const Ws = 0.072, Hs = 0.05, e = 0.024;
   const poly: P2[] = [];
-  for (let j = 0; j < 44; j++) { const th = (j / 44) * TAU; poly.push([Hs / 2 + (Hs / 2) * Math.sin(th) * (Math.sin(th) < 0 ? 0.8 : 1), (Ws / 2) * Math.cos(th)]); }
+  for (let j = 0; j < 36; j++) { const th = (j / 36) * TAU; poly.push([Hs / 2 + (Hs / 2) * Math.sin(th) * (Math.sin(th) < 0 ? 0.72 : 1), (Ws / 2) * Math.cos(th) * (1 + 0.04 * Math.sin(th * 3))]); }
   const crosta: CorFn = (x, y, z) => {
-    let c = mix(rgb('#d89a48'), rgb('#b07028'), suave(0.3, 0.8, fbm(x * 200, y * 200, z * 200, s)));
-    c = mul(c, 1 - 0.08 * Math.abs(Math.sin(y * 900 + fbm(x * 50, y * 50, z * 50, s) * 4)) ** 4);
-    return mix(c, rgb('#fbf8f0'), pinta(x, y, z, 700, 0.3, s + 1) * suave(Hs * 0.6, Hs, y) * 0.8);
+    let c = mix(rgb('#d8a050'), rgb('#a86a24'), suave(0.3, 0.8, fbm(x * 200, y * 200, z * 200, s)));
+    // folhas de massa lascadas em camadas finas
+    c = mul(c, 1 - 0.12 * Math.abs(Math.sin(x * 1400 + fbm(x * 50, y * 50, z * 50, s) * 4)) ** 6);
+    return mix(c, rgb('#fbf8f0'), pinta(x, y, z, 700, 0.35, s + 1) * suave(Hs * 0.55, Hs, y) * 0.85);
   };
   const corte: CorFn = (x, y, z) => {
     const u = (y - Hs / 2) / (Hs / 2), w = z / (Ws / 2);
     const r = Math.hypot(u, w), a = Math.atan2(u, w);
-    if (r > 0.9) return mix(rgb('#c88a3a'), rgb('#e8c070'), Math.abs(Math.sin(r * 90)) * 0.5);
-    if (linha(r * 3.2 - a / TAU) < 0.07 && r > 0.1) return rgb('#ecd49a');
-    let c = mix(rgb('#e8c878'), rgb('#9a6a38'), suave(0.5, 0.8, fbm(y * 300, z * 300, 0, s + 2)) * 0.7);
-    c = mix(c, rgb('#3a1a14'), pinta(y, z, 0, 400, 0.25, s + 3) * 0.8 * (hash(Math.floor(y * 400) + Math.floor(z * 400) * 7, 3) > 0.6 ? 1 : 0));
+    // crosta da última volta
+    if (r > 0.9) return mix(rgb('#c08032'), rgb('#e8c070'), Math.abs(Math.sin(r * 90)) * 0.4);
+    // lâmina de massa em espiral (clara, quase branca de tão fina)
+    const f = frac(r * 2.6 - a / TAU + 0.1);
+    if (r > 0.08 && f < 0.17) return mix(rgb('#f4e2b4'), rgb('#e2c27a'), suave(0.1, 0.17, f));
+    // recheio de maçã cozida com canela
+    let c = mix(rgb('#b87a34'), rgb('#946028'), suave(0.4, 0.8, fbm(y * 260, z * 260, 0, s + 2)) * 0.7);
+    // pedaços de maçã mais claros e translúcidos
+    c = mix(c, rgb('#e2c070'), pinta(y, z, 0, 140, 0.42, s + 5) * 0.75);
+    // passas e migalhas de noz
+    const cel = Math.floor(y * 320) + Math.floor(z * 320) * 7;
+    c = mix(c, rgb('#2e140e'), pinta(y, z, 0, 320, 0.3, s + 3) * (hash(cel, 3) > 0.62 ? 0.9 : 0));
     return c;
   };
   const out: Parte[] = [];
   for (let i = 0; i < 3; i++) {
-    const g = extrusao(poly, 0, e, crosta, { tampa: corte, nx: 3, nr: 16, nr0: 1 });
+    const g = extrusao(poly, 0, e, crosta, { tampa: corte, nx: 3, nr: 20, nr0: 1 });
     g.rotateZ(PI / 2);
-    g.rotateY((i - 1) * 0.12);
-    g.translate((i - 1) * 0.052 + Hs / 2, 0, (i - 1) * 0.008);
+    g.rotateY((i - 1) * 0.35 + 0.1);
+    g.translate((i - 1) * 0.066 + Hs / 2, 0, (i === 1 ? 0.012 : -0.006));
     out.push(parte(g, 'acetinado', true));
   }
   return out;
@@ -1571,25 +1610,61 @@ const gPaoDeLoFino: Gerador = (k) => {
   return [parte(esponja, 'fosco', true), parte(papel, 'fosco')];
 };
 
-const gRocamboleEspiral: Gerador = (k) => {
-  // rocambole enrolado, crosta dourada polvilhada de açúcar e a espiral de recheio nas duas pontas
-  const { s } = k;
-  const L = 0.24, R = 0.034;
-  return [parte(corpo({
-    x0: -L / 2, x1: L / 2, n: 12, m: 56, tampa: true, aneisTampa: 14, linear: true,
-    perfil: () => ({ ry: R * 0.94, rz: R }),
-    mod: (t, a) => 1 + 0.015 * fbm(t * 6, Math.cos(a) * 2, Math.sin(a) * 2, s),
-    cor: (x, y, z, t, a) => {
+/**
+ * Corte do rocambole (u, w de -1 a 1 na seção): três voltas de pão-de-ló amarelo-claro, cada uma
+ * fechada pela pele dourada fininha, com a faixa de recheio branco entre elas; no centro, a
+ * pontinha enrolada de recheio.
+ */
+export function corteRocambole(u: number, w: number, s: number): RGB {
+  const r = Math.hypot(u, w), a = Math.atan2(u, w);
+  if (r > 0.95) return rgb('#a8682e');
+  if (r < 0.07) return rgb('#fdf8ec');
+  const f = frac(r * 3 - a / TAU + 0.2);
+  if (f < 0.56) return mul(mix(rgb('#f4d68e'), rgb('#e8c070'), pinta(u, w, 0, 30, 0.35, s) * 0.5), 0.97 + 0.05 * fbm(u * 20, w * 20, 0, s));
+  if (f < 0.63) return mix(rgb('#b8783a'), rgb('#d09a52'), (f - 0.56) / 0.07);
+  if (f < 0.95) return mul(rgb('#fdf8ec'), 0.97 + 0.03 * fbm(u * 30, w * 30, 0, s + 1));
+  return rgb('#e8c890');
+}
+
+/**
+ * Tora de rocambole deitada ao longo de X, apoiada em y = 0: casca dourada polvilhada de açúcar e a
+ * espiral nas pontas. Com `diagonal`, a ponta de +X sai aparada em diagonal, virada para a frente
+ * (+Z), para a espiral aparecer de frente.
+ */
+export function toraRocambole(L: number, R: number, s: number, diagonal = 0): THREE.BufferGeometry {
+  const ry = R * 0.95;
+  return corpo({
+    x0: -L / 2, x1: L / 2, n: 12, m: 36, tampa: true, aneisTampa: 14, linear: true,
+    perfil: () => ({ ry, rz: R, cy: ry }),
+    mod: (t, a) => 1 + 0.012 * fbm(t * 6, Math.cos(a) * 2, Math.sin(a) * 2, s),
+    desloc: (p) => {
+      if (p.y < ry * 0.12) p.y = ry * 0.12 - (ry * 0.12 - p.y) * 0.3;
+      if (diagonal) p.x -= diagonal * p.z * clamp((p.x + L / 2) / L);
+    },
+    cor: (x, y, z) => {
       const c = mix(rgb('#c88a40'), rgb('#a86a2a'), suave(0.3, 0.8, fbm(x * 60, y * 60, z * 60, s)) * 0.6);
-      return mix(c, rgb('#fbf9f2'), pinta(x, y, z, 600, 0.35, s + 1) * suave(0.2, 0.7, Math.cos(a)) * 0.9);
+      // açúcar polvilhado só por cima
+      return mix(c, rgb('#fbf9f2'), pinta(x, y, z, 650, 0.38, s + 1) * suave(ry * 1.2, ry * 1.9, y) * 0.95);
     },
-    corTampa: (x, y, z) => {
-      const r = Math.hypot(y / (R * 0.94), z / R), a = Math.atan2(y, z);
-      if (r > 0.93) return rgb('#c08040');
-      if (r < 0.1 || (linha(r * 3.1 - a / TAU + 0.15) < 0.11 && r > 0.1)) return rgb('#faf6ec');
-      return mul(rgb('#f4d88a'), 0.95 + 0.08 * fbm(y * 400, z * 400, 0, s));
-    },
-  }), 'fosco', true)];
+    corTampa: (x, y, z) => corteRocambole((y - ry) / ry, z / R, s),
+  });
+}
+
+/** Fatia de rocambole deitada, com o corte para cima. */
+export function fatiaRocambole(R: number, e: number, s: number): THREE.BufferGeometry[] {
+  const lado = torno({
+    caminho: [[0, 0], [R * 0.9, 0], [R, e * 0.15], [R, e * 0.85], [R * 0.9, e], [0, e]], n: 6, m: 40,
+    cor: (x, y, z) => (y > e * 0.9 ? corteRocambole(x / R, z / R, s) : mix(rgb('#c08440'), rgb('#a86a2a'), suave(0.3, 0.8, fbm(x * 60, y * 60, z * 60, s)) * 0.6)),
+  });
+  // a face de cima, mais fina, para a espiral ficar nítida
+  const face = discoPolar(R * 0.995, e + 0.0002, 16, 40, (x, z) => corteRocambole(x / R, z / R, s));
+  return [lado, face];
+}
+
+const gRocamboleEspiral: Gerador = (k) => {
+  // rocambole enrolado, crosta dourada polvilhada de açúcar e a espiral de pão-de-ló e recheio branco
+  // nas pontas; a ponta da direita aparada em diagonal, virada para a frente, mostra a espiral
+  return [parte(toraRocambole(0.22, 0.036, k.s, 0.75), 'fosco', true)];
 };
 
 const gOperetta: Gerador = (k) => {
@@ -1651,18 +1726,29 @@ const gRoloMassaBiscoito: Gerador = (k) => {
   return [parte(rolo, 'acetinado', true), parte(papel, 'fosco')];
 };
 
+/**
+ * Disco fino (raio R, borda um pouco irregular) dobrado sobre um rolo de raio Rb com o eixo em Z:
+ * o arco corre ao longo de X e as pontas descem até a bancada. `cor` recebe também r, a distância
+ * ao centro do disco (0 a 1).
+ */
+export function telhaCurva(R: number, Rb: number, s: number, cor: (x: number, y: number, z: number, r: number) => RGB, borda = 0.03, res: [number, number] = [28, 18]): THREE.BufferGeometry {
+  const ang = R / Rb;
+  return chapa(res[0], res[1], (u, v, lado) => {
+    const xu = 2 * u - 1;
+    const meia = Math.sqrt(Math.max(0, 1 - xu * xu)) * (1 + borda * Math.sin(u * 23 + s) + borda * 0.6 * Math.sin(v * 9 + s));
+    const xd = R * xu, zd = v * R * meia;
+    const th = xd / Rb, rr = Rb + (lado ? 0.0004 : -0.0004);
+    return [rr * Math.sin(th), rr * Math.cos(th) - Rb * Math.cos(ang) + 0.0006, zd];
+  }, (x, y, z, u, v) => {
+    const xu = 2 * u - 1;
+    return cor(x, y, z, Math.hypot(xu, v * Math.sqrt(Math.max(0, 1 - xu * xu))));
+  });
+}
+
 const gTuileCurva: Gerador = (k) => {
   // tuile fina curvada sobre o rolo ainda quente: telha dourada na borda e clara no meio
-  const { s } = k;
-  const R = 0.04, Rb = 0.03;
-  return [parte(chapa(24, 16, (u, v, lado) => {
-    const xd = R * (2 * u - 1), zd = v * R * Math.sqrt(Math.max(0, 1 - (2 * u - 1) ** 2)) * (1 + 0.03 * Math.sin(u * 17));
-    const th = zd / Rb, rr = Rb + (lado ? 0.0004 : -0.0004);
-    return [xd, rr * Math.cos(th) - Rb * Math.cos(R / Rb) + 0.001, rr * Math.sin(th)];
-  }, (x, y, z, u, v) => {
-    const xd = 2 * u - 1, r = Math.hypot(xd, v * Math.sqrt(Math.max(0, 1 - xd * xd)));
-    return mul(mix(rgb('#ecc878'), rgb('#a86a24'), suave(0.6, 1, r)), 0.95 + 0.08 * fbm(x * 300, y * 300, z * 300, s));
-  }), 'acetinado', true)];
+  // a curva corre ao longo de X (o rolo fica atravessado em Z): de frente, a telha mostra o arco
+  return [parte(telhaCurva(0.04, 0.03, k.s, (x, y, z, r) => mul(mix(rgb('#ecc878'), rgb('#a86a24'), suave(0.6, 1, r)), 0.95 + 0.08 * fbm(x * 300, y * 300, z * 300, k.s))), 'acetinado', true)];
 };
 
 /** Letras de "Sacher" em traço cursivo, numa caixa de altura 1 (x para a direita, y para cima). */

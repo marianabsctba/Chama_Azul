@@ -53,7 +53,7 @@ function perfil(ctx: ContextoGesto): Perfil {
 }
 
 // cores em sRGB (setRGB trabalharia no espaço linear e a calda sairia pálida)
-const CALDA_CLARA = new THREE.Color('#d39a3c');
+const CALDA_CLARA = new THREE.Color('#c4862c');
 const CALDA_AMBAR = new THREE.Color('#a4560f');
 const MAX_MEIO = { agua: 100, oleo: 240, acucar: 200, chocolate: 70, seco: 260, forno: 260 };
 const TAU = { agua: 45, oleo: 30, acucar: 35, chocolate: 25, seco: 15, forno: 90 };

@@ -9,7 +9,7 @@ import { pontosDoUtensilio } from '../modelos/utensilios';
 /** Estado final esperado do conteúdo, lido do texto do passo. */
 function alvoDoConteudo(texto: string) {
   const t = texto.toLowerCase();
-  if (/neve|picos?|merengue|chantilly|ponto de fita|firme|volume/.test(t)) return { picos: /mole|macio/.test(t) ? 0.55 : 1, cor: new THREE.Color('#fbfaf4'), espessura: 0.7, brilho: 0.55, cresce: 1.6 };
+  if (/neve|picos?|merengue|chantilly|ponto de fita|firme|volume/.test(t)) return { picos: /mole|macio/.test(t) ? 0.55 : 1, cor: new THREE.Color('#fbfaf4'), espessura: 0.7, brilho: 0.55, cresce: 2.6 };
   if (/emuls|maionese|hollandaise|holand|engross|liga|cremos|nappe|napar/.test(t)) return { picos: 0.1, espessura: 0.75, brilho: 0.75, cresce: 1.1 };
   if (/esbranqui|clarear|fofo|creme|aerad/.test(t)) return { picos: 0.25, cor: new THREE.Color('#f7e7b4'), espessura: 0.6, brilho: 0.5, cresce: 1.3 };
   if (/massa|homog|lisa|uniforme/.test(t)) return { picos: 0.05, espessura: 0.7, brilho: 0.4, cresce: 1 };
@@ -49,7 +49,8 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   mesa.removerPeca();
   mesa.garantirRecipiente(recipienteTexto, estacao.superficie.clone(), 'tigela grande');
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.4);
-  const alvo = alvoDoConteudo(texto);
+  // o ponto que se quer vem do passo e também do nome da técnica ("claras em neve", "chantilly")
+  const alvo = alvoDoConteudo(`${texto} ${ctx.tecnica.nome}`);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   respeitarSabor(alvo, inicial.cor, texto);
   // mexer calda, caldo ou água não engrossa: o líquido continua translúcido
@@ -295,7 +296,8 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.3);
   conteudo.position.set(fundo.x, mesa.fundoY, fundo.z);
   conteudo.estado.nivel = liquidificador ? 0.05 : 0.03;
-  const alvo = alvoDoConteudo(texto);
+  // o ponto que se quer vem do passo e também do nome da técnica ("claras em neve", "chantilly")
+  const alvo = alvoDoConteudo(`${texto} ${ctx.tecnica.nome}`);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
   respeitarSabor(alvo, inicial.cor, texto);
   // mexer calda, caldo ou água não engrossa: o líquido continua translúcido

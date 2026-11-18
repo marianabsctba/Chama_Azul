@@ -481,27 +481,62 @@ export const gChoux: Gerador = (k) => {
       return out;
     }
     case 'croquembouche': {
+      // torre em cone, larga embaixo e fina em cima, sobre o disco de nougatine com conchinhas de
+      // glacê real na borda; bombinhas com o topo caramelado, em fileiras que encolhem até uma só no
+      // alto, o enfeite de nougatine (disquinho e três luas) no topo e fios de caramelo em volta.
+      // Com 'invertido' sai de ponta-cabeça (montado dentro do cone): o gesto de desenformar vira a
+      // peça e ela fica em pé.
       const R = L / 2;
-      out.push(parte(disco(R * 1.05, H * 0.03, (x, y, z) => mix(c3, mul(c3, 0.7), 1 - suave(0.1, 0.2, celula(x * 100, 0, z * 100, s))), { n: 10, m: 36 }), 'brilhante', true));
-      const rb = R * 0.22;
-      const andares = Math.floor((H * 0.95) / (rb * 1.6));
+      const ambar = mul(c3, 1.05);
+      const nougat: CorFn = (x, y, z) => mix(mix(c3, mul(c3, 0.72), suave(0.2, 0.8, fbm(x * 60, y * 60, z * 60, s)) * 0.6), [0.93, 0.85, 0.66], (1 - suave(0.08, 0.16, celula(x * 160, y * 160, z * 160, s))) * 0.7);
+      const hb = R * 0.05;
+      out.push(parte(disco(R * 1.08, hb, nougat, { n: 8, m: 40 }), 'brilhante', true));
+      // conchinhas de glacê real na borda do disco
+      for (let i = 0; i < 28; i++) {
+        const a = (i / 28) * TAU;
+        out.push(parte(tf(elipsoide(R * 0.05, R * 0.03, R * 0.035, () => [0.97, 0.96, 0.93], 4, 6), [Math.cos(a) * R * 1.02, hb, Math.sin(a) * R * 1.02], [0, -a + PI / 2, 0]), 'acetinado'));
+      }
+      const rb = R * 0.15;
+      const passo = rb * 1.5;
+      const andares = Math.max(3, Math.floor((H - hb - rb * 3) / passo));
+      const cone = R - rb * 1.6;
+      const caramelo: CorFn = (x, y, z) => craquel(x, y, z, 0, 0);
       for (let a = 0; a < andares; a++) {
-        const y = H * 0.03 + a * rb * 1.6;
-        const rr = (R - rb) * (1 - a / andares) + rb * 0.3;
-        const nb = Math.max(1, Math.floor((TAU * rr) / (rb * 1.9)));
+        const y = hb + a * passo;
+        const f = a / (andares - 1);
+        const rr = cone * (1 - f) + rb * 0.15;
+        const nb = a === andares - 1 ? 1 : Math.max(3, Math.floor((TAU * rr) / (rb * 1.85)));
         for (let b = 0; b < nb; b++) {
-          const ang = (b / nb) * TAU + a * 0.4;
-          const g = bomba(rb, rb * 1.6, craquel, 8, 10);
-          g.translate(Math.cos(ang) * rr, y, Math.sin(ang) * rr);
+          const ang = (b / nb) * TAU + a * 0.7;
+          const cx = nb === 1 ? 0 : Math.cos(ang) * rr, cz = nb === 1 ? 0 : Math.sin(ang) * rr;
+          // topo de cada bombinha mergulhado no caramelo, virado para fora
+          const g = bomba(rb, rb * 1.5, (x, yy, z) => mix(caramelo(x, yy, z, 0, 0), ambar, suave(rb * 0.75, rb * 1.2, yy) * 0.8), 6, 8);
+          g.rotateZ(nb === 1 ? 0 : -0.5);
+          g.rotateY(-ang);
+          g.translate(cx, y, cz);
           out.push(parte(g, k.ac, true));
         }
       }
-      // fios de caramelo
-      for (let i = 0; i < 6; i++) {
-        const pts: THREE.Vector3[] = [];
-        for (let j = 0; j <= 20; j++) { const t = j / 20; const ang = t * TAU * 3 + i; const rr = R * (1 - t) * 1.05; pts.push(V(Math.cos(ang) * rr, H * 0.05 + t * H * 0.95, Math.sin(ang) * rr)); }
-        out.push(parte(tubo(pts, { raio: R * 0.006, m: 3, n: 60, cor: () => mul(c3, 1.2) }), 'brilhante'));
+      const topo = hb + (andares - 1) * passo + rb * 1.4;
+      // enfeite de nougatine no topo: disquinho em pé e três luas em volta
+      out.push(parte(tf(disco(rb * 1.5, rb * 0.15, nougat, { n: 4, m: 20 }), [0, topo + rb * 1.4, 0], [PI / 2, 0, 0]), 'brilhante'));
+      for (let i = 0; i < 3; i++) {
+        const a = (i / 3) * TAU;
+        const lua = disco(rb * 1.1, rb * 0.12, nougat, { n: 4, m: 16, mod: (t, aa) => 0.35 + 0.65 * Math.abs(Math.sin(aa / 2)) });
+        out.push(parte(tf(lua, [Math.cos(a) * rb * 0.7, topo + rb * 0.6, Math.sin(a) * rb * 0.7], [PI / 2 - 0.4, -a, 0]), 'brilhante'));
       }
+      // fios de caramelo finos enrolados em volta do cone
+      for (let i = 0; i < 9; i++) {
+        const pts: THREE.Vector3[] = [];
+        for (let j = 0; j <= 28; j++) {
+          const t = j / 28;
+          const ang = t * TAU * (2.2 + (i % 3) * 0.4) + i * 0.7;
+          const rr = (cone * (1 - t) + rb * 1.15) * (1.08 + 0.04 * Math.sin(t * 17 + i));
+          pts.push(V(Math.cos(ang) * rr, hb + rb + t * (topo - hb - rb) * 0.95, Math.sin(ang) * rr));
+        }
+        out.push(parte(tubo(pts, { raio: R * 0.0045, m: 3, n: 70, cor: () => mul(c3, 1.25) }), 'brilhante'));
+      }
+      if (k.tem('invertido')) for (const p of out) p.g.rotateX(PI);
       return out;
     }
   }
@@ -523,11 +558,30 @@ export const gFolhado: Gerador = (k) => {
   };
   switch (v) {
     case 'baklava': {
+      // travessa de baklava riscada em losangos compridos (6,5 cm por 3,3 cm) nas camadas de cima;
+      // na lateral, as folhas de filo em lâminas e a faixa de nozes no meio
       const cor: CorFn = (x, y, z) => {
-        const lo = Math.min(Math.abs(Math.sin((x + z * 0.6) * 60)), Math.abs(Math.sin((x - z * 0.6) * 60)));
-        return mix(dourado(x, y, z, 0, 0), mul(c3, 0.8), (1 - suave(0, 0.08, lo)) * (y > H * 0.8 ? 1 : 0.3));
+        const c = dourado(x, y, z, 0, 0);
+        if (y > H * 0.95) return c;
+        return mix(mix(c2, mul(c1, 0.8), Math.abs(Math.sin(y * 2800)) ** 4 * 0.7), [0.4, 0.27, 0.14], suave(H * 0.38, H * 0.45, y) * suave(H * 0.62, H * 0.55, y));
       };
       out.push(parte(corpo({ x0: -L / 2, x1: L / 2, n: 20, m: 36, exp: 8, tampa: true, linear: true, cor, corTampa: cor, perfil: () => ({ ry: H / 2, rz: W / 2, cy: H / 2 }) }), 'brilhante', true));
+      // cortes da faca: retas nas duas diagonais, recortadas no retângulo da travessa
+      const bx = L / 2 - 0.004, bz = W / 2 - 0.004;
+      for (const sg of [1, -1]) {
+        for (let c = -6.5; c <= 6.5; c += 1) {
+          const dentro: THREE.Vector3[] = [];
+          for (let i = 0; i <= 80; i++) {
+            const z = -bz + (2 * bz * i) / 80;
+            const x = 0.065 * (c - (sg * z) / 0.033);
+            if (Math.abs(x) <= bx) dentro.push(V(x, H * 0.995, z));
+          }
+          if (dentro.length < 2) continue;
+          const p0 = dentro[0], p1 = dentro[dentro.length - 1];
+          if (p0.distanceTo(p1) < 0.01) continue;
+          out.push(parte(tubo([p0, p0.clone().lerp(p1, 0.5), p1], { raio: 0.0007, achata: 1.8, cima: V(0, 1, 0), m: 4, n: 6, cor: () => mul(c3, 0.5) }), 'acetinado'));
+        }
+      }
       return out;
     }
     case 'cigarro': case 'strudel': {

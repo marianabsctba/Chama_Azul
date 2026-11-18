@@ -84,7 +84,7 @@ export class Conteudo extends THREE.Group {
       this.material.needsUpdate = true;
     }
     // caldo, dashi e consomê translúcidos de verdade: dá para ver o fundo e o que boia
-    this.material.opacity = ralo ? 0.38 + e.espessura * 2.5 : 1;
+    this.material.opacity = ralo ? 0.5 + e.espessura * 2.5 : 1;
   }
 
   /** Interpola o estado para outro (t de 0 a 1). */
@@ -120,7 +120,7 @@ const SABORES: [RegExp, string, number, number][] = [
 ];
 
 /** Bases neutras que ganham a cor do sabor da técnica. */
-const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#d39a3c', '#efdcb2', '#f0dfa4', '#e8d7b0', '#a8702e']);
+const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#c4862c', '#efdcb2', '#f0dfa4', '#e8d7b0', '#a8702e']);
 
 /**
  * Cor, espessura e brilho do que está no recipiente. O texto do passo decide a base; quando a base
@@ -140,21 +140,28 @@ export function estadoInicial(texto: string, contexto = ''): { cor: string; espe
     [/caf[eé]/, '#3b2416', 0.1, 0.85],
     // calda de açúcar é transparente, só levemente dourada; o caramelo é âmbar
     // calda: dourada, lisa e espelhada como mel ralo (translúcida sobre a panela branca parecia leite)
-    [/calda|a[cç][uú]car|xarope/, '#d39a3c', 0.13, 1],
+    [/calda|xarope|[aá]gua ado[cç]ada|[aá]gua (com|e) a[cç][uú]car|a[cç][uú]car (com|e) [aá]gua/, '#c4862c', 0.13, 1],
+    // açúcar seco (peneirado, de confeiteiro): branco e fosco, não calda
+    [/a[cç][uú]car/, '#f7f3ea', 0.9, 0.2],
     [/maionese|aïoli|aioli/, '#f4e6a6', 0.6, 0.6],
     [/hollandaise|holandês|béarnaise|bearnaise/, '#f1d27a', 0.5, 0.6],
     [/manteiga/, '#f7e08c', 0.5, 0.6],
     [/creme de leite|chantilly|nata|creme/, '#fbf6e9', 0.3, 0.5],
-    [/leite|béchamel|bechamel/, '#f6f1e4', 0.2, 0.5],
+    [/béchamel|bechamel/, '#f6f1e4', 0.2, 0.5],
+    // leite é ralo: a peça pochê aparece através dele
+    [/leite/, '#f6f1e4', 0.1, 0.6],
     [/tomate|vermelh/, '#c8432b', 0.35, 0.5],
     [/caldo escuro|demi|molho escuro|roux escuro|espanhol/, '#6b3a1e', 0.25, 0.7],
     // caldos claros: dourados de verdade (na panela branca, o tom pálido de antes virava leite)
     [/caldo de peixe|fumet|caldo branco|caldo de galinha|consomê|consome|dashi/, '#c99640', 0.05, 0.9],
     [/caldo|sopa|bouillon/, '#a8702e', 0.08, 0.85],
     [/roux/, '#e7c77d', 0.6, 0.4],
-    [/óleo|azeite|gordura|fritura/, '#e8c45a', 0.02, 1],
+    // azeite esverdeado e óleo dourado mais fortes: claros demais pareciam leite na panela branca
+    [/azeite/, '#a8962c', 0.02, 1],
+    [/óleo|oleo|gordura|fritura/, '#d4a62c', 0.02, 1],
     [/vinho tinto/, '#4a1220', 0.1, 0.9],
-    [/vinho|vinagre/, '#e9dc9c', 0.02, 0.9],
+    [/vinagre bals[aâ]mico|redu[cç][aã]o de bals/, '#3a1a10', 0.1, 0.9],
+    [/vinho|vinagre/, '#c9a64a', 0.02, 0.9],
     [/água|salmoura|gelo/, '#bcd8e6', 0.0, 1],
     [/massa de pão|massa|farinha|pão/, '#efdcb2', 0.95, 0.15],
     [/arroz|risoto/, '#efe6cf', 0.8, 0.3],

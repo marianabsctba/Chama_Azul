@@ -1,0 +1,19 @@
+[
+  {"id": "c6-rocambole-fatiado", "nome": "Rocambole fatiado com a espiral à mostra", "forma": "rocambole dourado polvilhado de açúcar com a ponta aparada em diagonal e duas fatias deitadas na frente, mostrando a espiral de pão-de-ló amarelo, pele dourada e recheio branco"},
+  {"id": "c6-pao-de-lo-recheado", "nome": "Folha de pão-de-ló recheada antes de enrolar", "forma": "folha retangular de pão-de-ló sobre o papel açucarado, coberta de recheio branco até perto das bordas, com o vinco a 2 cm da borda curta"},
+  {"id": "c6-granita-assadeira", "nome": "Granita de café raspada na assadeira", "forma": "camada fina de café congelado cobrindo o fundo da assadeira, esmagada e raspada em sulcos, com montinhos de cristais marrons soltos"},
+  {"id": "c6-tuile-rodelas", "nome": "Rodelas de massa de tuile na assadeira", "forma": "seis rodelas finas de 5 cm de massa clara espalhadas com o garfo, bem separadas, com os riscos do garfo por cima"},
+  {"id": "c6-lace-tuile-curva", "nome": "Lace tuile curvada no rolo", "forma": "telha fina rendada de caramelo dourado, cheia de furinhos, curvada em arco como saiu do rolo"},
+  {"id": "c6-pennants-assadeira", "nome": "Pennants de maracujá crus na assadeira", "forma": "seis triângulos compridos e finos de pasta clara salpicada de sementes pretas de maracujá, retos e com as pontas alternadas"},
+  {"id": "c6-croquembouche-invertido", "nome": "Croquembouche montado no cone, de ponta-cabeça", "forma": "cone de bombinhas carameladas montado de ponta para baixo, com o disco de nougatine em cima e os fios de caramelo; ao desenformar ele vira e fica em pé"},
+  {"id": "c6-torta-funil-pincelada", "nome": "Torta com funil pincelada de gema", "forma": "torta crua no prato de louça com a tampa inteira pincelada de gema, amarela e brilhante, e a boca do funil no centro"},
+  {"id": "c6-torta-dupla-pincelada", "nome": "Torta de massa dupla pincelada de gema", "forma": "torta crua de massa dupla no prato de louça, tampa inteira pincelada de gema, amarela e brilhante, com os cortes de vapor"},
+  {"id": "c6-bolo-camadas-coberto", "nome": "Bolo em camadas todo coberto de creme", "forma": "bolo redondo alto coberto de creme liso no topo e em toda a lateral, marcas da espátula em espiral e cordão de conchinhas na borda e na base"},
+  {"id": "c6-bolo-chantilly-pronto", "nome": "Bolo coberto de chantilly com castanhas", "forma": "bolo redondo todo coberto de chantilly alisado, com a lateral forrada de castanhas picadas tostadas"},
+  {"id": "c6-cheesecake-assado-pronto", "nome": "Cheesecake assado desenformado", "forma": "cheesecake redondo e alto sobre a base de biscoito, lateral de creme claro e topo liso dourado, mais escuro na beirada"},
+  {"id": "c6-cheesecake-gelado-pronto", "nome": "Cheesecake gelado de framboesa desenformado", "forma": "cheesecake redondo rosa sobre a base de biscoito, topo liso com veios de framboesa"},
+  {"id": "c6-arroz-doce-graos", "nome": "Arroz-doce cremoso com os grãos à mostra", "forma": "monte de grãos de arroz inchados e brancos, bem visíveis, presos num creme de leite amarelado com pontinhos de baunilha"},
+  {"id": "c6-pudim-arroz-assado", "nome": "Pudim de arroz assado com pele dourada", "forma": "superfície do pudim de arroz assado com a pele dourada e manchas tostadas, grãos de arroz marcando o topo e noz-moscada ralada"},
+  {"id": "c6-folha-ouro", "nome": "Folha de ouro para decorar", "forma": "pedacinho amassado de folha de ouro comestível, dourado e brilhante"},
+  {"id": "c6-strudel-reto", "nome": "Strudel enrolado reto, cru", "forma": "rolo comprido de massa esticada fina e clara, quase translúcida, com o volume irregular do recheio de maçã e a espiral de massa e recheio nas pontas"}
+]

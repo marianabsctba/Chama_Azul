@@ -256,7 +256,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "tiras",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 12
     }
   },
   "legumes.corte_girado": {
@@ -340,7 +341,8 @@
       ],
       "servir": "prato",
       "forma": "cubos",
-      "estado": "cru"
+      "estado": "cru",
+      "quantidade": 12
     }
   },
   "legumes.brunoise": {
@@ -934,7 +936,8 @@
           "Racha só pela metade e fica presa no fio"
         ],
         "correta": 0,
-        "explicacao": "Vagem fresca quebra limpa; a que dobra foi colhida tarde."
+        "explicacao": "Vagem fresca quebra limpa; a que dobra foi colhida tarde.",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -948,10 +951,12 @@
   "vagens.tirar_fio": {
     "passos": [
       {
-        "alimento": "vagem"
+        "alimento": "vagem",
+        "utensilio": "mãos"
       },
       {
-        "alimento": "vagem"
+        "alimento": "vagem",
+        "utensilio": "mãos"
       }
     ],
     "prato": {
@@ -1105,12 +1110,10 @@
         ]
       },
       {
-        "alimento": "carne_porco_moida",
-        "meio": "óleo",
+        "alimento": null,
+        "meio": "carne moída dourando com cebola e alho picados",
         "recipiente": "frigideira",
         "adicionar": [
-          "cebola",
-          "alho",
           "chili"
         ]
       },
@@ -1333,7 +1336,7 @@
       "principal": "cebolinha",
       "acompanhamentos": [],
       "servir": "tigelinha",
-      "forma": "cubos",
+      "forma": "fatias",
       "estado": "cru",
       "quantidade": 12
     }
@@ -1460,7 +1463,8 @@
       "principal": "c3-melao-amargo-fatias",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "inteiro"
+      "forma": "inteiro",
+      "estado": "dourado"
     }
   },
   "incomuns.mooli": {
@@ -1676,12 +1680,11 @@
       }
     ],
     "prato": {
-      "principal": "tomate",
+      "principal": "tomate-concassee",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "cubos",
-      "estado": "cru",
-      "quantidade": 12
+      "forma": "inteiro",
+      "estado": "cru"
     }
   },
   "frutos_legume.berinjela_salgar": {
@@ -2151,7 +2154,8 @@
       "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro",
-      "quantidade": 2
+      "quantidade": 2,
+      "estado": "dourado"
     }
   },
   "saladas.alface_preparar": {
@@ -2475,7 +2479,8 @@
   "cozinhar.microondas": {
     "passos": [
       {
-        "alimento": "brocolis"
+        "alimento": "brocolis",
+        "utensilio": "mãos"
       },
       {
         "alimento": "brocolis",
@@ -2704,7 +2709,8 @@
     "passos": [
       {
         "alimento": "alho",
-        "recipiente": "assadeira"
+        "recipiente": "assadeira",
+        "estado": "metades"
       },
       {
         "alimento": "batata",
@@ -2801,7 +2807,8 @@
       },
       {
         "alimento": null,
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "utensilio": "mãos"
       },
       {
         "alimento": null,
@@ -3167,7 +3174,7 @@
         "recipiente": "panela"
       },
       {
-        "alimento": "espinafre",
+        "alimento": "c3-espinafre-cozido",
         "meio": "azeite",
         "recipiente": "frigideira"
       }
@@ -3185,12 +3192,12 @@
       {
         "alimento": "espinafre",
         "recipiente": "processador",
-        "meio": "purê de espinafre"
+        "meio": "mistura verde de espinafre"
       },
       {
         "alimento": null,
         "recipiente": "forminha",
-        "meio": "purê de espinafre"
+        "meio": "mistura verde de espinafre"
       },
       {
         "alimento": "espinafre",
@@ -3415,7 +3422,7 @@
         "estado": "picado"
       },
       {
-        "alimento": null,
+        "alimento": "lentilha",
         "meio": "gordura de ghee",
         "recipiente": "panela",
         "adicionar": [
@@ -3423,7 +3430,7 @@
         ]
       },
       {
-        "alimento": null,
+        "alimento": "lentilha",
         "meio": "caldo",
         "recipiente": "panela",
         "adicionar": [
@@ -3684,9 +3691,9 @@
     "prato": {
       "principal": "c3-risoto-moldado",
       "acompanhamentos": [
-        "vieira-limpa",
-        "camarao-reto-cozido",
-        "aneis-lula"
+        "lagostim",
+        "aneis-lula",
+        "vieira-limpa"
       ],
       "servir": "prato",
       "forma": "inteiro",
@@ -4651,7 +4658,8 @@
         "adicionar": [
           "espinafre-refogado"
         ],
-        "ponto": "cozido"
+        "ponto": "cozido",
+        "utensilio": "saco de confeitar"
       },
       {
         "alimento": "canelone"
@@ -5468,7 +5476,8 @@
       {
         "alimento": null,
         "meio": "roux",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "utensilio": "fogo desligado"
       },
       {
         "alimento": null,
@@ -6387,11 +6396,11 @@
         ]
       },
       {
-        "alimento": "pao-trancado",
+        "alimento": "c4-tranca-massa",
         "ponto": "cru"
       },
       {
-        "alimento": "pao-trancado",
+        "alimento": "c4-tranca-massa",
         "ponto": "cru"
       }
     ],
@@ -6729,7 +6738,7 @@
         "alimento": "c5-torrada-grelhada",
         "adicionar": [
           "pimentao",
-          "cebola_roxa"
+          "c3-cebola-aneis"
         ]
       },
       {
@@ -7149,7 +7158,8 @@
       },
       {
         "alimento": "paratha",
-        "ponto": "dourado"
+        "ponto": "dourado",
+        "estado": "quartos"
       }
     ],
     "prato": {
@@ -7226,7 +7236,8 @@
       },
       {
         "alimento": "kugelhopf",
-        "recipiente": "fôrma de kugelhopf"
+        "recipiente": "fôrma de kugelhopf",
+        "utensilio": "grade"
       }
     ],
     "prato": {

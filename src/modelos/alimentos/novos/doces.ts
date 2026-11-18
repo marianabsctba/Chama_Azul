@@ -477,7 +477,7 @@ const gFarofaMassa: Gerador = (k) => {
 /* tortas cruas: tampa com funil, dupla, bordas em pregas, folhas, trança */
 /* ------------------------------------------------------------------ */
 
-const gTortaCrua: Gerador = (k) => {
+export const gTortaCrua: Gerador = (k) => {
   const { c1, c2, c3, ci, s, r } = k;
   const out: Parte[] = [];
   const v = k.v.v;
@@ -784,7 +784,7 @@ const gBoloGeleia: Gerador = (k) => {
   return out;
 };
 
-const gBoloChantilly: Gerador = (k) => {
+export const gBoloChantilly: Gerador = (k) => {
   const { c1, c2, s, r } = k;
   const out: Parte[] = [];
   const R = k.T / 2 / 1.04, H = R * 0.9;
