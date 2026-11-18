@@ -287,9 +287,15 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   const texto = `${passo.acao} ${passo.alvo} ${passo.parametro}`;
   mesa.removerPeca();
   const aparelho = mesa.garantirRecipiente(passo.utensilio, estacao.superficie.clone(), 'batedeira');
+  // o aparelho fica de frente para quem trabalha (na confeitaria a câmera está do outro lado da bancada)
+  const paraCamera = estacao.camera.clone().sub(estacao.superficie);
+  aparelho.rotation.y = Math.atan2(paraCamera.x, paraCamera.z);
   aparelho.updateMatrixWorld(true);
   // a ponta do aparelho é o fundo da tigela (ou do copo): o conteúdo vai ali
   const fundo = pontosDoUtensilio(aparelho).ponta.clone().applyMatrix4(aparelho.matrixWorld);
+  // o centro da tigela muda com o giro do aparelho: o conteúdo acompanha
+  mesa.centro.set(fundo.x, aparelho.position.y, fundo.z);
+  if (mesa.conteudo) mesa.conteudo.position.set(fundo.x, mesa.conteudo.position.y, fundo.z);
   const liquidificador = /liquidificador|mixer/i.test(passo.utensilio);
   mesa.bocaRaio = liquidificador ? 0.045 : 0.07;
   mesa.fundoY = fundo.y - 0.012;
