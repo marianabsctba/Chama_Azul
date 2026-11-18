@@ -160,6 +160,13 @@ export class Mesa {
       this.centro.set(p.x, g.position.y, p.z);
       if (p.y > caixa.min.y && p.y < caixa.min.y + tam.y * 0.5) this.fundoY = p.y;
     }
+    // taça e copo de pé: o fundo do bojo fica no alto, não no pé (a musse aparecia lá embaixo, fora do vidro)
+    if (/ta[cç]a|cálice|calice|copo de p[eé]/i.test(texto)) {
+      // a ponta desse modelo é a borda (onde se bebe), não o fundo: o bojo começa a ~56% da altura, no eixo
+      this.fundoY = caixa.min.y + tam.y * 0.56;
+      this.centro.set(g.position.x, g.position.y, g.position.z);
+      this.bocaRaio = Math.min(this.bocaRaio, Math.min(tam.x, tam.z) * 0.38);
+    }
     if (this.conteudo) {
       this.cena.remove(this.conteudo);
       this.conteudo.descartar();

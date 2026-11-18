@@ -58,6 +58,7 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   // grumos de carne continuam grumos ao misturar
   if (inicial.picos > 0.3) alvo.picos = inicial.picos;
   const nivel0 = conteudo.estado.nivel;
+  const limiteNivel = mesa.recipiente ? Math.max(nivel0, (new THREE.Box3().setFromObject(mesa.recipiente).max.y - conteudo.position.y) * 0.9) : nivel0 * 3;
   // no pilão e nos aparelhos de manivela não vai batedor na mão: o próprio aparelho trabalha
   const ferramenta = aparelho ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|amassador|martel|socador|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
   const centro = mesa.centro.clone();
@@ -146,7 +147,8 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
       conteudo.estado.espessura = inicial.espessura + (alvo.espessura - inicial.espessura) * k;
       conteudo.estado.brilho = inicial.brilho + (alvo.brilho - inicial.brilho) * k;
       if (alvo.cor) conteudo.estado.cor.copy(inicial.cor).lerp(alvo.cor, k);
-      conteudo.estado.nivel = nivel0 * (1 + (alvo.cresce - 1) * k);
+      // cresce, mas nunca acima da borda do recipiente (o creme flutuava no ar)
+      conteudo.estado.nivel = Math.min(nivel0 * (1 + (alvo.cresce - 1) * k), limiteNivel);
       if (progresso >= 1) {
         if (v === 'dobrar') {
           exec.nota = clamp(1 - bruscos * 0.12);
@@ -311,6 +313,7 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   // grumos de carne continuam grumos ao misturar
   if (inicial.picos > 0.3) alvo.picos = inicial.picos;
   const nivel0 = conteudo.estado.nivel;
+  const limiteNivel = mesa.recipiente ? Math.max(nivel0, (new THREE.Box3().setFromObject(mesa.recipiente).max.y - conteudo.position.y) * 0.9) : nivel0 * 3;
   const base = aparelho.position.clone();
   // velocidades de 0 a 10; bater claras e emulsões pede velocidade alta, misturar pede baixa
   const rapido = passo.variante === 'circular-rapido' || /neve|picos|chantilly|merengue|emuls/.test(texto);
@@ -355,7 +358,7 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
       conteudo.estado.espessura = inicial.espessura + (alvo.espessura - inicial.espessura) * k;
       conteudo.estado.brilho = inicial.brilho + (alvo.brilho - inicial.brilho) * k;
       if (alvo.cor) conteudo.estado.cor.copy(inicial.cor).lerp(alvo.cor, k);
-      conteudo.estado.nivel = nivel0 * (1 + (alvo.cresce - 1) * k * 0.8);
+      conteudo.estado.nivel = Math.min(nivel0 * (1 + (alvo.cresce - 1) * k * 0.8), limiteNivel);
       hud.medidores([
         { rotulo: 'Velocidade', valor: marcha / 10, texto: marcha === 0 ? 'desligada' : `${marcha}`, faixa: [faixa[0] / 10 - 0.02, faixa[1] / 10 + 0.02] },
         { rotulo: 'Ponto', valor: progresso, texto: `${Math.round(progresso * 100)}%` },

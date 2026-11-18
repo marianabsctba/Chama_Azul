@@ -2137,13 +2137,13 @@
       }
     ],
     "prato": {
-      "principal": "c4-conchas-merengue-ganache",
+      "principal": "bolo-merengue",
       "acompanhamentos": [
-        "ninho-merengue",
-        "disco-merengue"
+        "c4-conchas-merengue-ganache",
+        "morango",
+        "framboesa"
       ],
-      "servir": "prato",
-      "quantidade": 2
+      "servir": "prato"
     }
   },
   "sobremesas.dissolver-gelatina-po": {

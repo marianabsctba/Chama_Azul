@@ -136,8 +136,109 @@ function decorarServido(ctx: ContextoGesto): Execucao {
   );
 }
 
+/**
+ * Encher o saco de confeitar, como no livro: o bico encaixado e o saco torcido logo acima dele; o saco
+ * aberto dentro de uma jarra recebendo o creme às colheradas; a boca torcida até o creme chegar ao bico.
+ */
+function gestoSaco(ctx: ContextoGesto, fase: 'bico' | 'encher' | 'torcer'): Execucao {
+  const { mesa, estacao, entrada, hud } = ctx;
+  mesa.removerRecipiente(true);
+  mesa.soltarFerramenta();
+  mesa.limparExtras();
+  const base = estacao.superficie.clone();
+  const ang = anguloDaEstacao(estacao);
+  const cheio = fase !== 'bico';
+  // o saco é a peça do passo: a câmera enquadra por ele
+  const saco = mesa.garantirPeca('saco-confeitar-cheio', base.clone());
+  const L = saco.comprimento;
+  const alvoComp = 0.3;
+  saco.scale.setScalar(alvoComp / Math.max(L, 1e-3));
+  let jarra: THREE.Object3D | null = null;
+  if (fase === 'encher') {
+    // o saco em pé dentro da jarra, com a boca dobrada para fora
+    jarra = criarUtensilio('jarra medidora') ?? criarUtensilio('copo') ?? null;
+    if (jarra) {
+      jarra.position.copy(base);
+      mesa.adicionarExtra(jarra);
+    }
+    saco.rotation.set(0, ang, Math.PI / 2);
+    saco.position.copy(base).add(new THREE.Vector3(0, 0.02, 0));
+  } else {
+    saco.rotation.set(0, ang, 0);
+    saco.position.copy(base);
+  }
+  // vazio no primeiro passo: o saco murcho, mais fino
+  if (!cheio) saco.scale.set(saco.scale.x, saco.scale.y * 0.35, saco.scale.z * 0.55);
+  // o modelo nasce centrado na origem: assenta o fundo dele na bancada (antes ficava enterrado nela)
+  const assentar = () => {
+    saco.updateMatrixWorld(true);
+    const cx = new THREE.Box3().setFromObject(saco);
+    saco.position.y += base.y + 0.002 - cx.min.y;
+  };
+  assentar();
+  const escala0 = saco.scale.clone();
+  const maoTorce = criarFamilia('mao_pinca');
+  if (maoTorce) {
+    maoTorce.scale.setScalar(0.7);
+    mesa.adicionarExtra(maoTorce);
+  }
+  const colher = fase === 'encher' ? criarUtensilio('colher') : null;
+  if (colher) mesa.adicionarExtra(colher);
+  let prog = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica(fase === 'bico' ? 'Segure para torcer o saco logo acima do bico, vedando a saída.' : fase === 'encher' ? 'Segure para pôr o creme às colheradas dentro do saco aberto na jarra, sem passar de dois terços.' : 'Segure para torcer a boca do saco até o creme chegar ao bico, expulsando o ar.');
+      if (entrada.pressionado) prog = clamp(prog + dt * 0.4);
+      saco.updateMatrixWorld(true);
+      const caixa = new THREE.Box3().setFromObject(saco);
+      const topo = caixa.max.y;
+      if (fase === 'encher') {
+        // o saco vai enchendo de baixo para cima
+        saco.scale.set(escala0.x, escala0.y * (0.45 + 0.55 * prog), escala0.z * (0.45 + 0.55 * prog));
+        if (colher) {
+          colher.position.copy(base).add(new THREE.Vector3(0, topo - base.y + 0.02 + Math.sin(prog * 25) * 0.015, 0));
+          colher.rotation.set(0, ang, -1.2);
+        }
+        if (maoTorce) {
+          maoTorce.position.copy(base).add(new THREE.Vector3(-0.06, topo - base.y - 0.01, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), ang));
+          maoTorce.rotation.set(0, ang, 0);
+        }
+      } else {
+        // a ponta de trás (a boca) gira e o saco encurta: o ar sai e o creme vai ao bico
+        saco.rotation.x = prog * Math.PI * 3;
+        if (fase === 'torcer') saco.scale.set(escala0.x * (1 - 0.18 * prog), escala0.y, escala0.z);
+        assentar();
+        const traseira = new THREE.Vector3(-alvoComp * 0.5 * (fase === 'torcer' ? 1 - 0.18 * prog : 1), 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), ang);
+        const naFrente = new THREE.Vector3(alvoComp * 0.3, 0, 0).applyAxisAngle(new THREE.Vector3(0, 1, 0), ang);
+        if (maoTorce) {
+          maoTorce.position.copy(base).add(fase === 'bico' ? naFrente : traseira).setY(topo - 0.005);
+          maoTorce.rotation.set(prog * 6, ang + Math.PI, 0);
+        }
+      }
+      hud.medidores([{ rotulo: fase === 'encher' ? 'Saco cheio' : 'Torcido', valor: prog }]);
+      if (prog >= 1) {
+        exec.nota = 1;
+        exec.comentario = fase === 'encher' ? 'Dois terços do saco, sem sujar a boca.' : fase === 'bico' ? 'Saco vedado acima do bico.' : 'Creme no bico, sem bolhas de ar.';
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      hud.medidores([]);
+    },
+  };
+  return exec;
+}
+
 export function gestoMontar(ctx: ContextoGesto): Execucao {
   const v = ctx.passo.variante;
+  // encher e torcer o saco de confeitar
+  const txtSaco = `${ctx.passo.alvo} ${ctx.passo.utensilio} ${ctx.passo.alimento ?? ''}`;
+  if (/saco.de.confeitar|saco-confeitar/i.test(txtSaco) && /bico no saco|saco aberto|boca do saco/i.test(ctx.passo.alvo)) {
+    return gestoSaco(ctx, /bico no saco/i.test(ctx.passo.alvo) ? 'bico' : /saco aberto/i.test(ctx.passo.alvo) ? 'encher' : 'torcer');
+  }
   // servir ou decorar o que já está na louça (sopa, creme, molho): a louça com o conteúdo em cena
   if (!ctx.passo.alimento && (v === 'decorar' || /^servir/.test(ctx.passo.acao))) return decorarServido(ctx);
   const peca = prepararPeca(ctx);
@@ -416,6 +517,13 @@ function corDoCreme(texto: string) {
   return '#fcfaf3';
 }
 
+/** O que o último confeitar deixou na bancada (creme e base), para o passo seguinte continuar em cima. */
+let confeitadoAnterior: { tecnica: string; estacao: THREE.Vector3; creme: THREE.InstancedMesh } | null = null;
+
+function limparConfeitado() {
+  confeitadoAnterior = null;
+}
+
 export function gestoConfeitar(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud, cena } = ctx;
   const texto = `${passo.alvo} ${passo.parametro}`;
@@ -433,7 +541,11 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
     mesa.removerPeca();
     const taca = mesa.garantirRecipiente('taça', estacao.superficie.clone(), 'tigela');
     y = new THREE.Box3().setFromObject(taca).max.y - 0.02;
+  } else if (confeitadoAnterior && confeitadoAnterior.tecnica === ctx.tecnica.id && confeitadoAnterior.estacao.distanceTo(estacao.superficie) < 0.01 && !!confeitadoAnterior.creme.parent) {
+    // continua sobre o que já foi confeitado no passo anterior (a parede sobre a base do ninho)
+    y += Math.min(0.012, 0.004 + confeitadoAnterior.creme.count * 0.00002);
   } else {
+    limparConfeitado();
     mesa.removerPeca();
     mesa.removerRecipiente(true);
     const assadeira = /assadeira|papel|tabuleiro|[eé]clair|bomba|choux|biscoito|suspiro|merengue|palito|desenhos|enfeite/.test(onde);
@@ -482,10 +594,13 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
       }
     }
   }
+  // pontinhos-guia azuis e visíveis sobre o papel claro (brancos de 3 mm sumiam); nos montinhos, um disco maior
+  const matGuia = new THREE.MeshBasicMaterial({ color: '#2f7fd6', transparent: true, opacity: 0.75, depthWrite: false });
   const guias = caminho.map((p) => {
-    const m = new THREE.Mesh(geoMarca, matFantasma);
-    m.scale.setScalar(0.003);
+    const m = new THREE.Mesh(geoMarca, matGuia);
+    m.scale.set(montinhos ? 0.008 : 0.0035, montinhos ? 0.0015 : 0.0035, montinhos ? 0.008 : 0.0035);
     m.position.copy(p);
+    m.userData.guiaConfeitar = true;
     mesa.adicionarExtra(m);
     return m;
   });
@@ -496,7 +611,22 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
   creme.castShadow = true;
   cena.add(creme);
   const aux = new THREE.Object3D();
-  const saco = mesa.pegarFerramenta(/saco|bico|seringa|cone/i.test(passo.utensilio) ? passo.utensilio : '', 'confeitar');
+  // o saco de confeitar inteiro na mão, de pé com o bico para baixo, cheio do creme; vai murchando
+  // conforme o creme sai (antes só aparecia o bico)
+  mesa.soltarFerramenta();
+  let saco: Peca | null = null;
+  try {
+    saco = new Peca(criarFormaAlimento('saco-confeitar-cheio'));
+  } catch {
+    saco = null;
+  }
+  const compSaco = 0.2;
+  const escSaco = saco ? compSaco / Math.max(saco.comprimento, 1e-3) : 1;
+  if (saco) {
+    saco.rotation.set(0, 0, -Math.PI / 2);
+    saco.scale.setScalar(escSaco);
+    cena.add(saco);
+  }
   let fora = 0;
   let ultimo: THREE.Vector3 | null = null;
   let pressao = 0;
@@ -507,7 +637,13 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
     atualizar(dt) {
       hud.dica('Segure o botão para apertar o saco e siga os pontinhos claros. Velocidade constante deixa o creme uniforme.');
       const ponto = entrada.noPlano(camera, y);
-      if (ponto && saco) mesa.ferramentaEm(ponto.clone().setY(y + 0.012), 0, Math.PI / 2 - 0.15, 0);
+      if (ponto && saco) {
+        // murcha à medida que o creme vai para a assadeira
+        const gasto = clamp(creme.count / max);
+        const f = 1 - 0.65 * gasto;
+        saco.scale.set(escSaco, escSaco * f, escSaco * f);
+        saco.position.copy(ponto).setY(y + 0.012 + compSaco / 2);
+      }
       pressao = entrada.pressionado ? Math.min(1, pressao + dt * 4) : Math.max(0, pressao - dt * 6);
       if (ponto && pressao > 0.2 && creme.count < max) {
         const dist = ultimo ? ponto.distanceTo(ultimo) : 1;
@@ -517,23 +653,34 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
           // apertando parado, o montinho cresce e sobe
           creme.getMatrixAt(creme.count - 1, aux.matrix);
           aux.matrix.decompose(aux.position, aux.quaternion, aux.scale);
-          const tam = Math.min(0.016, aux.scale.x + dt * 0.02 * pressao);
+          const tam = Math.min(0.016, aux.scale.x + dt * 0.045 * pressao);
           aux.scale.set(tam, tam * 0.8, tam);
           aux.position.setY(y + tam * 0.6);
           aux.updateMatrix();
           creme.setMatrixAt(creme.count - 1, aux.matrix);
           creme.instanceMatrix.needsUpdate = true;
           // o ponto só conta quando o montinho já tem tamanho
-          if (tam >= 0.011) caminho.forEach((p, i) => { if (p.distanceTo(aux.position.clone().setY(p.y)) < 0.013) coberto[i] = true; });
-        } else if (dist > 0.0025 && !(montinhos && (ultimo || !caminho.some((p) => p.distanceTo(ponto) < 0.012)))) {
-          // nos montinhos, cada aperto nasce sobre um ponto marcado e não deixa rastro pelo caminho
+          if (tam >= 0.009) caminho.forEach((p, i) => { if (p.distanceTo(aux.position.clone().setY(p.y)) < 0.013) coberto[i] = true; });
+        } else if (dist > 0.0025 && !(montinhos && (ultimo || !caminho.some((p, i) => !coberto[i] && p.distanceTo(ponto) < 0.03)))) {
+          // nos montinhos, o aperto puxa o creme para o ponto marcado mais próximo e não deixa rastro pelo caminho
+          let onde = ponto.clone();
+          if (montinhos) {
+            let melhor = Infinity;
+            caminho.forEach((p, i) => {
+              const d = p.distanceTo(ponto);
+              if (!coberto[i] && d < melhor) {
+                melhor = d;
+                onde = p.clone();
+              }
+            });
+          }
           const tam = 0.0045 + 0.004 * pressao - Math.min(0.003, dist * 0.08);
-          aux.position.copy(ponto).setY(y + tam * 0.6);
+          aux.position.copy(onde).setY(y + tam * 0.6);
           aux.scale.set(tam, tam * 0.75, tam);
           aux.updateMatrix();
           creme.setMatrixAt(creme.count++, aux.matrix);
           creme.instanceMatrix.needsUpdate = true;
-          ultimo = ponto.clone();
+          ultimo = montinhos ? ponto.clone() : ponto.clone();
           let perto = false;
           caminho.forEach((p, i) => {
             if (p.distanceTo(ponto) < 0.011) {
@@ -558,11 +705,14 @@ export function gestoConfeitar(ctx: ContextoGesto): Execucao {
       }
     },
     descartar() {
+      if (saco) cena.remove(saco);
+      // o desenho fica na bancada: o passo seguinte (a parede do ninho sobre a espiral) confeita por cima
+      for (const g of guias) g.visible = false;
+      // o creme vira um extra da mesa: sai junto quando a mesa troca de estação ou de técnica
       cena.remove(creme);
-      creme.geometry.dispose();
-      (creme.material as THREE.Material).dispose();
+      mesa.adicionarExtra(creme);
+      confeitadoAnterior = { tecnica: ctx.tecnica.id, estacao: estacao.superficie.clone(), creme };
       mesa.soltarFerramenta();
-      mesa.limparExtras();
       hud.botao(null);
     },
   };

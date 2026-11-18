@@ -194,7 +194,7 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
   if (h.botaoTexto && /Pronto|Tirar|Flambar/.test(h.botaoTexto)) h.clicar = true;
 
   // separar o ovo: basta segurar enquanto a clara escorre
-  if (h.med('Clara na tigela')) {
+  if (h.med('Clara na tigela') || h.med('Saco cheio') || h.med('Torcido')) {
     e.pressionado = true;
     return;
   }
@@ -391,7 +391,7 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
       return;
     }
     case 'confeitar': {
-      const guias = visiveis(cena, (o) => (o.material as THREE.MeshBasicMaterial)?.opacity === 0.45 && Math.abs(o.scale.x - 0.003) < 1e-5);
+      const guias = visiveis(cena, (o) => !!o.userData.guiaConfeitar);
       if (!guias.length) {
         h.clicar = true;
         return;
