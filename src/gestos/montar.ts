@@ -11,7 +11,7 @@ import { Particulas } from '../pecas/particulas';
 import { Fio } from '../pecas/fio';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
-import { gestoTempo } from './tempo_verter';
+import { gestoTempo, gestoVerter } from './tempo_verter';
 
 const VASO_NO_FOGO = /frigideira|wok|panela|caçarola|chapa|^aro$/i;
 const matFio = new THREE.MeshStandardMaterial({ color: '#efe6d2', roughness: 0.9 });
@@ -823,6 +823,40 @@ function objetoRetirado(alvo: string, peca: Peca): THREE.Object3D {
  * Separar o ovo como o livro manda: com a mão em concha (palma para cima, a clara escorrendo entre os
  * dedos), passando a gema de uma metade da casca para a outra, ou no separador apoiado na tigela.
  */
+/** A vasilha firmada sobre um pano de prato torcido em anel, para não escorregar enquanto se bate. */
+function vasilhaNoPano(ctx: ContextoGesto): Execucao {
+  const { mesa, estacao, hud } = ctx;
+  mesa.removerPeca();
+  const tigela = mesa.garantirRecipiente('tigela', estacao.superficie.clone().add(new THREE.Vector3(0, 0.012, 0)), 'tigela');
+  tigela.updateMatrixWorld(true);
+  const caixa = new THREE.Box3().setFromObject(tigela);
+  const r = Math.min(caixa.max.x - caixa.min.x, caixa.max.z - caixa.min.z) * 0.3;
+  // pano azul e branco torcido em anel sob a base
+  const pano = new THREE.Mesh(new THREE.TorusGeometry(r, 0.012, 10, 40), new THREE.MeshStandardMaterial({ color: '#7fa6d6', roughness: 0.95 }));
+  pano.rotation.x = Math.PI / 2;
+  pano.position.copy(estacao.superficie).add(new THREE.Vector3(0, 0.01, 0));
+  pano.position.x = mesa.centro.x;
+  pano.position.z = mesa.centro.z;
+  mesa.adicionarExtra(pano);
+  let t = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica('A vasilha fica firme sobre o pano torcido: assim ela não gira enquanto você bate.');
+      t += dt;
+      if (t > 1.2) {
+        exec.nota = 1;
+        exec.comentario = 'Vasilha firme no pano.';
+        exec.concluido = true;
+      }
+    },
+    descartar() {},
+  };
+  return exec;
+}
+
 function separarOvo(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, hud, cena } = ctx;
   const txt = `${passo.alvo} ${passo.parametro} ${passo.utensilio}`;
@@ -934,6 +968,11 @@ export function gestoSeparar(ctx: ContextoGesto): Execucao {
   if (ctx.vaso && ctx.passo.meio && ctx.passo.alimento && /[aá]gua|lim[aã]o|vinagre|leite|salmoura/i.test(ctx.passo.meio)) return gestoTempo(ctx);
   // separar gema e clara: a clara escorre para a tigela e a gema fica (na mão, na casca ou no separador)
   if (/^ovo/.test(ctx.passo.alimento ?? '') && /clara|gema/i.test(`${ctx.passo.alvo} ${ctx.passo.parametro}`)) return separarOvo(ctx);
+  // sem peça: firmar a vasilha num pano, ou separar um líquido do sedimento (é despejar com cuidado)
+  if (!ctx.passo.alimento) {
+    if (/pano/i.test(`${ctx.passo.alvo} ${ctx.passo.utensilio}`)) return vasilhaNoPano(ctx);
+    return gestoVerter(ctx);
+  }
   const { passo, estacao, entrada, camera, hud } = ctx;
   const peca = prepararPeca(ctx);
   const modo = modoSeparar(passo.alvo);

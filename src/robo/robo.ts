@@ -208,7 +208,9 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
     e.teclas.add(' ');
     return;
   }
-  switch (passo.gesto) {
+  // o gesto que está na tela manda (separar um líquido do sedimento é despejar)
+  const gestoTela = h.med('Transferido') && h.med('Fio') ? 'verter' : passo.gesto;
+  switch (gestoTela) {
     case 'cortar': {
       if (!peca) return;
       if (v === 'contorno' || v === 'pontos' || v === 'desfiar') {
