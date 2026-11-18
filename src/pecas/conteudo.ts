@@ -120,7 +120,7 @@ const SABORES: [RegExp, string, number, number][] = [
 ];
 
 /** Bases neutras que ganham a cor do sabor da técnica. */
-const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#d39a3c', '#efdcb2', '#f0dfa4', '#e8d7b0', '#c99a52']);
+const NEUTRAS = new Set(['#fbf6e9', '#f6f1e4', '#d39a3c', '#efdcb2', '#f0dfa4', '#e8d7b0', '#a8702e']);
 
 /**
  * Cor, espessura e brilho do que está no recipiente. O texto do passo decide a base; quando a base
@@ -148,8 +148,9 @@ export function estadoInicial(texto: string, contexto = ''): { cor: string; espe
     [/leite|béchamel|bechamel/, '#f6f1e4', 0.2, 0.5],
     [/tomate|vermelh/, '#c8432b', 0.35, 0.5],
     [/caldo escuro|demi|molho escuro|roux escuro|espanhol/, '#6b3a1e', 0.25, 0.7],
-    [/caldo de peixe|fumet|caldo branco|caldo de galinha|consomê|consome|dashi/, '#e3c98a', 0.05, 0.9],
-    [/caldo|sopa|bouillon/, '#c99a52', 0.08, 0.85],
+    // caldos claros: dourados de verdade (na panela branca, o tom pálido de antes virava leite)
+    [/caldo de peixe|fumet|caldo branco|caldo de galinha|consomê|consome|dashi/, '#c99640', 0.05, 0.9],
+    [/caldo|sopa|bouillon/, '#a8702e', 0.08, 0.85],
     [/roux/, '#e7c77d', 0.6, 0.4],
     [/óleo|azeite|gordura|fritura/, '#e8c45a', 0.02, 1],
     [/vinho tinto/, '#4a1220', 0.1, 0.9],

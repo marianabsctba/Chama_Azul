@@ -19,7 +19,8 @@ export function gestoTempo(ctx: ContextoGesto): Execucao {
   const peca = solido ? mesa.garantirPeca(passo.alimento!, estacao.superficie.clone()) : null;
   const texto = `${passo.alvo} ${passo.utensilio} ${passo.parametro}`.toLowerCase();
   // em água gelada, água fria ou com gelo: a peça vai para a tigela com água e cubos de gelo
-  const banhoFrio = passo.variante === 'frio' && /gelad|gelo|[aá]gua fria/.test(texto) && !/geladeira|freezer/.test(texto);
+  // "congelador" contém "gelad": não é banho de água gelada
+  const banhoFrio = passo.variante === 'frio' && /gelad|gelo|[aá]gua fria/.test(texto) && !/geladeira|freezer|congel/.test(texto);
   if (peca && banhoFrio) {
     mesa.garantirRecipiente('tigela grande', estacao.superficie.clone(), 'tigela');
     mesa.garantirConteudo('água gelada', 0.6);
@@ -144,15 +145,33 @@ function cobrirComPano(ctx: ContextoGesto, peca: ReturnType<ContextoGesto['mesa'
     }
   }
   if (aluminio && !pano) {
-    // papel-alumínio em tenda sobre a peça que descansa: amassado, prateado
-    const geo = new THREE.SphereGeometry(r * 1.1, 24, 10, 0, Math.PI * 2, 0, Math.PI / 2);
-    const p = geo.getAttribute('position');
-    for (let i = 0; i < p.count; i++) p.setY(i, p.getY(i) * 0.45 + Math.sin(p.getX(i) * 300) * 0.0015);
+    // papel-alumínio dobrado em tenda (cumeeira) sobre a peça, mais curto que ela: as pontas aparecem
+    const tam2 = caixa.getSize(new THREE.Vector3());
+    const comp = Math.max(tam2.x, tam2.z) * 0.72;
+    const larg = Math.min(tam2.x, tam2.z) * 1.35;
+    const alto = tam2.y * 1.12;
+    const nx = 16, nz = 10;
+    const pos: number[] = [];
+    const idx: number[] = [];
+    for (let i = 0; i <= nx; i++) for (let j = 0; j <= nz; j++) {
+      const x = -comp / 2 + (comp * i) / nx;
+      const z = -larg / 2 + (larg * j) / nz;
+      // as duas águas do telhado, com amassados
+      const y = alto * (1 - Math.abs(z) / (larg / 2)) + Math.sin(i * 2.3 + j * 1.7) * alto * 0.03;
+      pos.push(x, Math.max(0, y), z);
+    }
+    for (let i = 0; i < nx; i++) for (let j = 0; j < nz; j++) {
+      const a = i * (nz + 1) + j, b = a + nz + 1;
+      idx.push(a, b, a + 1, b, b + 1, a + 1);
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setIndex(idx);
     geo.computeVertexNormals();
-    const folha = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: '#d5dbe0', roughness: 0.35, metalness: 0.75, side: THREE.DoubleSide }));
-    // meio puxada de lado, para ainda se ver a peça embaixo
-    folha.position.set(centro.x + r * 0.5, caixa.min.y, centro.z);
-    folha.scale.set(1, Math.max(1, (caixa.max.y - caixa.min.y) / (r * 1.1 * 0.45)) * 1.1, 1);
+    const folha = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ color: '#d5dbe0', roughness: 0.3, metalness: 0.8, side: THREE.DoubleSide, flatShading: true }));
+    folha.position.set(centro.x, caixa.min.y, centro.z);
+    // a cumeeira acompanha o comprimento da peça
+    folha.rotation.y = tam2.x >= tam2.z ? 0 : Math.PI / 2;
     mesa.adicionarExtra(folha);
     return folha;
   }
