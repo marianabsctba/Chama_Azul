@@ -8,6 +8,7 @@ import { criarFormaAlimento, criarFormaGenerica, familiaDe, textoReconhecido } f
 import { estadoInicial } from '../pecas/conteudo';
 import { criarFamilia, criarUtensilio } from '../modelos/utensilios';
 import { Particulas } from '../pecas/particulas';
+import { Fio } from '../pecas/fio';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
 import { gestoTempo } from './tempo_verter';
@@ -887,6 +888,9 @@ function separarOvo(ctx: ContextoGesto): Execucao {
   // a clara que escorre: gotas translúcidas caindo na tigela
   const gotas = new Particulas('#f3eed2', 160, 'esfera', 0.75);
   cena.add(gotas);
+  // a clara cai num fio grosso e viscoso, não em bolinhas
+  const fio = new Fio('#f1ecd6', true);
+  cena.add(fio);
   let prog = 0;
   let pressa = 0;
   const exec: Execucao = {
@@ -897,10 +901,8 @@ function separarOvo(ctx: ContextoGesto): Execucao {
       hud.dica(modo === 'casca' ? 'Segure para passar a gema de uma metade da casca para a outra, deixando a clara cair na tigela.' : modo === 'mao' ? 'Segure para afrouxar os dedos e deixar a clara escorrer; a gema fica na palma.' : 'Segure para a clara escorrer pelas fendas do separador; a gema fica em cima.');
       const vel = entrada.pressionado ? 0.32 : 0;
       prog = clamp(prog + dt * vel);
-      if (vel && dt > 0 && prog < 1 && Math.random() < dt * 40) {
-        const origem = (modo === 'casca' ? gema.position.clone() : c.clone()).add(new THREE.Vector3((Math.random() - 0.5) * 0.04, -0.01, (Math.random() - 0.5) * 0.03));
-        gotas.emitir(origem, new THREE.Vector3(0, -0.15, 0), { vida: 0.6, tam: 0.004, gravidade: -4, espalhar: 0.15 });
-      }
+      const de = (modo === 'casca' ? gema.position.clone() : c.clone()).add(new THREE.Vector3(0, modo === 'mao' ? -0.012 : -0.014, 0));
+      fio.atualizar(de, de.clone().setY(conteudo.position.y + conteudo.estado.nivel), vel ? 0.0065 : 0, dt);
       gotas.atualizar(dt);
       conteudo.estado.nivel = nivel0 + prog * 0.03;
       if (modo === 'casca' && cascas.length === 2) {
@@ -920,6 +922,7 @@ function separarOvo(ctx: ContextoGesto): Execucao {
     descartar() {
       cena.remove(gotas);
       gotas.descartar();
+      fio.descartar();
       hud.medidores([]);
     },
   };

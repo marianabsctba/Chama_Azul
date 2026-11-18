@@ -4,6 +4,7 @@ import type { ContextoGesto, Execucao } from './base';
 import { clamp, comentar, formatarTempo, minutos, suave, temperaturas } from './base';
 import { anguloDaEstacao, aoLado, temPeca, textoConteudo } from './mesa';
 import { Particulas } from '../pecas/particulas';
+import { Fio } from '../pecas/fio';
 import { audio } from '../motor/audio';
 import { criarUtensilio } from '../modelos/utensilios';
 
@@ -310,6 +311,9 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
   const caixaOrigem = new THREE.Box3().setFromObject(origem);
   const fluxo = new Particulas(conteudo.estado.cor, 220, 'esfera', 0.95);
   cena.add(fluxo);
+  // o fio contínuo do despejo (as gotinhas ficam só para os respingos de quem despeja rápido demais)
+  const fio = new Fio(conteudo.estado.cor, conteudo.estado.espessura < 0.3);
+  cena.add(fio);
   const nivel0 = conteudo.estado.nivel;
   const origemPos0 = origem.position.clone();
   // o conteúdo fica no centro da boca, que não é a origem do modelo quando há cabo
@@ -369,8 +373,10 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
         if (vazao > 0.75) derramado += q;
         origem.updateMatrixWorld(true);
         const bico = origem.localToWorld(bicoLocal.clone());
-        for (let i = 0; i < 3; i++) fluxo.emitir(bico, dir.clone().multiplyScalar(0.06 + vazao * 0.08), { vida: 0.6, tam: 0.004 + vazao * 0.003, gravidade: -6, espalhar: vazao > 0.75 ? 0.9 : 0.12 });
-      }
+        const chegada = bico.clone().addScaledVector(dir, 0.02 + vazao * 0.03).setY(topoDest - 0.02);
+        fio.atualizar(bico, chegada, 0.004 + vazao * 0.005, dt, dir.clone().multiplyScalar(0.01 + vazao * 0.02));
+        if (vazao > 0.75) for (let i = 0; i < 2; i++) fluxo.emitir(chegada.clone().setY(topoDest), new THREE.Vector3(0, 0.3, 0), { vida: 0.4, tam: 0.003, gravidade: -6, espalhar: 0.9 });
+      } else fio.atualizar(new THREE.Vector3(), new THREE.Vector3(), 0, dt);
       conteudo.estado.nivel = Math.max(0.002, nivel0 * (1 - transferido));
       fluxo.atualizar(dt);
       audio.despejo(vazao);
@@ -387,6 +393,7 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
     descartar() {
       cena.remove(fluxo);
       fluxo.descartar();
+      fio.descartar();
       origem.quaternion.identity();
       origem.position.copy(origemPos0);
       conteudo.quaternion.identity();
@@ -758,6 +765,8 @@ export function gestoMedir(ctx: ContextoGesto): Execucao {
   conteudo.estado.nivel = 0.002;
   const fluxo = new Particulas(conteudo.estado.cor, 200, 'esfera', 1);
   cena.add(fluxo);
+  const fio = new Fio(conteudo.estado.cor, conteudo.estado.espessura < 0.3);
+  cena.add(fio);
   let medido = 0;
   let vel = 0;
   const exec: Execucao = {
@@ -769,10 +778,9 @@ export function gestoMedir(ctx: ContextoGesto): Execucao {
       if (entrada.pressionado) vel = Math.min(alvo * 0.6, vel + alvo * dt * 0.35);
       else vel = 0;
       medido += vel * dt;
-      if (vel > 0) {
-        const o = mesa.centro.clone().add(new THREE.Vector3(0, 0.25, 0));
-        for (let i = 0; i < 2; i++) fluxo.emitir(o, new THREE.Vector3(0, -0.5, 0), { vida: 0.5, tam: 0.003, gravidade: -8, espalhar: 0.1 });
-      }
+      // fio contínuo caindo do alto até o nível do que já está no recipiente
+      const o = mesa.centro.clone().add(new THREE.Vector3(0, 0.25, 0));
+      fio.atualizar(o, mesa.centro.clone().setY(conteudo.position.y + conteudo.estado.nivel), vel > 0 ? 0.0025 + 0.003 * clamp(vel / (alvo * 0.6)) : 0, dt);
       fluxo.atualizar(dt);
       audio.despejo(vel > 0 ? 0.5 : 0);
       conteudo.estado.nivel = 0.002 + 0.05 * clamp(medido / (alvo * 1.4));
@@ -787,6 +795,7 @@ export function gestoMedir(ctx: ContextoGesto): Execucao {
     descartar() {
       cena.remove(fluxo);
       fluxo.descartar();
+      fio.descartar();
       audio.despejo(0);
       hud.botao(null);
     },
