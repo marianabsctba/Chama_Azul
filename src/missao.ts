@@ -45,7 +45,9 @@ export function prepararEstado(peca: Peca, estado: EstadoPeca) {
     for (let j = 1; j < nz; j++) peca.cortar('z', -W / 2 + (W * j) / nz);
   }
   if (estado === 'cubos' || estado === 'picado') peca.cortar('y', H * 0.5);
-  abrir(estado === 'metades' ? 0.15 : 0.04);
+  // cubos, tiras e fatias bem soltos: com folga pequena a peça parecia inteira só riscada
+  abrir(estado === 'metades' ? 0.15 : 0.08);
+  for (let k = 0; k < 30; k++) peca.atualizar(1 / 30);
 }
 
 export interface ResultadoPasso {

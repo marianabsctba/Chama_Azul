@@ -6,7 +6,8 @@ import { clamp, comentar } from './base';
 import { anguloDaEstacao, aoLado, ehLiquido } from './mesa';
 import { criarFormaAlimento, criarFormaGenerica, familiaDe, textoReconhecido } from '../modelos/alimentos';
 import { estadoInicial } from '../pecas/conteudo';
-import { criarUtensilio } from '../modelos/utensilios';
+import { criarFamilia, criarUtensilio } from '../modelos/utensilios';
+import { Particulas } from '../pecas/particulas';
 import { Peca } from '../pecas/peca';
 import { audio } from '../motor/audio';
 import { gestoTempo } from './tempo_verter';
@@ -817,9 +818,119 @@ function objetoRetirado(alvo: string, peca: Peca): THREE.Object3D {
   return g;
 }
 
+/**
+ * Separar o ovo como o livro manda: com a mão em concha (palma para cima, a clara escorrendo entre os
+ * dedos), passando a gema de uma metade da casca para a outra, ou no separador apoiado na tigela.
+ */
+function separarOvo(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud, cena } = ctx;
+  const txt = `${passo.alvo} ${passo.parametro} ${passo.utensilio}`;
+  const modo: 'mao' | 'casca' | 'separador' = /separador/i.test(txt) ? 'separador' : /casca|metade/i.test(txt) ? 'casca' : 'mao';
+  mesa.removerPeca();
+  mesa.soltarFerramenta();
+  const tigela = mesa.garantirRecipiente(ctx.vaso && /tigela|vasilha|bowl/i.test(ctx.vaso) ? ctx.vaso : 'tigela', estacao.superficie.clone(), 'tigela');
+  const conteudo = mesa.garantirConteudo('clara', 0.04);
+  const nivel0 = conteudo.estado.nivel;
+  tigela.updateMatrixWorld(true);
+  const borda = new THREE.Box3().setFromObject(tigela).max.y;
+  const c = mesa.centro.clone().setY(borda + 0.035);
+  const ang = anguloDaEstacao(estacao);
+  const lado = new THREE.Vector3(Math.cos(ang), 0, -Math.sin(ang));
+  const gema = new THREE.Mesh(new THREE.SphereGeometry(0.015, 24, 16), new THREE.MeshStandardMaterial({ color: '#f2a516', roughness: 0.25 }));
+  gema.scale.set(1, 0.8, 1);
+  gema.castShadow = true;
+  const matCasca = new THREE.MeshStandardMaterial({ color: '#efe3cf', roughness: 0.7, side: THREE.DoubleSide });
+  const meiaCasca = () => {
+    const m = new THREE.Mesh(new THREE.SphereGeometry(0.024, 24, 12, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), matCasca);
+    m.scale.set(1, 1.25, 1);
+    return m;
+  };
+  const cascas: THREE.Object3D[] = [];
+  let suporte: THREE.Object3D | null = null;
+  if (modo === 'mao') {
+    // mão de luva em concha, palma para cima, logo acima da boca da tigela
+    const mao = criarFamilia('mao');
+    if (mao) {
+      mao.rotation.set(Math.PI, ang + Math.PI, 0);
+      mao.scale.setScalar(0.85);
+      mao.updateMatrixWorld(true);
+      const caixa = new THREE.Box3().setFromObject(mao);
+      const meio = caixa.getCenter(new THREE.Vector3());
+      mao.position.add(c.clone().sub(meio)).add(new THREE.Vector3(0, (caixa.max.y - caixa.min.y) / 2 - 0.012, 0));
+      mesa.adicionarExtra(mao);
+      suporte = mao;
+      mao.updateMatrixWorld(true);
+    }
+    // a gema assenta no meio da palma (virada para cima)
+    const palma = suporte?.userData.palma as THREE.Vector3 | undefined;
+    if (suporte && palma) gema.position.copy(palma.clone().applyMatrix4(suporte.matrixWorld)).add(new THREE.Vector3(0, 0.012, 0));
+    else gema.position.copy(c).add(new THREE.Vector3(0, 0.02, 0));
+  } else if (modo === 'casca') {
+    for (const s of [-1, 1]) {
+      const m = meiaCasca();
+      m.position.copy(c).addScaledVector(lado, s * 0.035);
+      m.rotation.z = s * 0.35;
+      mesa.adicionarExtra(m);
+      cascas.push(m);
+    }
+    gema.position.copy(cascas[0].position).add(new THREE.Vector3(0, -0.006, 0));
+  } else {
+    const sep = criarUtensilio('separador');
+    if (sep) {
+      sep.position.copy(mesa.centro).setY(borda);
+      mesa.adicionarExtra(sep);
+      suporte = sep;
+    }
+    gema.position.copy(mesa.centro).setY(borda + 0.012);
+  }
+  mesa.adicionarExtra(gema);
+  // a clara que escorre: gotas translúcidas caindo na tigela
+  const gotas = new Particulas('#f3eed2', 160, 'esfera', 0.75);
+  cena.add(gotas);
+  let prog = 0;
+  let pressa = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica(modo === 'casca' ? 'Segure para passar a gema de uma metade da casca para a outra, deixando a clara cair na tigela.' : modo === 'mao' ? 'Segure para afrouxar os dedos e deixar a clara escorrer; a gema fica na palma.' : 'Segure para a clara escorrer pelas fendas do separador; a gema fica em cima.');
+      const vel = entrada.pressionado ? 0.32 : 0;
+      prog = clamp(prog + dt * vel);
+      if (vel && dt > 0 && prog < 1 && Math.random() < dt * 40) {
+        const origem = (modo === 'casca' ? gema.position.clone() : c.clone()).add(new THREE.Vector3((Math.random() - 0.5) * 0.04, -0.01, (Math.random() - 0.5) * 0.03));
+        gotas.emitir(origem, new THREE.Vector3(0, -0.15, 0), { vida: 0.6, tam: 0.004, gravidade: -4, espalhar: 0.15 });
+      }
+      gotas.atualizar(dt);
+      conteudo.estado.nivel = nivel0 + prog * 0.03;
+      if (modo === 'casca' && cascas.length === 2) {
+        // a gema vai e volta entre as metades enquanto a clara cai
+        const ida = Math.floor(prog * 4) % 2;
+        const alvoCasca = cascas[ida];
+        gema.position.lerp(alvoCasca.position.clone().add(new THREE.Vector3(0, -0.006, 0)), Math.min(1, dt * 6));
+      }
+      void suporte;
+      hud.medidores([{ rotulo: 'Clara na tigela', valor: prog }]);
+      if (prog >= 1) {
+        exec.nota = clamp(1 - pressa * 0.5);
+        exec.comentario = comentar(exec.nota, 'Clara na tigela, gema inteira e limpa.', 'Separou, com um pouquinho de pressa.', 'Rápido demais: a gema pode furar.');
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      cena.remove(gotas);
+      gotas.descartar();
+      hud.medidores([]);
+    },
+  };
+  return exec;
+}
+
 export function gestoSeparar(ctx: ContextoGesto): Execucao {
   // "palitos em água fria", "pedaços em água com limão": é deixar de molho no recipiente, não puxar uma parte
   if (ctx.vaso && ctx.passo.meio && ctx.passo.alimento && /[aá]gua|lim[aã]o|vinagre|leite|salmoura/i.test(ctx.passo.meio)) return gestoTempo(ctx);
+  // separar gema e clara: a clara escorre para a tigela e a gema fica (na mão, na casca ou no separador)
+  if (/^ovo/.test(ctx.passo.alimento ?? '') && /clara|gema/i.test(`${ctx.passo.alvo} ${ctx.passo.parametro}`)) return separarOvo(ctx);
   const { passo, estacao, entrada, camera, hud } = ctx;
   const peca = prepararPeca(ctx);
   const modo = modoSeparar(passo.alvo);
@@ -834,7 +945,11 @@ export function gestoSeparar(ctx: ContextoGesto): Execucao {
     retirado.scale.setScalar(1);
     peca.add(retirado);
   }
-  const alvoDist = 0.12 / Math.max(peca.scale.x, 0.01);
+  // dentro de tigela ou panela a parte separada fica na boca do recipiente, sem atravessar a parede
+  const limite = ctx.mesa.recipiente ? Math.max(0.02, ctx.mesa.bocaRaio * 0.55) : 0.12;
+  const alvoDist = limite / Math.max(peca.scale.x, 0.01);
+  // separar com as mãos ou os dedos: a mão em pinça leva a parte que sai
+  const mao = /m[aã]os?|dedos?/i.test(passo.utensilio ?? '') ? ctx.mesa.pegarMao('dedos') : null;
   let dist = 0;
   let pressa = 0;
   let segurando = false;
@@ -866,6 +981,11 @@ export function gestoSeparar(ctx: ContextoGesto): Execucao {
         retirado.visible = prog < 0.98;
       } else {
         for (const f of lado) peca.moverFragmento(f, new THREE.Vector3(dist + (modo === 'partes' ? 0.004 : 0), dist > 0.01 ? 0.002 : 0, 0));
+        if (mao && lado.length) {
+          const f0 = lado[0];
+          const pt = peca.localToWorld(new THREE.Vector3((f0.x0 + f0.x1) / 2 + dist, peca.altura, (f0.z0 + f0.z1) / 2));
+          ctx.mesa.ferramentaEm(pt, peca.rotation.y, 0, 0);
+        }
       }
       hud.medidores([{ rotulo: modo === 'retirar' ? 'Retirado' : 'Separado', valor: prog }]);
       if (prog >= 1) {

@@ -193,6 +193,11 @@ export function jogar(m: Missao, e: EntradaFalsa, h: HudFalso, cam: THREE.Perspe
   if (h.pergunta) h.responder = 1;
   if (h.botaoTexto && /Pronto|Tirar|Flambar/.test(h.botaoTexto)) h.clicar = true;
 
+  // separar o ovo: basta segurar enquanto a clara escorre
+  if (h.med('Clara na tigela')) {
+    e.pressionado = true;
+    return;
+  }
   // um gesto pode virar outro (separar em água fria vira deixar de molho): o timer na tela manda
   if (passo.gesto !== 'tempo' && h.med('Timer')) {
     const timer = h.med('Timer')!;

@@ -2389,6 +2389,209 @@ const quebrador: Gerador = () => {
 };
 
 /* ================================================================== */
+/* Mão (luva azul-clara com punho de manga)                            */
+/* ================================================================== */
+
+// Mão direita estilizada de luva de cozinha azul-clara, em tamanho real (cerca
+// de 18 cm do punho à ponta do dedo médio). Fica deitada ao longo de X com os
+// dedos para +X, as costas da mão para +Y e o polegar em -Z. A pega fica no
+// punho, dentro da manga, e a ponta ativa na ponta do dedo que trabalha.
+
+const COR_LUVA = 0xa9d5f3;
+const COR_MANGA = COR.tecidoAzul;
+const GRAU = PI / 180;
+
+/**
+ * Tubo varrido por uma curva com seção elíptica variável. `perfil(t)` devolve
+ * [meia largura, meia espessura]; `lado` aponta a largura (as costas ficam em
+ * lado × tangente). Raio zero nas pontas fecha o tubo.
+ */
+function varrer(pts: V3[], perfil: (t: number) => [number, number], lado: V3, nL = 16, nR = 10, dist = 1.5): THREE.BufferGeometry {
+  const curva = new THREE.CatmullRomCurve3(pts.map((p) => new THREE.Vector3(p[0], p[1], p[2])));
+  const L = new THREE.Vector3(lado[0], lado[1], lado[2]).normalize();
+  const pos: number[] = [];
+  const S = new THREE.Vector3();
+  const U = new THREE.Vector3();
+  for (let i = 0; i <= nL; i++) {
+    const u = i / nL;
+    // anéis mais juntos perto do fim (ponta arredondada)
+    const t = 1 - Math.pow(1 - u, dist);
+    const P = curva.getPointAt(t);
+    const T = curva.getTangentAt(t);
+    S.copy(L).addScaledVector(T, -L.dot(T)).normalize();
+    U.crossVectors(S, T).normalize();
+    const [rs, ru] = perfil(t);
+    for (let j = 0; j < nR; j++) {
+      const a = (j / nR) * PI * 2;
+      const c = Math.cos(a) * Math.max(rs, 1e-4);
+      const s = Math.sin(a) * Math.max(ru, 1e-4);
+      pos.push(P.x + S.x * c + U.x * s, P.y + S.y * c + U.y * s, P.z + S.z * c + U.z * s);
+    }
+  }
+  const idx: number[] = [];
+  for (let i = 0; i < nL; i++) {
+    for (let j = 0; j < nR; j++) {
+      const j2 = (j + 1) % nR;
+      const a = i * nR + j;
+      const b = i * nR + j2;
+      const c = (i + 1) * nR + j;
+      const d = (i + 1) * nR + j2;
+      idx.push(a, c, b, b, c, d);
+    }
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return g;
+}
+
+/** Fator de tampa redonda: 1 no meio, cai como um quarto de círculo no começo (c0) e no fim (c1). */
+function tampaRedonda(t: number, c0: number, c1: number): number {
+  let f = 1;
+  if (c0 > 0 && t < c0) f *= Math.sqrt(Math.max(0, 1 - ((c0 - t) / c0) ** 2));
+  if (c1 > 0 && t > 1 - c1) f *= Math.sqrt(Math.max(0, 1 - ((t - (1 - c1)) / c1) ** 2));
+  return f;
+}
+
+interface DedoCfg {
+  /** Junta da base (nó do dedo), em coordenadas da mão. */
+  base: V3;
+  /** Comprimento do dedo a partir do nó. */
+  L: number;
+  /** Abertura em Z (radianos, positivo para o lado do mindinho). */
+  abre: number;
+  /** Dobra acumulada de cada falange (graus, para baixo). */
+  dobra: [number, number, number];
+  /** Meia largura e meia espessura no nó. */
+  r: [number, number];
+}
+
+/** Pontos do eixo do dedo: entra 1,6 cm na palma e segue pelas três falanges. */
+function eixoDedo(c: DedoCfg): V3[] {
+  const fr = [0.45, 0.32, 0.23];
+  const [bx, by, bz] = c.base;
+  const ca = Math.cos(c.abre);
+  const sa = Math.sin(c.abre);
+  const pts: V3[] = [[bx - 0.016 * ca, by + 0.002, bz - 0.016 * sa], [bx, by, bz]];
+  let p: V3 = [bx, by, bz];
+  for (let k = 0; k < 3; k++) {
+    const a = c.dobra[k] * GRAU;
+    const l = fr[k] * c.L;
+    // a falange da ponta ganha um ponto no meio para a curva ficar macia
+    const passos = k === 2 ? 2 : 1;
+    for (let q = 0; q < passos; q++) {
+      const lq = l / passos;
+      p = [p[0] + Math.cos(a) * ca * lq, p[1] - Math.sin(a) * lq, p[2] + Math.cos(a) * sa * lq];
+      pts.push(p);
+    }
+  }
+  return pts;
+}
+
+/** Desenha um dedo e devolve o ponto da ponta. */
+function dedo(m: Montador, c: DedoCfg): V3 {
+  const pts = eixoDedo(c);
+  // comprimento aproximado do eixo, para a tampa da ponta ser meia esfera
+  let comp = 0;
+  for (let i = 1; i < pts.length; i++) comp += Math.hypot(pts[i][0] - pts[i - 1][0], pts[i][1] - pts[i - 1][1], pts[i][2] - pts[i - 1][2]);
+  const [rs0, ru0] = c.r;
+  const cPonta = Math.min(0.45, (rs0 * 0.85) / comp);
+  const perfil = (t: number): [number, number] => {
+    // afina para a ponta, com leve inchaço nas juntas
+    const afina = 1 - 0.13 * t;
+    const junta = 1 + 0.05 * Math.exp(-(((t - 0.62) / 0.06) ** 2));
+    const f = afina * junta * tampaRedonda(t, 0.12, cPonta);
+    return [rs0 * f, ru0 * f];
+  };
+  const lado: V3 = [-Math.sin(c.abre), 0, Math.cos(c.abre)];
+  m.add('silicone', varrer(pts, perfil, lado, 16, 10), { cor: COR_LUVA });
+  return pts[pts.length - 1];
+}
+
+/** Palma, punho e manga, comuns às duas variantes. */
+function palmaEManga(m: Montador): void {
+  // palma: varrida do punho aos nós, larga em Z e achatada em Y
+  const palma = varrer(
+    [[-0.012, 0.034, 0.002], [0.03, 0.032, 0.001], [0.07, 0.029, 0], [0.104, 0.026, 0]],
+    (t) => {
+      const larg = 0.028 + 0.015 * sm(t / 0.55) - 0.004 * sm((t - 0.8) / 0.2);
+      const esp = 0.0165 - 0.005 * sm((t - 0.4) / 0.6);
+      const f = tampaRedonda(t, 0, 0.13);
+      return [larg * f, esp * Math.max(f, 0.2 + 0.8 * f)];
+    },
+    [0, 0, 1],
+    18,
+    16,
+    1.2,
+  );
+  m.add('silicone', palma, { cor: COR_LUVA });
+  // punho da luva entrando na manga
+  m.add('silicone', tornoX([[0.027, -0.03], [0.028, -0.012], [0.027, 0.004]], 16), { p: [0, 0.034, 0.002], s: [1, 0.64, 1], cor: COR_LUVA });
+  // manga de tecido azul com a bainha dobrada
+  m.add('madeira', tornoX([[0.0005, -0.075], [0.036, -0.074], [0.037, -0.03], [0.036, -0.012], [0.03, -0.011]], 18), {
+    p: [0, 0.034, 0.002], s: [1, 0.72, 1], cor: COR_MANGA,
+  });
+  m.add('madeira', new THREE.TorusGeometry(0.0345, 0.0045, 6, 22).rotateY(PI / 2), {
+    p: [-0.013, 0.034, 0.002], s: [1, 0.72, 1], cor: 0x4c7dba,
+  });
+}
+
+/** Mão aberta, palma para baixo e dedos levemente curvados: sovar, achatar, esfregar, espalhar. */
+const mao: Gerador = () => {
+  const m = new Montador();
+  palmaEManga(m);
+  const dedos: DedoCfg[] = [
+    { base: [0.099, 0.027, -0.0295], L: 0.072, abre: -0.1, dobra: [5, 15, 26], r: [0.0104, 0.0086] },
+    { base: [0.103, 0.027, -0.009], L: 0.08, abre: -0.02, dobra: [5, 14, 25], r: [0.0106, 0.0088] },
+    { base: [0.099, 0.027, 0.0105], L: 0.075, abre: 0.07, dobra: [6, 16, 27], r: [0.0102, 0.0084] },
+    { base: [0.091, 0.026, 0.0295], L: 0.06, abre: 0.17, dobra: [7, 18, 29], r: [0.0092, 0.0076] },
+  ];
+  const pontas = dedos.map((d) => dedo(m, d));
+  // polegar: nasce gordinho junto ao punho e se abre para o lado
+  m.add('silicone', varrer(
+    [[0.012, 0.027, -0.018], [0.04, 0.022, -0.04], [0.066, 0.017, -0.055], [0.08, 0.014, -0.064], [0.093, 0.012, -0.069]],
+    (t) => {
+      const f = tampaRedonda(t, 0.1, 0.13);
+      const r = 0.0165 - 0.0062 * sm(t / 0.45);
+      return [r * f, r * 0.82 * f];
+    },
+    [0.2, 0.75, 0.6], 18, 10,
+  ), { cor: COR_LUVA });
+  // ponta ativa na polpa do dedo médio (logo atrás da ponta, por baixo)
+  const b = pontas[1];
+  const ponta: V3 = [b[0] - 0.006, b[1] - 0.006, b[2]];
+  return m.finalizar('mao', [-0.035, 0.034, 0.002], ponta, { palma: [0.06, 0.012, 0] });
+};
+
+/** Polegar e indicador em pinça, demais dedos dobrados: testar com o dedo, puxar o fio, separar. */
+const maoPinca: Gerador = () => {
+  const m = new Montador();
+  palmaEManga(m);
+  const indicador = dedo(m, { base: [0.099, 0.027, -0.0295], L: 0.072, abre: -0.12, dobra: [40, 75, 90], r: [0.0104, 0.0086] });
+  const fechados: DedoCfg[] = [
+    { base: [0.103, 0.027, -0.009], L: 0.074, abre: -0.02, dobra: [80, 160, 222], r: [0.0106, 0.0088] },
+    { base: [0.099, 0.027, 0.0105], L: 0.07, abre: 0.05, dobra: [82, 162, 224], r: [0.0102, 0.0084] },
+    { base: [0.091, 0.026, 0.0295], L: 0.056, abre: 0.12, dobra: [84, 165, 226], r: [0.0092, 0.0076] },
+  ];
+  for (const d of fechados) dedo(m, d);
+  // polegar vem por baixo e encosta a ponta na do indicador
+  const alvo: V3 = [indicador[0] - 0.004, indicador[1] + 0.004, indicador[2] - 0.0145];
+  m.add('silicone', varrer(
+    [[0.012, 0.027, -0.018], [0.045, 0.016, -0.045], [0.078, -0.002, -0.054], [alvo[0] - 0.016, alvo[1] + 0.004, alvo[2] - 0.006], alvo],
+    (t) => {
+      const f = tampaRedonda(t, 0.1, 0.1);
+      const r = 0.0165 - 0.0062 * sm(t / 0.4);
+      return [r * f, r * 0.82 * f];
+    },
+    [0.3, 0.9, 0.3], 18, 10,
+  ), { cor: COR_LUVA });
+  // ponta ativa no encontro das duas pontas
+  const ponta: V3 = [(indicador[0] + alvo[0]) / 2, Math.min(indicador[1], alvo[1]) - 0.003, (indicador[2] + alvo[2]) / 2];
+  return m.finalizar('mao_pinca', [-0.035, 0.034, 0.002], ponta);
+};
+
+/* ================================================================== */
 /* Registro                                                            */
 /* ================================================================== */
 
@@ -2540,6 +2743,8 @@ export const GERADORES: Record<string, Gerador> = {
   folha_bananeira: folhaBananeira,
   saco_plastico: sacoPlastico,
   luva,
+  mao,
+  mao_pinca: maoPinca,
   cartao,
   caixa_ovos: caixaOvos,
   esteira,

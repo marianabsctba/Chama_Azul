@@ -115,6 +115,39 @@ export function criarLoucaPequena(tipo: LoucaPequena): LoucaMontada {
  * Montinho dentro da louça: pó seco de especiarias (grãos finos com pontinhos mais escuros) ou picos firmes de
  * claras em neve, merengue e chantilly (ondas que sobem e dobram na ponta).
  */
+/** Purê ou pasta grossa (homus, dhal, feijão refrito, duxelles): monte baixo com o redemoinho da colher. */
+export function montePasta(raio: number, cor: string | THREE.Color, granulado = false): THREE.Mesh {
+  const base = new THREE.Color(cor);
+  const perfil: THREE.Vector2[] = [];
+  for (let i = 0; i <= 12; i++) {
+    const t = i / 12;
+    perfil.push(new THREE.Vector2(raio * (1 - t), raio * 0.32 * Math.sin((t * Math.PI) / 2) ** 0.7));
+  }
+  const geo = new THREE.LatheGeometry(perfil, 64);
+  const pos = geo.getAttribute('position');
+  const cores: number[] = [];
+  const c = new THREE.Color();
+  for (let i = 0; i < pos.count; i++) {
+    const x = pos.getX(i);
+    const z = pos.getZ(i);
+    const r = Math.hypot(x, z) / raio;
+    const a = Math.atan2(z, x);
+    // sulco em espiral deixado pelas costas da colher
+    const sulco = Math.sin(a * 1 + r * 22) * 0.5 + 0.5;
+    pos.setY(i, pos.getY(i) * (1 - 0.18 * sulco * Math.min(1, r * 3)) + (granulado ? Math.sin(x * 1500) * Math.cos(z * 1400) * 0.0008 : 0));
+    c.copy(base).multiplyScalar(0.88 + 0.16 * sulco + (granulado ? 0.08 * Math.sin(x * 900 + z * 700) : 0));
+    cores.push(c.r, c.g, c.b);
+  }
+  geo.setAttribute('color', new THREE.Float32BufferAttribute(cores, 3));
+  geo.computeVertexNormals();
+  const m = new THREE.Mesh(geo, new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.6 }));
+  m.castShadow = true;
+  return m;
+}
+
+/** Purês, pastas e grãos cozidos que vão à mesa em monte, não em superfície lisa de líquido. */
+export const PASTA = /pur[eê]|homus|hummus|dhal|refrito|duxelles|pat[eê]|mousseline|polenta mole|guacamole|tapenade|babaganuche|pasta de|manteiga de castanha|caponata/i;
+
 export function montinhoTextura(raio: number, cor: string | THREE.Color, textura: 'po' | 'picos'): THREE.Group {
   const g = new THREE.Group();
   const base = new THREE.Color(cor);

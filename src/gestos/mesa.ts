@@ -4,7 +4,7 @@ import { Peca } from '../pecas/peca';
 import { Capa, capaDoTexto } from '../pecas/capa';
 import { Conteudo, estadoInicial } from '../pecas/conteudo';
 import { criarFormaAlimento, criarFormaGenerica, familiaDe } from '../modelos/alimentos';
-import { criarUtensilio, pontosDoUtensilio } from '../modelos/utensilios';
+import { criarFamilia, criarUtensilio, pontosDoUtensilio } from '../modelos/utensilios';
 import type { Estacao } from '../tipos';
 
 /** Palavras que indicam que o alvo do passo é um preparo líquido ou pastoso, não uma peça. */
@@ -181,7 +181,10 @@ export class Mesa {
     this.garantirRecipiente(vaso, onde, fogo ? 'frigideira' : 'assadeira');
     // a peça cabe no vaso
     const maior = Math.max(peca.comprimento, peca.largura);
-    const caber = (this.bocaRaio * 1.7) / Math.max(maior, 1e-3);
+    // tigela, pote e ramequim afunilam: a peça assenta no fundo, mais estreito que a boca, e
+    // atravessaria a parede; nos de parede reta (assadeira, fôrma, travessa) cabe quase a boca toda
+    const afunila = /tigela|pote|ramequi|vasilha|bowl|cumbuca|peneira|chinois|mouli|pil[aã]o|tagine|cuscuzeira|escorredor/i.test(vaso);
+    const caber = (this.bocaRaio * (afunila ? 1.15 : 1.7)) / Math.max(maior, 1e-3);
     if (peca.scale.x > caber) peca.scale.setScalar(caber);
     peca.position.set(this.centro.x, this.fundoY, this.centro.z);
     return true;
@@ -234,20 +237,34 @@ export class Mesa {
     }
   }
 
+  /**
+   * A mão de luva azul: aberta para sovar, achatar, esfregar e espalhar; em pinça (polegar e indicador)
+   * para testar com o dedo, puxar o fio, separar e descascar com os dedos.
+   */
+  pegarMao(texto = ''): THREE.Group | null {
+    const pinca = /dedo|pin[cç]a|testar|puxar|separar|descascar|despelar|tirar|abrir com os dedos|beliscar|prega/i.test(`${texto} ${this.acao}`);
+    const chave = pinca ? 'mao_pinca' : 'mao';
+    if (this.ferramenta && this.ferramentaChave === chave) return this.ferramenta;
+    this.soltarFerramenta();
+    const g = criarFamilia(chave);
+    if (!g) return null;
+    g.traverse((o) => {
+      if (o instanceof THREE.Mesh) o.castShadow = true;
+    });
+    this.ferramenta = g;
+    this.ferramentaChave = chave;
+    this.cena.add(g);
+    return g;
+  }
+
   /** Utensílio que acompanha o mouse. */
   pegarFerramenta(texto: string, padrao: string): THREE.Group | null {
     // a ficha do passo diz que é com as mãos
-    if (/^(m[aã]os?|dedos?)$/i.test((texto ?? '').trim())) {
-      this.soltarFerramenta();
-      return null;
-    }
+    if (/^(m[aã]os?|dedos?)$/i.test((texto ?? '').trim())) return this.pegarMao(texto);
     // o livro faz com as mãos (sovar, socar, quebrar o talo, esfarelar, espremer, rasgar): sem utensílio
     // utensílio que não é ferramenta de mão (bancada enfarinhada, tábua, vasilha) também conta como mãos
     const semUtensilio = !texto || /^(m[aã]os?|dedos?|palmas?|punho|polegares?)/i.test(texto.trim()) || /m[aã]os|dedos|palma|punho|polegar|bancada|superf[ií]cie|t[aá]bua|vasilha|tigela/i.test(texto) || !criarUtensilio(texto);
-    if (semUtensilio && /sovar|socar|quebrar|esfarelar|espremer|rasgar|torcer|achatar|amassar com|abrir com os dedos|despelar|descascar com os dedos|puxar/i.test(this.acao)) {
-      this.soltarFerramenta();
-      return null;
-    }
+    if (semUtensilio && /sovar|socar|quebrar|esfarelar|espremer|rasgar|torcer|achatar|amassar com|abrir com os dedos|despelar|descascar com os dedos|puxar/i.test(this.acao)) return this.pegarMao(texto);
     const t = texto && !/^(m[aã]os?|dedos?)$/i.test(texto.trim()) ? texto : UTENSILIO_PADRAO[padrao] ?? padrao;
     if (this.ferramenta && this.ferramentaChave === t) return this.ferramenta;
     this.soltarFerramenta();
@@ -278,11 +295,25 @@ export class Mesa {
     const { ponta } = pontosDoUtensilio(g);
     g.rotation.set(0, 0, 0);
     g.rotation.order = 'YZX';
-    g.rotation.y = rotY;
-    g.rotation.z = inclinacao;
-    g.rotation.x = rolar;
+    const ehMao = g.name === 'mao' || g.name === 'mao_pinca';
+    // diante de peça miúda (camarão, ovo, castanha) a câmera chega perto e a mão em tamanho real tapava tudo
+    if (ehMao) {
+      const p = this.peca;
+      // tamanho "de corpo" da peça (média geométrica): antenas e rabos compridos não inflam a conta
+      const tamPeca = p ? Math.cbrt(p.comprimento * p.largura * Math.max(p.altura, 0.005)) * p.scale.x : 0.08;
+      g.scale.setScalar(THREE.MathUtils.clamp((tamPeca * 2) / 0.18, 0.25, 1));
+    }
+    // a mão chega pelo lado de trás da peça, com o punho longe da câmera: não tapa o que ela faz
+    g.rotation.y = ehMao ? rotY + Math.PI : rotY;
+    // a mão trabalha deitada sobre a peça: os gestos pensados para faca e colher a inclinariam de ponta
+    const mao = g.name === 'mao' || g.name === 'mao_pinca';
+    // dentro de tigela, panela ou fôrma a mão desce por cima, de dedos para baixo e punho para o alto:
+    // deitada, ela atravessava a parede do recipiente
+    const dentro = mao && !!this.recipiente && Math.hypot(ponto.x - this.centro.x, ponto.z - this.centro.z) < this.bocaRaio * 1.3;
+    g.rotation.z = mao ? (dentro ? -1.15 : THREE.MathUtils.clamp(inclinacao, -0.25, 0.1)) : inclinacao;
+    g.rotation.x = mao ? 0 : rolar;
     g.updateMatrixWorld(true);
-    const pontaMundo = ponta.clone().applyQuaternion(g.quaternion);
+    const pontaMundo = ponta.clone().multiply(g.scale).applyQuaternion(g.quaternion);
     g.position.copy(ponto).sub(pontaMundo);
   }
 

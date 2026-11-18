@@ -9,7 +9,7 @@ import { NOVOS } from './modelos/alimentos/novos';
 import { Peca } from './pecas/peca';
 import { estadoInicial } from './pecas/conteudo';
 import { decorarSopa, SOPA_DA_DECORACAO } from './decoracao_sopa';
-import { criarLoucaPequena, superficie, montinhoTextura, LOUCAS_PEQUENAS, type LoucaPequena } from './loucas';
+import { criarLoucaPequena, superficie, montinhoTextura, montePasta, PASTA, LOUCAS_PEQUENAS, type LoucaPequena } from './loucas';
 
 const DOCE = new Set(['sobremesas', 'pastelaria', 'bolos']);
 const SOPA = new Set(['caldos']);
@@ -461,7 +461,12 @@ export function empratar(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnic
       const caldo = new THREE.Mesh(new THREE.CircleGeometry(tipo === 'taca' ? 0.058 : poco * 1.1, 64), new THREE.MeshStandardMaterial({ color: molho.cor, roughness: claro ? 0.05 : 1 - molho.brilho * 0.8, emissive: molho.cor.clone().multiplyScalar(claro ? 0.02 : 0.1), transparent: claro, opacity: claro ? 0.62 : 1, depthWrite: !claro }));
       caldo.rotation.x = -Math.PI / 2;
       caldo.position.y = nivel;
-      grupo.add(caldo);
+      if (tipo === 'tigela' && !claro && PASTA.test(`${tecnica.nome} ${preparoPrincipal ?? ''}`)) {
+        // purê e pasta em monte com o sulco da colher, não sopa lisa
+        const monte = montePasta(poco * 1.08, molho.cor, /refrito|dhal|duxelles|homus|hummus/i.test(tecnica.nome));
+        monte.position.y = nivel - 0.006;
+        grupo.add(monte);
+      } else grupo.add(caldo);
       if (decoSopa) {
         decoSopa.position.y = nivel + 0.0004;
         decoSopa.scale.setScalar(1.35);
@@ -825,6 +830,12 @@ function servirPequena(cena: THREE.Scene, cozinha: Cozinha, mesa: Mesa, tecnica:
     // pó seco de especiarias ou picos firmes de merengue: montinho, não superfície lisa
     const m = montinhoTextura(louca.raioLiquido * 0.85, corLiquido, ficha.textura);
     m.position.y = ficha.textura === 'po' ? louca.piso : louca.nivel - louca.raioLiquido * 0.2;
+    grupo.add(m);
+  } else if (corLiquido && !ficha.claro && PASTA.test(`${tecnica.nome} ${preparo ?? ''}`)) {
+    // purê e pasta: monte com o sulco da colher
+    // assentado na altura do líquido, do tamanho da boca nesse nível: não atravessa a parede da louça
+    const m = montePasta(louca.raioLiquido * 0.98, corLiquido, !!ficha.granulado || /refrito|dhal|duxelles|homus|hummus/i.test(tecnica.nome));
+    m.position.y = louca.nivel - louca.raioLiquido * 0.12;
     grupo.add(m);
   } else if (corLiquido) {
     const sup = superficie(louca.raioLiquido, corLiquido, !!ficha.claro || louca.vidro && !!ficha.claro, ficha.granulado ? 'granulado' : 'liso');

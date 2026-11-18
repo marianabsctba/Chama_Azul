@@ -43,7 +43,9 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud } = ctx;
   const texto = `${passo.acao} ${passo.alvo} ${passo.parametro}`;
   const v = passo.variante;
-  const recipienteTexto = (ctx.vaso && /frigideira|wok|panela|caçarola|chapa|tigela|vasilha|assadeira|travessa|f[oô]rma|pil[aã]o|processador|liquidificador|banho/i.test(ctx.vaso) ? ctx.vaso : undefined) ?? (/tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande');
+  // pilão, mouli, centrífuga e moedor são o próprio recipiente do gesto (antes viravam tigela com batedor)
+  const aparelho = /pil[aã]o|almofariz|mouli|passe.?vite|centr[ií]fuga|moedor/i.test(passo.utensilio ?? '') ? passo.utensilio : undefined;
+  const recipienteTexto = aparelho ?? (ctx.vaso && /frigideira|wok|panela|caçarola|chapa|tigela|vasilha|assadeira|travessa|f[oô]rma|pil[aã]o|processador|liquidificador|banho|mouli|centr[ií]fuga/i.test(ctx.vaso) ? ctx.vaso : undefined) ?? (/tigela|vasilha|bowl|panela|caçarola|liquidificador|processador/i.test(passo.utensilio) ? passo.utensilio : 'tigela grande');
   mesa.removerPeca();
   mesa.garantirRecipiente(recipienteTexto, estacao.superficie.clone(), 'tigela grande');
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.4);
@@ -55,7 +57,8 @@ function ritmoNaTigela(ctx: ContextoGesto): Execucao {
   // grumos de carne continuam grumos ao misturar
   if (inicial.picos > 0.3) alvo.picos = inicial.picos;
   const nivel0 = conteudo.estado.nivel;
-  const ferramenta = mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|amassador|martel|socador|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
+  // no pilão e nos aparelhos de manivela não vai batedor na mão: o próprio aparelho trabalha
+  const ferramenta = aparelho ? (mesa.soltarFerramenta(), null) : mesa.pegarFerramenta(/batedor|colher|esp[aá]tula|garfo|fouet|amassador|martel|socador|^m[aã]os?$|^dedos?$/i.test(passo.utensilio.trim()) ? passo.utensilio.trim() : '', v === 'dobrar' ? 'dobrar' : v);
   const centro = mesa.centro.clone();
   const faixa: [number, number] = v === 'circular-rapido' ? [7, 22] : v === 'circular' ? [2.5, 9] : [0, 0];
   const duracao = v === 'circular-rapido' ? 7 : v === 'circular' ? 5 : 0;

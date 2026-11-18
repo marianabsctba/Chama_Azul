@@ -128,16 +128,18 @@
   "caldos.caldo-de-carne": {
     "passos": [
       {
-        "alimento": "ossobuco",
+        "alimento": "c3-osso-tutano",
         "recipiente": "assadeira",
         "adicionar": [
+          "c3-osso-tutano",
           "c3-osso-tutano",
           "c3-osso-tutano"
         ]
       },
       {
-        "alimento": "ossobuco",
+        "alimento": "c3-osso-tutano",
         "adicionar": [
+          "c3-osso-tutano",
           "cebola",
           "cenoura",
           "alho_poro",
@@ -148,8 +150,10 @@
         "utensilio": "colher de pau"
       },
       {
-        "alimento": "ossobuco",
+        "alimento": "c3-osso-tutano",
         "adicionar": [
+          "c3-osso-tutano",
+          "c3-osso-tutano",
           "cebola",
           "cenoura",
           "alho_poro",
@@ -160,11 +164,13 @@
         "ponto": "dourado"
       },
       {
-        "alimento": "ossobuco",
+        "alimento": "c3-osso-tutano",
         "meio": "caldo de carne",
         "recipiente": "panela",
         "ponto": "dourado",
         "adicionar": [
+          "c3-osso-tutano",
+          "c3-osso-tutano",
           "cebola",
           "cenoura",
           "alho_poro",
@@ -229,7 +235,7 @@
           "cebola",
           "cenoura",
           "aipo",
-          "alho_poro"
+          "louro"
         ],
         "meio": "água",
         "recipiente": "panela"
@@ -241,7 +247,7 @@
           "cebola",
           "cenoura",
           "aipo",
-          "alho_poro"
+          "louro"
         ],
         "meio": "água",
         "recipiente": "panela"
@@ -397,7 +403,7 @@
       },
       {
         "alimento": "c1-bonito-seco",
-        "meio": "água",
+        "meio": "dashi",
         "recipiente": "panela"
       },
       {
@@ -499,17 +505,17 @@
       },
       {
         "alimento": null,
-        "meio": "caldo",
+        "meio": "consomê",
         "recipiente": "panela"
       },
       {
         "alimento": null,
-        "meio": "caldo",
+        "meio": "consomê",
         "recipiente": "panela"
       },
       {
         "alimento": null,
-        "meio": "caldo",
+        "meio": "consomê",
         "recipiente": "panela"
       },
       {
@@ -600,7 +606,7 @@
       "forma": "inteiro",
       "estado": "cozido",
       "quantidade": 6,
-      "liquido": "#e8c878",
+      "liquido": "#c99640",
       "claro": true
     }
   },
@@ -626,7 +632,7 @@
       "principal": "fios-de-ovo",
       "acompanhamentos": [],
       "servir": "tigela",
-      "liquido": "#e6cf86",
+      "liquido": "#c99640",
       "forma": "inteiro",
       "claro": true,
       "quantidade": 3
@@ -645,19 +651,19 @@
       },
       {
         "alimento": "c3-cebola-aneis",
-        "meio": "caldo de carne",
+        "meio": "caldo",
         "recipiente": "panela",
         "ponto": "dourado"
       },
       {
         "alimento": "c3-cebola-aneis",
-        "meio": "caldo de carne",
+        "meio": "caldo",
         "recipiente": "panela",
         "ponto": "dourado"
       },
       {
         "alimento": "c3-cebola-aneis",
-        "meio": "caldo de carne",
+        "meio": "caldo",
         "recipiente": "panela",
         "ponto": "dourado"
       }
@@ -744,7 +750,7 @@
       "servir": "tigela",
       "forma": "inteiro",
       "estado": null,
-      "liquido": "#e6d08a",
+      "liquido": "#c99640",
       "claro": true
     }
   },
@@ -782,7 +788,7 @@
       "servir": "tigela",
       "forma": "inteiro",
       "estado": null,
-      "liquido": "#e2c27a",
+      "liquido": "#c99a48",
       "claro": true
     }
   },
@@ -825,7 +831,7 @@
       "forma": "inteiro",
       "estado": null,
       "quantidade": 4,
-      "liquido": "#e2c27a",
+      "liquido": "#c99a48",
       "claro": true
     }
   },
@@ -857,7 +863,10 @@
         "alimento": "pimentao",
         "meio": "azeite",
         "recipiente": "caçarola",
-        "estado": "picado"
+        "estado": "picado",
+        "adicionar": [
+          "c1-fios-acafrao"
+        ]
       },
       {
         "alimento": "pimentao",
@@ -912,7 +921,7 @@
       "acompanhamentos": [
         "camarao-reto-cozido",
         "ostra",
-        "bruschetta"
+        "c5-torrada-grelhada"
       ],
       "servir": "tigela",
       "forma": "pedacos",
@@ -1007,12 +1016,12 @@
       },
       {
         "alimento": null,
-        "meio": "creme de cenoura",
+        "meio": "sopa de cenoura batida",
         "recipiente": "liquidificador"
       },
       {
         "alimento": null,
-        "meio": "creme de cenoura",
+        "meio": "sopa de cenoura batida",
         "recipiente": "panela"
       }
     ],
@@ -1037,7 +1046,7 @@
       },
       {
         "alimento": null,
-        "meio": "caldo",
+        "meio": "sopa de cenoura",
         "recipiente": "panela"
       }
     ],
@@ -1118,7 +1127,8 @@
           "aipo"
         ],
         "meio": "manteiga",
-        "recipiente": "frigideira"
+        "recipiente": "frigideira",
+        "estado": "picado"
       },
       {
         "alimento": "caranguejo",
@@ -1147,22 +1157,22 @@
       },
       {
         "alimento": null,
-        "meio": "bisque alaranjada de crustáceo com cenoura",
+        "meio": "bisque vermelha de tomate e caranguejo",
         "recipiente": "processador"
       },
       {
         "alimento": null,
-        "meio": "bisque alaranjada de crustáceo com cenoura",
+        "meio": "bisque vermelha de tomate e caranguejo",
         "recipiente": "chinois"
       },
       {
         "alimento": null,
-        "meio": "bisque alaranjada de crustáceo com cenoura",
+        "meio": "bisque vermelha de tomate e caranguejo",
         "recipiente": "panela"
       },
       {
         "alimento": null,
-        "meio": "bisque de cenoura com creme",
+        "meio": "bisque vermelha de tomate e caranguejo com creme",
         "recipiente": "panela"
       }
     ],
@@ -1475,14 +1485,11 @@
     ],
     "prato": {
       "principal": "cenoura",
-      "acompanhamentos": [
-        "abobrinha",
-        "aipo"
-      ],
+      "acompanhamentos": [],
       "servir": "tigela",
       "forma": "cubos",
       "estado": "cru",
-      "liquido": "#e8c878",
+      "liquido": "#c99640",
       "claro": true
     }
   },
@@ -2136,7 +2143,9 @@
       {
         "alimento": "ovo",
         "utensilio": "escumadeira",
-        "ponto": "cozido"
+        "ponto": "cozido",
+        "recipiente": "panela",
+        "meio": "água"
       },
       {
         "alimento": "ovo-quente",
@@ -2249,7 +2258,7 @@
       {
         "alimento": "ovo-cocotte",
         "meio": "creme de leite",
-        "recipiente": "ramequim"
+        "recipiente": "banho-maria"
       }
     ],
     "prato": {
@@ -2394,11 +2403,7 @@
     ],
     "prato": {
       "principal": "ovos-mexidos",
-      "acompanhamentos": [
-        "pimentao",
-        "cogumelo_paris",
-        "cebola"
-      ],
+      "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
     }
@@ -2542,7 +2547,8 @@
           "cebola"
         ],
         "recipiente": "tigela",
-        "estado": "picado"
+        "estado": "picado",
+        "meio": "ervas picadas com migalhas"
       },
       {
         "alimento": "tomate",
@@ -2782,7 +2788,7 @@
       "principal": "frittata",
       "acompanhamentos": [],
       "servir": "prato",
-      "forma": "pedacos",
+      "forma": "fatias",
       "estado": "dourado",
       "quantidade": 4
     }
@@ -3845,7 +3851,7 @@
     "prato": {
       "principal": "queijo-cabra",
       "acompanhamentos": [
-        "bruschetta",
+        "c5-torrada-grelhada",
         "rucula"
       ],
       "servir": "prato",
@@ -4178,7 +4184,7 @@
     "prato": {
       "principal": "wakame",
       "acompanhamentos": [],
-      "servir": "tigelinha",
+      "servir": "prato",
       "forma": "pedacos",
       "estado": "cru"
     }
@@ -4216,7 +4222,7 @@
     ],
     "prato": {
       "acompanhamentos": [],
-      "servir": "tigelinha",
+      "servir": "prato",
       "principal": "wasabi",
       "forma": "inteiro"
     }
@@ -4243,7 +4249,7 @@
         "alimento": "alho_poro"
       },
       {
-        "alimento": "alho_poro",
+        "alimento": "bouquet-garni",
         "utensilio": "barbante"
       }
     ],
@@ -4320,9 +4326,7 @@
     ],
     "prato": {
       "principal": "ossobuco-cozido",
-      "acompanhamentos": [
-        "gremolada"
-      ],
+      "acompanhamentos": [],
       "servir": "prato",
       "forma": "inteiro"
     }
@@ -4345,7 +4349,8 @@
           "alecrim"
         ],
         "ponto": "dourado",
-        "utensilio": "mãos"
+        "utensilio": "mãos",
+        "recipiente": "assadeira"
       }
     ],
     "prato": {
@@ -4522,7 +4527,7 @@
   "ervas.quatre-epices": {
     "passos": [
       {
-        "alimento": null,
+        "alimento": "especiarias-mistas",
         "meio": "pimenta e cravo",
         "recipiente": "moedor"
       },
@@ -5150,7 +5155,7 @@
   "peixes.desossar-barriga": {
     "passos": [
       {
-        "alimento": "salmao",
+        "alimento": "c1-salmao-borboleta",
         "corte": "contorno",
         "utensilio": "faca de filé"
       },
@@ -5361,7 +5366,8 @@
         "utensilio": "mãos"
       },
       {
-        "alimento": "file-de-salmao"
+        "alimento": "file-de-salmao",
+        "utensilio": "faca de filé"
       }
     ],
     "prato": {
@@ -5416,7 +5422,8 @@
           "gengibre"
         ],
         "meio": "óleo",
-        "recipiente": "wok"
+        "recipiente": "wok",
+        "estado": "picado"
       },
       {
         "alimento": null,
@@ -5663,7 +5670,10 @@
     "passos": [
       {
         "alimento": "cenoura",
-        "corte": "tiras"
+        "corte": "tiras",
+        "adicionar": [
+          "alho_poro"
+        ]
       },
       {
         "alimento": "cenoura",
@@ -5692,7 +5702,11 @@
       },
       {
         "alimento": "manga",
-        "corte": "cubos"
+        "corte": "cubos",
+        "adicionar": [
+          "pepino",
+          "gengibre"
+        ]
       },
       {
         "alimento": "camarao-descascado",
@@ -5996,7 +6010,7 @@
         "alimento": "c5-maki-rolo"
       },
       {
-        "alimento": "alga-nori",
+        "alimento": "c5-maki-rodela",
         "adicionar": [
           "c1-rosa-gengibre",
           "pepino"
@@ -6087,7 +6101,7 @@
     "prato": {
       "acompanhamentos": [],
       "servir": "xicara",
-      "liquido": "#e6d8a0",
+      "liquido": "#d2ac52",
       "claro": true
     }
   },
@@ -6188,8 +6202,11 @@
         "recipiente": "micro-ondas"
       },
       {
-        "alimento": "salmao",
-        "recipiente": "micro-ondas"
+        "alimento": "trouxinha-salmao",
+        "recipiente": "micro-ondas",
+        "adicionar": [
+          "paupiette-linguado"
+        ]
       },
       {
         "alimento": "linguado",
@@ -6331,9 +6348,7 @@
     ],
     "prato": {
       "principal": "salmao",
-      "acompanhamentos": [
-        "c1-pepino-torcido"
-      ],
+      "acompanhamentos": [],
       "servir": "travessa",
       "forma": "inteiro",
       "estado": "cozido"
@@ -6362,7 +6377,8 @@
   "peixes.nozinhos-citricos": {
     "passos": [
       {
-        "alimento": "laranja"
+        "alimento": "laranja",
+        "utensilio": "faca canelle"
       },
       {
         "alimento": "c4-lima-julienne",
@@ -6552,12 +6568,14 @@
       {
         "alimento": "gengibre",
         "meio": "água",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "estado": "tiras"
       },
       {
         "alimento": "gengibre",
         "meio": "óleo",
-        "recipiente": "frigideira"
+        "recipiente": "frigideira",
+        "estado": "tiras"
       },
       {
         "alimento": "gengibre",
@@ -6840,7 +6858,9 @@
       {
         "alimento": "vermelho",
         "adicionar": [
-          "cenoura"
+          "cenoura",
+          "gengibre",
+          "cebolinha"
         ],
         "recipiente": "travessa",
         "ponto": "cozido"
@@ -7794,10 +7814,12 @@
     "passos": [
       {
         "alimento": "caranguejo",
-        "recipiente": "congelador"
+        "recipiente": "congelador",
+        "ponto": "cru"
       },
       {
-        "alimento": "caranguejo"
+        "alimento": "caranguejo",
+        "ponto": "cru"
       },
       {
         "alimento": null,
@@ -7807,7 +7829,8 @@
       {
         "alimento": "caranguejo",
         "meio": "caldo de peixe",
-        "recipiente": "panela"
+        "recipiente": "panela",
+        "ponto": "cru"
       },
       {
         "alimento": "caranguejo",
@@ -7887,7 +7910,9 @@
       },
       {
         "alimento": "caranguejo",
-        "ponto": "cozido"
+        "ponto": "cozido",
+        "meio": "pasta de carne escura",
+        "recipiente": "tigela"
       },
       {
         "alimento": "ovo",

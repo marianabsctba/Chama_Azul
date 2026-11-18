@@ -165,7 +165,7 @@ const REGRAS: Regra[] = [
   [/^batedeira/, 'batedeira'],
   [/^batedor/, 'batedor'],
   [/^misturador/, 'espatula_silicone'],
-  [/^colher de pau|^pa para arroz/, 'colher_pau'],
+  [/^colher de pau|^pa (para|de) arroz/, 'colher_pau'],
   [/^colher com furo/, 'escumadeira'],
   [/^colher (de )?cabo longo/, 'concha'],
   [/^colher (de medida|medidora)/, 'colheres_medida'],
