@@ -299,11 +299,26 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
   mesa.centro.set(fundo.x, aparelho.position.y, fundo.z);
   if (mesa.conteudo) mesa.conteudo.position.set(fundo.x, mesa.conteudo.position.y, fundo.z);
   const liquidificador = /liquidificador|mixer/i.test(passo.utensilio);
-  mesa.bocaRaio = liquidificador ? 0.045 : 0.07;
+  // o copo do liquidificador: o líquido ocupa a largura dele e um terço da altura
+  const caixaAp = new THREE.Box3().setFromObject(aparelho);
+  const tamAp = caixaAp.getSize(new THREE.Vector3());
+  mesa.bocaRaio = liquidificador ? Math.max(0.035, Math.min(tamAp.x, tamAp.z) * 0.36) : 0.07;
   mesa.fundoY = fundo.y - 0.012;
   const conteudo = mesa.garantirConteudo(textoConteudo(passo), 0.3);
   conteudo.position.set(fundo.x, mesa.fundoY, fundo.z);
-  conteudo.estado.nivel = liquidificador ? 0.05 : 0.03;
+  conteudo.estado.nivel = liquidificador ? Math.max(0.05, (caixaAp.max.y - fundo.y) * 0.3) : 0.03;
+  if (liquidificador) conteudo.ajustarRaio(mesa.bocaRaio * 0.95);
+  // o copo é de vidro: o líquido aparece de lado, do fundo até a superfície, e não só como um disco
+  const corpo = liquidificador ? new THREE.Mesh(new THREE.CylinderGeometry(1, 0.9, 1, 32), new THREE.MeshStandardMaterial({ color: conteudo.estado.cor, roughness: 0.4, emissive: conteudo.estado.cor.clone().multiplyScalar(0.15) })) : null;
+  if (corpo) mesa.adicionarExtra(corpo);
+  const ajustarCorpo = () => {
+    if (!corpo) return;
+    const h = Math.max(0.002, conteudo.estado.nivel - 0.002);
+    corpo.scale.set(mesa.bocaRaio * 0.93, h, mesa.bocaRaio * 0.93);
+    corpo.position.set(conteudo.position.x, conteudo.position.y + h / 2, conteudo.position.z);
+    (corpo.material as THREE.MeshStandardMaterial).color.copy(conteudo.estado.cor);
+  };
+  ajustarCorpo();
   // o ponto que se quer vem do passo e também do nome da técnica ("claras em neve", "chantilly")
   const alvo = alvoDoConteudo(`${texto} ${ctx.tecnica.nome}`);
   const inicial = { ...conteudo.estado, cor: conteudo.estado.cor.clone() };
@@ -332,6 +347,7 @@ function ritmoEletrico(ctx: ContextoGesto): Execucao {
     atualizar(dt) {
       t += dt;
       hud.dica(`Ajuste a velocidade com os botões − e + (ou a roda do mouse). Velocidade ${faixa[0]} a ${faixa[1]} para este ponto.`);
+      ajustarCorpo();
       if (entrada.roda) vel -= entrada.roda;
       if (entrada.apertou('e') || entrada.apertou('+') || entrada.apertou('=')) vel += 1;
       if (entrada.apertou('q') || entrada.apertou('-')) vel -= 1;

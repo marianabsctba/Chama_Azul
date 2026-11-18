@@ -305,6 +305,16 @@ export function gestoVerter(ctx: ContextoGesto): Execucao {
     mesa.adicionarExtra(peneira);
   }
   const caixaDest = new THREE.Box3().setFromObject(destino);
+  // "leite sobre as gemas": as gemas batidas já esperam no fundo da tigela de destino
+  if (/sobre (as )?gemas|sobre os ovos/i.test(passo.alvo)) {
+    const tamD = caixaDest.getSize(new THREE.Vector3());
+    const gemas = new THREE.Mesh(
+      new THREE.CylinderGeometry(Math.min(tamD.x, tamD.z) * 0.36, Math.min(tamD.x, tamD.z) * 0.3, tamD.y * 0.18, 28),
+      new THREE.MeshStandardMaterial({ color: '#f2c24a', roughness: 0.35 }),
+    );
+    gemas.position.set(destinoPos.x, caixaDest.min.y + tamD.y * 0.22, destinoPos.z);
+    mesa.adicionarExtra(gemas);
+  }
   // topo do destino, contando a peneira por cima
   let topoDest = caixaDest.max.y;
   for (const o of mesa.extras) topoDest = Math.max(topoDest, new THREE.Box3().setFromObject(o).max.y);

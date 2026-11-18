@@ -150,7 +150,8 @@ export class Mesa {
     const caixa = new THREE.Box3().setFromObject(g);
     const tam = caixa.getSize(new THREE.Vector3());
     // a boca é o menor lado horizontal (ignora cabos compridos)
-    this.bocaRaio = Math.max(0.04, Math.min(tam.x, tam.z) * 0.42);
+    // forminha, timbale e ramequim pequenos: a boca não passa da parede (o creme aparecia por fora)
+    this.bocaRaio = Math.max(0.02, Math.min(tam.x, tam.z) * 0.42);
     this.fundoY = caixa.min.y + Math.min(0.012, tam.y * 0.15);
     // nos recipientes, a ponta do modelo é o centro do fundo por dentro: é ali que vai o conteúdo
     this.centro.copy(g.position);
@@ -191,6 +192,14 @@ export class Mesa {
     // tigela, pote e ramequim afunilam: a peça assenta no fundo, mais estreito que a boca, e
     // atravessaria a parede; nos de parede reta (assadeira, fôrma, travessa) cabe quase a boca toda
     const afunila = /tigela|pote|ramequi|vasilha|bowl|cumbuca|peneira|chinois|mouli|pil[aã]o|tagine|cuscuzeira|escorredor/i.test(vaso);
+    // crosta, pele ou cobertura de um creme: fica por cima do creme, da largura da boca, como no prato servido
+    if (/crosta|pele|cobertura/i.test(this.pecaChave) && /ramequi|forminha|travessa|ta[cç]a|tigelinha/i.test(vaso)) {
+      const creme = this.garantirConteudo(this.conteudoTexto || 'creme assado', 0.75);
+      const nivel = creme.position.y + creme.estado.nivel;
+      peca.scale.setScalar((this.bocaRaio * 1.8) / Math.max(maior, 1e-3));
+      peca.position.set(this.centro.x, nivel - 0.001, this.centro.z);
+      return true;
+    }
     const caber = (this.bocaRaio * (afunila ? 1.15 : 1.7)) / Math.max(maior, 1e-3);
     if (peca.scale.x > caber) peca.scale.setScalar(caber);
     peca.position.set(this.centro.x, this.fundoY, this.centro.z);

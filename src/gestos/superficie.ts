@@ -61,8 +61,123 @@ function corDaCobertura(texto: string): THREE.Color {
   return new THREE.Color('#f2c46a');
 }
 
+/** Pincelar a superfície de um creme ou molho na tigela/panela: o pincel passa por cima do conteúdo, sem peça. */
+function pincelarConteudo(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud, cena } = ctx;
+  const polvilhar = /polvilhar/i.test(passo.acao);
+  mesa.removerPeca();
+  mesa.garantirRecipiente(ctx.vaso!, estacao.superficie.clone(), 'tigela');
+  const conteudo = mesa.garantirConteudo(passo.meio!, 0.5);
+  if (polvilhar) mesa.pegarFerramenta('mãos', 'cobrir');
+  else mesa.pegarFerramenta(/m[aã]o/i.test(passo.utensilio) || !passo.utensilio ? 'pincel' : passo.utensilio, 'cobrir');
+  // polvilhar açúcar: uma camada branca e fina vai cobrindo o creme
+  const corPo = new THREE.Color(/a[cç][uú]car/i.test(passo.alvo) ? '#f7f3ea' : /canela|cacau/i.test(passo.alvo) ? '#7a4a28' : '#efe8d8');
+  const cor0 = conteudo.estado.cor.clone();
+  const po = polvilhar ? new Particulas(corPo, 240, 'esfera') : null;
+  if (po) cena.add(po);
+  const r = mesa.bocaRaio * 0.55;
+  let prog = 0;
+  let t = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica(polvilhar ? 'Segure para espalhar o açúcar por igual sobre todo o creme.' : 'Segure para passar o pincel com manteiga por toda a superfície do creme.');
+      if (entrada.pressionado) {
+        prog = clamp(prog + dt * 0.3);
+        t += dt;
+      }
+      // espiral de fora para dentro cobrindo a superfície toda
+      const a = t * 5;
+      const raio = r * (1 - prog * 0.85);
+      const y = conteudo.position.y + conteudo.estado.nivel + 0.002;
+      const ponto = new THREE.Vector3(mesa.centro.x + Math.cos(a) * raio, y, mesa.centro.z + Math.sin(a) * raio);
+      if (po) {
+        mesa.ferramentaEm(ponto.clone().setY(y + 0.07), -a, -0.3, 0);
+        if (entrada.pressionado) for (let k = 0; k < 3; k++) po.emitir(ponto.clone().setY(y + 0.06), new THREE.Vector3(0, -0.05, 0), { vida: 1, tam: 0.0018, gravidade: 0.5, espalhar: 0.012 });
+        po.atualizar(dt);
+        conteudo.estado.cor.copy(cor0).lerp(corPo, prog * 0.85);
+      } else mesa.ferramentaEm(ponto, -a, -0.9, 0);
+      hud.medidores([{ rotulo: polvilhar ? 'Polvilhado' : 'Pincelado', valor: prog }]);
+      if (prog >= 1) {
+        exec.nota = 1;
+        exec.comentario = polvilhar ? 'Camada fina e por igual.' : 'Superfície toda coberta, sem película.';
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      po?.descartar();
+      hud.medidores([]);
+    },
+  };
+  return exec;
+}
+
+/** "Ralar noz-moscada sobre o creme": o ralador fica no alto, a noz esfrega nele e o pó cai sobre a peça. */
+function ralarSobre(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud, cena } = ctx;
+  const peca = mesa.garantirPeca(passo.alimento!, estacao.superficie.clone());
+  peca.rotation.y = anguloDaEstacao(estacao);
+  if (!mesa.colocarNoVaso(peca, ctx.vaso, estacao.superficie.clone(), true)) peca.position.copy(estacao.superficie);
+  peca.updateMatrixWorld(true);
+  const caixa = new THREE.Box3().setFromObject(peca);
+  const centro = caixa.getCenter(new THREE.Vector3());
+  const topo = caixa.max.y;
+  const ralado = passo.alvo.split(/\s+sobre\s+/i)[0];
+  const corPo = /noz|canela|cacau|chocolate/i.test(ralado) ? '#7a4a28' : /queijo|parmes/i.test(ralado) ? '#f1e2a8' : /lim[aã]o|laranja/i.test(ralado) ? '#e8c43a' : '#8a5a34';
+  mesa.pegarFerramenta(/ralador/i.test(passo.utensilio) ? passo.utensilio : 'ralador', 'remover');
+  // a noz-moscada (ou o que se rala) esfregando no ralador
+  const noz = new THREE.Mesh(new THREE.SphereGeometry(0.011, 16, 12), new THREE.MeshStandardMaterial({ color: corPo, roughness: 0.85 }));
+  noz.scale.set(1, 0.8, 0.85);
+  mesa.adicionarExtra(noz);
+  const po = new Particulas(corPo, 260, 'esfera');
+  cena.add(po);
+  const alto = topo + 0.06;
+  let prog = 0;
+  let t = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica('Segure para esfregar a noz no ralador, bem acima do creme, e espalhar o pó por igual.');
+      // o ralador passeia devagar por cima da peça para o pó cobrir tudo
+      const raio = Math.max(0.01, Math.min(caixa.max.x - caixa.min.x, caixa.max.z - caixa.min.z) * 0.22);
+      const px = centro.x + Math.cos(t * 0.9) * raio;
+      const pz = centro.z + Math.sin(t * 0.9) * raio;
+      mesa.ferramentaEm(new THREE.Vector3(px, alto, pz), 0, -1.35, 0);
+      const vai = entrada.pressionado ? Math.sin(t * 14) * 0.02 : 0;
+      noz.position.set(px + 0.016, alto + 0.03 + vai, pz);
+      if (entrada.pressionado) {
+        t += dt;
+        prog = clamp(prog + dt * 0.28);
+        for (let k = 0; k < 3; k++) po.emitir(new THREE.Vector3(px + (Math.random() - 0.5) * 0.02, alto - 0.005, pz + (Math.random() - 0.5) * 0.02), new THREE.Vector3(0, -0.05, 0), { vida: 1.2, tam: 0.0016, gravidade: 0.5, espalhar: 0.01 });
+      }
+      po.atualizar(dt);
+      hud.medidores([{ rotulo: 'Ralado', valor: prog }]);
+      if (prog >= 1) {
+        exec.nota = 1;
+        exec.comentario = 'Pó fino espalhado por igual.';
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      po.descartar();
+      hud.medidores([]);
+    },
+  };
+  return exec;
+}
+
 export function gestoSuperficie(ctx: ContextoGesto): Execucao {
   const { passo, mesa, estacao, entrada, camera, hud, cena } = ctx;
+  if (passo.alimento && /^ralar/i.test(passo.acao) && /\ssobre\s/i.test(passo.alvo)) return ralarSobre(ctx);
+  if (!passo.alimento && passo.meio) {
+    const pincelarCreme = /pincelar|passar/i.test(passo.acao) && /tigela|panela|vasilha/i.test(ctx.vaso ?? '') && !/panela|parede|f[oô]rma|assadeira|frigideira|chapa|ramek|ramequi/i.test(passo.alvo);
+    const polvilharCreme = /polvilhar/i.test(passo.acao) && /ramequi|tigelinha|ta[cç]a/i.test(ctx.vaso ?? '') && /sobre o creme|sobre a superf/i.test(passo.alvo);
+    if (pincelarCreme || polvilharCreme) return pincelarConteudo(ctx);
+  }
   const chave = passo.alimento ?? passo.alvo;
   const peca = mesa.garantirPeca(chave, estacao.superficie.clone());
   peca.rotation.y = anguloDaEstacao(estacao);

@@ -77,6 +77,7 @@ export class Particulas extends THREE.InstancedMesh {
   }
 
   descartar() {
+    this.removeFromParent();
     (this.material as THREE.Material).dispose();
     this.dispose();
   }

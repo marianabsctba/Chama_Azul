@@ -1636,6 +1636,12 @@
      "parametro": "500 ml em infusão"
     },
     {
+     "acao": "separar",
+     "alvo": "gemas das claras",
+     "utensilio": "mãos",
+     "parametro": "5 ovos; só as gemas vão para a tigela"
+    },
+    {
      "acao": "bater",
      "alvo": "gemas e açúcar",
      "utensilio": "batedor",
@@ -1648,8 +1654,14 @@
      "parametro": "levantar fervura"
     },
     {
+     "acao": "despejar",
+     "alvo": "leite quente sobre as gemas",
+     "utensilio": "panela",
+     "parametro": "em fio, sem parar de bater"
+    },
+    {
      "acao": "bater",
-     "alvo": "leite sobre os ovos",
+     "alvo": "leite com as gemas",
      "utensilio": "batedor",
      "parametro": "passar para panela limpa"
     },
@@ -1660,7 +1672,7 @@
      "parametro": "fogo baixo, mexendo fundo e laterais até engrossar"
     },
     {
-     "acao": "medir",
+     "acao": "testar",
      "alvo": "ponto de napar",
      "utensilio": "colher de pau",
      "parametro": "dedo passado no dorso deixa traço limpo; rende cerca de 650 ml"
@@ -1942,15 +1954,15 @@
    ],
    "passos": [
     {
-     "acao": "decorar",
-     "alvo": "fôrmas",
+     "acao": "polvilhar",
+     "alvo": "açúcar sobre o creme das fôrmas",
      "utensilio": "",
      "parametro": "1 e 1/2 colher (sopa) de açúcar por fôrma"
     },
     {
-     "acao": "caramelizar",
-     "alvo": "açúcar",
-     "utensilio": "grelha bem quente",
+     "acao": "gratinar",
+     "alvo": "açúcar até caramelizar",
+     "utensilio": "dourador bem quente",
      "parametro": "o mais perto do fogo, 2 a 3 min"
     },
     {
@@ -1991,9 +2003,9 @@
      "parametro": "100 g de açúcar e 60 ml de água"
     },
     {
-     "acao": "forrar",
-     "alvo": "forminhas com caramelo",
-     "utensilio": "",
+     "acao": "despejar",
+     "alvo": "caramelo nas forminhas",
+     "utensilio": "panela",
      "parametro": "inclinar logo para cobrir fundo e lados"
     },
     {

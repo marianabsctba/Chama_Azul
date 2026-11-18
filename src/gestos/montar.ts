@@ -232,8 +232,85 @@ function gestoSaco(ctx: ContextoGesto, fase: 'bico' | 'encher' | 'torcer'): Exec
   return exec;
 }
 
+/**
+ * Arrumar uma camada de frutas (ou de pedaços) no recipiente: cada clique põe uma fruta no ponto
+ * marcado, até cobrir o fundo. Antes, o gesto de moldar girava um bloco único de fruta.
+ */
+function liquidoPorCima(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao, entrada, hud } = ctx;
+  mesa.removerPeca();
+  // mesmo recipiente do passo anterior: as frutas arrumadas continuam lá
+  mesa.garantirRecipiente(ctx.vaso!, estacao.superficie.clone(), 'tigela');
+  const texto = /gelatina/i.test(passo.alvo) ? 'gelatina de frutas' : (passo.meio ?? passo.alvo);
+  const conteudo = mesa.garantirConteudo(texto, 0.02);
+  const nivel0 = conteudo.estado.nivel;
+  let prog = 0;
+  const exec: Execucao = {
+    concluido: false,
+    nota: 0,
+    comentario: '',
+    atualizar(dt) {
+      hud.dica('Segure para despejar devagar e cobrir as frutas por igual.');
+      if (entrada.pressionado) prog = clamp(prog + dt * 0.35);
+      conteudo.estado.nivel = nivel0 + prog * 0.035;
+      hud.medidores([{ rotulo: 'Cobrindo', valor: prog }]);
+      if (prog >= 1) {
+        exec.nota = 1;
+        exec.comentario = 'Frutas cobertas por igual.';
+        exec.concluido = true;
+      }
+    },
+    descartar() {
+      hud.medidores([]);
+    },
+  };
+  return exec;
+}
+
+function camadaDePedacos(ctx: ContextoGesto): Execucao {
+  const { passo, mesa, estacao } = ctx;
+  mesa.removerPeca();
+  const vaso = ctx.vaso ?? 'tigela';
+  const rec = mesa.garantirRecipiente(vaso, estacao.superficie.clone(), 'tigela');
+  rec.updateMatrixWorld(true);
+  // se a camada vai sobre um líquido (gelatina, rum), ele já está no fundo
+  if (passo.meio) mesa.garantirConteudo(passo.meio, 0.3);
+  const ids = [passo.alimento, ...(passo.adicionar ?? [])].filter((x): x is string => !!x);
+  const lista = ids.length ? ids : ['morango'];
+  const yBase = (mesa.conteudo ? mesa.conteudo.position.y + mesa.conteudo.estado.nivel : mesa.fundoY) + 0.004;
+  const r = mesa.bocaRaio * 0.62;
+  const pontos: THREE.Vector3[] = [new THREE.Vector3(mesa.centro.x, yBase, mesa.centro.z)];
+  for (let k = 0; k < 7; k++) {
+    const a = (k / 7) * Math.PI * 2;
+    pontos.push(new THREE.Vector3(mesa.centro.x + Math.cos(a) * r, yBase, mesa.centro.z + Math.sin(a) * r));
+  }
+  const tam = Math.min(0.03, mesa.bocaRaio * 0.42);
+  return sequencia(
+    ctx,
+    pontos,
+    'Clique nos pontos marcados para arrumar as frutas, uma a uma, em camada no fundo.',
+    (i) => {
+      let fruta: Peca;
+      try {
+        fruta = new Peca(criarFormaAlimento(lista[i % lista.length]));
+      } catch {
+        return;
+      }
+      fruta.scale.setScalar(tam / Math.max(fruta.comprimento, fruta.largura, 1e-3));
+      fruta.position.copy(pontos[i]);
+      fruta.rotation.y = i * 1.9;
+      mesa.adicionarExtra(fruta);
+    },
+    (n) => comentar(n, 'Camada bonita e por igual.', 'Camada boa, com uns espaços.', 'Frutas desencontradas.'),
+  );
+}
+
 export function gestoMontar(ctx: ContextoGesto): Execucao {
   const v = ctx.passo.variante;
+  // "camada de frutas no pote", "camada de frutas" na fôrma: arrumar pedaço a pedaço
+  if (/camada/i.test(ctx.passo.alvo) && (v === 'moldar' || v === 'rechear') && !!ctx.vaso && !/gelatina|creme|musse|massa|calda/i.test(ctx.passo.alvo)) return camadaDePedacos(ctx);
+  // "gelatina líquida sobre a camada", "calda por cima": o líquido sobe no recipiente cobrindo o que já está lá
+  if (!ctx.passo.alimento && v === 'rechear' && !!ctx.vaso && /gelatina|calda|l[ií]quid|sobre a camada|cobrir/i.test(ctx.passo.alvo)) return liquidoPorCima(ctx);
   // encher e torcer o saco de confeitar
   const txtSaco = `${ctx.passo.alvo} ${ctx.passo.utensilio} ${ctx.passo.alimento ?? ''}`;
   if (/saco.de.confeitar|saco-confeitar/i.test(txtSaco) && /bico no saco|saco aberto|boca do saco/i.test(ctx.passo.alvo)) {
@@ -318,6 +395,9 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
 
   // gestos contínuos
   const escala0 = peca.scale.clone();
+  // desenformar: a peça começa de cabeça para baixo, como saiu da fôrma, e a virada a deixa de pé
+  const desenformar = v === 'virar' && /desenform/i.test(`${passo.acao} ${passo.alvo}`);
+  if (desenformar) peca.rotation.x += Math.PI;
   const rot0 = peca.rotation.clone();
   let progresso = 0;
   let direcao = 0;
@@ -456,7 +536,9 @@ export function gestoMontar(ctx: ContextoGesto): Execucao {
         else if (virando < 0.6) virando = Math.max(0, virando - dt * 2);
         else virando = Math.min(1, virando + dt * 3);
         peca.rotation.x = rot0.x + virando * Math.PI;
-        peca.position.y = estacao.superficie.y + Math.sin(virando * Math.PI) * 0.12 + (virando > 0.5 ? peca.altura * s : 0) * clamp((virando - 0.5) * 2);
+        const alturaViva = peca.altura * s;
+        const ergue = desenformar ? alturaViva * (1 - clamp((virando - 0.5) * 2)) : (virando > 0.5 ? alturaViva : 0) * clamp((virando - 0.5) * 2);
+        peca.position.y = estacao.superficie.y + Math.sin(virando * Math.PI) * 0.12 + ergue;
         progresso = virando >= 1 ? 1 : 0;
         hud.medidores([{ rotulo: 'Virada', valor: virando }]);
       } else if (v === 'forrar') {

@@ -2398,6 +2398,10 @@
         "recipiente": "panela"
       },
       {
+        "alimento": "ovo",
+        "recipiente": "tigela"
+      },
+      {
         "alimento": null,
         "meio": "gemas e açúcar",
         "recipiente": "tigela"
@@ -2406,6 +2410,11 @@
         "alimento": null,
         "meio": "leite",
         "recipiente": "panela"
+      },
+      {
+        "alimento": null,
+        "meio": "leite",
+        "recipiente": "tigela"
       },
       {
         "alimento": null,
@@ -2422,7 +2431,18 @@
         "alimento": null,
         "meio": "creme de gemas",
         "recipiente": "panela",
-        "utensilio": "colher de pau"
+        "utensilio": "colher de pau",
+        "pergunta": "Ao passar o dedo no dorso da colher, o que o creme mostra?",
+        "opcoes": [
+          "O creme cobre a colher e o dedo deixa um traço limpo.",
+          "O creme escorre ralo e não cobre a colher.",
+          "O creme talhou em grumos."
+        ],
+        "correta": 0,
+        "explicacao": "No ponto de napar o creme cobre o dorso da colher e o traço do dedo não se fecha. Não deixe ferver.",
+        "objetos": [
+          "colher"
+        ]
       }
     ],
     "prato": {
@@ -2621,9 +2641,8 @@
         "meio": "creme assado"
       },
       {
-        "alimento": null,
-        "recipiente": "ramequim",
-        "meio": "creme assado"
+        "alimento": "c4-crosta-brulee",
+        "recipiente": "ramequim"
       },
       {
         "alimento": "c4-crosta-brulee",
@@ -2665,13 +2684,14 @@
         "recipiente": "timbale"
       },
       {
-        "alimento": "custard",
-        "meio": "água quente",
-        "recipiente": "assadeira"
+        "meio": "creme de ovos",
+        "recipiente": "timbale",
+        "alimento": null
       },
       {
-        "alimento": "custard",
-        "recipiente": "timbale"
+        "recipiente": "timbale",
+        "meio": "creme de ovos",
+        "alimento": null
       },
       {
         "alimento": "creme-caramelo",

@@ -16,7 +16,7 @@ const SEM_MODELO = new Set<string>([
   '',
   'Fogão', 'fogão', 'Forno', 'forno', 'forno desligado', 'forno micro-ondas 600 a 700 W', 'mãos e água gelada', 'temperatura ambiente', 'fogo desligado', 'maço de alecrim com azeite', 'sal e pimenta-do-reino',
   'chama direta ou forno', 'fogo', 'geladeira', 'geladeira ou congelador', 'congelador', 'freezer',
-  'gratinador', 'dourador', 'torneira',
+  'gratinador', 'dourador', 'dourador bem quente', 'torneira',
   'bancada-enfarinhada', 'superfície enfarinhada', 'superfície fria', 'superfície untada', 'superfície untada (mármore)',
   'mão', 'mãos', 'mão em concha', 'mãos enfarinhadas', 'mãos molhadas', 'mãos sob água fria', 'mãos úmidas',
   'dedo', 'dedos', 'dedo enfarinhado', 'dedo indicador', 'dedo molhado', 'dedos e água gelada', 'dedos enfarinhados',

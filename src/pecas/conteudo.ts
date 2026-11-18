@@ -46,6 +46,12 @@ export class Conteudo extends THREE.Group {
     this.add(this.malha);
   }
 
+  /** Muda a largura da superfície quando o conteúdo passa para um recipiente de outra boca. */
+  ajustarRaio(r: number) {
+    const f = r / this.raio;
+    this.scale.set(f, 1, f);
+  }
+
   atualizar(dt: number) {
     this.t += dt;
     const e = this.estado;
@@ -167,7 +173,9 @@ export function estadoInicial(texto: string, contexto = ''): { cor: string; espe
     [/arroz|risoto/, '#efe6cf', 0.8, 0.3],
     [/purê|batata/, '#f0dfa4', 0.8, 0.3],
     [/merengue/, '#fbfaf5', 0.6, 0.5],
-    [/geleia|gelatina|coulis|frutas vermelhas|framboesa|morango/, '#b5203b', 0.3, 0.8],
+    // gelatina de frutas: vermelho rubi e translúcida, deixa ver as frutas dentro
+    [/gelatina/, '#c42a44', 0.08, 0.95],
+    [/geleia|coulis|frutas vermelhas|framboesa|morango/, '#b5203b', 0.3, 0.8],
     [/limão|lima/, '#f1ec9a', 0.05, 0.9],
     [/pesto|erva|verde/, '#4f7a2b', 0.6, 0.5],
   ];
